@@ -1,0 +1,37 @@
+ATK2EXTEND_DIR := ../../atk2ext
+
+APPL_CFG += atk2ext.cfg
+APPL_CFG += atk2ext_test.cfg
+
+INCLUDES += -I$(ATK2EXTEND_DIR)/include
+INCLUDES += -I$(ATK2EXTEND_DIR)/cmsis/include
+
+APPLDIR	:= $(ATK2EXTEND_DIR)/cmsis/src
+APPLDIR	+= $(ATK2EXTEND_DIR)/cmsis/src/core
+APPLDIR	+= $(ATK2EXTEND_DIR)/cmsis/src/autosar
+APPLDIR	+= $(ATK2EXTEND_DIR)/cmsis/src/sys
+APPLDIR += $(ATK2EXTEND_DIR)/config
+APPLDIR += $(ATK2EXTEND_DIR)/config/asp
+APPLDIR += $(ATK2EXTEND_DIR)/test
+
+APPL_COBJS	:= cmsis_generic.o
+APPL_COBJS	+= cmsis_kernel.o
+APPL_COBJS	+= cmsis_message_queue.o
+APPL_COBJS	+= cmsis_mutexes.o
+APPL_COBJS	+= cmsis_semaphores.o
+APPL_COBJS	+= cmsis_thread.o
+APPL_COBJS	+= cmsis_syscall.o
+
+APPL_COBJS	+= cmsis_atk2_alarm_pool.o
+APPL_COBJS	+= cmsis_atk2_memory.o
+APPL_COBJS	+= cmsis_atk2_queue.o
+APPL_COBJS	+= cmsis_atk2_message_queue.o
+APPL_COBJS	+= cmsis_atk2_task_lifecycle.o
+APPL_COBJS	+= cmsis_atk2_task_sync.o
+APPL_COBJS	+= cmsis_atk2_time.o
+
+APPL_COBJS	+= atk2os.o
+APPL_COBJS	+= atk2ext_asp_config.o
+APPL_COBJS	+= atk2ext_config.o
+
+APPL_COBJS	+= atk2ext_test.o

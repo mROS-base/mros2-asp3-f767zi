@@ -1,0 +1,7 @@
+#ifndef _CMSIS_ATK2_TYPES_H_
+#define _CMSIS_ATK2_TYPES_H_
+
+#define ATK2_TASK_SYNC_WAIT_FOREVER		(-1U)
+
+
+#endif /* _CMSIS_ATK2_TYPES_H_ */

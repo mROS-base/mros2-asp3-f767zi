@@ -1,0 +1,18 @@
+PACKAGE asp_arch_stm32f7xx_gcc
+
+MANIFEST
+Makefile.chip
+cmsis_f7.h
+stm32f7xx.h
+chip_config.c
+chip_config.h
+chip_kernel.h
+chip_rename.def
+chip_rename.h
+chip_sil.h
+chip_timer.cfg
+chip_timer.h
+chip_unrename.h
+chip_serial.c
+chip_serial.cfg
+chip_serial.h
