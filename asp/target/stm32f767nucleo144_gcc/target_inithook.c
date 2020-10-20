@@ -198,20 +198,27 @@ void hardware_init_hook(void)
 		(0x20000000 | RCC_PLLCFGR_PLLQ_2 | RCC_PLLCFGR_PLLN_7 | RCC_PLLCFGR_PLLN_6 | RCC_PLLCFGR_PLLM_4));
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 
+	// ETHMACуБоуВпуГнуГГуВпцЬЙхК╣хМЦ
+	__ETHMAC_CLK_ENABLE();
+	__ETHMACRX_CLK_ENABLE();
+	__ETHMACTX_CLK_ENABLE();
+
+	//DMAцЬЙхК╣хМЦ
+	sli_orw_mem((uint32_t *)(TADR_RCC_BASE + TOFF_RCC_AHB1ENR), (RCC_AHB1ENR_DMA1EN | RCCAHB1ENR_DMA2EN | RCC_AHB1ENR_DMA2DEN ) );
 	/*
-	 *  ┴┤│ф╣■д▀╢╪╗▀
+	 *  я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜▀╢╪╗я┐╜
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CIR), 0x00000000);
 
 	/*
-	 *  есетеъе╫еэе╞епе╖ечеєеце╦е├е╚д╬╜щ┤№▓╜
+	 *  я┐╜я┐╜я┐╜я┐╜╫ея┐╜я┐╜╞ея┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╦е├е╚д╬╜я┐╜я┐╜я┐╜я┐╜
 	 */
 	mpu_config();
 
 	/*
-	 *  енеуе├е╖ехдЄ═н╕·▓╜
+	 *  я┐╜я┐╜я┐╜я┐╜├ея┐╜я┐╜я┐╜я┐╜═ня┐╜я┐╜я┐╜я┐╜
 	 */
-	/* I-Cache═н╕·▓╜ */
+	/* I-Cache═ня┐╜я┐╜я┐╜я┐╜ */
 	Asm("dsb 0xF":::"memory");
 	Asm("isb 0xF":::"memory");
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_ICIALLU), 0);	/* invalidate I-Cache */
