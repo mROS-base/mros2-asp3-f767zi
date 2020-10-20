@@ -20,13 +20,12 @@ osMutexId_t osMutexNew(const osMutexAttr_t *attr)
 	}
 	mutex = (CmsisMutexType *)Atk2MemoryAlloc(sizeof(CmsisMutexType));
 	if (mutex == NULL) {
-		//TODO ERRLOG
+		CMSIS_ERROR("%s %s() %d cannot allocate memory size=%d\n", __FILE__, __FUNCTION__, __LINE__, sizeof(CmsisMutexType));
 		return NULL;
 	}
 	mutex->sem = osSemaphoreNew(1, 1, NULL);
 	if (mutex->sem == NULL) {
 		Atk2MemoryFree(mutex);
-		//TODO ERRLOG
 		return NULL;
 	}
 	mutex->magicno = ATK2MUTEX_HEAD_MAGICNO;
@@ -46,19 +45,26 @@ osStatus_t osMutexAcquire(osMutexId_t mutex_id, uint32_t timeout)
 	CmsisMutexType *mutex;
 	TaskType taskID;
 	osStatus_t err = osOK;
+	StatusType ercd;
 	bool_t is_ctx_isr = CurrentContextIsISR();
 
-	if (mutex_id == NULL) {
-		return osErrorParameter;
-	}
-	else if (is_ctx_isr) {
+	if (is_ctx_isr) {
 		return osErrorISR;
+	}
+	else if (mutex_id == NULL) {
+		CMSIS_ERROR("%s %s() %d invalid mutex_id(NULL)\n", __FILE__, __FUNCTION__, __LINE__);
+		return osErrorParameter;
 	}
 	mutex = (CmsisMutexType*)mutex_id;
 	if (mutex->magicno != ATK2MUTEX_HEAD_MAGICNO) {
+		CMSIS_ERROR("%s %s() %d invalid magicno(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mutex->magicno);
 		return osErrorParameter;
 	}
-	(void)GetTaskID(&taskID);
+	ercd = GetTaskID(&taskID);
+	if (ercd != E_OK) {
+		CMSIS_ERROR("%s %s() %d GetTaskID() ercd =%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		return osErrorResource;
+	}
 	SuspendOSInterrupts();
 	if ((mutex->is_recursive) && (mutex->count > 0) && (mutex->owner == taskID)) {
 		mutex->count++;
@@ -78,20 +84,27 @@ osStatus_t osMutexRelease(osMutexId_t mutex_id)
 {
 	CmsisMutexType *mutex;
 	TaskType taskID;
+	StatusType ercd;
 	osStatus_t err = osOK;
 	bool_t is_ctx_isr = CurrentContextIsISR();
 
-	if (mutex_id == NULL) {
-		return osErrorParameter;
-	}
-	else if (is_ctx_isr) {
+	if (is_ctx_isr) {
 		return osErrorISR;
+	}
+	else if (mutex_id == NULL) {
+		CMSIS_ERROR("%s %s() %d invalid mutex_id(NULL)\n", __FILE__, __FUNCTION__, __LINE__);
+		return osErrorParameter;
 	}
 	mutex = (CmsisMutexType*)mutex_id;
 	if (mutex->magicno != ATK2MUTEX_HEAD_MAGICNO) {
+		CMSIS_ERROR("%s %s() %d invalid magicno(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mutex->magicno);
 		return osErrorParameter;
 	}
-	(void)GetTaskID(&taskID);
+	ercd = GetTaskID(&taskID);
+	if (ercd != E_OK) {
+		CMSIS_ERROR("%s %s() %d GetTaskID() ercd =%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		return osErrorResource;
+	}
 	SuspendOSInterrupts();
 	if (mutex->owner == taskID) {
 		if ((mutex->is_recursive) && (mutex->count > 1)) {
@@ -120,16 +133,19 @@ osStatus_t osMutexDelete(osMutexId_t mutex_id)
 		return osErrorISR;
 	}
 	else if (mutex_id == NULL) {
+		CMSIS_ERROR("%s %s() %d invalid mutex_id(NULL)\n", __FILE__, __FUNCTION__, __LINE__);
 		return osErrorParameter;
 	}
 	mutex = (CmsisMutexType*)mutex_id;
 	if (mutex->magicno != ATK2MUTEX_HEAD_MAGICNO) {
+		CMSIS_ERROR("%s %s() %d invalid magicno(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mutex->magicno);
 		return osErrorParameter;
 	}
 	SuspendOSInterrupts();
 	if (mutex->count == 0) {
 		err = osSemaphoreDelete(mutex->sem);
 		if (err == osOK) {
+			mutex->magicno = 0;
 			Atk2MemoryFree(mutex);
 		}
 	}
@@ -146,7 +162,7 @@ osStatus_t osMutexDelete(osMutexId_t mutex_id)
 osMutexId osMutexCreate(const osMutexDef_t *mutex_def)
 {
 	if (mutex_def != NULL) {
-		//TODO ERROR LOG
+		CMSIS_ERROR("%s %s() %d mutex_def should not be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	return (osMutexId)osMutexNew(NULL);

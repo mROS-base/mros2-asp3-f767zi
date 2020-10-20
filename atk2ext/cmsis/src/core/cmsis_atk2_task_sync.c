@@ -22,12 +22,6 @@ static bool_t Atk2TaskHasTargetId(QUEUE *entry, void *arg);
 static void Atk2TaskSyncWaitInfoInit(Atk2TaskWaitInfoType *winfop, uint32_t timeout, TaskType taskID);
 
 
-
-#ifdef OS_ATK2
-#else
-extern void Atk2TaskScheduleCallback(intptr_t exinf);
-#endif
-
 static Atk2QueueHeadInitializer(atk2_task_sync_queue);
 
 StatusType Atk2TaskSyncSleep(uint32_t timeout)
@@ -35,12 +29,12 @@ StatusType Atk2TaskSyncSleep(uint32_t timeout)
 	Atk2TaskWaitInfoType winfo;
 	TaskType taskID;
 
-	(void)GetTaskID(&taskID);
-	Atk2TaskSyncWaitInfoInit(&winfo, timeout, taskID);
-	if (winfo.ercd != E_OK) {
-		//TODO ERROR LOG
+	StatusType ercd = GetTaskID(&taskID);
+	if (ercd != E_OK) {
+		CMSIS_ERROR("%s %s() %d winfo.ercd=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
 		return winfo.ercd;
 	}
+	Atk2TaskSyncWaitInfoInit(&winfo, timeout, taskID);
 	SuspendOSInterrupts();
 	Atk2QueueHeadAddTail(&atk2_task_sync_queue, &winfo.queue);
 	ResumeOSInterrupts();

@@ -19,7 +19,7 @@ Atk2MessageQueueType *Atk2MessageQueueCreate(Atk2MessageQueueConfigType *config)
 
 	top = Atk2MemoryAlloc(sizeof(Atk2MessageQueueType) + entry_total_size + msg_data_total_size);
 	if (top == NULL) {
-		//TODO ERRLOG
+		CMSIS_ERROR("%s %s() %d cannot allocate memory size=%d\n", __FILE__, __FUNCTION__, __LINE__, sizeof(Atk2MessageQueueType) + entry_total_size + msg_data_total_size);
 		return NULL;
 	}
 	qh = (Atk2MessageQueueType *)top;
@@ -57,6 +57,7 @@ StatusType Atk2MessageQueueDelete(Atk2MessageQueueType *qh)
 	else if (qh->magicno != ATK2MESSAGE_QUEUE_HEAD_MAGICNO) {
 		return E_OS_ID;
 	}
+	qh->magicno = 0;
 	Atk2MemoryFree(qh);
 	return E_OK;
 }
@@ -68,9 +69,14 @@ StatusType Atk2MessageQueueGet(Atk2MessageQueueType *qh, void *msg_ptr, uint8_t 
 	TaskType taskID;
 
 	if (qh->magicno != ATK2MESSAGE_QUEUE_HEAD_MAGICNO) {
+		CMSIS_ERROR("%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
 		return E_OS_ID;
 	}
-	(void)GetTaskID(&taskID);
+	ercd = GetTaskID(&taskID);
+	if (ercd != E_OK) {
+		CMSIS_ERROR("%s %s() %d GetTaskID() err=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		return ercd;
+	}
 
 	SuspendOSInterrupts();
 	entry = (Atk2MessageQueueEntryType*)Atk2QueueHeadRemoveFirst(&qh->used);
@@ -102,9 +108,14 @@ StatusType Atk2MessageQueuePut(Atk2MessageQueueType *qh, const void *msg_ptr, ui
 	TaskType taskID;
 
 	if (qh->magicno != ATK2MESSAGE_QUEUE_HEAD_MAGICNO) {
+		CMSIS_ERROR("%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
 		return E_OS_ID;
 	}
-	(void)GetTaskID(&taskID);
+	ercd = GetTaskID(&taskID);
+	if (ercd != E_OK) {
+		CMSIS_ERROR("%s %s() %d GetTaskID() err=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		return ercd;
+	}
 
 	SuspendOSInterrupts();
 	entry = (Atk2MessageQueueEntryType*)Atk2QueueHeadRemoveFirst(&qh->free);
