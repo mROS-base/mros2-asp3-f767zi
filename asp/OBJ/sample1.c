@@ -5,6 +5,9 @@
 #include "syssvc/syslog.h"
 #include "kernel_cfg.h"
 #include "sample1.h"
+#include "stm32f7xx_hal.h"
+
+UART_HandleTypeDef huart3;
 
 /*
  *  サービスコールのエラーのログ出力
@@ -44,5 +47,9 @@ void main_task(intptr_t exinf)
 	}
 	SVC_PERROR(serial_ctl_por(TASK_PORTID,
 							(IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
+	while(true)
+	{
+		HAL_UART_Transmit(&huart3,(uint8_t *)"Hello\r\n", 7, 100);
+	}
 	ext_tsk();
 }

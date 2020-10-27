@@ -8,7 +8,7 @@
 #  Copyright (C) 2006-2014 by Embedded and Real-Time Systems Laboratory
 #              Graduate School of Information Science, Nagoya Univ., JAPAN
 # 
-#  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+#  上記著作権者は，以下の(1)~(4)の条件を満たす場合に限り，本ソフトウェ
 #  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
 #  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
 #  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
@@ -145,7 +145,7 @@ ifndef OMIT_OPTIMIZATION
   COPTS := $(COPTS) -O0 -g
 endif
 CDEFS := $(CDEFS) 
-INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) $(INCLUDES)
+INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) -I$(SRCDIR)/../drivers/Inc $(INCLUDES)
 LDFLAGS := $(LDFLAGS) 
 CFG1_OUT_LDFLAGS := $(CFG1_OUT_LDFLAGS) 
 LIBS := $(LIBS) $(CXXLIBS)
@@ -160,6 +160,7 @@ APPL_CFG = $(APPLNAME).cfg
 
 include Makefile.atk2ext
 include Makefile.lwip
+include Makefile.serial
 
 APPL_DIR = $(APPLDIR) $(SRCDIR)/library
 APPL_ASMOBJS =
