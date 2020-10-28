@@ -171,6 +171,7 @@
 #define sil_orw_mem(addr, val)			sil_wrw_mem((addr), (sil_rew_mem(addr) | (val)))
 
 ER sysclock_config(int mode);
+//UART_HandleTypeDef huart3;
 #if 0 /* not used */
 static void mpu_config(void);
 static void sysemclock_error(void);
@@ -495,52 +496,15 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  PCLK1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 *  PCLK1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?
 	 */ 
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_PPRE1, RCC_HCLK_DIV4);
 
 	/*
-	 *  PCLK2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 *  PCLK2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_PPRE2, (RCC_HCLK_DIV2 << 3));
 	return E_OK;
-}
-
-void initUSART3() 
-{
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	__HAL_RCC_USART3_CLK_ENABLE();
-	__HAL_RCC_GPIOD_CLK_ENABLE();
-	GPIO_InitStruct.Pin = GPIO_PIN_8 | GPIO_PIN_9;
-	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-	GPIO_InitStruct.Alternate = GPIO_AF7_USART3;
-	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-	UART_HandleTypeDef huart3;
-	RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
-
-	PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART3;
-	PeriphClkInitStruct.Usart3ClockSelection = RCC_USART3CLKSOURCE_PCLK1;
-	if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK){
-		//Error_Handler();
-	}
-
-	huart3.Instance = USART3;
-	huart3.Init.BaudRate = 115200;
-	huart3.Init.WordLength = UART_WORDLENGTH_8B;
-	huart3.Init.StopBits = UART_STOPBITS_1;
-	huart3.Init.Parity = UART_PARITY_NONE;
-	huart3.Init.Mode = UART_MODE_TX_RX;
-	huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-	huart3.Init.OverSampling = UART_OVERSAMPLING_16;
-	huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-	huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-	if (HAL_UART_Init(&huart3) != HAL_OK)
-	{
-		//Error_Handler();
-	}
 }
 
 #if 0 /* not used */

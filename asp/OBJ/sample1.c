@@ -34,22 +34,23 @@ void main_task(intptr_t exinf)
 	syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
 
 	/*
-	 *  ¥·¥ê¥¢¥ë¥Ý¡¼¥È¤Î½é´ü²½
+	 *  ï¿½ï¿½ï¿½ê¥¢ï¿½ï¿½Ý¡ï¿½ï¿½È¤Î½ï¿½ï¿½ï¿½ï¿½
 	 *
-	 *  ¥·¥¹¥Æ¥à¥í¥°¥¿¥¹¥¯¤ÈÆ±¤¸¥·¥ê¥¢¥ë¥Ý¡¼¥È¤ò»È¤¦¾ì¹ç¤Ê¤É¡¤¥·¥ê¥¢¥ë
-	 *  ¥Ý¡¼¥È¤¬¥ª¡¼¥×¥óºÑ¤ß¤Î¾ì¹ç¤Ë¤Ï¤³¤³¤ÇE_OBJ¥¨¥é¡¼¤Ë¤Ê¤ë¤¬¡¤»Ù¾ã¤Ï
-	 *  ¤Ê¤¤¡¥
+	 *  ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½Ý¡ï¿½ï¿½È¤ï¿½È¤ï¿½ï¿½ï¿½ï¿½Ê¤É¡ï¿½ï¿½ï¿½ï¿½ê¥¢ï¿½ï¿½
+	 *  ï¿½Ý¡ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¥ï¿½Ñ¤ß¤Î¾ï¿½ï¿½Ë¤Ï¤ï¿½ï¿½ï¿½ï¿½ï¿½?E_OBJï¿½ï¿½ï¿½é¡¼ï¿½Ë¤Ê¤ë¤¬ï¿½ï¿½ï¿½Ù¾ï¿½ï¿½?
+	 *  ï¿½Ê¤ï¿½ï¿½ï¿½
 	 */
+	/*
 	ercd = serial_opn_por(TASK_PORTID);
 	if (ercd < 0 && MERCD(ercd) != E_OBJ) {
 		syslog(LOG_ERROR, "%s (%d) reported by `serial_opn_por'.",
 									itron_strerror(ercd), SERCD(ercd));
 	}
+	*/
 	SVC_PERROR(serial_ctl_por(TASK_PORTID,
 							(IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
-	while(true)
-	{
-		HAL_UART_Transmit(&huart3,(uint8_t *)"Hello\r\n", 7, 100);
+	while(true) {
+		syslog(LOG_NOTICE, "hogehoge");
 	}
 	ext_tsk();
 }

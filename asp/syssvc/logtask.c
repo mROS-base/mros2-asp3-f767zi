@@ -131,7 +131,7 @@ logtask_main(intptr_t exinf)
 	ER_UINT	rercd;
 
 	logtask_portid = (ID) exinf;
-	(void) serial_opn_por(logtask_portid);
+	//(void) serial_opn_por(logtask_portid);
 	(void) syslog_msk_log(LOG_UPTO(LOG_NOTICE), LOG_UPTO(LOG_EMERG));
 	syslog_1(LOG_NOTICE, "System logging task is started on port %d.",
 													logtask_portid);
