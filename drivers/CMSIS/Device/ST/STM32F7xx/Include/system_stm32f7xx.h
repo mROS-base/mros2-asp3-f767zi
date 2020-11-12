@@ -61,7 +61,7 @@
 
 
 /** @addtogroup STM32F7xx_System_Exported_Variables
-  * @{
+  * @{APBPrescTable
   */
   /* The SystemCoreClock variable is updated in three ways:
       1) by calling CMSIS function SystemCoreClockUpdate()
