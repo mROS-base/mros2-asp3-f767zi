@@ -9,34 +9,34 @@
  *              Imageing System Development Division RICOH COMPANY, LTD.
  *  Copyright (C) 2017-2019 by TOPPERS PROJECT Educational Working Group.
  * 
- *  �嵭����Ԥϡ��ʲ���(1)���(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: target_inithook.c 698 2019-07-02 17:55:15Z roi $
  */
@@ -45,7 +45,7 @@
 #include "target_syssvc.h"
 
 /*
- *  ������ץ�������stm32f767-nucleo144�ѡ�
+ *  初期化プログラム（stm32f767-nucleo144用）
  */
 
 #define PLL_M      (HSE_VALUE / 1000000)/* Possible value 0 and 63 */
@@ -98,50 +98,50 @@
 #define RCC_PLLSAIP_DIV8                 0x00000003
 
 /*
- *  CORTEX MPU�ΰ���Ķػ�
+ *  CORTEX MPU領域許可禁止
  */
 #define MPU_REGION_ENABLE               0x01
 #define MPU_REGION_DISABLE              0x00
 
 /*
- *  CORTEX MPU ���󥹥ȥ饯����󥢥��������Ķػ�
+ *  CORTEX MPU インストラクションアクセス許可禁止
  */
 #define MPU_INSTRUCTION_ACCESS_ENABLE   0x00
 #define MPU_INSTRUCTION_ACCESS_DISABLE  0x01
 
 /*
- *  CORTEX MPU ���󥹥ȥ饯����󥢥���������å�������
+ *  CORTEX MPU インストラクションアクセスキャッシュ設定
  */
 #define MPU_ACCESS_CACHEABLE            0x01
 #define MPU_ACCESS_NOT_CACHEABLE        0x00
 
 /*
- *  CORTEX MPU ���󥹥ȥ饯����󥢥������Хåե�����
+ *  CORTEX MPU インストラクションアクセスバッファ設定
  */
 #define MPU_ACCESS_BUFFERABLE           0x01
 #define MPU_ACCESS_NOT_BUFFERABLE       0x00
 
 /*
- *  CORTEX MPU ���󥹥ȥ饯����󥢥�������ͭ����
+ *  CORTEX MPU インストラクションアクセス共有設定
  */
 #define MPU_ACCESS_SHAREABLE            0x01
 #define MPU_ACCESS_NOT_SHAREABLE        0x00
 
 /*
- *  GPIO�����ȥץå�����ѥ�᡼��
+ *  GPIOアウトプット設定パラメータ
  */
 #define GPIO_OTYPE_PP       0x0
 #define GPIO_OTYPE_OD       0x1
 
 /*
- *  GPIO�ץ륢�åץ�����ѥ�᡼��
+ *  GPIOプルアップダウンパラメータ
  */
 #define GPIO_NOPULL         0x00000000	/* No Pull-up or Pull-down activation  */
 #define GPIO_PULLUP         0x00000001	/* Pull-up activation                  */
 #define GPIO_PULLDOWN       0x00000002	/* Pull-down activation                */
 
 /*
- *  GPIO�⡼�ɥѥ�᡼��
+ *  GPIOモードパラメータ
  */
 #define GPIO_MODE_INPUT     0x00000000	/* Input Floating Mode */
 #define GPIO_MODE_OUTPUT    0x00000001	/* Output Push Pull Mode */
@@ -149,7 +149,7 @@
 #define GPIO_MODE_ANALOG    0x00000003	/* Analog Mode  */
 
 /*
- *  GPIO�����ȥץåȺ�����ȿ��ѥ�᡼��
+ *  GPIOアウトプット最大周波数パラメータ
  */
 #define GPIO_SPEED_LOW      0x00000000	/* Low speed     */
 #define GPIO_SPEED_MEDIUM   0x00000001	/* Medium speed  */
@@ -160,7 +160,7 @@
 #define LED1_POSITION                   1
 
 /*
- *  ����å��奵����ID �쥸�����ޥ���
+ *  キャッシュサイズID レジスタマクロ
  */
 #define CCSIDR_WAYS(x)         (((x) & SCB_CCSIDR_ASSOCIATIVITY_Msk) >> SCB_CCSIDR_ASSOCIATIVITY_Pos)
 #define CCSIDR_SETS(x)         (((x) & SCB_CCSIDR_NUMSETS_Msk      ) >> SCB_CCSIDR_NUMSETS_Pos      )
@@ -179,9 +179,9 @@ static void sysemclock_error(void);
 
 #ifndef TOPPERS_RAM_EXEC
 /*
- *  ���٥�Υ������åȰ�¸�ν����
+ *  低レベルのターゲット依存の初期化
  *
- *  �������ȥ��åץ⥸�塼�����ǡ�����ν���������˸ƤӽФ���롥
+ *  スタートアップモジュールの中で，メモリの初期化の前に呼び出される．
  */
 void hardware_init_hook(void)
 {
@@ -190,7 +190,7 @@ void hardware_init_hook(void)
 	uint32_t sets, ways;
 
 	/*
-	 * RCC�Υꥻ�åȤȥ���ե�����졼�����
+	 * RCCのリセットとコンフィギュレーション
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSION);
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), 0x00000000);
@@ -199,7 +199,7 @@ void hardware_init_hook(void)
 		(0x20000000 | RCC_PLLCFGR_PLLQ_2 | RCC_PLLCFGR_PLLN_7 | RCC_PLLCFGR_PLLN_6 | RCC_PLLCFGR_PLLM_4));
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 
-	// ETHMAC????????��??????????��??
+	// ETHMACへのクロック供給
 	__ETHMAC_CLK_ENABLE();
 	__ETHMACRX_CLK_ENABLE();
 	__ETHMACTX_CLK_ENABLE();
@@ -208,22 +208,22 @@ void hardware_init_hook(void)
 	initUSART3();
 
 
-	//DMA?????��??
+	//DMA有効化
 	sli_orw_mem((uint32_t *)(TADR_RCC_BASE + TOFF_RCC_AHB1ENR), (RCC_AHB1ENR_DMA1EN | RCCAHB1ENR_DMA2EN | RCC_AHB1ENR_DMA2DEN ) );
 	/*
-	 *  ������߶ػ�?
+	 *  全割込み禁止
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CIR), 0x00000000);
 
 	/*
-	 *  ����ץ��ƥ�������˥åȤν����?
+	 *  メモリプロテクションユニットの初期化
 	 */
 	mpu_config();
 
 	/*
-	 *  ����å����ͭ����
+	 *  キャッシュを有効化
 	 */
-	/* I-Cacheͭ���� */
+	/* I-Cache有効化 */
 	Asm("dsb 0xF":::"memory");
 	Asm("isb 0xF":::"memory");
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_ICIALLU), 0);	/* invalidate I-Cache */
@@ -231,7 +231,7 @@ void hardware_init_hook(void)
 	Asm("dsb 0xF":::"memory");
 	Asm("isb 0xF":::"memory");
 
-	/* D-Cacheͭ���� */
+	/* D-Cache有効化 */
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_CSSELR), ((0UL << 1) | 0UL));	/* Level 1 data cache */
 	ccsidr  = sil_rew_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_CCSIDR));
     sets    = (uint32_t)(CCSIDR_SETS(ccsidr));
@@ -239,7 +239,7 @@ void hardware_init_hook(void)
     ways    = (uint32_t)(CCSIDR_WAYS(ccsidr));
     wshift  = (uint32_t)((uint32_t)__builtin_clz(ways) & 0x1FUL);
 
-    /* D-Chahe����Х�ǡ��� */
+    /* D-Chaheインバリデート */
 	Asm("dsb 0xF":::"memory");
 	do{
 		uint32_t tmpways = ways;
@@ -257,7 +257,7 @@ void hardware_init_hook(void)
 
 
 	/*
-	 *  ����ߥ��롼��ͥ��������
+	 *  割込みグループ優先度設定
 	 */
 	reg_value = sil_rew_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_AIRCR));        /* read old register configuration    */
 	reg_value &= ~((uint32_t)(SCB_AIRCR_VECTKEY_Msk | SCB_AIRCR_PRIGROUP_Msk));	/* clear bits to change               */
@@ -267,7 +267,7 @@ void hardware_init_hook(void)
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_AIRCR), reg_value);
 
 	/*
-	 *  �����ƥ९���å��� 216MHz������
+	 *  システムクロックを 216MHzに設定
 	 */
 	if(sysclock_config(0) != E_OK)
 		sysemclock_error();
@@ -283,12 +283,12 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
 	unsigned int pllsaiq = 0U;
 
     /*
-	 * �����å�48����������
+	 * クロック48ソース設定
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_DCKCFGR2), RCC_DCKCFGR2_CK48MSEL, RCC_CLK48SOURCE_PLLSAIP);
 
     /*
-	 *  PLLSAI�����å������
+	 *  PLLSAIクロックを停止
 	 */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLSAION);
 
@@ -302,7 +302,7 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
     }
 
     /*
-	 *  PLLSAI�����å�����
+	 *  PLLSAIクロック設定
 	 */
 	pllsaiq = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_PLLSAICFGR)) & (RCC_PLLSAICFGR_PLLSAIQ | RCC_PLLSAICFGR_PLLSAIR);
 	/* Configure the PLLSAI division factors */
@@ -312,7 +312,7 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_PLLSAICFGR), pllsaiq);
 
     /*
-	 *  PLLSAI�����å���Ƴ�
+	 *  PLLSAIクロックを再開
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLSAION);
 
@@ -328,8 +328,8 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
 }
 
 /*
- *  �����ƥ९���å�����
- *  �����͡�
+ *  システムクロック設定
+ *  設定値：
  *    System Clock source            = PLL (HSE)
  *    SYSCLK(Hz)                     = 216000000
  *    HCLK(Hz)                       = 216000000
@@ -352,12 +352,12 @@ ER sysclock_config(int mode)
 	volatile uint32_t tmpreg;
 
 	/*
-	 *  HSE�ν������
+	 *  HSEの初期設定
 	 */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEON);
 
-	/* HSE��̵�����Ԥ� */
+	/* HSEの無効化待ち */
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_HSERDY) != 0){
 		if(tickstart > HSE_TIMEOUT_VALUE){
 			return E_TMOUT;
@@ -366,13 +366,13 @@ ER sysclock_config(int mode)
 		tickstart++;
 	}
 
-	/* HSE�κ����� */
+	/* HSEの再設定 */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEON);
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEON);
 
 	tickstart = 0;
-	/* HSE�κƵ�ư�Ԥ� */
+	/* HSEの再起動待ち */
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_HSERDY) == 0){
 		if(tickstart > HSE_TIMEOUT_VALUE){
 			return E_TMOUT;
@@ -382,12 +382,12 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  PLL�ν������
+	 *  PLLの初期設定
 	 */
-	/*  �ᥤ��PLL��̵����. */
+	/*  メインPLLの無効化. */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLON);
 
-	/*  PLL�Υ�ǥ��Ԥ� */
+	/*  PLLのレディ待ち */
 	tickstart = 0;
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_PLLRDY) != 0){
 		if(tickstart > PLL_TIMEOUT_VALUE){
@@ -396,15 +396,15 @@ ER sysclock_config(int mode)
 		sil_dly_nse(1000);
 		tickstart++;
 	}
-	/*  PLL�쥸�������� */
+	/*  PLLレジスタ設定 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_PLLCFGR), (0x20000000 | PLL_M | (PLL_N << 6) | ((RCC_PLLP_DIV2 >> 1) -1) << 16)
 			 | RCC_PLLCFGR_PLLSRC_HSE | (PLL_Q << 24) | (PLL_R << 28));
 
-	/*  �ᥤ��PLL��ͭ�����Ԥ� */
+	/*  メインPLLの有効化待ち */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLON);
 	tickstart = 0;
 
-	/*  PLL��ͭ�����Ԥ� */
+	/*  PLLの有効化待ち */
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_PLLRDY) == 0){
 		if(tickstart > PLL_TIMEOUT_VALUE){
 			return E_TMOUT;
@@ -418,7 +418,7 @@ ER sysclock_config(int mode)
 	tmpreg = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_APB1ENR)) & RCC_APB1ENR_PWREN;
 	(void)(tmpreg);
 
-	/* 216MHz�ѤΥ����С��ɥ饤������ */
+	/* 216MHz用のオーバードライブ設定 */
 	sil_orw_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR1), PWR_CR1_ODEN);
 
 	tickstart = 0;
@@ -430,10 +430,10 @@ ER sysclock_config(int mode)
     	tickstart++;
 	}
 
-	/* �����С��ɥ饤�֥����å���ͭ���� */
+	/* オーバードライブスイッチを有効化 */
 	sil_orw_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR1), PWR_CR1_ODSWEN);
 
-	/* �����С��ɥ饤�֥�ǥ��Ԥ� */
+	/* オーバードライブレディ待ち */
 	tickstart = 0;
 	while((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CSR1)) & PWR_CSR1_ODSWRDY) != PWR_CSR1_ODSWRDY){
 		if(tickstart > PWR_OVERDRIVE_TIMEOUT_VALUE){
@@ -444,15 +444,15 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  USB�����å�����
+	 *  USBクロック設定
 	 */
 	USB_RCC_PeriphCLKConfig(384, RCC_PLLSAIP_DIV8);
 
 	/*
-	 *  �ե�å�����꤫���������ǡ������ɤ߹����褦�˼¹Լ��ȿ��˹�碌��
-	 *  HCLK�쥤�ƥ󥷥��ȥǥХ������Ÿ��Ű�Ĵ�᤹��ɬ�פ�����
+	 *  フラッシュメモリから正しくデータを読み込めるように実行周波数に合わせて
+	 *  HCLKレイテンシィとデバイスの電源電圧調節する必要がある
 	 */
-	/*  CPU���ȿ������祱���� */
+	/*  CPU周波数の増大ケース */
 	if(FLASH_ACR_LATENCY_7WS > (sil_rew_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR)) & FLASH_ACR_LATENCY)){
 
 		sil_mdw_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR), FLASH_ACR_LATENCY, FLASH_ACR_LATENCY_7WS);
@@ -474,7 +474,7 @@ ER sysclock_config(int mode)
 			tickstart++;
 		}
 	}
-	/*  CPU���ȿ����㲼������ */
+	/*  CPU周波数の低下ケース */
 	else{
 		sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_HPRE, RCC_SYSCLK_DIV1);
 		if((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_PLLRDY) == 0){
@@ -496,12 +496,12 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  PCLK1�������?
+	 *  PCLK1初期設定
 	 */ 
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_PPRE1, RCC_HCLK_DIV4);
 
 	/*
-	 *  PCLK2�������?
+	 *  PCLK2初期設定
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_PPRE2, (RCC_HCLK_DIV2 << 3));
 	return E_OK;
@@ -509,7 +509,7 @@ ER sysclock_config(int mode)
 
 #if 0 /* not used */
 /*
- *  ����ץ��ƥ�������˥åȤ�����
+ *  メモリプロテクションユニットの設定
  */
 static void mpu_config(void)
 {
@@ -563,7 +563,7 @@ static void mpu_config(void)
 }
 
 /*
- *  �����ƥ९���å����ꥨ�顼
+ *  システムクロック設定エラー
  */
 static void sysemclock_error(void)
 {
@@ -571,14 +571,14 @@ static void sysemclock_error(void)
 	uint32_t n = LED1_POSITION;
 
 	/*
-	 *  GPIO LED�����å�����
+	 *  GPIO LEDクロック設定
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_AHB1ENR), RCC_AHB1ENR_GPIOIEN);
 	temp = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_AHB1ENR));
 	(void)(temp);
 
 	/*
-	 * LED GPIO����
+	 * LED GPIO設定
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_GPIOI_BASE+TOFF_GPIO_MODER), (3 << (n * 2)), (GPIO_MODE_OUTPUT << (n * 2)));
 	sil_mdw_mem((uint32_t *)(TADR_GPIOI_BASE+TOFF_GPIO_OSPEEDR), (3 << (n * 2)), (GPIO_SPEED_HIGH << (n * 2)));
