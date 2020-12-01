@@ -127,7 +127,7 @@ void SuspendOSInterrupts(void)
 	return;
 }
 
-void Atk2ExtCyclicHandler(intptr_t exinf)
+ALARMCALLBACK(Atk2ExtCyclicHandler)
 {
 	iact_tsk(Atk2ExtCyclicTask);
 	return;

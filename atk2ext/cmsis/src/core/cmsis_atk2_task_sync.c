@@ -31,7 +31,7 @@ StatusType Atk2TaskSyncSleep(uint32_t timeout)
 
 	StatusType ercd = GetTaskID(&taskID);
 	if (ercd != E_OK) {
-		CMSIS_ERROR("%s %s() %d winfo.ercd=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		CMSIS_ERROR("ERROR:%s %s() %d winfo.ercd=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
 		return winfo.ercd;
 	}
 	Atk2TaskSyncWaitInfoInit(&winfo, timeout, taskID);

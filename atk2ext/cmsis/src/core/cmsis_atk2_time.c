@@ -1,4 +1,5 @@
 #include "cmsis_atk2_time.h"
+#include "atk2ext_common.h"
 
 static uint32_t cmsis_atk2_current_time;
 
@@ -40,6 +41,14 @@ bool_t Atk2TimeIsTimeout(uint32_t curr, uint32_t s, uint32_t e)
 		}
 		else {
 			// case2.1 or case2.2
+			if ((curr >= s) && (curr >= e)) {
+				//TODO test
+				//CMSIS_INFO("(c%ud s%ud <= e%ud): case:2.1",curr, s,e);
+			}
+			else {
+				//TODO test
+				//CMSIS_INFO("(c%ud s%ud <= e%ud): case:2.2",curr, s,e);
+			}
 			return true;
 		}
 	}
@@ -50,6 +59,8 @@ bool_t Atk2TimeIsTimeout(uint32_t curr, uint32_t s, uint32_t e)
 		 */
 		if ((curr >= e) && (curr < s)) {
 			// case2
+			//TODO test
+			//CMSIS_INFO("(c%ud s%ud > e%ud): case:2" ,curr,s,e);
 			return true;
 		}
 		else {
@@ -58,3 +69,12 @@ bool_t Atk2TimeIsTimeout(uint32_t curr, uint32_t s, uint32_t e)
 		}
 	}
 }
+
+
+//TODO test
+void Atk2TimeIncTickCountSet(uint32_t set_time)
+{
+	cmsis_atk2_current_time = set_time;
+	return;
+}
+

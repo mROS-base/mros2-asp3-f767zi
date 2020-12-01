@@ -40,5 +40,6 @@ extern StatusType Atk2MessageQueueDelete(Atk2MessageQueueType *qh);
 
 extern StatusType Atk2MessageQueueGet(Atk2MessageQueueType *qh, void *msg_ptr, uint8_t *msg_prio, uint32_t timeout);
 extern StatusType Atk2MessageQueuePut(Atk2MessageQueueType *qh, const void *msg_ptr, uint8_t msg_prio, uint32_t timeout);
+extern bool_t Atk2MessageQueueIsValid(Atk2MessageQueueType *qh);
 
 #endif /* _CMSIS_ATK2_MESSAGE_QUEUE_H_ */

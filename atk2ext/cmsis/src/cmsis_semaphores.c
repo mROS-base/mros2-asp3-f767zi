@@ -11,12 +11,12 @@ osSemaphoreId_t osSemaphoreNew(uint32_t max_count, uint32_t initial_count, const
 		return NULL;
 	}
 	else if (attr != NULL) {
-		CMSIS_ERROR("%s %s() %d attr must be null\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d attr must be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	semp = (CmsisSemType *)Atk2MemoryAlloc(sizeof(CmsisSemType));
 	if (semp == NULL) {
-		CMSIS_ERROR("%s %s() %d cannot allocate memory size=%d\n", __FILE__, __FUNCTION__, __LINE__, sizeof(CmsisSemType));
+		CMSIS_ERROR("ERROR:%s %s() %d cannot allocate memory size=%d\n", __FILE__, __FUNCTION__, __LINE__, sizeof(CmsisSemType));
 		return NULL;
 	}
 	semp->count = initial_count;
@@ -42,13 +42,20 @@ osStatus_t osSemaphoreAcquire(osSemaphoreId_t semaphore_id, uint32_t timeout)
 	if (semp->magicno != ATK2SEM_HEAD_MAGICNO) {
 		return osErrorParameter;
 	}
-	ercd = GetTaskID(&taskID);
-	if (ercd != E_OK) {
-		return osErrorResource;
+	if (!is_ctx_isr) {
+		ercd = GetTaskID(&taskID);
+		if (ercd != E_OK) {
+			return osErrorResource;
+		}
+	}
+	else {
+		if (timeout != 0) {
+			return osErrorResource;
+		}
 	}
 
 	SuspendOSInterrupts();
-	err = osSemaphoreAcquire_nolock(semp, timeout, taskID, is_ctx_isr);
+	err = osSemaphoreAcquire_nolock(semp, timeout, taskID);
 	ResumeOSInterrupts();
 	return err;
 }
@@ -79,12 +86,12 @@ osStatus_t osSemaphoreDelete(osSemaphoreId_t semaphore_id)
 		return osErrorISR;
 	}
 	else if (semaphore_id == NULL) {
-		CMSIS_ERROR("%s %s() %d semaphore_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, semaphore_id);
+		CMSIS_ERROR("ERROR:%s %s() %d semaphore_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, semaphore_id);
 		return osErrorParameter;
 	}
 	semp = (CmsisSemType*)semaphore_id;
 	if (semp->magicno != ATK2SEM_HEAD_MAGICNO) {
-		CMSIS_ERROR("%s %s() %d invalid magicno(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, semp->magicno);
+		CMSIS_ERROR("ERROR:%s %s() %d invalid magicno(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, semp->magicno);
 		return osErrorParameter;
 	}
 	SuspendOSInterrupts();
@@ -99,7 +106,7 @@ osStatus_t osSemaphoreDelete(osSemaphoreId_t semaphore_id)
 	return err;
 }
 
-osStatus_t osSemaphoreAcquire_nolock(CmsisSemType *semp, uint32_t timeout, TaskType taskID, bool_t is_ctx_isr)
+osStatus_t osSemaphoreAcquire_nolock(CmsisSemType *semp, uint32_t timeout, TaskType taskID)
 {
 	osStatus_t err = osOK;
 	StatusType ercd;
@@ -109,9 +116,6 @@ osStatus_t osSemaphoreAcquire_nolock(CmsisSemType *semp, uint32_t timeout, TaskT
 	}
 	else {
 		if (timeout == 0) {
-			err = osErrorResource;
-		}
-		else if (is_ctx_isr) {
 			err = osErrorResource;
 		}
 		else {
@@ -149,7 +153,7 @@ osStatus_t osSemaphoreRelease_nolock(CmsisSemType *semp)
 osSemaphoreId osSemaphoreCreate(const osSemaphoreDef_t *semaphore_def, int32_t count)
 {
 	if (semaphore_def != NULL) {
-		CMSIS_ERROR("%s %s() %d semaphore_def should not be null\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d semaphore_def should not be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	return (osSemaphoreId)osSemaphoreNew(count, count, NULL);
@@ -163,6 +167,9 @@ int32_t osSemaphoreWait(osSemaphoreId semaphore_id, uint32_t millisec)
 	StatusType ercd;
 	bool_t is_ctx_isr = CurrentContextIsISR();
 
+	if (is_ctx_isr) {
+		return -1;
+	}
 	if (semaphore_id == NULL) {
 		return -1;
 	}
@@ -176,7 +183,7 @@ int32_t osSemaphoreWait(osSemaphoreId semaphore_id, uint32_t millisec)
 	}
 
 	SuspendOSInterrupts();
-	err = osSemaphoreAcquire_nolock(semp, millisec, taskID, is_ctx_isr);
+	err = osSemaphoreAcquire_nolock(semp, millisec, taskID);
 	ResumeOSInterrupts();
 	if (err != osOK) {
 		return 0;
