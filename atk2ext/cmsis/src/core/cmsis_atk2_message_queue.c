@@ -19,7 +19,7 @@ Atk2MessageQueueType *Atk2MessageQueueCreate(Atk2MessageQueueConfigType *config)
 
 	top = Atk2MemoryAlloc(sizeof(Atk2MessageQueueType) + entry_total_size + msg_data_total_size);
 	if (top == NULL) {
-		CMSIS_ERROR("%s %s() %d cannot allocate memory size=%d\n", __FILE__, __FUNCTION__, __LINE__, sizeof(Atk2MessageQueueType) + entry_total_size + msg_data_total_size);
+		CMSIS_ERROR("ERROR:%s %s() %d cannot allocate memory size=%d\n", __FILE__, __FUNCTION__, __LINE__, sizeof(Atk2MessageQueueType) + entry_total_size + msg_data_total_size);
 		return NULL;
 	}
 	qh = (Atk2MessageQueueType *)top;
@@ -69,13 +69,15 @@ StatusType Atk2MessageQueueGet(Atk2MessageQueueType *qh, void *msg_ptr, uint8_t 
 	TaskType taskID;
 
 	if (qh->magicno != ATK2MESSAGE_QUEUE_HEAD_MAGICNO) {
-		CMSIS_ERROR("%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
+		CMSIS_ERROR("ERROR:%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
 		return E_OS_ID;
 	}
-	ercd = GetTaskID(&taskID);
-	if (ercd != E_OK) {
-		CMSIS_ERROR("%s %s() %d GetTaskID() err=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
-		return ercd;
+	if (!CurrentContextIsISR()) {
+		ercd = GetTaskID(&taskID);
+		if (ercd != E_OK) {
+			CMSIS_ERROR("ERROR:%s %s() %d GetTaskID() err=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+			return ercd;
+		}
 	}
 
 	SuspendOSInterrupts();
@@ -100,6 +102,10 @@ StatusType Atk2MessageQueueGet(Atk2MessageQueueType *qh, void *msg_ptr, uint8_t 
 	ResumeOSInterrupts();
 	return ercd;
 }
+bool_t Atk2MessageQueueIsValid(Atk2MessageQueueType *qh)
+{
+	return (qh->magicno == ATK2MESSAGE_QUEUE_HEAD_MAGICNO);
+}
 
 StatusType Atk2MessageQueuePut(Atk2MessageQueueType *qh, const void *msg_ptr, uint8_t msg_prio, uint32_t timeout)
 {
@@ -108,13 +114,15 @@ StatusType Atk2MessageQueuePut(Atk2MessageQueueType *qh, const void *msg_ptr, ui
 	TaskType taskID;
 
 	if (qh->magicno != ATK2MESSAGE_QUEUE_HEAD_MAGICNO) {
-		CMSIS_ERROR("%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
+		CMSIS_ERROR("ERROR:%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
 		return E_OS_ID;
 	}
-	ercd = GetTaskID(&taskID);
-	if (ercd != E_OK) {
-		CMSIS_ERROR("%s %s() %d GetTaskID() err=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
-		return ercd;
+	if (!CurrentContextIsISR()) {
+		ercd = GetTaskID(&taskID);
+		if (ercd != E_OK) {
+			CMSIS_ERROR("ERROR:%s %s() %d GetTaskID() err=%d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+			return ercd;
+		}
 	}
 
 	SuspendOSInterrupts();

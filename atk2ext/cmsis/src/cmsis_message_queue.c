@@ -1,5 +1,5 @@
 #include "cmsis_os.h"
-#include "atk2ext_config.h"
+#include "atk2ext_sys_config.h"
 #include "cmsis_atk2_message_queue.h"
 #include "cmsis_atk2_task_sync.h"
 #include <string.h>
@@ -16,15 +16,15 @@ osMessageQueueId_t osMessageQueueNew(
 		return NULL;
 	}
 	else if (attr != NULL) {
-		CMSIS_ERROR("%s %s() %d attr must be null\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d attr must be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	else if (msg_count == 0) {
-		CMSIS_ERROR("%s %s() %d msg_count should not be 0\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d msg_count should not be 0\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	else if (msg_size == 0) {
-		CMSIS_ERROR("%s %s() %d msg_size should not be 0\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d msg_size should not be 0\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	aligned_msg_size = MESSAGE_QUEUE_ENTRY_ALIGNED_SIZE(msg_size);
@@ -45,7 +45,7 @@ osStatus_t osMessageQueueDelete(osMessageQueueId_t mq_id)
 		return osErrorISR;
 	}
 	else if (qh == NULL) {
-		CMSIS_ERROR("%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		CMSIS_ERROR("ERROR:%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
 		return osErrorParameter;
 	}
 	SuspendOSInterrupts();
@@ -76,11 +76,15 @@ osStatus_t osMessageQueueGet(
 		return osErrorParameter;
 	}
 	else if (qh == NULL) {
-		CMSIS_ERROR("%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		CMSIS_ERROR("ERROR:%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		return osErrorParameter;
+	}
+	else if (msg_ptr == NULL) {
+		CMSIS_ERROR("ERROR:%s %s() %d msg_ptr is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, msg_ptr);
 		return osErrorParameter;
 	}
 	else if (msg_prio != NULL) {
-		CMSIS_ERROR("%s %s() %d msg_prio must be null\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d msg_prio must be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return osErrorParameter;
 	}
 	if (timeout == 0) {
@@ -96,8 +100,11 @@ osStatus_t osMessageQueueGet(
 	if (ercd == E_OK) {
 		err = osOK;
 	}
+	else if (ercd == E_OS_ID) {
+		err = osErrorParameter;
+	}
 	else {
-		CMSIS_ERROR("%s %s() %d ercd = %d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		//CMSIS_ERROR("ERROR:%s %s() %d ercd = %d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
 	}
 	return err;
 }
@@ -106,7 +113,11 @@ uint32_t osMessageQueueGetCount(osMessageQueueId_t mq_id)
 {
 	Atk2MessageQueueType *qh = (Atk2MessageQueueType*)mq_id;
 	if (qh == NULL) {
-		CMSIS_ERROR("%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		CMSIS_ERROR("ERROR:%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		return 0;
+	}
+	else if (!Atk2MessageQueueIsValid(qh)) {
+		CMSIS_ERROR("ERROR:%s %s() %d invalid magicno=%d\n", __FILE__, __FUNCTION__, __LINE__, qh->magicno);
 		return 0;
 	}
 	return qh->used.count;
@@ -127,11 +138,15 @@ osStatus_t osMessageQueuePut(
 		return osErrorParameter;
 	}
 	else if (qh == NULL) {
-		CMSIS_ERROR("%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		CMSIS_ERROR("ERROR:%s %s() %d mq_id is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, mq_id);
+		return osErrorParameter;
+	}
+	else if (msg_ptr == NULL) {
+		CMSIS_ERROR("ERROR:%s %s() %d msg_ptr is invalid value(0x%x)\n", __FILE__, __FUNCTION__, __LINE__, msg_ptr);
 		return osErrorParameter;
 	}
 	else if (msg_prio != 0) {
-		CMSIS_ERROR("%s %s() %d msg_prio must be null\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d msg_prio must be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return osErrorParameter;
 	}
 	if (timeout == 0) {
@@ -147,8 +162,11 @@ osStatus_t osMessageQueuePut(
 	if (ercd == E_OK) {
 		err = osOK;
 	}
+	else if (ercd == E_OS_ID) {
+		err = osErrorParameter;
+	}
 	else {
-		CMSIS_ERROR("%s %s() %d ercd = %d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
+		CMSIS_ERROR("ERROR:%s %s() %d ercd = %d\n", __FILE__, __FUNCTION__, __LINE__, ercd);
 	}
 	return err;
 }
@@ -160,7 +178,7 @@ osMessageQId osMessageCreate(
 	osThreadId thread_id)
 {
 	if (queue_def == NULL) {
-		CMSIS_ERROR("%s %s() %d queue_def should not be null\n", __FILE__, __FUNCTION__, __LINE__);
+		CMSIS_ERROR("ERROR:%s %s() %d queue_def should not be null\n", __FILE__, __FUNCTION__, __LINE__);
 		return NULL;
 	}
 	return osMessageQueueNew(queue_def->queue_sz, sizeof(uint32_t), NULL);

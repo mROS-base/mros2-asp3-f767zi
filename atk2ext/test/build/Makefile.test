@@ -1,0 +1,21 @@
+ATK2EXTEND_DIR := ../../../atk2ext
+
+APPL_CFG += atk2ext_test.cfg
+APPLDIR	+= $(ATK2EXTEND_DIR)/test
+APPLDIR	+= $(ATK2EXTEND_DIR)/test/api_test
+APPLDIR	+= $(ATK2EXTEND_DIR)/test/fw
+APPLDIR	+= $(ATK2EXTEND_DIR)/test/config
+APPLDIR	+= $(ATK2EXTEND_DIR)/test/config/asp
+
+APPL_COBJS	+= atk2ext_test.o
+APPL_COBJS	+= atk2ext_asp_user_config.o
+APPL_COBJS	+= atk2ext_user_config.o
+APPL_COBJS	+= atk2ext_testfw.o
+APPL_COBJS	+= atk2memory_test.o
+APPL_COBJS	+= cmsis_generic_test.o
+APPL_COBJS	+= cmsis_kernel_test.o
+APPL_COBJS	+= cmsis_message_queue_test.o
+APPL_COBJS	+= cmsis_mutexes_test.o
+APPL_COBJS	+= cmsis_semaphores_test.o
+APPL_COBJS	+= cmsis_thread_test.o
+

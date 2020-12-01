@@ -54,7 +54,7 @@ extern StatusType TerminateTask(void);
 #define Atk2ExtEvent	0x00000001
 
 #define TASK(func)	void TaskMain ## func (intptr_t exinf)
-
+#define ALARMCALLBACK(func) void AlarmManin ## func (intptr_t exinf)
 #endif /* OS_ATK2 */
 
 extern bool_t CurrentContextIsISR(void);
