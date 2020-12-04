@@ -1,0 +1,10 @@
+ATK2EXTEND_DIR := ../../sample_ping
+
+APPL_CFG += sample_ping.cfg
+APPLDIR	+= $(ATK2EXTEND_DIR)/
+APPLDIR	+= $(ATK2EXTEND_DIR)/config
+APPLDIR	+= $(ATK2EXTEND_DIR)/config/asp
+
+APPL_COBJS	+= sample_ping.o
+APPL_COBJS	+= atk2ext_user_config.o
+APPL_COBJS	+= atk2ext_asp_user_config.o
