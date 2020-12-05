@@ -46,6 +46,20 @@
 all:
 
 #
+#  OSの判定
+#
+ifeq ($(OS),Windows_NT)
+  UNAME := Windows
+else
+ifeq ($(shell uname),Linux)
+  UNAME := Linux
+endif
+ifeq ($(shell uname),Darwin)
+  UNAME := Darwin
+endif
+endif
+
+#
 #  �������å�ά�Τ����
 #
 TARGET = stm32f767nucleo144_gcc
@@ -98,8 +112,18 @@ ENABLE_TRACE =
 #  �桼�ƥ���ƥ��ץ�����̾��
 #
 PERL = /usr/bin/perl
-CFG = $(SRCDIR)/cfg/cfg/cfg
-
+ifeq ($(UNAME),Windows)
+  CFG = $(SRCDIR)/cfg_binary/cfg-mingw-static-1_9_6.exe
+else
+ifeq ($(UNAME),Linux)
+  CFG = $(SRCDIR)/cfg_binary/cfg-linux-static-1_9_6
+else
+ifeq ($(UNAME),Darwin)
+  CFG = $(SRCDIR)/cfg_binary/cfg-osx-static-1_9_5
+else
+endif
+endif
+endif
 #
 #  ���֥������ȥե�����̾�����
 #
