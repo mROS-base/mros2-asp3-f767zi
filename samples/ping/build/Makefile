@@ -63,7 +63,7 @@ endif
 #  �������å�ά�Τ����
 #
 TARGET = stm32f767nucleo144_gcc
-CUBEPROJDIR = /home/uden/STM32CubeIDE/workspace_1.4.0/ping
+CUBEPROJDIR = ../../../../asp-stm32f767
 #
 #  �ץ���ߥ󥰸�������
 #
@@ -80,7 +80,7 @@ endif
 #
 #  �������ե�����Υǥ��쥯�ȥ�����
 #
-SRCDIR = ../../asp
+SRCDIR = ../../../asp
 
 #
 #  ���֥������ȥե�����̾�γ�ĥ�Ҥ�����
@@ -169,7 +169,7 @@ ifndef OMIT_OPTIMIZATION
   COPTS := $(COPTS) -O0 -g
 endif
 CDEFS := $(CDEFS) 
-INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) -I$(SRCDIR)/../../drivers/Inc $(INCLUDES)
+INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) -I$(SRCDIR)/../drivers/Inc $(INCLUDES)
 LDFLAGS := $(LDFLAGS) 
 CFG1_OUT_LDFLAGS := $(CFG1_OUT_LDFLAGS) 
 LIBS := $(LIBS) $(CXXLIBS)
@@ -181,6 +181,7 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 APPLNAME = sample1
 APPLDIR = 
 APPL_CFG = $(APPLNAME).cfg
+ATK2EXTEND_DIR := $(SRCDIR)/../atk2ext
 
 include Makefile.atk2ext
 include Makefile.lwip

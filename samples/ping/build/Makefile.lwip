@@ -1,6 +1,6 @@
-LWIP_DIR := ../../lwip
-DRIVERS_DIR := ../../drivers
-APL_DIR := ../../application
+LWIP_DIR := $(SRCDIR)/../lwip
+DRIVERS_DIR := $(SRCDIR)/../drivers
+APL_DIR := $(SRCDIR)/../application
 
 
 #APPL_CFG += atk2ext.cfg
