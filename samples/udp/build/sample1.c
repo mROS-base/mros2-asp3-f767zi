@@ -66,7 +66,7 @@ void main_task(intptr_t exinf)
 	ip4_addr_t dst_addr;
 	const unsigned short src_port = 12345;
 	const unsigned short dst_port = 8080;
-
+	//UDPパケット宛先IPアドレス
 	IP4_ADDR(&dst_addr,192,168,11,3);
 
 	pcb = udp_new();
