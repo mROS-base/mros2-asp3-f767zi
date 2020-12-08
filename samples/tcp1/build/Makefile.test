@@ -1,0 +1,6 @@
+ATK2EXTEND_DIR := ../../../atk2ext
+
+APPL_CFG += atk2ext_test.cfg
+APPLDIR	+= $(ATK2EXTEND_DIR)/test/config
+
+APPL_COBJS	+= atk2ext_asp_user_config.o

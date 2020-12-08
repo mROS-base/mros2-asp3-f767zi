@@ -1,0 +1,3 @@
+APPL_COBJS		+= stm32f7xx_hal_tim.o
+APPL_COBJS		+= stm32f7xx_hal_timebase_tim.o
+APPL_COBJS		+= stm32f7xx_hal_tim_ex.o
