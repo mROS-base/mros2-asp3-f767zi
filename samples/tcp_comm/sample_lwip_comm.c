@@ -108,13 +108,6 @@ int sample_lwip_connection_tcp_client(SampleLwipSocketType* server_socket, struc
 		return -1;
 	}
 
-	//socket bind
-	err = lwip_bind(server_socket->sockfd, (const struct sockaddr *)server, sizeof(struct sockaddr));
-	if (err != 0) {
-		syslog(LOG_ERROR, " %s %s() line=%d bind err:%d", __FILE__, __FUNCTION__, __LINE__, err);
-		return err;
-	}
-
 	//connect
 	err = lwip_connect(server_socket->sockfd, server, sizeof(struct sockaddr));
 	if (err != 0) {
