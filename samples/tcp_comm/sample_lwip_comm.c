@@ -43,6 +43,7 @@ int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, Sampl
 {
 	int err;
 
+	
 	//socket create
 	server_socket->sockfd = lwip_socket(AF_INET, server_socket->comm_type, 0);
 	if (server_socket->sockfd < 0) {
@@ -66,11 +67,6 @@ int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, Sampl
 
 	//accept
 	while (1) {
-		err = sample_lwip_socket_select(server_socket->sockfd, true, false);
-		if (err != 0) {
-			continue;
-		}
-
 		client_socket->sockfd = lwip_accept(server_socket->sockfd, (struct sockaddr*)server, sizeof(struct sockaddr));
 		if (client_socket->sockfd < 0) {
 			syslog(LOG_ERROR, " %s %s() line=%d accept err:%d", __FILE__, __FUNCTION__, __LINE__, err);
@@ -139,10 +135,10 @@ int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, in
 
 	// send
 	while(1) {
-		err = sample_lwip_socket_select(socket->sockfd, false, true);
-		if (err != 0) {
-			continue;
-		}
+		// err = sample_lwip_socket_select(socket->sockfd, false, true);
+		// if (err != 0) {
+		// 	break;
+		// }
 	}
 
 	send_size = lwip_send(socket->sockfd, data, data_size, 0);
