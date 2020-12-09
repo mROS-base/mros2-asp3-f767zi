@@ -25,7 +25,7 @@ static int sample_lwip_socket_select(SampleLwipSocketType* socket, bool_t read, 
 	sample_lwip_timeval.tv_usec =SAMPLE_LWIP_SELECT_TIMEOUT_USEC;
 
 
-	ret = lwip_select(FD_SETSIZE, r_set, w_set, NULL, &sample_lwip_timeval);
+	ret = lwip_select(socket->sockfd+1, r_set, w_set, NULL, &sample_lwip_timeval);
 	if (ret < 0) {
 		syslog(LOG_ERROR, " %s %s() line=%d select err", __FILE__, __FUNCTION__, __LINE__);
 		return -1;
@@ -42,8 +42,7 @@ static int sample_lwip_socket_select(SampleLwipSocketType* socket, bool_t read, 
 int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server)
 {
 	int err;
-
-	
+	int len;
 	//socket create
 	server_socket->sockfd = lwip_socket(AF_INET, server_socket->comm_type, 0);
 	if (server_socket->sockfd < 0) {
@@ -67,9 +66,43 @@ int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, Sampl
 
 	//accept
 	while (1) {
-		client_socket->sockfd = lwip_accept(server_socket->sockfd, (struct sockaddr*)server, sizeof(struct sockaddr));
+		
+		err = sample_lwip_socket_select(server_socket, true, false);
+		if (err != 0) {
+			continue;
+		}
+		
+		len = sizeof(struct sockaddr);
+		client_socket->sockfd = lwip_accept(server_socket->sockfd, (struct sockaddr*)server, &len);
 		if (client_socket->sockfd < 0) {
-			syslog(LOG_ERROR, " %s %s() line=%d accept err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+			syslog(LOG_ERROR, " %s %s() line=%d accept err:%d", __FILE__, __FUNCTION__, __LINE__, client_socket->sockfd);
+			continue;
+		}
+		else {
+			break;
+		}
+	}
+
+	return 0;
+}
+
+int sample_lwip_reconnection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server)
+{
+	int err;
+	int len;
+
+	//accept
+	while (1) {
+		
+		err = sample_lwip_socket_select(server_socket, true, false);
+		if (err != 0) {
+			continue;
+		}
+		
+		len = sizeof(struct sockaddr);
+		client_socket->sockfd = lwip_accept(server_socket->sockfd, (struct sockaddr*)server, &len);
+		if (client_socket->sockfd < 0) {
+			syslog(LOG_ERROR, " %s %s() line=%d accept err:%d", __FILE__, __FUNCTION__, __LINE__, client_socket->sockfd);
 			continue;
 		}
 		else {
@@ -105,21 +138,13 @@ int sample_lwip_connection_tcp_client(SampleLwipSocketType* server_socket, struc
 	}
 
 	//connect
-	err = lwip_connect(server_socket->sockfd, server, sizeof(struct sockaddr));
+	err = lwip_connect(server_socket->sockfd,  (struct sockaddr*)server, sizeof(struct sockaddr));
 	if (err != 0) {
 		syslog(LOG_ERROR, " %s %s() line=%d connect err:%d", __FILE__, __FUNCTION__, __LINE__, err);
 		return err;
 	}
 
 	return 0;
-}
-
-static void sample_lwip_connection_udp_server(void)
-{
-
-
-
-	return;
 }
 
 int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, int* res)
@@ -133,14 +158,17 @@ int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, in
 		return -1;
 	}
 
-	// send
-	// while(1) {
-		// err = sample_lwip_socket_select(socket->sockfd, false, true);
-		// if (err != 0) {
-		// 	break;
-		// }
-	// }
+	while(1) {
+		err = sample_lwip_socket_select(socket, true, true);
+		if (err != 0) {
+			continue;
+		}
+		else {
+			break;
+		}
+	}
 
+	// send
 	send_size = lwip_send(socket->sockfd, data, data_size, 0);
 	if (send_size < 0) {
 		syslog(LOG_ERROR, " %s %s() line=%d send err:%d", __FILE__, __FUNCTION__, __LINE__, err);
@@ -150,20 +178,36 @@ int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, in
 	return 0;
 }
 
-static void sample_lwip_sendto(void)
+int sample_lwip_recv(SampleLwipSocketType* socket, char* data, int length, int* res)
 {
+	int err;
+	int recv_size;
 
-	return;
+	//guard
+	if (socket->sockfd < 0) {
+		syslog(LOG_ERROR, " %s %s() line=%d recv sockfd err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+		return -1;
+	}
+
+	//select
+	//recv
+	while(1) {
+		err = sample_lwip_socket_select(socket, true, false);
+		if (err != 0) {
+			continue;
+		}
+		else {
+			break;
+		}
+	}
+
+	recv_size = lwip_recv(socket->sockfd, data, length, 0);
+	if (recv_size == 0) {
+		syslog(LOG_ERROR, " %s %s() line=%d recv err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+		return -1;
+	}
+	*res = recv_size;
+
+	return 0;
 }
 
-static void sample_lwip_recv(void)
-{
-
-	return;
-}
-
-static void sample_lwip_fromrecv(void)
-{
-
-	return;
-}

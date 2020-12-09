@@ -6,7 +6,7 @@
 
 #define SAMPLE_LWIP_COMM_TIMEOUT	100
 #define SAMPLE_LWIP_SELECT_TIMEOUT_SEC	10
-#define SAMPLE_LWIP_SELECT_TIMEOUT_USEC	10000000
+#define SAMPLE_LWIP_SELECT_TIMEOUT_USEC	0
 
 #define SAMPLE_LWIP_SERVER_PORT			54001
 #define SAMPLE_LWIP_SERVER_IPADDR		"0.0.0.0"
@@ -30,11 +30,13 @@ typedef struct {
 }SampleLwipTcpClientType;
 
 extern int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server);
+extern int sample_lwip_reconnection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server);
 extern int sample_lwip_disconnection(SampleLwipSocketType* socket);
 
 extern int sample_lwip_connection_tcp_client(SampleLwipSocketType* server_socket, struct sockaddr_in* server);
 
 extern int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, int* res);
-
+extern int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, int* res);
+extern int sample_lwip_recv(SampleLwipSocketType* socket, char* data, int length, int* res);
 
 #endif /*_SAMPLE_LWIP_COMM_H_*/

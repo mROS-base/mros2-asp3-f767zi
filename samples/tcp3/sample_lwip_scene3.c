@@ -14,7 +14,7 @@ void sample_lwip_scene3(void)
 	int sended_length = 0;
 	SampleLwipSocketType sample_lwip_socket;
 	struct sockaddr_in sample_lwip_server;
-	SampleLwipTcpClientType sample_lwip_client;
+	SampleLwipSocketType sample_lwip_client;
 
 	//pre
 	sample_lwip_socket.comm_type = SOCK_STREAM;
@@ -33,13 +33,12 @@ void sample_lwip_scene3(void)
 
 	//do
 	//send
-	err = sample_lwip_send(sample_lwip_client, SAMPLE_LWIP_SCENE3_SEND_DATA, sizeof(SAMPLE_LWIP_SCENE3_SEND_DATA), &sended_length);
-	while(1) {
-		tslp_tsk(100);
-	}
+	err = sample_lwip_send(&sample_lwip_client, SAMPLE_LWIP_SCENE3_SEND_DATA, sizeof(SAMPLE_LWIP_SCENE3_SEND_DATA), &sended_length);
 	if (err != 0) {
 		syslog(LOG_ERROR, " %s %s() line=%d : scene3 send", __FILE__, __FUNCTION__, __LINE__);
 	}
+
+	tslp_tsk(100);
 
 	//done
 	sample_lwip_disconnection(&sample_lwip_socket);
