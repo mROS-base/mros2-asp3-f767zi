@@ -1,0 +1,13 @@
+ATK2EXTEND_DIR := ../../../samples
+
+APPL_CFG += sample_tcp.cfg
+APPLDIR	+= $(ATK2EXTEND_DIR)/tcp4
+APPLDIR	+= $(ATK2EXTEND_DIR)/tcp4/config
+APPLDIR	+= $(ATK2EXTEND_DIR)/tcp4/config/asp
+APPLDIR	+= $(ATK2EXTEND_DIR)/tcp_comm
+
+APPL_COBJS	+= sample.o
+APPL_COBJS	+= sample_lwip_scene4.o
+APPL_COBJS	+= atk2ext_user_config.o
+APPL_COBJS	+= atk2ext_asp_user_config.o
+APPL_COBJS	+= sample_lwip_comm.o
