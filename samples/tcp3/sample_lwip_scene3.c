@@ -33,7 +33,10 @@ void sample_lwip_scene3(void)
 
 	//do
 	//send
-	err = sample_lwip_send(sample_lwip_client.sockfd, SAMPLE_LWIP_SCENE3_SEND_DATA, sizeof(SAMPLE_LWIP_SCENE3_SEND_DATA), &sended_length);
+	err = sample_lwip_send(sample_lwip_client, SAMPLE_LWIP_SCENE3_SEND_DATA, sizeof(SAMPLE_LWIP_SCENE3_SEND_DATA), &sended_length);
+	while(1) {
+		tslp_tsk(100);
+	}
 	if (err != 0) {
 		syslog(LOG_ERROR, " %s %s() line=%d : scene3 send", __FILE__, __FUNCTION__, __LINE__);
 	}

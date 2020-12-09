@@ -134,15 +134,15 @@ int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, in
 	}
 
 	// send
-	while(1) {
+	// while(1) {
 		// err = sample_lwip_socket_select(socket->sockfd, false, true);
 		// if (err != 0) {
 		// 	break;
 		// }
-	}
+	// }
 
 	send_size = lwip_send(socket->sockfd, data, data_size, 0);
-	if (send_size == 0) {
+	if (send_size < 0) {
 		syslog(LOG_ERROR, " %s %s() line=%d send err:%d", __FILE__, __FUNCTION__, __LINE__, err);
 	}
 	*res = send_size;
