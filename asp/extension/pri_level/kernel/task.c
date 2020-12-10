@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2011 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: task.c 2247 2011-08-26 22:59:55Z ertl-hiro $
  */
 
 /*
- *		�����������⥸�塼��
+ *		タスク管理モジュール
  */
 
 #include "kernel_impl.h"
@@ -49,7 +49,7 @@
 #include "task.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_TEX_ENTER
 #define LOG_TEX_ENTER(p_tcb, texptn)
@@ -62,42 +62,42 @@
 #ifdef TOPPERS_tskini
 
 /*
- *  �¹Ծ��֤Υ�����
+ *  実行状態のタスク
  */
 TCB		*p_runtsk;
 
 /*
- *  �ǹ�ͥ���̤Υ�����
+ *  最高優先順位のタスク
  */
 TCB		*p_schedtsk;
 
 /*
- *  �������ǥ����ѥå����������㳰�����롼����ư�׵�ե饰
+ *  タスクディスパッチ／タスク例外処理ルーチン起動要求フラグ
  */
 bool_t	reqflg;
 
 /*
- *  �����ͥ���٥ޥ������������
+ *  割込み優先度マスク全解除状態
  */
 bool_t	ipmflg;
 
 /*
- *  �ǥ����ѥå��ػ߾���
+ *  ディスパッチ禁止状態
  */
 bool_t	disdsp;
 
 /*
- *  �������ǥ����ѥå���ǽ����
+ *  タスクディスパッチ可能状態
  */
 bool_t	dspflg;
 
 /*
- *  ��ǥ����塼
+ *  レディキュー
  */
 QUEUE	ready_queue[TNUM_TPRI];
 
 /*
- *  ��ǥ����塼�������Τ���Υӥåȥޥå�
+ *  レディキューサーチのためのビットマップ
  */
 #ifdef PRIMAP_LEVEL_1
 uint16_t	ready_primap;
@@ -107,7 +107,7 @@ uint16_t	ready_primap2[TNUM_PRIMAP2];
 #endif /* PRIMAP_LEVEL_1 */
 
 /*
- *  �����������⥸�塼��ν����
+ *  タスク管理モジュールの初期化
  */
 void
 initialize_task(void)
@@ -149,22 +149,22 @@ initialize_task(void)
 #endif /* TOPPERS_tskini */
 
 /*
- *  �ӥåȥޥåץ������ؿ�
+ *  ビットマップサーチ関数
  *
- *  bitmap���1�ΥӥåȤ��⡤�ǤⲼ�̡ʱ��ˤΤ�Τ򥵡����������Υӥ�
- *  ���ֹ���֤����ӥå��ֹ�ϡ��ǲ��̥ӥåȤ�0�Ȥ��롥bitmap��0�����
- *  ���ƤϤʤ�ʤ������δؿ��Ǥϡ�bitmap��16�ӥåȤǤ��뤳�Ȥ��ꤷ��
- *  uint16_t���Ȥ��Ƥ��롥
+ *  bitmap内の1のビットの内，最も下位（右）のものをサーチし，そのビッ
+ *  ト番号を返す．ビット番号は，最下位ビットを0とする．bitmapに0を指定
+ *  してはならない．この関数では，bitmapが16ビットであることを仮定し，
+ *  uint16_t型としている．
  *
- *  �ӥåȥ�����̿�����ĥץ����å��Ǥϡ��ӥåȥ�����̿���Ȥ��褦��
- *  ��ľ����������Ψ���ɤ���礬���롥���Τ褦�ʾ��ˤϡ��������å�
- *  ��¸���ǥӥåȥ�����̿���Ȥä�bitmap_search���������
- *  OMIT_BITMAP_SEARCH��ޥ����������Ф褤���ޤ����ӥåȥ�����̿���
- *  �������������դʤɤ���ͳ��ͥ���٤ȥӥåȤȤ��б����ѹ�����������
- *  �ϡ�PRIMAP_BIT��ޥ����������Ф褤��
+ *  ビットサーチ命令を持つプロセッサでは，ビットサーチ命令を使うように
+ *  書き直した方が効率が良い場合がある．このような場合には，ターゲット
+ *  依存部でビットサーチ命令を使ったbitmap_searchを定義し，
+ *  OMIT_BITMAP_SEARCHをマクロ定義すればよい．また，ビットサーチ命令の
+ *  サーチ方向が逆などの理由で優先度とビットとの対応を変更したい場合に
+ *  は，PRIMAP_BITをマクロ定義すればよい．
  *
- *  �ޤ����饤�֥���ffs������ʤ顤���Τ褦��������ƥ饤�֥��ؿ���
- *  �Ȥä�������Ψ���ɤ���ǽ���⤢�롥
+ *  また，ライブラリにffsがあるなら，次のように定義してライブラリ関数を
+ *  使った方が効率が良い可能性もある．
  *		#define	bitmap_search(bitmap) (ffs(bitmap) - 1)
  */
 #ifndef PRIMAP_BIT
@@ -196,7 +196,7 @@ bitmap_search(uint16_t bitmap)
 #endif /* OMIT_BITMAP_SEARCH */
 
 /*
- *  ͥ���٥ӥåȥޥåפ������Υ����å�
+ *  優先度ビットマップが空かのチェック
  */
 Inline bool_t
 primap_empty(void)
@@ -209,7 +209,7 @@ primap_empty(void)
 }
 
 /*
- *  ͥ���٥ӥåȥޥåפΥ�����
+ *  優先度ビットマップのサーチ
  */
 Inline uint_t
 primap_search(void)
@@ -225,7 +225,7 @@ primap_search(void)
 }
 
 /*
- *  ͥ���٥ӥåȥޥåפΥ��å�
+ *  優先度ビットマップのセット
  */
 Inline void
 primap_set(uint_t pri)
@@ -239,7 +239,7 @@ primap_set(uint_t pri)
 }
 
 /*
- *  ͥ���٥ӥåȥޥåפΥ��ꥢ
+ *  優先度ビットマップのクリア
  */
 Inline void
 primap_clear(uint_t pri)
@@ -255,7 +255,7 @@ primap_clear(uint_t pri)
 }
 
 /*
- *  �ǹ�ͥ���̥������Υ�����
+ *  最高優先順位タスクのサーチ
  */
 #ifdef TOPPERS_tsksched
 
@@ -271,11 +271,11 @@ search_schedtsk(void)
 #endif /* TOPPERS_tsksched */
 
 /*
- *  �¹ԤǤ�����֤ؤ�����
+ *  実行できる状態への遷移
  *
- *  �ǹ�ͥ���̤Υ������򹹿�����Τϡ��¹ԤǤ��륿�������ʤ��ä����
- *  �ȡ�p_tcb��ͥ���٤��ǹ�ͥ���̤Υ�������ͥ���٤���⤤���Ǥ�
- *  �롥
+ *  最高優先順位のタスクを更新するのは，実行できるタスクがなかった場合
+ *  と，p_tcbの優先度が最高優先順位のタスクの優先度よりも高い場合であ
+ *  る．
  */
 #ifdef TOPPERS_tskrun
 
@@ -297,12 +297,12 @@ make_runnable(TCB *p_tcb)
 #endif /* TOPPERS_tskrun */
 
 /*
- *  �¹ԤǤ�����֤���¾�ξ��֤ؤ�����
+ *  実行できる状態から他の状態への遷移
  *
- *  �ǹ�ͥ���̤Υ������򹹿�����Τϡ�p_tcb���ǹ�ͥ���̤Υ�������
- *  ���ä����Ǥ��롥p_tcb��Ʊ��ͥ���٤Υ�������¾�ˤ�����ϡ�p_tcb
- *  �μ��Υ��������ǹ�ͥ���̤ˤʤ롥�����Ǥʤ����ϡ���ǥ����塼��
- *  ����������ɬ�פ����롥
+ *  最高優先順位のタスクを更新するのは，p_tcbが最高優先順位のタスクで
+ *  あった場合である．p_tcbと同じ優先度のタスクが他にある場合は，p_tcb
+ *  の次のタスクが最高優先順位になる．そうでない場合は，レディキューを
+ *  サーチする必要がある．
  */
 #ifdef TOPPERS_tsknrun
 
@@ -332,7 +332,7 @@ make_non_runnable(TCB *p_tcb)
 #endif /* TOPPERS_tsknrun */
 
 /*
- *  �ٻ߾��֤ؤ�����
+ *  休止状態への遷移
  */
 #ifdef TOPPERS_tskdmt
 
@@ -350,7 +350,7 @@ make_dormant(TCB *p_tcb)
 #endif /* TOPPERS_tskdmt */
 
 /*
- *  �ٻ߾��֤���¹ԤǤ�����֤ؤ�����
+ *  休止状態から実行できる状態への遷移
  */
 #ifdef TOPPERS_tskact
 
@@ -366,16 +366,16 @@ make_active(TCB *p_tcb)
 #endif /* TOPPERS_tskact */
 
 /*
- *  ��������ͥ���٤��ѹ�
+ *  タスクの優先度の変更
  *
- *  ���������¹ԤǤ�����֤ξ��ˤϡ���ǥ����塼����Ǥΰ��֤��ѹ���
- *  �롥���֥������Ȥ��Ԥ����塼������Ԥ����֤ˤʤäƤ�����ˤϡ���
- *  �����塼����Ǥΰ��֤��ѹ����롥
+ *  タスクが実行できる状態の場合には，レディキューの中での位置を変更す
+ *  る．オブジェクトの待ちキューの中で待ち状態になっている場合には，待
+ *  ちキューの中での位置を変更する．
  *
- *  �ǹ�ͥ���̤Υ������򹹿�����Τϡ�(1) p_tcb���ǹ�ͥ���̤Υ���
- *  ���Ǥ��äơ�����ͥ���٤򲼤�����硤(2) p_tcb���ǹ�ͥ���̤Υ���
- *  ���ǤϤʤ����ѹ����ͥ���٤��ǹ�ͥ���̤Υ�������ͥ���٤���⤤
- *  ���Ǥ��롥(1)�ξ��ˤϡ���ǥ����塼�򥵡�������ɬ�פ����롥
+ *  最高優先順位のタスクを更新するのは，(1) p_tcbが最高優先順位のタス
+ *  クであって，その優先度を下げた場合，(2) p_tcbが最高優先順位のタス
+ *  クではなく，変更後の優先度が最高優先順位のタスクの優先度よりも高い
+ *  場合である．(1)の場合には，レディキューをサーチする必要がある．
  */
 #ifdef TOPPERS_tskpri
 
@@ -389,7 +389,7 @@ change_priority(TCB *p_tcb, uint_t newpri)
 
 	if (TSTAT_RUNNABLE(p_tcb->tstat)) {
 		/*
-		 *  ���������¹ԤǤ�����֤ξ��
+		 *  タスクが実行できる状態の場合
 		 */
 		queue_delete(&(p_tcb->task_queue));
 		if (queue_empty(&(ready_queue[oldpri]))) {
@@ -414,8 +414,8 @@ change_priority(TCB *p_tcb, uint_t newpri)
 	else {
 		if (TSTAT_WAIT_WOBJCB(p_tcb->tstat)) {
 			/*
-			 *  ����������Ʊ�����̿����֥������Ȥδ����֥��å��ζ�����
-			 *  ʬ��WOBJCB�ˤ��Ԥ����塼�ˤĤʤ���Ƥ�����
+			 *  タスクが，同期・通信オブジェクトの管理ブロックの共通部
+			 *  分（WOBJCB）の待ちキューにつながれている場合
 			 */
 			wobj_change_priority(((WINFO_WOBJ *)(p_tcb->p_winfo))->p_wobjcb,
 																	p_tcb);
@@ -427,10 +427,10 @@ change_priority(TCB *p_tcb, uint_t newpri)
 #endif /* TOPPERS_tskpri */
 
 /*
- *  ��ǥ����塼�β�ž
+ *  レディキューの回転
  *
- *  �ǹ�ͥ���̤Υ������򹹿�����Τϡ��ǹ�ͥ���̤Υ���������������
- *  �塼�������˰�ư�������Ǥ��롥
+ *  最高優先順位のタスクを更新するのは，最高優先順位のタスクがタスクキ
+ *  ューの末尾に移動した場合である．
  */
 #ifdef TOPPERS_tskrot
 
@@ -454,10 +454,10 @@ rotate_ready_queue(uint_t pri)
 #endif /* TOPPERS_tskrot */
 
 /*
- *  �������㳰�����롼����θƽФ�
+ *  タスク例外処理ルーチンの呼出し
  *
- *  ASP�����ͥ�Ǥϡ��������㳰�����롼�������CPU���å����֤����ܤ���
- *  ���ξ��֤��ᤵ���˥꥿���󤷤���硤�����ͥ뤬���ξ��֤��᤹��
+ *  ASPカーネルでは，タスク例外処理ルーチン内でCPUロック状態に遷移し，
+ *  元の状態に戻さずにリターンした場合，カーネルが元の状態に戻す．
  */
 #ifdef TOPPERS_tsktex
 
@@ -490,10 +490,10 @@ call_texrtn(void)
 		p_runtsk->enatex = false;
 		if (p_runtsk != p_schedtsk && dspflg) {
 			/*
-			 *  ������dispatch��ƤӽФ������ϡ���ߺƵ��ƽФ��ˤʤä�
-			 *  ���뤬��dispatch��Ƥ�����p_runtsk->enatex��false�ˤ���
-			 *  �����лپ㤬�ʤ���������ͳ�ˤĤ��Ƥϡ���TOPPERS/ASP ����
-			 *  �ͥ� �߷ץ��פ򻲾ȤΤ��ȡ�
+			 *  ここでdispatchを呼び出す処理は，相互再帰呼出しになって
+			 *  いるが，dispatchを呼ぶ前にp_runtsk->enatexをfalseにして
+			 *  おけば支障がない．その理由については，「TOPPERS/ASP カー
+			 *  ネル 設計メモ」を参照のこと．
 			 */
 			dispatch();
 		}
@@ -502,7 +502,7 @@ call_texrtn(void)
 }
 
 /*
- *  �������㳰�����롼����ε�ư
+ *  タスク例外処理ルーチンの起動
  */
 #ifndef OMIT_CALLTEX
 

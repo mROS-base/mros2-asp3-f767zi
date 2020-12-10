@@ -3,21 +3,21 @@
 # 
 
 #
-#		Makefile д╬е╫еэе╗е├е╡░═┬╕╔Їб╩ARM-M═╤б╦
+#		Makefile уБоуГЧуГнуВ╗уГГуВ╡ф╛ЭхнШщГия╝ИARM-MчФия╝Й
 #
 
 # 
-#  е│ев░═┬╕╔Їе╟егеьепе╚еъ╠╛д╬─ъ╡┴ 
+#  уВ│уВвф╛ЭхнШщГиуГЗуВгуГмуВпуГИуГкхРНуБохоЪч╛й 
 # 
 COREDIR = $(SRCDIR)/arch/$(PRC)_$(TOOL)/common
 
 #
-#  е─б╝еы░═┬╕╔Їе╟егеьепе╚еъ╠╛д╬─ъ╡┴ 
+#  уГДуГ╝уГлф╛ЭхнШщГиуГЗуВгуГмуВпуГИуГкхРНуБохоЪч╛й 
 #
 TOOLDIR = $(SRCDIR)/arch/$(TOOL)
 
 #
-#  е│еєе╤едеыеке╫е╖ечеє
+#  уВ│уГ│уГСуВдуГлуВкуГЧуВ╖уГзуГ│
 #
 COPTS := $(COPTS) -mthumb 
 INCLUDES := $(INCLUDES) -I$(COREDIR) -I$(TOOLDIR)
@@ -26,14 +26,14 @@ CDEFS := $(CDEFS)
 LIBS := $(LIBS)  -lgcc
 
 #
-#  елб╝е═еыд╦┤╪д╣ды─ъ╡┴
+#  уВлуГ╝уГНуГлуБлщЦвуБЩуВЛхоЪч╛й
 #
 KERNEL_DIR := $(KERNEL_DIR) $(COREDIR)
 KERNEL_ASMOBJS := $(KERNEL_ASMOBJS)
 KERNEL_COBJS := $(KERNEL_COBJS) core_config.o
 
 #
-#  е│евд╬е┐еде╫д╦дшды░удд
+#  уВ│уВвуБоуВ┐уВдуГЧуБлуВИуВЛщБХуБД
 #
 ifeq ($(CORE_TYPE),CORTEX_M7)
 	ARM_ARCH = ARMV7M
@@ -66,7 +66,7 @@ else ifeq ($(CORE_TYPE),CORTEX_M3)
 endif
 
 #
-#  евб╝ене╞епе┴еу╦шд╦░█д╩ды└▀─ъ
+#  уВвуГ╝уВнуГЖуВпуГБуГгцпОуБлчХ░уБкуВЛшинхоЪ
 #
 ifeq ($(ARM_ARCH),ARMV7M)
 	KERNEL_ASMOBJS := $(KERNEL_ASMOBJS) core_support.o
@@ -77,7 +77,7 @@ else ifeq ($(ARM_ARCH),ARMV6M)
 endif
 
 #
-#  FPUд╬└▀─ъ
+#  FPUуБошинхоЪ
 #
 ifeq ($(FPU_USAGE),FPU_NO_PRESERV)
 	COPTS := $(COPTS) -mfloat-abi=$(FPU_ABI) -mfpu=$(FPU_ARCH_OPT)
@@ -92,12 +92,12 @@ endif
 
 
 #
-#  ░═┬╕┤╪╖╕д╬─ъ╡┴
+#  ф╛ЭхнШщЦвф┐ВуБохоЪч╛й
 #
 cfg1_out.c: $(COREDIR)/core_def.csv
 kernel_cfg.timestamp: $(COREDIR)/core.tf
 
 #
-#  е│еєе╒егеоехеьб╝е┐┤╪╖╕д╬╩╤┐Їд╬─ъ╡┴
+#  уВ│уГ│уГХуВгуВоуГеуГмуГ╝уВ┐щЦвф┐ВуБохдЙцХ░уБохоЪч╛й
 #
 CFG_TABS := $(CFG_TABS) --cfg1-def-table $(COREDIR)/core_def.csv

@@ -8,40 +8,40 @@
  *  Copyright (C) 2006-2013 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: serial.c 2524 2013-09-15 17:40:06Z ertl-hiro $
  */
 
 /*
- *		���ꥢ�륤�󥿥ե������ɥ饤��
+ *		シリアルインタフェースドライバ
  */
 
 #include <kernel.h>
@@ -52,27 +52,27 @@
 #include "kernel_cfg.h"
 
 /*
- *  �Хåե��������Υǥե�����ͤȥХåե������
+ *  バッファサイズのデフォルト値とバッファの定義
  */
 #ifndef SERIAL_RCV_BUFSZ1
-#define	SERIAL_RCV_BUFSZ1	256			/* �ݡ���1�μ����Хåե������� */
+#define	SERIAL_RCV_BUFSZ1	256			/* ポート1の受信バッファサイズ */
 #endif /* SERIAL_RCV_BUFSZ1 */
 
 #ifndef SERIAL_SND_BUFSZ1
-#define	SERIAL_SND_BUFSZ1	256			/* �ݡ���1�������Хåե������� */
+#define	SERIAL_SND_BUFSZ1	256			/* ポート1の送信バッファサイズ */
 #endif /* SERIAL_SND_BUFSZ1 */
 
 static char	rcv_buffer1[SERIAL_RCV_BUFSZ1];
 static char	snd_buffer1[SERIAL_SND_BUFSZ1];
 
-#if TNUM_PORT >= 2						/* �ݡ���2�˴ؤ������ */
+#if TNUM_PORT >= 2						/* ポート2に関する定義 */
 
 #ifndef SERIAL_RCV_BUFSZ2
-#define	SERIAL_RCV_BUFSZ2	256			/* �ݡ���2�μ����Хåե������� */
+#define	SERIAL_RCV_BUFSZ2	256			/* ポート2の受信バッファサイズ */
 #endif /* SERIAL_RCV_BUFSZ2 */
 
 #ifndef SERIAL_SND_BUFSZ2
-#define	SERIAL_SND_BUFSZ2	256			/* �ݡ���2�������Хåե������� */
+#define	SERIAL_SND_BUFSZ2	256			/* ポート2の送信バッファサイズ */
 #endif /* SERIAL_SND_BUFSZ2 */
 
 static char	rcv_buffer2[SERIAL_RCV_BUFSZ2];
@@ -80,14 +80,14 @@ static char	snd_buffer2[SERIAL_SND_BUFSZ2];
 
 #endif /* TNUM_PORT >= 2 */
 
-#if TNUM_PORT >= 3						/* �ݡ���3�˴ؤ������ */
+#if TNUM_PORT >= 3						/* ポート3に関する定義 */
 
 #ifndef SERIAL_RCV_BUFSZ3
-#define	SERIAL_RCV_BUFSZ3	256			/* �ݡ���3�μ����Хåե������� */
+#define	SERIAL_RCV_BUFSZ3	256			/* ポート3の受信バッファサイズ */
 #endif /* SERIAL_RCV_BUFSZ3 */
 
 #ifndef SERIAL_SND_BUFSZ3
-#define	SERIAL_SND_BUFSZ3	256			/* �ݡ���3�������Хåե������� */
+#define	SERIAL_SND_BUFSZ3	256			/* ポート3の送信バッファサイズ */
 #endif /* SERIAL_SND_BUFSZ3 */
 
 static char	rcv_buffer3[SERIAL_RCV_BUFSZ3];
@@ -95,14 +95,14 @@ static char	snd_buffer3[SERIAL_SND_BUFSZ3];
 
 #endif /* TNUM_PORT >= 3 */
 
-#if TNUM_PORT >= 4						/* �ݡ���4�˴ؤ������ */
+#if TNUM_PORT >= 4						/* ポート4に関する定義 */
 
 #ifndef SERIAL_RCV_BUFSZ4
-#define	SERIAL_RCV_BUFSZ4	256			/* �ݡ���4�μ����Хåե������� */
+#define	SERIAL_RCV_BUFSZ4	256			/* ポート4の受信バッファサイズ */
 #endif /* SERIAL_RCV_BUFSZ4 */
 
 #ifndef SERIAL_SND_BUFSZ4
-#define	SERIAL_SND_BUFSZ4	256			/* �ݡ���4�������Хåե������� */
+#define	SERIAL_SND_BUFSZ4	256			/* ポート4の送信バッファサイズ */
 #endif /* SERIAL_SND_BUFSZ4 */
 
 static char	rcv_buffer4[SERIAL_RCV_BUFSZ4];
@@ -115,24 +115,24 @@ static char	snd_buffer4[SERIAL_SND_BUFSZ4];
 #endif /* TNUM_PORT >= 5 */
 
 /*
- *  �ե�������˴�Ϣ��������ȥޥ���
+ *  フロー制御に関連する定数とマクロ
  */
-#define	FC_STOP			'\023'		/* ����ȥ�����-S */
-#define	FC_START		'\021'		/* ����ȥ�����-Q */
+#define	FC_STOP			'\023'		/* コントロール-S */
+#define	FC_START		'\021'		/* コントロール-Q */
 
-#define BUFCNT_STOP(bufsz)		((bufsz) * 3 / 4)	/* STOP��������ʸ���� */
-#define BUFCNT_START(bufsz)		((bufsz) / 2)		/* START��������ʸ���� */
+#define BUFCNT_STOP(bufsz)		((bufsz) * 3 / 4)	/* STOPを送る基準文字数 */
+#define BUFCNT_START(bufsz)		((bufsz) / 2)		/* STARTを送る基準文字数 */
 
 /*
- *  ���ꥢ��ݡ��Ƚ�����֥��å�
+ *  シリアルポート初期化ブロック
  */
 typedef struct serial_port_initialization_block {
-	ID		rcv_semid;		/* �����Хåե������ѥ��ޥե���ID */
-	ID		snd_semid;		/* �����Хåե������ѥ��ޥե���ID */
-	uint_t	rcv_bufsz;		/* �����Хåե������� */
-	char	*rcv_buffer;	/* �����Хåե� */
-	uint_t	snd_bufsz;		/* �����Хåե������� */
-	char	*snd_buffer;	/* �����Хåե� */
+	ID		rcv_semid;		/* 受信バッファ管理用セマフォのID */
+	ID		snd_semid;		/* 送信バッファ管理用セマフォのID */
+	uint_t	rcv_bufsz;		/* 受信バッファサイズ */
+	char	*rcv_buffer;	/* 受信バッファ */
+	uint_t	snd_bufsz;		/* 送信バッファサイズ */
+	char	*snd_buffer;	/* 送信バッファ */
 } SPINIB;
 
 static const SPINIB spinib_table[TNUM_PORT] = {
@@ -157,37 +157,37 @@ static const SPINIB spinib_table[TNUM_PORT] = {
 };
 
 /*
- *  ���ꥢ��ݡ��ȴ����֥��å�
+ *  シリアルポート管理ブロック
  */
 typedef struct serial_port_control_block {
-	const SPINIB *p_spinib;		/* ���ꥢ��ݡ��Ƚ�����֥��å� */
-	SIOPCB	*p_siopcb;			/* ���ꥢ��I/O�ݡ��ȴ����֥��å� */
-	bool_t	openflag;			/* �����ץ�Ѥߥե饰 */
-	bool_t	errorflag;			/* ���顼�ե饰 */
-	uint_t	ioctl;				/* ư������������� */
+	const SPINIB *p_spinib;		/* シリアルポート初期化ブロック */
+	SIOPCB	*p_siopcb;			/* シリアルI/Oポート管理ブロック */
+	bool_t	openflag;			/* オープン済みフラグ */
+	bool_t	errorflag;			/* エラーフラグ */
+	uint_t	ioctl;				/* 動作制御の設定値 */
 
-	uint_t	rcv_read_ptr;		/* �����Хåե��ɽФ��ݥ��� */
-	uint_t	rcv_write_ptr;		/* �����Хåե�����ߥݥ��� */
-	uint_t	rcv_count;			/* �����Хåե����ʸ���� */
-	char	rcv_fc_chr;			/* ����٤�START/STOP */
-	bool_t	rcv_stopped;		/* STOP�����ä����֤��� */
+	uint_t	rcv_read_ptr;		/* 受信バッファ読出しポインタ */
+	uint_t	rcv_write_ptr;		/* 受信バッファ書込みポインタ */
+	uint_t	rcv_count;			/* 受信バッファ中の文字数 */
+	char	rcv_fc_chr;			/* 送るべきSTART/STOP */
+	bool_t	rcv_stopped;		/* STOPを送った状態か？ */
 
-	uint_t	snd_read_ptr;		/* �����Хåե��ɽФ��ݥ��� */
-	uint_t	snd_write_ptr;		/* �����Хåե�����ߥݥ��� */
-	uint_t	snd_count;			/* �����Хåե����ʸ���� */
-	bool_t	snd_stopped;		/* STOP�������ä����֤��� */
+	uint_t	snd_read_ptr;		/* 送信バッファ読出しポインタ */
+	uint_t	snd_write_ptr;		/* 送信バッファ書込みポインタ */
+	uint_t	snd_count;			/* 送信バッファ中の文字数 */
+	bool_t	snd_stopped;		/* STOPを受け取った状態か？ */
 } SPCB;
 
 static SPCB	spcb_table[TNUM_PORT];
 
 /*
- *  ���ꥢ��ݡ���ID���饷�ꥢ��ݡ��ȴ����֥��å�����Ф�����Υޥ���
+ *  シリアルポートIDからシリアルポート管理ブロックを取り出すためのマクロ
  */
 #define INDEX_PORT(portid)	((uint_t)((portid) - 1))
 #define get_spcb(portid)	(&(spcb_table[INDEX_PORT(portid)]))
 
 /*
- *  �ݥ��󥿤Υ��󥯥����
+ *  ポインタのインクリメント
  */
 #define INC_PTR(ptr, bufsz) do {	\
 	if (++(ptr) == (bufsz)) {		\
@@ -196,10 +196,10 @@ static SPCB	spcb_table[TNUM_PORT];
 } while (false)
 
 /*
- *  �����ӥ�������ƽФ��ޥ���
+ *  サービスコール呼出しマクロ
  *
- *  �����ӥ�������ƽФ���ޤ༰exp��ɾ���������ͤ����顼������͡ˤξ�
- *  ��ˤϡ�erc��ercd_exp��ɾ�������ͤ���������error_exit��goto���롥
+ *  サービスコール呼出しを含む式expを評価し，返値がエラー（負の値）の場
+ *  合には，ercにercd_expを評価した値を代入し，error_exitにgotoする．
  */
 #define SVC(exp, ercd_exp) do {		\
 	if ((exp) < 0) {				\
@@ -209,7 +209,7 @@ static SPCB	spcb_table[TNUM_PORT];
 } while (false)
 
 /*
- *  E_SYS���顼������
+ *  E_SYSエラーの生成
  */
 static ER
 gen_ercd_sys(SPCB *p_spcb)
@@ -219,7 +219,7 @@ gen_ercd_sys(SPCB *p_spcb)
 }
 
 /*
- *  �Ԥ������륵���ӥ������뤫��Υ��顼���Ѵ�
+ *  待ちに入るサービスコールからのエラーの変換
  */
 static ER
 gen_ercd_wait(ER rercd, SPCB *p_spcb)
@@ -235,7 +235,7 @@ gen_ercd_wait(ER rercd, SPCB *p_spcb)
 }
 
 /*
- *  ���ꥢ�륤�󥿥ե������ɥ饤�Фν�����롼����
+ *  シリアルインタフェースドライバの初期化ルーチン
  */
 void
 serial_initialize(intptr_t exinf)
@@ -251,7 +251,7 @@ serial_initialize(intptr_t exinf)
 }
 
 /*
- *  ���ꥢ��ݡ��ȤΥ����ץ�ʥ����ӥ��������
+ *  シリアルポートのオープン（サービスコール）
  */
 ER
 serial_opn_por(ID portid)
@@ -259,21 +259,21 @@ serial_opn_por(ID portid)
 	SPCB	*p_spcb;
 	ER		ercd;
 
-	if (sns_dpn()) {				/* ����ƥ����ȤΥ����å� */
+	if (sns_dpn()) {				/* コンテキストのチェック */
 		return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= TNUM_PORT)) {
-		return(E_ID);				/* �ݡ����ֹ�Υ����å� */
+		return(E_ID);				/* ポート番号のチェック */
 	}
 	p_spcb = get_spcb(portid);
 
 	SVC(dis_dsp(), gen_ercd_sys(p_spcb));
-	if (p_spcb->openflag) {			/* �����ץ�Ѥߤ��Υ����å� */
+	if (p_spcb->openflag) {			/* オープン済みかのチェック */
 		ercd = E_OBJ;
 	}
 	else {
 		/*
-		 *  �ѿ��ν����
+		 *  変数の初期化
 		 */
 		p_spcb->ioctl = (IOCTL_ECHO | IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV);
 
@@ -289,7 +289,7 @@ serial_opn_por(ID portid)
 		p_spcb->snd_stopped = false;
 
 		/*
-		 *  ����ʹߡ�����ߤ�ػߤ��롥
+		 *  これ以降，割込みを禁止する．
 		 */
 		if (loc_cpu() < 0) {
 			ercd = E_SYS;
@@ -297,12 +297,12 @@ serial_opn_por(ID portid)
 		}
 
 		/*
-		 *  �ϡ��ɥ�������¸�Υ����ץ����
+		 *  ハードウェア依存のオープン処理
 		 */
 		p_spcb->p_siopcb = sio_opn_por(portid, (intptr_t) p_spcb);
 
 		/*
-		 *  �������Υ�����Хå�����Ĥ��롥
+		 *  受信通知コールバックを許可する．
 		 */
 		sio_ena_cbr(p_spcb->p_siopcb, SIO_RDY_RCV);
 		p_spcb->openflag = true;
@@ -324,7 +324,7 @@ serial_opn_por(ID portid)
 }
 
 /*
- *  ���ꥢ��ݡ��ȤΥ��������ʥ����ӥ��������
+ *  シリアルポートのクローズ（サービスコール）
  */
 ER
 serial_cls_por(ID portid)
@@ -333,21 +333,21 @@ serial_cls_por(ID portid)
 	ER		ercd;
 	bool_t	eflag = false;
 
-	if (sns_dpn()) {				/* ����ƥ����ȤΥ����å� */
+	if (sns_dpn()) {				/* コンテキストのチェック */
 		return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= TNUM_PORT)) {
-		return(E_ID);				/* �ݡ����ֹ�Υ����å� */
+		return(E_ID);				/* ポート番号のチェック */
 	}
 	p_spcb = get_spcb(portid);
 
 	SVC(dis_dsp(), gen_ercd_sys(p_spcb));
-	if (!(p_spcb->openflag)) {		/* �����ץ�Ѥߤ��Υ����å� */
+	if (!(p_spcb->openflag)) {		/* オープン済みかのチェック */
 		ercd = E_OBJ;
 	}
 	else {
 		/*
-		 *  �ϡ��ɥ�������¸�Υ�����������
+		 *  ハードウェア依存のクローズ処理
 		 */
 		if (loc_cpu() < 0) {
 			eflag = true;
@@ -359,7 +359,7 @@ serial_cls_por(ID portid)
 		}
 
 		/*
-		 *  ���ޥե��ν����
+		 *  セマフォの初期化
 		 */
 		if (ini_sem(p_spcb->p_spinib->snd_semid) < 0) {
 			eflag = true;
@@ -369,7 +369,7 @@ serial_cls_por(ID portid)
 		}
 
 		/*
-		 *  ���顼�����ɤ�����
+		 *  エラーコードの設定
 		 */
 		if (eflag) {
 			ercd = gen_ercd_sys(p_spcb);
@@ -385,12 +385,12 @@ serial_cls_por(ID portid)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥؤ�ʸ������
+ *  シリアルポートへの文字送信
  *
- *  p_spcb�ǻ��ꤵ��륷�ꥢ��I/O�ݡ��Ȥ��Ф��ơ�ʸ��c���������롥ʸ��
- *  �������쥸�����ˤ��줿���ˤ�true���֤��������Ǥʤ����ˤϡ�����
- *  �쥸���������������Ȥ����Τ��륳����Хå��ؿ�����Ĥ���false���֤���
- *  ���δؿ��ϡ�CPU���å����֤ǸƤӽФ���롥
+ *  p_spcbで指定されるシリアルI/Oポートに対して，文字cを送信する．文字
+ *  を送信レジスタにいれた場合にはtrueを返す．そうでない場合には，送信
+ *  レジスタが空いたことを通知するコールバック関数を許可し，falseを返す．
+ *  この関数は，CPUロック状態で呼び出される．
  */
 Inline bool_t
 serial_snd_chr(SPCB *p_spcb, char c)
@@ -405,7 +405,7 @@ serial_snd_chr(SPCB *p_spcb, char c)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥؤ�1ʸ������
+ *  シリアルポートへの1文字送信
  */
 static ER_BOOL
 serial_wri_chr(SPCB *p_spcb, char c)
@@ -414,13 +414,13 @@ serial_wri_chr(SPCB *p_spcb, char c)
 	ER		ercd, rercd;
 
 	/*
-	 *  LF������CR���������롥
+	 *  LFの前にCRを送信する．
 	 */
 	if (c == '\n' && (p_spcb->ioctl & IOCTL_CRLF) != 0U) {
 		/*
-		 *  �ʲ��Υ����ɤϺƵ��ƽФ��ˤʤäƤ��뤬������c��'\n'�ξ���
-		 *  ����c��'\r'�Ȥ��ƸƤӽФ����Ȥ��顤���κƵ��ƽФ���2���ܤ�
-		 *  �ƤӽФ���ɬ���ߤޤ롥
+		 *  以下のコードは再帰呼出しになっているが，引数cが'\n'の場合に
+		 *  引数cを'\r'として呼び出すことから，この再帰呼出しは2回目の
+		 *  呼び出しで必ず止まる．
 		 */
 		SVC(rercd = serial_wri_chr(p_spcb, '\r'), rercd);
 		if ((bool_t) rercd) {
@@ -433,14 +433,14 @@ serial_wri_chr(SPCB *p_spcb, char c)
 	if (p_spcb->snd_count == 0U && !(p_spcb->snd_stopped)
 								&& serial_snd_chr(p_spcb, c)) {
 		/*
-		 *  ���ꥢ��I/O�ǥХ����������쥸������ʸ��������뤳�Ȥ�������
-		 *  ����硥
+		 *  シリアルI/Oデバイスの送信レジスタに文字を入れることに成功し
+		 *  た場合．
 		 */
 		buffer_full = false;
 	}
 	else {
 		/*
-		 *  �����Хåե���ʸ��������롥
+		 *  送信バッファに文字を入れる．
 		 */
 		p_spcb->p_spinib->snd_buffer[p_spcb->snd_write_ptr] = c;
 		INC_PTR(p_spcb->snd_write_ptr, p_spcb->p_spinib->snd_bufsz);
@@ -456,7 +456,7 @@ serial_wri_chr(SPCB *p_spcb, char c)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥؤ�ʸ���������ʥ����ӥ��������
+ *  シリアルポートへの文字列送信（サービスコール）
  */
 ER_UINT
 serial_wri_dat(ID portid, const char *buf, uint_t len)
@@ -466,22 +466,22 @@ serial_wri_dat(ID portid, const char *buf, uint_t len)
 	uint_t	wricnt = 0U;
 	ER		ercd, rercd;
 
-	if (sns_dpn()) {				/* ����ƥ����ȤΥ����å� */
+	if (sns_dpn()) {				/* コンテキストのチェック */
 		return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= TNUM_PORT)) {
-		return(E_ID);				/* �ݡ����ֹ�Υ����å� */
+		return(E_ID);				/* ポート番号のチェック */
 	}
 
 	p_spcb = get_spcb(portid);
-	if (!(p_spcb->openflag)) {		/* �����ץ�Ѥߤ��Υ����å� */
+	if (!(p_spcb->openflag)) {		/* オープン済みかのチェック */
 		return(E_OBJ);
 	}
-	if (p_spcb->errorflag) {		/* ���顼���֤��Υ����å� */
+	if (p_spcb->errorflag) {		/* エラー状態かのチェック */
 		return(E_SYS);
 	}
 
-	buffer_full = true;				/* �롼�פ�1����wai_sem���� */
+	buffer_full = true;				/* ループの1回めはwai_semする */
 	while (wricnt < len) {
 		if (buffer_full) {
 			SVC(rercd = wai_sem(p_spcb->p_spinib->snd_semid),
@@ -501,7 +501,7 @@ serial_wri_dat(ID portid, const char *buf, uint_t len)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥ����1ʸ������
+ *  シリアルポートからの1文字受信
  */
 static bool_t
 serial_rea_chr(SPCB *p_spcb, char *p_c)
@@ -512,7 +512,7 @@ serial_rea_chr(SPCB *p_spcb, char *p_c)
 	SVC(loc_cpu(), gen_ercd_sys(p_spcb));
 
 	/*
-	 *  �����Хåե�����ʸ������Ф���
+	 *  受信バッファから文字を取り出す．
 	 */
 	*p_c = p_spcb->p_spinib->rcv_buffer[p_spcb->rcv_read_ptr];
 	INC_PTR(p_spcb->rcv_read_ptr, p_spcb->p_spinib->rcv_bufsz);
@@ -520,7 +520,7 @@ serial_rea_chr(SPCB *p_spcb, char *p_c)
 	buffer_empty = (p_spcb->rcv_count == 0U);
 
 	/*
-	 *  START���������롥
+	 *  STARTを送信する．
 	 */
 	if (p_spcb->rcv_stopped && p_spcb->rcv_count
 								<= BUFCNT_START(p_spcb->p_spinib->rcv_bufsz)) {
@@ -538,7 +538,7 @@ serial_rea_chr(SPCB *p_spcb, char *p_c)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥ����ʸ��������ʥ����ӥ��������
+ *  シリアルポートからの文字列受信（サービスコール）
  */
 ER_UINT
 serial_rea_dat(ID portid, char *buf, uint_t len)
@@ -546,25 +546,25 @@ serial_rea_dat(ID portid, char *buf, uint_t len)
 	SPCB	*p_spcb;
 	bool_t	buffer_empty;
 	uint_t	reacnt = 0U;
-	char	c = '\0';		/* ����ѥ���ηٹ���޻ߤ��뤿��˽�������� */
+	char	c = '\0';		/* コンパイラの警告を抑止するために初期化する */
 	ER		ercd, rercd;
 
-	if (sns_dpn()) {				/* ����ƥ����ȤΥ����å� */
+	if (sns_dpn()) {				/* コンテキストのチェック */
 		return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= TNUM_PORT)) {
-		return(E_ID);				/* �ݡ����ֹ�Υ����å� */
+		return(E_ID);				/* ポート番号のチェック */
 	}
 
 	p_spcb = get_spcb(portid);
-	if (!(p_spcb->openflag)) {		/* �����ץ�Ѥߤ��Υ����å� */
+	if (!(p_spcb->openflag)) {		/* オープン済みかのチェック */
 		return(E_OBJ);
 	}
-	if (p_spcb->errorflag) {		/* ���顼���֤��Υ����å� */
+	if (p_spcb->errorflag) {		/* エラー状態かのチェック */
 		return(E_SYS);
 	}
 
-	buffer_empty = true;			/* �롼�פ�1����wai_sem���� */
+	buffer_empty = true;			/* ループの1回めはwai_semする */
 	while (reacnt < len) {
 		if (buffer_empty) {
 			SVC(rercd = wai_sem(p_spcb->p_spinib->rcv_semid),
@@ -576,7 +576,7 @@ serial_rea_dat(ID portid, char *buf, uint_t len)
 		buffer_empty = (bool_t) rercd;
 
 		/*
-		 *  �������Хå�������
+		 *  エコーバック処理．
 		 */
 		if ((p_spcb->ioctl & IOCTL_ECHO) != 0U) {
 			SVC(rercd = wai_sem(p_spcb->p_spinib->snd_semid),
@@ -598,25 +598,25 @@ serial_rea_dat(ID portid, char *buf, uint_t len)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥ�����ʥ����ӥ��������
+ *  シリアルポートの制御（サービスコール）
  */
 ER
 serial_ctl_por(ID portid, uint_t ioctl)
 {
 	SPCB	*p_spcb;
 
-	if (sns_dpn()) {				/* ����ƥ����ȤΥ����å� */
+	if (sns_dpn()) {				/* コンテキストのチェック */
 		return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= TNUM_PORT)) {
-		return(E_ID);				/* �ݡ����ֹ�Υ����å� */
+		return(E_ID);				/* ポート番号のチェック */
 	}
 
 	p_spcb = get_spcb(portid);
-	if (!(p_spcb->openflag)) {		/* �����ץ�Ѥߤ��Υ����å� */
+	if (!(p_spcb->openflag)) {		/* オープン済みかのチェック */
 		return(E_OBJ);
 	}
-	if (p_spcb->errorflag) {		/* ���顼���֤��Υ����å� */
+	if (p_spcb->errorflag) {		/* エラー状態かのチェック */
 		return(E_SYS);
 	}
 
@@ -625,25 +625,25 @@ serial_ctl_por(ID portid, uint_t ioctl)
 }
 
 /*
- *  ���ꥢ��ݡ��Ⱦ��֤λ��ȡʥ����ӥ��������
+ *  シリアルポート状態の参照（サービスコール）
  */
 ER
 serial_ref_por(ID portid, T_SERIAL_RPOR *pk_rpor)
 {
 	SPCB	*p_spcb;
 
-	if (sns_dpn()) {				/* ����ƥ����ȤΥ����å� */
+	if (sns_dpn()) {				/* コンテキストのチェック */
 		return(E_CTX);
 	}
 	if (!(1 <= portid && portid <= TNUM_PORT)) {
-		return(E_ID);				/* �ݡ����ֹ�Υ����å� */
+		return(E_ID);				/* ポート番号のチェック */
 	}
 
 	p_spcb = get_spcb(portid);
-	if (!(p_spcb->openflag)) {		/* �����ץ�Ѥߤ��Υ����å� */
+	if (!(p_spcb->openflag)) {		/* オープン済みかのチェック */
 		return(E_OBJ);
 	}
-	if (p_spcb->errorflag) {		/* ���顼���֤��Υ����å� */
+	if (p_spcb->errorflag) {		/* エラー状態かのチェック */
 		return(E_SYS);
 	}
 
@@ -653,7 +653,7 @@ serial_ref_por(ID portid, T_SERIAL_RPOR *pk_rpor)
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥ����������ǽ������Хå�
+ *  シリアルポートからの送信可能コールバック
  */
 void
 sio_irdy_snd(intptr_t exinf)
@@ -663,14 +663,14 @@ sio_irdy_snd(intptr_t exinf)
 	p_spcb = (SPCB *) exinf;
 	if (p_spcb->rcv_fc_chr != '\0') {
 		/*
-		 *  START/STOP ���������롥
+		 *  START/STOP を送信する．
 		 */
 		(void) sio_snd_chr(p_spcb->p_siopcb, p_spcb->rcv_fc_chr);
 		p_spcb->rcv_fc_chr = '\0';
 	}
 	else if (!(p_spcb->snd_stopped) && p_spcb->snd_count > 0U) {
 		/*
-		 *  �����Хåե��椫��ʸ������Ф����������롥
+		 *  送信バッファ中から文字を取り出して送信する．
 		 */
 		(void) sio_snd_chr(p_spcb->p_siopcb,
 					p_spcb->p_spinib->snd_buffer[p_spcb->snd_read_ptr]);
@@ -684,14 +684,14 @@ sio_irdy_snd(intptr_t exinf)
 	}
 	else {
 		/*
-		 *  �������٤�ʸ�����ʤ����ϡ�������ǽ������Хå���ػߤ��롥
+		 *  送信すべき文字がない場合は，送信可能コールバックを禁止する．
 		 */
 		sio_dis_cbr(p_spcb->p_siopcb, SIO_RDY_SND);
 	}
 }
 
 /*
- *  ���ꥢ��ݡ��Ȥ���μ������Υ�����Хå�
+ *  シリアルポートからの受信通知コールバック
  */
 void
 sio_irdy_rcv(intptr_t exinf)
@@ -703,14 +703,14 @@ sio_irdy_rcv(intptr_t exinf)
 	c = (char) sio_rcv_chr(p_spcb->p_siopcb);
 	if ((p_spcb->ioctl & IOCTL_FCSND) != 0U && c == FC_STOP) {
 		/*
-		 *  ����������ߤ��롥�������ʸ���Ϥ��Τޤ��������롥
+		 *  送信を一時停止する．送信中の文字はそのまま送信する．
 		 */
 		p_spcb->snd_stopped = true;
 	}
 	else if (p_spcb->snd_stopped && (c == FC_START
 				|| (p_spcb->ioctl & IOCTL_FCANY) != 0U)) {
 		/*
-		 *  ������Ƴ����롥
+		 *  送信を再開する．
 		 */
 		p_spcb->snd_stopped = false;
 		if (p_spcb->snd_count > 0U) {
@@ -728,17 +728,17 @@ sio_irdy_rcv(intptr_t exinf)
 	}
 	else if ((p_spcb->ioctl & IOCTL_FCSND) != 0U && c == FC_START) {
 		/*
-		 *  �������Ф��ƥե������椷�Ƥ����硤START �ϼΤƤ롥
+		 *  送信に対してフロー制御している場合，START は捨てる．
 		 */
 	}
 	else if (p_spcb->rcv_count == p_spcb->p_spinib->rcv_bufsz) {
 		/*
-		 *  �Хåե��ե�ξ�硤��������ʸ����ΤƤ롥
+		 *  バッファフルの場合，受信した文字を捨てる．
 		 */
 	}
 	else {
 		/*
-		 *  ��������ʸ��������Хåե�������롥
+		 *  受信した文字を受信バッファに入れる．
 		 */
 		p_spcb->p_spinib->rcv_buffer[p_spcb->rcv_write_ptr] = c;
 		INC_PTR(p_spcb->rcv_write_ptr, p_spcb->p_spinib->rcv_bufsz);
@@ -750,7 +750,7 @@ sio_irdy_rcv(intptr_t exinf)
 		p_spcb->rcv_count++;
 
 		/*
-		 *  STOP���������롥
+		 *  STOPを送信する．
 		 */
 		if ((p_spcb->ioctl & IOCTL_FCRCV) != 0U && !(p_spcb->rcv_stopped)
 						&& p_spcb->rcv_count
@@ -764,16 +764,16 @@ sio_irdy_rcv(intptr_t exinf)
 }
 
 /*
- *  ���ꥢ�륤�󥿥ե������ɥ饤�Ф����̤����ʸ���μ�Ф�
+ *  シリアルインタフェースドライバからの未送信文字の取出し
  */
 bool_t
 serial_get_chr(ID portid, char *p_c)
 {
 	SPCB	*p_spcb;
 
-	if (1 <= portid && portid <= TNUM_PORT) {	/* �ݡ����ֹ�Υ����å� */
+	if (1 <= portid && portid <= TNUM_PORT) {	/* ポート番号のチェック */
 		p_spcb = get_spcb(portid);
-		if (p_spcb->openflag) {					/* �����ץ�Ѥߤ��Υ����å� */
+		if (p_spcb->openflag) {					/* オープン済みかのチェック */
 			if (p_spcb->snd_count > 0U) {
 				*p_c = p_spcb->p_spinib->snd_buffer[p_spcb->snd_read_ptr];
 				INC_PTR(p_spcb->snd_read_ptr, p_spcb->p_spinib->snd_bufsz);

@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2013 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: pridataq.c 2515 2013-06-12 11:56:59Z ertl-hiro $
  */
 
 /*
- *		ͥ���٥ǡ������塼��ǽ
+ *		優先度データキュー機能
  */
 
 #include "kernel_impl.h"
@@ -51,7 +51,7 @@
 #include "pridataq.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_SND_PDQ_ENTER
 #define LOG_SND_PDQ_ENTER(pdqid, data, datapri)
@@ -126,19 +126,19 @@
 #endif /* LOG_REF_PDQ_LEAVE */
 
 /*
- *  ͥ���٥ǡ������塼�ο�
+ *  優先度データキューの数
  */
 #define tnum_pdq	((uint_t)(tmax_pdqid - TMIN_PDQID + 1))
 
 /*
- *  ͥ���٥ǡ������塼ID����ͥ���٥ǡ������塼�����֥��å�����Ф���
- *  ��Υޥ���
+ *  優先度データキューIDから優先度データキュー管理ブロックを取り出すた
+ *  めのマクロ
  */
 #define INDEX_PDQ(pdqid)	((uint_t)((pdqid) - TMIN_PDQID))
 #define get_pdqcb(pdqid)	(&(pdqcb_table[INDEX_PDQ(pdqid)]))
 
 /*
- *  ͥ���٥ǡ������塼��ǽ�ν����
+ *  優先度データキュー機能の初期化
  */
 #ifdef TOPPERS_pdqini
 
@@ -163,7 +163,7 @@ initialize_pridataq(void)
 #endif /* TOPPERS_pdqini */
 
 /*
- *  ͥ���٥ǡ������塼�����ΰ�ؤΥǡ����γ�Ǽ
+ *  優先度データキュー管理領域へのデータの格納
  */
 #ifdef TOPPERS_pdqenq
 
@@ -200,7 +200,7 @@ enqueue_pridata(PDQCB *p_pdqcb, intptr_t data, PRI datapri)
 #endif /* TOPPERS_pdqenq */
 
 /*
- *  ͥ���٥ǡ������塼�����ΰ褫��Υǡ����μ�Ф�
+ *  優先度データキュー管理領域からのデータの取出し
  */
 #ifdef TOPPERS_pdqdeq
 
@@ -223,7 +223,7 @@ dequeue_pridata(PDQCB *p_pdqcb, intptr_t *p_data, PRI *p_datapri)
 #endif /* TOPPERS_pdqdeq */
 
 /*
- *  ͥ���٥ǡ������塼�ؤΥǡ�������
+ *  優先度データキューへのデータ送信
  */
 #ifdef TOPPERS_pdqsnd
 
@@ -252,7 +252,7 @@ send_pridata(PDQCB *p_pdqcb, intptr_t data, PRI datapri, bool_t *p_dspreq)
 #endif /* TOPPERS_pdqsnd */
 
 /*
- *  ͥ���٥ǡ������塼����Υǡ�������
+ *  優先度データキューからのデータ受信
  */
 #ifdef TOPPERS_pdqrcv
 
@@ -293,7 +293,7 @@ receive_pridata(PDQCB *p_pdqcb, intptr_t *p_data,
 #endif /* TOPPERS_pdqrcv */
 
 /*
- *  ͥ���٥ǡ������塼�ؤ�����
+ *  優先度データキューへの送信
  */
 #ifdef TOPPERS_snd_pdq
 
@@ -336,7 +336,7 @@ snd_pdq(ID pdqid, intptr_t data, PRI datapri)
 #endif /* TOPPERS_snd_pdq */
 
 /*
- *  ͥ���٥ǡ������塼�ؤ������ʥݡ���󥰡�
+ *  優先度データキューへの送信（ポーリング）
  */
 #ifdef TOPPERS_psnd_pdq
 
@@ -373,7 +373,7 @@ psnd_pdq(ID pdqid, intptr_t data, PRI datapri)
 #endif /* TOPPERS_psnd_pdq */
 
 /*
- *  ͥ���٥ǡ������塼�ؤ������ʥݡ���󥰡��󥿥�������ƥ������ѡ�
+ *  優先度データキューへの送信（ポーリング，非タスクコンテキスト用）
  */
 #ifdef TOPPERS_ipsnd_pdq
 
@@ -410,7 +410,7 @@ ipsnd_pdq(ID pdqid, intptr_t data, PRI datapri)
 #endif /* TOPPERS_ipsnd_pdq */
 
 /*
- *  ͥ���٥ǡ������塼�ؤ������ʥ����ॢ���Ȥ����
+ *  優先度データキューへの送信（タイムアウトあり）
  */
 #ifdef TOPPERS_tsnd_pdq
 
@@ -459,7 +459,7 @@ tsnd_pdq(ID pdqid, intptr_t data, PRI datapri, TMO tmout)
 #endif /* TOPPERS_tsnd_pdq */
 
 /*
- *  ͥ���٥ǡ������塼����μ���
+ *  優先度データキューからの受信
  */
 #ifdef TOPPERS_rcv_pdq
 
@@ -506,7 +506,7 @@ rcv_pdq(ID pdqid, intptr_t *p_data, PRI *p_datapri)
 #endif /* TOPPERS_rcv_pdq */
 
 /*
- *  ͥ���٥ǡ������塼����μ����ʥݡ���󥰡�
+ *  優先度データキューからの受信（ポーリング）
  */
 #ifdef TOPPERS_prcv_pdq
 
@@ -542,7 +542,7 @@ prcv_pdq(ID pdqid, intptr_t *p_data, PRI *p_datapri)
 #endif /* TOPPERS_prcv_pdq */
 
 /*
- *  ͥ���٥ǡ������塼����μ����ʥ����ॢ���Ȥ����
+ *  優先度データキューからの受信（タイムアウトあり）
  */
 #ifdef TOPPERS_trcv_pdq
 
@@ -594,7 +594,7 @@ trcv_pdq(ID pdqid, intptr_t *p_data, PRI *p_datapri, TMO tmout)
 #endif /* TOPPERS_trcv_pdq */
 
 /*
- *  ͥ���٥ǡ������塼�κƽ����
+ *  優先度データキューの再初期化
  */
 #ifdef TOPPERS_ini_pdq
 
@@ -633,7 +633,7 @@ ini_pdq(ID pdqid)
 #endif /* TOPPERS_ini_pdq */
 
 /*
- *  ͥ���٥ǡ������塼�ξ��ֻ���
+ *  優先度データキューの状態参照
  */
 #ifdef TOPPERS_ref_pdq
 

@@ -8,172 +8,172 @@
  *  Copyright (C) 2004-2010 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: kernel_impl.h 1713 2010-01-27 13:23:29Z ertl-hiro $
  */
 
 /*
- *		TOPPERS/ASP�����ͥ���������ɸ��إå��ե�����
+ *		TOPPERS/ASPカーネル内部向け標準ヘッダファイル
  *
- *  ���Υإå��ե�����ϡ������ͥ��������ץ������Υ������ե�����
- *  ��ɬ�����󥯥롼�ɤ���٤�ɸ��إå��ե�����Ǥ��롥
+ *  このヘッダファイルは，カーネルを構成するプログラムのソースファイル
+ *  で必ずインクルードするべき標準ヘッダファイルである．
  *
- *  ������֥����Υ������ե����뤫�餳�Υե�����򥤥󥯥롼�ɤ����
- *  �ϡ�TOPPERS_MACRO_ONLY��������Ƥ���������ˤ�ꡤ�ޥ�������ʳ���
- *  �����褦�ˤʤäƤ��롥
+ *  アセンブリ言語のソースファイルからこのファイルをインクルードする時
+ *  は，TOPPERS_MACRO_ONLYを定義しておく．これにより，マクロ定義以外を
+ *  除くようになっている．
  */
 
 #ifndef TOPPERS_KERNEL_IMPL_H
 #define TOPPERS_KERNEL_IMPL_H
 
 /*
- *  �����ͥ����������̾�Υ�͡���
+ *  カーネルの内部識別名のリネーム
  */
 #include "kernel_rename.h"
 
 /*
- *  ���ץꥱ�������ȶ��̤Υإå��ե�����
+ *  アプリケーションと共通のヘッダファイル
  */
 #include <kernel.h>
 
 /*
- *  �����ƥ������ǽ�Τ�������
+ *  システムログ機能のための定義
  */
 #include <t_syslog.h>
 
 /*
- *  �����㥹�Ȥ�Ԥ��ޥ��������
+ *  型キャストを行うマクロの定義
  */
 #ifndef CAST
 #define CAST(type, val)		((type)(val))
 #endif /* CAST */
 
 /*
- *  �������åȰ�¸��������
+ *  ターゲット依存情報の定義
  */
 #include "target_config.h"
 
 /*
- *  ���٤Ƥδؿ��򥳥�ѥ��뤹�뤿������
+ *  すべての関数をコンパイルするための定義
  */
 #ifdef ALLFUNC
 #include "allfunc.h"
 #endif /* ALLFUNC */
 
 /*
- *  �ӥåȥե�����ɤǤ����̵��������
+ *  ビットフィールドでの符号無し整数型
  *
- *  8�ӥåȰʲ������Υӥåȥե�����ɤǡ����̵�������ͤ��ݻ����������
- *  ���Ѥ���٤��ǡ�������ANSI C�Ǥϡ��ӥåȥե�����ɤΥǡ������ˤ�
- *  int��unsigned int����������ʤ����ᡤ�ǥե���Ȥ������unsigned
- *  int�Ȥ��Ƥ��뤬���������åȤ���ӥġ����¸�ǡ�unsigned char�ޤ���
- *  unsigned short���������������Ψ���ɤ���礬���롥
+ *  8ビット以下の幅のビットフィールドで，符号無し整数値を保持したい場合
+ *  に用いるべきデータ型．ANSI Cでは，ビットフィールドのデータ型には
+ *  intとunsigned intしか許されないため，デフォルトの定義はunsigned
+ *  intとしているが，ターゲットおよびツール依存で，unsigned charまたは
+ *  unsigned shortに定義した方が効率が良い場合がある．
  */
 #ifndef BIT_FIELD_UINT
 #define BIT_FIELD_UINT		unsigned int
 #endif /* BIT_FIELD_UINT */
 
 /*
- *  �ӥåȥե�����ɤǤΥ֡��뷿
+ *  ビットフィールドでのブール型
  *
- *  1�ӥå����Υӥåȥե�����ɤǡ��֡����ͤ��ݻ������������Ѥ���٤�
- *  �ǡ��������ǥե���ȤǤ�BIT_FIELD_UINT��Ʊ���������Ƥ��뤬���֡�
- *  ���ͤ��ݻ����뤳�Ȥ��������뤿����̤�̾�ΤȤ��Ƥ��롥
+ *  1ビット幅のビットフィールドで，ブール値を保持したい場合に用いるべき
+ *  データ型．デフォルトではBIT_FIELD_UINTと同一に定義しているが，ブー
+ *  ル値を保持することを明示するために別の名称としている．
  */
 #ifndef BIT_FIELD_BOOL
 #define BIT_FIELD_BOOL		BIT_FIELD_UINT
 #endif /* BIT_FIELD_BOOL */
 
 /*
- *  ���֥�������ID�κǾ��ͤ����
+ *  オブジェクトIDの最小値の定義
  */
-#define TMIN_TSKID		1		/* ������ID�κǾ��� */
-#define TMIN_SEMID		1		/* ���ޥե�ID�κǾ��� */
-#define TMIN_FLGID		1		/* �ե饰ID�κǾ��� */
-#define TMIN_DTQID		1		/* �ǡ������塼ID�κǾ��� */
-#define TMIN_PDQID		1		/* ͥ���٥ǡ������塼ID�κǾ��� */
-#define TMIN_MBXID		1		/* �᡼��ܥå���ID�κǾ��� */
-#define TMIN_MTXID		1		/* �ߥ塼�ƥå���ID�κǾ��� */
-#define TMIN_MPFID		1		/* ����Ĺ����ס���ID�κǾ��� */
-#define TMIN_CYCID		1		/* �����ϥ�ɥ�ID�κǾ��� */
-#define TMIN_ALMID		1		/* ���顼��ϥ�ɥ�ID�κǾ��� */
+#define TMIN_TSKID		1		/* タスクIDの最小値 */
+#define TMIN_SEMID		1		/* セマフォIDの最小値 */
+#define TMIN_FLGID		1		/* フラグIDの最小値 */
+#define TMIN_DTQID		1		/* データキューIDの最小値 */
+#define TMIN_PDQID		1		/* 優先度データキューIDの最小値 */
+#define TMIN_MBXID		1		/* メールボックスIDの最小値 */
+#define TMIN_MTXID		1		/* ミューテックスIDの最小値 */
+#define TMIN_MPFID		1		/* 固定長メモリプールIDの最小値 */
+#define TMIN_CYCID		1		/* 周期ハンドラIDの最小値 */
+#define TMIN_ALMID		1		/* アラームハンドラIDの最小値 */
 
 /*
- *  ͥ���٤��ʳ��������
+ *  優先度の段階数の定義
  */
 #define TNUM_TPRI		(TMAX_TPRI - TMIN_TPRI + 1)
 #define TNUM_MPRI		(TMAX_MPRI - TMIN_MPRI + 1)
 #define TNUM_INTPRI		(TMAX_INTPRI - TMIN_INTPRI + 1)
 
 /*
- *  �إå��ե����������ʤ��⥸�塼��δؿ����ѿ������
+ *  ヘッダファイルを持たないモジュールの関数・変数の宣言
  */
 #ifndef TOPPERS_MACRO_ONLY
 
 /*
- *  �ƥ⥸�塼��ν������kernel_cfg.c��
+ *  各モジュールの初期化（kernel_cfg.c）
  */
 extern void	initialize_object(void);
 
 /*
- *  ������롼����μ¹ԡ�kernel_cfg.c��
+ *  初期化ルーチンの実行（kernel_cfg.c）
  */
 extern void	call_inirtn(void);
 
 /*
- *  ��λ�����롼����μ¹ԡ�kernel_cfg.c��
+ *  終了処理ルーチンの実行（kernel_cfg.c）
  */
 extern void	call_terrtn(void);
 
 /*
- *  �󥿥�������ƥ������ѤΥ����å��ΰ��kernel_cfg.c��
+ *  非タスクコンテキスト用のスタック領域（kernel_cfg.c）
  */
-extern const SIZE	istksz;		/* �����å��ΰ�Υ������ʴݤ᤿�͡� */
-extern STK_T *const	istk;		/* �����å��ΰ����Ƭ���� */
+extern const SIZE	istksz;		/* スタック領域のサイズ（丸めた値） */
+extern STK_T *const	istk;		/* スタック領域の先頭番地 */
 #ifdef TOPPERS_ISTKPT
-extern STK_T *const	istkpt;		/* �����å��ݥ��󥿤ν���� */
+extern STK_T *const	istkpt;		/* スタックポインタの初期値 */
 #endif /* TOPPERS_ISTKPT */
 
 /*
- *  �����ͥ�ư����֥ե饰��startup.c��
+ *  カーネル動作状態フラグ（startup.c）
  */
 extern bool_t	kerflg;
 
 /*
- *  �����ͥ�ε�ư��startup.c��
+ *  カーネルの起動（startup.c）
  */
 extern void	sta_ker(void);
 
 /*
- *  �����ͥ�ν�λ������startup.c��
+ *  カーネルの終了処理（startup.c）
  */
 extern void	exit_kernel(void);
 

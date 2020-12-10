@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2014 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: messagebuf.h 2589 2014-01-02 05:10:53Z ertl-hiro $
  */
 
 /*
- *		��å������Хåե���ǽ
+ *		メッセージバッファ機能
  */
 
 #ifndef TOPPERS_MESSAGEBUF_H
@@ -50,112 +50,112 @@
 #include "wait.h"
 
 /*
- *  ��å������Хåե�������֥��å�
+ *  メッセージバッファ初期化ブロック
  *
- *  ���ι�¤�Τϡ�Ʊ�����̿����֥������Ȥν�����֥��å��ζ�����ʬ
- *  ��WOBJINIB�ˤ��ĥ�ʥ��֥������Ȼظ�����ηѾ��������ˤ�����Τǡ�
- *  �ǽ�Υե�����ɤ����̤ˤʤäƤ��롥
+ *  この構造体は，同期・通信オブジェクトの初期化ブロックの共通部分
+ *  （WOBJINIB）を拡張（オブジェクト指向言語の継承に相当）したもので，
+ *  最初のフィールドが共通になっている．
  */
 typedef struct messagebuf_initialization_block {
-	ATR			mbfatr;			/* ��å������Хåե�°�� */
-	uint_t		maxmsz;			/* ��å������κ���Ĺ */
-	SIZE		mbfsz;			/* ��å������Хåե������ΰ�Υ����� */
-	void		*mbfmb;			/* ��å������Хåե������ΰ����Ƭ���� */
+	ATR			mbfatr;			/* メッセージバッファ属性 */
+	uint_t		maxmsz;			/* メッセージの最大長 */
+	SIZE		mbfsz;			/* メッセージバッファ管理領域のサイズ */
+	void		*mbfmb;			/* メッセージバッファ管理領域の先頭番地 */
 } MBFINIB;
 
 /*
- *  ��å������Хåե������֥��å�
+ *  メッセージバッファ管理ブロック
  *
- *  ���ι�¤�Τϡ�Ʊ�����̿����֥������Ȥδ����֥��å��ζ�����ʬ��WOBJCB��
- *  ���ĥ�ʥ��֥������Ȼظ�����ηѾ��������ˤ�����Τǡ��ǽ��2�Ĥ�
- *  �ե�����ɤ����̤ˤʤäƤ��롥
+ *  この構造体は，同期・通信オブジェクトの管理ブロックの共通部分（WOBJCB）
+ *  を拡張（オブジェクト指向言語の継承に相当）したもので，最初の2つの
+ *  フィールドが共通になっている．
  */
 typedef struct messagebuf_control_block {
-	QUEUE		swait_queue;	/* ��å������Хåե������Ԥ����塼 */
-	const MBFINIB *p_mbfinib;	/* ������֥��å��ؤΥݥ��� */
-	QUEUE		rwait_queue;	/* ��å������Хåե������Ԥ����塼 */
-	SIZE		fmbfsz;			/* �����ΰ�Υ����� */
-	SIZE		head;			/* �ǽ�Υ�å������γ�Ǽ��� */
-	SIZE		tail;			/* �Ǹ�Υ�å������γ�Ǽ���μ� */
-	uint_t		smbfcnt;		/* �����ΰ�˳�Ǽ����Ƥ����å������ο� */
+	QUEUE		swait_queue;	/* メッセージバッファ送信待ちキュー */
+	const MBFINIB *p_mbfinib;	/* 初期化ブロックへのポインタ */
+	QUEUE		rwait_queue;	/* メッセージバッファ受信待ちキュー */
+	SIZE		fmbfsz;			/* 空き領域のサイズ */
+	SIZE		head;			/* 最初のメッセージの格納場所 */
+	SIZE		tail;			/* 最後のメッセージの格納場所の次 */
+	uint_t		smbfcnt;		/* 管理領域に格納されているメッセージの数 */
 } MBFCB;
 
 /*
- *  ��å������Хåե��Ԥ�����֥��å������
+ *  メッセージバッファ待ち情報ブロックの定義
  *
- *  ���ι�¤�Τϡ�Ʊ�����̿����֥������Ȥ��Ԥ�����֥��å��ζ�����ʬ
- *  ��WINFO_WOBJ�ˤ��ĥ�ʥ��֥������Ȼظ�����ηѾ��������ˤ�����Τǡ�
- *  �ǽ��2�ĤΥե�����ɤ����̤ˤʤäƤ��롥
- *  ��å������Хåե��ؤ������Ԥ��ȥ�å������Хåե�����μ����Ԥ��ǡ�
- *  Ʊ���Ԥ�����֥��å���Ȥ���
+ *  この構造体は，同期・通信オブジェクトの待ち情報ブロックの共通部分
+ *  （WINFO_WOBJ）を拡張（オブジェクト指向言語の継承に相当）したもので，
+ *  最初の2つのフィールドが共通になっている．
+ *  メッセージバッファへの送信待ちとメッセージバッファからの受信待ちで，
+ *  同じ待ち情報ブロックを使う．
  */
 typedef struct messagebuf_waiting_information {
-	WINFO		winfo;			/* ɸ����Ԥ�����֥��å� */
-	MBFCB		*p_mbfcb;		/* �ԤäƤ����å������Хåե��δ����֥��å� */
-	void		*msg;			/* ��������å����� */
-	uint_t		msgsz;			/* ��������å����������� */
+	WINFO		winfo;			/* 標準の待ち情報ブロック */
+	MBFCB		*p_mbfcb;		/* 待っているメッセージバッファの管理ブロック */
+	void		*msg;			/* 送受信メッセージ */
+	uint_t		msgsz;			/* 送受信メッセージサイズ */
 } WINFO_MBF;
 
 /*
- *  ��å������Хåե�ID�κ����͡�kernel_cfg.c��
+ *  メッセージバッファIDの最大値（kernel_cfg.c）
  */
 extern const ID	tmax_mbfid;
 
 /*
- *  ��å������Хåե�������֥��å��Υ��ꥢ��kernel_cfg.c��
+ *  メッセージバッファ初期化ブロックのエリア（kernel_cfg.c）
  */
 extern const MBFINIB	mbfinib_table[];
 
 /*
- *  ��å������Хåե������֥��å��Υ��ꥢ��kernel_cfg.c��
+ *  メッセージバッファ管理ブロックのエリア（kernel_cfg.c）
  */
 extern MBFCB	mbfcb_table[];
 
 /*
- *  ��å������Хåե������֥��å������å������Хåե�ID����Ф���
- *  ��Υޥ���
+ *  メッセージバッファ管理ブロックからメッセージバッファIDを取り出すた
+ *  めのマクロ
  */
 #define	MBFID(p_mbfcb)	((ID)(((p_mbfcb) - mbfcb_table) + TMIN_MBFID))
 
 /*
- *  ��å������Хåե���ǽ�ν����
+ *  メッセージバッファ機能の初期化
  */
 extern void	initialize_messagebuf(void);
 
 /*
- *  ��å������Хåե������ΰ�ؤΥ�å������γ�Ǽ
+ *  メッセージバッファ管理領域へのメッセージの格納
  */
 extern bool_t	enqueue_message(MBFCB *p_mbfcb, const void *msg, uint_t msgsz);
 
 /*
- *  ��å������Хåե������ΰ褫��Υ�å������μ�Ф�
+ *  メッセージバッファ管理領域からのメッセージの取出し
  */
 extern uint_t	dequeue_message(MBFCB *p_mbfcb, void *msg);
 
 /*
- *  ��å������Хåե��ؤΥ�å���������
+ *  メッセージバッファへのメッセージ送信
  */
 extern bool_t	send_message(MBFCB *p_mbfcb, const void *msg,
 											uint_t msgsz, bool_t *p_dspreq);
 
 /*
- *  ��å������Хåե������Ԥ��������Υ����å�
+ *  メッセージバッファ送信待ちタスクのチェック
  */
 extern bool_t	messagebuf_signal(MBFCB *p_mbfcb);
 
 /*
- *  ��å������Хåե�����Υ�å���������
+ *  メッセージバッファからのメッセージ受信
  */
 extern uint_t	receive_message(MBFCB *p_mbfcb, void *msg, bool_t *p_dspreq);
 
 /*
- *  ��å������Хåե������Ԥ����������Ԥ����������
+ *  メッセージバッファ送信待ちタスクの待ち解除時処理
  */
 extern bool_t	(*mbfhook_dequeue_wobj)(TCB *p_tcb);
 extern bool_t	messagebuf_dequeue_wobj(TCB *p_tcb);
 
 /*
- *  ��å������Хåե������Ԥ���������ͥ�����ѹ�������
+ *  メッセージバッファ送信待ちタスクの優先度変更時処理
  */
 extern bool_t	(*mbfhook_change_priority)(WOBJCB *p_wobjcb);
 extern bool_t	messagebuf_change_priority(WOBJCB *p_wobjcb);

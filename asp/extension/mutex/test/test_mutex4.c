@@ -5,351 +5,351 @@
  *  Copyright (C) 2007-2013 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: test_mutex4.c 2593 2014-01-02 06:29:10Z ertl-hiro $
  */
 
 /* 
- *		�ߥ塼�ƥå����Υƥ���(4)
+ *		ミューテックスのテスト(4)
  *
- * �ڥƥ��Ȥ���Ū��
+ * 【テストの目的】
  *
- *  ͥ���پ�¥ߥ塼�ƥå������Ф��ơ�loc_mtx��unl_mtx��ȼ��ͥ���٤���
- *  ������������Ū�˥ƥ��Ȥ��롥��������change_priority��
- *  mutex_calc_priority�����Ƥˤ�Ƨ�߹��ޤʤ���
+ *  優先度上限ミューテックスに対して，loc_mtxとunl_mtxに伴う優先度の変
+ *  更処理を網羅的にテストする．ただし，change_priorityと
+ *  mutex_calc_priorityの内容には踏み込まない．
  *
- * �ڥƥ��ȹ��ܡ�
+ * 【テスト項目】
  *
- *	(A) �ߥ塼�ƥå����Υ��å�������loc_mtx�ˤ�ȼ��ͥ�����ѹ�
- *		(A-1) ���å������ߥ塼�ƥå�����ͥ���پ�¤����������θ���ͥ��
- *			  �٤���⤤���ˡ�����������ͥ���٤�����ͥ���پ�¤ޤ�
- *			  �夬�뤳�ȡ��ޤ���Ʊ��ͥ������Ǥ�ͥ���̤��ǹ�ˤʤ뤳
- *			  ��
- *		(A-2) ���å������ߥ塼�ƥå�����ͥ���پ�¤����������θ���ͥ��
- *			  �٤�Ʊ�����ˡ�����������ͥ���٤��Ѥ��ʤ����ȡ��ޤ���
- *			  Ʊ��ͥ������Ǥ�ͥ���̤��Ѥ��ʤ�����
- *		(A-3) ���å������ߥ塼�ƥå�����ͥ���پ�¤����������θ���ͥ��
- *			  �٤����㤤���ˡ�����������ͥ���٤��Ѥ��ʤ����ȡ���
- *			  ����Ʊ��ͥ������Ǥ�ͥ���̤��Ѥ��ʤ�����
- *	(B) �ߥ塼�ƥå����Υ��å����������unl_mtx�ˤ�ȼ�����å��������
- * 		��������ͥ�����ѹ�
- *		(B-1) ���å���������ߥ塼�ƥå����ξ��ͥ���٤����������θ���
- *			  ͥ���٤�Ʊ���ǡ��ߥ塼�ƥå����Υ��å������ͥ���٤�����
- *			  ��٤����ˡ�����������ͥ���٤�Ŭ�ڤ˲������뤳�ȡ���
- *			  ����Ʊ��ͥ������Ǥ�ͥ���̤��ǹ�ˤʤ뤳��
- *		(B-2) ���å���������ߥ塼�ƥå����ξ��ͥ���٤����������θ���
- *			  ͥ���٤�Ʊ���ǡ��ߥ塼�ƥå����Υ��å������ͥ���٤��Ѥ�
- *			  ��٤��Ǥʤ����ˡ�����������ͥ���٤��Ѥ��ʤ����ȡ���
- *			  ����Ʊ��ͥ������Ǥ�ͥ���̤��Ѥ��ʤ�����
- *		(B-3) ���å���������ߥ塼�ƥå����ξ��ͥ���٤����������θ���
- *			  ͥ���٤����㤤���ˡ�����������ͥ���٤��Ѥ��ʤ����ȡ�
- *			  �ޤ���Ʊ��ͥ������Ǥ�ͥ���̤��Ѥ��ʤ�����
- *	(C) �ߥ塼�ƥå����Υ��å����������unl_mtx�ˤ�ȼ���ߥ塼�ƥå�����
- *		���å�������������ͥ�����ѹ�
- *		(C-1) �ߥ塼�ƥå�����ͥ���پ�¤������˥ߥ塼�ƥå�������å�
- *			  �����������θ���ͥ���٤���⤤���ˡ�������������ͥ��
- *			  �٤�����ͥ���پ�¤ޤǾ夬�뤳�ȡ��ޤ���Ʊ��ͥ������Ǥ�
- *			  ͥ���̤�����ˤʤ뤳��
- *		(C-2) �ߥ塼�ƥå�����ͥ���پ�¤������˥ߥ塼�ƥå�������å�
- *			  �����������θ���ͥ���٤�Ʊ�����ˡ�������������ͥ���٤�
- *			  �Ѥ��ʤ����ȡ��ޤ���Ʊ��ͥ������Ǥ�ͥ���̤�����ˤ�
- *			  �뤳��
- *		(C-3) �ߥ塼�ƥå�����ͥ���پ�¤������˥ߥ塼�ƥå�������å�
- *			  �����������θ���ͥ���٤����㤤���ˡ�������������ͥ��
- *			  �٤��Ѥ��ʤ����ȡ��ޤ���Ʊ��ͥ������Ǥ�ͥ���̤�����
- *			  �ˤʤ뤳��
- *	(D) �ߥ塼�ƥå����Υ��å�������loc_mtx�ˤ�E_ILUSE���顼
- *		(D-1) ���������Υ١���ͥ���٤������å����褦�Ȥ����ߥ塼�ƥå�
- *			  ���ξ��ͥ���٤���⤤����E_ILUSE���顼�ˤʤ뤳��
- *		(D-2) ���������Υ١���ͥ���٤������å����褦�Ȥ����ߥ塼�ƥå�
- *			  ���ξ��ͥ���٤�Ʊ�����������㤱��С����������θ���ͥ
- *			  ���٤�������⤯�Ƥ⡤E_ILUSE���顼�ˤʤ�ʤ�����
+ *	(A) ミューテックスのロック処理（loc_mtx）に伴う優先度変更
+ *		(A-1) ロックしたミューテックスの優先度上限が自タスクの現在優先
+ *			  度よりも高い場合に，自タスクの優先度がその優先度上限まで
+ *			  上がること．また，同じ優先度内での優先順位が最高になるこ
+ *			  と
+ *		(A-2) ロックしたミューテックスの優先度上限が自タスクの現在優先
+ *			  度と同じ場合に，自タスクの優先度が変わらないこと．また，
+ *			  同じ優先度内での優先順位が変わらないこと
+ *		(A-3) ロックしたミューテックスの優先度上限が自タスクの現在優先
+ *			  度よりも低い場合に，自タスクの優先度が変わらないこと．ま
+ *			  た，同じ優先度内での優先順位が変わらないこと
+ *	(B) ミューテックスのロック解除処理（unl_mtx）に伴うロック解除した
+ * 		タスクの優先度変更
+ *		(B-1) ロック解除したミューテックスの上限優先度が自タスクの現在
+ *			  優先度と同じで，ミューテックスのロック解除で優先度が下が
+ *			  るべき場合に，自タスクの優先度が適切に下げられること．ま
+ *			  た，同じ優先度内での優先順位が最高になること
+ *		(B-2) ロック解除したミューテックスの上限優先度が自タスクの現在
+ *			  優先度と同じで，ミューテックスのロック解除で優先度が変わ
+ *			  るべきでない場合に，自タスクの優先度が変わらないこと．ま
+ *			  た，同じ優先度内での優先順位が変わらないこと
+ *		(B-3) ロック解除したミューテックスの上限優先度が自タスクの現在
+ *			  優先度よりも低い場合に，自タスクの優先度が変わらないこと．
+ *			  また，同じ優先度内での優先順位が変わらないこと
+ *	(C) ミューテックスのロック解除処理（unl_mtx）に伴いミューテックスを
+ *		ロックしたタスクの優先度変更
+ *		(C-1) ミューテックスの優先度上限が新たにミューテックスをロック
+ *			  したタスクの現在優先度よりも高い場合に，当該タスクの優先
+ *			  度がその優先度上限まで上がること．また，同じ優先度内での
+ *			  優先順位が最低になること
+ *		(C-2) ミューテックスの優先度上限が新たにミューテックスをロック
+ *			  したタスクの現在優先度と同じ場合に，当該タスクの優先度が
+ *			  変わらないこと．また，同じ優先度内での優先順位が最低にな
+ *			  ること
+ *		(C-3) ミューテックスの優先度上限が新たにミューテックスをロック
+ *			  したタスクの現在優先度よりも低い場合に，当該タスクの優先
+ *			  度が変わらないこと．また，同じ優先度内での優先順位が最低
+ *			  になること
+ *	(D) ミューテックスのロック処理（loc_mtx）のE_ILUSEエラー
+ *		(D-1) 自タスクのベース優先度が，ロックしようとしたミューテック
+ *			  スの上限優先度よりも高い時，E_ILUSEエラーになること
+ *		(D-2) 自タスクのベース優先度が，ロックしようとしたミューテック
+ *			  スの上限優先度と同じかそれより低ければ，自タスクの現在優
+ *			  先度がそれより高くても，E_ILUSEエラーにならないこと
  *
- * �ڥƥ��ȹ��ܤμ¸���ˡ��
+ * 【テスト項目の実現方法】
  *
  *	(A-1)
- *		��ͥ���٥�������TASK1�ˤˡ���ͥ���پ�¥ߥ塼�ƥå�����MTX2�ˤ�
- *		���å���������ͥ���٤ˤʤ뤳�Ȥ��ǧ���롥�ޤ����¹Բ�ǽ���֤�
- *		��ͥ���٥�������TASK4�ˤ��⡤ͥ���̤��⤯�ʤ뤳�Ȥ��ǧ���롥
- *		�ǥ����ѥå��ػ߾��֤Ǽ»ܤ��롥
+ *		中優先度タスク（TASK1）に，高優先度上限ミューテックス（MTX2）を
+ *		ロックさせ，高優先度になることを確認する．また，実行可能状態の
+ *		高優先度タスク（TASK4）よりも，優先順位が高くなることを確認する．
+ *		ディスパッチ禁止状態で実施する．
  *	(A-2)
- *		��ͥ���٥�������TASK1�ˤˡ���ͥ���پ�¥ߥ塼�ƥå�����MTX1�ˤ�
- *		���å�������ͥ���٤��Ѥ��ʤ����Ȥ��ǧ���롥�ޤ����¹Բ�ǽ��
- *		�֤���ͥ���٥�������2�ġ�TASK2��TASK3�ˤ��Ѱդ��Ƥ�����ͥ����
- *		���Ѥ��ʤ����Ȥ��ǧ���롥�ǥ����ѥå��ػ߾��֤Ǽ»ܤ��롥
+ *		中優先度タスク（TASK1）に，中優先度上限ミューテックス（MTX1）を
+ *		ロックさせ，優先度が変わらないことを確認する．また，実行可能状
+ *		態の中優先度タスクを2つ（TASK2，TASK3）を用意しておき，優先順位
+ *		が変わらないことを確認する．ディスパッチ禁止状態で実施する．
  *	(A-3)
- *		��ͥ���٥�������TASK1�ˤ���ͥ���پ�¥ߥ塼�ƥå�����MTX2�ˤ����
- *		�����ƹ�ͥ���٤ˤʤäƤ�����֤ǡ���ͥ���پ�¥ߥ塼�ƥå���
- *		��MTX1�ˤ���å�������ͥ���٤��Ѥ��ʤ����Ȥ��ǧ���롥�ޤ���
- *		�¹Բ�ǽ���֤ι�ͥ���٥�������2�ġ�TASK4��TASK5�ˤ��Ѱդ��Ƥ�����
- *		ͥ���̤��Ѥ��ʤ����Ȥ��ǧ���롥�ǥ����ѥå��ػ߾��֤Ǽ»�
- *		���롥
+ *		中優先度タスク（TASK1）が高優先度上限ミューテックス（MTX2）をロッ
+ *		クして高優先度になっている状態で，中優先度上限ミューテックス
+ *		（MTX1）をロックさせ，優先度が変わらないことを確認する．また，
+ *		実行可能状態の高優先度タスクを2つ（TASK4，TASK5）を用意しておき，
+ *		優先順位が変わらないことを確認する．ディスパッチ禁止状態で実施
+ *		する．
  *	(B-1)
- *		��ͥ���٥�������TASK1�ˤ˹�ͥ���پ�¥ߥ塼�ƥå�����MTX2�ˤΤ�
- *		����å������Ƥ�����֤ǡ��������å������������ͥ���٤ˤʤ�
- *		���Ȥ��ǧ���롥�ޤ����¹Բ�ǽ���֤���ͥ���٥�������TASK2�ˤ��
- *		�⡤ͥ���̤��⤯�ʤ뤳�Ȥ��ǧ���롥
+ *		中優先度タスク（TASK1）に高優先度上限ミューテックス（MTX2）のみ
+ *		をロックさせている状態で，それをロック解除させ，中優先度になる
+ *		ことを確認する．また，実行可能状態の中優先度タスク（TASK2）より
+ *		も，優先順位が高くなることを確認する．
  *	(B-2)
- *		��ͥ���٥�������TASK1�ˤ���ͥ���پ�¥ߥ塼�ƥå�����MTX1�ˤΤ�
- *		����å������Ƥ�����֤ǡ��������å����������ͥ���٤��Ѥ��
- *		�ʤ����Ȥ��ǧ���롥�ޤ����¹Բ�ǽ���֤���ͥ���٥�������2��
- *		��TASK2��TASK3�ˤ��Ѱդ��Ƥ�����ͥ���̤��Ѥ��ʤ����Ȥ��ǧ
- *		���롥�ǥ����ѥå��ػ߾��֤Ǽ»ܤ��롥
+ *		中優先度タスク（TASK1）に中優先度上限ミューテックス（MTX1）のみ
+ *		をロックさせている状態で，それをロック解除させ，優先度が変わら
+ *		ないことを確認する．また，実行可能状態の中優先度タスクを2つ
+ *		（TASK2，TASK3）を用意しておき，優先順位が変わらないことを確認
+ *		する．ディスパッチ禁止状態で実施する．
  *	(B-3)
- *		��ͥ���٥�������TASK1�ˤ˹�ͥ���پ�¥ߥ塼�ƥå�����MTX2�ˤ���
- *		ͥ���پ�¥ߥ塼�ƥå�����MTX1�ˤ���å������Ƥ�����֤ǡ���ͥ
- *		���پ�¥ߥ塼�ƥå�����MTX1�ˤ���å����������ͥ���٤��Ѥ��
- *		�ʤ����Ȥ��ǧ���롥�ޤ����¹Բ�ǽ���֤ι�ͥ���٥�������2��
- *		��TASK4��TASK5�ˤ��Ѱդ��Ƥ�����ͥ���̤��Ѥ��ʤ����Ȥ��ǧ
- *		���롥�ǥ����ѥå��ػ߾��֤Ǽ»ܤ��롥
+ *		中優先度タスク（TASK1）に高優先度上限ミューテックス（MTX2）と中
+ *		優先度上限ミューテックス（MTX1）をロックさせている状態で，中優
+ *		先度上限ミューテックス（MTX1）をロック解除させ，優先度が変わら
+ *		ないことを確認する．また，実行可能状態の高優先度タスクを2つ
+ *		（TASK4，TASK5）を用意しておき，優先順位が変わらないことを確認
+ *		する．ディスパッチ禁止状態で実施する．
  *	(C-1)
- *		��ͥ���٥�������TASK1�ˤ˹�ͥ���پ�¥ߥ塼�ƥå�����2�ġ�MTX2��
- *		MTX3�˥��å��������̤���ͥ���٥�������TASK2�ˤ�MTX2���ԤäƤ���
- *		���֤ǡ�TASK1��MTX2����å����������TASK2��ͥ���٤���ͥ���٤�
- *		�ʤ뤳�Ȥ��ǧ���롥�ޤ���TASK2��ͥ���̤���TASK1�����㤯��
- *		�뤳�Ȥ��ǧ���롥
+ *		中優先度タスク（TASK1）に高優先度上限ミューテックスを2つ（MTX2，
+ *		MTX3）ロックさせ，別の中優先度タスク（TASK2）がMTX2を待っている
+ *		状態で，TASK1にMTX2をロック解除させ，TASK2の優先度が高優先度に
+ *		なることを確認する．また，TASK2の優先順位が，TASK1よりも低くな
+ *		ることを確認する．
  *	(C-2)
- *		��ͥ���٥�������TASK2�ˤ���ͥ���پ�¥ߥ塼�ƥå�����MTX1�ˤ����
- *		���������̤���ͥ���٥�������TASK1�ˤ�MTX1���ԤäƤ�����֤ǡ�
- *		TASK2��MTX1����å����������TASK1��ͥ���٤���ͥ���٤Τޤ��Ѳ�
- *		���ʤ����Ȥ��ǧ���롥�ޤ����¹Բ�ǽ���֤���ͥ���٥�������⤦
- *		1�ġ�TASK3���Ѱդ��Ƥ�����TASK1��ͥ���̤�TASK3�����㤯�ʤ�
- *		���Ȥ��ǧ���롥
+ *		中優先度タスク（TASK2）に中優先度上限ミューテックス（MTX1）をロッ
+ *		クさせ，別の中優先度タスク（TASK1）がMTX1を待っている状態で，
+ *		TASK2にMTX1をロック解除させ，TASK1の優先度が中優先度のまま変化
+ *		しないことを確認する．また，実行可能状態の中優先度タスクをもう
+ *		1つ（TASK3）用意しておき，TASK1の優先順位がTASK3よりも低くなる
+ *		ことを確認する．
  *	(C-3)
- *		��ͥ���٥�������TASK1�ˤ���ͥ���پ�¥ߥ塼�ƥå�����MTX1�ˤȹ�
- *		ͥ���پ�¥ߥ塼�ƥå�����MTX3�ˤ���å��������̤���ͥ���٥���
- *		����TASK2�ˤ��̤ι�ͥ���پ�¥ߥ塼�ƥå�����MTX2�ˤ���å�����
- *		MTX1���ԤäƤ�����֤ǡ�TASK1��MTX1����å����������TASK2��ͥ
- *		���٤���ͥ���٤Τޤ��Ѳ����ʤ����Ȥ��ǧ���롥�ޤ���TASK2��ͥ��
- *		��̤���TASK1�����㤯�ʤ뤳�Ȥ��ǧ���롥
+ *		中優先度タスク（TASK1）に中優先度上限ミューテックス（MTX1）と高
+ *		優先度上限ミューテックス（MTX3）をロックさせ，別の中優先度タス
+ *		ク（TASK2）が別の高優先度上限ミューテックス（MTX2）をロックして
+ *		MTX1を待っている状態で，TASK1にMTX1をロック解除させ，TASK2の優
+ *		先度が高優先度のまま変化しないことを確認する．また，TASK2の優先
+ *		順位が，TASK1よりも低くなることを確認する．
  *	(D-1)
- *		��ͥ���٥�������TASK4�ˤˡ���ͥ���پ�¥ߥ塼�ƥå�����MTX1�ˤ�
- *		���å�������E_ILUSE���顼�ˤʤ뤳�Ȥ��ǧ���롥
+ *		高優先度タスク（TASK4）に，中優先度上限ミューテックス（MTX1）を
+ *		ロックさせ，E_ILUSEエラーになることを確認する．
  *	(D-2)
- *		��ͥ���٥�������TASK1�ˤ���ͥ���پ�¥ߥ塼�ƥå�����MTX2�ˤ����
- *		�����ƹ�ͥ���٤ˤʤäƤ�����֤ǡ���ͥ���پ�¥ߥ塼�ƥå���
- *		��MTX1�ˤ���å�������E_ILUSE���顼�ˤʤ�ʤ����Ȥ��ǧ���롥
+ *		中優先度タスク（TASK1）が高優先度上限ミューテックス（MTX2）をロッ
+ *		クして高優先度になっている状態で，中優先度上限ミューテックス
+ *		（MTX1）をロックさせ，E_ILUSEエラーになるないことを確認する．
  *
- * �ڻ��ѥ꥽������
+ * 【使用リソース】
  *
- *	TASK1: ��ͥ���٥��������ᥤ�󥿥������ǽ餫�鵯ư
- *	TASK2: ��ͥ���٥�����
- *	TASK3: ��ͥ���٥�����
- *	TASK4: ��ͥ���٥�����
- *	TASK5: ��ͥ���٥�����
- *	MTX1: �ߥ塼�ƥå�����TA_CEILING°������¤���ͥ���١�
- *	MTX2: �ߥ塼�ƥå�����TA_CEILING°������¤Ϲ�ͥ���١�
- *	MTX3: �ߥ塼�ƥå�����TA_CEILING°������¤Ϲ�ͥ���١�
+ *	TASK1: 中優先度タスク，メインタスク，最初から起動
+ *	TASK2: 中優先度タスク
+ *	TASK3: 中優先度タスク
+ *	TASK4: 高優先度タスク
+ *	TASK5: 高優先度タスク
+ *	MTX1: ミューテックス（TA_CEILING属性，上限は中優先度）
+ *	MTX2: ミューテックス（TA_CEILING属性，上限は高優先度）
+ *	MTX3: ミューテックス（TA_CEILING属性，上限は高優先度）
  *
- * �ڥƥ��ȥ������󥹡�
+ * 【テストシーケンス】
  *
- *	== TASK1��ͥ���١����==
+ *	== TASK1（優先度：中）==
  *		call(set_bit_func(bit_mutex))
  *	1:	dis_dsp()
  *	2:	act_tsk(TASK2)
  *		act_tsk(TASK4)
- *	//		�⡧TASK4���桧TASK1��TASK2
+ *	//		高：TASK4，中：TASK1→TASK2
  *	3:	ploc_mtx(MTX2)								... (A-1)
- *	//		�⡧TASK1��TASK4���桧TASK2��MTX2��TASK1
+ *	//		高：TASK1→TASK4，中：TASK2，MTX2：TASK1
  *		get_pri(TSK_SELF, &tskpri)
  *		assert(tskpri == HIGH_PRIORITY)
  *	4:	ena_dsp()
  *	5:	unl_mtx(MTX2)								... (B-1)
- *	//		�⡧TASK4���桧TASK1��TASK2
- *	== TASK4��ͥ���١����==
+ *	//		高：TASK4，中：TASK1→TASK2
+ *	== TASK4（優先度：高）==
  *	6:	loc_mtx(MTX1) -> E_ILUSE					... (D-1)
  *	7:	slp_tsk()
- *	//		�桧TASK1��TASK2
- *	== TASK1��³����==
+ *	//		中：TASK1→TASK2
+ *	== TASK1（続き）==
  *	8:	get_pri(TSK_SELF, &tskpri)
  *		assert(tskpri == MID_PRIORITY)
  *
  *	9:	dis_dsp()
  *	10:	rot_rdq(MID_PRIORITY)
- *	//		�桧TASK2��TASK1
+ *	//		中：TASK2→TASK1
  *	11:	act_tsk(TASK3)
- *	//		�桧TASK2��TASK1��TASK3
+ *	//		中：TASK2→TASK1→TASK3
  *	12:	ploc_mtx(MTX1)								... (A-2)
- *	//		�桧TASK2��TASK1��TASK3��MTX1��TASK1
+ *	//		中：TASK2→TASK1→TASK3，MTX1：TASK1
  *		get_pri(TSK_SELF, &tskpri)
  *		assert(tskpri == MID_PRIORITY)
  *	13:	ena_dsp()
- *	== TASK2��ͥ���١����==
+ *	== TASK2（優先度：中）==
  *	14:	slp_tsk()
- *	//		�桧TASK1��TASK3��MTX1��TASK1
- *	== TASK1��³����==
+ *	//		中：TASK1→TASK3，MTX1：TASK1
+ *	== TASK1（続き）==
  *	15:	slp_tsk()
- *	//		�桧TASK3��MTX1��TASK1
- *	== TASK3��ͥ���١����==
+ *	//		中：TASK3，MTX1：TASK1
+ *	== TASK3（優先度：中）==
  *	16:	wup_tsk(TASK1)
- *	//		�桧TASK3��TASK1��MTX1��TASK1
+ *	//		中：TASK3→TASK1，MTX1：TASK1
  *	17:	slp_tsk()
- *	//		�桧TASK1��MTX1��TASK1
+ *	//		中：TASK1，MTX1：TASK1
  *
- *	== TASK1��³����==
+ *	== TASK1（続き）==
  *	18:	wup_tsk(TASK2)
- *	//		�桧TASK1��TASK2��MTX1��TASK1
+ *	//		中：TASK1→TASK2，MTX1：TASK1
  *	19:	dis_dsp()
  *	20:	rot_rdq(MID_PRIORITY)
- *	//		�桧TASK2��TASK1��MTX1��TASK1
+ *	//		中：TASK2→TASK1，MTX1：TASK1
  *	21:	wup_tsk(TASK3)
- *	//		�桧TASK2��TASK1��TASK3��MTX1��TASK1
+ *	//		中：TASK2→TASK1→TASK3，MTX1：TASK1
  *	22:	unl_mtx(MTX1)								... (B-2)
- *	//		�桧TASK2��TASK1��TASK3
+ *	//		中：TASK2→TASK1→TASK3
  *		get_pri(TSK_SELF, &tskpri)
  *		assert(tskpri == MID_PRIORITY)
  *	23:	ena_dsp()
- *	== TASK2��ͥ���١����==
+ *	== TASK2（優先度：中）==
  *	24:	slp_tsk()
- *	//		�桧TASK1��TASK3
- *	== TASK1��³����==
+ *	//		中：TASK1→TASK3
+ *	== TASK1（続き）==
  *	25:	slp_tsk()
- *	//		�桧TASK3
- *	== TASK3��ͥ���١����==
+ *	//		中：TASK3
+ *	== TASK3（優先度：中）==
  *	26:	wup_tsk(TASK1)
- *	//		�桧TASK3��TASK1
+ *	//		中：TASK3→TASK1
  *	27:	slp_tsk()
- *	//		�桧TASK1
+ *	//		中：TASK1
  *
- *	== TASK1��³����==
+ *	== TASK1（続き）==
  *	28:	dis_dsp()
  *	29:	wup_tsk(TASK4)
- *	//		�⡧TASK4���桧TASK1
+ *	//		高：TASK4，中：TASK1
  *	30:	ploc_mtx(MTX2)
- *	//		�⡧TASK1��TASK4��MTX2��TASK1
+ *	//		高：TASK1→TASK4，MTX2：TASK1
  *	31:	rot_rdq(HIGH_PRIORITY)
- *	//		�⡧TASK4��TASK1��MTX2��TASK1
+ *	//		高：TASK4→TASK1，MTX2：TASK1
  *	32:	act_tsk(TASK5)
- *	//		�⡧TASK4��TASK1��TASK5��MTX2��TASK1
+ *	//		高：TASK4→TASK1→TASK5，MTX2：TASK1
  *	33:	ploc_mtx(MTX1)								... (A-3)(D-2)
- *	//		�⡧TASK4��TASK1��TASK5��MTX2��TASK1��MTX1��TASK1
+ *	//		高：TASK4→TASK1→TASK5，MTX2：TASK1，MTX1：TASK1
  *		get_pri(TSK_SELF, &tskpri)
  *		assert(tskpri == HIGH_PRIORITY)
  *	34:	ena_dsp()
- *	== TASK4��³����==
+ *	== TASK4（続き）==
  *	35:	slp_tsk()
- *	//		�⡧TASK1��TASK5��MTX2��TASK1��MTX1��TASK1
- *	== TASK1��³����==
+ *	//		高：TASK1→TASK5，MTX2：TASK1，MTX1：TASK1
+ *	== TASK1（続き）==
  *	36:	slp_tsk()
- *	//		�⡧TASK5��MTX2��TASK1��MTX1��TASK1
- *	== TASK5��ͥ���١����==
+ *	//		高：TASK5，MTX2：TASK1，MTX1：TASK1
+ *	== TASK5（優先度：高）==
  *	37:	wup_tsk(TASK1)
- *	//		�⡧TASK5��TASK1��MTX2��TASK1��MTX1��TASK1
+ *	//		高：TASK5→TASK1，MTX2：TASK1，MTX1：TASK1
  *	38:	slp_tsk()
- *	//		�⡧TASK1��MTX2��TASK1��MTX1��TASK1
+ *	//		高：TASK1，MTX2：TASK1，MTX1：TASK1
  *
- *	== TASK1��³����==
+ *	== TASK1（続き）==
  *	39:	dis_dsp()
  *	40:	wup_tsk(TASK4)
- *	//		�⡧TASK1��TASK4��MTX2��TASK1��MTX1��TASK1
+ *	//		高：TASK1→TASK4，MTX2：TASK1，MTX1：TASK1
  *	41:	rot_rdq(HIGH_PRIORITY)
- *	//		�⡧TASK4��TASK1��MTX2��TASK1��MTX1��TASK1
+ *	//		高：TASK4→TASK1，MTX2：TASK1，MTX1：TASK1
  *	42:	wup_tsk(TASK5)
- *	//		�⡧TASK4��TASK1��TASK5��MTX2��TASK1��MTX1��TASK1
+ *	//		高：TASK4→TASK1→TASK5，MTX2：TASK1，MTX1：TASK1
  *	43:	unl_mtx(MTX1)								... (B-3)
- *	//		�⡧TASK4��TASK1��TASK5��MTX2��TASK1
+ *	//		高：TASK4→TASK1→TASK5，MTX2：TASK1
  *		get_pri(TSK_SELF, &tskpri)
  *		assert(tskpri == HIGH_PRIORITY)
  *	44:	ena_dsp()
- *	== TASK4��³����==
+ *	== TASK4（続き）==
  *	45:	slp_tsk()
- *	//		�⡧TASK1��TASK5��MTX2��TASK1
- *	== TASK1��³����==
+ *	//		高：TASK1→TASK5，MTX2：TASK1
+ *	== TASK1（続き）==
  *	46:	slp_tsk()
- *	//		�⡧TASK5��MTX2��TASK1
- *	== TASK5��³����==
+ *	//		高：TASK5，MTX2：TASK1
+ *	== TASK5（続き）==
  *	47:	wup_tsk(TASK1)
- *	//		�⡧TASK5��TASK1��MTX2��TASK1
+ *	//		高：TASK5→TASK1，MTX2：TASK1
  *	48:	slp_tsk()
- *	//		�⡧TASK1��MTX2��TASK1
+ *	//		高：TASK1，MTX2：TASK1
  *
- *	== TASK1��³����==
+ *	== TASK1（続き）==
  *	49:	wup_tsk(TASK2)
  *		wup_tsk(TASK3)
  *		slp_tsk()
- *	//		�桧TASK2��TASK3��MTX2��TASK1
- *	== TASK2��³����==
+ *	//		中：TASK2→TASK3，MTX2：TASK1
+ *	== TASK2（続き）==
  *	50:	loc_mtx(MTX2)
- *	//		�桧TASK3��MTX2��TASK1��TASK2
- *	== TASK3��³����==
+ *	//		中：TASK3，MTX2：TASK1→TASK2
+ *	== TASK3（続き）==
  *	51:	wup_tsk(TASK1)
- *	//		�⡧TASK1���桧TASK3��MTX2��TASK1��TASK2
- *	== TASK1��³����==
+ *	//		高：TASK1，中：TASK3，MTX2：TASK1→TASK2
+ *	== TASK1（続き）==
  *	52:	loc_mtx(MTX3)
- *	//		�⡧TASK1���桧TASK3��MTX2��TASK1��TASK2��MTX3��TASK1
+ *	//		高：TASK1，中：TASK3，MTX2：TASK1→TASK2，MTX3：TASK1
  *	53:	unl_mtx(MTX2)								... (C-1)
- *	//		�⡧TASK1��TASK2���桧TASK3��MTX2��TASK2��MTX3��TASK1
+ *	//		高：TASK1→TASK2，中：TASK3，MTX2：TASK2，MTX3：TASK1
  *		get_pri(TASK2, &tskpri)
  *		assert(tskpri == HIGH_PRIORITY)
  *	54:	loc_mtx(MTX1)
- *	//		�⡧TASK1��TASK2���桧TASK3��MTX1��TASK1��MTX2��TASK2��MTX3��TASK1
+ *	//		高：TASK1→TASK2，中：TASK3，MTX1：TASK1，MTX2：TASK2，MTX3：TASK1
  *	55:	slp_tsk()
- *	//		�⡧TASK2���桧TASK3��MTX1��TASK1��MTX2��TASK2��MTX3��TASK1
+ *	//		高：TASK2，中：TASK3，MTX1：TASK1，MTX2：TASK2，MTX3：TASK1
  *
- *	== TASK2��³����==
+ *	== TASK2（続き）==
  *	56:	wup_tsk(TASK1)
- *	//		�⡧TASK2��TASK1���桧TASK3��MTX1��TASK1��MTX2��TASK2��MTX3��TASK1
+ *	//		高：TASK2→TASK1，中：TASK3，MTX1：TASK1，MTX2：TASK2，MTX3：TASK1
  *	57:	loc_mtx(MTX1)
- *	//		�⡧TASK1���桧TASK3��MTX1��TASK1��TASK2��MTX2��TASK2��MTX3��TASK1
- *	== TASK1��³����==
+ *	//		高：TASK1，中：TASK3，MTX1：TASK1→TASK2，MTX2：TASK2，MTX3：TASK1
+ *	== TASK1（続き）==
  *	58:	unl_mtx(MTX1)								... (C-3)
- *	//		�⡧TASK1��TASK2���桧TASK3��MTX1��TASK2��MTX2��TASK2��MTX3��TASK1
+ *	//		高：TASK1→TASK2，中：TASK3，MTX1：TASK2，MTX2：TASK2，MTX3：TASK1
  *		get_pri(TASK2, &tskpri)
  *		assert(tskpri == HIGH_PRIORITY)
  *	59:	unl_mtx(MTX3)
- *	//		�⡧TASK2���桧TASK1��TASK3��MTX1��TASK2��MTX2��TASK2
- *	== TASK2��³����==
+ *	//		高：TASK2，中：TASK1→TASK3，MTX1：TASK2，MTX2：TASK2
+ *	== TASK2（続き）==
  *	60:	unl_mtx(MTX2)
- *	//		�桧TASK2��TASK1��TASK3��MTX1��TASK2
+ *	//		中：TASK2→TASK1→TASK3，MTX1：TASK2
  *
  *	61:	rot_rdq(MID_PRIORITY)
- *	//		�桧TASK1��TASK3��TASK2��MTX1��TASK2
- *	== TASK1��³����==
+ *	//		中：TASK1→TASK3→TASK2，MTX1：TASK2
+ *	== TASK1（続き）==
  *	62:	loc_mtx(MTX1)
- *	//		�桧TASK3��TASK2��MTX1��TASK2��TASK1
- *	== TASK3��³����==
+ *	//		中：TASK3→TASK2，MTX1：TASK2→TASK1
+ *	== TASK3（続き）==
  *	63:	rot_rdq(MID_PRIORITY)
- *	//		�桧TASK2��TASK3��MTX1��TASK2��TASK1
- *	== TASK2��³����==
+ *	//		中：TASK2→TASK3，MTX1：TASK2→TASK1
+ *	== TASK2（続き）==
  *	64:	unl_mtx(MTX1)								... (C-2)
- *	//		�桧TASK2��TASK3��TASK1��MTX1��TASK1
+ *	//		中：TASK2→TASK3→TASK1，MTX1：TASK1
  *		get_pri(TASK1, &tskpri)
  *		assert(tskpri == MID_PRIORITY)
- *	== TASK2��³����==
+ *	== TASK2（続き）==
  *	65:	ext_tsk() -> noreturn
- *	//		�桧TASK3��TASK1��MTX1��TASK1
- *	== TASK3��³����==
+ *	//		中：TASK3→TASK1，MTX1：TASK1
+ *	== TASK3（続き）==
  *	66:	ext_tsk() -> noreturn
- *	//		�桧TASK1��MTX1��TASK1
- *	== TASK1��³����==
+ *	//		中：TASK1，MTX1：TASK1
+ *	== TASK1（続き）==
  *	67:	END
  */
 

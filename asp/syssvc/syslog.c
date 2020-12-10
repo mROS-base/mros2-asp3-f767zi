@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2015 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: syslog.c 2679 2015-07-31 10:16:55Z ertl-hiro $
  */
 
 /*
- *		�����ƥ������ǽ
+ *		システムログ機能
  */
 
 #include <sil.h>
@@ -52,7 +52,7 @@
 #include "syslog.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_SYSLOG_WRI_LOG_ENTER
 #define LOG_SYSLOG_WRI_LOG_ENTER(prio, p_syslog)
@@ -87,30 +87,30 @@
 #endif /* LOG_SYSLOG_REF_LOG_LEAVE */
 
 /*
- *  ���ߤΥ����ƥ����
+ *  現在のシステム時刻
  *
- *  �����������Ф�����ˡ����ʤ��������ͥ�������ѿ��򻲾Ȥ��Ƥ�
- *  �롥
+ *  ログ時刻を取り出すために，やむなく，カーネルの内部変数を参照してい
+ *  る．
  */
 extern ulong_t	_kernel_current_time;
 
 /*
- *  �����Хåե��Ȥ���˥����������뤿��Υݥ���
+ *  ログバッファとそれにアクセスするためのポインタ
  */
-static SYSLOG	syslog_buffer[TCNT_SYSLOG_BUFFER];	/* �����Хåե� */
-static uint_t	syslog_count;			/* �����Хåե���Υ����ο� */
-static uint_t	syslog_head;			/* ��Ƭ�Υ����γ�Ǽ���� */
-static uint_t	syslog_tail;			/* ���Υ����γ�Ǽ���� */
-static uint_t	syslog_lost;			/* ����줿�����ο� */
+static SYSLOG	syslog_buffer[TCNT_SYSLOG_BUFFER];	/* ログバッファ */
+static uint_t	syslog_count;			/* ログバッファ中のログの数 */
+static uint_t	syslog_head;			/* 先頭のログの格納位置 */
+static uint_t	syslog_tail;			/* 次のログの格納位置 */
+static uint_t	syslog_lost;			/* 失われたログの数 */
 
 /*
- *  ���Ϥ��٤���������ν����١ʥӥåȥޥåס�
+ *  出力すべきログ情報の重要度（ビットマップ）
  */
-static uint_t	syslog_logmask;			/* �����Хåե��˵�Ͽ���٤������� */
-static uint_t	syslog_lowmask_not;		/* ���٥���Ϥ��٤������١�ȿž��*/
+static uint_t	syslog_logmask;			/* ログバッファに記録すべき重要度 */
+static uint_t	syslog_lowmask_not;		/* 低レベル出力すべき重要度（反転）*/
 
 /*
- *  �����ƥ������ǽ�ν����
+ *  システムログ機能の初期化
  */
 void
 syslog_initialize(intptr_t exinf)
@@ -124,9 +124,9 @@ syslog_initialize(intptr_t exinf)
 }     
 
 /* 
- *  ��������ν���
+ *  ログ情報の出力
  *
- *  CPU���å����֤�¹ԥ���ƥ����Ȥˤ�餺ư��Ǥ���褦�˼������Ƥ��롥
+ *  CPUロック状態や実行コンテキストによらず動作できるように実装してある．
  */
 ER
 syslog_wri_log(uint_t prio, const SYSLOG *p_syslog)
@@ -137,12 +137,12 @@ syslog_wri_log(uint_t prio, const SYSLOG *p_syslog)
 	SIL_LOC_INT();
 
 	/*
-	 *  �������������
+	 *  ログ時刻の設定
 	 */
 	((SYSLOG *) p_syslog)->logtim = _kernel_current_time;
 
 	/*
-	 *  �����Хåե��˵�Ͽ
+	 *  ログバッファに記録
 	 */
 	if ((syslog_logmask & LOG_MASK(prio)) != 0U) {
 		syslog_buffer[syslog_tail] = *p_syslog;
@@ -160,7 +160,7 @@ syslog_wri_log(uint_t prio, const SYSLOG *p_syslog)
 	}
 
 	/*
-	 *  ���٥����?
+	 *  鐃緒申鐃駿ワ申鐃緒申鐃
 	 */
 	if (true){//(((~syslog_lowmask_not) & LOG_MASK(prio)) != 0U) {
 		syslog_print(p_syslog, target_fput_log);
@@ -173,9 +173,9 @@ syslog_wri_log(uint_t prio, const SYSLOG *p_syslog)
 }
 
 /*
- *  �����Хåե�������ɽФ�
+ *  ログバッファからの読出し
  *
- *  CPU���å����֤�¹ԥ���ƥ����Ȥˤ�餺ư��Ǥ���褦�˼������Ƥ��롥
+ *  CPUロック状態や実行コンテキストによらず動作できるように実装してある．
  */
 ER_UINT
 syslog_rea_log(SYSLOG *p_syslog)
@@ -187,7 +187,7 @@ syslog_rea_log(SYSLOG *p_syslog)
 	SIL_LOC_INT();
 
 	/*
-	 *  �����Хåե�����μ�Ф�
+	 *  ログバッファからの取出し
 	 */
 	if (syslog_count > 0U) {
 		*p_syslog = syslog_buffer[syslog_head];
@@ -209,7 +209,7 @@ syslog_rea_log(SYSLOG *p_syslog)
 }
 
 /* 
- *  ���Ϥ��٤���������ν����٤�����
+ *  出力すべきログ情報の重要度の設定
  */
 ER
 syslog_msk_log(uint_t logmask, uint_t lowmask)
@@ -222,7 +222,7 @@ syslog_msk_log(uint_t logmask, uint_t lowmask)
 }
 
 /*
- *  �����Хåե��ξ��ֻ���
+ *  ログバッファの状態参照
  */
 ER
 syslog_ref_log(T_SYSLOG_RLOG *pk_rlog)

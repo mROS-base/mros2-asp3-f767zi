@@ -6,40 +6,40 @@
  *  Copyright (C) 2008-2015 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id$
  */
 
 /*
- *  ARMVx-M�Υϡ��ɥ������񸻤����
+ *  ARMVx-Mのハードウェア資源の定義
  */
 
 #ifndef ARM_M_H
@@ -50,23 +50,23 @@
 #endif /* __TARGET_ARCH_THUMB == 4 */
 
 /*
- *  EPSR��T�ӥå�
+ *  EPSRのTビット
  */
 #define EPSR_T   0x01000000
 
 /*
- * IPSR�� ISR NUMBER
+ * IPSRの ISR NUMBER
  */
 #define IPSR_ISR_NUMBER 0x1ff
 
 /*
- *  �㳰�������ȯ�����˥����å�����Ѥޤ����¸�ΰ�Υ�����
- *  �ܥ����ͥ�Ǥ��㳰�ե졼��ȸƤ�
+ *  例外・割込み発生時にスタック上に積まれる保存領域のサイズ
+ *  本カーネルでは例外フレームと呼ぶ
  */
 #define EXC_FRAME_SIZE         (8*4)
 
 /*
- *  �㳰�������ȯ������LR�����ꤵ���EXC_RETURN����
+ *  例外・割込み発生時にLRに設定されるEXC_RETURNの値
  */
 #define EXC_RETURN_PSP          0x04
 #define EXC_RETURN_HANDLER_MSP  0x00
@@ -78,14 +78,14 @@
 #define EXC_RETURN_OTHER        0xFFFFFFE0
 
 /*
- *  CONTROL�쥸����
+ *  CONTROLレジスタ
  */
 #define CONTROL_PSP            0x02
 #define CONTROL_MSP            0x00
 #define CONTROL_FPCA           0x04
 
 /*
- *  �㳰�ֹ�
+ *  例外番号
  */
 #define EXCNO_NMI         2
 #define EXCNO_HARD        3
@@ -97,23 +97,23 @@
 #define EXCNO_PENDSV     14
 
 /*
- *  �㳰�ֹ�κǾ��ͤȺ�����
+ *  例外番号の最小値と最大値
  */
 #define TMIN_EXCNO   2
 #define TMAX_EXCNO  14
 
 /*
- *  ������ֹ�
+ *  割込み番号
  */
 #define IRQNO_SYSTICK    15
 
 /*
- *  ������ֹ�κǾ���
+ *  割込み番号の最小値
  */
 #define TMIN_INTNO       15
 
 /*
- *  �㳰�ե졼��Υ��ե��å�
+ *  例外フレームのオフセット
  */
 #define P_EXCINF_OFFSET_EXC_RETURN  0x01
 #define P_EXCINF_OFFSET_IIPM        0x00
@@ -121,23 +121,23 @@
 #define P_EXCINF_OFFSET_PC          0x08
 
 /*
- *  NVIC��Ϣ
+ *  NVIC関連
  */
 
 /*
- *  �����ƥ�ϥ�ɥ顼����ȥ�����쥸����
+ *  システムハンドラーコントロールレジスタ
  */
 #define NVIC_SYS_HND_CTRL   0xE000ED24
 
 /*
- *  ���㳰�ε��ĥӥå�
+ *  各例外の許可ビット
  */
 #define NVIC_SYS_HND_CTRL_USAGE 0x00040000
 #define NVIC_SYS_HND_CTRL_BUS   0x00020000
 #define NVIC_SYS_HND_CTRL_MEM   0x00010000
 
 /*
- *  ͥ��������쥸����
+ *  優先度設定レジスタ
  */
 #define NVIC_SYS_PRI1       0xE000ED18  // Sys. Handlers 4 to 7 Priority
 #define NVIC_SYS_PRI2       0xE000ED1C  // Sys. Handlers 8 to 11 Priority
@@ -145,40 +145,40 @@
 #define NVIC_PRI0           0xE000E400  // IRQ 0 to 3 Priority Register
 
 /*
- *  ����ߵ��ĥ쥸����
+ *  割込み許可レジスタ
  */
 #define NVIC_SETENA0        0xE000E100  // IRQ 0 to 31 Set Enable Register
 
 /*
- *  ����߶ػߥ쥸����
+ *  割込み禁止レジスタ
  */
 #define NVIC_CLRENA0        0xE000E180  // IRQ 0 to 31 Set Disable Register
 
 /*
- *  ����ߥ��åȥڥ�ǥ��󥰥쥸����
+ *  割込みセットペンディングレジスタ
  */
 #define NVIC_ISER0          0xE000E200  // IRQ 0 to 31 Set-Pending Register
 
 /*
- *  ����ߥ��ꥢ�ڥ�ǥ��󥰥쥸����
+ *  割込みクリアペンディングレジスタ
  */
 #define NVIC_ICER0          0xE000E280  // IRQ 0 to 31 Clear-Pending Register
 
 /*
- *  �٥����ơ��֥륪�ե��åȥ쥸����
+ *  ベクタテーブルオフセットレジスタ
  */
 #define NVIC_VECTTBL        0xE000ED08
 
 /*
- *  ����������Ⱦ��֥쥸����
+ *  割り込み制御と状態レジスタ
  */
 #define NVIC_ICSR           0xE000ED04
-#define NVIC_PENDSVSET          (1 << 28)       /*  PenvSVC�㳰 */
-#define NVIC_PENDSTSET          (1 << 26)       /*  SYSTick�㳰 */
+#define NVIC_PENDSVSET          (1 << 28)       /*  PenvSVC例外 */
+#define NVIC_PENDSTSET          (1 << 26)       /*  SYSTick例外 */
 
 
 /*
- *  SYSTIC��Ϣ�쥸����
+ *  SYSTIC関連レジスタ
  */
 #define SYSTIC_CONTROL_STATUS 0xE000E010
 #define SYSTIC_RELOAD_VALUE   0xE000E014
@@ -195,7 +195,7 @@
 #define SYSTIC_TENMS     0x00ffffff
 
 /*
- * FPU��Ϣ�쥸����
+ * FPU関連レジスタ
  */
 #if __TARGET_ARCH_THUMB == 4
 
@@ -212,17 +212,17 @@
 
 #if defined(TOPPERS_CORTEX_M0) || defined(TOPPERS_CORTEX_M0PLUS)
 /*
- *  M0/M0+��ͭ������
+ *  M0/M0+固有の内容
  */
 
 /*
- *  �����ͥ���٤��ϰ�
+ *  割込み優先度の範囲
  */
-#define TMIN_INTPRI		(-4)	/* �����ͥ���٤κǾ��͡ʺǹ��͡�*/
-#define TMAX_INTPRI		(-1)	/* �����ͥ���٤κ����͡ʺ����͡�*/
+#define TMIN_INTPRI		(-4)	/* 割込み優先度の最小値（最高値）*/
+#define TMAX_INTPRI		(-1)	/* 割込み優先度の最大値（最低値）*/
 
 /*
- *  �����ͥ���٤Υӥå���
+ *  割込み優先度のビット幅
  */
 #define TBITW_IPRI		2
 

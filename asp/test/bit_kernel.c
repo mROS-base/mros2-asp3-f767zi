@@ -6,40 +6,40 @@
  *  Copyright (C) 2005-2011 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: bit_kernel.c 2128 2011-06-26 01:21:05Z ertl-hiro $
  */
 
 /*
- *		�����ͥ������������
+ *		カーネルの整合性検査
  */
 
 #include "kernel/kernel_impl.h"
@@ -54,12 +54,12 @@
 #include "kernel/time_event.h"
 
 /*
- *   ���顼�����ɤ����
+ *   エラーコードの定義
  */
 #define E_SYS_LINENO	ERCD(E_SYS, -(__LINE__))
 
 /*
- *  �����֥��å��Υ��ɥ쥹���������Υ����å�
+ *  管理ブロックのアドレスの正当性のチェック
  */
 #define VALID_TCB(p_tcb) \
 		((((char *) p_tcb) - ((char *) tcb_table)) % sizeof(TCB) == 0 \
@@ -90,11 +90,11 @@
 			&& TMIN_MPFID <= MPFID(p_mpfcb) && MPFID(p_mpfcb) <= tmax_mpfid)
 
 /*
- *  ���塼�Υ����å��Τ���δؿ�
+ *  キューのチェックのための関数
  *
- *  p_queue��p_entry���ޤޤ�Ƥ��뤫��Ĵ�٤롥�ޤޤ�Ƥ����true���ޤ�
- *  ��Ƥ��ʤ����ˤ�false���֤������֥��󥯤�������ξ��ˤ⡤
- *  false���֤���
+ *  p_queueにp_entryが含まれているかを調べる．含まれていればtrue，含ま
+ *  れていない場合にはfalseを返す．ダブルリンクの不整合の場合にも，
+ *  falseを返す．
  */
 static bool_t
 in_queue(QUEUE *p_queue, QUEUE *p_entry)
@@ -103,19 +103,19 @@ in_queue(QUEUE *p_queue, QUEUE *p_entry)
 
 	p_current = p_queue->p_next;
 	if (p_current->p_prev != p_queue) {
-		return(false);					/* ���֥��󥯤������� */
+		return(false);					/* ダブルリンクの不整合 */
 	}
 	while (p_current != p_queue) {
 		if (p_current == p_entry) {
-			return(true);				/* p_entry���ޤޤ�Ƥ��� */
+			return(true);				/* p_entryが含まれていた */
 		}
 
 		/*
-		 *  ���塼�μ������Ǥ˿ʤ�
+		 *  キューの次の要素に進む
 		 */
 		p_next = p_current->p_next;
 		if (p_next->p_prev != p_current) {
-			return(false);				 /* ���֥��󥯤������� */
+			return(false);				 /* ダブルリンクの不整合 */
 		}
 		p_current = p_next;
 	}
@@ -123,7 +123,7 @@ in_queue(QUEUE *p_queue, QUEUE *p_entry)
 }
 
 /*
- *  �����å����ؤ��Ƥ��뤫�θ���
+ *  スタック上を指しているかの検査
  */
 static bool_t
 on_stack(void *addr, const TINIB *p_tinib)
@@ -136,7 +136,7 @@ on_stack(void *addr, const TINIB *p_tinib)
 }
 
 /*
- *  �������������������
+ *  タスク毎の整合性検査
  */
 static ER
 bit_task(ID tskid)
@@ -162,14 +162,14 @@ bit_task(ID tskid)
 	pri = p_tcb->priority;
 
 	/*
-	 *  ������֥��å��ؤΥݥ��󥿤θ���
+	 *  初期化ブロックへのポインタの検査
 	 */
 	if (p_tinib != &(tinib_table[INDEX_TSK(tskid)])) {
 		return(E_SYS_LINENO);
 	}
 
 	/*
-	 *  tstat�θ���
+	 *  tstatの検査
 	 */
 	switch (tstat & (TS_RUNNABLE | TS_WAITING | TS_SUSPENDED)) {
 	case TS_DORMANT:
@@ -202,28 +202,28 @@ bit_task(ID tskid)
 	}
 
 	/*
-	 *  actque�θ���
+	 *  actqueの検査
 	 */
 	if (TSTAT_DORMANT(tstat) && p_tcb->actque) {
 		return(E_SYS_LINENO);
 	}
 
 	/*
-	 *  ������ͥ���٤θ���
+	 *  タスク優先度の検査
 	 */
 	if (pri >= TNUM_TPRI) {
 		return(E_SYS_LINENO);
 	}
 
 	/*
-	 *  texptn�θ���
+	 *  texptnの検査
 	 */
 	if (p_tcb->p_tinib->texrtn == NULL && p_tcb->texptn != 0U) {
 		return(E_SYS_LINENO);
 	}
 
 	/*
-	 *  �ٻ߾��֤ˤ���������å�
+	 *  休止状態におけるチェック
 	 */
 	if (TSTAT_DORMANT(tstat)) {
 		if (!(pri == p_tinib->ipriority)
@@ -235,7 +235,7 @@ bit_task(ID tskid)
 	}
 
 	/*
-	 *  �¹ԤǤ�����֤ˤ���������å�
+	 *  実行できる状態におけるチェック
 	 */
 	if (TSTAT_RUNNABLE(tstat)) {
 		if (!in_queue(&ready_queue[pri], &(p_tcb->task_queue))) {
@@ -244,7 +244,7 @@ bit_task(ID tskid)
 	}
 
 	/*
-	 *  �Ԥ����֤ˤ���������å�
+	 *  待ち状態におけるチェック
 	 */
 	if (TSTAT_WAITING(tstat)) {
 		if (!on_stack(p_tcb->p_winfo, p_tinib)) {
@@ -256,7 +256,7 @@ bit_task(ID tskid)
 				return(E_SYS_LINENO);
 			}
 			/*
-			 *  (*p_tmevtb)�θ�����̤������
+			 *  (*p_tmevtb)の検査（未完成）
 			 */
 		}
 
@@ -356,11 +356,11 @@ bit_task(ID tskid)
 	}
 
 	/*
-	 *  tskctxb�θ���
+	 *  tskctxbの検査
 	 */
 	if (!TSTAT_DORMANT(tstat) && p_tcb != p_runtsk) {
 		/*
-		 *  �������åȰ�¸�θ���
+		 *  ターゲット依存の検査
 		 */
 #if 0
 		if (bit_tskctxb(&(p_tcb->tskctxb))) {
@@ -372,7 +372,7 @@ bit_task(ID tskid)
 }
 
 /*
- *  ���ޥե��������������
+ *  セマフォ毎の整合性検査
  */
 #define INDEX_SEM(semid)	((uint_t)((semid) - TMIN_SEMID))
 #define get_semcb(semid)	(&(semcb_table[INDEX_SEM(semid)]))
@@ -394,21 +394,21 @@ bit_semaphore(ID semid)
 	semcnt = p_semcb->semcnt;
 
 	/*
-	 *  ������֥��å��ؤΥݥ��󥿤θ���
+	 *  初期化ブロックへのポインタの検査
 	 */
 	if (p_seminib != &(seminib_table[INDEX_SEM(semid)])) {
 		return(E_SYS_LINENO);
 	}
 
 	/*
-	 *  semcnt�θ���
+	 *  semcntの検査
 	 */
 	if (semcnt > p_seminib->maxsem) {
 		return(E_SYS_LINENO);
 	}
 
 	/*
-	 *  wait_queue�θ���
+	 *  wait_queueの検査
 	 */
 	if (semcnt == 0) {
 		p_queue = p_semcb->wait_queue.p_next;
@@ -435,7 +435,7 @@ bit_semaphore(ID semid)
 }
 
 /*
- *  �����������롼��������
+ *  整合性検査ルーチン本体
  */
 ER
 bit_kernel(void)
@@ -445,7 +445,7 @@ bit_kernel(void)
 	ER		ercd;
 
 	/*
-	 *  ��������θ���
+	 *  タスク毎の検査
 	 */
 	for (tskid = TMIN_TSKID; tskid <= tmax_tskid; tskid++) {
 		ercd = bit_task(tskid);
@@ -455,7 +455,7 @@ bit_kernel(void)
 	}
 
 	/*
-	 *  ���ޥե���θ���
+	 *  セマフォ毎の検査
 	 */
 	for (semid = TMIN_SEMID; semid <= tmax_semid; semid++) {
 		ercd = bit_semaphore(semid);

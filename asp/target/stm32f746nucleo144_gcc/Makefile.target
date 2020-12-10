@@ -1,9 +1,9 @@
 #
-#		Makefile д╬е┐б╝е▓е├е╚░═┬╕╔Їб╩stm32f746_nucleo144═╤б╦
+#		Makefile уБоуВ┐уГ╝уВ▓уГГуГИф╛ЭхнШщГия╝Иstm32f746_nucleo144чФия╝Й
 #
 
 #
-#  е▄б╝е╔╠╛бде╫еэе╗е├е╡╠╛бд│л╚п┤─╢н╠╛д╬─ъ╡┴
+#  уГЬуГ╝уГЙхРНя╝МуГЧуГнуВ╗уГГуВ╡хРНя╝МщЦЛчЩ║чТ░хвГхРНуБохоЪч╛й
 #
 BOARD = stm32f746nucleo144_gcc
 CHIP  = stm32f7xx
@@ -11,46 +11,46 @@ PRC   = arm_m
 TOOL  = gcc
 
 #
-#  ╝┬╣╘┤─╢нд╬─ъ╡┴
+#  хоЯшбМчТ░хвГуБохоЪч╛й
 #
 ifeq ($(DBGENV),)
 DBGENV = RAM
 endif
 
 #
-#  FPUд╬╩¤╝░
+#  FPUуБоцЦ╣х╝П
 #
 #FPU_USAGE := FPU_NO_PRESERV
 #FPU_USAGE := FPU_NO_LAZYSTACKING
 FPU_USAGE := FPU_LAZYSTACKING
 
 #
-#  ║╟┼м▓╜д╖д┐дпд╩дд╛ь╣чд╧trueд╦─ъ╡┴
+#  цЬАщБйхМЦуБЧуБЯуБПуБкуБДха┤хРИуБпtrueуБлхоЪч╛й
 #
 #OMIT_OPTIMIZATION = true
 
 #
-#  е│еєе╤едеыеке╫е╖ечеє
+#  уВ│уГ│уГСуВдуГлуВкуГЧуВ╖уГзуГ│
 #
 INCLUDES := $(INCLUDES) -I$(TARGETDIR)
 COPTS := $(COPTS) 
 LDFLAGS := $(LDFLAGS)
 
 #
-#  елб╝е═еыд╦┤╪д╣ды─ъ╡┴
+#  уВлуГ╝уГНуГлуБлщЦвуБЩуВЛхоЪч╛й
 #
 KERNEL_DIR := $(KERNEL_DIR) $(TARGETDIR)
 KERNEL_ASMOBJS := $(KERNEL_ASMOBJS)
 KERNEL_COBJS := $(KERNEL_COBJS)
 
 #
-#  е╖е╣е╞ере╡б╝е╙е╣д╦┤╪д╣ды─ъ╡┴
+#  уВ╖уВ╣уГЖуГауВ╡уГ╝уГУуВ╣уБлщЦвуБЩуВЛхоЪч╛й
 #
 SYSSVC_DIR := $(SYSSVC_DIR) $(TARGETDIR)
 SYSSVC_COBJS := $(SYSSVC_COBJS) target_inithook.o
 
 #
-#  е╚еьб╝е╣еэе░д╦┤╪д╣ды└▀─ъ
+#  уГИуГмуГ╝уВ╣уГнуВ░уБлщЦвуБЩуВЛшинхоЪ
 #
 ifeq ($(ENABLE_TRACE),true)
       COPTS := $(COPTS) -DTOPPERS_ENABLE_TRACE
@@ -59,33 +59,33 @@ ifeq ($(ENABLE_TRACE),true)
 endif
 
 #
-#  GNU│л╚п┤─╢нд╬е┐б╝е▓е├е╚евб╝ене╞епе┴еуд╬─ъ╡┴
+#  GNUщЦЛчЩ║чТ░хвГуБоуВ┐уГ╝уВ▓уГГуГИуВвуГ╝уВнуГЖуВпуГБуГгуБохоЪч╛й
 #
 GCC_TARGET = arm-none-eabi
 
 #
-#  е╖еъевеые▌б╝е╚д╬─ъ╡┴
+#  уВ╖уГкуВвуГлуГЭуГ╝уГИуБохоЪч╛й
 #
 COPTS := $(COPTS) -DSIO_PORTID=1
 
 #
-#  ░═┬╕┤╪╖╕д╬─ъ╡┴
+#  ф╛ЭхнШщЦвф┐ВуБохоЪч╛й
 #
 kernel_cfg.timestamp: $(TARGETDIR)/target.tf
 $(OBJFILE): $(TARGETDIR)/target_check.tf
 
 # 
-#  еке╒е╗е├е╚е╒ебедеы└╕└од╬д┐дсд╬─ъ╡┴ 
+#  уВкуГХуВ╗уГГуГИуГХуВбуВдуГлчФЯцИРуБоуБЯуВБуБохоЪч╛й 
 # 
 OFFSET_TF := $(TARGETDIR)/target_offset.tf
 
 #
-#  е┴е├е╫░═┬╕╔Їд╬едеєепеыб╝е╔
+#  уГБуГГуГЧф╛ЭхнШщГиуБоуВдуГ│уВпуГлуГ╝уГЙ
 #
 include $(SRCDIR)/arch/$(PRC)_$(TOOL)/$(CHIP)/Makefile.chip
 
 #
-#  е╒еще├е╖ехд╪д╬╜ёдн╣■д▀
+#  уГХуГйуГГуВ╖уГеуБ╕уБоцЫ╕уБНш╛╝уБ┐
 #
 UNAME_TARGET = Cygwin
 OPENOCD_PATH = /cygdrive/c/pleiades/OpenOCD/0.10.0-201510281129-dev/bin/openocd.exe
