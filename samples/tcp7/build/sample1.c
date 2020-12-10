@@ -12,7 +12,7 @@ UART_HandleTypeDef huart3;
 ETH_HandleTypeDef heth;
 
 /*
- *  �����ӥ�������Υ��顼�Υ�������
+ *  サービスコールのエラーのログ出力
  */
 Inline void
 svc_perror(const char *file, int_t line, const char *expr, ER ercd)
@@ -24,45 +24,25 @@ svc_perror(const char *file, int_t line, const char *expr, ER ercd)
 
 #define	SVC_PERROR(expr)	svc_perror(__FILE__, __LINE__, #expr, (expr))
 
-extern void sample_lwip_scene7(void);
+extern int sample_lwip_scene7(void);
 /*
- *  �ᥤ�󥿥���
+ *  メインタスク
  */
 void main_task(intptr_t exinf)
 {
-	ER ercd;
-
 	SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
 	syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
 	MX_LWIP_Init();
 	ena_int(77);
 	dev_timer_init();
-	osThreadNew(sample_lwip_scene7, NULL, NULL);
-	/*
-	 *  ���ꥢ��ݡ��Ȥν����
-	 *
-	 *  �����ƥ����������Ʊ������?��ݡ��Ȥ�Ȥ����ʤɡ����ꥢ��
-	 *  �ݡ��Ȥ������ץ�Ѥߤξ��ˤϤ�����?E_OBJ���顼�ˤʤ뤬���پ��?
-	 *  �ʤ���
-	 */
-	/*
-	ercd = serial_opn_por(TASK_PORTID);
-	if (ercd < 0 && MERCD(ercd) != E_OBJ) {
-		syslog(LOG_ERROR, "%s (%d) reported by `serial_opn_por'.",
-									itron_strerror(ercd), SERCD(ercd));
-	}
-	*/
-	volatile uint32_t hoge;
-	volatile uint32_t tmp;
+	osThreadNew((void *)(sample_lwip_scene7), NULL, NULL);
+  
 	while(true){
 		tslp_tsk(100);
-		hoge = NVIC_GetPriority(ETH_IRQn);
+		(void)NVIC_GetPriority(ETH_IRQn);
 	}
 	SVC_PERROR(serial_ctl_por(TASK_PORTID,
 							(IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
-	while(true) {
-
-	}
 	ext_tsk();
 }
 
@@ -95,16 +75,12 @@ void  dev_timer_init( void )
 
   TIM2->CR1 |=  TIM_CR1_CEN;   /* counter enable */
 
-  ER  er;
-
-  //er = ena_int( 44 );
 }
 
 
 unsigned short int  dev_timer_clr_int( void )
 {
   TIM2->SR &= ~TIM_SR_UIF; /* clear update interrupt */
-  //TIM2->SR &= ~(TIM_SR_CC1IF | TIM_SR_CC2IF | TIM_SR_CC3IF | TIM_SR_CC4IF);
 
   return  0;
 }
