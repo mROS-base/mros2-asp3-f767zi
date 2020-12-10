@@ -42,7 +42,7 @@ static int sample_lwip_socket_select(SampleLwipSocketType* socket, bool_t read, 
 int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server)
 {
 	int err;
-	int len;
+	socklen_t len;
 	//socket create
 	server_socket->sockfd = lwip_socket(AF_INET, server_socket->comm_type, 0);
 	if (server_socket->sockfd < 0) {
@@ -89,7 +89,7 @@ int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, Sampl
 int sample_lwip_reconnection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server)
 {
 	int err;
-	int len;
+	socklen_t len;
 
 	//accept
 	while (1) {
@@ -133,7 +133,7 @@ int sample_lwip_connection_tcp_client(SampleLwipSocketType* server_socket, struc
 	//socket create
 	server_socket->sockfd = lwip_socket(AF_INET, server_socket->comm_type, 0);
 	if (server_socket->sockfd < 0) {
-		syslog(LOG_ERROR, " %s %s() line=%d socket err", __FILE__, __FUNCTION__, __LINE__, err);
+		syslog(LOG_ERROR, " %s %s() line=%d socket err", __FILE__, __FUNCTION__, __LINE__, server_socket->sockfd);
 		return -1;
 	}
 
@@ -154,7 +154,7 @@ int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, in
 
 	//guard
 	if (socket->sockfd < 0) {
-		syslog(LOG_ERROR, " %s %s() line=%d send sockfd err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+		syslog(LOG_ERROR, " %s %s() line=%d send sockfd err:%d", __FILE__, __FUNCTION__, __LINE__, socket->sockfd);
 		return -1;
 	}
 
@@ -171,7 +171,7 @@ int sample_lwip_send(SampleLwipSocketType* socket, char* data, int data_size, in
 	// send
 	send_size = lwip_send(socket->sockfd, data, data_size, 0);
 	if (send_size < 0) {
-		syslog(LOG_ERROR, " %s %s() line=%d send err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+		syslog(LOG_ERROR, " %s %s() line=%d send err:%d", __FILE__, __FUNCTION__, __LINE__, send_size);
 	}
 	*res = send_size;
 
@@ -185,7 +185,7 @@ int sample_lwip_recv(SampleLwipSocketType* socket, char* data, int length, int* 
 
 	//guard
 	if (socket->sockfd < 0) {
-		syslog(LOG_ERROR, " %s %s() line=%d recv sockfd err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+		syslog(LOG_ERROR, " %s %s() line=%d recv sockfd err:%d", __FILE__, __FUNCTION__, __LINE__, socket->sockfd);
 		return -1;
 	}
 
@@ -203,7 +203,7 @@ int sample_lwip_recv(SampleLwipSocketType* socket, char* data, int length, int* 
 
 	recv_size = lwip_recv(socket->sockfd, data, length, 0);
 	if (recv_size == 0) {
-		syslog(LOG_ERROR, " %s %s() line=%d recv err:%d", __FILE__, __FUNCTION__, __LINE__, err);
+		syslog(LOG_ERROR, " %s %s() line=%d recv err:%d", __FILE__, __FUNCTION__, __LINE__, recv_size);
 		return -1;
 	}
 	*res = recv_size;
