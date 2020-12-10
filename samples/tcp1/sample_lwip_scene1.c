@@ -12,7 +12,7 @@ void sample_lwip_scene1(void)
 	int err;
 	SampleLwipSocketType sample_lwip_socket;
 	struct sockaddr_in sample_lwip_server;
-	SampleLwipTcpClientType sample_lwip_client;
+	SampleLwipSocketType sample_lwip_client;
 
 	//pre
 	sample_lwip_socket.comm_type = SOCK_STREAM;
