@@ -6,6 +6,8 @@
  * test scenario
  ********************************************/
 
+#define SAMPLE_LWIP_SCENE3_SEND_DATA	"sample lwip scene3\n"
+
 void sample_lwip_scene2(void)
 {
 	int err;
@@ -28,6 +30,8 @@ void sample_lwip_scene2(void)
 		syslog(LOG_ERROR, " %s %s() line=%d : scene2 connection", __FILE__, __FUNCTION__, __LINE__);
 		return;
 	}
+
+
 	//done
 	err = sample_lwip_disconnection(&sample_lwip_socket);
 	if (err != 0) {
@@ -36,6 +40,7 @@ void sample_lwip_scene2(void)
 	}
 
 	syslog(LOG_INFO, " %s %s() line=%d : scene2 success", __FILE__, __FUNCTION__, __LINE__);
+
 
 	return;
 }

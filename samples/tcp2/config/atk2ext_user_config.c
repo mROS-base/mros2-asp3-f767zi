@@ -24,7 +24,7 @@ UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
 		},
 		{
 				.taskID = Atk2TaskTestControl,
-				.func = sample_lwip_scene2,
+				.func = (void *)(sample_lwip_scene2),
 				.argument = NULL,
 		},
 };
