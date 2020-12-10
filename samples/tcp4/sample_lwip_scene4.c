@@ -45,7 +45,7 @@ void sample_lwip_scene4(void)
 		return;
 	}
 
-	sample_lwip_scene4_recv_data[(recv_size + 1U)] = "\0";
+	sample_lwip_scene4_recv_data[(recv_size + 1U)] = '\0';
 	syslog(LOG_INFO, " %s %s() line=%d : scene4 success", __FILE__, __FUNCTION__, __LINE__);
 	syslog(LOG_INFO, " recv size:%d , recv data:%s", recv_size, sample_lwip_scene4_recv_data);
 
