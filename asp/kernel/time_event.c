@@ -8,58 +8,58 @@
  *  Copyright (C) 2005-2013 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: time_event.c 2559 2013-10-19 06:53:19Z ertl-hiro $
  */
 
 /*
- *		�����।�٥�ȴ����⥸�塼��
+ *		タイムイベント管理モジュール
  */
 
 #include "kernel_impl.h"
 #include "time_event.h"
 
 /*
- *  �����।�٥�ȥҡ������ޥ���
+ *  タイムイベントヒープ操作マクロ
  */
-#define	PARENT(index)		((index) >> 1)		/* �ƥΡ��ɤ���� */
-#define	LCHILD(index)		((index) << 1)		/* ���λҥΡ��ɤ���� */
+#define	PARENT(index)		((index) >> 1)		/* 親ノードを求める */
+#define	LCHILD(index)		((index) << 1)		/* 左の子ノードを求める */
 #define	TMEVT_NODE(index)	(tmevt_heap[(index) - 1])
 
 /*
- *  ���٥��ȯ��������ӥޥ���
+ *  イベント発生時刻比較マクロ
  *
- *  ���٥��ȯ������ϡ�min_time����������ͤ���Ӥ��롥���ʤ����
- *  min_time��Ǿ��͡ʺǤ�ᤤ����ˡ�mit_time-1�������͡ʺǤ�󤤻����
- *  �Ȥߤʤ�����Ӥ��롥
+ *  イベント発生時刻は，min_timeからの相対値で比較する．すなわち，
+ *  min_timeを最小値（最も近い時刻），mit_time-1が最大値（最も遠い時刻）
+ *  とみなして比較する．
  */
 #define	EVTTIM_LT(t1, t2) (((t1) - min_time) < ((t2) - min_time))
 #define	EVTTIM_LE(t1, t2) (((t1) - min_time) <= ((t2) - min_time))
@@ -67,36 +67,36 @@
 #ifdef TOPPERS_tmeini
 
 /*
- *  ���ߤΥ����ƥ�����ñ��: 1�ߥ��á�
+ *  現在のシステム時刻（単位: 1ミリ秒）
  *
- *  ��̩�ˤϡ����Υ�����ƥ��å��Υ����ƥ���
+ *  厳密には，前のタイムティックのシステム時刻．
  */
 EVTTIM	current_time;
 
 /*
- *  �����।�٥�ȥҡ������ͭ���ʺǾ��Υ����ƥ�����ñ��: 1�ߥ��á�
+ *  タイムイベントヒープ中で有効な最小のシステム時刻（単位: 1ミリ秒）
  */
 EVTTIM	min_time;
 
 /*
- *  ���Υ�����ƥ��å��Υ����ƥ�����ñ��: 1�ߥ��á�
+ *  次のタイムティックのシステム時刻（単位: 1ミリ秒）
  */
 EVTTIM	next_time;
 
 /*
- *  �����ƥ�����ѻ����ѿ���ñ��: 1/TIC_DENO�ߥ��á�
+ *  システム時刻積算用変数（単位: 1/TIC_DENOミリ秒）
  */
 #if TIC_DENO != 1U
 uint_t	next_subtime;
 #endif /* TIC_DENO != 1U */
 
 /*
- *  �����।�٥�ȥҡ��פκǸ�λ����ΰ�Υ���ǥå���
+ *  タイムイベントヒープの最後の使用領域のインデックス
  */
 uint_t	last_index;
 
 /*
- *  �����ޥ⥸�塼��ν����
+ *  タイマモジュールの初期化
  */
 void
 initialize_tmevt(void)
@@ -113,11 +113,11 @@ initialize_tmevt(void)
 #endif /* TOPPERS_tmeini */
 
 /*
- *  �����।�٥�Ȥ��������֤�������õ��
+ *  タイムイベントの挿入位置を上向きに探索
  *
- *  ����time��ȯ�����륿���।�٥�Ȥ���������Ρ��ɤ�����뤿��ˡ�
- *  �ҡ��פξ�˸����äƶ��Ρ��ɤ��ư�����롥��ư���ζ��Ρ��ɤΰ��֤�
- *  index���Ϥ��ȡ���ư��ζ��Ρ��ɤΰ��֡ʤ��ʤ���������֡ˤ��֤���
+ *  時刻timeに発生するタイムイベントを挿入するノードを空けるために，
+ *  ヒープの上に向かって空ノードを移動させる．移動前の空ノードの位置を
+ *  indexに渡すと，移動後の空ノードの位置（すなわち挿入位置）を返す．
  */
 #ifdef TOPPERS_tmeup
 
@@ -128,8 +128,8 @@ tmevt_up(uint_t index, EVTTIM time)
 
 	while (index > 1) {
 		/*
-		 *  �ƥΡ��ɤΥ��٥��ȯ������������ᤤ�ʤޤ���Ʊ���ˤʤ�С�
-		 *  index���������֤ʤΤǥ롼�פ�ȴ���롥
+		 *  親ノードのイベント発生時刻の方が早い（または同じ）ならば，
+		 *  indexが挿入位置なのでループを抜ける．
 		 */
 		parent = PARENT(index);
 		if (EVTTIM_LE(TMEVT_NODE(parent).time, time)) {
@@ -137,13 +137,13 @@ tmevt_up(uint_t index, EVTTIM time)
 		}
 
 		/*
-		 *  �ƥΡ��ɤ�index�ΰ��֤˰�ư�����롥
+		 *  親ノードをindexの位置に移動させる．
 		 */
 		TMEVT_NODE(index) = TMEVT_NODE(parent);
 		TMEVT_NODE(index).p_tmevtb->index = index;
 
 		/*
-		 *  index��ƥΡ��ɤΰ��֤˹�����
+		 *  indexを親ノードの位置に更新．
 		 */
 		index = parent;
 	}
@@ -153,11 +153,11 @@ tmevt_up(uint_t index, EVTTIM time)
 #endif /* TOPPERS_tmeup */
 
 /*
- *  �����।�٥�Ȥ��������֤򲼸�����õ��
+ *  タイムイベントの挿入位置を下向きに探索
  *
- *  ����time��ȯ�����륿���।�٥�Ȥ���������Ρ��ɤ�����뤿��ˡ�
- *  �ҡ��פβ��˸����äƶ��Ρ��ɤ��ư�����롥��ư���ζ��Ρ��ɤΰ��֤� 
- *  index���Ϥ��ȡ���ư��ζ��Ρ��ɤΰ��֡ʤ��ʤ���������֡ˤ��֤���
+ *  時刻timeに発生するタイムイベントを挿入するノードを空けるために，
+ *  ヒープの下に向かって空ノードを移動させる．移動前の空ノードの位置を 
+ *  indexに渡すと，移動後の空ノードの位置（すなわち挿入位置）を返す．
  */
 #ifdef TOPPERS_tmedown
 
@@ -168,9 +168,9 @@ tmevt_down(uint_t index, EVTTIM time)
 
 	while ((child = LCHILD(index)) <= last_index) {
 		/*
-		 *  �����λҥΡ��ɤΥ��٥��ȯ���������Ӥ����ᤤ���λҥΡ���
-		 *  �ΰ��֤�child�����ꤹ�롥�ʲ��λҥΡ��ɤϡ����������Ф줿��
-		 *  �λҥΡ��ɤΤ��ȡ�
+		 *  左右の子ノードのイベント発生時刻を比較し，早い方の子ノード
+		 *  の位置をchildに設定する．以下の子ノードは，ここで選ばれた方
+		 *  の子ノードのこと．
 		 */
 		if (child + 1 <= last_index
 						&& EVTTIM_LT(TMEVT_NODE(child + 1).time,
@@ -179,21 +179,21 @@ tmevt_down(uint_t index, EVTTIM time)
 		}
 
 		/*
-		 *  �ҥΡ��ɤΥ��٥��ȯ������������٤��ʤޤ���Ʊ���ˤʤ�С�
-		 *  index���������֤ʤΤǥ롼�פ�ȴ���롥
+		 *  子ノードのイベント発生時刻の方が遅い（または同じ）ならば，
+		 *  indexが挿入位置なのでループを抜ける．
 		 */
 		if (EVTTIM_LE(time, TMEVT_NODE(child).time)) {
 			break;
 		}
 
 		/*
-		 *  �ҥΡ��ɤ�index�ΰ��֤˰�ư�����롥
+		 *  子ノードをindexの位置に移動させる．
 		 */
 		TMEVT_NODE(index) = TMEVT_NODE(child);
 		TMEVT_NODE(index).p_tmevtb->index = index;
 
 		/*
-		 *  index��ҥΡ��ɤΰ��֤˹�����
+		 *  indexを子ノードの位置に更新．
 		 */
 		index = child;
 	}
@@ -203,10 +203,10 @@ tmevt_down(uint_t index, EVTTIM time)
 #endif /* TOPPERS_tmedown */
 
 /*
- *  �����।�٥�ȥҡ��פؤ���Ͽ
+ *  タイムイベントヒープへの登録
  *
- *  p_tmevtb�ǻ��ꤷ�������।�٥�ȥ֥��å���time�ǻ��ꤷ�����֤���
- *  ���˥��٥�Ȥ�ȯ������褦�ˡ������।�٥�ȥҡ��פ���Ͽ���롥
+ *  p_tmevtbで指定したタイムイベントブロックを，timeで指定した時間が経
+ *  過後にイベントが発生するように，タイムイベントヒープに登録する．
  */
 #ifdef TOPPERS_tmeins
 
@@ -216,12 +216,12 @@ tmevtb_insert(TMEVTB *p_tmevtb, EVTTIM time)
 	uint_t	index;
 
 	/*
-	 *  last_index�򥤥󥯥���Ȥ��������������������֤�õ����
+	 *  last_indexをインクリメントし，そこから上に挿入位置を探す．
 	 */
 	index = tmevt_up(++last_index, time);
 
 	/*
-	 *  �����।�٥�Ȥ�index�ΰ��֤��������롥
+	 *  タイムイベントをindexの位置に挿入する．
 	 */ 
 	TMEVT_NODE(index).time = time;
 	TMEVT_NODE(index).p_tmevtb = p_tmevtb;
@@ -231,7 +231,7 @@ tmevtb_insert(TMEVTB *p_tmevtb, EVTTIM time)
 #endif /* TOPPERS_tmeins */
 
 /*
- *  �����।�٥�ȥҡ��פ���κ��
+ *  タイムイベントヒープからの削除
  */
 #ifdef TOPPERS_tmedel
 
@@ -243,44 +243,44 @@ tmevtb_delete(TMEVTB *p_tmevtb)
 	EVTTIM	event_time = TMEVT_NODE(last_index).time;
 
 	/*
-	 *  ����ˤ�꥿���।�٥�ȥҡ��פ����ˤʤ���ϲ��⤷�ʤ���
+	 *  削除によりタイムイベントヒープが空になる場合は何もしない．
 	 */
 	if (--last_index == 0) {
 		return;
 	}
 
 	/*
-	 *  ��������Ρ��ɤΰ��֤˺Ǹ�ΥΡ��ɡ�last_index+1�ΰ��֤ΥΡ��ɡ�
-	 *  ���������������Ŭ�ڤʰ��֤ذ�ư�����롥�ºݤˤϡ��Ǹ�ΥΡ���
-	 *  ��ºݤ���������ΤǤϤʤ�����������Ρ��ɤΰ��֤����Ρ��ɤˤ�
-	 *  ��Τǡ��Ǹ�ΥΡ��ɤ��������٤����֤ظ����ƶ��Ρ��ɤ��ư����
-	 *  �롥
-	 *  �Ǹ�ΥΡ��ɤΥ��٥��ȯ�����郎����������Ρ��ɤοƥΡ��ɤΥ�
-	 *  �٥��ȯ�����������ξ��ˤϡ���˸����ä��������֤�õ������
-	 *  ���Ǥʤ����ˤϡ����˸����ä�õ����
+	 *  削除したノードの位置に最後のノード（last_index+1の位置のノード）
+	 *  を挿入し，それを適切な位置へ移動させる．実際には，最後のノード
+	 *  を実際に挿入するのではなく，削除したノードの位置が空ノードにな
+	 *  るので，最後のノードを挿入すべき位置へ向けて空ノードを移動させ
+	 *  る．
+	 *  最後のノードのイベント発生時刻が，削除したノードの親ノードのイ
+	 *  ベント発生時刻より前の場合には，上に向かって挿入位置を探す．そ
+	 *  うでない場合には，下に向かって探す．
 	 */
 	if (index > 1 && EVTTIM_LT(event_time,
 								TMEVT_NODE(parent = PARENT(index)).time)) {
 		/*
-		 *  �ƥΡ��ɤ�index�ΰ��֤˰�ư�����롥
+		 *  親ノードをindexの位置に移動させる．
 		 */
 		TMEVT_NODE(index) = TMEVT_NODE(parent);
 		TMEVT_NODE(index).p_tmevtb->index = index;
 
 		/*
-		 *  ��������Ρ��ɤοƥΡ��ɤ����˸����ä��������֤�õ����
+		 *  削除したノードの親ノードから上に向かって挿入位置を探す．
 		 */
 		index = tmevt_up(parent, event_time);
 	}
 	else {
 		/*
-		 *  ��������Ρ��ɤ��鲼�˸����ä��������֤�õ����
+		 *  削除したノードから下に向かって挿入位置を探す．
 		 */
 		index = tmevt_down(index, event_time);
 	}
 
 	/*
-	 *  �Ǹ�ΥΡ��ɤ�index�ΰ��֤��������롥
+	 *  最後のノードをindexの位置に挿入する．
 	 */ 
 	TMEVT_NODE(index) = TMEVT_NODE(last_index + 1);
 	TMEVT_NODE(index).p_tmevtb->index = index;
@@ -289,7 +289,7 @@ tmevtb_delete(TMEVTB *p_tmevtb)
 #endif /* TOPPERS_tmedel */
 
 /*
- *  �����।�٥�ȥҡ��פ���Ƭ�ΥΡ��ɤκ��
+ *  タイムイベントヒープの先頭のノードの削除
  */
 Inline void
 tmevtb_delete_top(void)
@@ -298,29 +298,29 @@ tmevtb_delete_top(void)
 	EVTTIM	event_time = TMEVT_NODE(last_index).time;
 
 	/*
-	 *  ����ˤ�꥿���।�٥�ȥҡ��פ����ˤʤ���ϲ��⤷�ʤ���
+	 *  削除によりタイムイベントヒープが空になる場合は何もしない．
 	 */
 	if (--last_index == 0) {
 		return;
 	}
 
 	/*
-	 *  �롼�ȥΡ��ɤ˺Ǹ�ΥΡ��ɡ�last_index + 1 �ΰ��֤ΥΡ��ɡˤ�
-	 *  �������������Ŭ�ڤʰ��֤ذ�ư�����롥�ºݤˤϡ��Ǹ�ΥΡ��ɤ�
-	 *  �ºݤ���������ΤǤϤʤ����롼�ȥΡ��ɤ����Ρ��ɤˤʤ�Τǡ���
-	 *  ��ΥΡ��ɤ��������٤����֤ظ����ƶ��Ρ��ɤ��ư�����롥
+	 *  ルートノードに最後のノード（last_index + 1 の位置のノード）を
+	 *  挿入し，それを適切な位置へ移動させる．実際には，最後のノードを
+	 *  実際に挿入するのではなく，ルートノードが空ノードになるので，最
+	 *  後のノードを挿入すべき位置へ向けて空ノードを移動させる．
 	 */
 	index = tmevt_down(1, event_time);
 
 	/*
-	 *  �Ǹ�ΥΡ��ɤ�index�ΰ��֤��������롥
+	 *  最後のノードをindexの位置に挿入する．
 	 */ 
 	TMEVT_NODE(index) = TMEVT_NODE(last_index + 1);
 	TMEVT_NODE(index).p_tmevtb->index = index;
 }
 
 /*
- *  �����।�٥�ȤޤǤλĤ���֤η׻�
+ *  タイムイベントまでの残り時間の計算
  */
 #ifdef TOPPERS_tmeltim
 
@@ -332,7 +332,7 @@ tmevt_lefttim(TMEVTB *p_tmevtb)
 	time = TMEVT_NODE(p_tmevtb->index).time;
 	if (EVTTIM_LE(time, next_time)) {
 		/*
-		 *  ���Υ�����ƥ��å��ǽ����������ˤ�0���֤���
+		 *  次のタイムティックで処理される場合には0を返す．
 		 */
 		return(0U);
 	}
@@ -344,7 +344,7 @@ tmevt_lefttim(TMEVTB *p_tmevtb)
 #endif /* TOPPERS_tmeltim */
 
 /*
- *  ������ƥ��å��ζ���
+ *  タイムティックの供給
  */
 #ifdef TOPPERS_sigtim
 
@@ -359,12 +359,12 @@ signal_time(void)
 	i_lock_cpu();
 
 	/*
-	 *  current_time�򹹿����롥
+	 *  current_timeを更新する．
 	 */
 	current_time = next_time;
 
 	/*
-	 *  next_time��next_subtime�򹹿����롥
+	 *  next_time，next_subtimeを更新する．
 	 */
 #if TIC_DENO == 1U
 	next_time = current_time + TIC_NUME;
@@ -378,9 +378,9 @@ signal_time(void)
 #endif /* TIC_DENO == 1U */
 
 	/*
-	 *  current_time��ꥤ�٥��ȯ��������ᤤ�ʤޤ���Ʊ���˥����।��
-	 *  ��Ȥ򡤥����।�٥�ȥҡ��פ���������������Хå��ؿ���Ƥ�
-	 *  �Ф���
+	 *  current_timeよりイベント発生時刻の早い（または同じ）タイムイベ
+	 *  ントを，タイムイベントヒープから削除し，コールバック関数を呼び
+	 *  出す．
 	 */
 	while (last_index > 0 && EVTTIM_LE(TMEVT_NODE(1).time, current_time)) {
 		p_tmevtb = TMEVT_NODE(1).p_tmevtb;
@@ -389,7 +389,7 @@ signal_time(void)
 	}
 
 	/*
-	 *  min_time�򹹿����롥
+	 *  min_timeを更新する．
 	 */
 	min_time = current_time;
 

@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2014 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: messagebuf.c 2629 2014-04-13 09:38:28Z ertl-hiro $
  */
 
 /*
- *		��å������Хåե���ǽ
+ *		メッセージバッファ機能
  */
 
 #include "kernel_impl.h"
@@ -52,7 +52,7 @@
 #include <string.h>
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_SND_MBF_ENTER
 #define LOG_SND_MBF_ENTER(mbfid, msg, msgsz)
@@ -119,19 +119,19 @@
 #endif /* LOG_REF_MBF_LEAVE */
 
 /*
- *  ��å������Хåե��ο�
+ *  メッセージバッファの数
  */
 #define tnum_mbf	((uint_t)(tmax_mbfid - TMIN_MBFID + 1))
 
 /*
- *  ��å������Хåե�ID�����å������Хåե������֥��å�����Ф���
- *  ��Υޥ���
+ *  メッセージバッファIDからメッセージバッファ管理ブロックを取り出すた
+ *  めのマクロ
  */
 #define INDEX_MBF(mbfid)	((uint_t)((mbfid) - TMIN_MBFID))
 #define get_mbfcb(mbfid)	(&(mbfcb_table[INDEX_MBF(mbfid)]))
 
 /*
- *  �եå��롼����ƽФ��Ѥ��ѿ�
+ *  フックルーチン呼出し用の変数
  */
 #ifdef TOPPERS_mbfhook
 
@@ -141,7 +141,7 @@ bool_t	(*mbfhook_change_priority)(WOBJCB *p_wobjcb) = NULL;
 #endif /* TOPPERS_mbfhook */
 
 /*
- *  ��å������Хåե���ǽ�ν����
+ *  メッセージバッファ機能の初期化
  */
 #ifdef TOPPERS_mbfini
 
@@ -169,7 +169,7 @@ initialize_messagebuf(void)
 #endif /* TOPPERS_mbfini */
 
 /*
- *  ��å������Хåե������ΰ�ؤΥ�å������γ�Ǽ
+ *  メッセージバッファ管理領域へのメッセージの格納
  */
 #ifdef TOPPERS_mbfenq
 
@@ -212,7 +212,7 @@ enqueue_message(MBFCB *p_mbfcb, const void *msg, uint_t msgsz)
 #endif /* TOPPERS_mbfenq */
 
 /*
- *  ��å������Хåե������ΰ褫��Υ�å������μ�Ф�
+ *  メッセージバッファ管理領域からのメッセージの取出し
  */
 #ifdef TOPPERS_mbfdeq
 
@@ -253,21 +253,21 @@ dequeue_message(MBFCB *p_mbfcb, void *msg)
 #endif /* TOPPERS_mbfdeq */
 
 /*
- *  �����Ԥ�����˼����������ͥ�褷�ƥ�å������������Ǥ��륿������¸
- *  �ߤ��ʤ�����true���֤��ؿ�
+ *  送信待ち行列に自タスクより優先してメッセージを送信できるタスクが存
+ *  在しない場合にtrueを返す関数
  */
 Inline bool_t
 have_precedence(MBFCB *p_mbfcb)
 {
 	if (queue_empty(&(p_mbfcb->swait_queue))) {
-		/* �����Ԥ����󤬶��λ� */
+		/* 送信待ち行列が空の時 */
 		return(true);
 	}
 	else if ((p_mbfcb->p_mbfinib->mbfatr & TA_TPRI) != 0) {
 		if (((TCB *)(p_mbfcb->swait_queue.p_next))->priority
 												> p_runtsk->priority) {
-			/* �����Ԥ����󤬥�������ͥ���ٽ�ǡ�
-					��Ƭ�Υ�������ͥ���٤�����������ͥ���٤����㤤�� */
+			/* 送信待ち行列がタスクの優先度順で，
+					先頭のタスクの優先度が自タスクの優先度よりも低い時 */
 			return(true);
 		}
 	}
@@ -275,7 +275,7 @@ have_precedence(MBFCB *p_mbfcb)
 }
 
 /*
- *  ��å������Хåե��ؤΥ�å���������
+ *  メッセージバッファへのメッセージ送信
  */
 #ifdef TOPPERS_mbfsnd
 
@@ -304,12 +304,12 @@ send_message(MBFCB *p_mbfcb, const void *msg, uint_t msgsz, bool_t *p_dspreq)
 #endif /* TOPPERS_mbfsnd */
 
 /*
- *  ��å������Хåե������Ԥ��������Υ����å�
+ *  メッセージバッファ送信待ちタスクのチェック
  *
- *  ��å������Хåե������Ԥ����塼����Ƭ�Υ�������������å���������
- *  ��å������Хåե������ΰ�˳�Ǽ���뤳�ȤǤ���г�Ǽ�����Ԥ������
- *  �롥���ν�������Ƭ�Υ�������������å���������Ǽ�Ǥ��ʤ��ʤ�ޤ�
- *  �����֤���
+ *  メッセージバッファ送信待ちキューの先頭のタスクの送信メッセージが，
+ *  メッセージバッファ管理領域に格納することできれば格納し，待ち解除す
+ *  る．この処理を，先頭のタスクの送信メッセージが格納できなくなるまで
+ *  繰り返す．
  */
 #ifdef TOPPERS_mbfsig
 
@@ -338,7 +338,7 @@ messagebuf_signal(MBFCB *p_mbfcb)
 #endif /* TOPPERS_mbfsig */
 
 /*
- *  ��å������Хåե�����Υ�å���������
+ *  メッセージバッファからのメッセージ受信
  */
 #ifdef TOPPERS_mbfrcv
 
@@ -368,7 +368,7 @@ receive_message(MBFCB *p_mbfcb, void *msg, bool_t *p_dspreq)
 #endif /* TOPPERS_mbfrcv */
 
 /*
- *  ��å������Хåե������Ԥ����������Ԥ����������
+ *  メッセージバッファ送信待ちタスクの待ち解除時処理
  */
 #ifdef TOPPERS_mbfwobj
 
@@ -381,7 +381,7 @@ messagebuf_dequeue_wobj(TCB *p_tcb)
 #endif /* TOPPERS_mbfwobj */
 
 /*
- *  ��å������Хåե������Ԥ���������ͥ�����ѹ�������
+ *  メッセージバッファ送信待ちタスクの優先度変更時処理
  */
 #ifdef TOPPERS_mbfpri
 
@@ -394,7 +394,7 @@ messagebuf_change_priority(WOBJCB *p_wobjcb)
 #endif /* TOPPERS_mbfpri */
 
 /*
- *  ��å������Хåե��ؤ�����
+ *  メッセージバッファへの送信
  */
 #ifdef TOPPERS_snd_mbf
 
@@ -437,7 +437,7 @@ snd_mbf(ID mbfid, const void *msg, uint_t msgsz)
 #endif /* TOPPERS_snd_mbf */
 
 /*
- *  ��å������Хåե��ؤ������ʥݡ���󥰡�
+ *  メッセージバッファへの送信（ポーリング）
  */
 #ifdef TOPPERS_psnd_mbf
 
@@ -474,7 +474,7 @@ psnd_mbf(ID mbfid, const void *msg, uint_t msgsz)
 #endif /* TOPPERS_psnd_mbf */
 
 /*
- *  ��å������Хåե��ؤ������ʥ����ॢ���Ȥ����
+ *  メッセージバッファへの送信（タイムアウトあり）
  */
 #ifdef TOPPERS_tsnd_mbf
 
@@ -523,7 +523,7 @@ tsnd_mbf(ID mbfid, const void *msg, uint_t msgsz, TMO tmout)
 #endif /* TOPPERS_tsnd_mbf */
 
 /*
- *  ��å������Хåե�����μ���
+ *  メッセージバッファからの受信
  */
 #ifdef TOPPERS_rcv_mbf
 
@@ -571,7 +571,7 @@ rcv_mbf(ID mbfid, void *msg)
 #endif /* TOPPERS_rcv_mbf */
 
 /*
- *  ��å������Хåե�����μ����ʥݡ���󥰡�
+ *  メッセージバッファからの受信（ポーリング）
  */
 #ifdef TOPPERS_prcv_mbf
 
@@ -608,7 +608,7 @@ prcv_mbf(ID mbfid, void *msg)
 #endif /* TOPPERS_prcv_mbf */
 
 /*
- *  ��å������Хåե�����μ����ʥ����ॢ���Ȥ����
+ *  メッセージバッファからの受信（タイムアウトあり）
  */
 #ifdef TOPPERS_trcv_mbf
 
@@ -661,7 +661,7 @@ trcv_mbf(ID mbfid, void *msg, TMO tmout)
 #endif /* TOPPERS_trcv_mbf */
 
 /*
- *  ��å������Хåե��κƽ����
+ *  メッセージバッファの再初期化
  */
 #ifdef TOPPERS_ini_mbf
 
@@ -700,7 +700,7 @@ ini_mbf(ID mbfid)
 #endif /* TOPPERS_ini_mbf */
 
 /*
- *  ��å������Хåե��ξ��ֻ���
+ *  メッセージバッファの状態参照
  */
 #ifdef TOPPERS_ref_mbf
 

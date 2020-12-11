@@ -1,9 +1,9 @@
 #
-#		Makefile �Υ������åȰ�¸����stm32f7_discovery�ѡ�
+#		Makefile のターゲット依存部（stm32f7_discovery用）
 #
 
 #
-#  �ܡ���̾���ץ����å�̾����ȯ�Ķ�̾�����
+#  ボード名，プロセッサ名，開発環境名の定義
 #
 BOARD = stm32f7discovery_gcc
 CHIP  = stm32f7xx
@@ -11,46 +11,46 @@ PRC   = arm_m
 TOOL  = gcc
 
 #
-#  �¹ԴĶ������
+#  実行環境の定義
 #
 ifeq ($(DBGENV),)
 DBGENV = RAM
 endif
 
 #
-#  FPU������
+#  FPUの方式
 #
 #FPU_USAGE := FPU_NO_PRESERV
 #FPU_USAGE := FPU_NO_LAZYSTACKING
 FPU_USAGE := FPU_LAZYSTACKING
 
 #
-#  ��Ŭ���������ʤ�����true�����
+#  最適化したくない場合はtrueに定義
 #
 #OMIT_OPTIMIZATION = true
 
 #
-#  ����ѥ��륪�ץ����
+#  コンパイルオプション
 #
 INCLUDES := $(INCLUDES) -I$(TARGETDIR)
 COPTS := $(COPTS) 
 LDFLAGS := $(LDFLAGS)
 
 #
-#  �����ͥ�˴ؤ������
+#  カーネルに関する定義
 #
 KERNEL_DIR := $(KERNEL_DIR) $(TARGETDIR)
 KERNEL_ASMOBJS := $(KERNEL_ASMOBJS)
 KERNEL_COBJS := $(KERNEL_COBJS)
 
 #
-#  �����ƥॵ���ӥ��˴ؤ������
+#  システムサービスに関する定義
 #
 SYSSVC_DIR := $(SYSSVC_DIR) $(TARGETDIR)
 SYSSVC_COBJS := $(SYSSVC_COBJS) target_inithook.o
 
 #
-#  �ȥ졼�������˴ؤ�������
+#  トレースログに関する設定
 #
 ifeq ($(ENABLE_TRACE),true)
       COPTS := $(COPTS) -DTOPPERS_ENABLE_TRACE
@@ -59,33 +59,33 @@ ifeq ($(ENABLE_TRACE),true)
 endif
 
 #
-#  GNU��ȯ�Ķ��Υ������åȥ������ƥ���������
+#  GNU開発環境のターゲットアーキテクチャの定義
 #
 GCC_TARGET = arm-none-eabi
 
 #
-#  ���ꥢ��ݡ��Ȥ����
+#  シリアルポートの定義
 #
 COPTS := $(COPTS) -DSIO_PORTID=1
 
 #
-#  ��¸�ط������
+#  依存関係の定義
 #
 kernel_cfg.timestamp: $(TARGETDIR)/target.tf
 $(OBJFILE): $(TARGETDIR)/target_check.tf
 
 # 
-#  ���ե��åȥե����������Τ������� 
+#  オフセットファイル生成のための定義 
 # 
 OFFSET_TF := $(TARGETDIR)/target_offset.tf
 
 #
-#  ���åװ�¸���Υ��󥯥롼��
+#  チップ依存部のインクルード
 #
 include $(SRCDIR)/arch/$(PRC)_$(TOOL)/$(CHIP)/Makefile.chip
 
 #
-#  �ե�å���ؤν񤭹���
+#  フラッシュへの書き込み
 #
 UNAME_TARGET = Cygwin
 OPENOCD_PATH = /cygdrive/c/pleiades/OpenOCD/0.10.0-201510281129-dev/bin/openocd.exe

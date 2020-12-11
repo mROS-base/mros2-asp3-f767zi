@@ -6,72 +6,72 @@
  *  Copyright (C) 2015 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id$
  */
 
 /*
- *		����߽�����ǥ��ARMv6-M�ѡ�
+ *		割込み処理モデル（ARMv6-M用）
  *
- *  ���Υ��󥯥롼�ɥե�����ϡ�core_config.h�ʤޤ��ϡ��������饤��
- *  �롼�ɤ����ե�����ˤΤߤ��饤�󥯥롼�ɤ���롥¾�Υե����뤫��
- *  ľ�ܥ��󥯥롼�ɤ��ƤϤʤ�ʤ���
+ *  このインクルードファイルは，core_config.h（または，そこからインク
+ *  ルードされるファイル）のみからインクルードされる．他のファイルから
+ *  直接インクルードしてはならない．
  */
 
 #ifndef TOPPERS_CORE_INTMODEL_V6M_H
 #define TOPPERS_CORE_INTMODEL_V6M_H
 
 /*
- *  �������åȰ�¸�Υ��֥�������°��
+ *  ターゲット依存のオブジェクト属性
  */
-#define TARGET_INHATR  TA_NONKERNEL /* �������å�����γ���ߥϥ�ɥ�°�� */
+#define TARGET_INHATR  TA_NONKERNEL /* ターゲット定義の割込みハンドラ属性 */
 
 /*
- *  �����ͥ���٥ޥ����γ���ɽ��������ɽ�����Ѵ�
+ *  割込み優先度マスクの外部表現と内部表現の変換
  *
- *  ������֥����Υ������ե����뤫�饤�󥯥롼�ɤ�����Τ���ˡ�
- *  CAST�����
- *   ����ɽ�� : TMIN_INTPRI  ��       0  
- *   ����ɽ�� :      0       ��  -TMIN_INTPRI
+ *  アセンブリ言語のソースファイルからインクルードする場合のために，
+ *  CASTを使用
+ *   外部表現 : TMIN_INTPRI  〜       0  
+ *   内部表現 :      0       〜  -TMIN_INTPRI
  */
-#define EXT_IPM(iipm)   (CAST(PRI,iipm + TMIN_INTPRI))     /* ����ɽ������ɽ���� */
-#define INT_IPM(ipm)    (CAST(uint8_t, ipm - TMIN_INTPRI)) /* ����ɽ��������ɽ���� */
+#define EXT_IPM(iipm)   (CAST(PRI,iipm + TMIN_INTPRI))     /* 内部表現を外部表現に */
+#define INT_IPM(ipm)    (CAST(uint8_t, ipm - TMIN_INTPRI)) /* 外部表現を内部表現に */
 
 /*
- *  �����ͥ���٥ޥ�����NVIC��ͥ���٤��Ѵ�
+ *  割込み優先度マスクをNVICの優先度に変換
  */
 #define INT_NVIC_PRI(ipm)    (((1 << TBITW_IPRI) - CAST(uint8_t, -(ipm)))  << (8 - TBITW_IPRI))
 
 /*
- *  TIPM_ENAALL�ʳ����ͥ���٥ޥ���������ˤ�����ɽ��
+ *  TIPM_ENAALL（割込み優先度マスク全解除）の内部表現
  *
  */
 #define IIPM_ENAALL  (-TMIN_INTPRI)
@@ -79,31 +79,31 @@
 #ifndef TOPPERS_MACRO_ONLY
 
 /*
- *  ������׵�ػߥե饰�μ¸��Τ�����ѿ�
+ *  割込み要求禁止フラグの実現のための変数
  */
-extern uint32_t ief;			/* IRQ�γ�����׵���ĥե饰�ξ��� */
-extern uint8_t  ief_systick;	/* SysTick�γ�����׵���ĥե饰�ξ��� */
+extern uint32_t ief;			/* IRQの割込み要求許可フラグの状態 */
+extern uint8_t  ief_systick;	/* SysTickの割込み要求許可フラグの状態 */
 
 /*
- *  �����ͥ���٥ޥ����¸��Τ�����ѿ�
+ *  割込み優先度マスク実現のための変数
  */
-extern uint8_t iipm;		/* ���ߤγ����ͥ���٥ޥ������� */ 
+extern uint8_t iipm;		/* 現在の割込み優先度マスクの値 */ 
 
 /*
- *  �����ͥ���٥ޥ����¸��Τ�����ѿ���kernel_cfg.c��
+ *  割込み優先度マスク実現のための変数（kernel_cfg.c）
  */
 extern const uint32_t iipm_enable_irq_tbl[];
 extern const uint8_t iipm_enable_systic_tbl[];
 
 /*
- *  CPU���å����֤ؤΰܹ�
+ *  CPUロック状態への移行
  *
  */
 Inline void
 x_lock_cpu(void)
 {
 	set_primask();
-	/* ����ƥ����륻������������ǥ��꤬�񤭴�����ǽ�������� */
+	/* クリティカルセクションの前後でメモリが書き換わる可能性がある */
 	ARM_MEMORY_CHANGED;    
 }
 
@@ -111,13 +111,13 @@ x_lock_cpu(void)
 #define i_lock_cpu()    x_lock_cpu()
 
 /*
- *  CPU���å����֤β��
+ *  CPUロック状態の解除
  *
  */
 Inline void
 x_unlock_cpu(void)
 {
-	/* ����ƥ����륻������������ǥ��꤬�񤭴�����ǽ�������� */
+	/* クリティカルセクションの前後でメモリが書き換わる可能性がある */
 	ARM_MEMORY_CHANGED;
 	clear_primask();
 }
@@ -126,7 +126,7 @@ x_unlock_cpu(void)
 #define i_unlock_cpu()    x_unlock_cpu()
 
 /*
- *  CPU���å����֤λ���
+ *  CPUロック状態の参照
  */
 Inline bool_t
 x_sense_lock(void)
@@ -138,18 +138,18 @@ x_sense_lock(void)
 #define i_sense_lock()    x_sense_lock()
 
 /*
- *  chg_ipm��ͭ���ʳ����ͥ���٤��ϰϤ�Ƚ��
+ *  chg_ipmで有効な割込み優先度の範囲の判定
  *
- *  TMIN_INTPRI���ͤˤ�餺��chg_ipm�Ǥϡ�-(1 << TBITW_IPRI)��TIPM_ENAALL�ʡ�0��
- *  ���ϰϤ�����Ǥ��뤳�ȤȤ���ʥ������å�����γ�ĥ�ˡ�
- *  �����ͥ���٤Υӥå���(TBITW_IPRI)�� 2 �ξ��ϡ�-4 �� 0 �������ǽ�Ǥ��롥
+ *  TMIN_INTPRIの値によらず，chg_ipmでは，-(1 << TBITW_IPRI)〜TIPM_ENAALL（＝0）
+ *  の範囲に設定できることとする（ターゲット定義の拡張）．
+ *  割込み優先度のビット幅(TBITW_IPRI)が 2 の場合は，-4 〜 0 が指定可能である．
  *   
  */
 #define VALID_INTPRI_CHGIPM(intpri) \
 				((-((1 << TBITW_IPRI) - 1) <= (intpri) && (intpri) <= TIPM_ENAALL))
 
 /*
- * �ʥ�ǥ��Ρ˳����ͥ���٥ޥ���������
+ * （モデル上の）割込み優先度マスクの設定
  *
  */
 Inline void
@@ -166,7 +166,7 @@ x_set_ipm(PRI intpri)
 	}
 	sil_wrw_mem((void *)SYSTIC_CONTROL_STATUS, tmp);
 
-	/* ��ö������߶ػ� */
+	/* 一旦全割込み禁止 */
 	sil_wrw_mem((void *)NVIC_CLRENA0, 0xffffffff);
 	sil_wrw_mem((void *)NVIC_SETENA0, (iipm_enable_systic_tbl[iipm] & ief));
 }
@@ -175,7 +175,7 @@ x_set_ipm(PRI intpri)
 #define i_set_ipm(intpri)    x_set_ipm(intpri)
 
 /*
- * �ʥ�ǥ��Ρ˳����ͥ���٥ޥ����λ���
+ * （モデル上の）割込み優先度マスクの参照
  *
  */
 Inline PRI
@@ -188,19 +188,19 @@ x_get_ipm(void)
 #define i_get_ipm()    x_get_ipm()
 
 /*
- *  ������׵�ػߥե饰
+ *  割込み要求禁止フラグ
  */
 
 /*
- *  �����°�������ꤵ��Ƥ��뤫��Ƚ�̤��뤿����ѿ���kernel_cfg.c��
+ *  割込み属性が設定されているかを判別するための変数（kernel_cfg.c）
  */
 extern const uint32_t	bitpat_cfgint[];
 
 /*
- *  ������׵�ػߥե饰�Υ��å�
+ *  割込み要求禁止フラグのセット
  *
- *  �����°�������ꤵ��Ƥ��ʤ�������׵�饤����Ф��Ƴ�����׵�ػ�
- *  �ե饰�򥯥ꥢ���褦�Ȥ������ˤϡ�false���֤���  
+ *  割込み属性が設定されていない割込み要求ラインに対して割込み要求禁止
+ *  フラグをクリアしようとした場合には，falseを返す．  
  */
 Inline bool_t
 x_disable_int(INTNO intno)
@@ -208,7 +208,7 @@ x_disable_int(INTNO intno)
 	uint32_t tmp;
 
 	/*
-	 *  �����°�������ꤵ��Ƥ��ʤ����
+	 *  割込み属性が設定されていない場合
 	 */
 	if ((bitpat_cfgint[intno >> 5] & (1 << (intno & 0x1f))) == 0x00) {
 		return(false);
@@ -232,10 +232,10 @@ x_disable_int(INTNO intno)
 #define i_disable_int(intno) x_disable_int(intno)
 
 /*
- *  ������׵�ػߥե饰�β��
+ *  割込み要求禁止フラグの解除
  *
- *  �����°�������ꤵ��Ƥ��ʤ�������׵�饤����Ф��Ƴ�����׵�ػ�
- *  �ե饰�򥯥ꥢ���褦�Ȥ������ˤϡ�false���֤���
+ *  割込み属性が設定されていない割込み要求ラインに対して割込み要求禁止
+ *  フラグをクリアしようとした場合には，falseを返す．
  */
 Inline bool_t
 x_enable_int(INTNO intno)
@@ -243,7 +243,7 @@ x_enable_int(INTNO intno)
 	uint32_t tmp;
 
 	/*
-	 *  �����°�������ꤵ��Ƥ��ʤ����
+	 *  割込み属性が設定されていない場合
 	 */
 	if ((bitpat_cfgint[intno >> 5] & (1 << (intno & 0x1f))) == 0x00) {
 		return(false);
@@ -271,7 +271,7 @@ x_enable_int(INTNO intno)
 #define i_enable_int(intno) x_enable_int(intno)
 
 /*
- *  PendSVC�ϥ�ɥ��core_support.S��
+ *  PendSVCハンドラ（core_support.S）
  */
 extern void pendsvc_handler(void);
 

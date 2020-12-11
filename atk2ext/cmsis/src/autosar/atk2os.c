@@ -35,11 +35,20 @@ StatusType SetEvent(TaskType TaskID, EventMaskType Mask)
 {
 	ID flgid;
 	ER ercd = Atk2ExtTask2EventFlag(TaskID, &flgid);
+
 	if (ercd != E_OK) {
 		syslog(LOG_NOTICE, "%s() %d taskid=%d err=%d", __FUNCTION__, __LINE__, TaskID, ercd);
 		return ercd;
 	}
-	ercd = set_flg(flgid, (FLGPTN)Mask);
+
+
+	if (CurrentContextIsISR()) {
+		ercd = iset_flg(flgid, (FLGPTN)Mask);
+	}
+	else{
+		ercd = set_flg(flgid, (FLGPTN)Mask);
+	}
+
 	if (ercd != E_OK) {
 		syslog(LOG_NOTICE, "%s() %d err=%d", __FUNCTION__, __LINE__, ercd);
 		return E_OS_ID;

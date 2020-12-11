@@ -16,14 +16,3 @@ uint32_t SystemCoreClock = 16000000;
   const uint8_t APBPrescTable[8] = {0, 0, 0, 0, 1, 2, 3, 4};
 
 
-extern ETH_HandleTypeDef EthHandle;
-/**
-  * @brief  This function handles Ethernet interrupt request.
-  * @param  None
-  * @retval None
-  */
-void ETH_IRQHandler(void)
-{
-  HAL_ETH_IRQHandler(&EthHandle);
-}
-

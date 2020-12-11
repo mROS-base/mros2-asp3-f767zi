@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2010 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: task.h 2366 2012-05-06 09:22:22Z ertl-hiro $
  */
 
 /*
- *		�����������⥸�塼��
+ *		タスク管理モジュール
  */
 
 #ifndef TOPPERS_TASK_H
@@ -51,49 +51,49 @@
 #include "time_event.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_TSKSTAT
 #define LOG_TSKSTAT(p_tcb)
 #endif /* LOG_TSKSTAT */
 
 /*
- *  ������ͥ���٤�����ɽ��������ɽ���Ѵ��ޥ���
+ *  タスク優先度の内部表現・外部表現変換マクロ
  */
 #define INT_PRIORITY(x)		((uint_t)((x) - TMIN_TPRI))
 #define EXT_TSKPRI(x)		((PRI)(x) + TMIN_TPRI)
 
 /*
- *  ���������֤�����ɽ��
+ *  タスク状態の内部表現
  *
- *  TCB��Υ��������֤Ǥϡ��¹Ծ��֡�RUNNING�ˤȼ¹Բ�ǽ���֡�READY��
- *  �϶��̤��ʤ���ξ���֤����Τ��ơ��¹ԤǤ�����֡�RUNNABLE�ˤȸƤ֡�
- *  ����Ԥ����֤ϡ�(TS_WAITING | TS_SUSPENDED)��ɽ����TS_WAIT_???����
- *  ���װ���ɽ�����Ԥ����֡�����Ԥ����֤�ޤ�ˤξ��ˤΤ����ꤹ�롥
+ *  TCB中のタスク状態では，実行状態（RUNNING）と実行可能状態（READY）
+ *  は区別しない．両状態を総称して，実行できる状態（RUNNABLE）と呼ぶ．
+ *  二重待ち状態は，(TS_WAITING | TS_SUSPENDED)で表す．TS_WAIT_???は待
+ *  ち要因を表し，待ち状態（二重待ち状態を含む）の場合にのみ設定する．
  */
-#define TS_DORMANT		0x00U			/* �ٻ߾��� */
-#define TS_RUNNABLE		0x01U			/* �¹ԤǤ������ */
-#define TS_WAITING		0x02U			/* �Ԥ����� */
-#define TS_SUSPENDED	0x04U			/* �����Ԥ����� */
+#define TS_DORMANT		0x00U			/* 休止状態 */
+#define TS_RUNNABLE		0x01U			/* 実行できる状態 */
+#define TS_WAITING		0x02U			/* 待ち状態 */
+#define TS_SUSPENDED	0x04U			/* 強制待ち状態 */
 
-#define TS_WAIT_DLY		(0x00U << 3)	/* ���ַв��Ԥ� */
-#define TS_WAIT_SLP		(0x01U << 3)	/* �����Ԥ� */
-#define TS_WAIT_RDTQ	(0x02U << 3)	/* �ǡ������塼����μ����Ԥ� */
-#define TS_WAIT_RPDQ	(0x03U << 3)	/* ͥ���٥ǡ������塼����μ����Ԥ� */
-#define TS_WAIT_SEM		(0x04U << 3)	/* ���ޥե��񸻤γ����Ԥ� */
-#define TS_WAIT_FLG		(0x05U << 3)	/* ���٥�ȥե饰�Ԥ� */
-#define TS_WAIT_SDTQ	(0x06U << 3)	/* �ǡ������塼�ؤ������Ԥ� */
-#define TS_WAIT_SPDQ	(0x07U << 3)	/* ͥ���٥ǡ������塼�ؤ������Ԥ� */
-#define TS_WAIT_MBX		(0x08U << 3)	/* �᡼��ܥå�������μ����Ԥ� */
-#define TS_WAIT_MPF		(0x09U << 3)	/* ����Ĺ����֥��å��γ����Ԥ� */
+#define TS_WAIT_DLY		(0x00U << 3)	/* 時間経過待ち */
+#define TS_WAIT_SLP		(0x01U << 3)	/* 起床待ち */
+#define TS_WAIT_RDTQ	(0x02U << 3)	/* データキューからの受信待ち */
+#define TS_WAIT_RPDQ	(0x03U << 3)	/* 優先度データキューからの受信待ち */
+#define TS_WAIT_SEM		(0x04U << 3)	/* セマフォ資源の獲得待ち */
+#define TS_WAIT_FLG		(0x05U << 3)	/* イベントフラグ待ち */
+#define TS_WAIT_SDTQ	(0x06U << 3)	/* データキューへの送信待ち */
+#define TS_WAIT_SPDQ	(0x07U << 3)	/* 優先度データキューへの送信待ち */
+#define TS_WAIT_MBX		(0x08U << 3)	/* メールボックスからの受信待ち */
+#define TS_WAIT_MPF		(0x09U << 3)	/* 固定長メモリブロックの獲得待ち */
 
 /*
- *  ����������Ƚ�̥ޥ���
+ *  タスク状態判別マクロ
  *
- *  TSTAT_DORMANT�ϥ��������ٻ߾��֤Ǥ��뤫�ɤ�����TSTAT_RUNNABLE��
- *  ���������¹ԤǤ�����֤Ǥ��뤫�ɤ�����Ƚ�̤��롥TSTAT_WAITING����
- *  �����֤�����Ԥ����֤Τ����줫�Ǥ��뤫�ɤ�����TSTAT_SUSPENDED��
- *  �����Ԥ����֤�����Ԥ����֤Τ����줫�Ǥ��뤫�ɤ�����Ƚ�̤��롥
+ *  TSTAT_DORMANTはタスクが休止状態であるかどうかを，TSTAT_RUNNABLEは
+ *  タスクが実行できる状態であるかどうかを判別する．TSTAT_WAITINGは待
+ *  ち状態と二重待ち状態のいずれかであるかどうかを，TSTAT_SUSPENDEDは
+ *  強制待ち状態と二重待ち状態のいずれかであるかどうかを判別する．
  */
 #define TSTAT_DORMANT(tstat)	((tstat) == TS_DORMANT)
 #define TSTAT_RUNNABLE(tstat)	(((tstat) & TS_RUNNABLE) != 0U)
@@ -101,388 +101,388 @@
 #define TSTAT_SUSPENDED(tstat)	(((tstat) & TS_SUSPENDED) != 0U)
 
 /*
- *  �������Ԥ��װ�Ƚ�̥ޥ���
+ *  タスク待ち要因判別マクロ
  *
- *  TSTAT_WAIT_SLP�ϥ������������Ԥ��Ǥ��뤫�ɤ�����TSTAT_WAIT_WOBJ
- *  �ϥ�������Ʊ�����̿����֥������Ȥ��Ф����Ԥ��Ǥ��뤫�ʸ���������ȡ�
- *  Ʊ���̿����֥������Ȥ��Ԥ����塼�ˤĤʤ���Ƥ��뤫�ˤɤ�����Ƚ�̤�
- *  �롥�ޤ���TSTAT_WAIT_WOBJCB�ϥ�������Ʊ�����̿����֥������Ȥδ���
- *  �֥��å��ζ�����ʬ��WOBJCB�ˤ��Ԥ����塼�ˤĤʤ���Ƥ��뤫�ɤ�����
- *  Ƚ�̤��롥
+ *  TSTAT_WAIT_SLPはタスクが起床待ちであるかどうかを，TSTAT_WAIT_WOBJ
+ *  はタスクが同期・通信オブジェクトに対する待ちであるか（言い換えると，
+ *  同期通信オブジェクトの待ちキューにつながれているか）どうかを判別す
+ *  る．また，TSTAT_WAIT_WOBJCBはタスクが同期・通信オブジェクトの管理
+ *  ブロックの共通部分（WOBJCB）の待ちキューにつながれているかどうかを
+ *  判別する．
  *
- *  TSTAT_WAIT_SLP�ϡ�Ǥ�դΥ��������֤��椫�顤�������������Ԥ��Ǥ���
- *  ���Ȥ�Ƚ�̤Ǥ��롥���ʤ����TSTAT_WAITING�ˤ���Ԥ����֤Ǥ��뤳�Ȥ�
- *  Ƚ�̤����ˡ�TSTAT_SLP�������Ѥ��Ƶ����Ԥ����֤Ǥ��뤳�Ȥ�Ƚ�̤Ǥ��롥
- *  ������ΨŪ�˼¸����뤿��ˡ�TS_WAIT_SLP���ͤ�(0x00U << 3)�ǤϤ�
- *  ��(0x01U << 3)�Ȥ��Ƥ��롥���Τ��ᡤ�����������ַв��Ԥ����֤Ǥ���
- *  ���Ȥ�Ƚ�̤��뤿���TSTAT_WAIT_DLY��TSTAT_WAIT_SLP��Ʊ�ͤ���ˡ��
- *  �¸����뤳�ȤϤǤ��ʤ���
+ *  TSTAT_WAIT_SLPは，任意のタスク状態の中から，タスクが起床待ちである
+ *  ことを判別できる．すなわち，TSTAT_WAITINGにより待ち状態であることを
+ *  判別せずに，TSTAT_SLPだけを用いて起床待ち状態であることを判別できる．
+ *  これを効率的に実現するために，TS_WAIT_SLPの値を，(0x00U << 3)ではな
+ *  く(0x01U << 3)としている．そのため，タスクが時間経過待ち状態である
+ *  ことを判別するためのTSTAT_WAIT_DLYを，TSTAT_WAIT_SLPと同様の方法で
+ *  実現することはできない．
  */
-#define TS_WAIT_MASK	(0x0fU << 3)	/* �Ԥ��װ��μ�Ф��ޥ��� */
+#define TS_WAIT_MASK	(0x0fU << 3)	/* 待ち要因の取出しマスク */
 
 #define TSTAT_WAIT_SLP(tstat)		(((tstat) & TS_WAIT_MASK) == TS_WAIT_SLP)
 #define TSTAT_WAIT_WOBJ(tstat)		(((tstat) & TS_WAIT_MASK) >= TS_WAIT_RDTQ)
 #define TSTAT_WAIT_WOBJCB(tstat)	(((tstat) & TS_WAIT_MASK) >= TS_WAIT_SEM)
 
 /*
- *  �Ԥ�����֥��å���WINFO�ˤ����
+ *  待ち情報ブロック（WINFO）の定義
  *
- *  ���������Ԥ����֤δ֤ϡ�TCB����Ӥ���p_winfo�ǻؤ����WINFO�򼡤�
- *  �褦�����ꤷ�ʤ���Фʤ�ʤ���
+ *  タスクが待ち状態の間は，TCBおよびそのp_winfoで指されるWINFOを次の
+ *  ように設定しなければならない．
  *
- *  (a) TCB�Υ��������֤��Ԥ����֡�TS_WAITING�ˤˤ��롥���κݤˡ��Ԥ�
- *  �װ���TS_WAIT_???�ˤ����ꤹ�롥
+ *  (a) TCBのタスク状態を待ち状態（TS_WAITING）にする．その際に，待ち
+ *  要因（TS_WAIT_???）も設定する．
  *
- *  (b) �����ॢ���Ȥ�ƻ뤹�뤿��ˡ������।�٥�ȥ֥��å�����Ͽ���롥
- *  ��Ͽ���륿���।�٥�ȥ֥��å��ϡ��Ԥ������륵���ӥ�����������ؿ�
- *  �Υ��������ѿ��Ȥ��Ƴ��ݤ�������ؤΥݥ��󥿤�WINFO��p_tmevtb�˵�
- *  �����롥�����ॢ���Ȥδƻ뤬ɬ�פʤ����ʱʵ��Ԥ��ξ��ˤˤϡ�
- *  p_tmevtb��NULL�ˤ��롥
+ *  (b) タイムアウトを監視するために，タイムイベントブロックを登録する．
+ *  登録するタイムイベントブロックは，待ちに入るサービスコール処理関数
+ *  のローカル変数として確保し，それへのポインタをWINFOのp_tmevtbに記
+ *  憶する．タイムアウトの監視が必要ない場合（永久待ちの場合）には，
+ *  p_tmevtbをNULLにする．
  *
- *  Ʊ�����̿����֥������Ȥ��Ф����Ԥ����֤ξ��ˤϡ�ɸ���WINFO��
- *  p_wobjcb�ե�����ɤ��ɲä�����¤�Ρ�WINFO_WOBJ��wait.h������ˤ��
- *  �����ޤ����ʲ���(c)��(e)�������Ԥ�ɬ�פ����롥Ʊ�����̿����֥���
- *  ���Ȥ˴ط����ʤ��Ԥ��ʵ����Ԥ������ַв��Ԥ��ˤξ��ˤϡ�(c)��(e)
- *  ��ɬ�פʤ���
+ *  同期・通信オブジェクトに対する待ち状態の場合には，標準のWINFOに
+ *  p_wobjcbフィールドを追加した構造体（WINFO_WOBJ，wait.hで定義）を使
+ *  う．また，以下の(c)〜(e)の設定を行う必要がある．同期・通信オブジェ
+ *  クトに関係しない待ち（起床待ち，時間経過待ち）の場合には，(c)〜(e)
+ *  は必要ない．
  *
- *  (c) TCB���Ԥ��оݤ�Ʊ�����̿����֥������Ȥ��Ԥ����塼�ˤĤʤ�����
- *  �����塼�ˤĤʤ�����ˡ�task_queue��Ȥ���
+ *  (c) TCBを待ち対象の同期・通信オブジェクトの待ちキューにつなぐ．待
+ *  ちキューにつなぐために，task_queueを使う．
  *
- *  (d) �Ԥ��оݤ�Ʊ�����̿����֥������Ȥδ����֥��å��ؤΥݥ��󥿤�
- *  WINFO_WOBJ��p_wobjcb�˵������롥
+ *  (d) 待ち対象の同期・通信オブジェクトの管理ブロックへのポインタを，
+ *  WINFO_WOBJのp_wobjcbに記憶する．
  *
- *  (e) �Ԥ��оݤ�Ʊ�����̿����֥������Ȥ˰�¸���Ƶ������뤳�Ȥ�ɬ�פ�
- *  ���󤬤�����ˤϡ�WINFO_WOBJ��ɬ�פʾ���Τ���Υե�����ɤ��ɲ�
- *  ������¤�Τ��������WINFO_WOBJ��������Ѥ��롥
+ *  (e) 待ち対象の同期・通信オブジェクトに依存して記憶することが必要な
+ *  情報がある場合には，WINFO_WOBJに必要な情報のためのフィールドを追加
+ *  した構造体を定義し，WINFO_WOBJの代わりに用いる．
  *
- *  �Ԥ����֤�������ݤˤϡ��Ԥ�����������������Ф������ͤ�WINFO��
- *  wercd�����ꤹ�롥wercd��ɬ�פʤΤ��Ԥ�����ʹߤǤ���Τ��Ф��ơ�
- *  p_tmevtb���Ԥ�������ɬ�פʤ����ᡤ��������Τ���˶����Τ�Ȥ�
- *  �Ƥ��롥���Τ��ᡤwercd�إ��顼�����ɤ����ꤹ��Τϡ������।�٥��
- *  �֥��å�����Ͽ���������ˤ��ʤ���Фʤ�ʤ���
+ *  待ち状態を解除する際には，待ち解除したタスクに対する返値をWINFOの
+ *  wercdに設定する．wercdが必要なのは待ち解除以降であるのに対して，
+ *  p_tmevtbは待ち解除後は必要ないため，メモリ節約のために共用体を使っ
+ *  ている．そのため，wercdへエラーコードを設定するのは，タイムイベント
+ *  ブロックを登録解除した後にしなければならない．
  */
 typedef union waiting_information {
-	ER		wercd;			/* �Ԥ�������Υ��顼������ */
-	TMEVTB	*p_tmevtb;		/* �Ԥ������ѤΥ����।�٥�ȥ֥��å� */
+	ER		wercd;			/* 待ち解除時のエラーコード */
+	TMEVTB	*p_tmevtb;		/* 待ち状態用のタイムイベントブロック */
 } WINFO;
 
 /*
- *  ������������֥��å�
+ *  タスク初期化ブロック
  *
- *  �������˴ؤ��������ͤ��Ѥ��ʤ������ROM���֤�����ʬ�ʥ�����
- *  ������֥��å��ˤȡ��ͤ��Ѳ����뤿���RAM���֤��ʤ���Фʤ�ʤ���
- *  ʬ�ʥ����������֥��å���TCB�ˤ�ʬΥ����TCB����б����륿���������
- *  �֥��å���ؤ��ݥ��󥿤�����롥������������֥��å�����б�����
- *  TCB��ؤ��ݥ��󥿤��������ˡ��������RAM������δ��������˾�ޤ���
- *  �����¹Ը�Ψ�������ʤ뤿��˺��Ѥ��Ƥ��ʤ���¾�Υ��֥������ȤˤĤ�
- *  �Ƥ�Ʊ�ͤ˰�����
+ *  タスクに関する情報を，値が変わらないためにROMに置ける部分（タスク
+ *  初期化ブロック）と，値が変化するためにRAMに置かなければならない部
+ *  分（タスク管理ブロック，TCB）に分離し，TCB内に対応するタスク初期化
+ *  ブロックを指すポインタを入れる．タスク初期化ブロック内に対応する
+ *  TCBを指すポインタを入れる方法の方が，RAMの節約の観点からは望ましい
+ *  が，実行効率が悪くなるために採用していない．他のオブジェクトについ
+ *  ても同様に扱う．
  *
- *  ������������֥��å��ˤϡ�DEF_TEX���������륿�����㳰�����롼��
- *  ��˴ؤ�������ޤࡥ
+ *  タスク初期化ブロックには，DEF_TEXで定義されるタスク例外処理ルーチ
+ *  ンに関する情報も含む．
  */
 typedef struct task_initialization_block {
-	ATR			tskatr;			/* ������°�� */
-	intptr_t	exinf;			/* �������γ�ĥ���� */
-	TASK		task;			/* �������ε�ư���� */
-	uint_t		ipriority;		/* �������ε�ư��ͥ���١�����ɽ���� */
+	ATR			tskatr;			/* タスク属性 */
+	intptr_t	exinf;			/* タスクの拡張情報 */
+	TASK		task;			/* タスクの起動番地 */
+	uint_t		ipriority;		/* タスクの起動時優先度（内部表現） */
 
 #ifdef USE_TSKINICTXB
-	TSKINICTXB	tskinictxb;		/* ���������������ƥ����ȥ֥��å� */
+	TSKINICTXB	tskinictxb;		/* タスク初期化コンテキストブロック */
 #else /* USE_TSKINICTXB */
-	SIZE		stksz;			/* �����å��ΰ�Υ������ʴݤ᤿�͡� */
-	void		*stk;			/* �����å��ΰ����Ƭ���� */
+	SIZE		stksz;			/* スタック領域のサイズ（丸めた値） */
+	void		*stk;			/* スタック領域の先頭番地 */
 #endif /* USE_TSKINICTXB */
 
-	ATR			texatr;			/* �������㳰�����롼����°�� */
-	TEXRTN		texrtn;			/* �������㳰�����롼����ε�ư���� */
+	ATR			texatr;			/* タスク例外処理ルーチン属性 */
+	TEXRTN		texrtn;			/* タスク例外処理ルーチンの起動番地 */
 } TINIB;
 
 /*
- *  TCB��Υե�����ɤΥӥå��������
+ *  TCB中のフィールドのビット幅の定義
  *
- *  �ץ����å��ˤ�äƤϡ�TCB��Υե�����ɤΥӥå����ǥ�������̤�
- *  ��ǽ���ȥ졼�ɥ��դˤʤ뤿�ᡤ�������åȰ�¸�˥ե�����ɤΥӥå���
- *  ���ѹ����뤳�Ȥ�����Ƥ��롥
+ *  プロセッサによっては，TCB中のフィールドのビット幅でメモリ使用量と
+ *  性能がトレードオフになるため，ターゲット依存にフィールドのビット幅
+ *  を変更することを許している．
  */
 #ifndef TBIT_TCB_PRIORITY
-#define	TBIT_TCB_PRIORITY		8		/* priority�ե�����ɤΥӥå��� */
+#define	TBIT_TCB_PRIORITY		8		/* priorityフィールドのビット幅 */
 #endif /* TBIT_TCB_PRIORITY */
 
 /*
- *  �����������֥��å���TCB��
+ *  タスク管理ブロック（TCB）
  *
- *  ASP�����ͥ�Ǥϡ��������ε�ư�׵ᥭ�塼���󥰿��κ����͡�TMAX_ACTCNT��
- *  �ȵ����׵ᥭ�塼���󥰿��κ����͡�TMAX_WUPCNT�ˤ�1�˸��ꤵ��Ƥ���
- *  ���ᡤ���塼���󥰤���Ƥ��뤫�ɤ����ο����ͤ�ɽ�����뤳�Ȥ��Ǥ��롥
- *  �ޤ��������Ԥ��׵�ͥ��ȿ��κ����͡�TMAX_SUSCNT�ˤ�1�˸��ꤵ��Ƥ�
- *  ��Τǡ������Ԥ��׵�ͥ��ȿ���suscnt�ˤ�ɬ�פʤ���
+ *  ASPカーネルでは，タスクの起動要求キューイング数の最大値（TMAX_ACTCNT）
+ *  と起床要求キューイング数の最大値（TMAX_WUPCNT）は1に固定されている
+ *  ため，キューイングされているかどうかの真偽値で表現することができる．
+ *  また，強制待ち要求ネスト数の最大値（TMAX_SUSCNT）が1に固定されてい
+ *  るので，強制待ち要求ネスト数（suscnt）は必要ない．
  *
- *  TCB�Τ����Ĥ��Υե�����ɤϡ�����Υ��������֤ǤΤ�ͭ�����ͤ��ݻ�����
- *  ����ʳ��ξ����ͤ��ݾڤ���ʤ��ʤ�äơ����Ȥ��ƤϤʤ�ʤ��ˡ���
- *  �ե�����ɤ�ͭ�����ͤ��ݻ�������ϼ����̤ꡥ
+ *  TCBのいくつかのフィールドは，特定のタスク状態でのみ有効な値を保持し，
+ *  それ以外の場合は値が保証されない（よって，参照してはならない）．各
+ *  フィールドが有効な値を保持する条件は次の通り．
  *
- *  ���������Ͼ��ͭ����
- *  		p_tinib��tstat��actque
- *  ���ٻ߾��ְʳ���ͭ���ʵٻ߾��֤ǤϽ���ͤˤʤäƤ���ˡ�
- *  		priority��wupque��enatex��texptn
- *  ���Ԥ����֡�����Ԥ����֤�ޤ�ˤ�ͭ����
+ *  ・初期化後は常に有効：
+ *  		p_tinib，tstat，actque
+ *  ・休止状態以外で有効（休止状態では初期値になっている）：
+ *  		priority，wupque，enatex，texptn
+ *  ・待ち状態（二重待ち状態を含む）で有効：
  *  		p_winfo
- *  ���¹ԤǤ�����֤�Ʊ�����̿����֥������Ȥ��Ф����Ԥ����֤�ͭ����
+ *  ・実行できる状態と同期・通信オブジェクトに対する待ち状態で有効：
  *  		task_queue
- *  ���¹Բ�ǽ���֡��Ԥ����֡������Ԥ����֡�����Ԥ����֤�ͭ����
+ *  ・実行可能状態，待ち状態，強制待ち状態，二重待ち状態で有効：
  *  		tskctxb
  */
 typedef struct task_control_block {
-	QUEUE			task_queue;		/* ���������塼 */
-	const TINIB		*p_tinib;		/* ������֥��å��ؤΥݥ��� */
+	QUEUE			task_queue;		/* タスクキュー */
+	const TINIB		*p_tinib;		/* 初期化ブロックへのポインタ */
 
 #ifdef UINT8_MAX
-	uint8_t			tstat;			/* ���������֡�����ɽ����*/
+	uint8_t			tstat;			/* タスク状態（内部表現）*/
 #else /* UINT8_MAX */
-	BIT_FIELD_UINT	tstat : 8;		/* ���������֡�����ɽ����*/
+	BIT_FIELD_UINT	tstat : 8;		/* タスク状態（内部表現）*/
 #endif /* UINT8_MAX */
 #if defined(UINT8_MAX) && (TBIT_TCB_PRIORITY == 8)
-	uint8_t			priority;		/* ���ߤ�ͥ���١�����ɽ����*/
+	uint8_t			priority;		/* 現在の優先度（内部表現）*/
 #else /* defined(UINT8_MAX) && (TBIT_TCB_PRIORITY == 8) */
 	BIT_FIELD_UINT	priority : TBIT_TCB_PRIORITY;
-									/* ���ߤ�ͥ���١�����ɽ����*/
+									/* 現在の優先度（内部表現）*/
 #endif /* defined(UINT8_MAX) && (TBIT_TCB_PRIORITY == 8) */
-	BIT_FIELD_BOOL	actque : 1;		/* ��ư�׵ᥭ�塼���� */
-	BIT_FIELD_BOOL	wupque : 1;		/* �����׵ᥭ�塼���� */
-	BIT_FIELD_BOOL	enatex : 1;		/* �������㳰�������ľ��� */
+	BIT_FIELD_BOOL	actque : 1;		/* 起動要求キューイング */
+	BIT_FIELD_BOOL	wupque : 1;		/* 起床要求キューイング */
+	BIT_FIELD_BOOL	enatex : 1;		/* タスク例外処理許可状態 */
 
-	TEXPTN			texptn;			/* ��α�㳰�װ� */
-	WINFO			*p_winfo;		/* �Ԥ�����֥��å��ؤΥݥ��� */
-	TSKCTXB			tskctxb;		/* ����������ƥ����ȥ֥��å� */
+	TEXPTN			texptn;			/* 保留例外要因 */
+	WINFO			*p_winfo;		/* 待ち情報ブロックへのポインタ */
+	TSKCTXB			tskctxb;		/* タスクコンテキストブロック */
 } TCB;
 
 /*
- *  �¹Ծ��֤Υ�����
+ *  実行状態のタスク
  *
- *  �¹Ծ��֤Υ������ʡ�ץ����å�������ƥ����Ȥ���äƤ��륿�����ˤ�
- *  TCB��ؤ��ݥ��󥿡��¹Ծ��֤Υ��������ʤ�����NULL�ˤ��롥
+ *  実行状態のタスク（＝プロセッサがコンテキストを持っているタスク）の
+ *  TCBを指すポインタ．実行状態のタスクがない場合はNULLにする．
  *
- *  �����ӥ�������ν�����ǡ����������ʥ����ӥ��������ƤӽФ�������
- *  ���ˤ˴ؤ������򻲾Ȥ������p_runtsk��Ȥ���p_runtsk��񤭴���
- *  ��Τϡ��ǥ����ѥå���ʤȽ���������ˤΤߤǤ��롥
+ *  サービスコールの処理中で，自タスク（サービスコールを呼び出したタス
+ *  ク）に関する情報を参照する場合はp_runtskを使う．p_runtskを書き換え
+ *  るのは，ディスパッチャ（と初期化処理）のみである．
  */
 extern TCB	*p_runtsk;
 
 /*
- *  �ǹ�ͥ���̤Υ�����
+ *  最高優先順位のタスク
  *
- *  �¹ԤǤ��륿��������Ǻǹ�ͥ���̤Υ�������TCB��ؤ��ݥ��󥿡���
- *  �ԤǤ��륿�������ʤ�����NULL�ˤ��롥
+ *  実行できるタスクの中で最高優先順位のタスクのTCBを指すポインタ．実
+ *  行できるタスクがない場合はNULLにする．
  *
- *  �ǥ����ѥå��ػ߾��֤ʤɡ��ǥ����ѥå�����α����Ƥ���֤�p_runtsk
- *  �Ȱ��פ��Ƥ���Ȥϸ¤�ʤ���
+ *  ディスパッチ禁止状態など，ディスパッチが保留されている間はp_runtsk
+ *  と一致しているとは限らない．
  */
 extern TCB	*p_schedtsk;
 
 /*
- *  �ǥ����ѥå����������㳰�����롼����ư�׵�ե饰
+ *  ディスパッチ／タスク例外処理ルーチン起動要求フラグ
  *
- *  ����ߥϥ�ɥ顿CPU�㳰�ϥ�ɥ�νи������ˡ��ǥ����ѥå��ޤ���
- *  �������㳰�����롼����ε�ư���׵᤹�뤳�Ȥ򼨤��ե饰��
+ *  割込みハンドラ／CPU例外ハンドラの出口処理に，ディスパッチまたは
+ *  タスク例外処理ルーチンの起動を要求することを示すフラグ．
  */
 extern bool_t	reqflg;
 
 /*
- *  �����ͥ���٥ޥ������������
+ *  割込み優先度マスク全解除状態
  *
- *  �����ͥ���٥ޥ�����������֤Ǥ��뤳�Ȥ򼨤��ե饰��
+ *  割込み優先度マスク全解除状態であることを示すフラグ．
  */
 extern bool_t	ipmflg;
 
 /*
- *  �ǥ����ѥå��ػ߾���
+ *  ディスパッチ禁止状態
  *
- *  �ǥ����ѥå��ػ߾��֤Ǥ��뤳�Ȥ򼨤��ե饰��
+ *  ディスパッチ禁止状態であることを示すフラグ．
  */
 extern bool_t	disdsp;
 
 /*
- *  �������ǥ����ѥå���ǽ����
+ *  タスクディスパッチ可能状態
  *
- *  �����ͥ���٥ޥ�����������֤Ǥ��ꡤ�ǥ����ѥå����ľ��֤Ǥ���ʥǥ�
- *  ���ѥå��ػ߾��֤Ǥʤ��ˤ��Ȥ򼨤��ե饰��
+ *  割込み優先度マスク全解除状態であり，ディスパッチ許可状態である（ディ
+ *  スパッチ禁止状態でない）ことを示すフラグ．
  */
 extern bool_t	dspflg;
 
 /*
- *  ��ǥ����塼
+ *  レディキュー
  *
- *  ��ǥ����塼�ϡ��¹ԤǤ�����֤Υ�������������뤿��Υ��塼�Ǥ��롥
- *  �¹Ծ��֤Υ�������������Ƥ��뤿�ᡤ��ǥ��ʼ¹Բ�ǽ�˥��塼�Ȥ���
- *  ̾�Τ����ΤǤϤʤ�������ǥ����塼�Ȥ���̾�Τ����夷�Ƥ��뤿�ᡤ��
- *  ��̾�ΤǸƤ֤��Ȥˤ��롥
+ *  レディキューは，実行できる状態のタスクを管理するためのキューである．
+ *  実行状態のタスクも管理しているため，レディ（実行可能）キューという
+ *  名称は正確ではないが，レディキューという名称が定着しているため，こ
+ *  の名称で呼ぶことにする．
  *
- *  ��ǥ����塼�ϡ�ͥ���٤��ȤΥ��������塼�ǹ�������Ƥ��롥��������
- *  TCB�ϡ���������ͥ���٤Υ��塼����Ͽ����롥
+ *  レディキューは，優先度ごとのタスクキューで構成されている．タスクの
+ *  TCBは，該当する優先度のキューに登録される．
  */
 extern QUEUE	ready_queue[TNUM_TPRI];
 
 /*
- *  ��ǥ����塼�������Τ���Υӥåȥޥå�
+ *  レディキューサーチのためのビットマップ
  *
- *  ��ǥ����塼�Υ��������Ψ�褯�Ԥ�����ˡ�ͥ���٤��ȤΥ��������塼
- *  �˥����������äƤ��뤫�ɤ����򼨤��ӥåȥޥåפ��Ѱդ��Ƥ��롥�ӥ�
- *  �ȥޥåפ�Ȥ����Ȥǡ����ꥢ�������β���򸺤餹���Ȥ��Ǥ��뤬��
- *  �ӥå����̿�᤬���¤��Ƥ��ʤ��ץ����å��ǡ�ͥ���٤��ʳ��������ʤ�
- *  ���ˤϡ��ӥåȥޥå����Υ����С��إåɤΤ���ˡ��դ˸�Ψ�����
- *  ���ǽ���⤢�롥
+ *  レディキューのサーチを効率よく行うために，優先度ごとのタスクキュー
+ *  にタスクが入っているかどうかを示すビットマップを用意している．ビッ
+ *  トマップを使うことで，メモリアクセスの回数を減らすことができるが，
+ *  ビット操作命令が充実していないプロセッサで，優先度の段階数が少ない
+ *  場合には，ビットマップ操作のオーバーヘッドのために，逆に効率が落ち
+ *  る可能性もある．
  *
- *  ͥ���٤�16�ʳ��Ǥ��뤳�Ȥ��ꤷ�Ƥ��뤿�ᡤuint16_t���Ȥ��Ƥ��롥
+ *  優先度が16段階であることを仮定しているため，uint16_t型としている．
  */
 extern uint16_t	ready_primap;
 
 /*
- *  ������ID�κ����͡�kernel_cfg.c��
+ *  タスクIDの最大値（kernel_cfg.c）
  */
 extern const ID	tmax_tskid;
 
 /*
- *  ������������֥��å��Υ��ꥢ��kernel_cfg.c��
+ *  タスク初期化ブロックのエリア（kernel_cfg.c）
  */
 extern const TINIB	tinib_table[];
 
 /*
- *  ��������������ơ��֥��kernel_cfg.c��
+ *  タスク生成順序テーブル（kernel_cfg.c）
  */
 extern const ID	torder_table[];
 
 /*
- *  TCB�Υ��ꥢ��kernel_cfg.c��
+ *  TCBのエリア（kernel_cfg.c）
  */
 extern TCB	tcb_table[];
 
 /*
- *  �������ο�
+ *  タスクの数
  */
 #define tnum_tsk	((uint_t)(tmax_tskid - TMIN_TSKID + 1))
 
 /*
- *  ������ID����TCB����Ф�����Υޥ���
+ *  タスクIDからTCBを取り出すためのマクロ
  */
 #define INDEX_TSK(tskid)	((uint_t)((tskid) - TMIN_TSKID))
 #define get_tcb(tskid)		(&(tcb_table[INDEX_TSK(tskid)]))
 #define get_tcb_self(tskid)	((tskid) == TSK_SELF ? p_runtsk : get_tcb(tskid))
 
 /*
- *  TCB���饿����ID����Ф�����Υޥ���
+ *  TCBからタスクIDを取り出すためのマクロ
  */
 #define	TSKID(p_tcb)	((ID)(((p_tcb) - tcb_table) + TMIN_TSKID))
 
 /*
- *  �����������⥸�塼��ν����
+ *  タスク管理モジュールの初期化
  */
 extern void	initialize_task(void);
 
 /*
- *  �ǹ�ͥ���̥������Υ�����
+ *  最高優先順位タスクのサーチ
  *
- *  ��ǥ����塼��κǹ�ͥ���̤Υ������򥵡�����������TCB�ؤΥݥ���
- *  ���֤�����ǥ����塼�����ξ��ˤϡ����δؿ���ƤӽФ��ƤϤʤ�ʤ���
+ *  レディキュー中の最高優先順位のタスクをサーチし，そのTCBへのポインタ
+ *  を返す．レディキューが空の場合には，この関数を呼び出してはならない．
  */
 extern TCB	*search_schedtsk(void);
 
 /*
- *  �¹ԤǤ�����֤ؤ�����
+ *  実行できる状態への遷移
  *
- *  p_tcb�ǻ��ꤵ��륿�������ǥ����塼���������롥��ǥ����塼������
- *  ������������ͥ���٤����ǹ�ͥ���̤Υ�������ͥ���٤���⤤���ϡ�
- *  �ǹ�ͥ���̤Υ������򹹿������ǥ����ѥå����ľ��֤Ǥ����true����
- *  ���������Ǥʤ�����false���֤���
+ *  p_tcbで指定されるタスクをレディキューに挿入する．レディキューに挿入
+ *  したタスクの優先度が，最高優先順位のタスクの優先度よりも高い場合は，
+ *  最高優先順位のタスクを更新し，ディスパッチ許可状態であればtrueを返
+ *  す．そうでない場合はfalseを返す．
  */
 extern bool_t	make_runnable(TCB *p_tcb);
 
 /*
- *  �¹ԤǤ�����֤���¾�ξ��֤ؤ�����
+ *  実行できる状態から他の状態への遷移
  *
- *  p_tcb�ǻ��ꤵ��륿�������ǥ����塼���������롥p_tcb�ǻ��ꤷ��
- *  ���������ǹ�ͥ���̤Υ������Ǥ��ä����ˤϡ��ǹ�ͥ���̤Υ�����
- *  �����ꤷ�ʤ������ǥ����ѥå����ľ��֤Ǥ����true���֤��������Ǥʤ�
- *  ����false���֤����������ξ��֤Ϲ������ʤ���
+ *  p_tcbで指定されるタスクをレディキューから削除する．p_tcbで指定した
+ *  タスクが最高優先順位のタスクであった場合には，最高優先順位のタスク
+ *  を設定しなおし，ディスパッチ許可状態であればtrueを返す．そうでない
+ *  場合はfalseを返す．タスクの状態は更新しない．
  */
 extern bool_t	make_non_runnable(TCB *p_tcb);
 
 /*
- *  �ٻ߾��֤ؤ�����
+ *  休止状態への遷移
  *
- *  p_tcb�ǻ��ꤵ��륿�����ξ��֤�ٻ߾��֤Ȥ��롥�ޤ����������ε�ư
- *  ���˽�������٤��ѿ��ν�����ȡ���������ư�Τ���Υ���ƥ����Ȥ���
- *  �ꤹ�롥
+ *  p_tcbで指定されるタスクの状態を休止状態とする．また，タスクの起動
+ *  時に初期化すべき変数の初期化と，タスク起動のためのコンテキストを設
+ *  定する．
  */
 extern void	make_dormant(TCB *p_tcb);
 
 /*
- *  �ٻ߾��֤���¹ԤǤ�����֤ؤ�����
+ *  休止状態から実行できる状態への遷移
  *
- *  p_tcb�ǻ��ꤵ��륿�����ξ��֤�ٻ߾��֤���¹ԤǤ�����֤Ȥ��롥
- *  �¹ԤǤ�����֤����ܤ����������ؤΥǥ����ѥå���ɬ�פʾ���true��
- *  �����Ǥʤ�����false���֤���
+ *  p_tcbで指定されるタスクの状態を休止状態から実行できる状態とする．
+ *  実行できる状態に遷移したタスクへのディスパッチが必要な場合はtrue，
+ *  そうでない場合はfalseを返す．
  */
 extern bool_t	make_active(TCB *p_tcb);
 
 /*
- *  ��������ͥ���٤��ѹ�
+ *  タスクの優先度の変更
  *
- *  p_tcb�ǻ��ꤵ��륿������ͥ���٤�newpri������ɽ���ˤ��ѹ����롥�ޤ���
- *  ɬ�פʾ��ˤϺǹ�ͥ���̤Υ������򹹿������ǥ����ѥå����ľ��֤�
- *  �����true���֤��������Ǥʤ�����false���֤���
+ *  p_tcbで指定されるタスクの優先度をnewpri（内部表現）に変更する．また，
+ *  必要な場合には最高優先順位のタスクを更新し，ディスパッチ許可状態で
+ *  あればtrueを返す．そうでない場合はfalseを返す．
  */
 extern bool_t	change_priority(TCB *p_tcb, uint_t newpri);
 
 /*
- *  ����������ͥ���٤ΰ����夲
+ *  自タスクの優先度の引き上げ
  *
- *  ����������ͥ���٤�newpri������ɽ���ˤ��ѹ����롥�ޤ���ɬ�פʾ���
- *  �Ϻǹ�ͥ���̤Υ������򹹿������ǥ����ѥå����ľ��֤Ǥ����true��
- *  �֤��������Ǥʤ�����false���֤���
+ *  自タスクの優先度をnewpri（内部表現）に変更する．また，必要な場合に
+ *  は最高優先順位のタスクを更新し，ディスパッチ許可状態であればtrueを
+ *  返す．そうでない場合はfalseを返す．
  */
 extern bool_t	raise_priority(uint_t newpri);
 
 /*
- *  ��ǥ����塼�β�ž
+ *  レディキューの回転
  *
- *  ��ǥ����塼��Ρ�p_queue�ǻ��ꤵ��륿�������塼���ž�����롥�ޤ���
- *  ɬ�פʾ��ˤϺǹ�ͥ���̤Υ��������ѹ������ǥ����ѥå�����α����
- *  �Ƥ��ʤ����true���֤��������Ǥʤ�����false���֤���
+ *  レディキュー中の，p_queueで指定されるタスクキューを回転させる．また，
+ *  必要な場合には最高優先順位のタスクを変更し，ディスパッチが保留され
+ *  ていなければtrueを返す．そうでない場合はfalseを返す．
  */
 extern bool_t	rotate_ready_queue(QUEUE *p_queue);
 
 /*
- *  �������㳰�����롼����θƽФ�
+ *  タスク例外処理ルーチンの呼出し
  *
- *  �������㳰�����롼�����ƤӽФ����ƤӽФ����ˡ��¹Ծ��֤Υ�������
- *  ��α�㳰�װ��򥯥ꥢ�����������㳰�����ػ߾��֤ˤ���CPU���å����
- *  �����롥
+ *  タスク例外処理ルーチンを呼び出す．呼び出す前に，実行状態のタスクの
+ *  保留例外要因をクリアし，タスク例外処理禁止状態にし，CPUロックを解
+ *  除する．
  *
- *  �������㳰�����롼���󤫤����ȡ��ޤ�CPU���å����֤��ᤷ�����δ�
- *  ����α�㳰�װ���0�Ǥʤ��ʤäƤ���С��Ƥӥ������㳰�����롼�����
- *  �ƤӽФ�����α�㳰�װ���0�ξ��ˤϡ��㳰�������ľ��֤ˤ��ƴؿ���
- *  ��꥿���󤹤롥
+ *  タスク例外処理ルーチンから戻ると，まずCPUロック状態に戻し，その間
+ *  に保留例外要因が0でなくなっていれば，再びタスク例外処理ルーチンを
+ *  呼び出す．保留例外要因が0の場合には，例外処理許可状態にして関数か
+ *  らリターンする．
  *
- *  ���δؿ��ϡ��¹Ծ��֤Υ����������������㳰�������ľ��֡�enatex��
- *  true�ˤǡ���α�㳰�װ���0�Ǥʤ���texptn��0�Ǥʤ��˾��˸ƤӽФ���
- *  �Ȥ����ꤷ�Ƥ��롥���δؿ��ϡ�CPU���å����֤ǸƤӽФ��ʤ���Фʤ�
- *  �ʤ���
+ *  この関数は，実行状態のタスクが，タスク例外処理許可状態（enatexが
+ *  true）で，保留例外要因が0でない（texptnが0でない）場合に呼び出すこ
+ *  とを想定している．この関数は，CPUロック状態で呼び出さなければなら
+ *  ない．
  */
 extern void	call_texrtn(void);
 
 /*
- *  �������㳰�����롼����ε�ư
+ *  タスク例外処理ルーチンの起動
  *
- *  �¹Ծ��֤Υ��������������㳰�����롼����ε�ư�����������Ƥ���С�
- *  �������㳰�����롼�����ƤӽФ���CPU�㳰�����롼�����ƤӽФ���
- *  �ϡ����Ū��CPU���å��������롥
+ *  実行状態のタスクがタスク例外処理ルーチンの起動条件を満たしていれば，
+ *  タスク例外処理ルーチンを呼び出す．CPU例外処理ルーチンを呼び出す時
+ *  は，一時的にCPUロックを解除する．
  *
- *  ���δؿ��ϡ��ǥ����ѥå�������ߥϥ�ɥ顿CPU�㳰�ϥ�ɥ�νи�
- *  ��������ƤӽФ���뤳�Ȥ����ꤷ�Ƥ��롥���δؿ��ϡ�CPU���å�����
- *  �ǸƤӽФ��ʤ���Фʤ�ʤ���
+ *  この関数は，ディスパッチャや割込みハンドラ／CPU例外ハンドラの出口
+ *  処理から呼び出されることを想定している．この関数は，CPUロック状態
+ *  で呼び出さなければならない．
  *
- *  �¹Ը�Ψ��夲�뤿��ˡ����δؿ��򥿡����åȰ�¸���ǵ��Ҥ��Ƥ�褤��
- *  ���ξ��ˤϡ�OMIT_CALLTEX��ޥ���������롥
+ *  実行効率を上げるために，この関数をターゲット依存部で記述してもよい．
+ *  その場合には，OMIT_CALLTEXをマクロ定義する．
  */
 extern void	calltex(void);
 

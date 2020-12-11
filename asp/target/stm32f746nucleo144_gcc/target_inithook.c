@@ -9,34 +9,34 @@
  *              Imageing System Development Division RICOH COMPANY, LTD.
  *  Copyright (C) 2017-2019 by TOPPERS PROJECT Educational Working Group.
  * 
- *  ╛х╡н├°║ю╕в╝╘д╧бд░╩▓╝д╬(1)б┴(4)д╬╛Є╖ядЄ╦■д┐д╣╛ь╣чд╦╕┬дъбд╦▄е╜е╒е╚ежез
- *  евб╩╦▄е╜е╒е╚ежезевдЄ▓■╩╤д╖д┐дтд╬дЄ┤▐дрбе░╩▓╝╞▒д╕б╦дЄ╗╚═╤бж╩г└╜бж▓■
- *  ╩╤бж║╞╟█╔█б╩░╩▓╝бд═°═╤д╚╕╞д╓б╦д╣дыд│д╚дЄ╠╡╜■д╟╡Ў┬·д╣дыбе
- *  (1) ╦▄е╜е╒е╚ежезевдЄе╜б╝е╣е│б╝е╔д╬╖┴д╟═°═╤д╣ды╛ь╣чд╦д╧бд╛х╡нд╬├°║ю
- *      ╕в╔╜╝ибдд│д╬═°═╤╛Є╖ядкдшд╙▓╝╡нд╬╠╡╩▌╛┌╡м─ъдмбдд╜д╬д▐д▐д╬╖┴д╟е╜б╝
- *      е╣е│б╝е╔├цд╦┤▐д▐дьд╞дддыд│д╚бе
- *  (2) ╦▄е╜е╒е╚ежезевдЄбдещеде╓ещеъ╖┴╝░д╩д╔бд┬╛д╬е╜е╒е╚ежезев│л╚пд╦╗╚
- *      ═╤д╟днды╖┴д╟║╞╟█╔█д╣ды╛ь╣чд╦д╧бд║╞╟█╔█д╦╚╝дже╔енехесеєе╚б╩═°═╤
- *      ╝╘е▐е╦ехевеыд╩д╔б╦д╦бд╛х╡нд╬├°║ю╕в╔╜╝ибдд│д╬═°═╤╛Є╖ядкдшд╙▓╝╡н
- *      д╬╠╡╩▌╛┌╡м─ъдЄ╖╟║▄д╣дыд│д╚бе
- *  (3) ╦▄е╜е╒е╚ежезевдЄбд╡б┤яд╦┴╚д▀╣■дрд╩д╔бд┬╛д╬е╜е╒е╚ежезев│л╚пд╦╗╚
- *      ═╤д╟днд╩дд╖┴д╟║╞╟█╔█д╣ды╛ь╣чд╦д╧бд╝бд╬ддд║дьдлд╬╛Є╖ядЄ╦■д┐д╣д│
- *      д╚бе
- *    (a) ║╞╟█╔█д╦╚╝дже╔енехесеєе╚б╩═°═╤╝╘е▐е╦ехевеыд╩д╔б╦д╦бд╛х╡нд╬├°
- *        ║ю╕в╔╜╝ибдд│д╬═°═╤╛Є╖ядкдшд╙▓╝╡нд╬╠╡╩▌╛┌╡м─ъдЄ╖╟║▄д╣дыд│д╚бе
- *    (b) ║╞╟█╔█д╬╖┴┬╓дЄбд╩╠д╦─ъдсды╩¤╦бд╦дшд├д╞бдTOPPERSе╫еэе╕езепе╚д╦
- *        ╩є╣Ёд╣дыд│д╚бе
- *  (4) ╦▄е╜е╒е╚ежезевд╬═°═╤д╦дшдъ─╛└▄┼кд▐д┐д╧┤╓└▄┼кд╦└╕д╕дыдддлд╩ды┬╗
- *      │▓длдщдтбд╛х╡н├°║ю╕в╝╘дкдшд╙TOPPERSе╫еэе╕езепе╚дЄ╠╚└╒д╣дыд│д╚бе
- *      д▐д┐бд╦▄е╜е╒е╚ежезевд╬ецб╝е╢д▐д┐д╧еиеєе╔ецб╝е╢длдщд╬дддлд╩ды═¤
- *      ═│д╦┤Ёд┼дп└┴╡сдлдщдтбд╛х╡н├°║ю╕в╝╘дкдшд╙TOPPERSе╫еэе╕езепе╚дЄ
- *      ╠╚└╒д╣дыд│д╚бе
+ *  ф╕КшиШшСЧф╜ЬцийшАЕуБпя╝Мф╗еф╕ЛуБо(1)уАЬ(4)уБоцЭбф╗╢уВТц║АуБЯуБЩха┤хРИуБлщЩРуВКя╝МцЬмуВ╜уГХуГИуВжуВз
+ *  уВвя╝ИцЬмуВ╜уГХуГИуВжуВзуВвуВТцФ╣хдЙуБЧуБЯуВВуБоуВТхРлуВАя╝Оф╗еф╕ЛхРМуБШя╝ЙуВТф╜┐чФиуГ╗шдЗшг╜уГ╗цФ╣
+ *  хдЙуГ╗хЖНщЕНх╕Гя╝Иф╗еф╕Ля╝МхИйчФиуБихС╝уБ╢я╝ЙуБЩуВЛуБУуБиуВТчДбхДЯуБзши▒шл╛уБЩуВЛя╝О
+ *  (1) цЬмуВ╜уГХуГИуВжуВзуВвуВТуВ╜уГ╝уВ╣уВ│уГ╝уГЙуБох╜вуБзхИйчФиуБЩуВЛха┤хРИуБлуБпя╝Мф╕КшиШуБошСЧф╜Ь
+ *      цийшбичд║я╝МуБУуБохИйчФицЭбф╗╢уБКуВИуБ│ф╕ЛшиШуБочДбф┐Эши╝шжПхоЪуБМя╝МуБЭуБоуБ╛уБ╛уБох╜вуБзуВ╜уГ╝
+ *      уВ╣уВ│уГ╝уГЙф╕нуБлхРлуБ╛уВМуБжуБДуВЛуБУуБия╝О
+ *  (2) цЬмуВ╜уГХуГИуВжуВзуВвуВТя╝МуГйуВдуГЦуГйуГкх╜вх╝ПуБкуБйя╝Мф╗ЦуБоуВ╜уГХуГИуВжуВзуВвщЦЛчЩ║уБлф╜┐
+ *      чФиуБзуБНуВЛх╜вуБзхЖНщЕНх╕ГуБЩуВЛха┤хРИуБлуБпя╝МхЖНщЕНх╕ГуБлф╝┤уБЖуГЙуВнуГеуГбуГ│уГИя╝ИхИйчФи
+ *      шАЕуГЮуГЛуГеуВвуГлуБкуБйя╝ЙуБля╝Мф╕КшиШуБошСЧф╜Ьцийшбичд║я╝МуБУуБохИйчФицЭбф╗╢уБКуВИуБ│ф╕ЛшиШ
+ *      уБочДбф┐Эши╝шжПхоЪуВТцО▓ш╝ЙуБЩуВЛуБУуБия╝О
+ *  (3) цЬмуВ╜уГХуГИуВжуВзуВвуВТя╝МцйЯхЩиуБлч╡ДуБ┐ш╛╝уВАуБкуБйя╝Мф╗ЦуБоуВ╜уГХуГИуВжуВзуВвщЦЛчЩ║уБлф╜┐
+ *      чФиуБзуБНуБкуБДх╜вуБзхЖНщЕНх╕ГуБЩуВЛха┤хРИуБлуБпя╝МцмбуБоуБДуБЪуВМуБЛуБоцЭбф╗╢уВТц║АуБЯуБЩуБУ
+ *      уБия╝О
+ *    (a) хЖНщЕНх╕ГуБлф╝┤уБЖуГЙуВнуГеуГбуГ│уГИя╝ИхИйчФишАЕуГЮуГЛуГеуВвуГлуБкуБйя╝ЙуБля╝Мф╕КшиШуБошСЧ
+ *        ф╜Ьцийшбичд║я╝МуБУуБохИйчФицЭбф╗╢уБКуВИуБ│ф╕ЛшиШуБочДбф┐Эши╝шжПхоЪуВТцО▓ш╝ЙуБЩуВЛуБУуБия╝О
+ *    (b) хЖНщЕНх╕ГуБох╜вцЕЛуВТя╝МхИеуБлхоЪуВБуВЛцЦ╣ц│ХуБлуВИуБгуБжя╝МTOPPERSуГЧуГнуВ╕уВзуВпуГИуБл
+ *        ха▒хСКуБЩуВЛуБУуБия╝О
+ *  (4) цЬмуВ╜уГХуГИуВжуВзуВвуБохИйчФиуБлуВИуВКчЫ┤цОечЪДуБ╛уБЯуБпщЦУцОечЪДуБлчФЯуБШуВЛуБДуБЛуБкуВЛцРН
+ *      хо│уБЛуВЙуВВя╝Мф╕КшиШшСЧф╜ЬцийшАЕуБКуВИуБ│TOPPERSуГЧуГнуВ╕уВзуВпуГИуВТхЕНш▓муБЩуВЛуБУуБия╝О
+ *      уБ╛уБЯя╝МцЬмуВ╜уГХуГИуВжуВзуВвуБоуГжуГ╝уВ╢уБ╛уБЯуБпуВиуГ│уГЙуГжуГ╝уВ╢уБЛуВЙуБоуБДуБЛуБкуВЛчРЖ
+ *      чФ▒уБлхЯ║уБеуБПшлЛц▒ВуБЛуВЙуВВя╝Мф╕КшиШшСЧф╜ЬцийшАЕуБКуВИуБ│TOPPERSуГЧуГнуВ╕уВзуВпуГИуВТ
+ *      хЕНш▓муБЩуВЛуБУуБия╝О
  * 
- *  ╦▄е╜е╒е╚ежезевд╧бд╠╡╩▌╛┌д╟─є╢бд╡дьд╞дддыдтд╬д╟двдыбе╛х╡н├°║ю╕в╝╘дк
- *  дшд╙TOPPERSе╫еэе╕езепе╚д╧бд╦▄е╜е╒е╚ежезевд╦┤╪д╖д╞бд╞├─ъд╬╗╚═╤╠▄┼к
- *  д╦┬╨д╣ды┼м╣ч└ндт┤▐дсд╞бддддлд╩ды╩▌╛┌дт╣╘дяд╩ддбед▐д┐бд╦▄е╜е╒е╚ежез
- *  евд╬═°═╤д╦дшдъ─╛└▄┼кд▐д┐д╧┤╓└▄┼кд╦└╕д╕д┐дддлд╩ды┬╗│▓д╦┤╪д╖д╞дтбдд╜
- *  д╬└╒╟ддЄ╔щдяд╩ддбе
+ *  цЬмуВ╜уГХуГИуВжуВзуВвуБпя╝МчДбф┐Эши╝уБзцПРф╛ЫуБХуВМуБжуБДуВЛуВВуБоуБзуБВуВЛя╝Оф╕КшиШшСЧф╜ЬцийшАЕуБК
+ *  уВИуБ│TOPPERSуГЧуГнуВ╕уВзуВпуГИуБпя╝МцЬмуВ╜уГХуГИуВжуВзуВвуБлщЦвуБЧуБжя╝МчЙ╣хоЪуБоф╜┐чФичЫочЪД
+ *  уБлхп╛уБЩуВЛщБйхРИцАзуВВхРлуВБуБжя╝МуБДуБЛуБкуВЛф┐Эши╝уВВшбМуВПуБкуБДя╝ОуБ╛уБЯя╝МцЬмуВ╜уГХуГИуВжуВз
+ *  уВвуБохИйчФиуБлуВИуВКчЫ┤цОечЪДуБ╛уБЯуБпщЦУцОечЪДуБлчФЯуБШуБЯуБДуБЛуБкуВЛцРНхо│уБлщЦвуБЧуБжуВВя╝МуБЭ
+ *  уБош▓мф╗╗уВТш▓ауВПуБкуБДя╝О
  * 
  *  @(#) $Id: target_inithook.c 698 2019-07-26 21:50:31Z roi $
  */
@@ -45,7 +45,7 @@
 #include "target_syssvc.h"
 
 /*
- *  ╜щ┤№▓╜е╫еэе░ещерб╩stm32f746-nucleo144═╤б╦
+ *  хИЭцЬЯхМЦуГЧуГнуВ░уГйуГая╝Иstm32f746-nucleo144чФия╝Й
  */
 
 #define PLL_M      (HSE_VALUE / 1000000)/* Possible value 0 and 63 */
@@ -55,11 +55,11 @@
 /*
  *  TIMEOUT VALUES
  */
-#define CLOCKSWITCH_TIMEOUT_VALUE      (5000*1000)		/* 5╔├ */
-#define HSE_TIMEOUT_VALUE              (5000*1000)		/* 5╔├ */
+#define CLOCKSWITCH_TIMEOUT_VALUE      (5000*1000)		/* 5чзТ */
+#define HSE_TIMEOUT_VALUE              (5000*1000)		/* 5чзТ */
 #define PLL_TIMEOUT_VALUE              (100*1000)		/* 100 ms */
 #define PLLSAI_TIMEOUT_VALUE           (100*1000)		/* 100 ms  */
-#define PWR_OVERDRIVE_TIMEOUT_VALUE    (1000*1000)		/* 1╔├ */
+#define PWR_OVERDRIVE_TIMEOUT_VALUE    (1000*1000)		/* 1чзТ */
 
 /*
  *  RCC_PLLP_Clock_Divider PLLP Clock Divider
@@ -97,50 +97,50 @@
 #define RCC_PLLSAIP_DIV8                 0x00000003
 
 /*
- *  CORTEX MPU╬╬░ш╡Ў▓─╢╪╗▀
+ *  CORTEX MPUщаШхЯЯши▒хПпчжБцнв
  */
 #define MPU_REGION_ENABLE               0x01
 #define MPU_REGION_DISABLE              0x00
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣╡Ў▓─╢╪╗▀
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣ши▒хПпчжБцнв
  */
 #define MPU_INSTRUCTION_ACCESS_ENABLE   0x00
 #define MPU_INSTRUCTION_ACCESS_DISABLE  0x01
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣енеуе├е╖ех└▀─ъ
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣уВнуГгуГГуВ╖уГешинхоЪ
  */
 #define MPU_ACCESS_CACHEABLE            0x01
 #define MPU_ACCESS_NOT_CACHEABLE        0x00
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣е╨е├е╒еб└▀─ъ
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣уГРуГГуГХуВбшинхоЪ
  */
 #define MPU_ACCESS_BUFFERABLE           0x01
 #define MPU_ACCESS_NOT_BUFFERABLE       0x00
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣╢ж═н└▀─ъ
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣хЕ▒цЬЙшинхоЪ
  */
 #define MPU_ACCESS_SHAREABLE            0x01
 #define MPU_ACCESS_NOT_SHAREABLE        0x00
 
 /*
- *  GPIOевеже╚е╫е├е╚└▀─ъе╤ещесб╝е┐
+ *  GPIOуВвуВжуГИуГЧуГГуГИшинхоЪуГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_OTYPE_PP       0x0
 #define GPIO_OTYPE_OD       0x1
 
 /*
- *  GPIOе╫еыеве├е╫е└ежеєе╤ещесб╝е┐
+ *  GPIOуГЧуГлуВвуГГуГЧуГАуВжуГ│уГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_NOPULL         0x00000000	/* No Pull-up or Pull-down activation  */
 #define GPIO_PULLUP         0x00000001	/* Pull-up activation                  */
 #define GPIO_PULLDOWN       0x00000002	/* Pull-down activation                */
 
 /*
- *  GPIOетб╝е╔е╤ещесб╝е┐
+ *  GPIOуГвуГ╝уГЙуГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_MODE_INPUT     0x00000000	/* Input Floating Mode */
 #define GPIO_MODE_OUTPUT    0x00000001	/* Output Push Pull Mode */
@@ -148,7 +148,7 @@
 #define GPIO_MODE_ANALOG    0x00000003	/* Analog Mode  */
 
 /*
- *  GPIOевеже╚е╫е├е╚║╟┬ч╝■╟╚┐Їе╤ещесб╝е┐
+ *  GPIOуВвуВжуГИуГЧуГГуГИцЬАхдзхСиц│вцХ░уГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_SPEED_LOW      0x00000000	/* Low speed     */
 #define GPIO_SPEED_MEDIUM   0x00000001	/* Medium speed  */
@@ -159,7 +159,7 @@
 #define LED1_POSITION                   1
 
 /*
- *  енеуе├е╖ехе╡еде║ID еье╕е╣е┐е▐епеэ
+ *  уВнуГгуГГуВ╖уГеуВ╡уВдуВ║ID уГмуВ╕уВ╣уВ┐уГЮуВпуГн
  */
 #define CCSIDR_WAYS(x)         (((x) & SCB_CCSIDR_ASSOCIATIVITY_Msk) >> SCB_CCSIDR_ASSOCIATIVITY_Pos)
 #define CCSIDR_SETS(x)         (((x) & SCB_CCSIDR_NUMSETS_Msk      ) >> SCB_CCSIDR_NUMSETS_Pos      )
@@ -176,9 +176,9 @@ static void mpu_config(void);
 static void sysemclock_error(void);
 
 /*
- *  ─уеье┘еыд╬е┐б╝е▓е├е╚░═┬╕д╬╜щ┤№▓╜
+ *  ф╜ОуГмуГЩуГлуБоуВ┐уГ╝уВ▓уГГуГИф╛ЭхнШуБохИЭцЬЯхМЦ
  *
- *  е╣е┐б╝е╚еве├е╫ете╕ехб╝еыд╬├цд╟бдесетеъд╬╜щ┤№▓╜д╬┴░д╦╕╞д╙╜╨д╡дьдыбе
+ *  уВ╣уВ┐уГ╝уГИуВвуГГуГЧуГвуВ╕уГеуГ╝уГлуБоф╕нуБзя╝МуГбуГвуГкуБохИЭцЬЯхМЦуБохЙНуБлхС╝уБ│хЗ║уБХуВМуВЛя╝О
  */
 void hardware_init_hook(void)
 {
@@ -187,7 +187,7 @@ void hardware_init_hook(void)
 	uint32_t sets, ways;
 
 	/*
-	 * RCCд╬еъе╗е├е╚д╚е│еєе╒егеоехеьб╝е╖ечеє
+	 * RCCуБоуГкуВ╗уГГуГИуБиуВ│уГ│уГХуВгуВоуГеуГмуГ╝уВ╖уГзуГ│
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSION);
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), 0x00000000);
@@ -197,19 +197,19 @@ void hardware_init_hook(void)
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 
 	/*
-	 *  ┴┤│ф╣■д▀╢╪╗▀
+	 *  хЕихЙ▓ш╛╝уБ┐чжБцнв
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CIR), 0x00000000);
 
 	/*
-	 *  есетеъе╫еэе╞епе╖ечеєеце╦е├е╚д╬╜щ┤№▓╜
+	 *  уГбуГвуГкуГЧуГнуГЖуВпуВ╖уГзуГ│уГжуГЛуГГуГИуБохИЭцЬЯхМЦ
 	 */
 	mpu_config();
 
 	/*
-	 *  енеуе├е╖ехдЄ═н╕·▓╜
+	 *  уВнуГгуГГуВ╖уГеуВТцЬЙхК╣хМЦ
 	 */
-	/* I-Cache═н╕·▓╜ */
+	/* I-CacheцЬЙхК╣хМЦ */
 	Asm("dsb 0xF":::"memory");
 	Asm("isb 0xF":::"memory");
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_ICIALLU), 0);	/* invalidate I-Cache */
@@ -217,7 +217,7 @@ void hardware_init_hook(void)
 	Asm("dsb 0xF":::"memory");
 	Asm("isb 0xF":::"memory");
 
-	/* D-Cache═н╕·▓╜ */
+	/* D-CacheцЬЙхК╣хМЦ */
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_CSSELR), ((0UL << 1) | 0UL));	/* Level 1 data cache */
 	ccsidr  = sil_rew_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_CCSIDR));
     sets    = (uint32_t)(CCSIDR_SETS(ccsidr));
@@ -225,7 +225,7 @@ void hardware_init_hook(void)
     ways    = (uint32_t)(CCSIDR_WAYS(ccsidr));
     wshift  = (uint32_t)((uint32_t)__builtin_clz(ways) & 0x1FUL);
 
-    /* D-Chaheедеєе╨еъе╟б╝е╚ */
+    /* D-ChaheуВдуГ│уГРуГкуГЗуГ╝уГИ */
 	Asm("dsb 0xF":::"memory");
 	do{
 		uint32_t tmpways = ways;
@@ -243,7 +243,7 @@ void hardware_init_hook(void)
 
 
 	/*
-	 *  │ф╣■д▀е░еыб╝е╫═е└ш┼┘└▀─ъ
+	 *  хЙ▓ш╛╝уБ┐уВ░уГлуГ╝уГЧхДкхЕИх║жшинхоЪ
 	 */
 	reg_value = sil_rew_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_AIRCR));        /* read old register configuration    */
 	reg_value &= ~((uint32_t)(SCB_AIRCR_VECTKEY_Msk | SCB_AIRCR_PRIGROUP_Msk));	/* clear bits to change               */
@@ -253,7 +253,7 @@ void hardware_init_hook(void)
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_AIRCR), reg_value);
 
 	/*
-	 *  е╖е╣е╞ерепеэе├епдЄ 216MHzд╦└▀─ъ
+	 *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпуВТ 216MHzуБлшинхоЪ
 	 */
 	if(sysclock_config(0) != E_OK)
 		sysemclock_error();
@@ -269,12 +269,12 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
 	unsigned int pllsaiq = 0U;
 
     /*
-	 * епеэе├еп48е╜б╝е╣└▀─ъ
+	 * уВпуГнуГГуВп48уВ╜уГ╝уВ╣шинхоЪ
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_DCKCFGR2), RCC_DCKCFGR2_CK48MSEL, RCC_CLK48SOURCE_PLLSAIP);
 
     /*
-	 *  PLLSAIепеэе├епдЄ─ф╗▀
+	 *  PLLSAIуВпуГнуГГуВпуВТхБЬцнв
 	 */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLSAION);
 
@@ -288,7 +288,7 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
     }
 
     /*
-	 *  PLLSAIепеэе├еп└▀─ъ
+	 *  PLLSAIуВпуГнуГГуВпшинхоЪ
 	 */
 	pllsaiq = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_PLLSAICFGR)) & (RCC_PLLSAICFGR_PLLSAIQ | RCC_PLLSAICFGR_PLLSAIR);
 	/* Configure the PLLSAI division factors */
@@ -298,7 +298,7 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_PLLSAICFGR), pllsaiq);
 
     /*
-	 *  PLLSAIепеэе├епдЄ║╞│л
+	 *  PLLSAIуВпуГнуГГуВпуВТхЖНщЦЛ
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLSAION);
 
@@ -314,8 +314,8 @@ ER USB_RCC_PeriphCLKConfig(unsigned int pllsan, unsigned int pllsaip)
 }
 
 /*
- *  е╖е╣е╞ерепеэе├еп└▀─ъ
- *  └▀─ъ├═бз
+ *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпшинхоЪ
+ *  шинхоЪхАдя╝Ъ
  *    System Clock source            = PLL (HSE)
  *    SYSCLK(Hz)                     = 216000000
  *    HCLK(Hz)                       = 216000000
@@ -337,12 +337,12 @@ ER sysclock_config(int mode)
 	volatile uint32_t tmpreg;
 
 	/*
-	 *  HSEд╬╜щ┤№└▀─ъ
+	 *  HSEуБохИЭцЬЯшинхоЪ
 	 */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEON);
 
-	/* HSEд╬╠╡╕·▓╜┬╘д┴ */  
+	/* HSEуБочДбхК╣хМЦх╛ЕуБб */  
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_HSERDY) != 0){
 		if(tickstart > HSE_TIMEOUT_VALUE){
 			return E_TMOUT;
@@ -351,13 +351,13 @@ ER sysclock_config(int mode)
 		tickstart++;
 	}
 
-	/* HSEд╬║╞└▀─ъ */
+	/* HSEуБохЖНшинхоЪ */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEON);
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEON);
 
 	tickstart = 0;
-	/* HSEд╬║╞╡п╞░┬╘д┴ */
+	/* HSEуБохЖНш╡╖хЛХх╛ЕуБб */
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_HSERDY) == 0){
 		if(tickstart > HSE_TIMEOUT_VALUE){
 			return E_TMOUT;
@@ -367,12 +367,12 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  PLLд╬╜щ┤№└▀─ъ
+	 *  PLLуБохИЭцЬЯшинхоЪ
 	 */
-	/*  еседеєPLLд╬╠╡╕·▓╜. */
+	/*  уГбуВдуГ│PLLуБочДбхК╣хМЦ. */
 	sil_anw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLON);
 
-	/*  PLLд╬еье╟ег┬╘д┴ */
+	/*  PLLуБоуГмуГЗуВгх╛ЕуБб */
 	tickstart = 0;
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_PLLRDY) != 0){
 		if(tickstart > PLL_TIMEOUT_VALUE){
@@ -381,15 +381,15 @@ ER sysclock_config(int mode)
 		sil_dly_nse(1000);
 		tickstart++;
 	}
-	/*  PLLеье╕е╣е┐└▀─ъ */
+	/*  PLLуГмуВ╕уВ╣уВ┐шинхоЪ */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_PLLCFGR), (0x20000000 | PLL_M | (PLL_N << 6) | ((RCC_PLLP_DIV2 >> 1) -1) << 16)
 			 | RCC_PLLCFGR_PLLSRC_HSE | (PLL_Q << 24));
 
-	/*  еседеєPLLд╬═н╕·▓╜┬╘д┴ */
+	/*  уГбуВдуГ│PLLуБоцЬЙхК╣хМЦх╛ЕуБб */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_PLLON);
 	tickstart = 0;
 
-	/*  PLLд╬═н╕·▓╜┬╘д┴ */
+	/*  PLLуБоцЬЙхК╣хМЦх╛ЕуБб */
 	while((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_PLLRDY) == 0){
 		if(tickstart > PLL_TIMEOUT_VALUE){
 			return E_TMOUT;
@@ -403,7 +403,7 @@ ER sysclock_config(int mode)
 	tmpreg = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_APB1ENR)) & RCC_APB1ENR_PWREN;
 	(void)(tmpreg);
 
-	/* 216MHz═╤д╬екб╝е╨б╝е╔ещеде╓└▀─ъ */
+	/* 216MHzчФиуБоуВкуГ╝уГРуГ╝уГЙуГйуВдуГЦшинхоЪ */
 	sil_orw_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR1), PWR_CR1_ODEN);
 
 	tickstart = 0;
@@ -415,10 +415,10 @@ ER sysclock_config(int mode)
     	tickstart++;
 	}
 
-	/* екб╝е╨б╝е╔ещеде╓е╣еде├е┴дЄ═н╕·▓╜ */
+	/* уВкуГ╝уГРуГ╝уГЙуГйуВдуГЦуВ╣уВдуГГуГБуВТцЬЙхК╣хМЦ */
 	sil_orw_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR1), PWR_CR1_ODSWEN);
 
-	/* екб╝е╨б╝е╔ещеде╓еье╟ег┬╘д┴ */
+	/* уВкуГ╝уГРуГ╝уГЙуГйуВдуГЦуГмуГЗуВгх╛ЕуБб */
 	tickstart = 0;
 	while((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CSR1)) & PWR_CSR1_ODSWRDY) != PWR_CSR1_ODSWRDY){
 		if(tickstart > PWR_OVERDRIVE_TIMEOUT_VALUE){
@@ -429,15 +429,15 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  USBепеэе├еп└▀─ъ
+	 *  USBуВпуГнуГГуВпшинхоЪ
 	 */
 	USB_RCC_PeriphCLKConfig(384, RCC_PLLSAIP_DIV8);
 
 	/*
-	 *  е╒еще├е╖ехесетеъдлдщ└╡д╖дпе╟б╝е┐дЄ╞╔д▀╣■дсдыдшджд╦╝┬╣╘╝■╟╚┐Їд╦╣чдяд╗д╞
-	 *  HCLKеьеде╞еєе╖егд╚е╟е╨еде╣д╬┼┼╕╗┼┼░╡─┤└сд╣ды╔м═╫дмдвды
+	 *  уГХуГйуГГуВ╖уГеуГбуГвуГкуБЛуВЙцнгуБЧуБПуГЗуГ╝уВ┐уВТшкнуБ┐ш╛╝уВБуВЛуВИуБЖуБлхоЯшбМхСиц│вцХ░уБлхРИуВПуБЫуБж
+	 *  HCLKуГмуВдуГЖуГ│уВ╖уВгуБиуГЗуГРуВдуВ╣уБощЫ╗ц║РщЫ╗хЬзшк┐чпАуБЩуВЛх┐ЕшжБуБМуБВуВЛ
 	 */
-	/*  CPU╝■╟╚┐Їд╬┴¤┬че▒б╝е╣ */
+	/*  CPUхСиц│вцХ░уБохвЧхдзуВ▒уГ╝уВ╣ */
 	if(FLASH_ACR_LATENCY_7WS > (sil_rew_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR)) & FLASH_ACR_LATENCY)){
 
 		sil_mdw_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR), FLASH_ACR_LATENCY, FLASH_ACR_LATENCY_7WS);
@@ -459,7 +459,7 @@ ER sysclock_config(int mode)
 			tickstart++;
 		}
 	}
-	/*  CPU╝■╟╚┐Їд╬─у▓╝е▒б╝е╣ */
+	/*  CPUхСиц│вцХ░уБоф╜Оф╕ЛуВ▒уГ╝уВ╣ */
 	else{
 		sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_HPRE, RCC_SYSCLK_DIV1);
 		if((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_PLLRDY) == 0){
@@ -481,12 +481,12 @@ ER sysclock_config(int mode)
 	}
 
 	/*
-	 *  PCLK1╜щ┤№└▀─ъ
+	 *  PCLK1хИЭцЬЯшинхоЪ
 	 */ 
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_PPRE1, RCC_HCLK_DIV4);
 
 	/*
-	 *  PCLK2╜щ┤№└▀─ъ
+	 *  PCLK2хИЭцЬЯшинхоЪ
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), RCC_CFGR_PPRE2, (RCC_HCLK_DIV2 << 3));
 	return E_OK;
@@ -494,7 +494,7 @@ ER sysclock_config(int mode)
 
 #ifndef TOPPERS_RAM_EXEC
 /*
- *  есетеъе╫еэе╞епе╖ечеєеце╦е├е╚д╬└▀─ъ
+ *  уГбуГвуГкуГЧуГнуГЖуВпуВ╖уГзуГ│уГжуГЛуГГуГИуБошинхоЪ
  */
 static void mpu_config(void)
 {
@@ -549,7 +549,7 @@ static void mpu_config(void)
 }
 
 /*
- *  е╖е╣е╞ерепеэе├еп└▀─ъеиещб╝
+ *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпшинхоЪуВиуГйуГ╝
  */
 static void sysemclock_error(void)
 {
@@ -557,14 +557,14 @@ static void sysemclock_error(void)
 	uint32_t n = LED1_POSITION;
 
 	/*
-	 *  GPIO LEDепеэе├еп└▀─ъ
+	 *  GPIO LEDуВпуГнуГГуВпшинхоЪ
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_AHB1ENR), RCC_AHB1ENR_GPIOIEN);
 	temp = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_AHB1ENR));
 	(void)(temp);
 
 	/*
-	 * LED GPIO└▀─ъ
+	 * LED GPIOшинхоЪ
 	 */
 	sil_mdw_mem((uint32_t *)(TADR_GPIOI_BASE+TOFF_GPIO_MODER), (3 << (n * 2)), (GPIO_MODE_OUTPUT << (n * 2)));
 	sil_mdw_mem((uint32_t *)(TADR_GPIOI_BASE+TOFF_GPIO_OSPEEDR), (3 << (n * 2)), (GPIO_SPEED_HIGH << (n * 2)));

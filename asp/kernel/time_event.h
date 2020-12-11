@@ -8,113 +8,113 @@
  *  Copyright (C) 2005-2010 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: time_event.h 1774 2010-03-19 12:45:46Z ertl-hiro $
  */
 
 /*
- *		�����।�٥�ȴ����⥸�塼��
+ *		タイムイベント管理モジュール
  */
 
 #ifndef TOPPERS_TIME_EVENT_H
 #define TOPPERS_TIME_EVENT_H
 
 /*
- *  ���٥��ȯ������Υǡ����������
+ *  イベント発生時刻のデータ型の定義
  *
- *  EVTTIM�ϡ�RELTIM�Ȥ��ƻ���Ǥ����ϰϤ��⹭���ϰϤ�ɽ���Ǥ���ɬ��
- *  �����롥��ITRON4.0���ͤΥ���������ɥץ��ե�����Ǥϡ�RELTIM��16�ӥ�
- *  �Ȱʾ�Ǥʤ���Фʤ�ʤ����ᡤEVTTIM��17�ӥåȰʾ�Ǥ��뤳�Ȥ�ɬ��
- *  �Ǥ��롥���Τ��ᡤ16�ӥåȤˤʤ��礬����uint_t�ǤϤʤ���ulong_t��
- *  ������Ƥ��롥
+ *  EVTTIMは，RELTIMとして指定できる範囲よりも広い範囲を表現できる必要
+ *  がある．μITRON4.0仕様のスタンダードプロファイルでは，RELTIMが16ビッ
+ *  ト以上でなければならないため，EVTTIMは17ビット以上であることが必要
+ *  である．そのため，16ビットになる場合があるuint_tではなく，ulong_tに
+ *  定義している．
  */
 typedef ulong_t	EVTTIM;
 
 /* 
- *  �����।�٥�ȥ֥��å��Υǡ����������
+ *  タイムイベントブロックのデータ型の定義
  */
-typedef void	(*CBACK)(void *);	/* ������Хå��ؿ��η� */
+typedef void	(*CBACK)(void *);	/* コールバック関数の型 */
 
 typedef struct time_event_block {
-	uint_t	index;			/* �����।�٥�ȥҡ�����Ǥΰ��� */
-	CBACK	callback;		/* ������Хå��ؿ� */
-	void	*arg;			/* ������Хå��ؿ����Ϥ����� */
+	uint_t	index;			/* タイムイベントヒープ中での位置 */
+	CBACK	callback;		/* コールバック関数 */
+	void	*arg;			/* コールバック関数へ渡す引数 */
 } TMEVTB;
 
 /*
- *  �����।�٥�ȥҡ�����ΥΡ��ɤΥǡ����������
+ *  タイムイベントヒープ中のノードのデータ型の定義
  */
 typedef struct time_event_node {
-	EVTTIM	time;			/* ���٥��ȯ������ */
-	TMEVTB	*p_tmevtb;		/* �б����륿���।�٥�ȥ֥��å� */
+	EVTTIM	time;			/* イベント発生時刻 */
+	TMEVTB	*p_tmevtb;		/* 対応するタイムイベントブロック */
 } TMEVTN;
 
 /*
- *  �����।�٥�ȥҡ��ס�kernel_cfg.c��
+ *  タイムイベントヒープ（kernel_cfg.c）
  */
 extern TMEVTN	tmevt_heap[];
 
 /*
- *  ���ߤΥ����ƥ�����ñ��: 1�ߥ��á�
+ *  現在のシステム時刻（単位: 1ミリ秒）
  *
- *  �����ƥ൯ư����0�˽�������졤�ʹߡ�������ƥ��å������뤵����٤�
- *  ñĴ�����ä��롥
+ *  システム起動時に0に初期化され，以降，タイムティックが供給される度に
+ *  単調に増加する．
  */
 extern EVTTIM	current_time;
 
 /*
- *  �����।�٥�ȥҡ������ͭ���ʺǾ��Υ����ƥ�����ñ��: 1�ߥ��á�
+ *  タイムイベントヒープ中で有効な最小のシステム時刻（単位: 1ミリ秒）
  */
 extern EVTTIM	min_time;
 
 /*
- *  ���Υ�����ƥ��å��Υ����ƥ�����ñ��: 1�ߥ��á�
+ *  次のタイムティックのシステム時刻（単位: 1ミリ秒）
  */
 extern EVTTIM	next_time;
 
 /*
- *  �����ƥ�����ѻ����ѿ���ñ��: 1/TIC_DENO�ߥ��á�
+ *  システム時刻積算用変数（単位: 1/TIC_DENOミリ秒）
  *
- *  ���Υ�����ƥ��å��Υ����ƥ����β��̷�򼨤��ʾ�̷��next_time�ˡ�
- *  TIC_DENO��1�λ��ϡ����̷�Ͼ��0�Ǥ��뤿�ᡤ�����ѿ���ɬ�פʤ���
+ *  次のタイムティックのシステム時刻の下位桁を示す（上位桁はnext_time）．
+ *  TIC_DENOが1の時は，下位桁は常に0であるため，この変数は必要ない．
  */
 #if TIC_DENO != 1U
 extern uint_t	next_subtime;
 #endif /* TIC_DENO != 1U */
 
 /*
- *  ���л��֤δ������ñ��: 1�ߥ��á�
+ *  相対時間の基準時刻（単位: 1ミリ秒）
  *
- *  ���Υ�����ƥ��å��Υ����ƥ������ڤ�夲�����TIC_DENO��1�λ�
- *  �ϡ�next_time�˰��פ��롥
+ *  次のタイムティックのシステム時刻を切り上げた時刻．TIC_DENOが1の時
+ *  は，next_timeに一致する．
  */
 #if TIC_DENO == 1U
 #define	base_time	(next_time)
@@ -123,35 +123,35 @@ extern uint_t	next_subtime;
 #endif /* TIC_DENO == 1U */
 
 /*
- *  �����।�٥�ȥҡ��פκǸ�λ����ΰ�Υ���ǥå���
+ *  タイムイベントヒープの最後の使用領域のインデックス
  *
- *  �����।�٥�ȥҡ��פ���Ͽ����Ƥ��륿���।�٥�Ȥο��˰��פ��롥
+ *  タイムイベントヒープに登録されているタイムイベントの数に一致する．
  */
 extern uint_t	last_index;
 
 /*
- *  �����।�٥�ȴ����⥸�塼��ν����
+ *  タイムイベント管理モジュールの初期化
  */
 extern void	initialize_tmevt(void);
 
 /*
- *  �����।�٥�Ȥ��������֤�õ��
+ *  タイムイベントの挿入位置の探索
  */
 extern uint_t	tmevt_up(uint_t index, EVTTIM time);
 extern uint_t	tmevt_down(uint_t index, EVTTIM time);
 
 /*
- *  �����।�٥�ȥҡ��פؤ���Ͽ�Ⱥ��
+ *  タイムイベントヒープへの登録と削除
  */
 extern void	tmevtb_insert(TMEVTB *p_tmevtb, EVTTIM time);
 extern void	tmevtb_delete(TMEVTB *p_tmevtb);
 
 /*
- *  �����।�٥�ȥ֥��å�����Ͽ�����л��ֻ����
+ *  タイムイベントブロックの登録（相対時間指定）
  *
- *  time�ǻ��ꤷ�����л��֤��вᤷ����ˡ�arg������Ȥ���callback����
- *  �ӽФ����褦�ˡ�p_tmevtb�ǻ��ꤷ�������।�٥�ȥ֥��å�����Ͽ��
- *  �롥
+ *  timeで指定した相対時間が経過した後に，argを引数としてcallbackが呼
+ *  び出されるように，p_tmevtbで指定したタイムイベントブロックを登録す
+ *  る．
  *  
  */
 Inline void
@@ -165,10 +165,10 @@ tmevtb_enqueue(TMEVTB *p_tmevtb, RELTIM time, CBACK callback, void *arg)
 }
 
 /*
- *  �����।�٥�ȥ֥��å�����Ͽ�ʥ��٥��ȯ����������
+ *  タイムイベントブロックの登録（イベント発生時刻指定）
  *
- *  time�ǻ��ꤷ�����٥��ȯ������ˡ�arg������Ȥ���callback���Ƥӽ�
- *  �����褦�ˡ�p_tmevtb�ǻ��ꤷ�������।�٥�ȥ֥��å�����Ͽ���롥
+ *  timeで指定したイベント発生時刻に，argを引数としてcallbackが呼び出
+ *  されるように，p_tmevtbで指定したタイムイベントブロックを登録する．
  */
 Inline void
 tmevtb_enqueue_evttim(TMEVTB *p_tmevtb, EVTTIM time, CBACK callback, void *arg)
@@ -179,7 +179,7 @@ tmevtb_enqueue_evttim(TMEVTB *p_tmevtb, EVTTIM time, CBACK callback, void *arg)
 }
 
 /*
- *  �����।�٥�ȥ֥��å�����Ͽ���
+ *  タイムイベントブロックの登録解除
  */
 Inline void
 tmevtb_dequeue(TMEVTB *p_tmevtb)
@@ -188,12 +188,12 @@ tmevtb_dequeue(TMEVTB *p_tmevtb)
 }
 
 /*
- *  �����।�٥�ȤޤǤλĤ���֤η׻�
+ *  タイムイベントまでの残り時間の計算
  */
 extern RELTIM	tmevt_lefttim(TMEVTB *p_tmevtb);
 
 /*
- *  ������ƥ��å��ζ���
+ *  タイムティックの供給
  */
 extern void	signal_time(void);
 

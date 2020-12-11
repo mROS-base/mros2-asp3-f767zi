@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2014 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: task_manage.c 2590 2014-01-02 05:18:11Z ertl-hiro $
  */
 
 /*
- *		������������ǽ
+ *		タスク管理機能
  */
 
 #include "kernel_impl.h"
@@ -50,7 +50,7 @@
 #include "wait.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_ACT_TSK_ENTER
 #define LOG_ACT_TSK_ENTER(tskid)
@@ -117,7 +117,7 @@
 #endif /* LOG_GET_INF_LEAVE */
 
 /*
- *  �������ε�ư
+ *  タスクの起動
  */
 #ifdef TOPPERS_act_tsk
 
@@ -156,7 +156,7 @@ act_tsk(ID tskid)
 #endif /* TOPPERS_act_tsk */
 
 /*
- *  �������ε�ư���󥿥�������ƥ������ѡ�
+ *  タスクの起動（非タスクコンテキスト用）
  */
 #ifdef TOPPERS_iact_tsk
 
@@ -195,7 +195,7 @@ iact_tsk(ID tskid)
 #endif /* TOPPERS_iact_tsk */
 
 /*
- *  ��������ư�׵�Υ���󥻥�
+ *  タスク起動要求のキャンセル
  */
 #ifdef TOPPERS_can_act
 
@@ -223,7 +223,7 @@ can_act(ID tskid)
 #endif /* TOPPERS_can_act */
 
 /*
- *  ���������ν�λ
+ *  自タスクの終了
  */
 #ifdef TOPPERS_ext_tsk
 
@@ -237,9 +237,9 @@ ext_tsk(void)
 
 	if (t_sense_lock()) {
 		/*
-		 *  CPU���å����֤�ext_tsk���ƤФ줿���ϡ�CPU���å�������
-		 *  �Ƥ��饿������λ���롥������ϡ������ӥ���������Ǥ�CPU
-		 *  ���å����ά����Ф褤������
+		 *  CPUロック状態でext_tskが呼ばれた場合は，CPUロックを解除し
+		 *  てからタスクを終了する．実装上は，サービスコール内でのCPU
+		 *  ロックを省略すればよいだけ．
 		 */
 	}
 	else {
@@ -247,16 +247,16 @@ ext_tsk(void)
 	}
 	if (disdsp) {
 		/*
-		 *  �ǥ����ѥå��ػ߾��֤�ext_tsk���ƤФ줿���ϡ��ǥ����ѥ�
-		 *  �����ľ��֤ˤ��Ƥ��饿������λ���롥
+		 *  ディスパッチ禁止状態でext_tskが呼ばれた場合は，ディスパッ
+		 *  チ許可状態にしてからタスクを終了する．
 		 */
 		disdsp = false;
 	}
 	if (!ipmflg) {
 		/*
-		 *  �����ͥ���٥ޥ�����IPM�ˤ�TIPM_ENAALL�ʳ��ξ��֤�ext_tsk
-		 *  ���ƤФ줿���ϡ�IPM��TIPM_ENAALL�ˤ��Ƥ��饿������λ��
-		 *  �롥
+		 *  割込み優先度マスク（IPM）がTIPM_ENAALL以外の状態でext_tsk
+		 *  が呼ばれた場合は，IPMをTIPM_ENAALLにしてからタスクを終了す
+		 *  る．
 		 */
 		t_set_ipm(TIPM_ENAALL);
 		ipmflg = true;
@@ -280,7 +280,7 @@ ext_tsk(void)
 #endif /* TOPPERS_ext_tsk */
 
 /*
- *  �������ζ�����λ
+ *  タスクの強制終了
  */
 #ifdef TOPPERS_ter_tsk
 
@@ -304,9 +304,9 @@ ter_tsk(ID tskid)
 	else {
 		if (TSTAT_RUNNABLE(p_tcb->tstat)) {
 			/*
-			 *  p_tcb�ϼ��������Ǥʤ����ᡤ�ʥ��󥰥�ץ����å��Ǥϡ˼�
-			 *  �Ծ��֤Ǥʤ���make_non_runnable(p_tcb)�ǥ������ǥ����ѥ�
-			 *  ����ɬ�פˤʤ뤳�ȤϤʤ���
+			 *  p_tcbは自タスクでないため，（シングルプロセッサでは）実
+			 *  行状態でなく，make_non_runnable(p_tcb)でタスクディスパッ
+			 *  チが必要になることはない．
 			 */
 			(void) make_non_runnable(p_tcb);
 		}
@@ -338,7 +338,7 @@ ter_tsk(ID tskid)
 #endif /* TOPPERS_ter_tsk */
 
 /*
- *  �������Υ١���ͥ���٤��ѹ�
+ *  タスクのベース優先度の変更
  */
 #ifdef TOPPERS_chg_pri
 
@@ -377,7 +377,7 @@ chg_pri(ID tskid, PRI tskpri)
 #endif /* TOPPERS_chg_pri */
 
 /*
- *  ������ͥ���٤λ���
+ *  タスク優先度の参照
  */
 #ifdef TOPPERS_get_pri
 
@@ -410,7 +410,7 @@ get_pri(ID tskid, PRI *p_tskpri)
 #endif /* TOPPERS_get_pri */
 
 /*
- *  ���������γ�ĥ����λ���
+ *  自タスクの拡張情報の参照
  */
 #ifdef TOPPERS_get_inf
 

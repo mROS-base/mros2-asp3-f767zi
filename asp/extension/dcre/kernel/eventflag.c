@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2014 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  $Id: eventflag.c 2631 2014-04-13 09:49:44Z ertl-hiro $
  */
 
 /*
- *		���٥�ȥե饰��ǽ
+ *		イベントフラグ機能
  */
 
 #include "kernel_impl.h"
@@ -51,7 +51,7 @@
 #include "eventflag.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_ACRE_FLG_ENTER
 #define LOG_ACRE_FLG_ENTER(pk_cflg)
@@ -134,13 +134,13 @@
 #endif /* LOG_REF_FLG_LEAVE */
 
 /*
- *  ���٥�ȥե饰�ο�
+ *  イベントフラグの数
  */
 #define tnum_flg	((uint_t)(tmax_flgid - TMIN_FLGID + 1))
 #define tnum_sflg	((uint_t)(tmax_sflgid - TMIN_FLGID + 1))
 
 /*
- *  ���٥�ȥե饰ID���饤�٥�ȥե饰�����֥��å�����Ф�����Υޥ���
+ *  イベントフラグIDからイベントフラグ管理ブロックを取り出すためのマクロ
  */
 #define INDEX_FLG(flgid)	((uint_t)((flgid) - TMIN_FLGID))
 #define get_flgcb(flgid)	(&(flgcb_table[INDEX_FLG(flgid)]))
@@ -148,12 +148,12 @@
 #ifdef TOPPERS_flgini
 
 /*
- *  ���Ѥ��Ƥ��ʤ����٥�ȥե饰�����֥��å��Υꥹ��
+ *  使用していないイベントフラグ管理ブロックのリスト
  */
 QUEUE	free_flgcb;
 
 /*
- *  ���٥�ȥե饰��ǽ�ν����
+ *  イベントフラグ機能の初期化
  */
 void
 initialize_eventflag(void)
@@ -181,7 +181,7 @@ initialize_eventflag(void)
 #endif /* TOPPERS_flgini */
 
 /*
- *  ���٥�ȥե饰�Ԥ�������Υ����å�
+ *  イベントフラグ待ち解除条件のチェック
  */
 #ifdef TOPPERS_flgcnd
 
@@ -202,7 +202,7 @@ check_flg_cond(FLGCB *p_flgcb, FLGPTN waiptn, MODE wfmode, FLGPTN *p_flgptn)
 #endif /* TOPPERS_flgcnd */
 
 /*
- *  ���٥�ȥե饰������
+ *  イベントフラグの生成
  */
 #ifdef TOPPERS_acre_flg
 
@@ -241,7 +241,7 @@ acre_flg(const T_CFLG *pk_cflg)
 #endif /* TOPPERS_acre_flg */
 
 /*
- *  ���٥�ȥե饰�κ��
+ *  イベントフラグの削除
  */
 #ifdef TOPPERS_del_flg
 
@@ -285,7 +285,7 @@ del_flg(ID flgid)
 #endif /* TOPPERS_del_flg */
 
 /*
- *  ���٥�ȥե饰�Υ��å�
+ *  イベントフラグのセット
  */
 #ifdef TOPPERS_set_flg
 
@@ -341,7 +341,7 @@ set_flg(ID flgid, FLGPTN setptn)
 #endif /* TOPPERS_set_flg */
 
 /*
- *  ���٥�ȥե饰�Υ��åȡ��󥿥�������ƥ������ѡ�
+ *  イベントフラグのセット（非タスクコンテキスト用）
  */
 #ifdef TOPPERS_iset_flg
 
@@ -393,7 +393,7 @@ iset_flg(ID flgid, FLGPTN setptn)
 #endif /* TOPPERS_iset_flg */
 
 /*
- *  ���٥�ȥե饰�Υ��ꥢ
+ *  イベントフラグのクリア
  */
 #ifdef TOPPERS_clr_flg
 
@@ -426,7 +426,7 @@ clr_flg(ID flgid, FLGPTN clrptn)
 #endif /* TOPPERS_clr_flg */
 
 /*
- *  ���٥�ȥե饰�Ԥ�
+ *  イベントフラグ待ち
  */
 #ifdef TOPPERS_wai_flg
 
@@ -476,7 +476,7 @@ wai_flg(ID flgid, FLGPTN waiptn, MODE wfmode, FLGPTN *p_flgptn)
 #endif /* TOPPERS_wai_flg */
 
 /*
- *  ���٥�ȥե饰�Ԥ��ʥݡ���󥰡�
+ *  イベントフラグ待ち（ポーリング）
  */
 #ifdef TOPPERS_pol_flg
 
@@ -517,7 +517,7 @@ pol_flg(ID flgid, FLGPTN waiptn, MODE wfmode, FLGPTN *p_flgptn)
 #endif /* TOPPERS_pol_flg */
 
 /*
- *  ���٥�ȥե饰�Ԥ��ʥ����ॢ���Ȥ����
+ *  イベントフラグ待ち（タイムアウトあり）
  */
 #ifdef TOPPERS_twai_flg
 
@@ -573,7 +573,7 @@ twai_flg(ID flgid, FLGPTN waiptn, MODE wfmode, FLGPTN *p_flgptn, TMO tmout)
 #endif /* TOPPERS_twai_flg */
 
 /*
- *  ���٥�ȥե饰�κƽ����
+ *  イベントフラグの再初期化
  */
 #ifdef TOPPERS_ini_flg
 
@@ -611,7 +611,7 @@ ini_flg(ID flgid)
 #endif /* TOPPERS_ini_flg */
 
 /*
- *  ���٥�ȥե饰�ξ��ֻ���
+ *  イベントフラグの状態参照
  */
 #ifdef TOPPERS_ref_flg
 

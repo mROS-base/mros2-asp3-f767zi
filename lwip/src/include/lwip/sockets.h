@@ -518,12 +518,12 @@ struct pollfd
 #define LWIP_TIMEVAL_PRIVATE 1
 #endif
 
-#if LWIP_TIMEVAL_PRIVATE
+//#if LWIP_TIMEVAL_PRIVATE
 struct timeval {
   long    tv_sec;         /* seconds */
   long    tv_usec;        /* and microseconds */
 };
-#endif /* LWIP_TIMEVAL_PRIVATE */
+//#endif /* LWIP_TIMEVAL_PRIVATE */
 
 #define lwip_socket_init() /* Compatibility define, no init needed. */
 void lwip_socket_thread_init(void); /* LWIP_NETCONN_SEM_PER_THREAD==1: initialize thread-local semaphore */

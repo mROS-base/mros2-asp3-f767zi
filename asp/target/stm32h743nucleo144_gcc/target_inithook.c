@@ -9,34 +9,34 @@
  *              Imageing System Development Division RICOH COMPANY, LTD.
  *  Copyright (C) 2017-2019 by TOPPERS PROJECT Educational Working Group.
  * 
- *  ╛х╡н├°║ю╕в╝╘д╧бд░╩▓╝д╬(1)б┴(4)д╬╛Є╖ядЄ╦■д┐д╣╛ь╣чд╦╕┬дъбд╦▄е╜е╒е╚ежез
- *  евб╩╦▄е╜е╒е╚ежезевдЄ▓■╩╤д╖д┐дтд╬дЄ┤▐дрбе░╩▓╝╞▒д╕б╦дЄ╗╚═╤бж╩г└╜бж▓■
- *  ╩╤бж║╞╟█╔█б╩░╩▓╝бд═°═╤д╚╕╞д╓б╦д╣дыд│д╚дЄ╠╡╜■д╟╡Ў┬·д╣дыбе
- *  (1) ╦▄е╜е╒е╚ежезевдЄе╜б╝е╣е│б╝е╔д╬╖┴д╟═°═╤д╣ды╛ь╣чд╦д╧бд╛х╡нд╬├°║ю
- *      ╕в╔╜╝ибдд│д╬═°═╤╛Є╖ядкдшд╙▓╝╡нд╬╠╡╩▌╛┌╡м─ъдмбдд╜д╬д▐д▐д╬╖┴д╟е╜б╝
- *      е╣е│б╝е╔├цд╦┤▐д▐дьд╞дддыд│д╚бе
- *  (2) ╦▄е╜е╒е╚ежезевдЄбдещеде╓ещеъ╖┴╝░д╩д╔бд┬╛д╬е╜е╒е╚ежезев│л╚пд╦╗╚
- *      ═╤д╟днды╖┴д╟║╞╟█╔█д╣ды╛ь╣чд╦д╧бд║╞╟█╔█д╦╚╝дже╔енехесеєе╚б╩═°═╤
- *      ╝╘е▐е╦ехевеыд╩д╔б╦д╦бд╛х╡нд╬├°║ю╕в╔╜╝ибдд│д╬═°═╤╛Є╖ядкдшд╙▓╝╡н
- *      д╬╠╡╩▌╛┌╡м─ъдЄ╖╟║▄д╣дыд│д╚бе
- *  (3) ╦▄е╜е╒е╚ежезевдЄбд╡б┤яд╦┴╚д▀╣■дрд╩д╔бд┬╛д╬е╜е╒е╚ежезев│л╚пд╦╗╚
- *      ═╤д╟днд╩дд╖┴д╟║╞╟█╔█д╣ды╛ь╣чд╦д╧бд╝бд╬ддд║дьдлд╬╛Є╖ядЄ╦■д┐д╣д│
- *      д╚бе
- *    (a) ║╞╟█╔█д╦╚╝дже╔енехесеєе╚б╩═°═╤╝╘е▐е╦ехевеыд╩д╔б╦д╦бд╛х╡нд╬├°
- *        ║ю╕в╔╜╝ибдд│д╬═°═╤╛Є╖ядкдшд╙▓╝╡нд╬╠╡╩▌╛┌╡м─ъдЄ╖╟║▄д╣дыд│д╚бе
- *    (b) ║╞╟█╔█д╬╖┴┬╓дЄбд╩╠д╦─ъдсды╩¤╦бд╦дшд├д╞бдTOPPERSе╫еэе╕езепе╚д╦
- *        ╩є╣Ёд╣дыд│д╚бе
- *  (4) ╦▄е╜е╒е╚ежезевд╬═°═╤д╦дшдъ─╛└▄┼кд▐д┐д╧┤╓└▄┼кд╦└╕д╕дыдддлд╩ды┬╗
- *      │▓длдщдтбд╛х╡н├°║ю╕в╝╘дкдшд╙TOPPERSе╫еэе╕езепе╚дЄ╠╚└╒д╣дыд│д╚бе
- *      д▐д┐бд╦▄е╜е╒е╚ежезевд╬ецб╝е╢д▐д┐д╧еиеєе╔ецб╝е╢длдщд╬дддлд╩ды═¤
- *      ═│д╦┤Ёд┼дп└┴╡сдлдщдтбд╛х╡н├°║ю╕в╝╘дкдшд╙TOPPERSе╫еэе╕езепе╚дЄ
- *      ╠╚└╒д╣дыд│д╚бе
+ *  ф╕КшиШшСЧф╜ЬцийшАЕуБпя╝Мф╗еф╕ЛуБо(1)уАЬ(4)уБоцЭбф╗╢уВТц║АуБЯуБЩха┤хРИуБлщЩРуВКя╝МцЬмуВ╜уГХуГИуВжуВз
+ *  уВвя╝ИцЬмуВ╜уГХуГИуВжуВзуВвуВТцФ╣хдЙуБЧуБЯуВВуБоуВТхРлуВАя╝Оф╗еф╕ЛхРМуБШя╝ЙуВТф╜┐чФиуГ╗шдЗшг╜уГ╗цФ╣
+ *  хдЙуГ╗хЖНщЕНх╕Гя╝Иф╗еф╕Ля╝МхИйчФиуБихС╝уБ╢я╝ЙуБЩуВЛуБУуБиуВТчДбхДЯуБзши▒шл╛уБЩуВЛя╝О
+ *  (1) цЬмуВ╜уГХуГИуВжуВзуВвуВТуВ╜уГ╝уВ╣уВ│уГ╝уГЙуБох╜вуБзхИйчФиуБЩуВЛха┤хРИуБлуБпя╝Мф╕КшиШуБошСЧф╜Ь
+ *      цийшбичд║я╝МуБУуБохИйчФицЭбф╗╢уБКуВИуБ│ф╕ЛшиШуБочДбф┐Эши╝шжПхоЪуБМя╝МуБЭуБоуБ╛уБ╛уБох╜вуБзуВ╜уГ╝
+ *      уВ╣уВ│уГ╝уГЙф╕нуБлхРлуБ╛уВМуБжуБДуВЛуБУуБия╝О
+ *  (2) цЬмуВ╜уГХуГИуВжуВзуВвуВТя╝МуГйуВдуГЦуГйуГкх╜вх╝ПуБкуБйя╝Мф╗ЦуБоуВ╜уГХуГИуВжуВзуВвщЦЛчЩ║уБлф╜┐
+ *      чФиуБзуБНуВЛх╜вуБзхЖНщЕНх╕ГуБЩуВЛха┤хРИуБлуБпя╝МхЖНщЕНх╕ГуБлф╝┤уБЖуГЙуВнуГеуГбуГ│уГИя╝ИхИйчФи
+ *      шАЕуГЮуГЛуГеуВвуГлуБкуБйя╝ЙуБля╝Мф╕КшиШуБошСЧф╜Ьцийшбичд║я╝МуБУуБохИйчФицЭбф╗╢уБКуВИуБ│ф╕ЛшиШ
+ *      уБочДбф┐Эши╝шжПхоЪуВТцО▓ш╝ЙуБЩуВЛуБУуБия╝О
+ *  (3) цЬмуВ╜уГХуГИуВжуВзуВвуВТя╝МцйЯхЩиуБлч╡ДуБ┐ш╛╝уВАуБкуБйя╝Мф╗ЦуБоуВ╜уГХуГИуВжуВзуВвщЦЛчЩ║уБлф╜┐
+ *      чФиуБзуБНуБкуБДх╜вуБзхЖНщЕНх╕ГуБЩуВЛха┤хРИуБлуБпя╝МцмбуБоуБДуБЪуВМуБЛуБоцЭбф╗╢уВТц║АуБЯуБЩуБУ
+ *      уБия╝О
+ *    (a) хЖНщЕНх╕ГуБлф╝┤уБЖуГЙуВнуГеуГбуГ│уГИя╝ИхИйчФишАЕуГЮуГЛуГеуВвуГлуБкуБйя╝ЙуБля╝Мф╕КшиШуБошСЧ
+ *        ф╜Ьцийшбичд║я╝МуБУуБохИйчФицЭбф╗╢уБКуВИуБ│ф╕ЛшиШуБочДбф┐Эши╝шжПхоЪуВТцО▓ш╝ЙуБЩуВЛуБУуБия╝О
+ *    (b) хЖНщЕНх╕ГуБох╜вцЕЛуВТя╝МхИеуБлхоЪуВБуВЛцЦ╣ц│ХуБлуВИуБгуБжя╝МTOPPERSуГЧуГнуВ╕уВзуВпуГИуБл
+ *        ха▒хСКуБЩуВЛуБУуБия╝О
+ *  (4) цЬмуВ╜уГХуГИуВжуВзуВвуБохИйчФиуБлуВИуВКчЫ┤цОечЪДуБ╛уБЯуБпщЦУцОечЪДуБлчФЯуБШуВЛуБДуБЛуБкуВЛцРН
+ *      хо│уБЛуВЙуВВя╝Мф╕КшиШшСЧф╜ЬцийшАЕуБКуВИуБ│TOPPERSуГЧуГнуВ╕уВзуВпуГИуВТхЕНш▓муБЩуВЛуБУуБия╝О
+ *      уБ╛уБЯя╝МцЬмуВ╜уГХуГИуВжуВзуВвуБоуГжуГ╝уВ╢уБ╛уБЯуБпуВиуГ│уГЙуГжуГ╝уВ╢уБЛуВЙуБоуБДуБЛуБкуВЛчРЖ
+ *      чФ▒уБлхЯ║уБеуБПшлЛц▒ВуБЛуВЙуВВя╝Мф╕КшиШшСЧф╜ЬцийшАЕуБКуВИуБ│TOPPERSуГЧуГнуВ╕уВзуВпуГИуВТ
+ *      хЕНш▓муБЩуВЛуБУуБия╝О
  * 
- *  ╦▄е╜е╒е╚ежезевд╧бд╠╡╩▌╛┌д╟─є╢бд╡дьд╞дддыдтд╬д╟двдыбе╛х╡н├°║ю╕в╝╘дк
- *  дшд╙TOPPERSе╫еэе╕езепе╚д╧бд╦▄е╜е╒е╚ежезевд╦┤╪д╖д╞бд╞├─ъд╬╗╚═╤╠▄┼к
- *  д╦┬╨д╣ды┼м╣ч└ндт┤▐дсд╞бддддлд╩ды╩▌╛┌дт╣╘дяд╩ддбед▐д┐бд╦▄е╜е╒е╚ежез
- *  евд╬═°═╤д╦дшдъ─╛└▄┼кд▐д┐д╧┤╓└▄┼кд╦└╕д╕д┐дддлд╩ды┬╗│▓д╦┤╪д╖д╞дтбдд╜
- *  д╬└╒╟ддЄ╔щдяд╩ддбе
+ *  цЬмуВ╜уГХуГИуВжуВзуВвуБпя╝МчДбф┐Эши╝уБзцПРф╛ЫуБХуВМуБжуБДуВЛуВВуБоуБзуБВуВЛя╝Оф╕КшиШшСЧф╜ЬцийшАЕуБК
+ *  уВИуБ│TOPPERSуГЧуГнуВ╕уВзуВпуГИуБпя╝МцЬмуВ╜уГХуГИуВжуВзуВвуБлщЦвуБЧуБжя╝МчЙ╣хоЪуБоф╜┐чФичЫочЪД
+ *  уБлхп╛уБЩуВЛщБйхРИцАзуВВхРлуВБуБжя╝МуБДуБЛуБкуВЛф┐Эши╝уВВшбМуВПуБкуБДя╝ОуБ╛уБЯя╝МцЬмуВ╜уГХуГИуВжуВз
+ *  уВвуБохИйчФиуБлуВИуВКчЫ┤цОечЪДуБ╛уБЯуБпщЦУцОечЪДуБлчФЯуБШуБЯуБДуБЛуБкуВЛцРНхо│уБлщЦвуБЧуБжуВВя╝МуБЭ
+ *  уБош▓мф╗╗уВТш▓ауВПуБкуБДя╝О
  * 
  *  @(#) $Id: target_inithook.c 698 2019-08-13 20:23:39Z roi $
  */
@@ -50,7 +50,7 @@
 #define sil_modw_mem(a, b, c)	sil_wrw_mem((a), (sil_rew_mem(a) & (~b)) | (c))
 
 /*
- *  ╜щ┤№▓╜е╫еэе░ещерб╩stm32h743-nucleo144═╤б╦
+ *  хИЭцЬЯхМЦуГЧуГнуВ░уГйуГая╝Иstm32h743-nucleo144чФия╝Й
  */
 
 /*
@@ -67,7 +67,7 @@
 #define PWR_FLAG_SETTING_DELAY_US    1000
 
 /*
- *  RCCе╗е├е╚еве├е╫├═
+ *  RCCуВ╗уГГуГИуВвуГГуГЧхАд
  */
 #define REQUEST_SYSCLOCK             RCC_CFGR_SW_PLL1
 #define REQUEST_FLASH_LATENCY        FLASH_ACR_LATENCY_4WS
@@ -109,44 +109,44 @@
 #define PWR_SUPPLY_CONFIG_MASK       (PWR_CR3_SCUEN | PWR_CR3_LDOEN | PWR_CR3_BYPASS)
 
 /*
- *  USBепеэе├еп└▀─ъ
+ *  USBуВпуГнуГГуВпшинхоЪ
  */
 #define RCC_USBCLKSOURCE_PLL         RCC_D2CCIP2R_USBSEL_0
 #define RCC_USBCLKSOURCE_PLL3        RCC_D2CCIP2R_USBSEL_1
 #define RCC_USBCLKSOURCE_HSI48       RCC_D2CCIP2R_USBSEL
 
 /*
- *  CORTEX MPU╬╬░ш╡Ў▓─╢╪╗▀
+ *  CORTEX MPUщаШхЯЯши▒хПпчжБцнв
  */
 #define MPU_REGION_ENABLE            0x01
 #define MPU_REGION_DISABLE           0x00
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣╡Ў▓─╢╪╗▀
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣ши▒хПпчжБцнв
  */
 #define MPU_INSTRUCTION_ACCESS_ENABLE   0x00
 #define MPU_INSTRUCTION_ACCESS_DISABLE  0x01
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣енеуе├е╖ех└▀─ъ
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣уВнуГгуГГуВ╖уГешинхоЪ
  */
 #define MPU_ACCESS_CACHEABLE         0x01
 #define MPU_ACCESS_NOT_CACHEABLE     0x00
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣е╨е├е╒еб└▀─ъ
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣уГРуГГуГХуВбшинхоЪ
  */
 #define MPU_ACCESS_BUFFERABLE        0x01
 #define MPU_ACCESS_NOT_BUFFERABLE    0x00
 
 /*
- *  CORTEX MPU едеєе╣е╚ещепе╖ечеєевепе╗е╣╢ж═н└▀─ъ
+ *  CORTEX MPU уВдуГ│уВ╣уГИуГйуВпуВ╖уГзуГ│уВвуВпуВ╗уВ╣хЕ▒цЬЙшинхоЪ
  */
 #define MPU_ACCESS_SHAREABLE         0x01
 #define MPU_ACCESS_NOT_SHAREABLE     0x00
 
 /*
- *  енеуе├е╖ехе╡еде║ID еье╕е╣е┐е▐епеэ
+ *  уВнуГгуГГуВ╖уГеуВ╡уВдуВ║ID уГмуВ╕уВ╣уВ┐уГЮуВпуГн
  */
 #define CCSIDR_WAYS(x)         (((x) & SCB_CCSIDR_ASSOCIATIVITY_Msk) >> SCB_CCSIDR_ASSOCIATIVITY_Pos)
 #define CCSIDR_SETS(x)         (((x) & SCB_CCSIDR_NUMSETS_Msk      ) >> SCB_CCSIDR_NUMSETS_Pos      )
@@ -163,20 +163,20 @@
 #define get_hsi_divider()      ((sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR)) & RCC_CR_HSIDIV) >> 3)
 
 /*
- *  GPIOевеже╚е╫е├е╚└▀─ъе╤ещесб╝е┐
+ *  GPIOуВвуВжуГИуГЧуГГуГИшинхоЪуГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_OTYPE_PP       0x0
 #define GPIO_OTYPE_OD       0x1
 
 /*
- *  GPIOе╫еыеве├е╫е└ежеєе╤ещесб╝е┐
+ *  GPIOуГЧуГлуВвуГГуГЧуГАуВжуГ│уГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_NOPULL         0x00000000	/* No Pull-up or Pull-down activation  */
 #define GPIO_PULLUP         0x00000001	/* Pull-up activation                  */
 #define GPIO_PULLDOWN       0x00000002	/* Pull-down activation                */
 
 /*
- *  GPIOетб╝е╔е╤ещесб╝е┐
+ *  GPIOуГвуГ╝уГЙуГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_MODE_INPUT     0x00000000	/* Input Floating Mode */
 #define GPIO_MODE_OUTPUT    0x00000001	/* Output Push Pull Mode */
@@ -184,7 +184,7 @@
 #define GPIO_MODE_ANALOG    0x00000003	/* Analog Mode  */
 
 /*
- *  GPIOевеже╚е╫е├е╚║╟┬ч╝■╟╚┐Їе╤ещесб╝е┐
+ *  GPIOуВвуВжуГИуГЧуГГуГИцЬАхдзхСиц│вцХ░уГСуГйуГбуГ╝уВ┐
  */
 #define GPIO_SPEED_LOW      0x00000000	/* Low speed     */
 #define GPIO_SPEED_MEDIUM   0x00000001	/* Medium speed  */
@@ -200,7 +200,7 @@ ER sysclock_config(int mode);
 
 #ifndef TOPPERS_RAM_EXEC
 /*
- *  есетеъе╫еэе╞епе╖ечеєеце╦е├е╚д╬└▀─ъ
+ *  уГбуГвуГкуГЧуГнуГЖуВпуВ╖уГзуГ│уГжуГЛуГГуГИуБошинхоЪ
  */
 static void
 mpu_config(void)
@@ -229,7 +229,7 @@ mpu_config(void)
 }
 
 /*
- *  е╖е╣е╞ерепеэе├еп└▀─ъеиещб╝
+ *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпшинхоЪуВиуГйуГ╝
  */
 void
 sysemclock_error(void)
@@ -238,14 +238,14 @@ sysemclock_error(void)
 	uint32_t n = LEDR_POSITION;
 
 	/*
-	 *  GPIO LEDепеэе├еп└▀─ъ
+	 *  GPIO LEDуВпуГнуГГуВпшинхоЪ
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_AHB4ENR), RCC_AHB4ENR_GPIOBEN);
 	temp = sil_rew_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_AHB4ENR));
 	(void)(temp);
 
 	/*
-	 * LED GPIO└▀─ъ
+	 * LED GPIOшинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(TADR_GPIOB_BASE+TOFF_GPIO_MODER), (3 << (n * 2)), (GPIO_MODE_OUTPUT << (n * 2)));
 	sil_modw_mem((uint32_t *)(TADR_GPIOB_BASE+TOFF_GPIO_OSPEEDR), (3 << (n * 2)), (GPIO_SPEED_HIGH << (n * 2)));
@@ -262,9 +262,9 @@ sysemclock_error(void)
 }
 
 /*
- *  ─уеье┘еыд╬е┐б╝е▓е├е╚░═┬╕д╬╜щ┤№▓╜
+ *  ф╜ОуГмуГЩуГлуБоуВ┐уГ╝уВ▓уГГуГИф╛ЭхнШуБохИЭцЬЯхМЦ
  *
- *  е╣е┐б╝е╚еве├е╫ете╕ехб╝еыд╬├цд╟бдесетеъд╬╜щ┤№▓╜д╬┴░д╦╕╞д╙╜╨д╡дьдыбе
+ *  уВ╣уВ┐уГ╝уГИуВвуГГуГЧуГвуВ╕уГеуГ╝уГлуБоф╕нуБзя╝МуГбуГвуГкуБохИЭцЬЯхМЦуБохЙНуБлхС╝уБ│хЗ║уБХуВМуВЛя╝О
  */
 void
 hardware_init_hook(void)
@@ -272,22 +272,22 @@ hardware_init_hook(void)
 	uint32_t ccsidr, sets, ways;
 
 	/*
-	 *  HSIдЄ═н╕·▓╜
+	 *  HSIуВТцЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSION);
 
 	/*
-	 *  CFGRеье╕е╣е┐дЄ╜щ┤№▓╜
+	 *  CFGRуГмуВ╕уВ╣уВ┐уВТхИЭцЬЯхМЦ
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CFGR), 0x00000000);
 
 	/*
-	 *  HSI░╩│░д╬епеэе├епдЄ─ф╗▀
+	 *  HSIф╗ехдЦуБоуВпуГнуГГуВпуВТхБЬцнв
 	 */
 	sil_andw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), CR_RESET_VALUE);
 
 	/*
-	 *  ┬╛д╬RCCеье╕е╣е┐д╬еъе╗е├е╚
+	 *  ф╗ЦуБоRCCуГмуВ╕уВ╣уВ┐уБоуГкуВ╗уГГуГИ
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_D1CFGR), 0x00000000);
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_D2CFGR), 0x00000000);
@@ -303,7 +303,7 @@ hardware_init_hook(void)
 	sil_andw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CR), RCC_CR_HSEBYP);
 
 	/*
-	 *  RCC│ф╣■д▀дЄ╢╪╗▀
+	 *  RCCхЙ▓ш╛╝уБ┐уВТчжБцнв
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_RCC_BASE+TOFF_RCC_CIER), 0x00000000);
 
@@ -315,12 +315,12 @@ hardware_init_hook(void)
 	}
 
 	/*
-	 *  есетеъе╫еэе╞епе╖ечеєеце╦е├е╚д╬╜щ┤№▓╜
+	 *  уГбуГвуГкуГЧуГнуГЖуВпуВ╖уГзуГ│уГжуГЛуГГуГИуБохИЭцЬЯхМЦ
 	 */
 	mpu_config();
 
 	/*
-	 *  I-Cache═н╕·▓╜
+	 *  I-CacheцЬЙхК╣хМЦ
 	 */
 	asm volatile ("dsb 0xF":::"memory");
 	asm volatile ("isb 0xF":::"memory");
@@ -332,7 +332,7 @@ hardware_init_hook(void)
 	asm volatile ("isb 0xF":::"memory");
 
 	/*
-	 *  D-Cache═н╕·▓╜
+	 *  D-CacheцЬЙхК╣хМЦ
 	 */
 	sil_wrw_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_CSSELR), ((0 << 1) | 0));	/* Level 1 data cache */
 	ccsidr  = sil_rew_mem((uint32_t *)(TADR_SCB_BASE+TOFF_SCB_CCSIDR));
@@ -355,7 +355,7 @@ hardware_init_hook(void)
 	asm volatile ("isb 0xF":::"memory");
 
 	/*
-	 *  е╖е╣е╞ерепеэе├епдЄ 400MHzд╦└▀─ъ
+	 *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпуВТ 400MHzуБлшинхоЪ
 	 */
 	if(sysclock_config(0) != E_OK)
 		sysemclock_error();
@@ -363,7 +363,7 @@ hardware_init_hook(void)
 #endif
 
 /*
- *  FLASH-ROMд╬LatencyдЄ└▀─ъд╣ды
+ *  FLASH-ROMуБоLatencyуВТшинхоЪуБЩуВЛ
  */
 static int
 Set_Flash_latency(uint32_t latency)
@@ -371,7 +371,7 @@ Set_Flash_latency(uint32_t latency)
 	sil_modw_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR), FLASH_ACR_LATENCY, latency);
 
 	/*
-	 *  Latencyд╬└▀─ъдЄ╚╜─ъ
+	 *  LatencyуБошинхоЪуВТхИдхоЪ
 	 */
 	if((sil_rew_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR)) & FLASH_ACR_LATENCY) != latency)
 		return -1;
@@ -380,8 +380,8 @@ Set_Flash_latency(uint32_t latency)
 }
 
 /*
- *  е╖е╣е╞ерепеэе├еп└▀─ъ
- *  └▀─ъ├═бз
+ *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпшинхоЪ
+ *  шинхоЪхАдя╝Ъ
  *            System Clock source            = PLL (HSE BYPASS)
  *            SYSCLK(Hz)                     = 400000000 (CPU Clock)
  *            HCLK(Hz)                       = 200000000 (AXI and AHBs Clock)
@@ -406,22 +406,22 @@ sysclock_config(int mode)
 	uint32_t tick = 0, tmp;
 
 	/*
-	 *  е╤еяб╝е╡е╫ещед е│еєе╒егеоехеьб╝е╖ечеєеве├е╫е╟б╝е╚е┴езе├еп
+	 *  уГСуГпуГ╝уВ╡уГЧуГйуВд уВ│уГ│уГХуВгуВоуГеуГмуГ╝уВ╖уГзуГ│уВвуГГуГЧуГЗуГ╝уГИуГБуВзуГГуВп
 	 */
 	if((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR3)) & PWR_CR3_SCUEN) == 0){
 		if((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR3)) & PWR_SUPPLY_CONFIG_MASK) != REQUEST_PWR_SUPPLY){
-			/* еэе├еп╛ї┬╓д╩дщд╨╜к╬╗ */
+			/* уГнуГГуВпчК╢цЕЛуБкуВЙуБ░ч╡Вф║Ж */
 			return E_SYS;
 		}
 	}
 
 	/*
-	 *  е╤еяб╝е╡е╫ещед е│еєе╒егеоехеьб╝е╖ечеє
+	 *  уГСуГпуГ╝уВ╡уГЧуГйуВд уВ│уГ│уГХуВгуВоуГеуГмуГ╝уВ╖уГзуГ│
 	 */
 	sil_modw_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR3), PWR_SUPPLY_CONFIG_MASK, REQUEST_PWR_SUPPLY);
 
 	/*
-	 *  VOLTAGEеье┘еые╒еще░екеєд▐д╟┬╘д┴
+	 *  VOLTAGEуГмуГЩуГлуГХуГйуВ░уВкуГ│уБ╛уБзх╛ЕуБб
 	 */
 	while((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CSR1)) & PWR_CSR1_ACTVOSRDY) == 0){
 		if(tick++ > PWR_FLAG_SETTING_DELAY_US){
@@ -431,7 +431,7 @@ sysclock_config(int mode)
 	}
 
 	/*
-	 *  ║╟┬чепеэе├еп▓─╟╜еье┘еы═╤д╬ VOLTAGE SCALE└▀─ъдЄ╣╘дж
+	 *  цЬАхдзуВпуГнуГГуВпхПпшГ╜уГмуГЩуГлчФиуБо VOLTAGE SCALEшинхоЪуВТшбМуБЖ
 	 */
 	sil_andw_mem((uint32_t *)(TADR_SYSCFG_BASE+TOFF_SYSCFG_PWRCR), SYSCFG_PWRCR_ODEN);
 	tmp  = sil_rew_mem((uint32_t *)(TADR_SYSCFG_BASE+TOFF_SYSCFG_PWRCR));
@@ -443,13 +443,13 @@ sysclock_config(int mode)
 	while((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_D3CR)) & PWR_D3CR_VOSRDY) == 0){}
 
 	/*
-	 *  HSE└▀─ъ
+	 *  HSEшинхоЪ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_HSEBYP);
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_HSEON);
 
 	/*
-	 *  HSEеье╟ег┬╘д┴
+	 *  HSEуГмуГЗуВгх╛ЕуБб
 	 */
 	tick = 0;
 	while((sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_CR)) & RCC_CR_HSERDY) == 0){
@@ -460,12 +460,12 @@ sysclock_config(int mode)
 
 #if REQUEST_USBCLOCK == RCC_USBCLKSOURCE_HSI48
 	/*
-	 *  HSI48епеэе├епдЄ╡п╞░
+	 *  HSI48уВпуГнуГГуВпуВТш╡╖хЛХ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_HSI48ON);
 
 	/*
-	 *  HSI48еье╟ег┬╘д┴
+	 *  HSI48уГмуГЗуВгх╛ЕуБб
 	 */
 	tick = 0;
 	while((sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_CR)) & RCC_CR_HSI48RDY) == 0){
@@ -476,10 +476,10 @@ sysclock_config(int mode)
 #endif	/* USE_USB */
 
 	/*
-	 *  PLL└▀─ъ
+	 *  PLLшинхоЪ
 	 */
     /*
-	 *  PLLдме╖е╣е╞ерепеэе├еп└▀─ъ║╤д▀д╬╛ь╣чбвеиещб╝
+	 *  PLLуБМуВ╖уВ╣уГЖуГауВпуГнуГГуВпшинхоЪц╕ИуБ┐уБоха┤хРИуАБуВиуГйуГ╝
 	 */
 	if(get_sysclk_source() == RCC_CFGR_SWS_PLL1)
 		return E_SYS;
@@ -490,7 +490,7 @@ sysclock_config(int mode)
 	sil_andw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_PLL1ON);
 
 	/*
-	 *  PLL NOT-READY┬╘д┴
+	 *  PLL NOT-READYх╛ЕуБб
 	 */
 	tick = 0;
 	while((sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_CR)) & RCC_CR_PLL1RDY) != 0){
@@ -500,7 +500,7 @@ sysclock_config(int mode)
 	}
 
 	/*
-	 *  PLLM,N,P,R,Q└▀─ъ
+	 *  PLLM,N,P,R,QшинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCKSELR),
 				(RCC_PLLCKSELR_PLLSRC | RCC_PLLCKSELR_DIVM1), (REQUEST_PLL_SOURCE | (REQUEST_PLLM<<4)));
@@ -508,7 +508,7 @@ sysclock_config(int mode)
 				((REQUEST_PLLN-1) | ((REQUEST_PLLP-1) << 9) | ((REQUEST_PLLR-1) << 24) | ((REQUEST_PLLQ-1) << 16)));
 
 	/*
-	 *  PLLFRACN╠╡╕·▓╜
+	 *  PLLFRACNчДбхК╣хМЦ
 	 */
 	sil_andw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL1FRACEN);
 
@@ -522,32 +522,32 @@ sysclock_config(int mode)
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL1VCOSEL, REQUEST_PLL1VCOWIDE);
 
 	/*
-	 *  PLL1Pепеэе├еп╩м╝■═н╕·▓╜
+	 *  PLL1PуВпуГнуГГуВпхИЖхСицЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_DIVP1EN);
 
 	/*
-	 *  PLL1Qепеэе├еп╩м╝■═н╕·▓╜
+	 *  PLL1QуВпуГнуГГуВпхИЖхСицЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_DIVQ1EN);
 
 	/*
-	 *  PLL1Rепеэе├еп╩м╝■═н╕·▓╜
+	 *  PLL1RуВпуГнуГГуВпхИЖхСицЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_DIVR1EN);
 
 	/*
-	 *  PLL1FRACN═н╕·▓╜
+	 *  PLL1FRACNцЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL1FRACEN);
 
 	/*
-	 *  PLLепеэе├еп═н╕·▓╜
+	 *  PLLуВпуГнуГГуВпцЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_PLL1ON);
 
 	/*
-	 *  PLLеье╟ег┬╘д┴
+	 *  PLLуГмуГЗуВгх╛ЕуБб
 	 */
 	tick = 0;
 	while((sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_CR)) & RCC_CR_PLL1RDY) == 0){
@@ -559,8 +559,8 @@ sysclock_config(int mode)
 #ifdef REQUEST_USBCLOCK
 #if REQUEST_USBCLOCK == RCC_USBCLKSOURCE_PLL3
 	/*
-	 *  USBепеэе├еп└▀─ъ
-	 *  PLL3─ф╗▀
+	 *  USBуВпуГнуГГуВпшинхоЪ
+	 *  PLL3хБЬцнв
 	 */
 	sil_andw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_PLL3ON);
 	tick = 0;
@@ -571,7 +571,7 @@ sysclock_config(int mode)
 	}
 
     /*
-	 *  PLL3д╬е│еєе╒егеоехеьб╝е╖ечеє└▀─ъ
+	 *  PLL3уБоуВ│уГ│уГХуВгуВоуГеуГмуГ╝уВ╖уГзуГ│шинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCKSELR), RCC_PLLCKSELR_DIVM3, (REQUEST_PLL3_PLL3M << 20));
 	sil_wrw_mem((uint32_t *)(rccbase+TOFF_RCC_PLL3DIVR), ((REQUEST_PLL3_PLL3N-1) & RCC_PLL3DIVR_N3) | \
@@ -579,37 +579,37 @@ sysclock_config(int mode)
 						(((REQUEST_PLL3_PLL3R-1) << 24) & RCC_PLL3DIVR_R3));
 
 	/*
-	 *  PLL3 VCI└▀─ъ
+	 *  PLL3 VCIшинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL3RGE, 2<<10);
 
     /*
-	 *  PLL3 VCO└▀─ъ
+	 *  PLL3 VCOшинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL3VCOSEL, 0<<9);
 
 	/*
-	 *  PLL3FRACN─ф╗▀
+	 *  PLL3FRACNхБЬцнв
 	 */
 	sil_andw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL3FRACEN);
 
 	/*
-	 *  PLL3епеэе├еп Fractional Part Of The Multiplication Factor└▀─ъ
+	 *  PLL3уВпуГнуГГуВп Fractional Part Of The Multiplication FactorшинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_PLL3FRACR), RCC_PLL3FRACR_FRACN3, REQUEST_PLL3_PLL3FRACN);
 
 	/*
-	 *  PLL3FRACN║╞│л
+	 *  PLL3FRACNхЖНщЦЛ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_PLL3FRACEN);
 
 	/*
-	 *  PLL3-Qепеэе├еп╜╨╬╧
+	 *  PLL3-QуВпуГнуГГуВпхЗ║хКЫ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_PLLCFGR), RCC_PLLCFGR_DIVQ3EN);
 
 	/*
-	 *  PLL3═н╕·▓╜
+	 *  PLL3цЬЙхК╣хМЦ
 	 */
 	sil_orw_mem((uint32_t *)(rccbase+TOFF_RCC_CR), RCC_CR_PLL3ON);
 	tick = 0;
@@ -621,17 +621,17 @@ sysclock_config(int mode)
 #endif	/* RCC_USBCLKSOURCE_PLL3 */
 
 	/*
-	 *  USB└▀─ъ
+	 *  USBшинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D2CCIP2R), RCC_D2CCIP2R_USBSEL, REQUEST_USBCLOCK);
 
 	/*
-	 *  USBV3.3еьеоехеьб╝е┐
+	 *  USBV3.3уГмуВоуГеуГмуГ╝уВ┐
 	 */
 	sil_orw_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR3), PWR_CR3_USBREGEN);
 
 	/*
-	 *  еье╟ег┬╘д┴
+	 *  уГмуГЗуВгх╛ЕуБб
 	 */
 	tick = 0;
 	while((sil_rew_mem((uint32_t *)(TADR_PWR_BASE+TOFF_PWR_CR3)) & PWR_CR3_USB33RDY) == 0){
@@ -642,7 +642,7 @@ sysclock_config(int mode)
 #endif	/* USE_USB */
 
 	/*
-	 *  FLASHевепе╗е╣ежезеде╚└▀─ъ(╕╜║▀├═дшдъ├┘дд╛ь╣ч)
+	 *  FLASHуВвуВпуВ╗уВ╣уВжуВзуВдуГИшинхоЪ(чП╛хЬихАдуВИуВКщБЕуБДха┤хРИ)
 	 */
 	if(REQUEST_FLASH_LATENCY > (sil_rew_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR)) & FLASH_ACR_LATENCY)){
 		if(Set_Flash_latency(FLASH_ACR_LATENCY) != 0)
@@ -650,37 +650,37 @@ sysclock_config(int mode)
 	}
 
 	/*
-	 *  D1PCLK1╩м╝■└▀─ъ
+	 *  D1PCLK1хИЖхСишинхоЪ
 	 */
     if(REQUEST_APB3_DIV > (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR)) & RCC_D1CFGR_D1PPRE))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR), RCC_D1CFGR_D1PPRE, REQUEST_APB3_DIV);
 
 	/*
-	 *  PCLK1╩м╝■└▀─ъ
+	 *  PCLK1хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB1_DIV > (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR)) & RCC_D2CFGR_D2PPRE1))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR), RCC_D2CFGR_D2PPRE1, REQUEST_APB1_DIV);
 
 	/*
-	 *  PCLK2╩м╝■└▀─ъ
+	 *  PCLK2хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB2_DIV > (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR)) & RCC_D2CFGR_D2PPRE2))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR), RCC_D2CFGR_D2PPRE2, REQUEST_APB2_DIV);
 
 	/*
-	 *  D3PCLK1╩м╝■└▀─ъ
+	 *  D3PCLK1хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB4_DIV > (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D3CFGR)) & RCC_D3CFGR_D3PPRE))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D3CFGR), RCC_D3CFGR_D3PPRE, REQUEST_APB4_DIV);
 
 	/*
-	 *  HCLK╩м╝■└▀─ъ
+	 *  HCLKхИЖхСишинхоЪ
 	 */
 	if(REQUEST_HCLK_DIV > (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR)) & RCC_D1CFGR_HPRE))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR), RCC_D1CFGR_HPRE, REQUEST_HCLK_DIV);
 
 	/*
-	 *  SYSCLK╩м╝■└▀─ъ
+	 *  SYSCLKхИЖхСишинхоЪ
 	 */
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR), RCC_D1CFGR_D1CPRE, REQUEST_SYSCLK_DIV);
 
@@ -692,7 +692,7 @@ sysclock_config(int mode)
 	sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_CFGR), RCC_CFGR_SW, REQUEST_SYSCLOCK);
 
 	/*
-	 *  е╖е╣е╞ерепеэе├еп└▀─ъ╚┐▒╟┬╘д┴
+	 *  уВ╖уВ╣уГЖуГауВпуГнуГГуВпшинхоЪхПНцШах╛ЕуБб
 	 */
 	tick = 0;
 	while(get_sysclk_source() != (REQUEST_SYSCLOCK << CFGR_SWS_SHIFT)){
@@ -703,13 +703,13 @@ sysclock_config(int mode)
 	}
 
 	/*
-	 *  HCLK╩м╝■└▀─ъ
+	 *  HCLKхИЖхСишинхоЪ
 	 */
 	if(REQUEST_HCLK_DIV < (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR)) & RCC_D1CFGR_HPRE))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR), RCC_D1CFGR_HPRE, REQUEST_HCLK_DIV);
 
 	/*
-	 *  FLASHевепе╗е╣ежезеде╚└▀─ъ(╕╜║▀├═дшдъ┬одд╛ь╣ч)
+	 *  FLASHуВвуВпуВ╗уВ╣уВжуВзуВдуГИшинхоЪ(чП╛хЬихАдуВИуВКщАЯуБДха┤хРИ)
 	 */
 	if(REQUEST_FLASH_LATENCY < (sil_rew_mem((uint32_t *)(TADR_FLASH_R_BASE+TOFF_FLASH_ACR)) & FLASH_ACR_LATENCY)){
 		if(Set_Flash_latency(FLASH_ACR_LATENCY) != 0)
@@ -717,25 +717,25 @@ sysclock_config(int mode)
 	}
 
 	/*
-	 *  D1PCLK1╩м╝■└▀─ъ
+	 *  D1PCLK1хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB3_DIV < (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR)) & RCC_D1CFGR_D1PPRE))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D1CFGR), RCC_D1CFGR_D1PPRE, REQUEST_APB3_DIV);
 
 	/*
-	 *  PCLK1╩м╝■└▀─ъ
+	 *  PCLK1хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB1_DIV < (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR)) & RCC_D2CFGR_D2PPRE1))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR), RCC_D2CFGR_D2PPRE1, REQUEST_APB1_DIV);
 
 	/*
-	 *  PCLK2╩м╝■└▀─ъ
+	 *  PCLK2хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB2_DIV < (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR)) & RCC_D2CFGR_D2PPRE2))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D2CFGR), RCC_D2CFGR_D2PPRE2, REQUEST_APB2_DIV);
 
 	/*
-	 *  D3PCLK1╩м╝■└▀─ъ
+	 *  D3PCLK1хИЖхСишинхоЪ
 	 */
 	if(REQUEST_APB4_DIV < (sil_rew_mem((uint32_t *)(rccbase+TOFF_RCC_D3CFGR)) & RCC_D3CFGR_D3PPRE))
 		sil_modw_mem((uint32_t *)(rccbase+TOFF_RCC_D3CFGR), RCC_D3CFGR_D3PPRE, REQUEST_APB4_DIV);
@@ -743,7 +743,7 @@ sysclock_config(int mode)
 }
 
 /*
- *  PLL2епеэе├еп╝ш╞└
+ *  PLL2уВпуГнуГГуВпхПЦх╛Ч
  *  0-P, 1-Q, 2-R
  *  PLL_VCO = (HSE_VALUE or HSI_VALUE or CSI_VALUE/ PLL2M) * PLL2N
  *  PLL2xCLK = PLL2_VCO / PLL2x
@@ -790,7 +790,7 @@ RCC_GetPLL2ClockFreq(uint32_t *PLL2_Clocks)
 }
 
 /*
- *  PLL3епеэе├еп╝ш╞└
+ *  PLL3уВпуГнуГГуВпхПЦх╛Ч
  *  0-P, 1-Q, 2-R
  *  PLL3_VCO = (HSE_VALUE or HSI_VALUE or CSI_VALUE/ PLL3M) * PLL3N
  *  PLL3xCLK = PLL3_VCO / PLLxR
