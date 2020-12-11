@@ -56,7 +56,7 @@
 #define MAIN_PRIORITY	5		/* メインタスクの優先度 */
 								/* メインタスクの優先度 */
 
-#define HIGH_PRIORITY	9		/* メインタスクの優先度 */
+#define HIGH_PRIORITY	9		/* 並行実行されるタスクの優先度 */	
 #define MID_PRIORITY	10
 #define LOW_PRIORITY	11
 
@@ -69,7 +69,7 @@
 #endif /* TASK_PORTID */
 
 #ifndef STACK_SIZE
-#define	STACK_SIZE		4096		/* 文字入力するシリアルポートID */
+#define	STACK_SIZE		4096		/* タスクのスタックサイズ */	
 #endif /* STACK_SIZE */
 
 #ifndef LOOP_REF
