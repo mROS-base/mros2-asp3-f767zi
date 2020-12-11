@@ -1,8 +1,8 @@
 $ 
-$     �ѥ�2�Υ������åȰ�¸�ƥ�ץ졼�ȡ�stm32f769_discovery�ѡ�
+$     パス2のターゲット依存テンプレート（stm32f769_discovery用）
 $ 
 
 $ 
-$  ������¸�ƥ�ץ졼�ȤΥ��󥯥롼��
+$  コア依存テンプレートのインクルード
 $ 
 $INCLUDE"arm_m_gcc/common/core.tf"$

@@ -6,46 +6,46 @@
  *  Copyright (C) 2008-2015 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id$
  */
 
 /*
- *  �ץ����å���¸�⥸�塼�� ������֥��������ARMv6-M�ѡ�
+ *  プロセッサ依存モジュール アセンブリ言語部（ARMv6-M用）
  */
 
 #define TOPPERS_MACRO_ONLY
-#define UINT_C(val)		(val)		/* uint_t�����������ޥ��� */
-#define ULONG_C(val)	(val)		/* ulong_t�����������ޥ��� */
-#define CAST(type, val)	(val)		/* �����㥹�Ȥ�Ԥ��ޥ��� */
+#define UINT_C(val)		(val)		/* uint_t型の定数を作るマクロ */
+#define ULONG_C(val)	(val)		/* ulong_t型の定数を作るマクロ */
+#define CAST(type, val)	(val)		/* 型キャストを行うマクロ */
 
 #include "kernel_impl.h"
 #include "arm_m.h"
@@ -57,7 +57,7 @@
 #endif /* __TARGET_ARCH_THUMB != 3 */
 
 /*
- *  �������ǥ����ѥå���
+ *  タスクディスパッチャ
  */
 	ATEXT
 	ABALIGN(4)
@@ -66,56 +66,56 @@
 ALABEL(dispatch)
 	/*
 	 *
-	 *  ���Υ롼����ϡ�����������ƥ����ȡ�CPU���å����֡��ǥ��ѥå����ľ���
-	 *  ���ʥ�ǥ��Ρ˳����ͥ���٥ޥ����������֤ǸƤӽФ���롥
+	 *  このルーチンは，タスクコンテキスト・CPUロック状態・ディパッチ許可状態
+	 *  ・（モデル上の）割込み優先度マスク全開状態で呼び出される．
 	 */
-	mov  r0, r8                  /* �쥸��������¸ */
+	mov  r0, r8                  /* レジスタの保存 */
 	mov  r1, r9
 	mov  r2, r10
 	mov  r3, r11
 	push {r0-r7,lr}
-	ldr  r0, =p_runtsk           /* p_runtsk���ɤ߹��� */
+	ldr  r0, =p_runtsk           /* p_runtskを読み込む */
 	ldr  r1, [r0]
 	mov  r2, sp
-	str  r2, [r1,#TCB_sp]        /* �����������å�����¸ */
-	ldr  r3, =dispatch_r         /* �¹ԺƳ����Ϥ���¸ */
+	str  r2, [r1,#TCB_sp]        /* タスクスタックを保存 */
+	ldr  r3, =dispatch_r         /* 実行再開番地を保存 */
 	str  r3, [r1,#TCB_pc]        
 	b    dispatcher
 
 	ATHUMB(dispatch_r)
 	AGLOBAL(dispatch_r)
 ALABEL(dispatch_r)
-	pop  {r0-r7}                 /* �쥸���������� */
+	pop  {r0-r7}                 /* レジスタの復帰 */
 	mov  r8,  r0
 	mov  r9,  r1
 	mov  r10, r2
 	mov  r11, r3
 	/*
-	 * �������㳰�����롼����ε�ư
+	 * タスク例外処理ルーチンの起動
 	 */
-	ldr  r0, =p_runtsk           /* p_runtsk���ɤ߹��� */
+	ldr  r0, =p_runtsk           /* p_runtskを読み込む */
 	ldr  r1, [r0]
 	ldrb r0, [r1,#TCB_enatex]
 	movs r2, #TCB_enatex_mask
 	tst  r0, r2
-	beq  dispatch_r_1            /* enatex �� false �ʤ�꥿���� */
-	ldr  r0, [r1,#TCB_texptn]    /* texptn �� 0 �ʤ�꥿����     */
+	beq  dispatch_r_1            /* enatex が false ならリターン */
+	ldr  r0, [r1,#TCB_texptn]    /* texptn が 0 ならリターン     */
 	tst  r0, r0
 	beq  dispatch_r_1            
-	ldr  r1, =ipmflg             /* ipmflg�� false �ʤ�꥿����  */
+	ldr  r1, =ipmflg             /* ipmflgが false ならリターン  */
 	ldr  r0, [r1]
 	tst  r0, r0
 	beq  dispatch_r_1
-	ldr  r0, =call_texrtn        /* �������㳰�롼����θƤӽФ� */
+	ldr  r0, =call_texrtn        /* タスク例外ルーチンの呼び出し */
 	bx   r0
-ALABEL(dispatch_r_1)             /* �������ؤ�call_textn������� */
+ALABEL(dispatch_r_1)             /* タスクへのcall_textnから戻る */
 	pop  {pc}
 
 /*
- *  CPU�㳰����ȥ�
+ *  CPU例外エントリ
  *
- *  ����ߥ���ȥ�Ƚ��������Ƥ�Ʊ�������������μ��ब�ۤʤ뤿�ᡤ
- *  ʬ���Ƥ��롥
+ *  割込みエントリと処理の内容は同等だが，ログの種類が異なるため，
+ *  分けている．
  */
 	ABALIGN(4)
 	ATEXT
@@ -123,11 +123,11 @@ ALABEL(dispatch_r_1)             /* �������ؤ�call_textn������� */
 	AGLOBAL(core_exc_entry)
 ALABEL(core_exc_entry)
 	/*
-	 *  �㳰/����ߤ�ȯ������ȡ�ȯ�����˥����ƥ��֤ʥ����å��˥�����
-	 *  �å��쥸����������¸����롥
-	 *  �������Ƥ˲ä��ơ�CPU�㳰�ϥ�ɥ�ؤξ���Ȥ��ơ�basepri ���ͤȡ�
-	 *  EXC_RETURN�ξ����ä�����¸���롥basepri���ͤϡ�CPU�㳰�����
-	 *  �꥿������˳����ͥ���٥ޥ������ͤ򸵤��᤹����ˤ��Ѥ����롥
+	 *  例外/割込みが発生すると，発生時にアクティブなスタックにスクラ
+	 *  ッチレジスタ等が保存される．
+	 *  この内容に加えて，CPU例外ハンドラへの情報として，basepri の値と，
+	 *  EXC_RETURNの情報を加えて保存する．basepriの値は，CPU例外からの
+	 *  リターン時に割込み優先度マスクの値を元に戻すためにも用いられる．
 	 *
 	 *   -----------
 	 *  |   iipm    |
@@ -154,46 +154,46 @@ ALABEL(core_exc_entry)
 	 */
 
 	/*
-	 *  �����ͥ���������㳰�������å�
-	 *  �����ͥ���Υ���ƥ����륻�������μ¹��桤������ߥ��å����֡�
-	 *  CPU���å����֡������ͥ�������γ���ߥϥ�ɥ�¹���Τ����줫��
-	 *  ȯ������CPU�㳰�򡤥����ͥ��������CPU�㳰�ȸƤ�
-	 *  ������ߥ��å����֤�FAULTMASK��'1'�ξ��
-	 *  CPU���å����֤�basepri��IIPM_LOCK����Ƚ�Ǥ��롥
+	 *  カーネル管理外の例外かチェック
+	 *  カーネル内のクリティカルセクションの実行中，全割込みロック状態，
+	 *  CPUロック状態，カーネル管理外の割込みハンドラ実行中のいずれかで
+	 *  発生したCPU例外を，カーネル管理外のCPU例外と呼ぶ
+	 *  全割込みロック状態はFAULTMASKが'1'の場合
+	 *  CPUロック状態はbasepriがIIPM_LOCKかで判断する．
 	 */
-	ldr   r3, =iipm               /* ��ǻ��Ѥ��뤿���ɤ߹��� */
+	ldr   r3, =iipm               /* 後で使用するため読み込む */
 	ldrb  r0, [r3]
-	mrs   r2, primask             /* CPU���å����֤ʤ饫���ͥ�������㳰������ */
+	mrs   r2, primask             /* CPUロック状態ならカーネル管理外例外処理へ */
 	cmp   r1, #1
 	beq   core_nonkernel_exc_entry
 
 	/*
-	 * �����å����ѹ�����ɬ�פ����뤫�����å�
-	 * EXC_RETURN�ʳ���߻���LR�����ꤵ����͡ˤ�����å����ơ��㳰ȯ������
-	 * �����ƥ��֤ʥ����å������ꤹ�뤳�Ȥ�¿�ų���ߤ�Ƚ�ꤹ�롥
+	 * スタックを変更する必要があるかチェック
+	 * EXC_RETURN（割込み時にLRに設定される値）をチェックして，例外発生時に
+	 * アクティブなスタックを特定することで多重割込みか判定する．
 	 */
-	movs  r1, #EXC_RETURN_PSP    /* ����߸���MSP�ʤ�¿�ų���� */
+	movs  r1, #EXC_RETURN_PSP    /* 割込み元がMSPなら多重割込み */
 	mov   r2, lr
 	tst   r2, r1
-	beq   core_exc_entry_1       /* ¿�ų���ߤʤ�core_exc_entry_1�� */
-	mrs   r3, psp                /* �����ܤγ���ߤξ���PSP��� */
-	subs  r3, #(0x04*2)          /* �����ȯ�����γ����ͥ���٥ޥ���(r2)��EXC_RETURN(r0)�ν��PSP����Ѥ� */
+	beq   core_exc_entry_1       /* 多重割込みならcore_exc_entry_1へ */
+	mrs   r3, psp                /* 一段目の割込みの場合はPSP上に */
+	subs  r3, #(0x04*2)          /* 割込み発生時の割込み優先度マスク(r2)，EXC_RETURN(r0)の順にPSP上に積む */
 	str   r2, [r3, 0x04]
 	str   r0, [r3, 0x00]
 	msr   psp, r3
-	push  {r0, r2}               /* MSP�ˤ�����ȯ�����γ����ͥ���٥ޥ���(r0)��EXC_RETURN(r2)���Ѥ� */
-	mov   lr, r3                 /* ̤����γ���ߤ�ȯ���������ξ���Ȥ��� */
+	push  {r0, r2}               /* MSPにも割込み発生時の割込み優先度マスク(r0)とEXC_RETURN(r2)を積む */
+	mov   lr, r3                 /* 未定義の割込みが発生した場合の情報とする */
 	b     core_exc_entry_2
-ALABEL(core_exc_entry_1)         /* ¿�ų���ߤξ�� */
-	push  {r0,r2}                /* �����ȯ�����γ����ͥ���٥ޥ���(r0)��EXC_RETURN(r2)�ν��PSP����Ѥ� */
-	mov   lr, sp                 /* CPU�㳰�ϥ�ɥ�ؤΰ����Ȥʤ� */
+ALABEL(core_exc_entry_1)         /* 多重割込みの場合 */
+	push  {r0,r2}                /* 割込み発生時の割込み優先度マスク(r0)，EXC_RETURN(r2)の順にPSP上に積む */
+	mov   lr, sp                 /* CPU例外ハンドラへの引数となる */
 
 	/*
-	 *  ���̽���
+	 *  共通処理
 	 */
 ALABEL(core_exc_entry_2)
 	/*
-	 *  CPU�㳰����꥿���󤹤�ݤ˳����ͥ���٥ޥ������᤹����Υǡ�������¸
+	 *  CPU例外からリターンする際に割込み優先度マスクを戻すためのデータを保存
 	 */
 	ldr  r3, =SYSTIC_CONTROL_STATUS
 	ldr  r2,[r3] 
@@ -201,58 +201,58 @@ ALABEL(core_exc_entry_2)
 	ldr  r1,[r3] 
 	push {r1,r2}
 
-	mrs   r3, ipsr               /* �ϥ�ɥ饢�ɥ쥹����� */
+	mrs   r3, ipsr               /* ハンドラアドレスを取得 */
 	ldr   r1, =_kernel_exc_tbl
 	lsls  r0, r3, #2
 	ldr   r2, [r1, r0]
 
 #ifdef LOG_EXC_ENTER
 	push  {r0,r2,r3}
-	mov   r0, r3                 /* �㳰�ֹ��ѥ�᡼����  */
-	bl    log_exc_enter          /* log_exc_enter��ƤӽФ� */
+	mov   r0, r3                 /* 例外番号をパラメータに  */
+	bl    log_exc_enter          /* log_exc_enterを呼び出す */
 	pop   {r0,r2,r3}
-	push  {r3}                   /* �㳰�ֹ�򥹥��å���    */
+	push  {r3}                   /* 例外番号をスタックへ    */
 #endif /* LOG_EXC_ENTER */
 
 	/*
-	 *  CPU�㳰�ϥ�ɥ�θƤӽФ�
+	 *  CPU例外ハンドラの呼び出し
 	 */
 	mov   r0, lr
 	blx   r2
 
 #ifdef LOG_EXC_ENTER
-	pop   {r0}                   /* �㳰�ֹ�������        */
-	bl    log_exc_leave          /* log_exc_leave��ƤӽФ� */
+	pop   {r0}                   /* 例外番号を引数に        */
+	bl    log_exc_leave          /* log_exc_leaveを呼び出す */
 #endif /* LOG_EXC_ENTER */
 
 	b     ret_exc
 
 /*
- *  �����ͥ��������CPU�㳰�ν���������
+ *  カーネル管理外のCPU例外の出入口処理
  */
 ALABEL(core_nonkernel_exc_entry)
-	movs  r1, #EXC_RETURN_PSP    /* ����߸���MSP�ʤ�¿�ų���� */
+	movs  r1, #EXC_RETURN_PSP    /* 割込み元がMSPなら多重割込み */
 	mov   r2, lr
 	tst   r2, r1
-	beq   core_nonkernel_exc_entry_1  /* ¿�ų���ߤʤ� */
-	mrs   r3, psp                /* �����ܤγ���ߤξ���PSP��� */
+	beq   core_nonkernel_exc_entry_1  /* 多重割込みなら */
+	mrs   r3, psp                /* 一段目の割込みの場合はPSP上に */
 	subs  r3, #(0x04*2)
 	str   r2, [r3, 0x04]
 	str   r0, [r3, 0x00]
 	msr   psp, r3                
-	push  {r0, r2}               /* MSP�ˤ�����ȯ�����γ����ͥ���٥ޥ���(r0)��EXC_RETURN(r2)���Ѥ� */
-	mov   r0,  r3                /* CPU�㳰�ϥ�ɥ�ؤΰ����Ȥʤ� */
+	push  {r0, r2}               /* MSPにも割込み発生時の割込み優先度マスク(r0)とEXC_RETURN(r2)を積む */
+	mov   r0,  r3                /* CPU例外ハンドラへの引数となる */
 	b     core_nonkernel_exc_entry_2
-ALABEL(core_nonkernel_exc_entry_1) /* ¿�ų���ߤξ�� */
-	push  {r0, r2}               /* �����ȯ�����γ����ͥ���٥ޥ���(r0)��EXC_RETURN(r2)���Ѥ� */
-	mov   r0, sp                 /* CPU�㳰�ϥ�ɥ�ؤΰ����Ȥʤ� */
+ALABEL(core_nonkernel_exc_entry_1) /* 多重割込みの場合 */
+	push  {r0, r2}               /* 割込み発生時の割込み優先度マスク(r0)とEXC_RETURN(r2)を積む */
+	mov   r0, sp                 /* CPU例外ハンドラへの引数となる */
 
 	/*
-	 *  ���̽���
+	 *  共通処理
 	 */
 ALABEL(core_nonkernel_exc_entry_2)
 	/*
-	 *  ����ߤ���꥿���󤹤�ݤ˳����ͥ���٥ޥ������᤹����Υǡ�������¸
+	 *  割込みからリターンする際に割込み優先度マスクを戻すためのデータを保存
 	 */
 	ldr  r3, =SYSTIC_CONTROL_STATUS
 	ldr  r2,[r3] 
@@ -260,103 +260,103 @@ ALABEL(core_nonkernel_exc_entry_2)
 	ldr  r1,[r3] 
 	push {r1,r2}
 
-	mrs   r3, ipsr               /* CPU�㳰�ϥ�ɥ�Υ��ɥ쥹����� */
+	mrs   r3, ipsr               /* CPU例外ハンドラのアドレスを取得 */
 	ldr   r1, =_kernel_exc_tbl
 	lsls  r4, r3, #2
 	ldr   r2, [r1, r4]
 
 	/*
-	 *  CPU�㳰�ϥ�ɥ�θƤӽФ�
+	 *  CPU例外ハンドラの呼び出し
 	 */
 	blx   r2
 
 	/*
-	 *  CPU���å����֤ξ��˸ƤӽФ���Ƥ��뤿�ᡤCPU�㳰�ϥ�ɥ餫��Υ꥿����
-	 *  �Τ���˸����᤹
+	 *  CPUロック状態の場合に呼び出されているため，CPU例外ハンドラからのリターン
+	 *  のために元に戻す
 	 */
 	cpsid i
 
 	/*
-	 *  �����ͥ���٥ޥ����򸵤��᤹
+	 *  割込み優先度マスクを元に戻す
 	 */
 	ldr  r1, =0xffffffff
-	ldr  r2, =NVIC_CLRENA0  /* ��öIRQ�����ߤ����ƶػ� */
+	ldr  r2, =NVIC_CLRENA0  /* 一旦IRQ割り込みを全て禁止 */
 	str  r1, [r2]
-	pop  {r0,r1}            /* �����å������㳰ȯ������NVIC_SETENA0(r0),SYSTIC_CONTROL_STATUS(r1)���ͤ���� */
-	ldr  r2, =NVIC_SETENA0  /* NVIC_SETENA0�򸵤��᤹ */
+	pop  {r0,r1}            /* スタックから例外発生時のNVIC_SETENA0(r0),SYSTIC_CONTROL_STATUS(r1)の値を取得 */
+	ldr  r2, =NVIC_SETENA0  /* NVIC_SETENA0を元に戻す */
 	str  r0, [r2]
-	ldr  r3, =SYSTIC_CONTROL_STATUS  /* SYSTIC_CONTROL_STATUS�򸵤��᤹ */
+	ldr  r3, =SYSTIC_CONTROL_STATUS  /* SYSTIC_CONTROL_STATUSを元に戻す */
 	ldr  r0,[r3] 
 	movs r2, #SYSTIC_TICINT
 	orrs r1, r1, r2
 	bics r0, r2
 	orrs r0, r1
 	str  r0, [r3]
-	pop  {r0}               /* iipm���᤹ */
+	pop  {r0}               /* iipmを戻す */
 	ldr  r1, =iipm
 	strb r0, [r1]
 
 	/*
-	 *  �����Υ���ƥ����Ȥ�Ƚ��
+	 *  戻り先のコンテキストの判定
 	 * 
-	 *  ����ߥϥ�ɥ�¹Ԥ�LR�˥��åȤ����EXC_RETURN������å����ơ����
-	 *  ���MSP���Ȥ��Ƥ���С�������褬�󥿥�������ƥ����Ȥ�Ƚ�ꤹ�롥
+	 *  割込みハンドラ実行にLRにセットされるEXC_RETURNをチェックして，戻り
+	 *  先でMSPが使われていれば，割込み先が非タスクコンテキストと判定する．
 	 */
-	pop   {r3}                   /* lr�򥹥��å��������        */
-	movs  r1, #EXC_RETURN_PSP    /* ����߸���MSP�ʤ�¿�ų���� */
+	pop   {r3}                   /* lrをスタックから取得        */
+	movs  r1, #EXC_RETURN_PSP    /* 割込み元がMSPなら多重割込み */
 	tst   r3, r1
 	bne   core_nonkernel_ret_exc_1
-	b     core_nonkernel_ret_exc_2 /* ���ͤ�MSP������� */
+	b     core_nonkernel_ret_exc_2 /* の値をMSPから取得 */
 ALABEL(core_nonkernel_ret_exc_1)
 	/*
-	 *  PSP�夫��EXC_RETURN/���γ����ͥ���٥ޥ���(iipm)����
+	 *  PSP上からEXC_RETURN/元の割込み優先度マスク(iipm)を削除
 	 */
 	mrs   r2, psp
 	adds  r2, r2, #8
 	msr   psp, r2
 
 ALABEL(core_nonkernel_ret_exc_2)
-	bx    r3                      /* �꥿���� */
+	bx    r3                      /* リターン */
 
 /*
- *  ����ߥ���ȥ�
+ *  割込みエントリ
  */
 	ATHUMB(core_int_entry)
 	AGLOBAL(core_int_entry)
 ALABEL(core_int_entry)
 	/*
-	 *  �����ȯ�����γ����ͥ���٥ޥ����򥹥��å�����¸���뤿�����
+	 *  割込み発生時の割込み優先度マスクをスタックに保存するため取得
 	 */
-	ldr   r3, =iipm               /* ��ǻ��Ѥ��뤿���ɤ߹��� */
+	ldr   r3, =iipm               /* 後で使用するため読み込む */
 	ldrb  r0, [r3]
 
 	/*
-	 * ¿�ų���ߤ������å�
-	 * EXC_RETURN�ʳ���߻���LR�����ꤵ����͡ˤ�����å����ơ��㳰ȯ������
-	 * �����ƥ��֤ʥ����å������ꤹ�뤳�Ȥ�¿�ų���ߤ�Ƚ�ꤹ�롥
+	 * 多重割込みかチェック
+	 * EXC_RETURN（割込み時にLRに設定される値）をチェックして，例外発生時に
+	 * アクティブなスタックを特定することで多重割込みか判定する．
 	 */
-	movs  r1, #EXC_RETURN_PSP    /* ����߸���MSP�ʤ�¿�ų���� */
+	movs  r1, #EXC_RETURN_PSP    /* 割込み元がMSPなら多重割込み */
 	mov   r2, lr
 	tst   r2, r1
-	beq   core_int_entry_1       /* ¿�ų���ߤʤ�core_int_entry_1�� */
-	mrs   r3, psp                /* �����ܤγ���ߤξ���PSP��� */
+	beq   core_int_entry_1       /* 多重割込みならcore_int_entry_1へ */
+	mrs   r3, psp                /* 一段目の割込みの場合はPSP上に */
 	subs  r3, #(0x04*2)
 	str   r2, [r3, 0x04]
 	str   r0, [r3, 0x00]
 	msr   psp, r3
-	push  {r0, r2}               /* MSP�ˤ�����ȯ�����γ����ͥ���٥ޥ���(r0)��EXC_RETURN(r2)���Ѥ� */
-	mov   lr, r3                 /* ̤����γ���ߤ�ȯ���������ξ���Ȥ��� */
+	push  {r0, r2}               /* MSPにも割込み発生時の割込み優先度マスク(r0)とEXC_RETURN(r2)を積む */
+	mov   lr, r3                 /* 未定義の割込みが発生した場合の情報とする */
 	b     core_int_entry_2
-ALABEL(core_int_entry_1)         /* ¿�ų���ߤξ�� */
-	push  {r0, r2}               /* �����ȯ�����γ����ͥ���٥ޥ���(r0)��EXC_RETURN(r2)���Ѥ� */
-	mov   lr, sp                 /* ̤����γ���ߤ�ȯ���������ξ���Ȥ��� */
+ALABEL(core_int_entry_1)         /* 多重割込みの場合 */
+	push  {r0, r2}               /* 割込み発生時の割込み優先度マスク(r0)とEXC_RETURN(r2)を積む */
+	mov   lr, sp                 /* 未定義の割込みが発生した場合の情報とする */
 
 	/*
-	 *  ���̽���
+	 *  共通処理
 	 */
 ALABEL(core_int_entry_2)
 	/*
-	 *  ����ߤ���꥿���󤹤�ݤ˳����ͥ���٥ޥ������᤹����Υǡ�������¸
+	 *  割込みからリターンする際に割込み優先度マスクを戻すためのデータを保存
 	 */
 	ldr  r3, =SYSTIC_CONTROL_STATUS
 	ldr  r2,[r3] 
@@ -364,218 +364,218 @@ ALABEL(core_int_entry_2)
 	ldr  r1,[r3] 
 	push {r1,r2}
 
-	mrs   r3, ipsr   /* ������װ��ֹ�μ��� */
+	mrs   r3, ipsr   /* 割込み要因番号の取得 */
 
 	/*
-	 *  basepri������
-	 *  NVICͥ���٥ޥ�������ưŪ�����ꤵ��뤿��ͥ���٥ޥ��������Ǥ�ɬ�פ�
-	 *  ������x_get_ipm()��basepri�򻲾Ȥ��뤿�ᡤbasepri�⹹�����롥
+	 *  basepriの設定
+	 *  NVIC優先度マスクが自動的に設定されるため優先度マスクの点では必要な
+	 *  いが，x_get_ipm()がbasepriを参照するため，basepriも更新する．
 	 */
 	ldr   r1, =_kernel_int_iipm_tbl
 	ldrb  r2, [r1, r3]
 	ldr   r0, =iipm
 	strb  r2, [r0]
 
-	ldr   r1, =_kernel_exc_tbl   /* �ϥ�ɥ饢�ɥ쥹����� */
+	ldr   r1, =_kernel_exc_tbl   /* ハンドラアドレスを取得 */
 	lsls  r0, r3, #2
 	ldr   r2, [r1, r0]
 
 #ifdef LOG_INH_ENTER
 	push  {r0,r2,r3}
-	mov   r0, r3                 /* �㳰�ֹ��ѥ�᡼����  */
-	bl    log_inh_enter          /* log_exc_enter��ƤӽФ� */
+	mov   r0, r3                 /* 例外番号をパラメータに  */
+	bl    log_inh_enter          /* log_exc_enterを呼び出す */
 	pop   {r0,r2,r3}
 #endif /* LOG_EXC_ENTER */
 
 #ifdef LOG_INH_LEAVE
-	mrs   r3, ipsr               /* ������װ��ֹ�μ��� */
-	push  { r3 }                 /* ������ֹ�򥹥��å���    */
+	mrs   r3, ipsr               /* 割込み要因番号の取得 */
+	push  { r3 }                 /* 割込み番号をスタックへ    */
 #endif /* LOG_INT_LEAVE */
 
 	/*
-	 *  ����ߥϥ�ɥ�θƤӽФ�
+	 *  割込みハンドラの呼び出し
 	 */
 	mov   r0, lr
 	blx   r2
 
 #ifdef LOG_INH_LEAVE
-	pop   {r0}                   /* �㳰�ֹ�������        */
-	bl    log_exc_leave          /* log_exc_leave��ƤӽФ� */
+	pop   {r0}                   /* 例外番号を引数に        */
+	bl    log_exc_leave          /* log_exc_leaveを呼び出す */
 #endif /* LOG_INH_LEAVE */
 
 
 /*
- *  �����/�㳰�и�
+ *  割込み/例外出口
  *
- *  ret_exc/ret_int�ϡ�CPU�㳰/����ߥϥ�ɥ餫����ä�ľ��˼¹Ԥ���
- *  �롼����Ǥ��롥
+ *  ret_exc/ret_intは，CPU例外/割込みハンドラから戻った直後に実行する
+ *  ルーチンである．
  */
 ALABEL(ret_exc)
 ALABEL(ret_int)
 	/*
-	 *  ����ߥ��å����֤Ȥ��롥���λ����Ǥϡ�CPU���å����֤ˤϤʤ�ʤ�
-	 * ��basepri��lock_flag��saved_iipm�Ϲ������ʤ��ˡ�
+	 *  割込みロック状態とする．この時点では，CPUロック状態にはならない
+	 * （basepriとlock_flagとsaved_iipmは更新しない）．
 	 *
-	 *  ����ߥ��å����֤Ȥ���Τϡ������Υ���ƥ����ȤΥ����å��ȡ�
-	 *  ����褬�󥿥�������ƥ����ȤǤ��ä����Υ꥿����򥢥ȥߥå�
-	 *  �˹Ԥ�����Ǥ��롥bsepri��CPU���å����ͤˤ��뤳�ȤǤ⥢�ȥߥ�
-	 *  ���ʥ����å��������ϲ�ǽ�Ǥ��뤬������ߤ���꥿���󤷤Ƥ⡤
-	 *  basepri ���������Ƥϸ������ʤ����ᡤ���Ѥ��뤳�Ȥ��Ǥ��ʤ��� 
-	 *  ������FAULTMASK�ϡ�����ߤ���Υ꥿��������ˤ�äơ�'0'�˥���
-	 *  ������롥
+	 *  割込みロック状態とするのは，戻り先のコンテキストのチェックと，
+	 *  戻り先が非タスクコンテキストであった場合のリターンをアトミック
+	 *  に行うためである．bsepriをCPUロックの値にすることでもアトミッ
+	 *  クなチェックと復帰は可能であるが，割込みからリターンしても，
+	 *  basepri の設定内容は元に戻らないため，使用することができない． 
+	 *  一方，FAULTMASKは，割込みからのリターン処理によって，'0'にクリ
+	 *  アされる．
 	 */
 	cpsid i
 
 	/*
-	 *  �����ͥ���٥ޥ����򸵤��᤹
+	 *  割込み優先度マスクを元に戻す
 	 */
 	ldr  r1, =0xffffffff
-	ldr  r2, =NVIC_CLRENA0  /* ��öIRQ�����ߤ����ƶػ� */
+	ldr  r2, =NVIC_CLRENA0  /* 一旦IRQ割り込みを全て禁止 */
 	str  r1, [r2]
-	pop  {r0,r1}            /* �����å������㳰/�����ȯ������NVIC_SETENA0(r0),SYSTIC_CONTROL_STATUS(r1)���ͤ���� */
-	ldr  r2, =NVIC_SETENA0  /* NVIC_SETENA0�򸵤��᤹ */
+	pop  {r0,r1}            /* スタックから例外/割込み発生時のNVIC_SETENA0(r0),SYSTIC_CONTROL_STATUS(r1)の値を取得 */
+	ldr  r2, =NVIC_SETENA0  /* NVIC_SETENA0を元に戻す */
 	str  r0, [r2]
-	ldr  r3, =SYSTIC_CONTROL_STATUS  /* SYSTIC_CONTROL_STATUS�򸵤��᤹ */
+	ldr  r3, =SYSTIC_CONTROL_STATUS  /* SYSTIC_CONTROL_STATUSを元に戻す */
 	ldr  r0,[r3] 
 	movs r2, #SYSTIC_TICINT
 	orrs r1, r1, r2
 	bics r0, r2
 	orrs r0, r1
 	str  r0, [r3]
-	pop  {r0}               /* iipm���᤹ */
+	pop  {r0}               /* iipmを戻す */
 	ldr  r1, =iipm
 	strb r0, [r1]
 
 	/*
-	 *  �����Υ���ƥ����Ȥ�Ƚ��
+	 *  戻り先のコンテキストの判定
 	 * 
-	 *  ����ߥϥ�ɥ�¹Ԥ�LR�˥��åȤ����EXC_RETURN������å����ơ����
-	 *  ���MSP���Ȥ��Ƥ���С�������褬�󥿥�������ƥ����Ȥ�Ƚ�ꤹ�롥
+	 *  割込みハンドラ実行にLRにセットされるEXC_RETURNをチェックして，戻り
+	 *  先でMSPが使われていれば，割込み先が非タスクコンテキストと判定する．
 	 */
-	pop   {r3}                     /* lr�򥹥��å��������         */
-	movs  r1, #EXC_RETURN_PSP      /* ����褬PSP�ʤ� ret_int_1 �� */
+	pop   {r3}                     /* lrをスタックから取得         */
+	movs  r1, #EXC_RETURN_PSP      /* 戻り先がPSPなら ret_int_1 へ */
 	tst   r3, r1
 	bne   ret_int_1
 	b     ret_int_2
 
 	/*
-	 *  �����ܤγ���ߤνи�����
+	 *  一段目の割込みの出口処理
 	 */
 ALABEL(ret_int_1)
 	/*
-	 *  PSP�夫�顤EXC_RETURN(r0)�ȸ��γ����ͥ���٥ޥ���(basepri)(r1)
-	 *  �����
+	 *  PSP上から，EXC_RETURN(r0)と元の割込み優先度マスク(basepri)(r1)
+	 *  を取得
 	 */
 	mrs   r2, psp
 	adds  r2, r2, #(0x04*2)  
 	msr   psp, r2
 
 	/*
-	 *  reqflg������å�����
+	 *  reqflgをチェックする
 	 * 
-	 *  �����ͥ������γ���ߤ϶ػߤ������֤Ǽ¹Ԥ���ɬ�פ����뤿�ᡤ
-	 *  FAULTMASK��'1'�ˤ������֤Ǽ¹Ԥ��롥
-	 *  reqflg������å��������˳���ߤ�ػߤ���Τϡ�reqflg������å�
-	 *  ����ľ��˳���ߥϥ�ɥ餬��ư���졤������ǥǥ����ѥå����׵�
-	 *  ���줿���ˡ������˥ǥ����ѥå�����ʤ��Ȥ������꤬�����뤿��
-	 *  �Ǥ��롥
+	 *  カーネル管理内の割込みは禁止した状態で実行する必要があるため，
+	 *  FAULTMASKを'1'にした状態で実行する．
+	 *  reqflgをチェックする前に割込みを禁止するのは，reqflgをチェック
+	 *  した直後に割込みハンドラが起動され，その中でディスパッチが要求
+	 *  された場合に，すぐにディスパッチされないという問題が生じるため
+	 *  である．
 	 */
-	ldr   r0, =reqflg             /* reqflg��false�ʤ餽�Τޤ���� */
+	ldr   r0, =reqflg             /* reqflgがfalseならそのまま戻る */
 	ldr   r2, [r0]
-	cmp   r2, #1                  /* true�ʤ�ret_int_3��           */
+	cmp   r2, #1                  /* trueならret_int_3へ           */
 	beq   ret_int_3
 
 ALABEL(ret_int_2)
 	/*
-	 *  �����ˤϳ���ߥ��å����֡�FAULTMASK�����åȡˤ��줿���֤���롥
-	 *  Thread�⡼�ɤ���Υ꥿����ˤ�꼫ưŪ�˳���ߥ��å�������֤ˤʤ롥
-	 *  �����ͥ���٥ޥ����ϳ�������˾��֤��᤹��
+	 *  ここには割込みロック状態（FAULTMASKがセット）された状態で来る．
+	 *  Threadモードからのリターンにより自動的に割込みロック解除状態になる．
+	 *  割込み優先度マスクは割込み前に状態に戻す．
 	 */ 
-	cpsie i                       /* ����ߤΥ꥿����ǥ��ꥢ����ʤ����᥯�ꥢ */
-	bx    r3                      /* �꥿���� */
+	cpsie i                       /* 割込みのリターンでクリアされないためクリア */
+	bx    r3                      /* リターン */
 
 ALABEL(ret_int_3)
 	/*
-	 *  �����Ǥϡ�����褬�������Ǥ��ꡤPSP��˥�����å��쥸�����ȳ�
-	 *  ����ͥ���٥ޥ���(basepri)����¸���줿���֤ˤʤäƤ��롥�ޤ���
-	 *  �ץ����å��ϡ�Handler�⡼�ɡ�����ߥ��å����֤ȤʤäƤ��롥
-	 *  �ޤ���r0�ˤϡ�reqflg�Υ��ɥ쥹��r3�ˤϳ���߼��ջ���lr���ͤ���
-	 *  ������Ƥ��롥
+	 *  ここでは，戻り先がタスクであり，PSP上にスクラッチレジスタと割
+	 *  込み優先度マスク(basepri)が保存された状態になっている．また，
+	 *  プロセッサは，Handlerモード・割込みロック状態となっている．
+	 *  また，r0には，reqflgのアドレス，r3には割込み受付時のlrの値が保
+	 *  持されている．
 	 */
 	/*
-	 *  �������㳰�ϥ�ɥ��ǥ����ѥå��򤹤�ݤ�Thread�⡼�ɤ����ܤ���
-	 *  ���ߡ��Υ����å��ե졼���������ơ�bx̿���Handler�⡼�ɤ����
-	 *  �����󤹤롥�ޤ����ٱ�ǥ����ѥå�������⡤�Ƥӳ����������
-	 *  �������ݤˤϡ�svc̿��ǡ�svc_handler��ƤӽФ���
-	 *  �����å��ե졼��ϡ�Configureation and Control Register(CCR)��
-	 *  STKALIGN��'1'�ξ��ϡ�8byte�����˥��饤�󤵤�롥
-	 *  ���� : DDI0403B_arm_architecture_v7m_reference_manual(P.220)
-	 *  ���Τ��ᡤ���λ����Υ����å��ϳ���ߤ��㳰ȯ�����˺������줿
-	 *  �����å��ե졼�फ�顤8byte�����Υ������ˤ��Ƥ����ȡ�svc_handler
-	 *  ���ǥ����å��ե졼��Υ��饤���Ȥ�̵ͭ�γ�ǧ���ά�Ǥ��롥
-	 *  �������������ƥ൯ư��ϡ�ưŪ��CCR��STKALIGN��������ѹ�����Τ�
-	 *  �ػߤȤ��롥
-	 *  ���λ�����ɸ��Υ����å��ե졼��ϡ�����ߡ��㳰ȯ������Ʊ���Ǥ�
-	 *  �뤿�ᡤ�����������å�(PSP)��8byte�����ˤʤäƤ��롥
+	 *  タスク例外ハンドラやディスパッチをする際にThreadモードへ遷移する
+	 *  ダミーのスタックフレームを作成して，bx命令でHandlerモードからリ
+	 *  ターンする．また，遅延ディスパッチする場合も，再び割り込んだタス
+	 *  クに戻る際には，svc命令で，svc_handlerを呼び出す．
+	 *  スタックフレームは，Configureation and Control Register(CCR)の
+	 *  STKALIGNが'1'の場合は，8byte境界にアラインされる．
+	 *  参考 : DDI0403B_arm_architecture_v7m_reference_manual(P.220)
+	 *  そのため，この時点のスタックは割込みや例外発生時に作成された
+	 *  スタックフレームから，8byte境界のサイズにしておくと，svc_handler
+	 *  等でスタックフレームのアライメントの有無の確認を省略できる．
+	 *  ただし，システム起動後は，動的にCCRのSTKALIGNの設定を変更するのは
+	 *  禁止とする．
+	 *  この時点は標準のスタックフレームは，割込み・例外発生時と同等であ
+	 *  るため，タスクスタック(PSP)は8byte境界になっている．
 	 */
-	movs  r1, #0                   /* reqflg��false�� */
+	movs  r1, #0                   /* reqflgをfalseに */
 	str   r1, [r0]
 
 	/*
-	 *  CPU���å����֤˰ܹԤ��롥
+	 *  CPUロック状態に移行する．
 	 *
-	 *  �����ͥ�δ�����γ���ߤ�ػߤ���褦��basepri�����ꤷ��
-	 *  lock_flag �� saved_iipm �򹹿����롥saved_iipm�ϡ������γ����
-	 *  ͥ���٥ޥ����ʤ�����ɽ���ˤ����ꤹ�롥
-	 *  ���λ�����CPU���å����֤Ȥ���Τϡ�dispatcher��ʬ��������ȡ�
-	 *  call_texrtn��ƤӽФ����ˡ�CPU���å����֤ˤʤäƤ���ɬ�פ�����
-	 *  ����Ǥ��롥
-	 *  �ʤ������ν����θ塤Thread�⡼�ɤؤΰܹԽ�����Ԥʤ����ᡤ�����
-	 *  ���å�����(FAULTMASK��"1")���ݻ����롥
+	 *  カーネルの管理内の割込みを禁止するようにbasepriを設定し，
+	 *  lock_flag と saved_iipm を更新する．saved_iipmは，戻り先の割込み
+	 *  優先度マスク（の内部表現）に設定する．
+	 *  この時点でCPUロック状態とするのは，dispatcherへ分岐する時と，
+	 *  call_texrtnを呼び出す時に，CPUロック状態になっている必要がある
+	 *  ためである．
+	 *  なお，この処理の後，Threadモードへの移行処理を行なうため，割込み
+	 *  ロック状態(FAULTMASKを"1")は保持する．
 	 */
 
 	/*
-	 *  �����ͥ���٥ޥ�������������֡�TIPM_ENAALL�ˤ����ꤹ��
-	 *  ���Ǥ�CPU���å����֤ʤΤǡ�saved_iipm��IIPM_ENAALL�Ȥ��롥
+	 *  割込み優先度マスクを，全解除状態（TIPM_ENAALL）に設定する
+	 *  すでにCPUロック状態なので，saved_iipmをIIPM_ENAALLとする．
 	 */
 
 	/*
-	 *  Thread�⡼�ɤذܹԤ��롥
+	 *  Threadモードへ移行する．
 	 *
-	 *  dispatcher��call_texrn��ƤӽФ����ϡ�Thread�⡼�ɤǤ���ɬ
-	 *  �פ����뤿�ᡤPSP�����å���˥��ߡ����㳰�ե졼����֤��ơ�
-	 *  ����Ū�˳���ߥϥ�ɥ餫��꥿���󤹤롥
-	 *  �꥿�����Ʊ����FAULTMASK����ưŪ�˥��ꥢ���졤�����ͥ��������
-	 *  ����ߤ����Ĥ���롥
+	 *  dispatcherやcall_texrnを呼び出す場合は，Threadモードである必
+	 *  要があるため，PSPスタック上にダミーの例外フレームを置いて，
+	 *  擬似的に割込みハンドラからリターンする．
+	 *  リターンと同時にFAULTMASKが自動的にクリアされ，カーネル管理外の
+	 *  割込みが許可される．
 	 */
 	ldr   r0, =ret_int_4          /* PC   */
-	ldr   r1, =EPSR_T             /* xPSR(T�ӥåȤ�'1'�Ǥ���ɬ�פ�����) */
+	ldr   r1, =EPSR_T             /* xPSR(Tビットが'1'である必要がある) */
 	mrs   r2, psp
 	subs  r2, #(0x04*2)
 	str   r1, [r2, 0x04]
 	str   r0, [r2, 0x00]
-	subs  r2, #(EXC_FRAME_SIZE - (4*2)) /* r0-r3,r12,lr�����Ƥ����ꤹ��ɬ�פ��ʤ� */
+	subs  r2, #(EXC_FRAME_SIZE - (4*2)) /* r0-r3,r12,lrの内容は設定する必要がない */
 	msr   psp,r2                  
-	bx    r3                      /* Thread�⡼�ɤذܹ� */
+	bx    r3                      /* Threadモードへ移行 */
     
 ALABEL(ret_int_4)
 	/*
-	 *  �嵭�ν����ˤ�ꡤThread�⡼�ɤǼ¹Ԥ���롥
-	 *  dspflg��false�Ǥ�����ȡ�p_runtsk��p_schedtsk��Ʊ�����ˤϡ�
-	 *  �ǥ����ѥå���Ԥ�ʤ������Υ����å���ɬ�פʤΤϡ��������㳰��
-	 *  ���롼����θƽФ���ɬ�פʾ��ˡ��ǥ����ѥå���ɬ�פʤ��Ƥ⡤
-	 *  reqflg��true�ˤ��뤿��Ǥ��롥
+	 *  上記の処理により，Threadモードで実行される．
+	 *  dspflgがfalseである場合と，p_runtskとp_schedtskが同じ場合には，
+	 *  ディスパッチを行わない．このチェックが必要なのは，タスク例外処
+	 *  理ルーチンの呼出しが必要な場合に，ディスパッチが必要なくても，
+	 *  reqflgをtrueにするためである．
 	 */
-	ldr   r0, =p_runtsk       /* �ǥ����ѥå���Ԥ�ʤ����Ǥ⡤r1��p_runtsk ����(TCB) */
-	ldr   r1, [r0]            /* �����äƤ���ɬ�פ�����Τǡ�����ɤ߹��� */
+	ldr   r0, =p_runtsk       /* ディスパッチを行わない場合でも，r1にp_runtsk の値(TCB) */
+	ldr   r1, [r0]            /* が入っている必要があるので，先に読み込む */
 	ldr   r0, =dspflg         
 	ldr   r2, [r0]
-	cmp   r2, #0x01           /* dspflg��false�ʤ�ret_int_r_1�� */
+	cmp   r2, #0x01           /* dspflgがfalseならret_int_r_1へ */
 	bne   ret_int_r_1     
 	ldr   r0, =p_schedtsk     
 	ldr   r2, [r0]
-	cmp   r1, r2              /* p_runtsk��p_schedtsk��Ʊ���ʤ� */
-	beq   ret_int_r_1         /*                  ret_int_r_1�� */
+	cmp   r1, r2              /* p_runtskとp_schedtskが同じなら */
+	beq   ret_int_r_1         /*                  ret_int_r_1へ */
 	mov  r0, r8
 	mov  r1, r9
 	mov  r2, r10
@@ -584,19 +584,19 @@ ALABEL(ret_int_4)
 	ldr   r2, =p_runtsk
 	ldr   r1, [r2]
 	mov   r0, sp
-	str   r0, [r1,#TCB_sp]    /* �����������å�����¸ */
-	ldr   r2, =ret_int_r      /* �¹ԺƳ����Ϥ���¸   */
+	str   r0, [r1,#TCB_sp]    /* タスクスタックを保存 */
+	ldr   r2, =ret_int_r      /* 実行再開番地を保存   */
 	str   r2, [r1,#TCB_pc]
-	b     dispatcher          /* �ǥ����ѥå���� */
+	b     dispatcher          /* ディスパッチャへ */
 
 /*
- * ����ߤˤ��ץꥨ��ץȤ��줿�������ؤΥ꥿�������
+ * 割込みによりプリエンプトされたタスクへのリターン処理
  *
- * Thread�⡼�ɤǡ��ǥ����ѥå�������ߤνи���������ƤӽФ���롥
- * ����ߤˤ��ץꥨ��ץȤ��줿�������إ꥿���󤹤�ˤϡ����ä���
- * Handler�⡼�ɤ˰ܹԤ���PC��0xfffffffd���������ƥ꥿���󤹤�ɬ��
- * �����롥���Τ��ᡤSVC�ˤ�ꡤSVC�ϥ�ɥ��ƤӽФ���Handler�⡼
- * �ɤذܹԤ��롥
+ * Threadモードで，ディスパッチャや割込みの出口処理から呼び出される．
+ * 割込みによりプリエンプトされたタスクへリターンするには，いったん
+ * Handlerモードに移行し，PCに0xfffffffdを代入してリターンする必要
+ * がある．そのため，SVCにより，SVCハンドラを呼び出し，Handlerモー
+ * ドへ移行する．
  */
 	ATHUMB(ret_int_r)
 	AGLOBAL(ret_int_r)
@@ -608,34 +608,34 @@ ALABEL(ret_int_r)
 	mov  r11, r3
 ALABEL(ret_int_r_1)
 	/*
-	 *  enatex��true�ǡ�texptn��0�Ǥʤ���С��������㳰�����롼�����
-	 *  �ƤӽФ���
-	 *  dispatcher����ƤӽФ���뤿�ᡤTCB�Υ��ɥ쥹��r1�����äƤ���
+	 *  enatexがtrueで，texptnが0でなければ，タスク例外処理ルーチンを
+	 *  呼び出す．
+	 *  dispatcherから呼び出されるため，TCBのアドレスはr1に入っている
 	 */
 	ldr   r2, =p_runtsk
 	ldr   r1, [r2]
 	ldrb  r0, [r1,#TCB_enatex]
 	movs  r2, #TCB_enatex_mask
 	tst   r0, r2
-	beq   ret_int_r_2           /* enatex �� false �ʤ� ret_int_r_2�� */
-	ldr   r0, [r1,#TCB_texptn]  /* texptn �� 0 �ʤ�꥿����     */
+	beq   ret_int_r_2           /* enatex が false なら ret_int_r_2へ */
+	ldr   r0, [r1,#TCB_texptn]  /* texptn が 0 ならリターン     */
 	cmp   r0, #0x00
 	beq   ret_int_r_2
-	ldr   r1, =ipmflg             /* ipmflg�� false �ʤ�꥿����  */
+	ldr   r1, =ipmflg             /* ipmflgが false ならリターン  */
 	ldr   r0, [r1]
 	cmp   r0, #0x00
 	beq   ret_int_r_2 
-	bl    call_texrtn           /* �������㳰�롼����θƤӽФ� */
+	bl    call_texrtn           /* タスク例外ルーチンの呼び出し */
 ALABEL(ret_int_r_2)
 	ldr   r0, =NVIC_ICSR
 	ldr   r1, =NVIC_PENDSVSET
 	str   r1, [r0]
-	cpsie i                     /* PRIMASK�򥯥ꥢ����PendSVC������դ��� */                
-1:                              /* �����ˤ���ʤ� */
+	cpsie i                     /* PRIMASKをクリアしてPendSVCを受け付ける */                
+1:                              /* ここには来ない */
 	b  1b
 
 /*
- *  SVC�ϥ�ɥ�
+ *  SVCハンドラ
  */
 	ATHUMB(svc_handler)
 	AGLOBAL(svc_handler)
@@ -644,201 +644,201 @@ ALABEL(svc_handler)
 	b  1b
 
 /*
- *  PendSVC�ϥ�ɥ�
+ *  PendSVCハンドラ
  */
 	ATHUMB(pendsvc_handler)
 	AGLOBAL(pendsvc_handler)
 ALABEL(pendsvc_handler)
 	/*
-	 *  ����߽�������Υ꥿����ˤ�ꡤCPU���å�������֤˰ܹԤ����
-	 *  ���������롥
+	 *  割込み処理からのリターンにより，CPUロック解除状態に移行するよ
+	 *  う準備する．
 	 */
 	mrs   r0, psp
-	adds  r0, #EXC_FRAME_SIZE     /* �����å���ΤƤ�   */
+	adds  r0, #EXC_FRAME_SIZE     /* スタックを捨てる   */
 	msr   psp, r0
 	movs  r0, #0
-	bx    lr                      /* �꥿����     */
+	bx    lr                      /* リターン     */
 
 /*
- *  �ǥ����ѥå����ư���
+ *  ディスパッチャの動作開始
  */
 	ATHUMB(start_dispatch)
 	AGLOBAL(start_dispatch)
 ALABEL(start_dispatch)
 	/*
-	 *  ���Υ롼����ϡ������ͥ뵯ư���ˡ����٤Ƥγ���ߤ�ػߤ�������
-	 * �ʳ���ߥ��å����֤�Ʊ���ˤǸƤӽФ���롥�ޤ�������ߥ⡼�ɡ���
-	 *  ����������ƥ����Ȥ�Ʊ���ˤǸƤӽФ���뤳�Ȥ����ꤷ�Ƥ��롥
+	 *  このルーチンは，カーネル起動時に，すべての割込みを禁止した状態
+	 * （割込みロック状態と同等）で呼び出される．また，割込みモード（非
+	 *  タスクコンテキストと同等）で呼び出されることを想定している．
 	 *
-	 *  core_initialize�ǡ�lock_flag��true�ˡ�saved_iipm��IIPM_ENAALL��
-	 *  ��������Ƥ��뤿�ᡤ�����ͥ�������γ���ߤ���Ĥ��뤳�Ȥǡ�
-	 *  CPU���å����֡��ʥ�ǥ��Ρ˳����ͥ���٥ޥ�����������֤ˤʤ롥
-	 *  �ޤ���task_initialize��disdsp��false�˽�������Ƥ��뤿�ᡤ�ǥ�
-	 *  ���ѥå����ľ��֤ˤʤäƤ��롥
+	 *  core_initializeで，lock_flagをtrueに，saved_iipmをIIPM_ENAALLに
+	 *  初期化しているため，カーネル管理外の割込みを許可することで，
+	 *  CPUロック状態・（モデル上の）割込み優先度マスク全解除状態になる．
+	 *  また，task_initializeでdisdspをfalseに初期化しているため，ディ
+	 *  スパッチ許可状態になっている．
 	 */
-	ldr   r0,=istkpt              /* MSP������   */
-	ldr   r1,[r0]                 /* start_dispatch�ƤӽФ����˸ƤӽФ��Ѥ� */
-	msr   msp, r1                 /* ���Ѥ��Ƥ��뤿����������             */
-	movs  r0, #CONTROL_PSP        /* PSP��ͭ����  */
+	ldr   r0,=istkpt              /* MSPを初期化   */
+	ldr   r1,[r0]                 /* start_dispatch呼び出し時に呼び出し用に */
+	msr   msp, r1                 /* 使用しているため初期化する             */
+	movs  r0, #CONTROL_PSP        /* PSPを有効に  */
 	msr   control, r0
-	isb                           /* control �������ɬ�� */
+	isb                           /* control の操作後に必要 */
 
 /*
- *  ���ߤΥ���ƥ����Ȥ�ΤƤƥǥ����ѥå�
+ *  現在のコンテキストを捨ててディスパッチ
  */
 	ATHUMB(exit_and_dispatch)
 	AGLOBAL(exit_and_dispatch)
 ALABEL(exit_and_dispatch)
-	/* �ǥ����ѥå������Ρ�dispatcher�ˤ� */ 
+	/* ディスパッチャ本体（dispatcher）へ */ 
 
 
 /*
- *  �ǥ����ѥå�������
+ *  ディスパッチャ本体
  */
 ALABEL(dispatcher)
 	/*
-	 *  ���Υ롼����ϡ�����������ƥ����ȡ�CPU���å����֡��ǥ����ѥå�
-	 *  ���ľ��֡��ʥ�ǥ��Ρ˳����ͥ���٥ޥ�����������֤ǸƤӽФ�
-	 *  ��롥
+	 *  このルーチンは，タスクコンテキスト・CPUロック状態・ディスパッチ
+	 *  許可状態・（モデル上の）割込み優先度マスク全解除状態で呼び出さ
+	 *  れる．
 	 *
-	 *  ���ʤ����Thread�⡼�ɡ�lock_flag��true��disdsp��false��dspflg
-	 *  ��true��saved_iipm��IIPM_ENAALL�ȤʤäƤ��롥�¹ԺƳ����Ϥؤ⤳
-	 *  �ξ��֤Τޤ�ʬ�����롥
+	 *  すなわち，Threadモード・lock_flagがtrue・disdspがfalse・dspflg
+	 *  がtrue・saved_iipmがIIPM_ENAALLとなっている．実行再開番地へもこ
+	 *  の状態のまま分岐する．
 	 */
 #ifdef LOG_DSP_ENTER
-	ldr   r1, =p_runtsk     /* p_runtsk��ѥ�᡼���� */
+	ldr   r1, =p_runtsk     /* p_runtskをパラメータに */
 	ldr   r0, [r1]        
 	bl    log_dsp_enter
 #endif /* LOG_DSP_ENTER */
 ALABEL(dispatcher_0)
-	ldr   r0, =p_schedtsk   /* p_schedtsk��p_runtsk�� */
+	ldr   r0, =p_schedtsk   /* p_schedtskをp_runtskに */
 	ldr   r1, [r0]
 	ldr   r2, =p_runtsk   
 	str   r1, [r2]        
-	cmp   r1, #0x00         /* p_runtsk��NULL�ʤ�dispatcher_1�� */
+	cmp   r1, #0x00         /* p_runtskがNULLならdispatcher_1へ */
 	beq   dispatcher_1  
-	ldr   r2, [r1,#TCB_sp]  /* �����������å������� */
+	ldr   r2, [r1,#TCB_sp]  /* タスクスタックを復帰 */
 	mov   sp, r2
 #ifdef LOG_DSP_LEAVE
-	mov   r0, r1            /* p_runtsk��ѥ�᡼���� */
-	mov   r4, r1            /* r1�ϥ�����å��쥸�����ʤΤ���¸ */
+	mov   r0, r1            /* p_runtskをパラメータに */
+	mov   r4, r1            /* r1はスクラッチレジスタなので保存 */
 	bl    log_dsp_leave
 	mov   r1, r4
 #endif /* LOG_DSP_LEAVE */
-	ldr   r2, [r1,#TCB_pc]  /* �¹ԺƳ����Ϥ�����   */    
+	ldr   r2, [r1,#TCB_pc]  /* 実行再開番地を復帰   */    
 	mov   pc, r2
 ALABEL(dispatcher_1)
 	/*
-	 * CPU���å����֤β���ȡ��󥿥�������ƥ����ȼ¹Ծ��֤ؤ�
-	 * �����򤹤�
+	 * CPUロック状態の解除と，非タスクコンテキスト実行状態への
+	 * 準備をする
 	 */
-	movs  r0, #CONTROL_MSP  /* MSP��ͭ����  */
+	movs  r0, #CONTROL_MSP  /* MSPを有効に  */
 	msr   control, r0       
-	isb                     /* control �������ɬ�� */
+	isb                     /* control の操作後に必要 */
 	movs  r4, #0            /* r4 <- '0' */
 	ldr   r6, =reqflg       /* r6 <- reqflg */
 ALABEL(dispatcher_2)
 	/*
-	 *  ����ߤ���Ĥ����󥿥�������ƥ����ȼ¹Ծ��֤Ȥ�����ߤ��Ԥġ�
+	 *  割込みを許可し，非タスクコンテキスト実行状態とし割込みを待つ．
 	 *
-	 *  �������󥿥�������ƥ����ȼ¹Ծ��֤��ڤ괹����Τϡ�������ȯ��
-	 *  �������߽����ˤɤΥ����å���Ȥ����Ȥ�������β��ȡ������
-	 *  �ϥ�ɥ���ǤΥ������ǥ����ѥå����ɻߤȤ���2�Ĥΰ�̣�����롥
+	 *  ここで非タスクコンテキスト実行状態に切り換えるのは，ここで発生
+	 *  する割込み処理にどのスタックを使うかという問題の解決と，割込み
+	 *  ハンドラ内でのタスクディスパッチの防止という2つの意味がある．
 	 *
-	 *  �ץ����å��������Ԥ��˰ܹԤ���������ȡ�����ߵ��ĤȤϡ��Բ�
-	 *  ʬ�˹Ԥʤ�ɬ�פ����롥
-	 *  ������Բ�ʬ�˹Ԥʤ�ʤ���硤����ߤ���Ĥ���ľ��˳��
-	 *  �ߤ����ꡤ������ǥ��������¹Բ�ǽ���֤ˤʤ�ȡ��¹Ԥ��٤�����
-	 *  ��������ˤ⤫����餺�ץ����å���������Ԥ��ˤʤäƤ��ޤ���
-	 *  ARM-M�Ǥϡ�PRIMASK�򥻥åȤ������֤�WFI��ƤӽФ����ȤǼ¸��Ǥ��롥
-	 *  ���ξ��֤ǳ���ߤ�����ȡ�����ߤϼ¹Ԥ��줺��WFI����꥿����
-	 *  �뤳�Ȥˤʤ�Τǡ���ö����ߤ���Ĥ��Ƴ���ߥϥ�ɥ��¹Ԥ��롥
+	 *  プロセッサを割込み待ちに移行させる処理と，割込み許可とは，不可
+	 *  分に行なう必要がある．
+	 *  これを不可分に行なわない場合，割込みを許可した直後に割込
+	 *  みが入り，その中でタスクが実行可能状態になると，実行すべきタス
+	 *  クがあるにもかかわらずプロセッサが割込み待ちになってしまう．
+	 *  ARM-Mでは，PRIMASKをセットした状態でWFIを呼び出すことで実現できる．
+	 *  この状態で割込みが入ると，割込みは実行されず，WFIからリターンす
+	 *  ることになるので，一旦割込みを許可して割込みハンドラを実行する．
 	 *
-	 *  ������Ԥ��δ֤ϡ�p_runtsk��NULL�ʡ�0�ˤ����ꤷ�ʤ���Фʤ��
-	 *  �������Τ褦�����ꤷ�ʤ��ȡ�����ߥϥ�ɥ餫��iget_tid��Ƥӽ�
-	 *  �����ݤ�ư����ͤ˹��פ��ʤ��ʤ롥
+	 *  割込み待ちの間は，p_runtskをNULL（＝0）に設定しなければならな
+	 *  い．このように設定しないと，割込みハンドラからiget_tidを呼び出
+	 *  した際の動作が仕様に合致しなくなる．
 	 *
-	 *  �������åȤˤ�äƤϡ������ϥ⡼�����˰ܹԤ��뤿�ᡤɸ�����ˡ��
-	 *  �ۤʤ��礬ɬ�פʾ�礬���롥
-	 *  ���Τ褦�ʥ������åȤǤϡ��������åȰ�¸�ˤ����ơ�TOPPERS_CUSTOM_IDLE
-	 *  ���������������֥�ޥ����Ȥ��ơ�toppers_asm_custom_idle ���Ѱ�
-	 *  ����Ф褤��
+	 *  ターゲットによっては，省電力モード等に移行するため，標準の方法と
+	 *  異なる手順が必要な場合がある．
+	 *  そのようなターゲットでは，ターゲット依存において，TOPPERS_CUSTOM_IDLE
+	 *  を定義し，アセンブラマクロとして，toppers_asm_custom_idle を用意
+	 *  すればよい．
 	 *
-	 *  �ʤ���toppers_asm_custom_idle �ε��Ҥˤ����äƤϡ����Υ쥸������
-	 *  toppers_asm_custom_idle������ǻ��Ѥ��뤿�ᡤ
-	 *  toppers_asm_custom_idle ��ǻ��Ѥ�����ϡ��������¸�������뤳�ȡ�
-	 *  �����Υ쥸������ Calee saved �쥸�����Ǥ��뤿�ᡤ 
-	 *  toppers_asm_custom_idle �Ȥ��ƴؿ��ƤӽФ��򤷤����ϡ��ƤӽФ���
-	 *  �ؿ��Ǽ�ưŪ����¸��������뤿�ᡤ������֥��٥�Ǥ���¸������ɬ
-	 *  �פʤ���
+	 *  なお，toppers_asm_custom_idle の記述にあたっては，次のレジスタは
+	 *  toppers_asm_custom_idleの前後で使用するため，
+	 *  toppers_asm_custom_idle 内で使用する場合は，前後で保存復帰すること．
+	 *  これらのレジスタは Calee saved レジスタであるため， 
+	 *  toppers_asm_custom_idle として関数呼び出しをした場合は，呼び出した
+	 *  関数で自動的に保存復帰されるため，アセンブラレベルでの保存復帰は必
+	 *  要ない．
 	 *
-	 *  �쥸���� : ����
+	 *  レジスタ : 内容
 	 *   r4      : '0'
 	 *   r5      : 'IIPM_LOCK'
-	 *   r6      : reqflg�Υ��ɥ쥹
-	 *   r7      : lock_flg�Υ��ɥ쥹
-	 *   sp      : �󥿥�������ƥ������ѤΥ����å�����Ƭ���ɥ쥹(msp)
+	 *   r6      : reqflgのアドレス
+	 *   r7      : lock_flgのアドレス
+	 *   sp      : 非タスクコンテキスト用のスタックの先頭アドレス(msp)
 	 */
 #ifdef TOPPERS_CUSTOM_IDLE
 	toppers_asm_custom_idle
 #else
 	wfi
-	cpsie i               /* PRIMASK �򥯥ꥢ�ʳ���ߤ�����դ���� */
-	cpsid i               /* PRIMASK �򥻥å� */
+	cpsie i               /* PRIMASK をクリア（割込みを受け付ける） */
+	cpsid i               /* PRIMASK をセット */
 #endif /* TOPPERS_CUSTOM_IDLE */
 
-	ldr   r0, [r6]        /* reqflg��false�ʤ�dispatcher_2�� */
+	ldr   r0, [r6]        /* reqflgがfalseならdispatcher_2へ */
 	cmp   r0, #0
 	beq   dispatcher_2
-	str   r4, [r6]        /* reqflg��false�� */
+	str   r4, [r6]        /* reqflgをfalseに */
 
 	/*
-	 *  CPU���å����֤��᤹��������Ԥ��δ֤˼¹Ԥ�������ߥϥ�ɥ�ˤ�
-	 *  �ꡤsaved_iipm���񤭴��������ǽ�������뤿�ᡤ�����ͤ��᤹ɬ
-	 *  �פ����롥dispatcher���¹Ԥ������ϡ�saved_iipm��IIPM_ENAALL
-	 *  �ȤʤäƤ��뤿�ᡤ�����Ǥ�saved_iipm��IIPM_ENAALL�ʡ�0�ˤ��᤻
-	 *  �Ф褤��
+	 *  CPUロック状態に戻す．割込み待ちの間に実行した割込みハンドラによ
+	 *  り，saved_iipmが書き換えられる可能性があるため，元の値に戻す必
+	 *  要がある．dispatcherが実行される時は，saved_iipmがIIPM_ENAALL
+	 *  となっているため，ここではsaved_iipmをIIPM_ENAALL（＝0）に戻せ
+	 *  ばよい．
 	 */
-	movs  r0, #CONTROL_PSP  /* PSP��ͭ����  */ 
+	movs  r0, #CONTROL_PSP  /* PSPを有効に  */ 
 	msr   control, r0      
-	isb                     /* control �������ɬ�� */
+	isb                     /* control の操作後に必要 */
 	b     dispatcher_0
 
 /*
- *  �����ͥ�ν�λ�����θƽФ�
+ *  カーネルの終了処理の呼出し
  *
- *  �����å����󥿥�������ƥ������Ѥ��ڤ��ؤ���
+ *  スタックを非タスクコンテキスト用に切り替え．
  *  
  */
 	ATHUMB(call_exit_kernel)
 	AGLOBAL(call_exit_kernel)
 ALABEL(call_exit_kernel)
 	movs  r0, #CONTROL_MSP
-	msr   control, r0       /* MSP��ͭ����  */
-	isb                     /* control �������ɬ�� */
-	ldr   r0, =exit_kernel  /* �����ͥ�ν�λ������Ƥ� */
+	msr   control, r0       /* MSPを有効に  */
+	isb                     /* control の操作後に必要 */
+	ldr   r0, =exit_kernel  /* カーネルの終了処理を呼ぶ */
 	bx    r0
 
 /*
- *  ��������ư����
+ *  タスク起動処理
  *
- *  dispatcher����ƤӽФ���뤿�ᡤTCB�Υ��ɥ쥹��r1�����äƤ���
+ *  dispatcherから呼び出されるため，TCBのアドレスはr1に入っている
  *
  */ 
 	ATHUMB(start_r)
 	AGLOBAL(start_r)
 ALABEL(start_r)
 	movs  r0, #0
-	cpsie i                                 /* ����ߵ���   */
-	ldr   r0, =ext_tsk                      /* ����������� */
+	cpsie i                                 /* 割込み許可   */
+	ldr   r0, =ext_tsk                      /* 戻り番地設定 */
 	mov   lr, r0
-	ldr   r2, [r1, #TCB_p_tinib]            /* p_runtsk->p_tinib��r2��  */
-	ldr   r0, [r2, #TINIB_exinf]            /* exinf������쥸����r0��  */
-	ldr   r1, [r2, #TINIB_task]             /* ��������ư���Ϥ˥����� */
+	ldr   r2, [r1, #TCB_p_tinib]            /* p_runtsk->p_tinibをr2に  */
+	ldr   r0, [r2, #TINIB_exinf]            /* exinfを引数レジスタr0に  */
+	ldr   r1, [r2, #TINIB_task]             /* タスク起動番地にジャンプ */
 	bx    r1
 
 /*
- *  ���������Ԥ�
+ *  微少時間待ち
  */
 	ABALIGN(4)
 	ATEXT

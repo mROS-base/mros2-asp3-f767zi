@@ -1,84 +1,84 @@
 =====================================================================
-                         ARM-M�ץ����å���¸���߷ץ��
+                         ARM-Mプロセッサ依存部設計メモ
                                   Last Modified:2015 Nov 23 08:57:56
 =====================================================================
 
-�����Υɥ�����Ȥΰ��֤Ť�
+○このドキュメントの位置づけ
 
-���Υɥ�����Ȥϡ�TOPPERS/ASP�����ͥ��ARMvX-M�ץ����å��˰ܿ����뤿��
-���߷ץ��Ǥ��롥
+このドキュメントは，TOPPERS/ASPカーネルをARMvX-Mプロセッサに移植するため
+の設計メモである．
 
 
-��ARMVx-M�λ��ͤޤȤ�(FPU�ʳ�)
+○ARMVx-Mの仕様まとめ(FPU以外)
 
-ARMvX-M�λ��ͤΤ����������ͥ���߷פ˴ط��������ˤĤ��ơ��ޤ�ARMv7-M
-�ˤĤ��ƤޤȤ�롥ARMv6-M�ϺǸ��ARMv7-M�Ȥκ�ʬ�Ȥ����������롥
+ARMvX-Mの仕様のうち，カーネルの設計に関係する事項について，まずARMv7-M
+についてまとめる．ARMv6-Mは最後にARMv7-Mとの差分として説明する．
 
-�����ͻ���
+●参考資料
 
 ARMv7-M Architecture Reference Manual E.b
 DDI0403E_B_armv7m_arm.pdf 
 
-���쥸����
+●レジスタ
 
-���ѥ쥸������R0��R15��16���ढ�ꡤR13�Τߤ�2�Х󥯹�����PSP,MSP�ˤȤ�
-�äƤ��롥R15��PC, R14�ϥ�󥯥쥸������LR�ˤȤʤäƤ��롥R0��R3,R12��
-������å��쥸�����Ǥ��롥
+汎用レジスタはR0〜R15の16種類あり，R13のみが2バンク構成（PSP,MSP）とな
+っている．R15はPC, R14はリンクレジスタ（LR）となっている．R0〜R3,R12は
+スクラッチレジスタである．
 
-��������󥰥���٥󥷥��
+●コーリングコンベンション
 
-R0��R4������������ʾ�ϥ����å�������ͤϡ�R0��R1�˳�Ǽ����롥(ARM��
-��구�ꤵ��Ƥ��뤿�ᡤ����ѥ���˰�¸�������Υ롼��Ȥʤ롥)
+R0〜R4が引数，それ以上はスタック．戻り値は，R0〜R1に格納される．(ARMに
+より規定されているため，コンパイラに依存せずこのルールとなる．)
 
-��CONTROL�쥸����
+●CONTROLレジスタ
 
-PSP,MSP���ڤ��ؤ���Privilage��User�⡼�ɤΥ쥸�������ѹ���ϡ����󥹥�
-�饯�����Хåե��ե�å���̿���¹Ԥ���ɬ�פ������isb�ˡ�CONTROL��
-�������ξܺ٤ϡ�ARMv7-M Architecture Application Level Reference 
-Manual �� B1-9 �򻲾ȤΤ��ȡ�
+PSP,MSPの切り替え，PrivilageとUserモードのレジスタ．変更後は，インスト
+ラクションバッファフラッシュ命令を実行する必要がある（isb）．CONTROLレ
+ジスタの詳細は，ARMv7-M Architecture Application Level Reference 
+Manual の B1-9 を参照のこと．
 
-������ߥ٥���
+●割込みベクタ
 
-�٥����ơ��֥뷿�ǡ��٥����ơ��֥�Υ��ɥ쥹�ϡ��ꥻ�åȻ���0x00�ǡ�
-Vector Table Offset Register�ʥ���ޥåץɥ쥸������ �����뤳��
-�ǡ�Ǥ�դΥ��ɥ쥹�����ֲ�ǽ�Ǥ��롥
+ベクタテーブル型で，ベクタテーブルのアドレスは，リセット時は0x00で，
+Vector Table Offset Register（メモリマップドレジスタ） を操作すること
+で，任意のアドレスに配置可能である．
 
-��ͥ����
+●優先度
 
-�ͤ�������������ͥ���٤Ȥʤꡤ0���ǹ�ͥ���٤Ȥʤ롥��������Ҥ���ץ�
-���å��γ����ͥ���٤����ꤹ��BASEPRI�쥸������'0'�򥻥åȤ���ȡ�����
-�γ���ߤ���Ĥ��뤿�ᡤ�ǹ�ͥ���٤ϡ�ͭ���ʥӥåȤ�LSB��'1'�Ȥ����ͤ�
-�����3bit�ξ���0x20�ˡ��ޤ�������ߤ�ͥ���٤�'0'�����ꤹ��ȡ�
-BASEPRI�쥸�����ǥޥ����Ǥ��ʤ�����ߤȤʤ롥
+値が小さい方が高優先度となり，0が最高優先度となる．一方，後述するプロ
+セッサの割込み優先度を設定するBASEPRIレジスタは'0'をセットすると，全て
+の割込みを許可するため，最高優先度は，有効なビットのLSBを'1'とした値で
+ある（3bitの場合は0x20）．また，割込みの優先度に'0'を設定すると，
+BASEPRIレジスタでマスクできない割込みとなる．
 
-ͥ���٤Ϻ���8bit�Ǥ��ꡤSoC��˼�������Ƥ���ӥå������ۤʤ롥������
-���ӥåȤ�8bit�ʲ��ξ��ϡ�LSB����̵���ˤʤ롥�㤨�С���������Ƥ�
-��ӥå�����7bit�ξ��ϡ��ӥå�0��̵���Ȥʤ롥
+優先度は最大8bitであり，SoC毎に実装されているビット幅が異なる．実装さ
+れるビットが8bit以下の場合は，LSBから無効になる．例えば，実装されてい
+るビット幅が7bitの場合は，ビット0が無効となる．
 
-ͥ���٤Υӥåȥե�����ɤ�LSB������ӥåȤ򥵥�ͥ���٤ȸƤ֥ե������
-�����ꤹ�뤳�Ȥ���ǽ�Ǥ��롥�Ĥ�ξ�̥ӥåȤ�ץꥨ��ץ����ͥ���٤�
-�Ƥ֡��ץꥨ��ץ����ͥ���٤�Ʊ���ǡ�����ͥ���٤��ۤʤ�ͥ���٤Υ��롼
-�פϡ����ߤ���ץꥨ��ץȤ��뤳�Ȥ��Ǥ��ʤ���
+優先度のビットフィールドのLSBから数ビットをサブ優先度と呼ぶフィールド
+に設定することが可能である．残りの上位ビットをプリエンプション優先度と
+呼ぶ．プリエンプション優先度が同じで，サブ優先度が異なる優先度のグルー
+プは，お互いをプリエンプトすることができない．
 
-Reset,NMI,Hard Fault �ʳ����㳰�ϳ���ߤ�Ʊ�ͤ�ͥ���٤������ǽ�Ǥ��ꡤ
-����ߥޥ�����ǽ�ˤ�ꡤȯ����ػߤ��뤳�Ȥ���ǽ�Ǥ��롥
+Reset,NMI,Hard Fault 以外の例外は割込みと同様に優先度が設定可能であり，
+割込みマスク機能により，発生を禁止することが可能である．
 
 
-��CPU�⡼��
+●CPUモード
 
-�ץ����å��ϡ�Thread�⡼�ɤ⤷����Handler�⡼�ɤΤ����줫�Υ⡼�ɤȤ�
-�롥
+プロセッサは，ThreadモードもしくはHandlerモードのいずれかのモードとな
+る．
 
-���ꥻ�åȻ��ξ���
+●リセット時の状態
 
-�ꥻ�åȻ���Thread�⡼�ɡ�MSP��ͭ���ȤʤäƤ��롥
+リセット時はThreadモード，MSPが有効となっている．
 
-��Handler�⡼��
+●Handlerモード
 
-�㳰/����ߤ�����դ�������ܤ���⡼�ɡ������դ����㳰/����ߤ��㳰��
-�椬��IPSR�˥��åȤ���롥�㳰�ֹ�ϡ�TRM�������Ƥ����ֹ�Ǥ��롥
+例外/割込みを受け付けると遷移するモード．受け付けた例外/割込みの例外番
+号が，IPSRにセットされる．例外番号は，TRMで定められている番号である．
 
-        �㳰              �㳰�ֹ�
+        例外              例外番号
   Reset                      1
   Non-makable Interrupt      2
   Hard Fault                 3
@@ -93,66 +93,66 @@ Reset,NMI,Hard Fault �ʳ����㳰�ϳ���ߤ�Ʊ�ͤ�ͥ���٤������ǽ�Ǥ��ꡤ
   IRQ1                      17
   ..
 
-�㳰/����ߤ�����դ���ȡ������դ����㳰/����ߤ�ͥ���ٰʲ����㳰/��
-���ߤ�ػߤ��롥����ͥ���٥ޥ�����"NVICͥ���٥ޥ���"�ȸƤ֡�����ͥ����
-�ϡ����եȥ����������ѹ����뤳�Ȥ��Ǥ������㳰/����ߤΥ꥿����ˤ��
-����������ͤ˼�ưŪ����롥
+例外/割込みを受け付けると，受け付けた例外/割込みの優先度以下の例外/割
+込みを禁止する．この優先度マスクを"NVIC優先度マスク"と呼ぶ．この優先度
+は，ソフトウェアから変更することができず，例外/割込みのリターンにより
+割込み前の値に自動的に戻る．
 
-�������å��ݥ��󥿡�PSP��MSP��
+●スタックポインタ（PSPとMSP）
 
-�����å��ݥ��󥿤ϡ�PSP��MSP�����ꡤ��¾Ū�˻��Ѳ�ǽ�Ǥ��롥Handler��
-���ɤǤ�MSP�Τ߻��Ѳ�ǽ�Ǥ��ꡤThread�⡼�ɤǤ�CONTROL�쥸�����������
-ǽ�Ǥ��롥CONTROL�쥸������1�ӥå��ܤ򥻥åȤ����PSP��ͭ���ˡ����ꥢ
-����ȡ�MSP��ͭ���ˤʤ롥
+スタックポインタは，PSPとMSPがあり，排他的に使用可能である．Handlerモ
+ードではMSPのみ使用可能であり，ThreadモードではCONTROLレジスタで選択可
+能である．CONTROLレジスタの1ビット目をセットするとPSPが有効に，クリア
+すると，MSPが有効になる．
 
-��Thread�⡼�ɤ�Handler�⡼�ɤ�����
+●ThreadモードとHandlerモードの遷移
 
-Thread�⡼�ɤ���Handler�⡼�ɤؤ����ܤϡ��㳰/����ߤ�����դ��뤳�Ȥ�
-ȯ�����롥������Handler�⡼�ɤ���Thread�⡼�ɤؤ����ܤϡ�PC��
-EXC_RETURN(0xfffffffx)���ͤ����ꤹ�뤳�Ȥˤ��Ԥ����㳰�꥿���������
-�Ƥ֡ˡ�EXC_RETURN�β���4bit�ˤ�ꡤ������Υ⡼�ɤ���Ѥ��륹���å���
-���󥿤��ѹ���ǽ�Ǥ��롥�㳰�꥿����ˤ�ꡤPRIMASK��BASEPRI���ͤ��Ѳ�
-���ʤ���������FAULTMASK���ͤ�'0'�˥��ꥢ�����롥
+ThreadモードからHandlerモードへの遷移は，例外/割込みを受け付けることで
+発生する．一方，HandlerモードからThreadモードへの遷移は，PCに
+EXC_RETURN(0xfffffffx)の値を設定することにより行う（例外リターン処理と
+呼ぶ）．EXC_RETURNの下位4bitにより，遷移先のモードや使用するスタックポ
+インタを変更可能である．例外リターンにより，PRIMASKやBASEPRIの値は変化
+しない．一方，FAULTMASKの値は'0'にクリアさせる．
 
-��EXC_RETURN
+●EXC_RETURN
 
-�㳰/����߼��դ�����lr�����ꤵ����͡��ӥå�31��4�ӥåȤ�����'1'�ǡ�
-����4bit�ϡ����դ�����CPU�⡼�ɤ䥹���å���ȿ�Ǥ����ͤȤʤäƤ��롥
+例外/割込み受付け時にlrに設定される値．ビット31〜4ビットは全て'1'で，
+下位4bitは，受付け時のCPUモードやスタックを反映した値となっている．
 
- 0b0001 : Handler�⡼��
- 0b1001 : Thread�⡼�� with MSP
- 0b1101 : Thread�⡼�� with PSP
+ 0b0001 : Handlerモード
+ 0b1001 : Threadモード with MSP
+ 0b1101 : Threadモード with PSP
 
-��Thread�⡼�ɤ�Handler�⡼�ɤ�Ƚ��
+●ThreadモードとHandlerモードの判定
 
-�����Υ⡼�ɤ�Ƚ�ꤹ��ˤϡ�IPSR�򸫤ơ�'0'�ʤ�Thread�⡼�ɡ�����ʳ�
-�ʤ顤Handler�⡼�ɤȤʤ롥
+現状のモードを判定するには，IPSRを見て，'0'ならThreadモード，それ以外
+なら，Handlerモードとなる．
 
-��BASEPRI�쥸����
+●BASEPRIレジスタ
 
-���ꤷ��ͥ���ٰʲ���ͥ���٤γ���ߤμ��դ�ػߤ��롥����ͥ���٥ޥ�����
-"BASEPRIͥ���٥ޥ���"�ȸƤ֡�'0'�����ꤹ��ȡ����Ƥγ���ߤ���Ĥ��롥
-�㳰/����ߤμ��դȥ꥿����ˤ���Ѳ����ʤ����㳰/����ߤ��Ф�������
-ͥ���٥ޥ����ϡ�NVICͥ���٥ޥ�����BASEPRI�������ͤι⤤�����ͤ�������
-���ˤȤʤ롥
+設定した優先度以下の優先度の割込みの受付を禁止する．この優先度マスクを
+"BASEPRI優先度マスク"と呼ぶ．'0'を設定すると，全ての割込みを許可する．
+例外/割込みの受付とリターンにより変化しない．例外/割込みに対する割込み
+優先度マスクは，NVIC優先度マスクとBASEPRIの設定値の高い方（値が小さい
+方）となる．
 
-��FAULTMASK
+●FAULTMASK
 
-FAULTMASK��'1'�򥻥åȤ��뤳�Ȥˤ�ꡤNMI�ʳ������Ƥγ���ߤ�ػߤ��롥
-FAULTMASK�ϡ��㳰�Υ꥿��������ˤ��'0'�˥��ꥢ�����롥
+FAULTMASKは'1'をセットすることにより，NMI以外の全ての割込みを禁止する．
+FAULTMASKは，例外のリターン処理により'0'にクリアさせる．
 
-��PRIMASK��WFI
+●PRIMASKとWFI
 
-PRIMASK��'1'�����ꤹ��ȡ�NMI �� Hardware Fault �ʳ����㳰/����ߤ��
-�ߤ��롥PRIMASK�ϳ���ߤε��Ĥȳ�����Ԥ��򥢥ȥߥå��˹Ԥ�������Ѥ�
-�롥����Ū�ˤϡ�PRIMASK�����åȤ���Ƥ�����֤�wfi��¹Ԥ���ȡ�����
-���Ԥ��Ȥʤꡤ����߼��դ���ȥϥ�ɥ��¹Ԥ����ˡ�wfi����꥿����
-�Ƥ��롥
+PRIMASKを'1'に設定すると，NMI と Hardware Fault 以外の例外/割込みを禁
+止する．PRIMASKは割込みの許可と割込み待ちをアトミックに行うために用い
+る．具体的には，PRIMASKがセットされている状態でwfiを実行すると，割り込
+み待ちとなり，割込み受付けるとハンドラを実行せずに，wfiからリターンし
+てくる．
 
-���㳰/����ߤμ���
+●例外/割込みの受付
 
-���㳰/����ߤ���դ���ȡ����դ����˥����ƥ��֤ʥ����å���˰ʲ��Υ�
-  ��ƥ����Ȥ���¸����(�㳰�ե졼��ȸƤ�)��
+・例外/割込みを受付けると，受付け時にアクティブなスタック上に以下のコ
+  ンテキストを保存する(例外フレームと呼ぶ)．
 
    -----------
   |    R0     |  <- new SP
@@ -173,59 +173,59 @@ PRIMASK��'1'�����ꤹ��ȡ�NMI �� Hardware Fault �ʳ����㳰/����ߤ��
    -----------
   |           | <- old SP
 
-���ץ����å���Handler�⡼�ɤȤ��롥MSP��ͭ���Ȥʤ롥
-�����դ����㳰/����ߤ��㳰�ֹ��IPSR�����ꤹ�롥
-��NVIC�����ͥ���٥ޥ�������դ����㳰/����ߤ�ͥ���٤����ꤹ�롥
-��lr��EXC_RETURN���ͤ����ꤵ��롥
-���٥����ơ��֥���ɤ߹��ߥϥ�ɥ��¹Ԥ��롥
-�������å��ե졼��ϡ�Configureation and Control Register(CCR)��
-  STKALIGN��'1'�ξ��ϡ�8byte�����˥��饤�󤵤�롥
+・プロセッサをHandlerモードとする．MSPが有効となる．
+・受付けた例外/割込みの例外番号をIPSRに設定する．
+・NVIC割込み優先度マスクを受付けた例外/割込みの優先度に設定する．
+・lrにEXC_RETURNの値が設定される．
+・ベクタテーブルを読み込みハンドラを実行する．
+・スタックフレームは，Configureation and Control Register(CCR)の
+  STKALIGNが'1'の場合は，8byte境界にアラインされる．
 
-���㳰/����ߤ���Υ꥿����
+●例外/割込みからのリターン
 
-pc��EXC_RETURN���ͤ����ꤹ�뤳�Ȥˤ�ꡤ�㳰/����ߤ���꥿���󤹤롥
-pc�ؤ�����˻��Ѳ�ǽ��̿��ˤ����¤����ꡤ�ʲ�̿�᤬���Ѳ�ǽ�Ǥ��롥
+pcにEXC_RETURNの値を設定することにより，例外/割込みからリターンする．
+pcへの設定に使用可能な命令には制限があり，以下命令が使用可能である．
 
-  ��POP/LDM, LDR, BX
+  ・POP/LDM, LDR, BX
 
-��̤������
+●未解決課題
 
-���٥������ơ��֥����Ͽ����ؿ��Υ��ɥ쥹��LSB��'1'�ˤ���٤���?
-��NVIC���㳰������ߤΥͥ��Ȳ��������Ū�˴������Ƥ���餷����
-  (!��ե���󥹤����餫��)��
-    ���եȥ������Ǥϡ��ͥ��Ȥ�Ģ�����碌��С��꥿���󥹥��å���¤��
-    �Ƥ�����ʤ�����
+・ベクターテーブルに登録する関数のアドレスのLSBは'1'にするべきか?
+・NVICは例外・割込みのネスト回数を内部的に管理しているらしい．
+  (!リファレンスを明らかに)．
+    ソフトウェアでは，ネストの帳尻を合わせれば，リターンスタックを偽造し
+    ても問題ないか．
 
-��stmfd������
+●stmfdの制限
 
-stmfd�ϥ쥸�����ꥹ�Ȥ�1�Ĥξ���ư�������ȤʤäƤ��롥���Τ��ᡤ��
-�������ꥹ�Ȥ�1�Ĥε��Ҥ򥢥���֥�ˤ������ϡ�������֥餬str.w ��
-�Ѵ����뤬��������֥�ˤ�äƤϥ�˥󥰤�Ф����ᡤ�쥸�����ꥹ�Ȥ�
-1�Ĥξ��ϡ�str.w����Ѥ��롥
+stmfdはレジスタリストが1個の場合の動作は不定となっている．そのため，レ
+ジスタリストが1個の記述をアセンブラにした場合は，アセンブラがstr.w に
+変換するが，アセンブラによってはワーニングを出すため，レジスタリストが
+1個の場合は，str.wを使用する．
 
-�ʤ���ldmfd�ˤϤ������¤��ʤ���
+なお，ldmfdにはこの制限がない．
 
-��ARMv6-M
+●ARMv6-M
 
-�����ͥ���߷פ��Ф��ơ�ARMv6-M��ARMv7-M���Ф��뺹ʬ�ϼ����̤�Ǥ��롥
+カーネルの設計に対して，ARMv6-MのARMv7-Mに対する差分は次の通りである．
 
-��BASEPRI�쥸����
-  ARMv6-M�Ǥ�BASEPRI�쥸����������ʤ���
+・BASEPRIレジスタ
+  ARMv6-MではBASEPRIレジスタを持たない．
 
-��FAULTMASK
-  ARMv6-M�Ǥ�FAULTMASK�쥸����������ʤ���
+・FAULTMASK
+  ARMv6-MではFAULTMASKレジスタを持たない．
   
-��̿��
-  ����̿�᤬���ѽ���ʤ���
-  Ʊ��̿��Ǥ�����ǽ�ʥ쥸���������¤�����
+・命令
+  一部命令が使用出来ない．
+  同じ命令でも指定可能なレジスタに制限がある
   
-����������߿�
-  ����32��
+・外部割込み数
+  最大32個
   
 
-��FPU��Ϣ�λ���
+○FPU関連の仕様
 
-�����ͻ���
+●参考資料
 
 ARMv7-M Architecture Reference Manual E.b
 DDI0403E_B_armv7m_arm.pdf 
@@ -236,619 +236,619 @@ arm_cortexm4_processor_trm_100166_0001_00_en.pdf
 Cortex-M4(F) Lazy Stacking and Context Switching Application Note 298
 DAI0298A_cortex_m4f_lazy_stacking_and_context_switching.pdf
 
-������
+●概要
 
-Cortex-M4��ARMv7E-M��١����Ȥ��Ƥ��롥FPU���ݡ��Ȥ��������ȥ��ݡ��Ȥ�
-�Ƥ��ʤ����������롥FPU�򥵥ݡ��Ȥ���������Cortex-M4F�ȸƤ֡�
-�ߤ��롥
+Cortex-M4はARMv7E-Mをベースとしている．FPUサポートした実装とサポートし
+ていない実装がある．FPUをサポートした実装をCortex-M4Fと呼ぶ．
+在する．
 
-FPU��ARMv7E-M Floatng Point Extension(FPv4-SP)�򥵥ݡ��Ȥ��Ƥ��롥
+FPUはARMv7E-M Floatng Point Extension(FPv4-SP)をサポートしている．
 
-FPv4-SP�ϼ��λ��ͤȤʤäƤ��롥
+FPv4-SPは次の仕様となっている．
 
-�쥸���� : ñ���٥쥸���� S0��S32 / �����٥쥸���� D0��D15 
-           D0��(S0��S1)��������
-̿��     : ñ����̿��򥵥ݡ���
+レジスタ : 単精度レジスタ S0〜S32 / 倍精度レジスタ D0〜D15 
+           D0は(S0とS1)と等価．
+命令     : 単精度命令をサポート
 
-������쥸����
+●制御レジスタ
 
 FPSCR : Floating-point Status and Control Register
-��FPU�Υ��ơ������ȥ���ȥ�����ե�����ɤ����
+・FPUのステータスとコントロールフィールドを持つ
 
 CPACR : Coprocessor Access Control Register
-��FPU��ͭ���ˤ�����˥��åȤ���ɬ�פ�����
+・FPUを有効にする場合にセットする必要がある
 
 FPCCR : Floating-point Context Control Register
-��FPU��Ϣ�Υ���ƥ����Ȥ���¸��ˡ�������ǽ
+・FPU関連のコンテキストの保存方法を選択可能
 
 FPCAR : Floating Point Context Address Register
-���㳰�ե졼���FPU�쥸��������¸���ɥ쥹(S0�Υ��ɥ쥹)���ݻ��� 
+・例外フレームのFPUレジスタの保存アドレス(S0のアドレス)を保持． 
 
 FPDSCR : Floating-point Default Status Control Register
-��FPSCR�Υǥ��ե�����ͤ���¸
-��FPU����ƻ��Ѥ�������[26:22]��FPSCR�˥��ԡ�����롥
+・FPSCRのディフォルト値を保存
+・FPUを初めて使用した場合に[26:22]がFPSCRにコピーされる．
 
-CONTROL�γ�ĥ
-��.FPCA(Bit[2])
-  ��FPU����Ѥ����'1'�˥��åȤ���롥
+CONTROLの拡張
+・.FPCA(Bit[2])
+  ・FPUを使用すると'1'にセットされる．
 
-EXC_RETURN�γ�ĥ
+EXC_RETURNの拡張
 
 EXC_RETURN[4]
- '0' : FPU���ΰ褢��(��¸����Ƥ��뤫���̤�����)
-       S0��S15��FPSCR�Τ�����ΰ补
- '1' : FPU���ΰ�ʤ�
+ '0' : FPUの領域あり(保存されているかは別の制御)
+       S0〜S15とFPSCRのための領域．
+ '1' : FPUの領域なし
 
-��ABI
+●ABI
 
-S0��S15,FPSCR  : caller saved registers
-S16��S17       : callee saved registers
+S0〜S15,FPSCR  : caller saved registers
+S16〜S17       : callee saved registers
 
-���㳰�������ȯ�����ο�����
+●例外・割込み発生時の振る舞い
 
-�ܺ٤� ARMv7-M Architecture Reference Manual E.b�� B1.5.6 Exception 
-entry behavior �� B1.5.8 Exception return behavior �򻲾ȤΤ��ȡ�
+詳細は ARMv7-M Architecture Reference Manual E.bの B1.5.6 Exception 
+entry behavior と B1.5.8 Exception return behavior を参照のこと．
  
-����ƥ����Ȥ���¸�ѥ�����
+コンテキストの保存パターン
     FPCCR
- LSPEN  ASPEN      ̾��(�ܥɥ�����ȥ��ꥸ�ʥ�)
+ LSPEN  ASPEN      名称(本ドキュメントオリジナル)
    0      0      :  NoAutomatic
    0      1      :  DisableLazystacking
    1      1      :  Lazystacking
  
 NoAutomatic 
-����ư��¸�ʤ�
+・自動保存なし
 
 DisableLazystacking
-����ư��¸���ꡥLazystacking���ʤ���
-��FPU����Ѥ���� CONTROL.FPCA ��'1'�����åȤ���롥
-��CONTROL.FPCA == 1�ξ����㳰/����ߤ�ȯ�������FPU����ƥ����Ȥ�
-  ���å�����¸���롥
+・自動保存あり．Lazystackingしない．
+・FPUを使用すると CONTROL.FPCA に'1'がセットされる．
+・CONTROL.FPCA == 1の場合に例外/割込みが発生するとFPUコンテキストをス
+  タックに保存する．
 
 Lazystacking
-����ư��¸���ꡥLazystacking ��Ԥ���
-��FPU����Ѥ���� CONTROL.FPCA ��'1'�����åȤ���롥
-��CONTROL.FPCA == '1'�ξ����㳰/����ߤ�ȯ�������FPU����ƥ����Ȥ���
-  ¸�Ѥ��ΰ�Τ߳��ݤ��졤FPCCR.LSPACT ��'1'�����ꤵ��롥
-��FPCCR.LSPACT == '1' �ξ���FPU̿�����Ѥ����FPU�Υ���ƥ����Ȥ���
-  ¸�ΰ����¸����롥
+・自動保存あり．Lazystacking を行う．
+・FPUを使用すると CONTROL.FPCA に'1'がセットされる．
+・CONTROL.FPCA == '1'の場合に例外/割込みが発生するとFPUコンテキストの保
+  存用の領域のみ確保され，FPCCR.LSPACT に'1'に設定される．
+・FPCCR.LSPACT == '1' の場合にFPU命令を使用するとFPUのコンテキストが保
+  存領域に保存される．
 
-FPU�˴ؤ����㳰/����ߤ����������
+FPUに関する例外/割込みの入り口処理
 
-��DisableLazystacking or Lazystacking �ξ��
- ��CONTROL.FPCA == 1�ξ��
-   ���㳰�ե졼���FPU�쥸������¸�Ѥ��ΰ�����
-   ��DisableLazystacking �ξ��
-     ��FPU�쥸������¸�Ѥ��ΰ��FPU�쥸����(S0��S15,FPSCR)����¸
-   ��Lazystacking
-     ��FPCAR ���㳰�ե졼���FPU�쥸��������¸���ɥ쥹(S0�Υ��ɥ쥹)���ݻ���
-     ��FPCCR.LSPACT ��1�ˡ�
-��CONTROL.FPCA��0�˥��ꥢ
+・DisableLazystacking or Lazystacking の場合
+ ・CONTROL.FPCA == 1の場合
+   ・例外フレームにFPUレジスタ保存用の領域を確保
+   ・DisableLazystacking の場合
+     ・FPUレジスタ保存用の領域にFPUレジスタ(S0〜S15,FPSCR)を保存
+   ・Lazystacking
+     ・FPCAR に例外フレームのFPUレジスタの保存アドレス(S0のアドレス)を保持．
+     ・FPCCR.LSPACT を1に．
+・CONTROL.FPCAを0にクリア
 
-FPU�˴ؤ����㳰/����ߤνи�����
+FPUに関する例外/割込みの出口処理
 
-��EXC_RETURN��4�ӥå��ܤ�'0'�ξ��(������FPU����Ѥ��Ƥ���)
- ��FPCCR.LSPACT == '1'�ξ��(����ߥϥ�ɥ��FPU����Ѥ��ʤ��ä�)
-   ��FPCCR.LSPACT��'0'��
- ��FPCCR.LSPACT == '0'�ξ��(����ߥϥ�ɥ��FPU����Ѥ���)    
-   ��S0��S32��FPSCR���㳰�ե졼�फ���᤹    
-��EXC_RETURN��4�ӥå��ܤ������CONTROL.FPCA������
- ���¼���������CONTROL.FPCA������
+・EXC_RETURNの4ビット目が'0'の場合(戻り先でFPUを使用していた)
+ ・FPCCR.LSPACT == '1'の場合(割込みハンドラでFPUを使用しなかった)
+   ・FPCCR.LSPACTを'0'に
+ ・FPCCR.LSPACT == '0'の場合(割込みハンドラでFPUを使用した)    
+   ・S0〜S32とFPSCRを例外フレームから戻す    
+・EXC_RETURNの4ビット目の否定をCONTROL.FPCAに設定
+ ・実質，戻り先のCONTROL.FPCAを復帰
 
-ISR�Ǥ�FPU�ο�����
+ISRでのFPUの振る舞い
 
-FPCCR.LSPACT==1��(Lazystacking�λ��ˤΤ�ȯ��)��FPU̿�����Ѥ������
-��FPCAR�Υ��ɥ쥹��FPU�쥸����(S0��S15,FPSCR)����¸
-��FPCCR.LSPACT ��0�ˤ��롥
+FPCCR.LSPACT==1時(Lazystackingの時にのみ発生)にFPU命令を使用した場合
+・FPCARのアドレスにFPUレジスタ(S0〜S15,FPSCR)を保存
+・FPCCR.LSPACT を0にする．
 
-��OS�μ���
+○OSの実装
 
-1.�������å�̾
+1.ターゲット名
 
  1-1 cm3(Cortex-M3)
  1-2 armv7m(ARMv7-M)
  1-3 arm_m
 
-cm3�Ǥϡ�ARMv6-M�򥵥ݡ��Ȥ����������Ȥʤ롥armv7m�Ǥϡ�armv8m����
-�꡼�����줿��������Ȥʤ롥ARM��¸����JSP�Ǥϡ�armv4�ȤʤäƤ�������
-armv5��armv7��ư��뤿��ASP�Ǥ�ñ��arm�Ȥ��������Τ��ᡤarm_m��̵��
-�ȹͤ����롥
+cm3では，ARMv6-Mをサポートする場合に問題となる．armv7mでは，armv8mがリ
+リースされた場合に問題となる．ARM依存部はJSPでは，armv4となっていたが，
+armv5やarmv7も動作するためASPでは単にarmとした．そのため，arm_mが無難
+と考えられる．
 
 
-2.Thread�⡼�ɤ�Handler�⡼�ɤλȤ�ʬ��
+2.ThreadモードとHandlerモードの使い分け
 
  2-1
-  ����������ƥ����Ȥ�Thread�⡼�ɡ��󥿥�������ƥ����Ȥ�Handler�⡼
-  �ɤ�ư����롥
+  タスクコンテキストはThreadモード，非タスクコンテキストはHandlerモー
+  ドで動作させる．
 
  2-2
-  ����������ƥ����Ȥ��󥿥�������ƥ����ȶ���Handler�⡼�ɤ�ư���
-  �롥
+  タスクコンテキストと非タスクコンテキスト共にHandlerモードで動作させ
+  る．
 
-�ץ����å����߷����ˤ��θ�����2-1��ͭ�ϡ�2-1�Ǥ��������Ȥ��Ƥϡ����
-�ߥϥ�ɥ餫�饿�����ؤΥ꥿������˥⡼�ɤ��ѹ����ʲ����ͤ�¿ȯ���뤳
-�Ȥ��󤲤��롥
+プロセッサの設計方針を考慮すると2-1が有力．2-1での問題点としては，割込
+みハンドラからタスクへのリターン時にモードの変更が以下の様に多発するこ
+とが挙げられる．
 
-1.����ߥϥ�ɥ�               : Handler�⡼��
-2.�������㳰�ϥ�ɥ�θƤӽФ� : Thread�⡼��
-3.�������ؤΥ꥿�������       : Handler�⡼��
-4.�������κƳ�                 : Thread�⡼��
+1.割込みハンドラ               : Handlerモード
+2.タスク例外ハンドラの呼び出し : Threadモード
+3.タスクへのリターン処理       : Handlerモード
+4.タスクの再開                 : Threadモード
 
-3��Handler�⡼�ɤ˰ܹԤ���ɬ�פ�����Τϡ��㳰�ե졼����Ѥ�����������
-�ˤϡ�Handler�⡼�ɤ��㳰�꥿���������Ԥ�ɬ�פ����뤿��Ǥ��롥ARM��
-�ϡ�ʣ���쥸�����Υ����ɤ�CPSR��������Ʊ���˹Ԥ��뤬��M3�ϹԤ��ʤ����ᡤ
-������ˡ�ǳ������Υ������˥꥿���󤹤�ɬ�פ����롥
+3でHandlerモードに移行する必要があるのは，例外フレームを用いて復帰する
+には，Handlerモードで例外リターン処理を行う必要があるためである．ARMで
+は，複数レジスタのロードとCPSRの復帰を同時に行えるが，M3は行えないため，
+この方法で割込み先のタスクにリターンする必要がある．
 
-2-2�ξ��γ���ߥϥ�ɥ餫�饿�����ؤΥ꥿������˥⡼�ɤ��ѹ���ʲ�
-�˼������ޤ���2-2�Ǥϳ����ͥ���٤κ����ͤ򥿥����μ¹Ի���ͥ���٤Ȥ�
-�ƥꥶ���֤���ɬ�פ����롥
+2-2の場合の割込みハンドラからタスクへのリターン時にモードの変更を以下
+に示す．また，2-2では割込み優先度の最低値をタスクの実行時の優先度とし
+てリザーブする必要がある．
 
-1.����ߥϥ�ɥ�               : Handler�⡼��
-2.NVICͥ���٥ޥ���'0'��0��     : Thread�⡼��
-3.����ͥ���٤�Handler�⡼�ɤ�  : Handler�⡼��
-4.�������㳰�ϥ�ɥ�θƤӽФ� : Handler�⡼��
-5.�������ؤΥ꥿�����������   : Thread�⡼��
-3.�������ؤΥ꥿����           : Handler�⡼��
-4.�������κƳ�                 : Handler�⡼��
+1.割込みハンドラ               : Handlerモード
+2.NVIC優先度マスク'0'を0へ     : Threadモード
+3.最低優先度のHandlerモードへ  : Handlerモード
+4.タスク例外ハンドラの呼び出し : Handlerモード
+5.タスクへのリターンの前処理   : Threadモード
+3.タスクへのリターン           : Handlerモード
+4.タスクの再開                 : Handlerモード
 
-����ߥϥ�ɥ餫�饿�����Υ꥿����˴ؤ��Ƥϡ�2-2�Ǥ��äƤ⡤2��¹Ԥ�
-����ˡ�NVICͥ���٥ޥ�����'0'�ˤ��뤿�ᡤ�㳰�꥿���������Ԥ�ɬ��
-�����롥�ޤ���NVIC���Τ�������ߤΥͥ��Ȳ����������Ƥ��뤿�ᡤ3����4
-�ؤ����ܤΤ���ˡ����ä����㳰/����ߤ���դ������֤ˤ���ɬ�פ����뤿
-�ᡤ���Ū��2-1�ʾ�����ܤ�ɬ�פȤʤ롥
+割込みハンドラからタスクのリターンに関しては，2-2であっても，2を実行す
+る場合に，NVIC優先度マスクを'0'にするため，例外リターン処理を行う必要
+がある．また，NVIC自体が，割込みのネスト回数を管理しているため，3から4
+への遷移のために，いったん例外/割込みを受付けた状態にする必要があるた
+め，結果的に2-1以上の遷移が必要となる．
 
-2-2�ξ��ϡ�MSP�����Ȥ��ʤ����ᡤ����ߤ�������ǥͥ��Ȳ����Ƚ�Ǥ��ơ�
-�����å��������ؤ���ɬ�פ����롥
+2-2の場合は，MSPしか使えないため，割込みの入り口でネスト回数を判断して，
+スタックを入れ替える必要がある．
 
-HRP���ǥ����ݸ���Ѥ������2-1�Ȥʤ롥
+HRP等でメモリ保護を用いる場合は2-1となる．
 
-�ʾ����ͳ�ˤ�ꡤ2-1����Ѥ��롥������2-1�ϡ������ͥ뵯ư����IDLE�롼
-�פΰ�����Ƥ����ɬ�פ����롥�����ˤĤ��Ƥ����ӵ������롥
+以上の理由により，2-1を採用する．ただし2-1は，カーネル起動時とIDLEルー
+プの扱いを検討する必要がある．これらについては別途議論する．
 
 
-3.�ǥ����ѥå���μ¹ԥ⡼��
+3.ディスパッチャの実行モード
 
  3-1
-  Thread�⡼�ɤǼ¹Ԥ���
+  Threadモードで実行する
 
  3-2
-  Handler�⡼�ɤǼ¹Ԥ���
+  Handlerモードで実行する
 
-�ǥ����ѥå����Thread�⡼�ɤǼ¹Ԥ���ȡ�����ߤˤ��ץꥨ��ץȤ���
-���������������ϼ��Τ褦�ʥѥ��ˤʤ롥
+ディスパッチャをThreadモードで実行すると，割込みによりプリエンプトされ
+たタスクに戻る場合は次のようなパスになる．
 
- 1. �ǥ����ѥå���ƤӽФ� : Thread�⡼�� 
- 2. �ǥ����ѥå���¹�     : Thread�⡼��
- 3. �������㳰�¹�         : Thread�⡼��
- 4���������ؤΥ꥿������� : Handler�⡼��
- 5. �������κƳ�           : Thread�⡼��
+ 1. ディスパッチャ呼び出し : Threadモード 
+ 2. ディスパッチャ実行     : Threadモード
+ 3. タスク例外実行         : Threadモード
+ 4．タスクへのリターン処理 : Handlerモード
+ 5. タスクの再開           : Threadモード
 
-����ߥϥ�ɥ餫�鼫��ǥ����ѥå������������إ꥿���󤹤���ϼ��Υ�
-���ˤʤ롥
+割込みハンドラから自らディスパッチしたタスクへリターンする場合は次のパ
+スになる．
 
- 1.����ߥϥ�ɥ�               : Handler�⡼��
- 2.�ǥ����ѥå���¹�           : Thread�⡼��
- 3.�������㳰�ϥ�ɥ�θƤӽФ� : Thread�⡼��
- 4.�������ؤΥ꥿����           : Handler�⡼��
- 5.�������κƳ�                 : Thread�⡼��
+ 1.割込みハンドラ               : Handlerモード
+ 2.ディスパッチャ実行           : Threadモード
+ 3.タスク例外ハンドラの呼び出し : Threadモード
+ 4.タスクへのリターン           : Handlerモード
+ 5.タスクの再開                 : Threadモード
 
-�������ǥ����ѥå����Handler�⡼�ɤǼ¹Ԥ���ȡ�����ߤˤ��ץꥨ��
-�ץȤ��줿�������������ϼ��Τ褦�ʥѥ��ˤʤ롥
+一方，ディスパッチャをHandlerモードで実行すると，割込みによりプリエン
+プトされたタスクに戻る場合は次のようなパスになる．
 
- 1. �ǥ����ѥå���ƤӽФ� : Thread�⡼�� 
- 2. �ǥ����ѥå���¹�     : Handler�⡼��
- 3. �������㳰�¹�         : Thread�⡼��
- 4���������ؤΥ꥿����     : Handler�⡼��
- 5. �������κƳ�           : Thread�⡼��
+ 1. ディスパッチャ呼び出し : Threadモード 
+ 2. ディスパッチャ実行     : Handlerモード
+ 3. タスク例外実行         : Threadモード
+ 4．タスクへのリターン     : Handlerモード
+ 5. タスクの再開           : Threadモード
 
-����ߥϥ�ɥ�νи����鼫��ǥ����ѥå������������إ꥿���󤹤����
-���Υѥ��ˤʤ롥
+割込みハンドラの出口から自らディスパッチしたタスクへリターンする場合は
+次のパスになる．
 
- 1.����ߥϥ�ɥ�               : Handler�⡼��
- 2.�ǥ����ѥå���¹�           : Handler�⡼��
- 3.�������㳰�ϥ�ɥ�θƤӽФ� : Thread�⡼��
- 4.�������ؤΥ꥿����           : Handler�⡼��
- 5.�������κƳ�                 : Thread�⡼��
+ 1.割込みハンドラ               : Handlerモード
+ 2.ディスパッチャ実行           : Handlerモード
+ 3.タスク例外ハンドラの呼び出し : Threadモード
+ 4.タスクへのリターン           : Handlerモード
+ 5.タスクの再開                 : Threadモード
 
-�������㳰�ϥ�ɥ餬�ʤ�OS�ξ��ϡ�Handler�⡼�ɤǼ¹Ԥ��������⡼��
-�����ܤβ�������뤬���������㳰�ϥ�ɥ餬����ȡ�Thread�⡼�ɤ�������
-�ܲ�������뤿�ᡤThread�⡼�ɤȤ��롥
+タスク例外ハンドラがないOSの場合は，Handlerモードで実行した方がモード
+の遷移の回数が減るが，タスク例外ハンドラがあると，Threadモードの方が遷
+移回数が減るため，Threadモードとする．
 
-�����ݸ���θ����ȡ��ǥ����ѥå����Handler�⡼�ɤ�ư���������
-��Ψ���褤�ȹͤ������SVC�ǥϥ�ɥ��ƤӽФ���Handler�⡼�ɤȤʤ뤿
-��ˡ�
+メモリ保護を考慮すると，ディスパッチャはHandlerモードで動作させた方が
+効率がよいと考えられる（SVCでハンドラを呼び出すとHandlerモードとなるた
+め）．
 
 
-4.�����å��λȤ�ʬ��
+4.スタックの使い分け
 
  4-1
-  ����������ƥ����Ȥ�PSP, �󥿥�������ƥ����Ȥ�MSP
+  タスクコンテキストをPSP, 非タスクコンテキストをMSP
  4-2
-  ����������ƥ����ȡ��󥿥�������ƥ����ȶ���MSP
+  タスクコンテキスト，非タスクコンテキスト共にMSP
 
-4-2�ξ�硤����ߤ�������ǥͥ��Ȳ����Ƚ�Ǥ��ơ������å��������ؤ���
-ɬ�פ����롥2�ǥ���������ƥ����Ȥ�Thread�⡼�ɡ��󥿥�������ƥ�����
-��Handler�⡼�ɤ�ư�����Ȥ������ᡤ4-1����Ѥ���ȡ�����ߤ������
-�Ǽ�ưŪ�˥����å����ڤ��ؤ�롥Thread�⡼�ɤǤ�PSP�Υ��������⡤
-mrs/msr̿��ǹԤ��뤿�ᡤ4-1����Ѥ��롥
+4-2の場合，割込みの入り口でネスト回数を判断して，スタックを入れ替える
+必要がある．2でタスクコンテキストはThreadモード，非タスクコンテキスト
+はHandlerモードで動作させるとしたため，4-1を採用すると，割込みの入り口
+で自動的にスタックが切り替わる．ThreadモードでのPSPのアクセスも，
+mrs/msr命令で行えるため，4-1を採用する．
 
 
-5.����ƥ����Ȥ�Ƚ��
+5.コンテキストの判定
 
  5-1
-  IPSR��'0'(Thread�⡼��)�ʤ饿��������������ƥ����ȡ�'1'(Handler�⡼
-  ��)�ʤ��󥿥�������ƥ����ȤȤ��롥
+  IPSRが'0'(Threadモード)ならタスクタスクコンテキスト，'1'(Handlerモー
+  ド)なら非タスクコンテキストとする．
 
  5-2
-  ����ߤΥͥ��Ȳ�����ݻ������ѿ����Ѱա�1�ʾ���󥿥�������ƥ����ȡ�
+  割込みのネスト回数を保持する変数を用意．1以上で非タスクコンテキスト．
 
  5-3
-  �����ƥ��֤ʥ����å��ˤ��Ƚ�ǡ�MSP�ʤ��󥿥�������ƥ����ȡ�PSP�ʤ�
-  ����������ƥ����ȤȤ����
+  アクティブなスタックにより判断（MSPなら非タスクコンテキスト，PSPなら
+  タスクコンテキストとする）
 
-5-1�ϡ����եȥ�����¦�ǥ���ƥ����ȴ����Τ���ν�����Ԥ�ɬ�פ��ʤ���
-�������åȤ����롥�������ʤ��顤�����ͥ�ε�ư��Thread�⡼�ɤǤ��뤿
-�ᡤHandler�⡼�ɤذܹԤ���ɬ�פ����롥ASP�����ͥ�Ǥϡ�IDLE�롼�׼¹�
-���󥿥�������ƥ����ȤȤ���ư�����ɬ�פ����뤿�ᡤIDLE�롼�פ�
-Handler�⡼�ɤ�ư�����ɬ�פ����롥IDLE�롼�פϥǥ����ѥå��㤫���
-�ӽФ���롥3����᤿�褦�ˡ��ǥ����ѥå����Thread�⡼�ɤ�ư�����
-���ᡤIDLE�롼�פ�ƤӽФ��ݤˤϡ�Handler�⡼�ɤ����ܤ���ɬ�פ����롥
-Handler�⡼�ɤؤ����ܤϡ�SVC/PendSVC���Ѥ���ȼ¸���ǽ�Ǥ��뤬��6�γ�
-���ߤ˥ץꥨ��ץȤ��줿�������ؤΥ꥿�������Handler�⡼�ɤؤΰܹԤ�
-��SVC/PendSVC�λ��Ѥ�ɬ�פȤʤ뤿�ᡤSVC�ϥ�ɥ�Ǥϡ��ɤ���Ū�ǸƤӽ�
-���줿��Ƚ�ꤹ��ɬ�פ��ФƤ��뤿�ᡤ�����Хإåɤ����礹�롥
+5-1は，ソフトウェア側でコンテキスト管理のための処理を行う必要がないと
+いうメリットがある．しかしながら，カーネルの起動時Threadモードであるた
+め，Handlerモードへ移行する必要がある．ASPカーネルでは，IDLEループ実行
+は非タスクコンテキストとして動作させる必要があるため，IDLEループは
+Handlerモードで動作させる必要がある．IDLEループはディスパッチャから呼
+び出される．3で定めたように，ディスパッチャをThreadモードで動作させる
+ため，IDLEループを呼び出す際には，Handlerモードへ遷移する必要がある．
+Handlerモードへの遷移は，SVC/PendSVCを用いると実現可能であるが，6の割
+込みにプリエンプトされたタスクへのリターン時のHandlerモードへの移行で
+もSVC/PendSVCの使用が必要となるため，SVCハンドラでは，どの目的で呼び出
+されたか判定する必要が出てくるため，オーバヘッドが増大する．
 
-5-2�Ǥϡ������ͥ뵯ư����IDLE�롼�׻����ѿ���'1'�����ꤹ��Ф褤���Ȥ�
-�ʤ롥���ξ�硤�����ͥ뵯ư����IDLE�롼�׻���Thread�⡼�ɤǼ¹Ԥ��Ƥ�
-ư������꤬�ʤ��褦���ä˳���ߤν���������߷פ����դ���ɬ�פ����롥
+5-2では，カーネル起動時やIDLEループ時に変数を'1'に設定すればよいことに
+なる．この場合，カーネル起動時やIDLEループ時にThreadモードで実行しても
+動作に問題がないよう，特に割込みの出入り口の設計を注意する必要がある．
 
-�����ͥ뵯ư���˴ؤ��Ƥϡ�������ߤ�ػߤ��Ƥ��ꡤ����ߤ�����ʤ��Τ�
-�ä�����Ϥʤ���IDLE�롼�׻��ϡ�Thread�⡼�ɤ�MSP��PSP�����򤬲�ǽ�Ǥ�
-�뤳�Ȥ����Ѥ��ơ��󥿥�������ƥ����ȤΥ����å��Ǥ���MSP���ѹ����롥
-�㳰/����ߤ�������Ǥϡ�¿�ų���ߤǤ��뤫��EXC_RETURN�Υ⡼��Ƚ���
-�ӥåȤǤϤʤ��������å���Ƚ��ӥåȤǹԤ�������ʤ����㳰/����ߤ���
-�Υ꥿����˴ؤ��Ƥϡ�¿�ų���ߤ�Ƚ��ϡ��������Ʊ�ͤ�EXC_RETURN�Υ�
-���å�Ƚ��ӥåȤǹԤ��Ф褤���㳰�꥿�����������pc����������
-EXC_RETURN���ͤ��Χ0xfffffffd (Thread�⡼�� with MSP)�Ȥ���ΤǤϤʤ���
-�㳰/����߼��դ�����LR�����ꤵ���EXC_RETURN���Ѥ��뤳�Ȥˤ�ꡤIDLE
-�롼�פ˳���������Ǥ�����ʤ��꥿���󤹤롥
+カーネル起動時に関しては，全割込みを禁止しており，割込みが入らないので
+特に問題はない．IDLEループ時は，ThreadモードでMSPとPSPの選択が可能であ
+ることを利用して，非タスクコンテキストのスタックであるMSPに変更する．
+例外/割込みの入り口では，多重割込みであるかをEXC_RETURNのモード判定の
+ビットではなく，スタックの判定ビットで行えば問題ない．例外/割込みから
+のリターンに関しては，多重割込みの判定は，入り口と同様にEXC_RETURNのス
+タック判定ビットで行えばよい．例外リターン処理時にpcに代入する
+EXC_RETURNの値を一律0xfffffffd (Threadモード with MSP)とするのではなく，
+例外/割込み受付け時にLRに設定されるEXC_RETURNを用いることにより，IDLE
+ループに割り込んだ場合でも問題なくリターンする．
 
-�����ͥ뵯ư���ϡ�MSP�������ƥ��֤Ǥ��ꡤ����ߥϥ�ɥ�¹Ի���Handler
-�⡼�ɤǤ��뤳�Ȥ���MSP�������ƥ��֤ǤꡤIDLE�롼�׻���MSP�򥢥��ƥ���
-�����ꤹ��ȡ��󥿥�������ƥ����Ȥ����ơ�MSP�򥢥��ƥ��֤ˤ���ư�
-�뤳�Ȥˤʤ롥�ޤ�������߻��ϳ�������˥����ƥ��֤ʥ����å��ξ��󤬡�
-EXC_RETURN�����ꤵ��롥���Τ��ᡤ����ƥ����Ȥ�Ƚ��ϡ�����ߥͥ��Ȳ�
-�����ݻ������ѿ����ʤ��Ȥ⡤�����ƥ��֤ʥ����å��򸫤�Ф褤���Ȥˤʤ롥
-�ޤ���exc_sense_context()�˴ؤ��Ƥϡ��㳰�ե졼�����EXC_RETURN���ɲ�
-�����������Ƥˤ��Ƚ�Ǥ���Ф褤���ʾ����ͳ�ˤ�ꡤ5-3����Ѥ��롥
+カーネル起動時は，MSPがアクティブであり，割込みハンドラ実行時はHandler
+モードであることからMSPがアクティブでり，IDLEループ時にMSPをアクティブ
+に設定すると，非タスクコンテキストは全て，MSPをアクティブにして動作す
+ることになる．また，割込み時は割込み前にアクティブなスタックの情報が，
+EXC_RETURNに設定される．そのため，コンテキストの判定は，割込みネスト回
+数を保持する変数がなくとも，アクティブなスタックを見ればよいことになる．
+また，exc_sense_context()に関しては，例外フレーム中にEXC_RETURNを追加
+し，その内容により判断すればよい．以上の理由により，5-3を採用する．
 
 
-6.����ߤ˥ץꥨ��ץȤ��줿�������ؤΥ꥿�������Handler�⡼�ɤؤΰ�
-  ����ˡ
+6.割込みにプリエンプトされたタスクへのリターン時のHandlerモードへの移
+  行方法
 
  6-1
-  SVC���Ѥ���
+  SVCを用いる
  6-2
-  PendSVC���Ѥ���
+  PendSVCを用いる
 
-PendSVC��SVC�ΰ㤤�ϡ�PendSVC���׵᤬���塼���󥰤��졤SVC���׵᤬����
-�����󥰤���ʤ����ȤǤ��롥����ߤ˥ץꥨ��ץȤ��줿�������ؤΥ꥿��
-�����Handler�⡼�ɤؤΰܹԤϡ����塼���󥰤��줺��¨�¤˽��������ɬ
-�פ����뤿�ᡤ�ɤ���Ǽ¸����Ƥ�����ʤ����ɤ���򥫡��ͥ�Υ꥽������
-�ƻ��Ѥ��뤫����������Ǥ��롥
+PendSVCとSVCの違いは，PendSVCが要求がキューイングされ，SVCは要求がキュ
+ーイングされないことである．割込みにプリエンプトされたタスクへのリター
+ン時のHandlerモードへの移行は，キューイングされずに即座に処理される必
+要があるため，どちらで実現しても問題ない．どちらをカーネルのリソースし
+て使用するかの選択だけである．
 
-�ɤ����Ȥ��Ȥ��Ƥ⡤ͥ���٤����꤬����Ȥʤ롥�ǥ����ѥå��㤫����
-�ߤ˥ץꥨ��ץȤ��줿�������ؤΥ꥿����ޤǤν����ϡ����ʤ��Ȥ�CPU��
-�å����֤Ǽ¹Ԥ���ʤ���Фʤ�ʤ���SVC��PendSVC�Ϥɤ��������ͥ����
-����Ĥ��ᡤNVICͥ���٥ޥ������BASEPRIͥ���٥ޥ����������⤤��硤��
-������ʤ���
+どちらを使うとしても，優先度の設定が問題となる．ディスパッチャから割込
+みにプリエンプトされたタスクへのリターンまでの処理は，少なくともCPUロ
+ック状態で実行されなければならない．SVCやPendSVCはどちらも割込み優先度
+を持つため，NVIC優先度マスクよりBASEPRI優先度マスクの方が高い場合，処
+理されない．
 
-CPU���å����֤�BASEPRI������Ǽ¸�������硤���������ͤ�SVC��PendSVC��
-���ꤷ���ͤ���㤯����ɬ�פ����롥����������ȡ�SVC��PendSVC��ͥ���٤�
-CPU���å�����ͥ���٥ޥ������ͤ��⤤�͡�¾�γ���ߤ��⤤ͥ���١ˤ�
-����ɬ�פ����롥
+CPUロック状態をBASEPRIの設定で実現した場合，その設定値をSVCやPendSVCに
+設定した値より低くする必要がある．言い換えると，SVCやPendSVCの優先度を
+CPUロック時の優先度マスクの値より高い値（他の割込みより高い優先度）と
+する必要がある．
 
-CPU���å����֤�FAULTMASK��PRIMASK�Ǽ¸��������ϡ�����餬���ꤵ���
-�ȡ�SVC��PendSVC�����դ����ʤ����ᡤ���ä���BASEPRI�ˤ�����ߤ��
-��������褦�����ꤹ��ɬ�פ����롥���ξ��⡤SVC��PendSVC��¾�γ����
-���⤤ͥ���٤����ꤹ��ɬ�פ����롥
+CPUロック状態をFAULTMASKやPRIMASKで実現した場合は，これらが設定される
+と，SVCやPendSVCが受付けられないため，いったんBASEPRIにより割込みをマ
+スクするように設定する必要がある．この場合も，SVCやPendSVCは他の割込み
+より高い優先度を設定する必要がある．
 
-�ʾ�ˤ�ꡤHandler�⡼�ɤؤΰܹԤΤ���ˤϡ�CPU���å����֤�BASEPRI��
-�¸�����SVC��PendSVC�����ꤹ��ͥ���٤򥫡��ͥ������κǹ�ͥ���٤���
-�Ĺ⤤ͥ���٤����ꤹ��ɬ�פ����롥
+以上により，Handlerモードへの移行のためには，CPUロック状態をBASEPRIで
+実現し，SVCやPendSVCに設定する優先度をカーネル管理内の最高優先度より一
+つ高い優先度に設定する必要がある．
 
-ARMv7-M�Ǥ�SVC�ˤ��¸����롥SVN������PendSVC���¹ԥ����Хإåɤ���
-�������ᡤSVC����Ѥ���
+ARMv7-MではSVCにより実現する．SVNの方がPendSVCより実行オーバヘッドが小
+さいため，SVCを使用する
 
-ARMv6-M�Ǥ�SVC�ˤ��¸����롥ARMv6-M��CPU���å����֤�PRIMASK�Ǽ¸���
-�Ƥ���PRIMASK�򥻥åȤ������֤�SVC��¹Ԥ���ȥե�����ȤȤʤ뤿�ᡤ
-PendSVC��ȯ�Ԥ��ơ�PRIMASK�򥯥ꥢ���뤳�ȤǼ¸����롥PendSVC�γ����
-ͥ���٤Ϻǹ�Ȥ��Ƥ��뤿�ᡤ���δ֤ǳ���ߤ����뤳�ȤϤʤ���
+ARMv6-MではSVCにより実現する．ARMv6-MはCPUロック状態をPRIMASKで実現し
+ているPRIMASKをセットした状態でSVCを実行するとフォールトとなるため，
+PendSVCを発行して，PRIMASKをクリアすることで実現する．PendSVCの割込み
+優先度は最高としているため，この間で割込みが入ることはない．
 
 
-7. �㳰/����߽�������Ǥ�¿�ų���ߤ�Ƚ��
+7. 例外/割込み出入り口での多重割込みの判断
 
 7-1
- EXC_RETURN�Υ⡼��Ƚ��ӥå�
+ EXC_RETURNのモード判定ビット
 7-2
- EXC_RETURN�Υ����å�Ƚ��ӥå�
+ EXC_RETURNのスタック判定ビット
 7-3
- ����ߥͥ��Ȳ���δ����ѿ�
+ 割込みネスト回数の管理変数
 
-�㳰/����߼��դ����ϡ����դ����㳰/����߰ʲ��γ���ߤ϶ػߤ��뤬����
-����߶ػ߾��֤ˤϤʤ�ʤ������Τ��ᡤ����ߥͥ��Ȳ���δ����ѿ��򥤥�
-������Ȥ������˳���ߤ������ǽ�������뤿�ᡤ7-3�ϻ��Ѥ��뤳�Ȥ���
-���ʤ���
+例外/割込み受付け時は，受付けた例外/割込み以下の割込みは禁止するが，全
+割込み禁止状態にはならない．そのため，割込みネスト回数の管理変数をイン
+クリメントする前に割込みが入る可能性があるため，7-3は使用することがで
+きない．
 
-5�ǵ��������̤ꡤIDLE�롼�פ�Thread�⡼�ɤǼ¹Ԥ��뤿�ᡤ7-1�ǤϤʤ���
-7-2��Ƚ�Ǥ���ɬ�פ����롥
+5で議論した通り，IDLEループをThreadモードで実行するため，7-1ではなく，
+7-2で判断する必要がある．
 
 
-8. IDLE�롼��
+8. IDLEループ
 
 8-1
- Thread�⡼�ɤǼ¹�
+ Threadモードで実行
 8-2
- Handler�⡼�ɤǼ¹�
+ Handlerモードで実行
 
-5�ǵ��������̤ꡤThread�⡼�ɤǼ¹ԤǤ������������Хإåɤ�����������
-����Thread�⡼�ɤǼ¹Ԥ��Ƥ⡤�����ߤν���������������󥿥��������
-�����Ȥ�Ƚ��Ǥ���С�Thread�⡼�ɤ�����ʤ���
+5で議論した通り，Threadモードで実行できた方がオーバヘッドが小さい．ま
+た，Threadモードで実行しても，割り込みの出入り口で正しく非タスクコンテ
+キストと判定できれば，Threadモードで問題ない．
 
 
-9�������ͥ�������γ���ߤΥ��ݡ���
+9．カーネル管理外の割込みのサポート
 
 9-1
- �����ͥ�������γ���ߤ򥵥ݡ��Ȥ��ʤ�
+ カーネル管理外の割込みをサポートしない
 9-2
- �����ͥ�������γ���ߤ򥵥ݡ��Ȥ���
+ カーネル管理外の割込みをサポートする
 
-ARMv7-M�Ǥϡ�CPU���å���BASEPRI�Ǽ¸����Ƥ��뤳�ȡ��٥����ơ��֥��
-�ݡ��Ȥ��Ƥ��ꡤ����ߥϥ�ɥ��C����ǵ��Ҳ�ǽ�Ǥ��뤿�ᡤ���ݡ��Ȥ�
-�ưפǤ��뤿�ᡤ���ݡ��Ȥ��롥
+ARMv7-Mでは，CPUロックをBASEPRIで実現していること，ベクタテーブルをサ
+ポートしており，割込みハンドラもC言語で記述可能であるため，サポートが
+容易であるため，サポートする．
 
-ARMv6-M�Ǥϡ�CPU���å���PRIMASK�Ǽ¸����Ƥ��뤿�ᡤ�����ݡ��Ȥ��ʤ���
+ARMv6-Mでは，CPUロックをPRIMASKで実現しているため，サーポートしない．
 
 
-10. CPU���å�
+10. CPUロック
 
 10-1
- BASEPRI�����(ARMv7-M) 
- ���̤γ���߶ػߵ��Ĥǥ��ߥ�졼�����(ARMv6-M)
+ BASEPRIを使用(ARMv7-M) 
+ 個別の割込み禁止許可でエミュレーション(ARMv6-M)
 10-2 
- FAULTMASK/PRIMASK�����
+ FAULTMASK/PRIMASKを使用
 
-�����ͥ�δ������γ���ߤ򥵥ݡ��Ȥ���ʤ顤BASEPRI����Ѥ���ɬ�פ���
-�롥
+カーネルの管理外の割込みをサポートするなら，BASEPRIを使用する必要があ
+る．
 
-ARMv7-M�Ǥ�CPU���å���BASEPRI����Ѥ��롥
+ARMv7-MではCPUロックにBASEPRIを使用する．
 
-ARMv6-M�Ǥ�CPU���å���PRIMASK����Ѥ��롥���̤γ���߶ػߵ��Ĥǥ��ߥ�
-�졼����󤹤���ˡ�ϡ�SysTic�Τ��̤Υ쥸���������ꤹ��ɬ�פ����ꡤ�¹�
-�����Хإåɤ��礭���Ȥ������꤬���롥
+ARMv6-MではCPUロックにPRIMASKを使用する．個別の割込み禁止許可でエミュ
+レーションする方法は，SysTicのみ別のレジスタで設定する必要があり，実行
+オーバヘッドが大きいという問題がある．
 
-11. ����ߥ��å���CPU�㳰�δط�
+11. 割込みロックとCPU例外の関係
 
 11-1
- BASEPRI�����(ARMv7-M) 
+ BASEPRIを使用(ARMv7-M) 
 11-2 
- FAULTMASK/PRIMASK����� 
+ FAULTMASK/PRIMASKを使用 
 
-FAULTMASK/PRIMASK����Ѥ���ȡ�NMI �� Hardware Fault �ʳ���CPU�㳰���
-�ߤ���Ƥ��ޤ���
+FAULTMASK/PRIMASKを使用すると，NMI と Hardware Fault 以外のCPU例外も禁
+止されてしまう．
 
-BASEPRI���Ѥ���ȡ�����ߥ��å���ˤ�CPU�㳰����դ��������ϡ�
-BASEPRI���Ѥ��ơ��ǹ�ͥ���٤�CPU�㳰�Τ���˥ꥶ���֤���ɬ�פ����롥
+BASEPRIを用いると，割込みロック中にもCPU例外を受付けたい場合は，
+BASEPRIを用いて，最高優先度をCPU例外のためにリザーブする必要がある．
 
-����ߥ��å����⡤CPU�㳰����դ���褦�ˤ��������BASEPRI����Ѥ���ɬ
-�פ����롥
+割込みロック時も，CPU例外を受付けるようにしたければBASEPRIを使用する必
+要がある．
 
-��IRON4.0���ͤ�3.5.3�Ǥϡ�CPU�㳰��ͥ���٤ϼ��Τ褦�������Ƥ��롥
+μIRON4.0仕様の3.5.3では，CPU例外の優先度は次のように定められている．
 
-"CPU�㳰�ϥ�ɥ��ͥ���̤ϡ�CPU�㳰��ȯ������������ͥ���٤ȡ��ǥ���
-�ѥå����ͥ���̤Τ����줫����⤤��"
+"CPU例外ハンドラの優先順位は，CPU例外が発生した処理の優先度と，ディス
+パッチャの優先順位のいずれかよりも高い．"
 
-CPU�㳰��ȯ������������ͥ���٤���⤤�Ȥ���Τǡ�CPU���å������ߥ�
-�å����֤Υ�������ȯ���������Ǥ⡤ͥ�褷�Ƽ¹Ԥ����٤����Ȥ�ͤ���
-��롥
+CPU例外が発生した処理の優先度よりも高いとあるので，CPUロックや割込みロ
+ック状態のタスクで発生した場合でも，優先して実行されるべきだとも考えら
+れる．
 
-������TOPPERSɸ�����߽�����ǥ�λ��ͽ�Ǥϡ�CPU�㳰�ϡ��ץ����å���
-�˰ۤʤ뤿�ᡤCPU�㳰�ν�����ǥ��ɸ�ಽ��Ƥ���оݳ��Ȥ��Ƥ��롥����
-���ᡤARM-M�Ǥΰ�������ơ��ޥ˥奢�����������Ф褤�ȹͤ����롥
+一方，TOPPERS標準割込み処理モデルの仕様書では，CPU例外は，プロセッサ毎
+に異なるため，CPU例外の処理モデルの標準化検討の対象外としている．その
+ため，ARM-Mでの扱いを決めて，マニュアルに明記すればよいと考えられる．
 
-ARMv7-M�Ǥϳ���ߥ��å���BASEPRI����Ѥ��롥
+ARMv7-Mでは割込みロックはBASEPRIを使用する．
 
-ARMv6-M�Ǥϳ���ߥ��å���PRIMASK����Ѥ��롥
-
-
-12. ����ͥ���٤�����ͥ���٤��Ѵ�
-
-����ͥ���٤Ȥ�API�ǻ��ꤹ������ͥ����(PRI��)�Τ��ȤǤ��ꡤ�ͤ�������
-�ۤ�ͥ���٤��⤤������ߥϥ�ɥ�ˤϡ�-1����Ϣ³��������ͤ������ǽ��
-���롥����ͥ���٤ϡ�BASEPRI��NVIC��ͥ���٥쥸���������ꤹ���ͤǤ��롥
-
-�������������ͥ���٤Υӥå����� TBITW_IPRI �Ȥ���ȡ������ǽ�ʳ���
-ͥ���٤ϼ��Τ褦�ˤʤ롥
-
-  TIPM_ENAALL�ʡ�0�ˡ� -(1 << TBITW_IPRI)
+ARMv6-Mでは割込みロックはPRIMASKを使用する．
 
 
-13. �����ͥ������κǹ�ͥ����(CPU���å����֤Ǥ�ͥ���٥ޥ���)
+12. 外部優先度と内部優先度の変換
 
-6.�ǽҤ٤��褦�ˡ�����ߤνи���SVC�ϥ�ɥ��ƤӽФ�ɬ�פ����뤿�ᡤ
-SVC�ϥ�ɥ��CPU���å����֤�BASEPRI�����ꤹ��ͥ���٥ޥ������⤤ͥ����
-�����ꤹ��ɬ�פ����롥
+外部優先度とはAPIで指定する割込み優先度(PRI型)のことであり，値が小さい
+ほど優先度が高い．割込みハンドラには，-1から連続した負の値を設定可能で
+ある．内部優先度は，BASEPRIやNVICの優先度レジスタに設定する値である．
 
-�������������ͥ���٤Υӥå����� TBITW_IPRI��ͥ������Υ���ͥ���٤�
-�ӥå�����TBIT_IPRI�Ȥ���ȡ�CPU���å����֡ʥ����ͥ���������ߤ�����
-��ǽ�ʺǹ�ͥ���١ˤȤ��ƻ����ǽ��ͥ���٥ޥ����������ϰϤϰʲ����ͤ���
-�ϤȤʤ롥
+実装される割込み優先度のビット幅を TBITW_IPRI とすると，設定可能な外部
+優先度は次のようになる．
 
-    -(2^(TBIW_IPRI) - 1) + (2^TBITW_SUBIPRI) �� -1
+  TIPM_ENAALL（＝0）〜 -(1 << TBITW_IPRI)
 
 
-14. �����ͥ���٥ޥ���
+13. カーネル管理内の最高優先度(CPUロック状態での優先度マスク)
 
-ARMv7-M�Ǥ�BASEPRI�ˤ��¸����롥
+6.で述べたように，割込みの出口でSVCハンドラを呼び出す必要があるため，
+SVCハンドラはCPUロック状態のBASEPRIに設定する優先度マスクより高い優先度
+を設定する必要がある．
 
-ARMv6-M�Ǥϸ��̤γ���߶ػߵ��ĵ�ǽ���Ѥ��ƥ��ߥ�졼����󤹤롥
+実装される割込み優先度のビット幅を TBITW_IPRI，優先度中のサブ優先度の
+ビット幅をTBIT_IPRIとすると，CPUロック状態（カーネル管理内割込みに設定
+可能な最高優先度）として指定可能な優先度マスクの設定範囲は以下の値の範
+囲となる．
+
+    -(2^(TBIW_IPRI) - 1) + (2^TBITW_SUBIPRI) 〜 -1
 
 
-15. FPU�Υ��ݡ���
+14. 割込み優先度マスク
+
+ARMv7-MではBASEPRIにより実現する．
+
+ARMv6-Mでは個別の割込み禁止許可機能を用いてエミュレーションする．
+
+
+15. FPUのサポート
 
 15-1
- FPU����Ѥ��륿����/ISR��桼�������ꤹ�롥 ���ꤷ�Ƥ��ʤ�������/ISR
- �Ǥ�FPU����Ѥ�����㳰�Ȥʤ롥
+ FPUを使用するタスク/ISRをユーザが指定する． 指定していないタスク/ISR
+ ではFPUを使用すると例外となる．
 15-2
- FPU����Ѥ��륿����/ISR��桼���ϻ��ꤷ�ʤ������ƤΥ�����/ISR��FPU��
- ���Ѳ�ǽ�Ǥ��롥
+ FPUを使用するタスク/ISRをユーザは指定しない．全てのタスク/ISRでFPUを
+ 使用可能である．
  
-15-1�ϰ��̤˥���ƥ����Ȥ���¸�����Υ����Хإåɤ��㸺������Ū�Ǻ��Ѥ�
-��롥15-1����Ѥ���ȡ���������ISR��°���γ�ĥ��ɬ�פȤʤ롥
+15-1は一般にコンテキストの保存復帰のオーバヘッドを低減する目的で採用さ
+れる．15-1を採用すると，タスクとISRの属性の拡張が必要となる．
 
-ARMv7-M�Ǥϡ�FPU����Ѥ������Τ��㳰������ߤ��������FPU����ƥ���
-�Ȥ���¸���뵡ǽ�����뤿�ᡤ15-2�����򤷤Ƥ⡤FPU��Ȥ�ʤ��¤�ϥڥ�
-��ƥ��Ϥʤ��ȹͤ���15-2����Ѥ��롥
+ARMv7-Mでは，FPUを使用した場合のみ例外・割込みの入り口でFPUコンテキス
+トを保存する機能があるため，15-2を選択しても，FPUを使わない限りはペナ
+ルティはないと考え，15-2を採用する．
 
-FPU�˴ؤ��륵�ݡ��ȤΥХꥨ�������ϼ����Ȥ߹�碌����ǽ�Ǥ��롥
+FPUに関するサポートのバリエーションは次の組み合わせが可能である．
 
-                       FPCCR                          ����ƥ�����  
-                    LSPEN  ASPEN ����ѥ��륪�ץ����  ��¸����     FPU
-NO_FPU                -      -        ����ʤ�           �ʤ�       ̵��   
-FPU_NO_PRESERV        0      0    -mfpu=fpv4-sp-d16      �ʤ�       ͭ��
-FPU_NO_LAZYSTACKING   0      1    -mfpu=fpv4-sp-d16      ����       ͭ��
-FPU_LAZYSTACKING      1      1    -mfpu=fpv4-sp-d16      ����       ͭ��
+                       FPCCR                          コンテキスト  
+                    LSPEN  ASPEN コンパイルオプション  保存復帰     FPU
+NO_FPU                -      -        指定なし           なし       無効   
+FPU_NO_PRESERV        0      0    -mfpu=fpv4-sp-d16      なし       有効
+FPU_NO_LAZYSTACKING   0      1    -mfpu=fpv4-sp-d16      あり       有効
+FPU_LAZYSTACKING      1      1    -mfpu=fpv4-sp-d16      あり       有効
 
 NO_FPU
-FPU����Ѥ��ʤ���Cortex-M0/Cortex-M0+/Cortex-M3/Cortex-M4 �ξ��˻��ꡥ
-�ǥ����ѥå������Ǥ�FPU����ƥ����Ȥ���¸������Ԥ�ʤ���
+FPUを使用しない．Cortex-M0/Cortex-M0+/Cortex-M3/Cortex-M4 の場合に指定．
+ディスパッチャ等ではFPUコンテキストの保存復帰を行わない．
 
 FPU_NO_PRESERV
-FPU����Ѥ��롥Cortex-M4F �ξ��˻����ǽ��
-�ǥ����ѥå������Ǥ�FPU����ƥ����Ȥ���¸������Ԥ�ʤ���
-FPU����Ѳ�ǽ�ʥ�������1�Ĥ⤷���ϡ������ƥ���κǹ�ͥ���٤�ISR���ǻ�
-�Ѳ�ǽ��
+FPUを使用する．Cortex-M4F の場合に指定可能．
+ディスパッチャ等ではFPUコンテキストの保存復帰を行わない．
+FPUを使用可能なタスクは1個もしくは，システム中の最高優先度のISR群で使
+用可能．
 
 FPU_NO_LAZYSTACKING
-FPU����Ѥ��롥Cortex-M4F �ξ��˻����ǽ��
-�ǥ����ѥå������Ǥ�FPU����ƥ����Ȥ���¸������Ԥ���Lazy stacking ��
-���Ѥ��ʤ���
-���ƤΥ�����/ISR��FPU����Ѳ�ǽ��
+FPUを使用する．Cortex-M4F の場合に指定可能．
+ディスパッチャ等ではFPUコンテキストの保存復帰を行う．Lazy stacking は
+使用しない．
+全てのタスク/ISRでFPUを使用可能．
 
 FPU_LAZYSTACKING
-FPU����Ѥ��롥Cortex-M4F �ξ��˻����ǽ��
-�ǥ����ѥå������Ǥ�FPU����ƥ����Ȥ���¸������Ԥ���Lazy stacking ��
-���Ѥ��롥
-���ƤΥ�����/ISR��FPU����Ѳ�ǽ��
+FPUを使用する．Cortex-M4F の場合に指定可能．
+ディスパッチャ等ではFPUコンテキストの保存復帰を行う．Lazy stacking を
+使用する．
+全てのタスク/ISRでFPUを使用可能．
 
 
-FPU_NO_LAZYSTACKING���Υ쥸��������¸������������
+FPU_NO_LAZYSTACKING時のレジスタの保存・復帰コード
 
-FPU_NO_LAZYSTACKING �ξ��ϰ��̥쥸������Ʊ�������ߥ󥰤ǡ��ǥ����ѥ�
-�����Υ�������FPU����Ѥ��Ƥ�������Ƚ�Ǥ��ƥ쥸��������¸�����������
-�褤����������ս�ϼ����̤�Ǥ��롥
+FPU_NO_LAZYSTACKING の場合は一般レジスタと同じタイミングで，ディスパッ
+チ元のタスクがFPUを使用していたかを判断してレジスタを保存・復帰すれば
+よい．該当する箇所は次の通りである．
 
-�ǥ����ѥå�(dispatch)
-��CONTROL.FPCA������å�����'1'�ʤ�s16-s31����¸����
-�������Ѥ�CONTROL.FPCA�򥿥��������å�����¸
+ディスパッチ(dispatch)
+・CONTROL.FPCAをチェックして'1'ならs16-s31を保存する
+・復帰用にCONTROL.FPCAをタスクスタックに保存
 
-�ǥ����ѥå����������(dispatch)
-��CONTROL.FPCA�򥿥��������å�������������
-����������CONTROL.FPCA������å�����'1'�ʤ�s16-s31�򥿥��������å�����
-  �������롥
+ディスパッチからの復帰(dispatch)
+・CONTROL.FPCAをタスクスタックから復帰する
+・復帰したCONTROL.FPCAをチェックして'1'ならs16-s31をタスクスタックから
+  復帰する．
 
-�ٱ�ǥ����ѥå�(ret_int_4)
-���������������ޤ줿�ݤ�EXC_RETURN�򥿥��������å�����¸���Ƥ���
-��EXC_RETURN�򥿥��������å���������
-����������EXC_RETURN[4] == 0(FPU����)�ʤ�s16-s31�򥿥��������å�����¸
-  ���롥
-�������Ѥ�EXC_RETURN���ͤ򥿥��������å�����¸  
+遅延ディスパッチ(ret_int_4)
+・タスクが割り込まれた際のEXC_RETURNをタスクスタックに保存しておく
+・EXC_RETURNをタスクスタックから復帰
+・復帰したEXC_RETURN[4] == 0(FPU使用)ならs16-s31をタスクスタックに保存
+  する．
+・復帰用にEXC_RETURNの値をタスクスタックに保存  
 
-�ٱ�ǥ����ѥå����������(ret_int_r)
-���������������ޤ줿�ݤ�EXC_RETURN���ͤ򥿥��������å���������
-����������EXC_RETURN[4] == 0(FPU����)�ʤ�s16-s31�򥿥��������å���������
-�����SVC�ϥ�ɥ�ƤӽФ�����FPU�쥸�������Ѥޤʤ��褦��CONTROL.FPCA�򥯥ꥢ��
+遅延ディスパッチからの復帰(ret_int_r)
+・タスクが割り込まれた際のEXC_RETURNの値をタスクスタックから復帰
+・復帰したEXC_RETURN[4] == 0(FPU使用)ならs16-s31をタスクスタックから復帰
+・先のSVCハンドラ呼び出し時にFPUレジスタを積まないようにCONTROL.FPCAをクリア．
 
-FPU_LAZYSTACKING���Υ쥸��������¸������������
+FPU_LAZYSTACKING時のレジスタの保存・復帰コード
 
-FPU_NO_LAZYSTACKING���Υ����ɤ򤽤Τޤ޻��Ѥ����FPU_LAZYSTACKING�ξ�
-��ϡ�����ߡ��㳰ȯ����˼��Υ����ߥ󥰤��㳰�ե졼���FPU�Υ���ƥ�
-���Ȥ��ϡ��ɥ������ˤ�äƼ�ưŪ����¸����롥
+FPU_NO_LAZYSTACKING時のコードをそのまま使用するとFPU_LAZYSTACKINGの場
+合は，割込み・例外発生後に次のタイミングで例外フレームにFPUのコンテキ
+ストがハードウェアによって自動的に保存される．
 
-�㳰������ߥϥ�ɥ�¹���
-FPU����Ѥ���������/ISR�¹�����㳰������ߤ�ȯ�������㳰������ߥϥ�
-�ɥ��FPU̿���¹Ԥ�����硥FPCCR.LSPACT==1 �ȤʤäƤ��뤿�ᡥ
+例外・割込みハンドラ実行中
+FPUを使用したタスク/ISR実行中に例外・割込みが発生し，例外・割込みハン
+ドラでFPU命令を実行した場合．FPCCR.LSPACT==1 となっているため．
 
-�ٱ�ǥ����ѥå���(ret_int_4)
-�㳰������ߥϥ�ɥ��FPU����Ѥ��ʤ��ä����ϡ�ret_int_4�¹Ի��ˤϥ�
-��ƥ����Ȥ���¸����Ƥ��ʤ�������˳ƥ쥸�������ͤϼ��Τ褦�ˤʤäƤ�
-�롥
-��FPCCR.LSPACT == '1'
-��FPCAR = �㳰�ե졼���FPU�쥸��������¸���ɥ쥹(S0�Υ��ɥ쥹)
-ret_int_4�Ǥϡ�s16-s31 �򥿥��������å�����¸���롥������FPU����Ѥ���
-���ᡤs0-s15,FPSR���㳰�ե졼�����¸����롥
+遅延ディスパッチ時(ret_int_4)
+例外・割込みハンドラでFPUを使用しなかった場合は，ret_int_4実行時にはコ
+ンテキストは保存されていない．さらに各レジスタの値は次のようになってい
+る．
+・FPCCR.LSPACT == '1'
+・FPCAR = 例外フレームのFPUレジスタの保存アドレス(S0のアドレス)
+ret_int_4では，s16-s31 をタスクスタックに保存する．ここでFPUを使用する
+ため，s0-s15,FPSRは例外フレームに保存される．
 
-�ʲ��βս��FPU_LAZYSTACKING�ξ��ˤΤ�ɬ�פǤ��롥
+以下の箇所はFPU_LAZYSTACKINGの場合にのみ必要である．
 
-����߽и��ǤΥ������㳰�ƤӽФ���
-FPU����Ѥ����������¹�����㳰/����ߤ�ȯ�������㳰/����ߤνи�����
-�������㳰������ƤӽФ������ˤϡ�FPCCR.LSPACT == '1' ��FPU����ƥ�
-���Ȥ���¸����Ƥ��ʤ����֤ǥ������㳰���ƤӽФ�����ǽ�������롥����
-���㳰��ext_tsk()��ƤӽФ�������¾�Υ������˥ǥ����ѥå����졤
-ter_tsk()�ǽ�λ������줿���ˤϡ�FPCCR.LSPACT �� '0'�˥��ꥢ����ɬ��
-�����롥ext_tsk()�Υ������ϥ������åȰ�¸��exit_and_dispatch()���Ƥӽ�
-����뤿�ᡤ�����ǥ��ꥢ������ɤ�����ter_tsk()�Ǥϥ������åȰ�¸����
-�ƤӽФ��ʤ����ᡤ���ꥢ���뤳�Ȥ�����ʤ������Τ��ᡤ����߽и��ǤΥ�
-�����㳰�ƤӽФ������ߥ󥰤�FPU����ƥ����Ȥ򥹥��å��˳�Ǽ���뤿�ᡤ
-�����ѤΤʤ�FPU̿���ȯ�Ԥ��롥
-�ʤ���¾�Υ������˥ǥ����ѥå����줿���ϡ�CONTROL.FPCA��'1'��̵����
-��(�������㳰��FPU����Ѥ��ʤ��ä����)��s16��s31��FPU�쥸��������¸��
-�Ԥ�줺���㳰�ե졼��ؤν��ᤷ��ȯ�����ʤ���
+割込み出口でのタスク例外呼び出し時
+FPUを使用したタスク実行中に例外/割込みが発生し，例外/割込みの出口から
+タスク例外処理を呼び出した場合には，FPCCR.LSPACT == '1' とFPUコンテキ
+ストが保存されていない状態でタスク例外が呼び出される可能性がある．タス
+ク例外でext_tsk()を呼び出した場合や他のタスクにディスパッチされ，
+ter_tsk()で終了させられた場合には，FPCCR.LSPACT を '0'にクリアする必要
+がある．ext_tsk()のケースはターゲット依存部exit_and_dispatch()が呼び出
+されるため，ここでクリアすれば良いが，ter_tsk()ではターゲット依存部を
+呼び出さないため，クリアすることが出来ない．そのため，割込み出口でのタ
+スク例外呼び出すタイミングでFPUコンテキストをスタックに格納するため，
+副作用のないFPU命令を発行する．
+なお，他のタスクにディスパッチされた場合は，CONTROL.FPCAが'1'で無いた
+め(タスク例外でFPUを使用しなかった場合)，s16〜s31のFPUレジスタの保存が
+行われず，例外フレームへの書き戻しが発生しない．
 
-CONTROL.FPCA�Υ��åȡ����ꥢ�Υ����ߥ�
+CONTROL.FPCAのセット・クリアのタイミング
 
-���ꥢ����ս꤬ʣ���ս�ˤʤ���İ�������Ǥ��뤿�ᡤ�ǥ����ѥå������Ƭ��
-�ϰ�ΧCONTROL.FPCA��'0'�˥��ꥢ���롥
+クリアする箇所が複数箇所になると把握が困難であるため，ディスパッチャの先頭で
+は一律CONTROL.FPCAを'0'にクリアする．
 
-dispatch��ƤӽФ����������ؤΥ꥿���󤹤�ݤˤϡ������Υ�������FPU
-����Ѥ��������ϡ�s16��s31��������Ԥ����ᡤ���ν����ˤ��
-CONTROL.FPCA��'1'�˥��åȤ���롥
+dispatchを呼び出したタスクへのリターンする際には，戻り先のタスクがFPU
+を使用しいた場合は，s16〜s31の復帰を行うため，この処理により
+CONTROL.FPCAが'1'にセットされる．
 
-�ޤ���EXC_RETURN�ˤ��꡼�������EXC_RETURN���ͤˤ�äƥ꡼���������
-�ϡ��ɥ�����Ū�˼�ưŪ��CONTROL.FPCA�����ξ��֤����������Τǥ��եȥ�
-�����ˤ�������ɬ�פʤ���
+また，EXC_RETURNによるリータン時はEXC_RETURNの値によってリーターン時に
+ハードウェア的に自動的にCONTROL.FPCAが元の状態に復帰されるのでソフトウ
+ェアによる処理は必要ない．
 
-�������㳰�ΰ���
+タスク例外の扱い
 
-�������㳰��FPU����Ѥ��ơ��̾�ν�����FPU����Ѥ��ʤ����ϡ���������
-���θƤӽФ�������� CONTROL.FPCA ����¸����������ˡ�⤢�뤬���쥢����
-���Ǥ���ȹͤ����뤿�᥵�ݡ��Ȥ��ʤ���
+タスク例外でFPUを使用して，通常の処理でFPUを使用しない場合は，タスク例
+外の呼び出しの前後で CONTROL.FPCA を保存復帰する方法もあるが，レアケー
+スであると考えられるためサポートしない．
 
 ABI
 
-GCC�Ǥ�3���������ǽ��
+GCCでは3種類選択可能．
 
-hard    : ��ư������̿�����Ѥ���ABI��FPU�쥸��������ѡ�
-soft    : ��ư������̿�����Ѥ��ʤ���
-softfp  : ��ư������̿�����Ѥ��뤬ABI��soft��Ʊ����
+hard    : 浮動小数点命令を使用してABIはFPUレジスタを使用．
+soft    : 浮動小数点命令を使用しない．
+softfp  : 浮動小数点命令を使用するがABIはsoftと同じ．
 
-��¸�Υ饤�֥��ȥ�󥯤������softfp��ͭ���������桼�����������ޥ�
-���Ȥ��ƥǥ��ե���Ȥϡ�hard�Ȥ��롥
+既存のライブラリとリンクする場合はsoftfpが有効だが，ユーザーカスタマイ
+ズとしてディフォルトは，hardとする．
 
-�ޥ���
+マクロ
 
-FPU����ƥ�����������¸��ͭ��������ޥ�����
+FPUコンテキスト復帰保存を有効化するマクロ．
 
 TOPPERS_FPU_CONTEXT
 
-FPU�λ��Ѥ�ͭ��������ޥ�����
+FPUの使用を有効化するマクロ．
 
 TOPPERS_FPU_ENABLE
 
-FPU�Υ������ƥ��������ꤹ��ޥ�����ARMCC�ȹ�碌�Ƽ��Υޥ�������Ѥ��롥
+FPUのアーキテクチャを指定するマクロ．ARMCCと合わせて次のマクロを使用する．
 __TARGET_FPU_FPV4_SP
 
-FPU_NO_PRESERV/FPU_NO_LAZYSTACKING/FPU_LAZYSTACKING�ξ��ϼ��Υޥ�����������롥
+FPU_NO_PRESERV/FPU_NO_LAZYSTACKING/FPU_LAZYSTACKINGの場合は次のマクロを定義する．
 
 TOPPERS_FPU_NO_PRESERV
 
@@ -857,11 +857,11 @@ TOPPERS_FPU_NO_LAZYSTACKING
 TOPPERS_FPU_LAZYSTACKING
 
 
-16. ̤������
-������ߥ��å���CPU�㳰�δط�
-  BASEPRI��Ȥä��Ȥ��Ƥ⡤����CPU�㳰�������¾���㳰��ȯ������ȡ���
-  ���㳰�ϼ����դ����ʤ����ᡤITRON���ͤ��������ʤ���
-  ->�������ƥޥ˥奢�뵭�ܤ�ƨ���뤫.
-  ����ץ��ƥ��������㳰��ޥ�����ǽ�Ǥ��뤿���׷�����
+16. 未解決課題
+・割込みロックとCPU例外の関係
+  BASEPRIを使ったとしても，あるCPU例外処理中に他の例外が発生すると，そ
+  の例外は受け付けられないため，ITRON仕様は満たせない．
+  ->あきらめてマニュアル記載に逃げるか.
+  メモリプロテクションの例外もマスク可能であるため要件等．
 
-�ʾ塥
+以上．

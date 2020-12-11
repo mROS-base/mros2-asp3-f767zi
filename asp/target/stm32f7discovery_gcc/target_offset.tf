@@ -1,13 +1,13 @@
 $
-$       オフセットファイル生成用テンプレートファイル（stm32f7_discovery用）
+$       stm32f7_discovery
 $
 
 $
-$  標準テンプレートファイルのインクルード
+$  e
 $
 $INCLUDE "kernel/genoffset.tf"$
 
 $ 
-$  コア依存テンプレートのインクルード（ARM-M用）
+$  ARM-M
 $ 
 $INCLUDE"../../arch/arm_m_gcc/common/core_offset.tf"$

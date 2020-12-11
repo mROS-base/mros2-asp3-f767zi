@@ -8,46 +8,46 @@ $   Copyright (C) 2007 by TAKAGI Nobuhisa
 $   Copyright (C) 2007-2015 by Embedded and Real-Time Systems Laboratory
 $               Graduate School of Information Science, Nagoya Univ., JAPAN
 $  
-$   �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
-$   �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
-$   �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
-$   (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
-$       ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
-$       ����������˴ޤޤ�Ƥ��뤳�ȡ�
-$   (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
-$       �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
-$       �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
-$       ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
-$   (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
-$       �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
-$       �ȡ�
-$     (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
-$         �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
-$     (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
-$         ��𤹤뤳�ȡ�
-$   (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
-$       ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
-$       �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
-$       ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
-$       ���դ��뤳�ȡ�
+$   上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+$   ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+$   変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+$   (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+$       権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+$       スコード中に含まれていること．
+$   (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+$       用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+$       者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+$       の無保証規定を掲載すること．
+$   (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+$       用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+$       と．
+$     (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+$         作権表示，この利用条件および下記の無保証規定を掲載すること．
+$     (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+$         報告すること．
+$   (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+$       害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+$       また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+$       由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+$       免責すること．
 $  
-$   �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
-$   ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
-$   ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
-$   �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
-$   ����Ǥ�����ʤ���
+$   本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+$   よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+$   に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+$   アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+$   の責任を負わない．
 $ 
 $   $Id: kernel.tf 2785 2017-01-18 01:58:07Z ertl-hiro $
 $  
 $ =====================================================================
 
 $ =====================================================================
-$ AID_YYY�ν���
+$ AID_YYYの処理
 $ =====================================================================
 
 $num_atskid = 0$
 $FOREACH i ATSK.ORDER_LIST$
-$	// notsk����ξ���E_PAR��
+$	// notskが負の場合（E_PAR）
 	$IF ATSK.NOTSK[i] < 0$
 		$ERROR ATSK.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "notsk", ATSK.NOTSK[i], "AID_TSK")$$END$
 	$END$
@@ -57,7 +57,7 @@ $num_tskid = LENGTH(TSK.ID_LIST) + num_atskid$
 
 $num_asemid = 0$
 $FOREACH i ASEM.ORDER_LIST$
-$	// nosem����ξ���E_PAR��
+$	// nosemが負の場合（E_PAR）
 	$IF ASEM.NOSEM[i] < 0$
 		$ERROR ASEM.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "nosem", ASEM.NOSEM[i], "AID_SEM")$$END$
 	$END$
@@ -67,7 +67,7 @@ $num_semid = LENGTH(SEM.ID_LIST) + num_asemid$
 
 $num_aflgid = 0$
 $FOREACH i AFLG.ORDER_LIST$
-$	// noflg����ξ���E_PAR��
+$	// noflgが負の場合（E_PAR）
 	$IF AFLG.NOFLG[i] < 0$
 		$ERROR AFLG.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "noflg", AFLG.NOFLG[i], "AID_FLG")$$END$
 	$END$
@@ -77,7 +77,7 @@ $num_flgid = LENGTH(FLG.ID_LIST) + num_aflgid$
 
 $num_adtqid = 0$
 $FOREACH i ADTQ.ORDER_LIST$
-$	// nodtq����ξ���E_PAR��
+$	// nodtqが負の場合（E_PAR）
 	$IF ADTQ.NODTQ[i] < 0$
 		$ERROR ADTQ.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "nodtq", ADTQ.NODTQ[i], "AID_DTQ")$$END$
 	$END$
@@ -87,7 +87,7 @@ $num_dtqid = LENGTH(DTQ.ID_LIST) + num_adtqid$
 
 $num_apdqid = 0$
 $FOREACH i APDQ.ORDER_LIST$
-$	// nopdq����ξ���E_PAR��
+$	// nopdqが負の場合（E_PAR）
 	$IF APDQ.NOPDQ[i] < 0$
 		$ERROR APDQ.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "nopdq", APDQ.NOPDQ[i], "AID_PDQ")$$END$
 	$END$
@@ -97,7 +97,7 @@ $num_pdqid = LENGTH(PDQ.ID_LIST) + num_apdqid$
 
 $num_ambxid = 0$
 $FOREACH i AMBX.ORDER_LIST$
-$	// nombx����ξ���E_PAR��
+$	// nombxが負の場合（E_PAR）
 	$IF AMBX.NOMBX[i] < 0$
 		$ERROR AMBX.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "nombx", AMBX.NOMBX[i], "AID_MBX")$$END$
 	$END$
@@ -107,7 +107,7 @@ $num_mbxid = LENGTH(MBX.ID_LIST) + num_ambxid$
 
 $num_ampfid = 0$
 $FOREACH i AMPF.ORDER_LIST$
-$	// nompf����ξ���E_PAR��
+$	// nompfが負の場合（E_PAR）
 	$IF AMPF.NOMPF[i] < 0$
 		$ERROR AMPF.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "nompf", AMPF.NOMPF[i], "AID_MPF")$$END$
 	$END$
@@ -117,7 +117,7 @@ $num_mpfid = LENGTH(MPF.ID_LIST) + num_ampfid$
 
 $num_acycid = 0$
 $FOREACH i ACYC.ORDER_LIST$
-$	// nocyc����ξ���E_PAR��
+$	// nocycが負の場合（E_PAR）
 	$IF ACYC.NOCYC[i] < 0$
 		$ERROR ACYC.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "nocyc", ACYC.NOCYC[i], "AID_CYC")$$END$
 	$END$
@@ -127,7 +127,7 @@ $num_cycid = LENGTH(CYC.ID_LIST) + num_acycid$
 
 $num_aalmid = 0$
 $FOREACH i AALM.ORDER_LIST$
-$	// noalm����ξ���E_PAR��
+$	// noalmが負の場合（E_PAR）
 	$IF AALM.NOALM[i] < 0$
 		$ERROR AALM.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "noalm", AALM.NOALM[i], "AID_ALM")$$END$
 	$END$
@@ -137,7 +137,7 @@ $num_almid = LENGTH(ALM.ID_LIST) + num_aalmid$
 
 $num_aisrid = 0$
 $FOREACH i AISR.ORDER_LIST$
-$	// noisr����ξ���E_PAR��
+$	// noisrが負の場合（E_PAR）
 	$IF AISR.NOISR[i] < 0$
 		$ERROR AISR.TEXT_LINE[i]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "noisr", AISR.NOISR[i], "AID_ISR")$$END$
 	$END$
@@ -147,7 +147,7 @@ $num_isrid = num_aisrid$
 $num_isr = LENGTH(ISR.ORDER_LIST) + num_aisrid$
 
 $ =====================================================================
-$ kernel_cfg.h������
+$ kernel_cfg.hの生成
 $ =====================================================================
 
 $FILE "kernel_cfg.h"$
@@ -197,7 +197,7 @@ $NL$
 #endif /* TOPPERS_KERNEL_CFG_H */$NL$
 
 $ =====================================================================
-$ kernel_cfg.c������
+$ kernel_cfg.cの生成
 $ =====================================================================
 
 $FILE "kernel_cfg.c"$
@@ -211,7 +211,7 @@ $NL$
 $NL$
 
 $ 
-$  ���󥯥롼�ɥǥ��쥯�ƥ��֡�#include��
+$  インクルードディレクティブ（#include）
 $ 
 /*$NL$
 $SPC$*  Include Directives (#include)$NL$
@@ -221,7 +221,7 @@ $INCLUDES$
 $NL$
 
 $ 
-$  ���֥������Ȥ�ID�ֹ���ݻ������ѿ�
+$  オブジェクトのID番号を保持する変数
 $ 
 $IF USE_EXTERNAL_ID$
 	/*$NL$
@@ -258,66 +258,66 @@ $IF USE_EXTERNAL_ID$
 $END$
 
 $
-$  �����å��ΰ�γ��ݴؿ�
+$  スタック領域の確保関数
 $
 $IF !ISFUNCTION("ALLOC_STACK")$
 $FUNCTION ALLOC_STACK$
-$	// �礭�����˴ݤ᤿�������ǳ��ݤ���
+$	// 大きい方に丸めたサイズで確保する
 	static STK_T $ARGV[1]$[COUNT_STK_T($ARGV[2]$)];$NL$
 	$RESULT = FORMAT("ROUND_STK_T(%1%)", ARGV[2])$
 $END$
 $END$
 
 $ 
-$  ������
+$  タスク
 $ 
 /*$NL$
 $SPC$*  Task Management Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿��������1�İʾ�¸�ߤ��뤳�ȤΥ����å�
+$ 静的に生成されたタスクが1個以上存在することのチェック
 $IF !LENGTH(TSK.ID_LIST)$
 	$ERROR$$FORMAT(_("no task is registered"))$$END$
 $END$
 
-$ ��Ū���������줿�������ο�
+$ 静的に生成されたタスクの数
 #define TNUM_STSKID	$LENGTH(TSK.ID_LIST)$$NL$
 $NL$
 
-$ ������ID�ֹ�κ�����
+$ タスクID番号の最大値
 const ID _kernel_tmax_tskid = (TMIN_TSKID + TNUM_TSKID - 1);$NL$
 const ID _kernel_tmax_stskid = (TMIN_TSKID + TNUM_STSKID - 1);$NL$
 $NL$
 
-$ ���顼�����å�
+$ エラーチェック
 $FOREACH tskid TSK.ID_LIST$
-$	// tskatr���ʡ�TA_ACT�ϡˤǤʤ�����E_RSATR��
+$	// tskatrが（［TA_ACT］）でない場合（E_RSATR）
 	$IF (TSK.TSKATR[tskid] & ~(TA_ACT|TARGET_TSKATR)) != 0$
 		$ERROR TSK.TEXT_LINE[tskid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "tskatr", TSK.TSKATR[tskid], tskid, "CRE_TSK")$$END$
 	$END$
 
-$	// (TMIN_TPRI <= itskpri && itskpri <= TMAX_TPRI)�Ǥʤ�����E_PAR��
+$	// (TMIN_TPRI <= itskpri && itskpri <= TMAX_TPRI)でない場合（E_PAR）
 	$IF !(TMIN_TPRI <= TSK.ITSKPRI[tskid] && TSK.ITSKPRI[tskid] <= TMAX_TPRI)$
 		$ERROR TSK.TEXT_LINE[tskid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "itskpri", TSK.ITSKPRI[tskid], tskid, "CRE_TSK")$$END$
 	$END$
 
-$ 	// texatr����TA_NULL�ˤǤʤ�����E_RSATR��
+$ 	// texatrが（TA_NULL）でない場合（E_RSATR）
 	$IF LENGTH(TSK.TEXATR[tskid]) && TSK.TEXATR[tskid] != 0$
 		$ERROR DEF_TEX.TEXT_LINE[tskid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "texatr", TSK.TEXATR[tskid], tskid, "DEF_TEX")$$END$
 	$END$
 $END$
 
-$ �����å��ΰ�������Ȥ���˴ؤ��륨�顼�����å�
+$ スタック領域の生成とそれに関するエラーチェック
 $FOREACH tskid TSK.ID_LIST$
-$	// stksz��0�ʲ������������å�����κǾ��͡�TARGET_MIN_STKSZ�ˤ���
-$	// ����������E_PAR��
+$	// stkszが0以下か，ターゲット定義の最小値（TARGET_MIN_STKSZ）よりも
+$	// 小さい場合（E_PAR）
 	$IF TSK.STKSZ[tskid] <= 0 || (TARGET_MIN_STKSZ
 									&& TSK.STKSZ[tskid] < TARGET_MIN_STKSZ)$
 		$ERROR TSK.TEXT_LINE[tskid]$E_PAR: $FORMAT(_("too small %1% `%2%\' of `%3%\' in %4%"), "stksz", TSK.STKSZ[tskid], tskid, "CRE_TSK")$$END$
 	$END$
 
-$ 	// stksz�������å��ΰ�Υ������Ȥ����������ʤ�����E_PAR��
+$ 	// stkszがスタック領域のサイズとして正しくない場合（E_PAR）
 	$IF !EQ(TSK.STK[tskid], "NULL") && CHECK_STKSZ_ALIGN
 							&& (TSK.STKSZ[tskid] & (CHECK_STKSZ_ALIGN - 1))$
 		$ERROR TSK.TEXT_LINE[tskid]$E_PAR: $FORMAT(_("%1% `%2%\' of `%3%\' in %4% is not aligned"), "stksz", TSK.STKSZ[tskid], tskid, "CRE_TSK")$$END$
@@ -334,81 +334,81 @@ $ 	// stksz�������å��ΰ�Υ������Ȥ����������ʤ�����E_PAR��
 $END$
 $NL$
 
-$ ������������֥��å��������ʥ�������1�İʾ�¸�ߤ����
+$ タスク初期化ブロックの生成（タスクは1個以上存在する）
 const TINIB _kernel_tinib_table[TNUM_STSKID] = {$NL$
 $JOINEACH tskid TSK.ID_LIST ",\n"$
-$	// ������°������ĥ���󡤵�ư���ϡ���ư��ͥ����
+$	// タスク属性，拡張情報，起動番地，起動時優先度
 	$TAB${
 	$SPC$($TSK.TSKATR[tskid]$), (intptr_t)($TSK.EXINF[tskid]$),
 	$SPC$((TASK)($TSK.TASK[tskid]$)), INT_PRIORITY($TSK.ITSKPRI[tskid]$),
 
-$	// ���������������ƥ����ȥ֥��å��������å��ΰ�
+$	// タスク初期化コンテキストブロック，スタック領域
 	$IF USE_TSKINICTXB$
 		$GENERATE_TSKINICTXB(tskid)$
 	$ELSE$
 		$SPC$$TSK.TINIB_STKSZ[tskid]$, $TSK.TINIB_STK[tskid]$,
 	$END$
 
-$	// �������㳰�����롼�����°���ȵ�ư����
+$	// タスク例外処理ルーチンの属性と起動番地
 	$SPC$($ALT(TSK.TEXATR[tskid],"TA_NULL")$), ($ALT(TSK.TEXRTN[tskid],"NULL")$) }
 $END$$NL$
 };$NL$
 $NL$
 
-$ ưŪ�����������ѤΥ�����������֥��å�������
+$ 動的生成タスク用のタスク初期化ブロックの生成
 $IF num_atskid > 0$
 	TINIB _kernel_atinib_table[$num_atskid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(TINIB, _kernel_atinib_table);$NL$
 $END$$NL$
 
-$ �����������֥��å�������
+$ タスク管理ブロックの生成
 TCB _kernel_tcb_table[TNUM_TSKID];$NL$
 $NL$
 
-$ ��������������ơ��֥������
+$ タスク生成順序テーブルの生成
 const ID _kernel_torder_table[TNUM_STSKID] = {$NL$
 $TAB$$JOINEACH tskid TSK.ORDER_LIST ", "$$tskid$$END$$NL$
 };$NL$
 $NL$
 
 $ 
-$  ���ޥե�
+$  セマフォ
 $ 
 /*$NL$
 $SPC$*  Semaphore Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿���ޥե��ο�
+$ 静的に生成されたセマフォの数
 #define TNUM_SSEMID	$LENGTH(SEM.ID_LIST)$$NL$
 $NL$
 
-$ ���ޥե�ID�ֹ�κ�����
+$ セマフォID番号の最大値
 const ID _kernel_tmax_semid = (TMIN_SEMID + TNUM_SEMID - 1);$NL$
 const ID _kernel_tmax_ssemid = (TMIN_SEMID + TNUM_SSEMID - 1);$NL$
 $NL$
 
-$ ���ޥե�������֥��å�������
+$ セマフォ初期化ブロックの生成
 $IF LENGTH(SEM.ID_LIST)$
 	const SEMINIB _kernel_seminib_table[TNUM_SSEMID] = {$NL$
 	$JOINEACH semid SEM.ID_LIST ",\n"$
-$		// sematr���ʡ�TA_TPRI�ϡˤǤʤ�����E_RSATR��
+$		// sematrが（［TA_TPRI］）でない場合（E_RSATR）
 		$IF (SEM.SEMATR[semid] & ~TA_TPRI) != 0$
 			$ERROR SEM.TEXT_LINE[semid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "sematr", SEM.SEMATR[semid], semid, "CRE_SEM")$$END$
 		$END$
 
-$		// (0 <= isemcnt && isemcnt <= maxsem)�Ǥʤ�����E_PAR��
+$		// (0 <= isemcnt && isemcnt <= maxsem)でない場合（E_PAR）
 		$IF !(0 <= SEM.ISEMCNT[semid] && SEM.ISEMCNT[semid] <= SEM.MAXSEM[semid])$
 			$ERROR SEM.TEXT_LINE[semid]$E_PAR: $FORMAT(_("too large %1% `%2%\' of `%3%\' in %4%"), "isemcnt", SEM.ISEMCNT[semid], semid, "CRE_SEM")$$END$
 		$END$
 
-$		// (1 <= maxsem && maxsem <= TMAX_MAXSEM)�Ǥʤ�����E_PAR��
+$		// (1 <= maxsem && maxsem <= TMAX_MAXSEM)でない場合（E_PAR）
 		$IF !(1 <= SEM.MAXSEM[semid] && SEM.MAXSEM[semid] <= TMAX_MAXSEM)$
 			$ERROR SEM.TEXT_LINE[semid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "maxsem", SEM.MAXSEM[semid], semid, "CRE_SEM")$$END$
 		$END$
 
-$		// ���ޥե�������֥��å�
+$		// セマフォ初期化ブロック
 		$TAB${ ($SEM.SEMATR[semid]$), ($SEM.ISEMCNT[semid]$), ($SEM.MAXSEM[semid]$) }
 	$END$$NL$
 	};$NL$
@@ -416,14 +416,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const SEMINIB, _kernel_seminib_table);$NL$
 $END$$NL$
 
-$ ưŪ�������ޥե��ѤΥ��ޥե�������֥��å�������
+$ 動的生成セマフォ用のセマフォ初期化ブロックの生成
 $IF num_asemid > 0$
 	SEMINIB _kernel_aseminib_table[$num_asemid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(SEMINIB, _kernel_aseminib_table);$NL$
 $END$$NL$
 
-$ ���ޥե������֥��å�������
+$ セマフォ管理ブロックの生成
 $IF num_semid > 0$
 	SEMCB _kernel_semcb_table[TNUM_SEMID];$NL$
 $ELSE$
@@ -431,37 +431,37 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  ���٥�ȥե饰
+$  イベントフラグ
 $ 
 /*$NL$
 $SPC$*  Eventflag Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿���٥�ȥե饰�ο�
+$ 静的に生成されたイベントフラグの数
 #define TNUM_SFLGID	$LENGTH(FLG.ID_LIST)$$NL$
 $NL$
 
-$ ���٥�ȥե饰ID�ֹ�κ�����
+$ イベントフラグID番号の最大値
 const ID _kernel_tmax_flgid = (TMIN_FLGID + TNUM_FLGID - 1);$NL$
 const ID _kernel_tmax_sflgid = (TMIN_FLGID + TNUM_SFLGID - 1);$NL$
 $NL$
 
-$ ���٥�ȥե饰������֥��å�������
+$ イベントフラグ初期化ブロックの生成
 $IF LENGTH(FLG.ID_LIST)$
 	const FLGINIB _kernel_flginib_table[TNUM_SFLGID] = {$NL$
 	$JOINEACH flgid FLG.ID_LIST ",\n"$
-$		// flgatr���ʡ�TA_TPRI�ϡá�TA_WMUL�ϡá�TA_CLR�ϡˤǤʤ�����E_RSATR��
+$		// flgatrが（［TA_TPRI］｜［TA_WMUL］｜［TA_CLR］）でない場合（E_RSATR）
 		$IF (FLG.FLGATR[flgid] & ~(TA_TPRI|TA_WMUL|TA_CLR)) != 0$
 			$ERROR FLG.TEXT_LINE[flgid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "flgatr", FLG.FLGATR[flgid], flgid, "CRE_FLG")$$END$
 		$END$
 
-$		// iflgptn��FLGPTN�˳�Ǽ�Ǥ��ʤ�����E_PAR��
+$		// iflgptnがFLGPTNに格納できない場合（E_PAR）
 		$IF (FLG.IFLGPTN[flgid] & ~((1 << TBIT_FLGPTN) - 1)) != 0$
 			$ERROR FLG.TEXT_LINE[flgid]$E_PAR: $FORMAT(_("too large %1% `%2%\' of `%3%\' in %4%"), "iflgptn", FLG.IFLGPTN[flgid], flgid, "CRE_FLG")$$END$
 		$END$
 
-$		// ���٥�ȥե饰������֥��å�
+$		// イベントフラグ初期化ブロック
 		$TAB${ ($FLG.FLGATR[flgid]$), ($FLG.IFLGPTN[flgid]$) }
 	$END$$NL$
 	};$NL$
@@ -469,14 +469,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const FLGINIB, _kernel_flginib_table);$NL$
 $END$$NL$
 
-$ ưŪ�������٥�ȥե饰�ѤΥ��٥�ȥե饰������֥��å�������
+$ 動的生成イベントフラグ用のイベントフラグ初期化ブロックの生成
 $IF num_aflgid > 0$
 	FLGINIB _kernel_aflginib_table[$num_aflgid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(FLGINIB, _kernel_aflginib_table);$NL$
 $END$$NL$
 
-$ ���٥�ȥե饰�����֥��å�������
+$ イベントフラグ管理ブロックの生成
 $IF num_flgid > 0$
 	FLGCB _kernel_flgcb_table[TNUM_FLGID];$NL$
 $ELSE$
@@ -484,46 +484,46 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  �ǡ������塼
+$  データキュー
 $ 
 /*$NL$
 $SPC$*  Dataqueue Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿�ǡ������塼�ο�
+$ 静的に生成されたデータキューの数
 #define TNUM_SDTQID	$LENGTH(DTQ.ID_LIST)$$NL$
 $NL$
 
-$ �ǡ������塼ID�ֹ�κ�����
+$ データキューID番号の最大値
 const ID _kernel_tmax_dtqid = (TMIN_DTQID + TNUM_DTQID - 1);$NL$
 const ID _kernel_tmax_sdtqid = (TMIN_DTQID + TNUM_SDTQID - 1);$NL$
 $NL$
 
 $IF LENGTH(DTQ.ID_LIST)$
 	$FOREACH dtqid DTQ.ID_LIST$
-$		// dtqatr���ʡ�TA_TPRI�ϡˤǤʤ�����E_RSATR��
+$		// dtqatrが（［TA_TPRI］）でない場合（E_RSATR）
 		$IF (DTQ.DTQATR[dtqid] & ~TA_TPRI) != 0$
 			$ERROR DTQ.TEXT_LINE[dtqid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "dtqatr", DTQ.DTQATR[dtqid], dtqid, "CRE_DTQ")$$END$
 		$END$
 
-$		// dtqcnt����ξ���E_PAR��
+$		// dtqcntが負の場合（E_PAR）
 		$IF DTQ.DTQCNT[dtqid] < 0$
 			$ERROR DTQ.TEXT_LINE[dtqid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "dtqcnt", DTQ.DTQCNT[dtqid], dtqid, "CRE_DTQ")$$END$
 		$END$
 
-$		// dtqmb��NULL�Ǥʤ�����E_NOSPT��
+$		// dtqmbがNULLでない場合（E_NOSPT）
 		$IF !EQ(DTQ.DTQMB[dtqid], "NULL")$
 			$ERROR DTQ.TEXT_LINE[dtqid]$E_NOSPT: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "dtqmb", DTQ.DTQMB[dtqid], dtqid, "CRE_DTQ")$$END$
 		$END$
 
-$		// �ǡ������塼�����ΰ�
+$		// データキュー管理領域
 		$IF DTQ.DTQCNT[dtqid]$
 			static DTQMB _kernel_dtqmb_$dtqid$[$DTQ.DTQCNT[dtqid]$];$NL$
 		$END$
 	$END$
 
-$	// �ǡ������塼������֥��å�������
+$	// データキュー初期化ブロックの生成
 	const DTQINIB _kernel_dtqinib_table[TNUM_SDTQID] = {$NL$
 	$JOINEACH dtqid DTQ.ID_LIST ",\n"$
 		$TAB${ ($DTQ.DTQATR[dtqid]$), ($DTQ.DTQCNT[dtqid]$), $IF DTQ.DTQCNT[dtqid]$(_kernel_dtqmb_$dtqid$)$ELSE$NULL$END$ }
@@ -533,14 +533,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const DTQINIB, _kernel_dtqinib_table);$NL$
 $END$$NL$
 
-$ ưŪ�����ǡ������塼�ѤΥǡ������塼������֥��å�������
+$ 動的生成データキュー用のデータキュー初期化ブロックの生成
 $IF num_adtqid > 0$
 	DTQINIB _kernel_adtqinib_table[$num_adtqid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(DTQINIB, _kernel_adtqinib_table);$NL$
 $END$$NL$
 
-$ �ǡ������塼�����֥��å�������
+$ データキュー管理ブロックの生成
 $IF num_dtqid > 0$
 	DTQCB _kernel_dtqcb_table[TNUM_DTQID];$NL$
 $ELSE$
@@ -548,51 +548,51 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  ͥ���٥ǡ������塼
+$  優先度データキュー
 $ 
 /*$NL$
 $SPC$*  Priority Dataqueue Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿ͥ���٥ǡ������塼�ο�
+$ 静的に生成された優先度データキューの数
 #define TNUM_SPDQID	$LENGTH(PDQ.ID_LIST)$$NL$
 $NL$
 
-$ ͥ���٥ǡ������塼ID�ֹ�κ�����
+$ 優先度データキューID番号の最大値
 const ID _kernel_tmax_pdqid = (TMIN_PDQID + TNUM_PDQID - 1);$NL$
 const ID _kernel_tmax_spdqid = (TMIN_PDQID + TNUM_SPDQID - 1);$NL$
 $NL$
 
 $IF LENGTH(PDQ.ID_LIST)$
 	$FOREACH pdqid PDQ.ID_LIST$
-$		// pdqatr���ʡ�TA_TPRI�ϡˤǤʤ�����E_RSATR��
+$		// pdqatrが（［TA_TPRI］）でない場合（E_RSATR）
 		$IF (PDQ.PDQATR[pdqid] & ~TA_TPRI) != 0$
 			$ERROR PDQ.TEXT_LINE[pdqid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "pdqatr", PDQ.PDQATR[pdqid], pdqid, "CRE_PDQ")$$END$
 		$END$
 
-$		// pdqcnt����ξ���E_PAR��
+$		// pdqcntが負の場合（E_PAR）
 		$IF PDQ.PDQCNT[pdqid] < 0$
 			$ERROR PDQ.TEXT_LINE[pdqid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "pdqcnt", PDQ.PDQCNT[pdqid], pdqid, "CRE_PDQ")$$END$
 		$END$
 
-$		// (TMIN_DPRI <= maxdpri && maxdpri <= TMAX_DPRI)�Ǥʤ�����E_PAR��
+$		// (TMIN_DPRI <= maxdpri && maxdpri <= TMAX_DPRI)でない場合（E_PAR）
 		$IF !(TMIN_DPRI <= PDQ.MAXDPRI[pdqid] && PDQ.MAXDPRI[pdqid] <= TMAX_DPRI)$
 			$ERROR PDQ.TEXT_LINE[pdqid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "maxdpri", PDQ.MAXDPRI[pdqid], pdqid, "CRE_PDQ")$$END$
 		$END$
 
-$		// pdqmb��NULL�Ǥʤ�����E_NOSPT��
+$		// pdqmbがNULLでない場合（E_NOSPT）
 		$IF !EQ(PDQ.PDQMB[pdqid], "NULL")$
 			$ERROR PDQ.TEXT_LINE[pdqid]$E_NOSPT: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "pdqmb", PDQ.PDQMB[pdqid], pdqid, "CRE_PDQ")$$END$
 		$END$
 
-$		// ͥ���٥ǡ������塼�����ΰ�
+$		// 優先度データキュー管理領域
 		$IF PDQ.PDQCNT[pdqid]$
 			static PDQMB _kernel_pdqmb_$pdqid$[$PDQ.PDQCNT[pdqid]$];$NL$
 		$END$
 	$END$
 
-$	// ͥ���٥ǡ������塼������֥��å�������
+$	// 優先度データキュー初期化ブロックの生成
 	const PDQINIB _kernel_pdqinib_table[TNUM_SPDQID] = {$NL$
 	$JOINEACH pdqid PDQ.ID_LIST ",\n"$
 		$TAB${ ($PDQ.PDQATR[pdqid]$), ($PDQ.PDQCNT[pdqid]$), ($PDQ.MAXDPRI[pdqid]$), $IF PDQ.PDQCNT[pdqid]$(_kernel_pdqmb_$pdqid$)$ELSE$NULL$END$ }
@@ -602,14 +602,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const PDQINIB, _kernel_pdqinib_table);$NL$
 $END$$NL$
 
-$ ưŪ����ͥ���٥ǡ������塼�Ѥ�ͥ���٥ǡ������塼������֥��å�������
+$ 動的生成優先度データキュー用の優先度データキュー初期化ブロックの生成
 $IF num_apdqid > 0$
 	PDQINIB _kernel_apdqinib_table[$num_apdqid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(PDQINIB, _kernel_apdqinib_table);$NL$
 $END$$NL$
 
-$ ͥ���٥ǡ������塼�����֥��å�������
+$ 優先度データキュー管理ブロックの生成
 $IF num_pdqid > 0$
 	PDQCB _kernel_pdqcb_table[TNUM_PDQID];$NL$
 $ELSE$
@@ -617,42 +617,42 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  �᡼��ܥå���
+$  メールボックス
 $ 
 /*$NL$
 $SPC$*  Mailbox Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿�᡼��ܥå����ο�
+$ 静的に生成されたメールボックスの数
 #define TNUM_SMBXID	$LENGTH(MBX.ID_LIST)$$NL$
 $NL$
 
-$ �᡼��ܥå���ID�ֹ�κ�����
+$ メールボックスID番号の最大値
 const ID _kernel_tmax_mbxid = (TMIN_MBXID + TNUM_MBXID - 1);$NL$
 const ID _kernel_tmax_smbxid = (TMIN_MBXID + TNUM_SMBXID - 1);$NL$
 $NL$
 
-$ �᡼��ܥå���������֥��å�������
+$ メールボックス初期化ブロックの生成
 $IF LENGTH(MBX.ID_LIST)$
 	const MBXINIB _kernel_mbxinib_table[TNUM_SMBXID] = {$NL$
 	$JOINEACH mbxid MBX.ID_LIST ",\n"$
-$		// mbxatr���ʡ�TA_TPRI�ϡá�TA_MPRI�ϡˤǤʤ�����E_RSATR��
+$		// mbxatrが（［TA_TPRI］｜［TA_MPRI］）でない場合（E_RSATR）
 		$IF (MBX.MBXATR[mbxid] & ~(TA_TPRI|TA_MPRI)) != 0$
 			$ERROR MBX.TEXT_LINE[mbxid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "mbxatr", MBX.MBXATR[mbxid], mbxid, "CRE_MBX")$$END$
 		$END$
 
-$		// (TMIN_MPRI <= maxmpri && maxmpri <= TMAX_MPRI)�Ǥʤ�����E_PAR��
+$		// (TMIN_MPRI <= maxmpri && maxmpri <= TMAX_MPRI)でない場合（E_PAR）
 		$IF !(TMIN_MPRI <= MBX.MAXMPRI[mbxid] && MBX.MAXMPRI[mbxid] <= TMAX_MPRI)$
 			$ERROR MBX.TEXT_LINE[mbxid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "maxmpri", MBX.MAXMPRI[mbxid], mbxid, "CRE_MBX")$$END$
 		$END$
 
-$		// mprihd��NULL�Ǥʤ�����E_NOSPT��
+$		// mprihdがNULLでない場合（E_NOSPT）
 		$IF !EQ(MBX.MPRIHD[mbxid], "NULL")$
 			$ERROR MBX.TEXT_LINE[mbxid]$E_NOSPT: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "mprihd", MBX.MPRIHD[mbxid], mbxid, "CRE_MBX")$$END$
 		$END$
 
-$		// �᡼��ܥå���������֥��å�
+$		// メールボックス初期化ブロック
 		$TAB${ ($MBX.MBXATR[mbxid]$), ($MBX.MAXMPRI[mbxid]$) }
 	$END$$NL$
 	};$NL$
@@ -660,14 +660,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const MBXINIB, _kernel_mbxinib_table);$NL$
 $END$$NL$
 
-$ ưŪ�����᡼��ܥå����ѤΥ᡼��ܥå���������֥��å�������
+$ 動的生成メールボックス用のメールボックス初期化ブロックの生成
 $IF num_ambxid > 0$
 	MBXINIB _kernel_ambxinib_table[$num_ambxid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(MBXINIB, _kernel_ambxinib_table);$NL$
 $END$$NL$
 
-$ �᡼��ܥå��������֥��å�������
+$ メールボックス管理ブロックの生成
 $IF num_mbxid > 0$
 	MBXCB _kernel_mbxcb_table[TNUM_MBXID];$NL$
 $ELSE$
@@ -675,54 +675,54 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  ����Ĺ����ס���
+$  固定長メモリプール
 $ 
 /*$NL$
 $SPC$*  Fixed-sized Memorypool Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿����Ĺ����ס���ο�
+$ 静的に生成された固定長メモリプールの数
 #define TNUM_SMPFID	$LENGTH(MPF.ID_LIST)$$NL$
 $NL$
 
-$ ����Ĺ����ס���ID�ֹ�κ�����
+$ 固定長メモリプールID番号の最大値
 const ID _kernel_tmax_mpfid = (TMIN_MPFID + TNUM_MPFID - 1);$NL$
 const ID _kernel_tmax_smpfid = (TMIN_MPFID + TNUM_SMPFID - 1);$NL$
 $NL$
 
 $IF LENGTH(MPF.ID_LIST)$
 	$FOREACH mpfid MPF.ID_LIST$
-$		// mpfatr���ʡ�TA_TPRI�ϡˤǤʤ�����E_RSATR��
+$		// mpfatrが（［TA_TPRI］）でない場合（E_RSATR）
 		$IF (MPF.MPFATR[mpfid] & ~TA_TPRI) != 0$
 			$ERROR MPF.TEXT_LINE[mpfid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "mpfatr", MPF.MPFATR[mpfid], mpfid, "CRE_MPF")$$END$
 		$END$
 
-$		// blkcnt��0�ʲ��ξ���E_PAR��
+$		// blkcntが0以下の場合（E_PAR）
 		$IF MPF.BLKCNT[mpfid] <= 0$
 			$ERROR MPF.TEXT_LINE[mpfid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "blkcnt", MPF.BLKCNT[mpfid], mpfid, "CRE_MPF")$$END$
 		$END$
 
-$		// blksz��0�ʲ��ξ���E_PAR��
+$		// blkszが0以下の場合（E_PAR）
 		$IF MPF.BLKSZ[mpfid] <= 0$
 			$ERROR MPF.TEXT_LINE[mpfid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "blksz", MPF.BLKSZ[mpfid], mpfid, "CRE_MPF")$$END$
 		$END$
 
-$		// ����Ĺ����ס����ΰ�
+$		// 固定長メモリプール領域
 		$IF EQ(MPF.MPF[mpfid], "NULL")$
 			static MPF_T _kernel_mpf_$mpfid$[($MPF.BLKCNT[mpfid]$) * COUNT_MPF_T($MPF.BLKSZ[mpfid]$)];$NL$
 		$END$
 
-$		// mpfmb��NULL�Ǥʤ�����E_NOSPT��
+$		// mpfmbがNULLでない場合（E_NOSPT）
 		$IF !EQ(MPF.MPFMB[mpfid], "NULL")$
 			$ERROR MPF.TEXT_LINE[mpfid]$E_NOSPT: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "mpfmb", MPF.MPFMB[mpfid], mpfid, "CRE_MPF")$$END$
 		$END$
 
-$		// ����Ĺ����ס�������ΰ�
+$		// 固定長メモリプール管理領域
 		static MPFMB _kernel_mpfmb_$mpfid$[$MPF.BLKCNT[mpfid]$];$NL$
 	$END$
 
-$	// ����Ĺ����ס��������֥��å�������
+$	// 固定長メモリプール初期化ブロックの生成
 	const MPFINIB _kernel_mpfinib_table[TNUM_SMPFID] = {$NL$
 	$JOINEACH mpfid MPF.ID_LIST ",\n"$
 		$TAB${ ($MPF.MPFATR[mpfid]$), ($MPF.BLKCNT[mpfid]$), ROUND_MPF_T($MPF.BLKSZ[mpfid]$), $IF EQ(MPF.MPF[mpfid],"NULL")$(_kernel_mpf_$mpfid$)$ELSE$(void *)($MPF.MPF[mpfid]$)$END$, (_kernel_mpfmb_$mpfid$) }
@@ -732,14 +732,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const MPFINIB, _kernel_mpfinib_table);$NL$
 $END$$NL$
 
-$ ưŪ��������Ĺ����ס����Ѥθ���Ĺ����ס��������֥��å�������
+$ 動的生成固定長メモリプール用の固定長メモリプール初期化ブロックの生成
 $IF num_ampfid > 0$
 	MPFINIB _kernel_ampfinib_table[$num_ampfid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(MPFINIB, _kernel_ampfinib_table);$NL$
 $END$$NL$
 
-$ ����Ĺ����ס�������֥��å�������
+$ 固定長メモリプール管理ブロックの生成
 $IF num_mpfid > 0$
 	MPFCB _kernel_mpfcb_table[TNUM_MPFID];$NL$
 $ELSE$
@@ -747,47 +747,47 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  �����ϥ�ɥ�
+$  周期ハンドラ
 $ 
 /*$NL$
 $SPC$*  Cyclic Handler Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿�����ϥ�ɥ�ο�
+$ 静的に生成された周期ハンドラの数
 #define TNUM_SCYCID	$LENGTH(CYC.ID_LIST)$$NL$
 $NL$
 
-$ �����ϥ�ɥ�ID�ֹ�κ�����
+$ 周期ハンドラID番号の最大値
 const ID _kernel_tmax_cycid = (TMIN_CYCID + TNUM_CYCID - 1);$NL$
 const ID _kernel_tmax_scycid = (TMIN_CYCID + TNUM_SCYCID - 1);$NL$
 $NL$
 
-$ �����ϥ�ɥ������֥��å�������
+$ 周期ハンドラ初期化ブロックの生成
 $IF LENGTH(CYC.ID_LIST)$
 	const CYCINIB _kernel_cycinib_table[TNUM_SCYCID] = {$NL$
 	$JOINEACH cycid CYC.ID_LIST ",\n"$
-$		// cycatr���ʡ�TA_STA�ϡˤǤʤ�����E_RSATR��
+$		// cycatrが（［TA_STA］）でない場合（E_RSATR）
 		$IF (CYC.CYCATR[cycid] & ~TA_STA) != 0$
 			$ERROR CYC.TEXT_LINE[cycid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "cycatr", CYC.CYCATR[cycid], cycid, "CRE_CYC")$$END$
 		$END$
 
-$		// (0 < cyctim && cyctim <= TMAX_RELTIM)�Ǥʤ�����E_PAR��
+$		// (0 < cyctim && cyctim <= TMAX_RELTIM)でない場合（E_PAR）
 		$IF !(0 < CYC.CYCTIM[cycid] && CYC.CYCTIM[cycid] <= TMAX_RELTIM)$
 			$ERROR CYC.TEXT_LINE[cycid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "cyctim", CYC.CYCTIM[cycid], cycid, "CRE_CYC")$$END$
 		$END$
 
-$		// (0 <= cycphs && cycphs <= TMAX_RELTIM)�Ǥʤ�����E_PAR��
+$		// (0 <= cycphs && cycphs <= TMAX_RELTIM)でない場合（E_PAR）
 		$IF !(0 <= CYC.CYCPHS[cycid] && CYC.CYCPHS[cycid] <= TMAX_RELTIM)$
 			$ERROR CYC.TEXT_LINE[cycid]$E_PAR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "cycphs", CYC.CYCPHS[cycid], cycid, "CRE_CYC")$$END$
 		$END$
 
-$		// �ٹ�cycatr��TA_STA�����ꤵ��Ƥ��ơ�(cycphs == 0)�ξ��
+$		// 警告：cycatrにTA_STAが設定されていて，(cycphs == 0)の場合
 		$IF (CYC.CYCATR[cycid] & TA_STA) != 0 && CYC.CYCPHS[cycid] == 0$
 			$WARNING CYC.TEXT_LINE[cycid]$$FORMAT(_("%1% is not recommended when %2% is set to %3% in %4%"), "cycphs==0", "TA_STA", "cycatr", "CRE_CYC")$$END$
 		$END$
 
-$		// �����ϥ�ɥ������֥��å�
+$		// 周期ハンドラ初期化ブロック
 		$TAB${ ($CYC.CYCATR[cycid]$), (intptr_t)($CYC.EXINF[cycid]$), ($CYC.CYCHDR[cycid]$), ($CYC.CYCTIM[cycid]$), ($CYC.CYCPHS[cycid]$) }
 	$END$$NL$
 	};$NL$
@@ -795,14 +795,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const CYCINIB, _kernel_cycinib_table);$NL$
 $END$$NL$
 
-$ ưŪ���������ϥ�ɥ��Ѥμ����ϥ�ɥ������֥��å�������
+$ 動的生成周期ハンドラ用の周期ハンドラ初期化ブロックの生成
 $IF num_acycid > 0$
 	CYCINIB _kernel_acycinib_table[$num_acycid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(CYCINIB, _kernel_acycinib_table);$NL$
 $END$$NL$
 
-$ �����ϥ�ɥ�����֥��å�������
+$ 周期ハンドラ管理ブロックの生成
 $IF num_cycid > 0$
 	CYCCB _kernel_cyccb_table[TNUM_CYCID];$NL$
 $ELSE$
@@ -810,32 +810,32 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  ���顼��ϥ�ɥ�
+$  アラームハンドラ
 $ 
 /*$NL$
 $SPC$*  Alarm Handler Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ��Ū���������줿���顼��ϥ�ɥ�ο�
+$ 静的に生成されたアラームハンドラの数
 #define TNUM_SALMID	$LENGTH(ALM.ID_LIST)$$NL$
 $NL$
 
-$ ���顼��ϥ�ɥ�ID�ֹ�κ�����
+$ アラームハンドラID番号の最大値
 const ID _kernel_tmax_almid = (TMIN_ALMID + TNUM_ALMID - 1);$NL$
 const ID _kernel_tmax_salmid = (TMIN_ALMID + TNUM_SALMID - 1);$NL$
 $NL$
 
-$ ���顼��ϥ�ɥ������֥��å�������
+$ アラームハンドラ初期化ブロックの生成
 $IF LENGTH(ALM.ID_LIST)$
 	const ALMINIB _kernel_alminib_table[TNUM_SALMID] = {$NL$
 	$JOINEACH almid ALM.ID_LIST ",\n"$
-$		// almatr����TA_NULL�ˤǤʤ�����E_RSATR��
+$		// almatrが（TA_NULL）でない場合（E_RSATR）
 		$IF ALM.ALMATR[almid] != 0$
 			$ERROR ALM.TEXT_LINE[almid]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of `%3%\' in %4%"), "almatr", ALM.ALMATR[almid], almid, "CRE_ALM")$$END$
 		$END$
 
-$		// ���顼��ϥ�ɥ������֥��å�
+$		// アラームハンドラ初期化ブロック
 		$TAB${ ($ALM.ALMATR[almid]$), (intptr_t)($ALM.EXINF[almid]$), ($ALM.ALMHDR[almid]$) }
 	$END$$NL$
 	};$NL$
@@ -843,14 +843,14 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(const ALMINIB, _kernel_alminib_table);$NL$
 $END$$NL$
 
-$ ưŪ�������顼��ϥ�ɥ��ѤΥ��顼��ϥ�ɥ������֥��å�������
+$ 動的生成アラームハンドラ用のアラームハンドラ初期化ブロックの生成
 $IF num_aalmid > 0$
 	ALMINIB _kernel_aalminib_table[$num_aalmid$];$NL$
 $ELSE$
 	TOPPERS_EMPTY_LABEL(ALMINIB, _kernel_aalminib_table);$NL$
 $END$$NL$
 
-$ ���顼��ϥ�ɥ�����֥��å�������
+$ アラームハンドラ管理ブロックの生成
 $IF num_almid > 0$
 	ALMCB _kernel_almcb_table[TNUM_ALMID];$NL$
 $ELSE$
@@ -858,14 +858,14 @@ $ELSE$
 $END$$NL$
 
 $ 
-$  ����ߴ�����ǽ
+$  割込み管理機能
 $ 
 /*$NL$
 $SPC$*  Interrupt Management Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ ������ֹ�ȳ���ߥϥ�ɥ��ֹ���Ѵ��ơ��֥�κ���
+$ 割込み番号と割込みハンドラ番号の変換テーブルの作成
 $IF LENGTH(INTNO_ATTISR_VALID) != LENGTH(INHNO_ATTISR_VALID)$
 	$ERROR$length of `INTNO_ATTISR_VALID' is different from length of `INHNO_ATTISR_VALID'$END$
 $END$
@@ -877,15 +877,15 @@ $FOREACH intno INTNO_ATTISR_VALID$
 	$i = i + 1$
 $END$
 
-$ ������׵�饤��˴ؤ��륨�顼�����å�
+$ 割込み要求ラインに関するエラーチェック
 $i = 0$
 $FOREACH intno INT.ORDER_LIST$
-$	// intno��CFG_INT���Ф��������ֹ�Ȥ����������ʤ�����E_PAR��
+$	// intnoがCFG_INTに対する割込み番号として正しくない場合（E_PAR）
 	$IF !LENGTH(FIND(INTNO_CFGINT_VALID, INT.INTNO[intno]))$
 		$ERROR INT.TEXT_LINE[intno]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "intno", INT.INTNO[intno], "CFG_INT")$$END$
 	$END$
 
-$	// intno��CFG_INT�ˤ�ä�����Ѥߤξ���E_OBJ��
+$	// intnoがCFG_INTによって設定済みの場合（E_OBJ）
 	$j = 0$
 	$FOREACH intno2 INT.ORDER_LIST$
 		$IF j < i && INT.INTNO[intno] == INT.INTNO[intno2]$
@@ -894,26 +894,26 @@ $	// intno��CFG_INT�ˤ�ä�����Ѥߤξ���E_OBJ��
 		$j = j + 1$
 	$END$
 
-$	// intatr���ʡ�TA_ENAINT�ϡá�TA_EDGE�ϡˤǤʤ�����E_RSATR��
+$	// intatrが（［TA_ENAINT］｜［TA_EDGE］）でない場合（E_RSATR）
 	$IF (INT.INTATR[intno] & ~(TA_ENAINT|TA_EDGE|TARGET_INTATR)) != 0$
 		$ERROR INT.TEXT_LINE[intno]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of %3% `%4%\' in %5%"), "intatr", INT.INTATR[intno], "intno", INT.INTNO[intno], "CFG_INT")$$END$
 	$END$
 
-$	// intpri��CFG_INT���Ф�������ͥ���٤Ȥ����������ʤ�����E_PAR��
+$	// intpriがCFG_INTに対する割込み優先度として正しくない場合（E_PAR）
 	$IF !LENGTH(FIND(INTPRI_CFGINT_VALID, INT.INTPRI[intno]))$
 		$ERROR INT.TEXT_LINE[intno]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "intpri", INT.INTPRI[intno], "CFG_INT")$$END$
 	$END$
 
-$	// �����ͥ�����˸��ꤵ��Ƥ���intno���Ф��ơ�intpri��TMIN_INTPRI
-$	// ���⾮�����ͤ����ꤵ�줿����E_OBJ��
+$	// カーネル管理に固定されているintnoに対して，intpriにTMIN_INTPRI
+$	// よりも小さい値が指定された場合（E_OBJ）
 	$IF LENGTH(FIND(INTNO_FIX_KERNEL, intno))$
 		$IF INT.INTPRI[intno] < TMIN_INTPRI$
 			$ERROR INT.TEXT_LINE[intno]$E_OBJ: $FORMAT(_("%1% `%2%\' must not have higher priority than %3%"), "intno", INT.INTNO[intno], "TMIN_INTPRI")$$END$
 		$END$
 	$END$
 
-$	// �����ͥ�������˸��ꤵ��Ƥ���intno���Ф��ơ�intpri��TMIN_INTPRI
-$	// ���⾮�����ͤ����ꤵ��ʤ��ä�����E_OBJ��
+$	// カーネル管理外に固定されているintnoに対して，intpriにTMIN_INTPRI
+$	// よりも小さい値が指定されなかった場合（E_OBJ）
 	$IF LENGTH(FIND(INTNO_FIX_NONKERNEL, intno))$
 		$IF INT.INTPRI[intno] >= TMIN_INTPRI$
 			$ERROR INT.TEXT_LINE[intno]$E_OBJ: $FORMAT(_("%1% `%2%\' must have higher priority than %3%"), "intno", INT.INTNO[intno], "TMIN_INTPRI")$$END$
@@ -922,15 +922,15 @@ $	// ���⾮�����ͤ����ꤵ��ʤ��ä�����E_OBJ��
 	$i = i + 1$
 $END$
 
-$ ����ߥϥ�ɥ�˴ؤ��륨�顼�����å�
+$ 割込みハンドラに関するエラーチェック
 $i = 0$
 $FOREACH inhno INH.ORDER_LIST$
-$	// inhno��DEF_INH���Ф������ߥϥ�ɥ��ֹ�Ȥ����������ʤ�����E_PAR��
+$	// inhnoがDEF_INHに対する割込みハンドラ番号として正しくない場合（E_PAR）
 	$IF !LENGTH(FIND(INHNO_DEFINH_VALID, INH.INHNO[inhno]))$
 		$ERROR INH.TEXT_LINE[inhno]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "inhno", INH.INHNO[inhno], "DEF_INH")$$END$
 	$END$
 
-$	// inhno��DEF_INH�ˤ�ä�����Ѥߤξ���E_OBJ��
+$	// inhnoがDEF_INHによって設定済みの場合（E_OBJ）
 	$j = 0$
 	$FOREACH inhno2 INH.ORDER_LIST$
 		$IF j < i && INH.INHNO[inhno] == INH.INHNO[inhno2]$
@@ -939,21 +939,21 @@ $	// inhno��DEF_INH�ˤ�ä�����Ѥߤξ���E_OBJ��
 		$j = j + 1$
 	$END$
 
-$	// inhatr����TA_NULL�ˤǤʤ�����E_RSATR��
+$	// inhatrが（TA_NULL）でない場合（E_RSATR）
 	$IF (INH.INHATR[inhno] & ~TARGET_INHATR) != 0$
 		$ERROR INH.TEXT_LINE[inhno]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of %3% `%4%\' in %5%"), "inhatr", INH.INHATR[inhno], "inhno", INH.INHNO[inhno], "DEF_INH")$$END$
 	$END$
 
-$	// �����ͥ�����˸��ꤵ��Ƥ���inhno���Ф��ơ�inhatr��TA_NONKERNEL
-$	//�������ꤵ��Ƥ������E_RSATR��
+$	// カーネル管理に固定されているinhnoに対して，inhatrにTA_NONKERNEL
+$	//　が指定されている場合（E_RSATR）
 	$IF LENGTH(FIND(INHNO_FIX_KERNEL, inhno))$
 		$IF (INH.INHATR[inhno] & TA_NONKERNEL) != 0$
 			$ERROR INH.TEXT_LINE[inhno]$E_RSATR: $FORMAT(_("%1% `%2%\' must not be non-kernel interrupt"), "inhno", INH.INHNO[inhno])$$END$
 		$END$
 	$END$
 
-$	// �����ͥ�������˸��ꤵ��Ƥ���inhno���Ф��ơ�inhatr��TA_NONKERNEL
-$	// �����ꤵ��Ƥ��ʤ�����E_RSATR��
+$	// カーネル管理外に固定されているinhnoに対して，inhatrにTA_NONKERNEL
+$	// が指定されていない場合（E_RSATR）
 	$IF LENGTH(FIND(INHNO_FIX_NONKERNEL, inhno))$
 		$IF (INH.INHATR[inhno] & TA_NONKERNEL) == 0$
 			$ERROR INH.TEXT_LINE[inhno]$E_RSATR: $FORMAT(_("%1% `%2%\' must be non-kernel interrupt"), "inhno", INH.INHNO[inhno])$$END$
@@ -962,21 +962,21 @@ $	// �����ꤵ��Ƥ��ʤ�����E_RSATR��
 
 	$IF LENGTH(INTNO[INH.INHNO[inhno]])$
 		$intno = INTNO[INH.INHNO[inhno]]$
-$		// inhno���б�����intno���Ф���CFG_INT���ʤ�����E_OBJ��
+$		// inhnoに対応するintnoに対するCFG_INTがない場合（E_OBJ）
 		$IF !LENGTH(INT.INTNO[intno])$
 			$ERROR INH.TEXT_LINE[inhno]$E_OBJ: $FORMAT(_("%1% `%2%\' corresponding to %3% `%4%\' is not configured with %5%"), "intno", intno, "inhno", INH.INHNO[inhno], "CFG_INT")$$END$
 		$ELSE$
 			$IF (INH.INHATR[inhno] & TA_NONKERNEL) == 0$
-$				// inhatr��TA_NONKERNEL�����ꤵ��Ƥ��餺��inhno���б�
-$				// ����intno���Ф���CFG_INT�����ꤵ�줿�����ͥ���٤�
-$				// TMIN_INTPRI���⾮��������E_OBJ��
+$				// inhatrにTA_NONKERNELが指定されておらず，inhnoに対応
+$				// するintnoに対してCFG_INTで設定された割込み優先度が
+$				// TMIN_INTPRIよりも小さい場合（E_OBJ）
 				$IF INT.INTPRI[intno] < TMIN_INTPRI$
 					$ERROR INT.TEXT_LINE[intno]$E_OBJ: $FORMAT(_("%1% `%2%\' configured for %3% `%4%\' is higher than %5%"), "intpri", INT.INTPRI[intno], "inhno", INH.INHNO[inhno], "TMIN_INTPRI")$$END$
 				$END$
 			$ELSE$
-$				// inhatr��TA_NONKERNEL�����ꤵ��Ƥ��ꡤinhno���б�
-$				// ����intno���Ф���CFG_INT�����ꤵ�줿�����ͥ���٤�
-$				// TMIN_INTPRI�ʾ�Ǥ������E_OBJ��
+$				// inhatrにTA_NONKERNELが指定されており，inhnoに対応
+$				// するintnoに対してCFG_INTで設定された割込み優先度が
+$				// TMIN_INTPRI以上である場合（E_OBJ）
 				$IF INT.INTPRI[intno] >= TMIN_INTPRI$
 					$ERROR INT.TEXT_LINE[intno]$E_OBJ: $FORMAT(_("%1% `%2%\' configured for %3% `%4%\' is lower than or equal to %5%"), "intpri", INT.INTPRI[intno], "inhno", INH.INHNO[inhno], "TMIN_INTPRI")$$END$
 				$END$
@@ -986,19 +986,19 @@ $				// TMIN_INTPRI�ʾ�Ǥ������E_OBJ��
 	$i = i + 1$
 $END$
 
-$ ����ߥ����ӥ��롼�����ISR�ˤ˴ؤ��륨�顼�����å�
+$ 割込みサービスルーチン（ISR）に関するエラーチェック
 $FOREACH order ISR.ORDER_LIST$
-$	// isratr����TA_NULL�ˤǤʤ�����E_RSATR��
+$	// isratrが（TA_NULL）でない場合（E_RSATR）
 	$IF (ISR.ISRATR[order] & ~TARGET_ISRATR) != 0$
 		$ERROR ISR.TEXT_LINE[order]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "isratr", ISR.ISRATR[order], "ATT_ISR")$$END$
 	$END$
 
-$	// intno��ATT_ISR���Ф��������ֹ�Ȥ����������ʤ�����E_PAR��
+$	// intnoがATT_ISRに対する割込み番号として正しくない場合（E_PAR）
 	$IF !LENGTH(FIND(INTNO_ATTISR_VALID, ISR.INTNO[order]))$
 		$ERROR ISR.TEXT_LINE[order]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "intno", ISR.INTNO[order], "ATT_ISR")$$END$
 	$END$
 
-$	// (TMIN_ISRPRI <= isrpri && isrpri <= TMAX_ISRPRI)�Ǥʤ�����E_PAR��
+$	// (TMIN_ISRPRI <= isrpri && isrpri <= TMAX_ISRPRI)でない場合（E_PAR）
 	$IF !(TMIN_ISRPRI <= ISR.ISRPRI[order] && ISR.ISRPRI[order] <= TMAX_ISRPRI)$
 		$ERROR ISR.TEXT_LINE[order]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "isrpri", ISR.ISRPRI[order], "ATT_ISR")$$END$
 	$END$
@@ -1007,7 +1007,7 @@ $END$
 $FOREACH intno INTNO_ATTISR_VALID$
 	$inhno = INHNO[intno]$
 
-$	// ������ֹ�intno���Ф�����Ͽ���줿ISR�Υꥹ�Ȥκ���
+$	// 割込み番号intnoに対して登録されたISRのリストの作成
 	$isr_order_list = {}$
 	$FOREACH order ISR.ORDER_LIST$
 		$IF ISR.INTNO[order] == intno$
@@ -1016,19 +1016,19 @@ $	// ������ֹ�intno���Ф�����Ͽ���줿ISR�Υꥹ�Ȥκ���
 		$END$
 	$END$
 
-$	// ������ֹ�intno���Ф�����Ͽ���줿ISR��¸�ߤ�����
+$	// 割込み番号intnoに対して登録されたISRが存在する場合
 	$IF LENGTH(isr_order_list) > 0$
-$		// intno���б�����inhno���Ф���DEF_INH���������E_OBJ��
+$		// intnoに対応するinhnoに対してDEF_INHがある場合（E_OBJ）
 		$IF LENGTH(INH.INHNO[inhno])$
 			$ERROR ISR.TEXT_LINE[order_for_error]$E_OBJ: $FORMAT(_("%1% `%2%\' in %3% is duplicated with %4% `%5%\'"), "intno", ISR.INTNO[order_for_error], "ATT_ISR", "inhno", INH.INHNO[inhno])$$END$
 		$END$
 
-$		// intno���Ф���CFG_INT���ʤ�����E_OBJ��
+$		// intnoに対するCFG_INTがない場合（E_OBJ）
 		$IF !LENGTH(INT.INTNO[intno])$
 			$ERROR ISR.TEXT_LINE[order_for_error]$E_OBJ: $FORMAT(_("%1% `%2%\' is not configured with %3%"), "intno", ISR.INTNO[order_for_error], "CFG_INT")$$END$
 		$ELSE$
-$			// intno���Ф���CFG_INT�����ꤵ�줿�����ͥ���٤�TMIN_INTPRI
-$			// ���⾮��������E_OBJ��
+$			// intnoに対してCFG_INTで設定された割込み優先度がTMIN_INTPRI
+$			// よりも小さい場合（E_OBJ）
 			$IF INT.INTPRI[intno] < TMIN_INTPRI$
 				$ERROR INT.TEXT_LINE[intno]$E_OBJ: $FORMAT(_("%1% `%2%\' configured for %3% `%4%\' is higher than %5%"), "intpri", INT.INTPRI[intno], "intno", ISR.INTNO[order_for_error], "TMIN_INTPRI")$$END$
 			$END$
@@ -1036,7 +1036,7 @@ $			// ���⾮��������E_OBJ��
 	$END$
 $END$
 
-$ ����ߥ����ӥ��롼�����ISR�˴����Υǡ�����¤
+$ 割込みサービスルーチン（ISR）管理のデータ構造
 $intno_isr_list = {}$
 $FOREACH intno INTNO_ATTISR_VALID$
 	$inhno = INHNO[intno]$
@@ -1072,7 +1072,7 @@ $ELSE$
 	TOPPERS_EMPTY_LABEL(QUEUE, _kernel_isr_queue_table);$NL$
 $END$$NL$
 
-$ ����ߥ����ӥ��롼�����ISR�˸ƽФ��Τ���γ���ߥϥ�ɥ������
+$ 割込みサービスルーチン（ISR）呼出しのための割込みハンドラの生成
 $FOREACH intno INTNO_ISR$
 	$inhno = INHNO[intno]$
 
@@ -1082,7 +1082,7 @@ $	// DEF_INH(inhno, { TA_NULL, _kernel_inthdr_<intno> } );
 	$INH.INTHDR[inhno] = CONCAT("_kernel_inthdr_", intno)$
 	$INH.ORDER_LIST = APPEND(INH.ORDER_LIST, inhno)$
 
-$	// ISR�Ѥγ���ߥϥ�ɥ�
+$	// ISR用の割込みハンドラ
 	void$NL$
 	_kernel_inthdr_$intno$(void)$NL$
 	{$NL$
@@ -1093,17 +1093,17 @@ $	// ISR�Ѥγ���ߥϥ�ɥ�
 	$NL$
 $END$
 
-$ ����ߥ����ӥ��롼����ο�
+$ 割込みサービスルーチンの数
 #define TNUM_SISR	$LENGTH(ISR.ORDER_LIST)$$NL$
 #define TNUM_ISR	$LENGTH(ISR.ORDER_LIST) + num_aisrid$$NL$
 $NL$
 
-$ ����ߥ����ӥ��롼����ID�ֹ�κ�����
+$ 割込みサービスルーチンID番号の最大値
 const ID _kernel_tmax_isrid = (TMIN_ISRID + TNUM_ISRID - 1);$NL$
 const uint_t _kernel_tnum_sisr = TNUM_SISR;$NL$
 $NL$
 
-$ ����ߥ����ӥ��롼���������֥��å�������
+$ 割込みサービスルーチン初期化ブロックの生成
 $IF LENGTH(ISR.ORDER_LIST)$
 	const ISRINIB _kernel_sisrinib_table[TNUM_SISR] = {$NL$
 	$JOINEACH order ISR.ORDER_LIST ",\n"$
@@ -1115,8 +1115,8 @@ $ELSE$
 $END$
 $NL$
 
-$ ưŪ��������ߥ����ӥ��롼�����Ѥγ���ߥ����ӥ��롼���������֥���
-$ ��������
+$ 動的生成割込みサービスルーチン用の割込みサービスルーチン初期化ブロッ
+$ クの生成
 $IF num_aisrid > 0$
 	ISRINIB _kernel_aisrinib_table[$num_aisrid$];$NL$
 $ELSE$
@@ -1124,7 +1124,7 @@ $ELSE$
 $END$
 $NL$
 
-$ ����ߥ����ӥ��롼��������֥��å�������
+$ 割込みサービスルーチン管理ブロックの生成
 $IF num_isr > 0$
 	ISRCB _kernel_isrcb_table[TNUM_ISR];$NL$
 $ELSE$
@@ -1133,12 +1133,12 @@ $END$
 $NL$
 
 $ 
-$  ����ߴ�����ǽ�Τ����ɸ��Ū�ʽ�������������
+$  割込み管理機能のための標準的な初期化情報の生成
 $ 
-$ ����ߥϥ�ɥ�ν������ɬ�פʾ���
+$ 割込みハンドラの初期化に必要な情報
 $IF !OMIT_INITIALIZE_INTERRUPT || ALT(USE_INHINIB_TABLE,0)$
 
-$ ����ߥϥ�ɥ��
+$ 割込みハンドラ数
 #define TNUM_INHNO	$LENGTH(INH.ORDER_LIST)$$NL$
 const uint_t _kernel_tnum_inhno = TNUM_INHNO;$NL$
 $NL$
@@ -1149,7 +1149,7 @@ $FOREACH inhno INH.ORDER_LIST$
 $END$
 $NL$
 
-$ ����ߥϥ�ɥ������֥��å�
+$ 割込みハンドラ初期化ブロック
 $IF LENGTH(INH.ORDER_LIST)$
 	const INHINIB _kernel_inhinib_table[TNUM_INHNO] = {$NL$
 	$JOINEACH inhno INH.ORDER_LIST ",\n"$
@@ -1165,15 +1165,15 @@ $ELSE$
 $END$$NL$
 $END$
 
-$ ������׵�饤��ν������ɬ�פʾ���
+$ 割込み要求ラインの初期化に必要な情報
 $IF !OMIT_INITIALIZE_INTERRUPT || ALT(USE_INTINIB_TABLE,0)$
 
-$ ������׵�饤���
+$ 割込み要求ライン数
 #define TNUM_INTNO	$LENGTH(INT.ORDER_LIST)$$NL$
 const uint_t _kernel_tnum_intno = TNUM_INTNO;$NL$
 $NL$
 
-$ ������׵�饤�������֥��å�
+$ 割込み要求ライン初期化ブロック
 $IF LENGTH(INT.ORDER_LIST)$
 	const INTINIB _kernel_intinib_table[TNUM_INTNO] = {$NL$
 	$JOINEACH intno INT.ORDER_LIST ",\n"$
@@ -1186,22 +1186,22 @@ $END$$NL$
 $END$
 
 $ 
-$  CPU�㳰������ǽ
+$  CPU例外管理機能
 $ 
 /*$NL$
 $SPC$*  CPU Exception Management Functions$NL$
 $SPC$*/$NL$
 $NL$
 
-$ CPU�㳰�ϥ�ɥ�˴ؤ��륨�顼�����å�
+$ CPU例外ハンドラに関するエラーチェック
 $i = 0$
 $FOREACH excno EXC.ORDER_LIST$
-$	// excno��DEF_EXC���Ф���CPU�㳰�ϥ�ɥ��ֹ�Ȥ����������ʤ�����E_PAR��
+$	// excnoがDEF_EXCに対するCPU例外ハンドラ番号として正しくない場合（E_PAR）
 	$IF !LENGTH(FIND(EXCNO_DEFEXC_VALID, EXC.EXCNO[excno]))$
 		$ERROR EXC.TEXT_LINE[excno]$E_PAR: $FORMAT(_("illegal %1% `%2%\' in %3%"), "excno", EXC.EXCNO[excno], "DEF_EXC")$$END$
 	$END$
 
-$	// excno��DEF_EXC�ˤ�ä�����Ѥߤξ���E_OBJ��
+$	// excnoがDEF_EXCによって設定済みの場合（E_OBJ）
 	$j = 0$
 	$FOREACH excno2 EXC.ORDER_LIST$
 		$IF j < i && EXC.EXCNO[excno] == EXC.EXCNO[excno2]$
@@ -1210,17 +1210,17 @@ $	// excno��DEF_EXC�ˤ�ä�����Ѥߤξ���E_OBJ��
 		$j = j + 1$
 	$END$
 
-$	// excatr����TA_NULL�ˤǤʤ�����E_RSATR��
+$	// excatrが（TA_NULL）でない場合（E_RSATR）
 	$IF (EXC.EXCATR[excno] & ~TARGET_EXCATR) != 0$
 		$ERROR EXC.TEXT_LINE[excno]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of %3% `%4%\' in %5%"), "excatr", EXC.EXCATR[excno], "excno", EXC.EXCNO[excno], "DEF_EXC")$$END$
 	$END$
 	$i = i + 1$
 $END$
 
-$ CPU�㳰�ϥ�ɥ�Τ����ɸ��Ū�ʽ�������������
+$ CPU例外ハンドラのための標準的な初期化情報の生成
 $IF !OMIT_INITIALIZE_EXCEPTION$
 
-$ CPU�㳰�ϥ�ɥ��
+$ CPU例外ハンドラ数
 #define TNUM_EXCNO	$LENGTH(EXC.ORDER_LIST)$$NL$
 const uint_t _kernel_tnum_excno = TNUM_EXCNO;$NL$
 $NL$
@@ -1229,7 +1229,7 @@ $FOREACH excno EXC.ORDER_LIST$
 $END$
 $NL$
 
-$ CPU�㳰�ϥ�ɥ������֥��å�
+$ CPU例外ハンドラ初期化ブロック
 $IF LENGTH(EXC.ORDER_LIST)$
 	const EXCINIB _kernel_excinib_table[TNUM_EXCNO] = {$NL$
 	$JOINEACH excno EXC.ORDER_LIST ",\n"$
@@ -1242,7 +1242,7 @@ $END$$NL$
 $END$
 
 $ 
-$  �󥿥�������ƥ������ѤΥ����å��ΰ�
+$  非タスクコンテキスト用のスタック領域
 $ 
 /*$NL$
 $SPC$*  Stack Area for Non-task Context$NL$
@@ -1250,7 +1250,7 @@ $SPC$*/$NL$
 $NL$
 
 $IF !LENGTH(ICS.ORDER_LIST)$
-$	// DEF_ICS���ʤ����Υǥե�����ͤ�����
+$	// DEF_ICSがない場合のデフォルト値の設定
 	#ifdef DEFAULT_ISTK$NL$
 	$NL$
 	#define TOPPERS_ISTKSZ		DEFAULT_ISTKSZ$NL$
@@ -1265,26 +1265,26 @@ $	// DEF_ICS���ʤ����Υǥե�����ͤ�����
 	#endif /* DEAULT_ISTK */$NL$
 $ELSE$
 
-$	// ��ŪAPI��DEF_ICS�פ�ʣ�������E_OBJ��
+$	// 静的API「DEF_ICS」が複数ある（E_OBJ）
 	$IF LENGTH(ICS.ORDER_LIST) > 1$
 		$ERROR$E_OBJ: $FORMAT(_("too many %1%"), "DEF_ICS")$$END$
 	$END$
 
-$	// istksz��0�ʲ������������å�����κǾ��͡�TARGET_MIN_ISTKSZ�ˤ���
-$	// ����������E_PAR��
+$	// istkszが0以下か，ターゲット定義の最小値（TARGET_MIN_ISTKSZ）よりも
+$	// 小さい場合（E_PAR）
 	$IF ICS.ISTKSZ[1] <= 0 || (TARGET_MIN_ISTKSZ
 									&& ICS.ISTKSZ[1] < TARGET_MIN_ISTKSZ)$
 		$ERROR ICS.TEXT_LINE[1]$E_PAR: $FORMAT(_("too small %1% `%2%\' in %3%"), "istksz", ICS.ISTKSZ[1], "DEF_ICS")$$END$
 	$END$
 
-$ 	// istksz�������å��ΰ�Υ������Ȥ����������ʤ�����E_PAR��
+$ 	// istkszがスタック領域のサイズとして正しくない場合（E_PAR）
 	$IF !EQ(ICS.ISTK[1], "NULL") && CHECK_STKSZ_ALIGN
 							&& (ICS.ISTKSZ[1] & (CHECK_STKSZ_ALIGN - 1))$
 		$ERROR ICS.TEXT_LINE[1]$E_PAR: $FORMAT(_("%1% `%2%\' in %3% is not aligned"), "istksz", ICS.ISTKSZ[1], "DEF_ICS")$$END$
 	$END$
 
 	$IF EQ(ICS.ISTK[1], "NULL")$
-$		// �����å��ΰ�μ�ư���դ�
+$		// スタック領域の自動割付け
 		$istksz = ALLOC_STACK("_kernel_istack", ICS.ISTKSZ[1])$$NL$
 		#define TOPPERS_ISTKSZ		$istksz$$NL$
 		#define TOPPERS_ISTK		_kernel_istack$NL$
@@ -1295,7 +1295,7 @@ $		// �����å��ΰ�μ�ư���դ�
 $END$
 $NL$
 
-$ �󥿥�������ƥ������ѤΥ����å��ΰ�
+$ 非タスクコンテキスト用のスタック領域
 const SIZE		_kernel_istksz = TOPPERS_ISTKSZ;$NL$
 STK_T *const	_kernel_istk = TOPPERS_ISTK;$NL$
 $NL$
@@ -1305,7 +1305,7 @@ STK_T *const	_kernel_istkpt = TOPPERS_ISTKPT(TOPPERS_ISTK, TOPPERS_ISTKSZ);$NL$
 $NL$
 
 $ 
-$  �����ͥ뤬����դ�������ΰ�
+$  カーネルが割り付けるメモリ領域
 $ 
 /*$NL$
 $SPC$*  Memory Area Allocated by Kernel$NL$
@@ -1313,28 +1313,28 @@ $SPC$*/$NL$
 $NL$
 
 $IF !LENGTH(KMM.ORDER_LIST)$
-$	// DEF_KMM���ʤ����Υǥե�����ͤ�����
+$	// DEF_KMMがない場合のデフォルト値の設定
 	#define TOPPERS_KMMSZ		0$NL$
 	#define TOPPERS_KMM			NULL$NL$
 $ELSE$
-$	// ��ŪAPI��DEF_KMM�פ�ʣ�������E_OBJ��
+$	// 静的API「DEF_KMM」が複数ある（E_OBJ）
 	$IF LENGTH(KMM.ORDER_LIST) > 1$
 		$ERROR$E_OBJ: $FORMAT(_("too many %1%"), "DEF_KMM")$$END$
 	$END$
 
-$	// kmmsz��0�ʲ��ξ���E_PAR��
+$	// kmmszが0以下の場合（E_PAR）
 	$IF KMM.KMMSZ[1] <= 0$
 		$ERROR KMM.TEXT_LINE[1]$E_PAR: $FORMAT(_("%1% `%2%\' is zero in %3%"), "kmmsz", KMM.KMMSZ[1], "DEF_KMM")$$END$
 	$END$
 
-$ 	// kmmsz�������ͥ뤬����դ�������ΰ�Υ������Ȥ����������ʤ�����E_PAR��
+$ 	// kmmszがカーネルが割り付けるメモリ領域のサイズとして正しくない場合（E_PAR）
 	$IF !EQ(KMM.KMM[1], "NULL") && CHECK_MB_ALIGN
 							&& (KMM.KMMSZ[1] & (CHECK_MB_ALIGN - 1))$
 		$ERROR KMM.TEXT_LINE[1]$E_PAR: $FORMAT(_("%1% `%2%\' in %3% is not aligned"), "kmmsz", KMM.KMMSZ[1], "DEF_KMM")$$END$
 	$END$
 
 	$IF EQ(KMM.KMM[1], "NULL")$
-$		// �����ͥ뤬����դ�������ΰ�μ�ư���դ�
+$		// カーネルが割り付けるメモリ領域の自動割付け
 		static MB_T					_kernel_memory[TOPPERS_COUNT_SZ($KMM.KMMSZ[1]$, sizeof(MB_T))];$NL$
 		#define TOPPERS_KMMSZ		TOPPERS_ROUND_SZ($KMM.KMMSZ[1]$, sizeof(MB_T))$NL$
 		#define TOPPERS_KMM			_kernel_memory$NL$
@@ -1345,13 +1345,13 @@ $		// �����ͥ뤬����դ�������ΰ�μ�ư���դ�
 $END$
 $NL$
 
-$ �����ͥ뤬����դ�������ΰ�
+$ カーネルが割り付けるメモリ領域
 const SIZE		_kernel_kmmsz = TOPPERS_KMMSZ;$NL$
 MB_T *const		_kernel_kmm = TOPPERS_KMM;$NL$
 $NL$
 
 $ 
-$  �����।�٥�ȴ���
+$  タイムイベント管理
 $ 
 /*$NL$
 $SPC$*  Time Event Management$NL$
@@ -1361,7 +1361,7 @@ TMEVTN   _kernel_tmevt_heap[TNUM_TSKID + TNUM_CYCID + TNUM_ALMID];$NL$
 $NL$
 
 $ 
-$  �ƥ⥸�塼��ν�����ؿ�
+$  各モジュールの初期化関数
 $ 
 /*$NL$
 $SPC$*  Module Initialization Function$NL$
@@ -1386,7 +1386,7 @@ $TAB$_kernel_initialize_exception();$NL$
 $NL$
 
 $ 
-$  ������롼����μ¹Դؿ�
+$  初期化ルーチンの実行関数
 $ 
 /*$NL$
 $SPC$*  Initialization Routine$NL$
@@ -1396,7 +1396,7 @@ void$NL$
 _kernel_call_inirtn(void)$NL$
 {$NL$
 $FOREACH order INI.ORDER_LIST$
-$ 	// iniatr����TA_NULL�ˤǤʤ�����E_RSATR��
+$ 	// iniatrが（TA_NULL）でない場合（E_RSATR）
 	$IF INI.INIATR[order] != 0$
 		$ERROR INI.TEXT_LINE[order]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of %3% `%4%\' in %5%"), "iniatr", INI.INIATR[order], "inirtn", INI.INIRTN[order], "ATT_INI")$$END$
 	$END$
@@ -1406,7 +1406,7 @@ $END$
 $NL$
 
 $ 
-$  ��λ�����롼����μ¹Դؿ�
+$  終了処理ルーチンの実行関数
 $ 
 /*$NL$
 $SPC$*  Termination Routine$NL$
@@ -1416,7 +1416,7 @@ void$NL$
 _kernel_call_terrtn(void)$NL$
 {$NL$
 $FOREACH rorder TER.RORDER_LIST$
-$ 	// teratr����TA_NULL�ˤǤʤ�����E_RSATR��
+$ 	// teratrが（TA_NULL）でない場合（E_RSATR）
 	$IF TER.TERATR[rorder] != 0$
 		$ERROR TER.TEXT_LINE[rorder]$E_RSATR: $FORMAT(_("illegal %1% `%2%\' of %3% `%4%\' in %5%"), "teratr", TER.TERATR[rorder], "terrtn", TER.TERRTN[rorder], "ATT_TER")$$END$
 	$END$

@@ -1,8 +1,8 @@
 $ 
-$     �ѥ�3�Υ������åȰ�¸�ƥ�ץ졼�ȡ�stm32f7_discovery�ѡ�
+$     パス3のターゲット依存テンプレート（stm32f7_discovery用）
 $ 
 
 $ 
-$  �ѥ�3�Υ�����¸�Υƥ�ץ졼�ȤΥ��󥯥롼��
+$  パス3のコア依存のテンプレートのインクルード
 $ 
 $INCLUDE"arm_m_gcc/common/core_check.tf"$

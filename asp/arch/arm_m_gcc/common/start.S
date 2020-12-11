@@ -5,45 +5,45 @@
  *  Copyright (C) 2008 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id$
  */
                 
 /*
- *   �����ͥ��ѤΥ������ȥ��åץ⥸�塼��(ARM-M��)
+ *   カーネル用のスタートアップモジュール(ARM-M用)
  */
 #define TOPPERS_MACRO_ONLY
-#define UINT_C(val)		(val)		/* uint_t�����������ޥ��� */
-#define ULONG_C(val)	(val)		/* ulong_t�����������ޥ��� */
-#define CAST(type, val)	(val)		/* �����㥹�Ȥ�Ԥ��ޥ��� */
+#define UINT_C(val)		(val)		/* uint_t型の定数を作るマクロ */
+#define ULONG_C(val)	(val)		/* ulong_t型の定数を作るマクロ */
+#define CAST(type, val)	(val)		/* 型キャストを行うマクロ */
 
 #include "kernel_impl.h"
 #include "arm_m.h"
@@ -55,24 +55,24 @@
 #endif
 
 /*
- *  �������ȥ��åץ롼����
+ *  スタートアップルーチン
  *
- *  Thread�⡼�ɤǸƤӽФ���뤳�Ȥ�����Ȥ��Ƥ롥
+ *  Threadモードで呼び出されることを前提としてる．
  */
 	ATEXT
 	ABALIGN(4)
 	ATHUMB(_start)
 	AGLOBAL(_start) 
 ALABEL(_start)
-	cpsid f                 /* ����ߥ��å����֤� */
+	cpsid f                 /* 割込みロック状態へ */
 
 #ifdef INIT_MSP
 	/*
-	 * MSP������
+	 * MSPの設定
 	 */
-	mov   r0, #CONTROL_MSP  /* MSP��ͭ����  */
+	mov   r0, #CONTROL_MSP  /* MSPを有効に  */
 	msr   control, r0
-	isb                     /* control �������ɬ�� */
+	isb                     /* control の操作後に必要 */
 	ldr  r0,=_kernel_istkpt
 	ldr  r1,[r0]
 	msr  msp, r1
@@ -80,7 +80,7 @@ ALABEL(_start)
 
 #ifdef TOPPERS_FPU_ENABLE
 	/*
-	 *  FPU��ͭ����
+	 *  FPUの有効化
 	 */
 	ldr  r0,=(CPACR)
 	ldr  r1,=(CPACR_FPU_ENABLE)
@@ -89,7 +89,7 @@ ALABEL(_start)
 	str  r2,[r0]
 
 	/*
-	 *  FPCA������
+	 *  FPCAを初期化
 	 */ 
 	ldr r0, =(FPCCR_INIT)
 	ldr r1, =(FPCCR)
@@ -97,10 +97,10 @@ ALABEL(_start)
 #endif /* TOPPERS_FPU_ENABLE */
 
 	/*
-	 * hardware_init_hook�θƤӽФ� ��0�Ǥʤ�����
+	 * hardware_init_hookの呼び出し （0でない場合）
 	 *
-	 * �������åȥϡ��ɥ������˰�¸����ɬ�פʽ����������������
-	 * �ϡ�hardware_init_hook �Ȥ����ؿ����Ѱդ���
+	 * ターゲットハードウェアに依存して必要な初期化処理がある場合
+	 * は，hardware_init_hook という関数を用意する
 	 */
 	ldr  r0, =hardware_init_hook
 #if defined(TOPPERS_CORTEX_M0PLUS) || defined(TOPPERS_CORTEX_M0)
@@ -114,7 +114,7 @@ ALABEL(_start)
 ALABEL(start_1)
 #ifndef OMIT_BSS_INIT
 	/*
-	 *  BSS�������������
+	 *  BSSセクション初期化
 	 */
 	mov  r0, #0
 	ldr  r1, =BSS_START
@@ -132,9 +132,9 @@ ALABEL(start_2)
 ALABEL(start_3)
 #ifndef OMIT_DATA_INIT
 	/*
-	 *  DATA�������������
-	 *  __idata_start ���� __idata_end �ޤǤ�__data_start �ʹߤ�
-	 *  ���ԡ�����
+	 *  DATAセクション初期化
+	 *  __idata_start から __idata_end までを，__data_start 以降に
+	 *  コピーする
 	 */
 	ldr  r1, =IDATA_START
 	ldr  r2, =IDATA_END
@@ -151,11 +151,11 @@ ALABEL(start_4)
 #endif /* OMIT_DATA_INIT */
 
 	/*
-	 *  software_init_hook ��ƽФ���0 �Ǥʤ�����
+	 *  software_init_hook を呼出し（0 でない場合）
 	 *
-	 *  ���եȥ������Ķ����ä˥饤�֥��ˤ˰�¸����ɬ�פʽ������
-	 *  ����������ϡ�software_init_hook �Ȥ����ؿ����Ѱդ����
-	 *  �褤��
+	 *  ソフトウェア環境（特にライブラリ）に依存して必要な初期化処
+	 *  理がある場合は，software_init_hook という関数を用意すれば
+	 *  よい．
 	 */
 ALABEL(start_5)
 	ldr  r0, =software_init_hook
