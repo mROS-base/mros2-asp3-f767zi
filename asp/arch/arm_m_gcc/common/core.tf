@@ -1,39 +1,39 @@
 $ 
-$     �ѥ�2�Υ������ƥ������¸�ƥ�ץ졼�ȡ�ARM-M�ѡ�
+$     パス2のアーキテクチャ依存テンプレート（ARM-M用）
 $ 
 
 $ 
-$  ͭ���ʳ�����ֹ桤����ߥϥ�ɥ��ֹ�
+$  有効な割込み番号，割込みハンドラ番号
 $ 
 $INTNO_VALID = RANGE(15, TMAX_INTNO)$
 $INHNO_VALID = INTNO_VALID$
 
 $ 
-$  ͭ����CPU�㳰�ֹ�
+$  有効なCPU例外番号
 $ 
 $EXCNO_VALID = { 2,3,4,5,6,11,12,14 }$
 
 $ 
-$  ATT_ISR�ǻ��ѤǤ��������ֹ�Ȥ�����б��������ߥϥ�ɥ��ֹ�
+$  ATT_ISRで使用できる割込み番号とそれに対応する割込みハンドラ番号
 $ 
 $INTNO_ATTISR_VALID = INTNO_VALID$
 $INHNO_ATTISR_VALID = INHNO_VALID$
 
 $ 
-$  DEF_INT��DEF_EXC�ǻ��ѤǤ������ߥϥ�ɥ��ֹ桿CPU�㳰�ϥ�ɥ��ֹ�
+$  DEF_INT／DEF_EXCで使用できる割込みハンドラ番号／CPU例外ハンドラ番号
 $ 
 $INHNO_DEFINH_VALID = INHNO_VALID$
 $EXCNO_DEFEXC_VALID = EXCNO_VALID$
 
 $ 
-$  CFG_INT�ǻ��ѤǤ��������ֹ�ȳ����ͥ����
-$  ����ͥ���٤�BASEPRI�쥸�����ǥޥ����Ǥ��ʤ�ͥ���١�����ͥ����'0'��
-$  ���Τ��ᡤ�����ͥ�������γ���ߤǤΤ߻����ǽ��
+$  CFG_INTで使用できる割込み番号と割込み優先度
+$  最大優先度はBASEPRIレジスタでマスクできない優先度（内部優先度'0'）
+$  そのため，カーネル管理外の割込みでのみ指定可能．
 $INTNO_CFGINT_VALID = INTNO_VALID$
 $INTPRI_CFGINT_VALID = RANGE(-(1 << TBITW_IPRI),-1)$
            
 $ 
-$  ɸ��ƥ�ץ졼�ȥե�����Υ��󥯥롼��
+$  標準テンプレートファイルのインクルード
 $ 
 $INCLUDE "kernel/kernel.tf"$
 
@@ -43,7 +43,7 @@ $SPC$*/$NL$
 $NL$
 
 $ 
-$  �٥������ơ��֥�
+$  ベクターテーブル
 $ 
 $FILE "kernel_cfg.c"$
 $NL$
@@ -114,7 +114,7 @@ $NL$};$NL$
 $NL$
 
 $ 
-$  _kernel_bitpat_cfgint������
+$  _kernel_bitpat_cfgintの生成
 $ 
 
 $bitpat_cfgint_num = 0$
@@ -130,7 +130,7 @@ $END$
 	$bitpat_cfgint_num$
 ] = {$NL$
 $FOREACH num RANGE(0,(bitpat_cfgint_num-1))$
-$   //boost �ΥС������ˤ�äƵ�ư���Ѥ�뤿����к�
+$   //boost のバージョンによって挙動が変わるための対策
 $   //http://www.toppers.jp/TOPPERS-USERS/201004/msg00034.html
 	$bitpat_cfgint = 1-1$
 	$FOREACH inhno RANGE(num*32, (num*32)+31)$
@@ -150,7 +150,7 @@ $NL$
 $IF __TARGET_ARCH_THUMB == 4 $
 
 $ 
-$  �����ͥ���٥ơ��֥������ɽ����
+$  割込み優先度テーブル（内部表現）
 $ 
 const uint32_t _kernel_int_iipm_tbl[] = {$NL$
 $FOREACH excno {0,1,...,14}$
@@ -161,8 +161,8 @@ $FOREACH intno INTNO_VALID$
 	$IF LENGTH(INT.INTNO[intno])$
 		$intpri = (((1 << TBITW_IPRI) + INT.INTPRI[intno]) << (8 - TBITW_IPRI))$
 	$ELSE$
-$		// LSB��1�ˤ��Ƥ���Τϡ������°�������ꤵ��Ƥ��ʤ����Ȥ�Ƚ
-$		// �̤��뤿��Ǥ��롥
+$		// LSBを1にしているのは，割込み属性が設定されていないことを判
+$		// 別するためである．
 		$intpri = 0 $
 	$END$
 	$TAB$$FORMAT("UINT32_C(0x%08x), /* 0x%03x */", intpri, +intno)$$NL$
@@ -175,7 +175,7 @@ $END$
 $IF __TARGET_ARCH_THUMB == 3 $
 
 $ 
-$  �����ͥ���٥ơ��֥������ɽ����
+$  割込み優先度テーブル（内部表現）
 $ 
 const uint8_t _kernel_int_iipm_tbl[] = {$NL$
 $FOREACH excno {0,1,...,14}$
@@ -194,7 +194,7 @@ $END$
 $NL$
 
 $ 
-$  �����ͥ���٥ޥ�����γ���ߤ���Ĥ�������
+$  割込み優先度マスク毎の割込みを許可する割込み
 $ 
 const uint32_t _kernel_iipm_enable_irq_tbl[]={$NL$
 $FOREACH intpri {-4,-3,...,0}$

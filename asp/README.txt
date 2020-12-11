@@ -1,47 +1,47 @@
 
-	TOPPERS/ASP Kernel��Release 1.9.3��
+	TOPPERS/ASP Kernel（Release 1.9.3）
 		Toyohashi Open Platform for Embedded Real-Time Systems/
 		Advanced Standard Profile Kernel
 
-TOPPERS/ASP�����ͥ�ʰʲ���ASP�����ͥ�ˤϡ�TOPPERS�����奫���ͥ�δ���
-�Ȥʤ��ΤȤ��ơ�TOPPERS�ץ��������Ȥˤ����Ƴ�ȯ�����ꥢ�륿���५����
-��Ǥ�����ITRON4.0���ͤΥ���������ɥץ��ե�������Υꥢ�륿���५��
-�ͥ�Ǥ���TOPPERS/JSP�����ͥ���ĥ�����ɤ�����ǳ�ȯ���ޤ�����
+TOPPERS/ASPカーネル（以下，ASPカーネル）は，TOPPERS新世代カーネルの基盤
+となるものとして，TOPPERSプロジェクトにおいて開発したリアルタイムカーネ
+ルです．μITRON4.0仕様のスタンダードプロファイル準拠のリアルタイムカー
+ネルであるTOPPERS/JSPカーネルを拡張・改良する形で開発しました．
 
-�ںǽ���ɤ�٤��ɥ�����ȡ�
+【最初に読むべきドキュメント】
 
-ASP�����ͥ�Υ桼�������ޥ˥奢�뤬��doc/user.txt�ˤ���ޤ���ASP������
-�����Ѥ�����ˤϡ��ޤ��Ϥ��Υɥ�����Ȥ��餪�ɤ߲�������
+ASPカーネルのユーザーズマニュアルが，doc/user.txtにあります．ASPカーネ
+ルを使用する場合には，まずはこのドキュメントからお読み下さい．
 
-�ڥե�����α����ˤ����äơ�
+【ファイルの閲覧にあたって】
 
-ASP�����ͥ�Υɥ�����ȡʥץ졼��ƥ����ȥե�����ˤ���ӥ������ե���
-����ɤ�ݤˤϡ�TAB��4�����ꤷ�Ƥ���������
+ASPカーネルのドキュメント（プレーンテキストファイル）およびソースファイ
+ルを読む際には，TABを4に設定してください．
 
-�����Ѿ���
+【利用条件】
 
-ASP�����ͥ�����Ѿ��ϡ��ƥե��������Ƭ��ɽ������Ƥ���TOPPERS�饤��
-�󥹤Ǥ���TOPPERS�饤���󥹤˴ؤ���FAQ�����ʲ��Υڡ����ˤ���ޤ���
+ASPカーネルの利用条件は，各ファイルの先頭に表示されているTOPPERSライセ
+ンスです．TOPPERSライセンスに関するFAQが，以下のページにあります．
 
 	http://www.toppers.jp/faq/faq_ct12.html
 
-�ڼ��䡦�Х���ݡ��ȡ��ո������������
+【質問・バグレポート・意見等の送付先】
 
-ASP�����ͥ�����ɤ���Τˤ��뤿��Τ��ո����򴿷ޤ��ޤ���ASP�����ͥ�
-�˴ؤ�������Х���ݡ��ȡ����ո����ϡ�TOPPERS�ץ��������Ȥβ����
-TOPPERS��ȯ�ԥ᡼��󥰥ꥹ�ȡ�dev@toppers.jp�˰��ޤ���ASP�����ͥ�Υ�
-���ȥ�å��󥰥����ƥ��Trac�ˤˡ�����¾������TOPPERS�桼�������᡼���
-���ꥹ�ȡ�users@toppers.jp�˰��ˤ��ꤤ���ޤ���
+ASPカーネルをより良いものにするためのご意見等を歓迎します．ASPカーネル
+に関する質問やバグレポート，ご意見等は，TOPPERSプロジェクトの会員は
+TOPPERS開発者メーリングリスト（dev@toppers.jp）宛またはASPカーネルのバ
+グトラッキングシステム（Trac）に，その他の方はTOPPERSユーザーズメーリン
+グリスト（users@toppers.jp）宛にお願いします．
 
-TOPPERS�桼�������᡼��󥰥ꥹ�Ȥؤ���Ͽ��ˡ�ˤĤ��Ƥϡ��ʲ��Υڡ�����
-����������ޤ���
+TOPPERSユーザーズメーリングリストへの登録方法については，以下のページに
+説明があります．
 
 	http://www.toppers.jp/community.html
 
-�ڥݡ��ƥ��󥰤ˤ����äơ�
+【ポーティングにあたって】
 
-ASP�����ͥ��TOPPERS�ץ��������Ȥ��饪���ץ󥽡����ˤ��뤳�Ȥ�����ˡ�
-̤���ݡ��ȤΥ������åȤ˥ݡ��ƥ��󥰤������ˤϡ����餫���ᤴ���̤�
-������ȹ����Ǥ���
+ASPカーネルを，TOPPERSプロジェクトからオープンソースにすることを前提に，
+未サポートのターゲットにポーティングされる場合には，あらかじめご相談く
+ださると幸いです．
 
-�ʾ�
+以上

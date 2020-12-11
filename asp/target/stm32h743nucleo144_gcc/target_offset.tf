@@ -1,13 +1,13 @@
 $
-$       オフセットファイル生成用テンプレートファイル（stm32h743_nucleo144用）
+$       stm32h743_nucleo144
 $
 
 $
-$  標準テンプレートファイルのインクルード
+$  e
 $
 $INCLUDE "kernel/genoffset.tf"$
 
 $ 
-$  コア依存テンプレートのインクルード（ARM-M用）
+$  ARM-M
 $ 
 $INCLUDE"../../arch/arm_m_gcc/common/core_offset.tf"$
