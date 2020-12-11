@@ -12,7 +12,7 @@ UART_HandleTypeDef huart3;
 ETH_HandleTypeDef heth;
 
 /*
- *  �����ӥ�������Υ��顼�Υ�������
+ *  サービスコールのエラーのログ出力
  */
 Inline void
 svc_perror(const char *file, int_t line, const char *expr, ER ercd)
@@ -26,7 +26,7 @@ svc_perror(const char *file, int_t line, const char *expr, ER ercd)
 
 
 /*
- *  �ᥤ�󥿥���
+ *  メインタスク
  */
 void main_task(intptr_t exinf)
 {
@@ -38,11 +38,11 @@ void main_task(intptr_t exinf)
 	ena_int(77);
 	dev_timer_init();
 	/*
-	 *  ���ꥢ��ݡ��Ȥν����
+	 *  シリアルポートの初期化
 	 *
-	 *  �����ƥ����������Ʊ������?��ݡ��Ȥ�Ȥ����ʤɡ����ꥢ��
-	 *  �ݡ��Ȥ������ץ�Ѥߤξ��ˤϤ�����?E_OBJ���顼�ˤʤ뤬���پ��?
-	 *  �ʤ���
+	 *  システムログタスクと同じシリアルポートを使う場合など，シリアル
+	 *  ポートがオープン済みの場合にはここでE_OBJエラーになるが，支障は
+	 *  ない．
 	 */
 	/*
 	ercd = serial_opn_por(TASK_PORTID);
