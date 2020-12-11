@@ -1,4 +1,5 @@
 *.o
+*/asp
 asp.*
 cfg1_out*
 kernel_cfg.*
