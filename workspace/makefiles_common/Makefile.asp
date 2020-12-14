@@ -46,24 +46,9 @@
 all:
 
 #
-#  OSの判定
-#
-ifeq ($(OS),Windows_NT)
-  UNAME := Windows
-else
-ifeq ($(shell uname),Linux)
-  UNAME := Linux
-endif
-ifeq ($(shell uname),Darwin)
-  UNAME := Darwin
-endif
-endif
-
-#
 #  ターゲット略称の定義
 #
 TARGET = stm32f767nucleo144_gcc
-CUBEPROJDIR = ../../../../asp-stm32f767
 #
 #  プログラミング言語の定義
 #
@@ -80,7 +65,7 @@ endif
 #
 #  ソースファイルのディレクトリの定義
 #
-SRCDIR = ../../../asp
+SRCDIR = ${ROOTDIR}/asp
 
 #
 #  オブジェクトファイル名の拡張子の設定
@@ -112,18 +97,21 @@ ENABLE_TRACE =
 #  ユーティリティプログラムの名称
 #
 PERL = /usr/bin/perl
-ifeq ($(UNAME),Windows)
+
+#
+#  cfgのバイナリをOSを判定して選択
+#
+ifeq ($(OS),Windows_NT)
+  UNAME := Windows
   CFG = $(SRCDIR)/cfg_binary/cfg-mingw-static-1_9_6.exe
-else
-ifeq ($(UNAME),Linux)
+else ifeq ($(shell uname),Linux)
+  UNAME := Linux
   CFG = $(SRCDIR)/cfg_binary/cfg-linux-static-1_9_6
-else
-ifeq ($(UNAME),Darwin)
+else ifeq ($(shell uname),Darwin)
+  UNAME := Darwin
   CFG = $(SRCDIR)/cfg_binary/cfg-osx-static-1_9_5
-else
 endif
-endif
-endif
+
 #
 #  オブジェクトファイル名の定義
 #
@@ -169,7 +157,7 @@ ifndef OMIT_OPTIMIZATION
   COPTS := $(COPTS) -O0 -g
 endif
 CDEFS := $(CDEFS) 
-INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) -I$(SRCDIR)/../drivers/Inc $(INCLUDES)
+INCLUDES := -I. -I$(SRCDIR)/include -I$(SRCDIR)/arch -I$(SRCDIR) $(INCLUDES)
 LDFLAGS := $(LDFLAGS) 
 CFG1_OUT_LDFLAGS := $(CFG1_OUT_LDFLAGS) 
 LIBS := $(LIBS) $(CXXLIBS)
@@ -178,24 +166,17 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 #
 #  アプリケーションプログラムに関する定義
 #
-APPLNAME = sample1
-APPLDIR = 
+APPLNAME := ${APPLNAME}
+APPLDIR := ${APPLDIR}
 APPL_CFG = $(APPLNAME).cfg
-ATK2EXTEND_DIR := $(SRCDIR)/../atk2ext
-
-include Makefile.atk2ext
-include Makefile.lwip
-include Makefile.serial
-include Makefile.timer
-include Makefile.sample
 
 APPL_DIR = $(APPLDIR) $(SRCDIR)/library
 APPL_ASMOBJS =
 ifdef USE_CXX
   APPL_CXXOBJS = $(APPLNAME).o 
-  APPL_COBJS =
+  APPL_COBJS := ${APPL_COBJS}
 else
-  APPL_COBJS += $(APPLNAME).o 
+  APPL_COBJS := ${APPL_COBJS} $(APPLNAME).o 
 endif
 APPL_COBJS := $(APPL_COBJS) log_output.o vasyslog.o t_perror.o strerror.o
 APPL_CFLAGS =

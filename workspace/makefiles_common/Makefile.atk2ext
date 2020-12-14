@@ -1,18 +1,22 @@
+#
+# Makefile definition for atk2ext stack
+#
 
+ATK2EXTDIR := ${ROOTDIR}/atk2ext
 
 APPL_CFG += atk2ext.cfg
 
-INCLUDES += -I$(ATK2EXTEND_DIR)/include
-INCLUDES += -I$(ATK2EXTEND_DIR)/cmsis/include
+INCLUDES += -I$(ATK2EXTDIR)/include
+INCLUDES += -I$(ATK2EXTDIR)/cmsis/include
 
-APPLDIR	:= $(ATK2EXTEND_DIR)/cmsis/src
-APPLDIR	+= $(ATK2EXTEND_DIR)/cmsis/src/core
-APPLDIR	+= $(ATK2EXTEND_DIR)/cmsis/src/autosar
-APPLDIR	+= $(ATK2EXTEND_DIR)/cmsis/src/sys
-APPLDIR += $(ATK2EXTEND_DIR)/config
-APPLDIR += $(ATK2EXTEND_DIR)/config/asp
+APPLDIR	+= $(ATK2EXTDIR)/cmsis/src
+APPLDIR	+= $(ATK2EXTDIR)/cmsis/src/core
+APPLDIR	+= $(ATK2EXTDIR)/cmsis/src/autosar
+APPLDIR	+= $(ATK2EXTDIR)/cmsis/src/sys
+APPLDIR += $(ATK2EXTDIR)/config
+APPLDIR += $(ATK2EXTDIR)/config/asp
 
-APPL_COBJS	:= cmsis_generic.o
+APPL_COBJS	+= cmsis_generic.o
 APPL_COBJS	+= cmsis_kernel.o
 APPL_COBJS	+= cmsis_message_queue.o
 APPL_COBJS	+= cmsis_mutexes.o
