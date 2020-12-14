@@ -160,7 +160,7 @@ syslog_wri_log(uint_t prio, const SYSLOG *p_syslog)
 	}
 
 	/*
-	 *  鐃緒申鐃駿ワ申鐃緒申鐃
+	 *  低レベル出力
 	 */
 	if (true){//(((~syslog_lowmask_not) & LOG_MASK(prio)) != 0U) {
 		syslog_print(p_syslog, target_fput_log);
