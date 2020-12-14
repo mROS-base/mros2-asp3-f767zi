@@ -56,11 +56,11 @@
 /*
  *  TIMEOUT VALUES
  */
-#define CLOCKSWITCH_TIMEOUT_VALUE      (5000*1000)		/* 5�� */
-#define HSE_TIMEOUT_VALUE              (5000*1000)		/* 5�� */
+#define CLOCKSWITCH_TIMEOUT_VALUE      (5000*1000)		/* 5秒 */
+#define HSE_TIMEOUT_VALUE              (5000*1000)		/* 5秒 */
 #define PLL_TIMEOUT_VALUE              (100*1000)		/* 100 ms */
 #define PLLSAI_TIMEOUT_VALUE           (100*1000)		/* 100 ms  */
-#define PWR_OVERDRIVE_TIMEOUT_VALUE    (1000*1000)		/* 1�� */
+#define PWR_OVERDRIVE_TIMEOUT_VALUE    (1000*1000)		/* 1秒 */
 
 /*
  *  RCC_PLLP_Clock_Divider PLLP Clock Divider
