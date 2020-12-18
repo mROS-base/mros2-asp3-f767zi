@@ -92,4 +92,5 @@ extern void	alarm_handler(intptr_t exinf);
 void  dev_timer_init( void );
 unsigned short int  dev_timer_clr_int( void );
 void  main_timer_handler(void *p_excinf);
+void Error_Handler();
 #endif /* TOPPERS_MACRO_ONLY */
