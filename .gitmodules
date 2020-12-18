@@ -1,0 +1,3 @@
+[submodule "embeddedRTPS"]
+	path = embeddedRTPS
+	url = https://github.com/tlk-emb/embeddedRTPS.git
