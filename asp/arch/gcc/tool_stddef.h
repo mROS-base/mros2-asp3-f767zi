@@ -105,8 +105,13 @@ typedef unsigned char		uint8_t;	/* 符号無し8ビット整数 */
 typedef signed short		int16_t;	/* 符号付き16ビット整数 */
 typedef unsigned short		uint16_t;	/* 符号無し16ビット整数 */
 
+#ifdef MROS2_USE_ASP
+typedef __int32_t			int32_t;	/* 符号付き32ビット整数 */
+typedef __uint32_t		uint32_t;	/* 符号無し32ビット整数 */
+#else
 typedef signed int			int32_t;	/* 符号付き32ビット整数 */
 typedef unsigned int		uint32_t;	/* 符号無し32ビット整数 */
+#endif
 
 typedef signed long long	int64_t;	/* 符号付き64ビット整数 */
 typedef unsigned long long	uint64_t;	/* 符号無し64ビット整数 */
@@ -114,8 +119,35 @@ typedef unsigned long long	uint64_t;	/* 符号無し64ビット整数 */
 typedef int8_t				int_least8_t;	/* 8ビット以上の符号付き整数 */
 typedef uint8_t				uint_least8_t;	/* 8ビット以上の符号無し整数 */
 
+#ifdef MROS2_USE_ASP
+typedef int				intptr_t;	/* ポインタを格納できる符号付き整数 */
+typedef unsigned int		uintptr_t;	/* ポインタを格納できる符号無し整数 */
+#else
 typedef long				intptr_t;	/* ポインタを格納できる符号付き整数 */
 typedef unsigned long		uintptr_t;	/* ポインタを格納できる符号無し整数 */
+#endif //MROS2_USE_ASP
+
+#ifdef MROS2_USE_ASP
+typedef __INT_FAST8_TYPE__       int_fast8_t;		  /* 符号付き8ビット整数 */
+typedef __INT_FAST16_TYPE__      int_fast16_t;		/* 符号付き16ビット整数 */
+typedef __INT_FAST32_TYPE__      int_fast32_t;		/* 符号付き32ビット整数 */
+typedef int64_t      int_fast64_t;		/* 符号付き64ビット整数 */
+typedef int8_t       int_least8_t;		/* 符号付き8ビット整数 */
+typedef int16_t      int_least16_t;		/* 符号付き16ビット整数 */
+typedef int32_t      int_least32_t;		/* 符号付き32ビット整数 */
+typedef int64_t      int_least64_t;		/* 符号付き64ビット整数 */
+typedef int64_t      intmax_t;	    	/* 符号付き整数の最大値 */
+typedef __UINT_FAST8_TYPE__        uint_fast8_t;		  /* 符号無し8ビット整数 */
+typedef __UINT_FAST16_TYPE__       uint_fast16_t;		/* 符号無し16ビット整数 */
+typedef __UINT_FAST32_TYPE__      uint_fast32_t;		/* 符号無し32ビット整数 */
+typedef uint64_t      uint_fast64_t;		/* 符号無し32ビット整数 */
+typedef uint8_t       uint_least8_t;		/* 符号無し8ビット整数 */
+typedef uint16_t      uint_least16_t;		/* 符号無し16ビット整数 */
+typedef uint32_t      uint_least32_t;		/* 符号無し32ビット整数 */
+typedef uint64_t      uint_least64_t;		/* 符号無し32ビット整数 */
+typedef uint64_t      uintmax_t;	    	/* 符号無し整数の最大値 */
+
+#endif
 
 #endif /* TOPPERS_MACRO_ONLY */
 

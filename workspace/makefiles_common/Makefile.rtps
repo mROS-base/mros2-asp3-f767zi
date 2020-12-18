@@ -43,3 +43,5 @@ APPL_COBJS      += basic.o
 APPL_COBJS      += sequence.o
 APPL_COBJS      += string.o
 APPL_COBJS      += common.o
+
+CDEFS            += -DMROS2_USE_ASP -DMROS2_USE_CUBE
