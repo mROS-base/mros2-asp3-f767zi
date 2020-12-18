@@ -59,7 +59,7 @@ endif
 ifeq ($(SRCLANG),c++)
   USE_CXX = true
   CXXLIBS = -lstdc++ -lm -lc
-  CXXRTS = # cxxrt.o newlibrt.o
+#  CXXRTS =  cxxrt.o newlibrt.o
 endif
 
 #
@@ -173,7 +173,7 @@ APPL_CFG = $(APPLNAME).cfg
 APPL_DIR = $(APPLDIR) $(SRCDIR)/library
 APPL_ASMOBJS =
 ifdef USE_CXX
-  APPL_CXXOBJS = $(APPLNAME).o 
+  APPL_CXXOBJS += $(APPLNAME).o 
   APPL_COBJS := ${APPL_COBJS}
 else
   APPL_COBJS := ${APPL_COBJS} $(APPLNAME).o 
@@ -257,6 +257,7 @@ endif
 #  ソースファイルのあるディレクトリに関する定義
 #
 vpath %.c $(KERNEL_DIR) $(SYSSVC_DIR) $(APPL_DIR)
+vpath %.cpp $(KERNEL_DIR) $(SYSSVC_DIR) $(APPL_DIR)
 vpath %.S $(KERNEL_DIR) $(SYSSVC_DIR) $(APPL_DIR)
 vpath %.cfg $(APPL_DIR)
 
