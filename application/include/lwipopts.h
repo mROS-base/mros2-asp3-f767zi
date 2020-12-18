@@ -109,6 +109,10 @@
 #define CHECKSUM_CHECK_ICMP6 0
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
+#ifdef MROS2_USE_CUBE
+#define LWIP_IGMP 1
+#define LWIP_TCPIP_CORE_LOCKING    		1
+#endif //MROS2_USE_CUBE
 #define portNOP()
 /* USER CODE END 1 */
 
