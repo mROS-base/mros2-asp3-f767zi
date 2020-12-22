@@ -38,6 +38,8 @@
 
 #include "GPIO.h"
 
+// To avoid link error
+void* __dso_handle=0;
 
 /* USER CODE END Includes */
 

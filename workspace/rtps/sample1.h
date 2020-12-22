@@ -95,3 +95,8 @@ extern void	cpuexc_handler(void *p_excinf);
 extern void	cyclic_handler(intptr_t exinf);
 void Error_Handler();
 #endif /* TOPPERS_MACRO_ONLY */
+
+// To avoid link error
+#ifdef __cplusplus
+extern void* __dso_handle;
+#endif
