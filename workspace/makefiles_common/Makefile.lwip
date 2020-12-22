@@ -70,4 +70,5 @@ APPL_COBJS		+= stm32f7xx_it.o
 APPL_COBJS      += ethernetif.o
 APPL_COBJS      += lwip.o
 APPL_COBJS      += system_stm32f7xx.o
+APPL_COBJS      += syscalls.o
 APPL_COBJS      += main.o

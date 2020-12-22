@@ -14,7 +14,7 @@ APPLDIR	+= $(APPDIR)/config/asp
 APPL_COBJS += atk2ext_user_config.o
 APPL_COBJS	+= atk2ext_asp_user_config.o
 
-LDFLAGS := -nostartfiles
+APPL_CXXLIBS += -specs=nano.specs
 
 MAKEFILEDIR = ${ROOTDIR}/workspace/makefiles_common
 include ${MAKEFILEDIR}/Makefile.atk2ext

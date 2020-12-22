@@ -58,7 +58,7 @@ ifeq ($(SRCLANG),c)
 endif
 ifeq ($(SRCLANG),c++)
   USE_CXX = true
-  CXXLIBS = -lstdc++ -lm -lc
+  CXXLIBS = -lstdc++ -lm -lc ${APPL_CXXLIBS} 
 #  CXXRTS =  cxxrt.o newlibrt.o
 endif
 
