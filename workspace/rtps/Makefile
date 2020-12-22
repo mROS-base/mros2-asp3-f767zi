@@ -14,6 +14,7 @@ APPLDIR	+= $(APPDIR)/config/asp
 APPL_COBJS += atk2ext_user_config.o
 APPL_COBJS	+= atk2ext_asp_user_config.o
 
+# link option for C++ code
 SRCLANG = c++
 APPL_CXXLIBS += -specs=nano.specs
 
