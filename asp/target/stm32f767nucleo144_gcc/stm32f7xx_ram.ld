@@ -31,6 +31,37 @@ SECTIONS
         *(.rodata*) 
     } > RAM
 
+  /* MROS2_USE_ASP (begin) */
+  /* refered at: https://github.com/embedded-software-laboratory/embeddedRTPS-STM32/blob/master/stm32/STM32F767ZITx_FLASH.ld#L105-L131 */
+  .ARM.extab   : { *(.ARM.extab* .gnu.linkonce.armextab.*) } >ROM
+  .ARM : {
+    __exidx_start = .;
+    *(.ARM.exidx*)
+    __exidx_end = .;
+  } >ROM
+
+  .preinit_array     :
+  {
+    PROVIDE_HIDDEN (__preinit_array_start = .);
+    KEEP (*(.preinit_array*))
+    PROVIDE_HIDDEN (__preinit_array_end = .);
+  } >ROM
+  .init_array :
+  {
+    PROVIDE_HIDDEN (__init_array_start = .);
+    KEEP (*(SORT(.init_array.*)))
+    KEEP (*(.init_array*))
+    PROVIDE_HIDDEN (__init_array_end = .);
+  } >ROM
+  .fini_array :
+  {
+    PROVIDE_HIDDEN (__fini_array_start = .);
+    KEEP (*(SORT(.fini_array.*)))
+    KEEP (*(.fini_array*))
+    PROVIDE_HIDDEN (__fini_array_end = .);
+  } >ROM
+  /* MROS2_USE_ASP (end) */
+
     . = ALIGN(4);
     .data   :  AT(__idata_start) 
     {
