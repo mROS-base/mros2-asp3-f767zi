@@ -52,7 +52,9 @@ TARGET = stm32f767nucleo144_gcc
 #
 #  プログラミング言語の定義
 #
-SRCLANG = c++
+ifndef SRCLANG
+SRCLANG = c
+endif
 ifeq ($(SRCLANG),c)
   LIBS = -lc
 endif
