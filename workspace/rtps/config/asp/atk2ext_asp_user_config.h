@@ -3,7 +3,7 @@
 
 #include "atk2ext_asp_config.h"
 
-#define ATK2EXT_ASP_FLAG_USER_NUM	(3U)
+#define ATK2EXT_ASP_FLAG_USER_NUM	(8U)
 
 extern const Atk2ExtFlagMapEntryType atk2ext_flag_user_map[ATK2EXT_ASP_FLAG_USER_NUM];
 

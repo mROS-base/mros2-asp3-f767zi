@@ -3,7 +3,7 @@
 #include "atk2ext_sys_config.h"
 #include "sample_ping.h"
 
-TASK(Atk2ExtTestTask)
+TASK(Atk2ExtTcpTask)
 {
 	UserThreadAtk2TaskMapEntryType config;
 	StatusType ercd = Atk2TaskConfigGet(&config);
@@ -16,7 +16,7 @@ TASK(Atk2ExtTestTask)
 	return;
 }
 
-TASK(Atk2ExtTest2Task)
+TASK(Atk2ExtEthIfLinkTask)
 {
 	UserThreadAtk2TaskMapEntryType config;
 	StatusType ercd = Atk2TaskConfigGet(&config);
@@ -29,7 +29,67 @@ TASK(Atk2ExtTest2Task)
 	return;
 }
 
-TASK(Atk2ExtTest3Task)
+TASK(Atk2ExtEthInputTask)
+{
+	UserThreadAtk2TaskMapEntryType config;
+	StatusType ercd = Atk2TaskConfigGet(&config);
+
+	if (ercd == E_OK) {
+		config.func(config.argument);
+	}
+
+	(void)osThreadTerminate(NULL);
+	return;
+}
+TASK(Atk2ExtHBPubTask)
+{
+	UserThreadAtk2TaskMapEntryType config;
+	StatusType ercd = Atk2TaskConfigGet(&config);
+
+	if (ercd == E_OK) {
+		config.func(config.argument);
+	}
+
+	(void)osThreadTerminate(NULL);
+	return;
+}
+TASK(Atk2ExtHBSubTask)
+{
+	UserThreadAtk2TaskMapEntryType config;
+	StatusType ercd = Atk2TaskConfigGet(&config);
+
+	if (ercd == E_OK) {
+		config.func(config.argument);
+	}
+
+	(void)osThreadTerminate(NULL);
+	return;
+}
+TASK(Atk2ExtSPDPTask)
+{
+	UserThreadAtk2TaskMapEntryType config;
+	StatusType ercd = Atk2TaskConfigGet(&config);
+
+	if (ercd == E_OK) {
+		config.func(config.argument);
+	}
+
+	(void)osThreadTerminate(NULL);
+	return;
+}
+TASK(Atk2ExtWriterTask)
+{
+	UserThreadAtk2TaskMapEntryType config;
+	StatusType ercd = Atk2TaskConfigGet(&config);
+
+	if (ercd == E_OK) {
+		config.func(config.argument);
+	}
+
+	(void)osThreadTerminate(NULL);
+	return;
+}
+TASK(Atk2ExtReaderTask)
 {
 	UserThreadAtk2TaskMapEntryType config;
 	StatusType ercd = Atk2TaskConfigGet(&config);
