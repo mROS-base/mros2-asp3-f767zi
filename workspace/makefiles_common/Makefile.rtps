@@ -7,7 +7,7 @@ DRIVERSDIR := $(ROOTDIR)/drivers
 APLDIR := $(ROOTDIR)/application
 MICROCDR_DIR := $(RTPSDIR)/thirdparty/Micro-CDR
 
-CDEFS            += -DMROS2_USE_ASP -DMROS2_USE_CUBE
+CDEFS            += -DMROS2_USE_ASP -DMROS2_USE_CUBE -DMROS2_USE_EMBEDDEDRTPS
 
 INCLUDES += -I$(RTPSDIR)/include
 INCLUDES += -I$(RTPSDIR)/thirdparty/lwip
