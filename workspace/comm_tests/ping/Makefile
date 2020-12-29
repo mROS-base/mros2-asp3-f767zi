@@ -14,9 +14,20 @@ APPLDIR	+= $(APPDIR)/config/asp
 APPL_COBJS += atk2ext_user_config.o
 APPL_COBJS	+= atk2ext_asp_user_config.o
 
+TOPPERS_KERNEL = asp3
+ifeq ($(TOPPERS_KERNEL),asp3)
+	CDEFS := -DMROS2_USE_ASP3
+else ifeq ($(TOPPERS_KERNEL),asp)
+	CDEFS := -DMROS2_USE_ASP 
+endif
+
 MAKEFILEDIR = ${ROOTDIR}/workspace/makefiles_common
 include ${MAKEFILEDIR}/Makefile.atk2ext
 include ${MAKEFILEDIR}/Makefile.lwip
 include ${MAKEFILEDIR}/Makefile.serial
 include ${MAKEFILEDIR}/Makefile.timer
+ifeq ($(TOPPERS_KERNEL),asp3)
+include ${MAKEFILEDIR}/Makefile.asp3
+else ifeq ($(TOPPERS_KERNEL),asp)
 include ${MAKEFILEDIR}/Makefile.asp
+endif
