@@ -178,7 +178,7 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 #  アプリケーションプログラムに関する定義
 #
 APPLNAME := ${APPLNAME}
-APPLDIR := ${APPLDIR}
+APPLDIRS := ${APPLDIR}
 APPL_CFG = $(APPLNAME).cfg
 APPL_CDL = ${APPLNAME}.cdl
 

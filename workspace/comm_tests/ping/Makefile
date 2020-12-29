@@ -21,7 +21,7 @@ APPL_COBJS := sample_ping.o
 APPLDIR	+= $(APPDIR)/config
 APPLDIR	+= $(APPDIR)/config/asp
 APPL_COBJS += atk2ext_user_config.o
-APPL_COBJS	+= atk2ext_asp_user_config.o
+APPL_COBJS += atk2ext_asp_user_config.o
 
 MAKEFILEDIR = ${ROOTDIR}/workspace/makefiles_common
 include ${MAKEFILEDIR}/Makefile.atk2ext

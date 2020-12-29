@@ -24,9 +24,7 @@ typedef boolean bool_t;
 #include "t_syslog.h"
 #include "queue.h"
 #include "kernel.h"
-#ifndef MROS2_USE_ASP3
 #include "kernel_cfg.h"
-#endif
 #include "sil.h"
 
 typedef int StatusType;
