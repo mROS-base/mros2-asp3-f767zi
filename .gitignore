@@ -1,7 +1,15 @@
+# TOPPERS related files
 *.o
+*.d
 */asp
 asp.*
 cfg1_out*
 kernel_cfg.*
 libkernel.a
 offset.h
+
+# STM32CubeIDE related files
+.cproject
+.project
+.settings/
+*.launch
