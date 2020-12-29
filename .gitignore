@@ -7,6 +7,7 @@ cfg1_out*
 kernel_cfg.*
 libkernel.a
 offset.h
+gen/
 
 # STM32CubeIDE related files
 .cproject
