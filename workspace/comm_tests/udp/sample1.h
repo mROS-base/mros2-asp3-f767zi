@@ -81,14 +81,7 @@
  */
 #ifndef TOPPERS_MACRO_ONLY
 
-extern void	task(intptr_t exinf);
 extern void	main_task(intptr_t exinf);
-extern void	tex_routine(TEXPTN texptn, intptr_t exinf);
-#ifdef CPUEXC1
-extern void	cpuexc_handler(void *p_excinf);
-#endif /* CPUEXC1 */
-extern void	cyclic_handler(intptr_t exinf);
-extern void	alarm_handler(intptr_t exinf);
 void  dev_timer_init( void );
 unsigned short int  dev_timer_clr_int( void );
 void  main_timer_handler(void *p_excinf);
