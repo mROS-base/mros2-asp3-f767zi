@@ -1,5 +1,5 @@
 # information for directory tree
-ROOTDIR := ../../../../asp-stm32f767
+ROOTDIR := ../../../
 APPDIR := .
 APPLDIR	:= $(APPDIR)/
 
