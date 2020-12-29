@@ -26,8 +26,10 @@ APPL_COBJS += atk2ext_asp_user_config.o
 MAKEFILEDIR = ${ROOTDIR}/workspace/makefiles_common
 include ${MAKEFILEDIR}/Makefile.atk2ext
 include ${MAKEFILEDIR}/Makefile.lwip
+ifneq ($(TOPPERS_KERNEL),asp3)
 include ${MAKEFILEDIR}/Makefile.serial
 include ${MAKEFILEDIR}/Makefile.timer
+endif
 ifeq ($(TOPPERS_KERNEL),asp3)
 include ${MAKEFILEDIR}/Makefile.asp3
 else ifeq ($(TOPPERS_KERNEL),asp)
