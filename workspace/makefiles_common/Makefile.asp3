@@ -59,14 +59,14 @@ ifeq ($(SRCLANG),c)
 endif
 ifeq ($(SRCLANG),c++)
 	USE_CXX = true
-	CXXLIBS = -lstdc++ -lm -lc
-	CXXRTS = cxxrt.o newlibrt.o
+	CXXLIBS = -lstdc++ -lm -lc ${APPL_CXXLIBS}
+#	CXXRTS = cxxrt.o newlibrt.o
 endif
 
 #
 #  ソースファイルのディレクトリの定義
 #
-SRCDIR = ..
+SRCDIR = ${ROOTDIR}/asp3
 
 #
 #  オブジェクトファイル名の拡張子の設定
@@ -113,7 +113,7 @@ TECSGEN = ruby $(TECSDIR)/tecsgen.rb
 #
 #  オブジェクトファイル名の定義
 #
-OBJNAME = asp
+OBJNAME = asp.elf
 ifdef OBJEXT
 	OBJFILE = $(OBJNAME).$(OBJEXT)
 	CFG1_OUT = cfg1_out.$(OBJEXT)
@@ -177,18 +177,18 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 #
 #  アプリケーションプログラムに関する定義
 #
-APPLNAME = sample1
-APPLDIRS = $(SRCDIR)/sample
-APPL_CFG = sample1.cfg
-APPL_CDL = sample1.cdl
+APPLNAME := ${APPLNAME}
+APPLDIR := ${APPLDIR}
+APPL_CFG = $(APPLNAME).cfg
+APPL_CDL = ${APPLNAME}.cdl
 
 APPL_DIRS := $(APPLDIRS) $(SRCDIR)/library
 APPL_ASMOBJS :=
 ifdef USE_CXX
-	APPL_CXXOBJS := sample1.o
-	APPL_COBJS :=
+	APPL_CXXOBJS += $(APPLNAME).o
+  APPL_COBJS := ${APPL_COBJS}
 else
-	APPL_COBJS := sample1.o
+  APPL_COBJS := ${APPL_COBJS} $(APPLNAME).o
 endif
 APPL_COBJS := $(APPL_COBJS) log_output.o vasyslog.o t_perror.o strerror.o
 APPL_CFLAGS := $(APPL_CFLAGS)

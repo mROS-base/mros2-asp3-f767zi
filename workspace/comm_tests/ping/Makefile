@@ -4,7 +4,7 @@ APPDIR := .
 APPLDIR	:= $(APPDIR)/
 
 # name of main application
-APPLNAME = sample1
+APPLNAME = sample3
 # additional files for main application
 APPL_COBJS := sample_ping.o
 
@@ -18,7 +18,7 @@ TOPPERS_KERNEL = asp3
 ifeq ($(TOPPERS_KERNEL),asp3)
 	CDEFS := -DMROS2_USE_ASP3
 else ifeq ($(TOPPERS_KERNEL),asp)
-	CDEFS := -DMROS2_USE_ASP 
+	CDEFS := -DMROS2_USE_ASP
 endif
 
 MAKEFILEDIR = ${ROOTDIR}/workspace/makefiles_common
