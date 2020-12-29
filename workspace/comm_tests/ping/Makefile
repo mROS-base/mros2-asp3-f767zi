@@ -3,7 +3,7 @@ ROOTDIR := ../../../../asp-stm32f767
 APPDIR := .
 APPLDIR	:= $(APPDIR)/
 
-TOPPERS_KERNEL = asp
+TOPPERS_KERNEL = asp3
 ifeq ($(TOPPERS_KERNEL),asp3)
 	CDEFS := -DMROS2_USE_ASP3
 	# name of main application
