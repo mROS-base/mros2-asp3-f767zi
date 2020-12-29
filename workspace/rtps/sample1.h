@@ -84,6 +84,7 @@
 extern "C" {
 #endif
 void main_task(void);
+void StartDefaultTask(void * argument);
 #ifdef __cplusplus
 }
 #endif

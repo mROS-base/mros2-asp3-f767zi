@@ -257,12 +257,10 @@ void main_task(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-  }
+  //StartDefaultTask(NULL);
+  MX_LWIP_Init();
+  sys_thread_new("MainThread", StartDefaultTask, NULL,1,1);
+  ext_tsk();
   /* USER CODE END 3 */
 }
 
@@ -272,6 +270,7 @@ void main_task(void)
   */
 void SystemClock_Config(void)
 {
+
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
@@ -310,7 +309,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;  //__HAL_RCC_SYSCLK_CONFIG(RCC_ClkInitStruct.SYSCLKSource);
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
@@ -503,7 +502,7 @@ void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
 
 //Function to start the RTPS Test
 void startRTPStest(){
-
+	syslog(LOG_NOTICE, "starting RTPS test");
 	//Initialize variables and complete RTPS initialization
 	bool subMatched = false;
 	bool pubMatched = false;
@@ -522,8 +521,8 @@ void startRTPStest(){
 	part->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
 
 	//Create new writer to send messages
-	rtps::Writer* writer = domain.createWriter(*part, "rt/toSTM","std_msgs/msg/String", false);
-	rtps::Reader* reader = domain.createReader(*part, "rt/toLINUX",  "std_msgs/msg/String", false);
+	rtps::Writer* writer = domain.createWriter(*part, "TOLINUX","TEST", false);
+	rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
 	reader->registerCallback(&message_callback, writer);
 
 	domain.completeInit();
@@ -534,11 +533,11 @@ void startRTPStest(){
 	}
 
 	//Wait for the subscriber on the Linux side to match
+	slp_tsk();
 	while(!subMatched || !pubMatched){
-
 	}
 
-	while(true){}
+	while(true){tslp_tsk(100);}
 }
 
 
@@ -557,14 +556,14 @@ void StartDefaultTask(void * argument)
 {
 
 	/* init code for LWIP */
-	MX_LWIP_Init();
+
 
     /* USER CODE BEGIN 5 */
 	startRTPStest();
 
 	//volatile auto size = uxTaskGetStackHighWaterMark(nullptr);
 
-    while(1);
+	ext_tsk();
   /* USER CODE END 5 */ 
 }
 
