@@ -165,13 +165,32 @@ extern "C" void vApplicationMallocFailedHook( void ){
 	uart_print("Malloc failed\n");
 	while(1);
 }*/
-
+void *networkSubDriverPtr;
+void *networkPubDriverPtr;
+void (*hbPubFuncPtr)(void *);
+void (*hbSubFuncPtr)(void *);
 /* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
+
+extern "C" void callHbPubFunc(void *arg)
+{
+	if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL)
+	{
+		(*hbPubFuncPtr)(networkPubDriverPtr);
+	}
+}
+extern "C" void callHbSubFunc(void *arg)
+{
+	if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL)
+	{
+		(*hbSubFuncPtr)(networkSubDriverPtr);
+	}
+}
+
 void main_task(void)
 {
   /* USER CODE BEGIN 1 */

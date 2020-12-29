@@ -4,28 +4,13 @@
 extern void tcpip_thread(void *arg);
 extern void ethernetif_set_link(void* argument);
 extern void ethernetif_input(void* argument);
-void *networkSubDriverPtr;
-void *networkPubDriverPtr;
-void (*hbPubFuncPtr)(void *);
-void (*hbSubFuncPtr)(void *);
+extern void callHbPubFunc(void *arg);
+extern void callHbSubFunc(void *arg);
+extern void StartDefaultTask(void * argument);
 extern void callWriterThreadFunction(void *arg);
 extern void callReaderThreadFunction(void *arg);
 extern void callRunBroadcast(void *args);
 
-void callHbPubFunc(void *arg)
-{
-	if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL)
-	{
-		(*hbPubFuncPtr)(networkPubDriverPtr);
-	}
-}
-void callHbSubFunc(void *arg)
-{
-	if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL)
-	{
-		(*hbSubFuncPtr)(networkSubDriverPtr);
-	}
-}
 
 UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
 		{
