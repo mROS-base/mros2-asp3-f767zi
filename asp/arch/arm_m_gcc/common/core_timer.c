@@ -61,7 +61,7 @@ target_timer_initialize(intptr_t exinf)
 #else 
 	cyc = TO_CLOCK(TIC_NUME, TIC_DENO) - 1;
 #endif /* SYSTIC_USE_CALIBRATION */
-
+	cyc = 95999;
 	/* 停止 */
 	tmp = sil_rew_mem((void *)SYSTIC_CONTROL_STATUS);
 	tmp &= ~SYSTIC_ENABLE;

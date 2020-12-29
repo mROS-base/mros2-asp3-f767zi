@@ -60,10 +60,10 @@
 /*
  *  システムクロックの定義
  */
-#define SystemFrequency     216000000
-#define SysFreHCLK          216000000	/* HCLK = MasterClock / 1 */
-#define SysFrePCLK1         54000000	/* PCLK1 = HCLK / 4 */
-#define SysFrePCLK2         108000000	/* PCLK2 = HCLK / 2 */
+#define SystemFrequency     96000000
+#define SysFreHCLK          90000000	/* HCLK = MasterClock / 1 */
+#define SysFrePCLK1         46800000	/* PCLK1 = HCLK / 4 */
+#define SysFrePCLK2         96000000	/* PCLK2 = HCLK / 2 */
 #define HSE_VALUE           8000000
 #define HSI_VALUE           16000000
 #define LSE_VALUE           32768

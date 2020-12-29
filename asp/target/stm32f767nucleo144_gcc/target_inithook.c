@@ -47,11 +47,17 @@
 /*
  *  初期化プログラム（stm32f767-nucleo144用）
  */
-
+#ifdef MROS2_USE_ASP
+#define PLL_M      4/* Possible value 0 and 63 */
+#define PLL_N      96
+#define PLL_Q      4
+#define PLL_R      7
+#else
 #define PLL_M      (HSE_VALUE / 1000000)/* Possible value 0 and 63 */
 #define PLL_N      432
 #define PLL_Q      9
 #define PLL_R      7
+#endif
 
 /*
  *  TIMEOUT VALUES
@@ -185,6 +191,7 @@ static void sysemclock_error(void);
  */
 void hardware_init_hook(void)
 {
+
 	uint32_t reg_value;
 	uint32_t ccsidr, sshift, wshift, sw;
 	uint32_t sets, ways;
