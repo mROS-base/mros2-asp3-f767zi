@@ -9,6 +9,7 @@ kernel_cfg.*
 libkernel.a
 offset.h
 offset.timestamp
+check.timestamp
 gen/
 
 # STM32CubeIDE related files
