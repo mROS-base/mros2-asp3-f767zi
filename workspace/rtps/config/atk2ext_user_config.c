@@ -68,4 +68,9 @@ UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
 				.func = callReaderThreadFunction,
 				.argument = NULL,
 		},
+		{
+				.taskID = Atk2ExtUserDefaultTask,
+				.func = StartDefaultTask,
+				.argument = NULL,
+		},
 };
