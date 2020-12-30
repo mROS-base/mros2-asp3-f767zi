@@ -80,6 +80,8 @@ APPL_COBJS      += ethernetif.o
 APPL_COBJS      += lwip.o
 ifneq ($(TOPPERS_KERNEL),asp3)
 APPL_COBJS      += system_stm32f7xx.o
+endif
 APPL_COBJS      += syscalls.o
+ifneq ($(TOPPERS_KERNEL),asp3)
 APPL_COBJS      += main.o
 endif
