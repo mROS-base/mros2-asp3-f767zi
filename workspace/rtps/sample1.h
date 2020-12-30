@@ -89,11 +89,6 @@ void StartDefaultTask(void * argument);
 }
 #endif
 extern void	task(intptr_t exinf);
-extern void	tex_routine(TEXPTN texptn, intptr_t exinf);
-#ifdef CPUEXC1
-extern void	cpuexc_handler(void *p_excinf);
-#endif /* CPUEXC1 */
-extern void	cyclic_handler(intptr_t exinf);
 void Error_Handler();
 #endif /* TOPPERS_MACRO_ONLY */
 
