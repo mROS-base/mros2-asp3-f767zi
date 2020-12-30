@@ -53,7 +53,9 @@ TARGET = nucleo_f767zi_gcc
 #
 #  プログラミング言語の定義
 #
+ifndef SRCLANG
 SRCLANG = c
+endif
 ifeq ($(SRCLANG),c)
 	LIBS = -lc
 endif
