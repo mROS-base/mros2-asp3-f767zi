@@ -1,5 +1,5 @@
 # information for directory tree
-ROOTDIR := ../../../
+ROOTDIR := ../../..
 APPDIR := .
 APPLDIR	:= $(APPDIR)/
 
