@@ -44,8 +44,6 @@ void main_task(intptr_t exinf)
 	SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
 	syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
 	MX_LWIP_Init();
-	ena_int(77);
-	dev_timer_init();
 	/*
 	 *  シリアルポートの初期化
 	 *
@@ -91,60 +89,14 @@ void main_task(intptr_t exinf)
 		p->len = 4;
 		err = udp_sendto(pcb, p, &dst_addr, dst_port);
 		pbuf_free(p);
-		tslp_tsk(100);
+#ifdef MROS2_USE_ASP3
+		tslp_tsk(1000000);
+#else
+		tslp_tsk(1000);
+#endif
 	}
 	SVC_PERROR(serial_ctl_por(TASK_PORTID,
 							(IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
-	while(true) {
-
-	}
 	ext_tsk();
 }
 
-
-void  dev_timer_init( void )
-{
-
-  /* set clock enable */
-  RCC->APB1ENR |= ( RCC_APB1ENR_TIM2EN
-                  ) ;
-
-  /* counter disable */
-  TIM2->CR1 &= ~TIM_CR1_CEN;
-
-  /* clk/4, Auto-reload preload enable, downcounter, Update request source */
-  TIM2->CR1  =  TIM_CR1_CKD_1 | TIM_CR1_ARPE | TIM_CR1_DIR | TIM_CR1_URS;
-  TIM2->DIER =  TIM_DIER_UIE;
-  TIM2->EGR  =  TIM_EGR_UG;
-
-  TIM2->PSC = 10-1;
-
-  /*  45000/9000000 = 1/200   ->   5msec */
-  /*   9000/9000000 = 1/1000  ->   1msec */
-  /*    900/9000000 = 1/10000 -> 100usec */
-  TIM2->ARR = 900;
-  TIM2->CNT = 900;
-
-  TIM2->SR &= ~TIM_SR_UIF;
-  TIM2->SR &= ~(TIM_SR_CC1IF | TIM_SR_CC2IF | TIM_SR_CC3IF | TIM_SR_CC4IF);
-
-  TIM2->CR1 |=  TIM_CR1_CEN;   /* counter enable */
-
-  ER  er;
-
-  //er = ena_int( 44 );
-}
-
-
-unsigned short int  dev_timer_clr_int( void )
-{
-  TIM2->SR &= ~TIM_SR_UIF; /* clear update interrupt */
-  //TIM2->SR &= ~(TIM_SR_CC1IF | TIM_SR_CC2IF | TIM_SR_CC3IF | TIM_SR_CC4IF);
-
-  return  0;
-}
-
-void  main_timer_handler(void *p_excinf)
-{
-  (void)dev_timer_clr_int();
-}
