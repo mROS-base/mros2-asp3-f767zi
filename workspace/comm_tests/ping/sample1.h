@@ -82,7 +82,9 @@
 #ifndef TOPPERS_MACRO_ONLY
 
 extern void	main_task(intptr_t exinf);
+#ifdef MROS2_USE_ASP
 void  dev_timer_init( void );
 unsigned short int  dev_timer_clr_int( void );
 void  main_timer_handler(void *p_excinf);
+#endif
 #endif /* TOPPERS_MACRO_ONLY */
