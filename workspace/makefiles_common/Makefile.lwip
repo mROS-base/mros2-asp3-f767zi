@@ -79,8 +79,13 @@ APPL_COBJS		+= stm32f7xx_it.o
 APPL_COBJS      += ethernetif.o
 APPL_COBJS      += lwip.o
 ifneq ($(TOPPERS_KERNEL),asp3)
+APPL_COBJS      += stm32f7xx_hal_pwr.o
+APPL_COBJS      += stm32f7xx_hal_pwr_ex.o
 APPL_COBJS      += system_stm32f7xx.o
 endif
+APPL_COBJS      += stm32f7xx_hal_pcd.o
+APPL_COBJS      += stm32f7xx_hal_pcd_ex.o
+APPL_COBJS      += stm32f7xx_ll_usb.o
 APPL_COBJS      += syscalls.o
 ifneq ($(TOPPERS_KERNEL),asp3)
 APPL_COBJS      += main.o
