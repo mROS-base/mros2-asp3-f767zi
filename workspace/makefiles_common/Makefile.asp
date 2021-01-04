@@ -106,7 +106,8 @@ ifeq ($(OS),Windows_NT)
   CFG = $(SRCDIR)/cfg_binary/cfg-mingw-static-1_9_6.exe
 else ifeq ($(shell uname),Linux)
   UNAME := Linux
-  CFG = $(SRCDIR)/cfg_binary/cfg-linux-static-1_9_6
+  #CFG = $(SRCDIR)/cfg_binary/cfg-linux-static-1_9_6
+  CFG = $(SRCDIR)/cfg_binary/cfg-1.9.7-x86_64-unknown-linux-gnu
 else ifeq ($(shell uname),Darwin)
   UNAME := Darwin
   CFG = $(SRCDIR)/cfg_binary/cfg-osx-static-1_9_5
