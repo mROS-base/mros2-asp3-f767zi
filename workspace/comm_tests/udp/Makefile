@@ -18,10 +18,10 @@ endif
 APPL_COBJS := sample_ping.o
 
 # information for user configuration
-APPLDIR	+= $(APPDIR)/config
-APPLDIR	+= $(APPDIR)/config/asp
+APPLDIR += ./config
+APPLDIR += ./config/asp
 APPL_COBJS += atk2ext_user_config.o
-APPL_COBJS	+= atk2ext_asp_user_config.o
+APPL_COBJS += atk2ext_asp_user_config.o
 
 MAKEFILEDIR = ${ROOTDIR}/workspace/makefiles_common
 include ${MAKEFILEDIR}/Makefile.atk2ext
