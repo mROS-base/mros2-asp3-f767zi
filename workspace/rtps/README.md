@@ -10,17 +10,18 @@ git clone --recursive https://github.com/embedded-software-laboratory/embeddedRT
 ```
 2. 通信用アプリをビルドします  
 ```
-cd linux \
-mkdir build \
-cd build \
-cmake -DTHIRDPARTY=ON .. \
+cd embeddedRTPS-STM32
+cd linux
+mkdir build
+cd build
+cmake -DTHIRDPARTY=ON ..
 make 
 ```
 3. PC上のファイヤウォールの設定を切ります
 
 #### STM側の設定
 1. IPアドレスを設定します。  
-`application/src/lwip.c l69-`  
+`application/src/lwip.c L69-L80`  
 ```
   IP_ADDRESS[0] = 192;
   IP_ADDRESS[1] = 168;
@@ -35,9 +36,10 @@ make
   GATEWAY_ADDRESS[2] = 11;
   GATEWAY_ADDRESS[3] = 1;
   ```  
-`embeddedRTPS/include/rtps/config.h`  
+`embeddedRTPS/include/rtps/config.h L36-L37`  
 ```
-const std::array<uint8_t, 4> IP_ADDRESS = {192,168,11,2};  // Needs to be set in Src/lwip.c too.
+const std::array<uint8_t, 4> IP_ADDRESS = {
+    192, 168, 11, 2}; // Needs to be set in lwipcfg.h too.
 ```
 2. 本アプリをビルドします
 
