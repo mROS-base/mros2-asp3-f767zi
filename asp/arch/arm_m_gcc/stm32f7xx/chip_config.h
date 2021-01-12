@@ -86,7 +86,6 @@ extern void	target_initialize(void);
  *  システムを終了する時に使う．
  */
 extern void	target_exit(void) NoReturn;
-
 #endif /* TOPPERS_MACRO_ONLY */
 
 /*

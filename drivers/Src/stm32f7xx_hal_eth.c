@@ -1874,8 +1874,13 @@ static void ETH_MACDMAConfig(ETH_HandleTypeDef *heth, uint32_t err)
   macinit.PassControlFrames = ETH_PASSCONTROLFRAMES_BLOCKALL;
   macinit.BroadcastFramesReception = ETH_BROADCASTFRAMESRECEPTION_ENABLE;
   macinit.DestinationAddrFilter = ETH_DESTINATIONADDRFILTER_NORMAL;
+#ifdef MROS2_USE_CUBE
+  macinit.PromiscuousMode = ETH_PROMISCUOUS_MODE_ENABLE;
+  macinit.MulticastFramesFilter = ETH_MULTICASTFRAMESFILTER_NONE;
+#else
   macinit.PromiscuousMode = ETH_PROMISCUOUS_MODE_DISABLE;
   macinit.MulticastFramesFilter = ETH_MULTICASTFRAMESFILTER_PERFECT;
+#endif
   macinit.UnicastFramesFilter = ETH_UNICASTFRAMESFILTER_PERFECT;
   macinit.HashTableHigh = 0x0;
   macinit.HashTableLow = 0x0;

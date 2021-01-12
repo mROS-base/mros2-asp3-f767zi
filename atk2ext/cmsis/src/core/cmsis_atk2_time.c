@@ -12,6 +12,12 @@ void Atk2TimeIncTickCount(void)
 	cmsis_atk2_current_time++;
 	return;
 }
+#ifndef MROS2_USE_ASP3
+uint32_t HAL_GetTick(void)
+{
+  return cmsis_atk2_current_time;
+}
+#endif
 
 uint32_t Atk2TimeGetExpireTickCount(uint32_t stick, uint32_t timeout)
 {

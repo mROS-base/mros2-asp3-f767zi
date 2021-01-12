@@ -75,6 +75,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
   htim1.Init.Prescaler = uwPrescalerValue;
   htim1.Init.ClockDivision = 0;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  return HAL_OK;
   if(HAL_TIM_Base_Init(&htim1) == HAL_OK)
   {
     /* Start the TIM time Base generation in interrupt mode */

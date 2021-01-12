@@ -68,7 +68,7 @@
 /*----- Value in opt.h for TCPIP_THREAD_PRIO: 1 -----*/
 #define TCPIP_THREAD_PRIO 24
 /*----- Value in opt.h for TCPIP_MBOX_SIZE: 0 -----*/
-#define TCPIP_MBOX_SIZE 6
+#define TCPIP_MBOX_SIZE 20
 /*----- Value in opt.h for SLIPIF_THREAD_STACKSIZE: 0 -----*/
 #define SLIPIF_THREAD_STACKSIZE 1024
 /*----- Value in opt.h for SLIPIF_THREAD_PRIO: 1 -----*/
@@ -109,6 +109,10 @@
 #define CHECKSUM_CHECK_ICMP6 0
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
+#ifdef MROS2_USE_CUBE
+#define LWIP_IGMP 1
+#define LWIP_TCPIP_CORE_LOCKING    		1
+#endif //MROS2_USE_CUBE
 #define portNOP()
 /* USER CODE END 1 */
 

@@ -24,7 +24,9 @@ typedef boolean bool_t;
 #include "t_syslog.h"
 #include "queue.h"
 #include "kernel.h"
+#ifndef TOPPERS_CB_TYPE_ONLY
 #include "kernel_cfg.h"
+#endif
 #include "sil.h"
 
 typedef int StatusType;

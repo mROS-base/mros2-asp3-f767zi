@@ -2,14 +2,13 @@
  *  TOPPERS/ASP Kernel
  *      Toyohashi Open Platform for Embedded Real-Time Systems/
  *      Advanced Standard Profile Kernel
- * 
- *  Copyright (C) 2008-2011 by Embedded and Real-Time Systems Laboratory
+ *
+ *  Copyright (C) 2000-2003 by Embedded and Real-Time Systems Laboratory
+ *                              Toyohashi Univ. of Technology, JAPAN
+ *  Copyright (C) 2004-2010 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
- *  Copyright (C) 2015-2016 by 3rd Designing Center
- *              Imageing System Development Division RICOH COMPANY, LTD.
- *  Copyright (C) 2017-2017 by TOPPERS PROJECT Educational Working Group.
- * 
- *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *
+ *  上記著作権者は，以下の(1)～(4)の条件を満たす場合に限り，本ソフトウェ
  *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
  *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
  *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
@@ -37,83 +36,63 @@
  *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
  *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
  *  の責任を負わない．
- * 
- *  @(#) $Id: target_syssvc.h 698 2017-02-05 16:47:09Z roi $
- */
-
-/*
- *  システムサービスのターゲット依存部（stm32f767-nucleo144用）
  *
- *  システムサービスのターゲット依存部のインクルードファイル．このファ
- *  イルの内容は，コンポーネント記述ファイルに記述され，このファイルは
- *  無くなる見込み．
+ *  $Id: sample1.h 2416 2012-09-07 08:06:20Z ertl-hiro $
  */
-
-#ifndef TOPPERS_TARGET_SYSSVC_H
-#define TOPPERS_TARGET_SYSSVC_H
 
 /*
- *  ターゲットシステムのハードウェア資源の定義
+ *		サンプルプログラム(1)のヘッダファイル
  */
-#include "stm32f7xx.h"
 
 /*
- *  システムクロックの定義
+ *  ターゲット依存の定義
  */
-#define SystemFrequency     96000000
-#define SysFreHCLK          90000000	/* HCLK = MasterClock / 1 */
-#define SysFrePCLK1         46800000	/* PCLK1 = HCLK / 4 */
-#define SysFrePCLK2         96000000	/* PCLK2 = HCLK / 2 */
-#define HSE_VALUE           8000000
-#define HSI_VALUE           16000000
-#define LSE_VALUE           32768
+#include "target_test.h"
+#include "kernel.h"
+/*
+ *  各タスクの優先度の定義
+ */
 
-#define SYS_CLOCK		    (SystemFrequency)
+#define MAIN_PRIORITY	5		/* メインタスクの優先度 */
+								/* メインタスクの優先度 */
+
+#define HIGH_PRIORITY	9		/* メインタスクの優先度 */
+#define MID_PRIORITY	10
+#define LOW_PRIORITY	11
 
 /*
- *  トレースログに関する設定
+ *  ターゲットに依存する可能性のある定数の定義
  */
-#ifdef TOPPERS_ENABLE_TRACE
-#include "logtrace/trace_config.h"
-#endif /* TOPPERS_ENABLE_TRACE */
+
+#ifndef TASK_PORTID
+#define	TASK_PORTID		1			/* 文字入力するシリアルポートID */
+#endif /* TASK_PORTID */
+
+#ifndef STACK_SIZE
+#define	STACK_SIZE		4096		/* 文字入力するシリアルポートID */
+#endif /* STACK_SIZE */
+
+#ifndef LOOP_REF
+#define LOOP_REF		ULONG_C(1000000)	/* 速度計測用のループ回数 */
+#endif /* LOOP_REF */
 
 /*
- *  起動メッセージのターゲットシステム名
+ *  関数のプロトタイプ宣言
  */
-#define TARGET_NAME    "stm32f767-nucleo144(Cortex-M7)"
+#ifndef TOPPERS_MACRO_ONLY
+#ifdef __cplusplus
+extern "C" {
+#endif
+void main_task(void);
+void StartDefaultTask(void * argument);
+#ifdef __cplusplus
+}
+#endif
+extern void	task(intptr_t exinf);
+void Error_Handler();
+#endif /* TOPPERS_MACRO_ONLY */
 
-/*
- *  起動メッセージの著作権表示
- */
-#define TARGET_COPYRIGHT \
-"Copyright (C) 2015-2017 by Education Working Group TOPPERS PROJECT, JAPAN\n" \
-
-/*
- *  システムログの低レベル出力のための文字出力
- *
- *  ターゲット依存の方法で，文字cを表示/出力/保存する．
- */
-extern void	target_fput_log(char c);
-
-/*
- *  サポートするシリアルポートの数
- */
-#define TNUM_PORT        TNUM_SIOP
-
-/*
- *  ログタスクが使用するポートID
- */
-#define LOGTASK_PORTID   SIO_PORTID
-
-/*
- *  ボーレート
- */
-#define BPS_SETTING		(115200)
-
-/*
- *  システムログタスク関連の定数の定義
- *
- *  デフォルト値の通り．
- */
-
-#endif /* TOPPERS_TARGET_SYSSVC_H */
+// To avoid link error
+#ifdef __cplusplus
+extern void* __dso_handle;
+#endif

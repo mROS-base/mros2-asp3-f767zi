@@ -4,7 +4,7 @@
 
 ATK2EXTDIR := ${ROOTDIR}/atk2ext
 
-APPL_CFG += atk2ext.cfg
+#APPL_CFG += atk2ext.cfg
 
 INCLUDES += -I$(ATK2EXTDIR)/include
 INCLUDES += -I$(ATK2EXTDIR)/cmsis/include

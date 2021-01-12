@@ -144,8 +144,8 @@ void HAL_ETH_MspInit(ETH_HandleTypeDef* ethHandle)
     HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
     /* Peripheral interrupt init */
-    //HAL_NVIC_SetPriority(ETH_IRQn, 5, 0);
-    //HAL_NVIC_EnableIRQ(ETH_IRQn);
+    HAL_NVIC_SetPriority(ETH_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(ETH_IRQn);
   /* USER CODE BEGIN ETH_MspInit 1 */
 
   /* USER CODE END ETH_MspInit 1 */
@@ -295,7 +295,9 @@ static void low_level_init(struct netif *netif)
   HAL_ETH_Start(&heth);
 
 /* USER CODE BEGIN PHY_PRE_CONFIG */
-
+#ifdef MROS2_USE_CUBE
+  netif->flags |= NETIF_FLAG_IGMP;
+#endif
 /* USER CODE END PHY_PRE_CONFIG */
 
   /* Read Register Configuration */
