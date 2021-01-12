@@ -115,7 +115,8 @@ TECSGEN = ruby $(TECSDIR)/tecsgen.rb
 #
 #  オブジェクトファイル名の定義
 #
-OBJNAME = asp.elf
+OBJNAME = asp
+OBJEXT = elf
 ifdef OBJEXT
 	OBJFILE = $(OBJNAME).$(OBJEXT)
 	CFG1_OUT = cfg1_out.$(OBJEXT)
@@ -223,12 +224,12 @@ endif
 .PHONY: all
 ifndef OMIT_TECS
 all: tecs
-	@$(MAKE) check
-#	@$(MAKE) check $(OBJNAME).bin
+#	@$(MAKE) check
+	@$(MAKE) check $(OBJNAME).bin
 #	@$(MAKE) check $(OBJNAME).srec
 else
-all: check
-#all: check $(OBJNAME).bin
+#all: check
+all: check $(OBJNAME).bin
 #all: check $(OBJNAME).srec
 endif
 
