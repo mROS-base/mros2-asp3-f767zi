@@ -7,7 +7,7 @@ DRIVERSDIR := $(ROOTDIR)/drivers
 APLDIR := $(ROOTDIR)/application
 MICROCDR_DIR := $(RTPSDIR)/thirdparty/Micro-CDR
 
-CDEFS            += -DMROS2_USE_ASP -DMROS2_USE_CUBE -DMROS2_USE_EMBEDDEDRTPS
+CDEFS            += -DMROS2_USE_CUBE -DMROS2_USE_EMBEDDEDRTPS
 
 INCLUDES += -I$(RTPSDIR)/include
 INCLUDES += -I$(RTPSDIR)/thirdparty/lwip
@@ -39,11 +39,6 @@ APPL_CXXOBJS    += SimpleHistoryCache.o
 APPL_CXXOBJS    += rtps.o
 APPL_CXXOBJS    += ThreadPool.o
 
-APPL_COBJS      += stm32f7xx_hal_pcd.o
-APPL_COBJS      += stm32f7xx_hal_pcd_ex.o
-APPL_COBJS      += stm32f7xx_hal_pwr.o
-APPL_COBJS      += stm32f7xx_hal_pwr_ex.o
-APPL_COBJS      += stm32f7xx_ll_usb.o
 APPL_COBJS      += array.o
 APPL_COBJS      += basic.o
 APPL_COBJS      += sequence.o
