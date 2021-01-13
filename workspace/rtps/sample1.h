@@ -84,11 +84,10 @@
 extern "C" {
 #endif
 void main_task(void);
-void StartDefaultTask(void * argument);
+extern void	led_cyclic_handler(intptr_t exinf);
 #ifdef __cplusplus
 }
 #endif
-extern void	task(intptr_t exinf);
 void Error_Handler();
 #endif /* TOPPERS_MACRO_ONLY */
 
