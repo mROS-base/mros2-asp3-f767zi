@@ -16,6 +16,7 @@
 #include "GPIO.h"
 
 #include "mros2.h"
+#include "TEST.hpp"
 
 // To avoid link error
 void* __dso_handle=0;
@@ -46,11 +47,9 @@ void setTrue(void* args){
 	*static_cast<volatile bool*>(args) = true;
 }
 
-void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
-	rtps::Writer* writer = (rtps::Writer*) callee;
-	static std::array<uint8_t,10> data{};
-	data.fill(10);
-	auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
+void userCallback(TEST *msg)
+{
+	syslog(LOG_NOTICE, "recv");
 }
 
 void main_task(void)
@@ -58,8 +57,8 @@ void main_task(void)
 	MX_LWIP_Init();
 	mros2::init(NULL, NULL);
 	mros2::Node node = mros2::Node::create_node();
-	auto sub = node.create_subscription("TOSTM", NULL, NULL);
-	auto pub = node.create_publisher("TOLINUX", NULL, NULL);
+	auto sub = node.create_subscription((char *)"TOSTM", 1, userCallback);
+	auto pub = node.create_publisher<TEST>("TOLINUX", NULL, NULL);
 	mros2::spin();
 }
 

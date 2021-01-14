@@ -16,7 +16,7 @@
 #include "stm32f7xx_nucleo_144.h"
 
 #include "rtps/rtps.h"
-
+#include "std_msgs/msg/string.hpp"
 namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
@@ -40,19 +40,21 @@ Node Node::create_node()
 bool completeSubInit = false;
 bool completePubInit = false;
 
-Subscriber Node::create_subscription(std::string node_name, int qos, int callback)
+template <class T>
+Subscriber Node::create_subscription(char *node_name, int qos, void(*fp)(T))
 {
-	rtps::Reader* reader = domain_ptr->createReader(*(this->part), node_name.c_str(), "TEST", false);
+	rtps::Reader* reader = domain_ptr->createReader(*(this->part), node_name, message_traits::TypeName<T>().value(), false);
     reader->registerCallback(message_callback, NULL);
     completeSubInit = true;
     Subscriber sub;
     sub.topic_name = node_name;
     return sub;
 }
-//TODO: change this to template func.
-Publisher Node::create_publisher(std::string node_name, int qos, int callback)
+
+template <class T>
+Publisher Node::create_publisher(char *node_name, int qos, int callback)
 {
-    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, node_name, "TEST", false);
+    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, node_name, message_traits::TypeName<T*>().value(), false);
     completePubInit = true;
     Publisher pub;
     pub.topic_name = node_name;
@@ -128,3 +130,18 @@ void mros2_init(void *args)
 
 
 }//namespace mros2
+
+//specialize template functions
+#include "TEST.hpp"
+
+template mros2::Publisher mros2::Node::create_publisher<TEST>(char *node_name, int qos, int callback);
+template mros2::Subscriber mros2::Node::create_subscription(char *node_name, int qos, void (*fp)(TEST*));
+
+/*
+void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
+	rtps::Writer* writer = (rtps::Writer*) callee;
+	static std::array<uint8_t,10> data{};
+	data.fill(10);
+	auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
+}
+*/

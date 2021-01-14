@@ -23,13 +23,15 @@ namespace mros2 {
     {
     public:
         static Node create_node();
+        template <class T>
         Subscriber create_subscription(
-            std::string node_name,
+            char *node_name,
             int qos,
-            int callback
+            void (*fp)(T)
         );
+        template <class T>
         Publisher create_publisher(
-            std::string node_name,
+            char *node_name,
             int qos,
             int callback
         );
@@ -56,4 +58,11 @@ namespace mros2 {
     }
     #endif
 }//namespace mros2
+
+namespace message_traits
+{
+    template <class T>
+    struct TypeName{static const char* value();};
+}
 #endif //MROS2_MROS2_H
+
