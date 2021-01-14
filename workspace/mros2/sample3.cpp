@@ -59,7 +59,7 @@ void main_task(void)
 	mros2::init(NULL, NULL);
 	mros2::Node node = mros2::Node::create_node();
 	node.create_subscription("TOSTM", NULL, NULL);
-
+	mros2::spin();
 }
 
 void

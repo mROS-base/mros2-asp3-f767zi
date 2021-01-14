@@ -47,37 +47,14 @@ void Node::create_subscription(std::string node_name, int qos, int callback)
 
 void init(int argc, char *argv)
 {
-    //rtps::Domain domain;
-	// syslog(LOG_NOTICE, "mROS2 init start");
-    // //Initialize variables and complete RTPS initialization
-    // bool subMatched = false;
-    // bool pubMatched = false;
-    // bool received_message = false;
+    sys_thread_new("mROS2Thread", mros2_init, NULL, 1000, 24); //TODO: fix this
+}
 
-
-    // //Create RTPS participant
-
-    // //Register callback to ensure that a publisher is matched to the writer before sending messages
-    // part->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
-    // part->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
-
-    // //Create new writer to send messages
-    // rtps::Writer* writer = domain.createWriter(*part, "TOLINUX","TEST", false);
-    // rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
-    // reader->registerCallback(&message_callback, writer);
-
-    // domain.completeInit();
-
-    // //Check that writer creation was successful
-    // if(writer == nullptr || reader == nullptr){
-    //     return;
-    // }
-    // syslog(LOG_NOTICE, "mROS2 init complete");
-    // //Wait for the subscriber on the Linux side to match
-    // while(!subMatched || !pubMatched){
-    // tslp_tsk(1000000);
-    // //BSP_LED_Toggle(LED3);
-    // }
+void spin()
+{
+    while(true){
+        slp_tsk();
+    }
 }
 
 //Callback function to set the boolean to true upon a match
