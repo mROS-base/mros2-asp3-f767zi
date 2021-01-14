@@ -10,6 +10,7 @@ extern void StartDefaultTask(void * argument);
 extern void callWriterThreadFunction(void *arg);
 extern void callReaderThreadFunction(void *arg);
 extern void callRunBroadcast(void *args);
+extern void mros2_init(void *args);
 
 
 UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
@@ -51,6 +52,11 @@ UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
 		{
 				.taskID = Atk2ExtReaderTask,
 				.func = callReaderThreadFunction,
+				.argument = NULL,
+		},
+		{
+				.taskID = Atk2ExtMROS2Task,
+				.func = mros2_init,
 				.argument = NULL,
 		},
 };

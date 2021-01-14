@@ -113,3 +113,15 @@ TASK(Atk2ExtUserDefaultTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
+TASK(Atk2ExtMROS2Task)
+{
+	UserThreadAtk2TaskMapEntryType config;
+	StatusType ercd = Atk2TaskConfigGet(&config);
+
+	if (ercd == E_OK) {
+		config.func(config.argument);
+	}
+
+	(void)osThreadTerminate(NULL);
+	return;
+}

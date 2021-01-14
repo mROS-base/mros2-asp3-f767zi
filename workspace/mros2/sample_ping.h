@@ -12,5 +12,6 @@ extern void	TASKNAME(Atk2ExtSPDPTask) (intptr_t exinf);
 extern void	TASKNAME(Atk2ExtWriterTask) (intptr_t exinf);
 extern void	TASKNAME(Atk2ExtReaderTask) (intptr_t exinf);
 extern void	TASKNAME(Atk2ExtUserDefaultTask) (intptr_t exinf);
+extern void	TASKNAME(Atk2ExtMROS2Task) (intptr_t exinf);
 
 #endif /* _ATK2EXT_TEST_H_ */

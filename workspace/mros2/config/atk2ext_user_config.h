@@ -17,6 +17,6 @@
  * THREAD
  *
  ***********************************************/
-#define USER_THREAD_NUM		8U
+#define USER_THREAD_NUM		9U
 
 #endif /* _ATK2EXT_CONFIG_H_ */
