@@ -56,10 +56,13 @@ void setTrue(void* args){
 }
 
 void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
+	/*
 	rtps::Writer* writer = (rtps::Writer*) callee;
 	static std::array<uint8_t,10> data{};
 	data.fill(10);
 	auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
+	*/
+	syslog(LOG_NOTICE, "recv");
 }
 
 void StartDefaultTask(void *argument)
@@ -100,8 +103,8 @@ void startRTPStest(){
 	part->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
 
 	//Create new writer to send messages
-	rtps::Writer* writer = domain.createWriter(*part, "TOLINUX","TEST", false);
-	rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
+	rtps::Writer* writer = domain.createWriter(*part, "rt/to_linux","std_msgs::msg::dds_::String_", false);
+	rtps::Reader* reader = domain.createReader(*part, "rt/to_stm",  "std_msgs::msg::dds_::String_", false);
 	reader->registerCallback(&message_callback, writer);
 
 	domain.completeInit();
