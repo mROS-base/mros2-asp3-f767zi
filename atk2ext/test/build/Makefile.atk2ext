@@ -1,6 +1,6 @@
 ATK2EXTEND_DIR := ../../../atk2ext
 
-APPL_CFG += atk2ext.cfg
+#APPL_CFG += atk2ext.cfg
 
 INCLUDES += -I$(ATK2EXTEND_DIR)/include
 INCLUDES += -I$(ATK2EXTEND_DIR)/cmsis/include

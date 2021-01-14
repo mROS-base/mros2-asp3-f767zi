@@ -1,6 +1,6 @@
 ATK2EXTEND_DIR := ../../../atk2ext
 
-APPL_CFG += atk2ext_test.cfg
+#APPL_CFG += atk2ext_test.cfg
 APPLDIR	+= $(ATK2EXTEND_DIR)/test
 APPLDIR	+= $(ATK2EXTEND_DIR)/test/api_test
 APPLDIR	+= $(ATK2EXTEND_DIR)/test/fw
