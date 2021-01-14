@@ -7,11 +7,16 @@
 
 namespace mros2 {
 
+    class Subscriber
+    {
+        public:
+            std::string topic_name;
+    };
     class Node//TODO: move to node.h/cpp?
     {
     public:
         static Node create_node();
-        void create_subscription(
+        Subscriber create_subscription(
             std::string node_name,
             int qos,
             int callback

@@ -38,12 +38,17 @@ Node Node::create_node()
    return node;
 }
 bool completeSubInit = false;
-void Node::create_subscription(std::string node_name, int qos, int callback)
+
+Subscriber Node::create_subscription(std::string node_name, int qos, int callback)
 {
 	rtps::Reader* reader = domain_ptr->createReader(*(this->part), node_name.c_str(), "TEST", false);
     reader->registerCallback(message_callback, NULL);
     completeSubInit = true;
+    Subscriber sub;
+    sub.topic_name = node_name;
+    return sub;
 }
+//TODO: create publisher creating function
 
 void init(int argc, char *argv)
 {
