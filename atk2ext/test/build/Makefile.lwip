@@ -16,6 +16,7 @@ INCLUDES += -I$(DRIVERS_DIR)/Inc/Legacy
 INCLUDES += -I$(DRIVERS_DIR)/CMSIS/Device/ST/STM32F7xx/Include
 INCLUDES += -I$(DRIVERS_DIR)/CMSIS/Core/Include
 INCLUDES += -I$(APL_DIR)/include
+INCLUDES += -I$(APL_DIR)/include/asp
 
 APPLDIR	+= $(LWIP_DIR)/system/OS
 APPLDIR	+= $(LWIP_DIR)/src/netif
@@ -67,4 +68,6 @@ APPL_COBJS      += stm32f7xx_hal_eth.o
 APPL_COBJS      += stm32f7xx_hal_cortex.o
 APPL_COBJS      += ethernetif.o
 APPL_COBJS      += system_stm32f7xx.o
+APPL_COBJS      += stm32f7xx_hal_pwr.o
+APPL_COBJS      += stm32f7xx_hal_pwr_ex.o
 APPL_COBJS      += main.o

@@ -98,12 +98,27 @@ ENABLE_TRACE =
 #  ユーティリティプログラムの名称
 #
 PERL = /usr/bin/perl
-CFG = $(SRCDIR)/cfg/cfg/cfg
+
+#
+#  cfgのバイナリをOSを判定して選択
+#
+ifeq ($(OS),Windows_NT)
+  UNAME := Windows
+  CFG = $(SRCDIR)/cfg_binary/cfg-mingw-static-1_9_6.exe
+else ifeq ($(shell uname),Linux)
+  UNAME := Linux
+  #CFG = $(SRCDIR)/cfg_binary/cfg-linux-static-1_9_6
+  CFG = $(SRCDIR)/cfg_binary/cfg-1.9.7-x86_64-unknown-linux-gnu
+else ifeq ($(shell uname),Darwin)
+  UNAME := Darwin
+  CFG = $(SRCDIR)/cfg_binary/cfg-osx-static-1_9_5
+endif
 
 #
 #  オブジェクトファイル名の定義
 #
-OBJNAME = asp.elf
+OBJNAME = asp
+OBJEXT = elf
 ifdef OBJEXT
   OBJFILE = $(OBJNAME).$(OBJEXT)
   CFG1_OUT = cfg1_out.$(OBJEXT)
