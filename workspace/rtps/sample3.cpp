@@ -42,12 +42,12 @@ extern "C" void callHbSubFunc(void *arg)
 
 void main_task(void)
 {
-  MX_LWIP_Init();
-
-	startRTPStest();
-
-  BSP_LED_On(LED1);
-  ext_tsk();
+  osThreadAttr_t attributes;
+  memset(&attributes, 0x0, sizeof(osThreadAttr_t));
+  attributes.name = "UserDefaultTask";
+  attributes.stack_size = 250;
+  attributes.priority = osPriorityRealtime;
+  osThreadNew(StartDefaultTask, NULL, &attributes);
 }
 
 //Callback function to set the boolean to true upon a match
@@ -60,6 +60,19 @@ void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
 	static std::array<uint8_t,10> data{};
 	data.fill(10);
 	auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
+}
+
+void StartDefaultTask(void *argument)
+{
+	/* init code for LWIP */
+	MX_LWIP_Init();
+
+	startRTPStest();
+
+	while(1){
+    osDelay(1000);
+    BSP_LED_Toggle(LED1);
+	}
 }
 
 //Function to start the RTPS Test
@@ -96,7 +109,7 @@ void startRTPStest(){
 
 	//Wait for the subscriber on the Linux side to match
 	while(!subMatched || !pubMatched){
-    tslp_tsk(1000000);
+    osDelay(1000);
     BSP_LED_Toggle(LED3);
 	}
 

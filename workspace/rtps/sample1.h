@@ -69,12 +69,8 @@
 #endif /* TASK_PORTID */
 
 #ifndef STACK_SIZE
-#define	STACK_SIZE		4096		/* 文字入力するシリアルポートID */
+#define	STACK_SIZE		4096		/* タスクのスタックサイズ */
 #endif /* STACK_SIZE */
-
-#ifndef LOOP_REF
-#define LOOP_REF		ULONG_C(1000000)	/* 速度計測用のループ回数 */
-#endif /* LOOP_REF */
 
 /*
  *  関数のプロトタイプ宣言
@@ -85,6 +81,7 @@ extern "C" {
 #endif
 void main_task(void);
 extern void	led_cyclic_handler(intptr_t exinf);
+void StartDefaultTask(void *argument);
 #ifdef __cplusplus
 }
 #endif

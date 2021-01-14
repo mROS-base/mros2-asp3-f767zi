@@ -6,7 +6,7 @@ extern void ethernetif_set_link(void* argument);
 extern void ethernetif_input(void* argument);
 extern void callHbPubFunc(void *arg);
 extern void callHbSubFunc(void *arg);
-extern void StartDefaultTask(void * argument);
+extern void StartDefaultTask(void *argument);
 extern void callWriterThreadFunction(void *arg);
 extern void callReaderThreadFunction(void *arg);
 extern void callRunBroadcast(void *args);
@@ -51,6 +51,11 @@ UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
 		{
 				.taskID = Atk2ExtReaderTask,
 				.func = callReaderThreadFunction,
+				.argument = NULL,
+		},
+		{
+				.taskID = Atk2ExtUserDefaultTask,
+				.func = StartDefaultTask,
 				.argument = NULL,
 		},
 };
