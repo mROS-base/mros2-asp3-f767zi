@@ -17,3 +17,6 @@ gen/
 .project
 .settings/
 *.launch
+
+# mros2 related files
+mros2/memos.txt 
