@@ -11,20 +11,26 @@ CDEFS += -DosObjectsExternal
 
 INCLUDES += -I$(LWIP_DIR)/src/include
 INCLUDES += -I$(LWIP_DIR)/system
+ifneq ($(TOPPERS_KERNEL),asp3)
 INCLUDES += -I$(DRIVERS_DIR)/Inc
 INCLUDES += -I$(DRIVERS_DIR)/Inc/Legacy
 INCLUDES += -I$(DRIVERS_DIR)/CMSIS/Device/ST/STM32F7xx/Include
 INCLUDES += -I$(DRIVERS_DIR)/CMSIS/Core/Include
+endif
 INCLUDES += -I$(APL_DIR)/include
+ifneq ($(TOPPERS_KERNEL),asp3)
 INCLUDES += -I$(APL_DIR)/include/asp
+endif
 
 APPLDIR	+= $(LWIP_DIR)/system/OS
 APPLDIR	+= $(LWIP_DIR)/src/netif
 APPLDIR	+= $(LWIP_DIR)/src/api
 APPLDIR	+= $(LWIP_DIR)/src/core
 APPLDIR	+= $(LWIP_DIR)/src/core/ipv4
+ifneq ($(TOPPERS_KERNEL),asp3)
 APPLDIR += $(DRIVERS_DIR)/Src
 APPLDIR += $(DRIVERS_DIR)/Src/Legacy
+endif
 APPLDIR += $(APL_DIR)/src
 
 
@@ -63,11 +69,15 @@ APPL_COBJS	+= ip4.o
 APPL_COBJS	+= igmp.o
 APPL_COBJS	+= autoip.o
 APPL_COBJS	+= ip4_frag.o
+ifneq ($(TOPPERS_KERNEL),asp3)
 APPL_COBJS      += stm32f7xx_hal.o
+endif
 APPL_COBJS      += stm32f7xx_hal_eth.o
 APPL_COBJS      += stm32f7xx_hal_cortex.o
 APPL_COBJS      += ethernetif.o
+ifneq ($(TOPPERS_KERNEL),asp3)
 APPL_COBJS      += system_stm32f7xx.o
 APPL_COBJS      += stm32f7xx_hal_pwr.o
 APPL_COBJS      += stm32f7xx_hal_pwr_ex.o
 APPL_COBJS      += main.o
+endif
