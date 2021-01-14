@@ -59,6 +59,7 @@ void main_task(void)
 	mros2::init(NULL, NULL);
 	mros2::Node node = mros2::Node::create_node();
 	auto sub = node.create_subscription("TOSTM", NULL, NULL);
+	auto pub = node.create_publisher("TOLINUX", NULL, NULL);
 	mros2::spin();
 }
 

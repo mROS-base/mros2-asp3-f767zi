@@ -38,6 +38,7 @@ Node Node::create_node()
    return node;
 }
 bool completeSubInit = false;
+bool completePubInit = false;
 
 Subscriber Node::create_subscription(std::string node_name, int qos, int callback)
 {
@@ -48,7 +49,15 @@ Subscriber Node::create_subscription(std::string node_name, int qos, int callbac
     sub.topic_name = node_name;
     return sub;
 }
-//TODO: create publisher creating function
+//TODO: change this to template func.
+Publisher Node::create_publisher(std::string node_name, int qos, int callback)
+{
+    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, node_name, "TEST", false);
+    completePubInit = true;
+    Publisher pub;
+    pub.topic_name = node_name;
+    return pub;
+}
 
 void init(int argc, char *argv)
 {
@@ -76,7 +85,7 @@ void mros2_init(void *args)
     static rtps::Domain domain;
     domain_ptr = &domain;
 	syslog(LOG_NOTICE, "mROS2 init start");
-    while(!completeSubInit){tslp_tsk(100000);}
+    while(!completeSubInit || !completePubInit){tslp_tsk(100000);}
 //    domain.completeInit();
 //    syslog(LOG_NOTICE,"mROS2 RTPS init complete ");
 //    ext_tsk();
@@ -91,7 +100,7 @@ void mros2_init(void *args)
 	 part_ptr->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
 
 	 //Create new writer to send messages
-	 rtps::Writer* writer = domain.createWriter(*part_ptr, "TOLINUX","TEST", false);
+	 //rtps::Writer* writer = domain.createWriter(*part_ptr, "TOLINUX","TEST", false);
 	 //rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
 	 //reader->registerCallback(&message_callback, writer);
 

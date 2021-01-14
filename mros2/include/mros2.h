@@ -12,11 +12,23 @@ namespace mros2 {
         public:
             std::string topic_name;
     };
+
+    class Publisher
+    {
+        public:
+            std::string topic_name;
+    };
+
     class Node//TODO: move to node.h/cpp?
     {
     public:
         static Node create_node();
         Subscriber create_subscription(
+            std::string node_name,
+            int qos,
+            int callback
+        );
+        Publisher create_publisher(
             std::string node_name,
             int qos,
             int callback
