@@ -17,6 +17,9 @@
 
 #include "rtps/rtps.h"
 
+#include "TEST.hpp"
+#include "std_msgs/msg/string.hpp"
+
 namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
@@ -39,26 +42,42 @@ Node Node::create_node()
 }
 bool completeSubInit = false;
 bool completePubInit = false;
+uint8_t endpointId = 0;
+uint32_t subCbArray[10];
 
 template <class T>
-Subscriber Node::create_subscription(char *node_name, int qos, void(*fp)(T))
+Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T))
 {
-	rtps::Reader* reader = domain_ptr->createReader(*(this->part), node_name, message_traits::TypeName<T>().value(), false);
-    reader->registerCallback(message_callback, NULL);
+	rtps::Reader* reader = domain_ptr->createReader(*(this->part), ("rt/"+node_name).c_str(), message_traits::TypeName<T>().value(), false);
     completeSubInit = true;
     Subscriber sub;
     sub.topic_name = node_name;
+	sub.cb_fp = (void (*)(intptr_t))fp;
+	reader->registerCallback(sub.callback_handler, (void *)&sub);
     return sub;
 }
 
 template <class T>
-Publisher Node::create_publisher(char *node_name, int qos, int callback)
+Publisher Node::create_publisher(std::string node_name, int qos, int callback)
 {
-    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, node_name, message_traits::TypeName<T*>().value(), false);
+    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, ("rt/"+node_name).c_str(), message_traits::TypeName<T*>().value(), false);
     completePubInit = true;
     Publisher pub;
     pub.topic_name = node_name;
     return pub;
+}
+
+void Subscriber::callback_handler(void* callee, const rtps::ReaderCacheChange& cacheChange)
+{
+	//TODO: move this to msg header files
+	uint32_t msg_size;
+	memcpy(&msg_size, &cacheChange.data[4], 4);
+	std_msgs::msg::String msg;
+	msg.data.resize(msg_size);
+	memcpy(&msg.data[0], &cacheChange.data[8], msg_size);
+	mros2::Subscriber *sub = (mros2::Subscriber*)callee;
+	void (*fp)(intptr_t) = sub->cb_fp;
+	fp((intptr_t)&msg);
 }
 
 void init(int argc, char *argv)
@@ -133,19 +152,10 @@ void mros2_init(void *args)
 }//namespace mros2
 
 //specialize template functions
-#include "TEST.hpp"
 
-template mros2::Publisher mros2::Node::create_publisher<TEST>(char *node_name, int qos, int callback);
-template mros2::Subscriber mros2::Node::create_subscription(char *node_name, int qos, void (*fp)(TEST*));
+template mros2::Publisher mros2::Node::create_publisher<TEST>(std::string node_name, int qos, int callback);
+template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(TEST*));
 
-#include "std_msgs/msg/string.hpp"
-template mros2::Subscriber mros2::Node::create_subscription(char *node_name, int qos, void (*fp)(std_msgs::msg::String*));
-template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(char *node_name, int qos, int callback);
-/*
-void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
-	rtps::Writer* writer = (rtps::Writer*) callee;
-	static std::array<uint8_t,10> data{};
-	data.fill(10);
-	auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
-}
-*/
+template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::String*));
+template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(std::string node_name, int qos, int callback);
+

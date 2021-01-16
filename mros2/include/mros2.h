@@ -11,6 +11,12 @@ namespace mros2 {
     {
         public:
             std::string topic_name;
+            static void callback_handler(
+                    void* callee,
+                    const rtps::ReaderCacheChange& cacheChange
+            );
+            void (*cb_fp)(intptr_t);
+        private:
     };
 
     class Publisher
@@ -25,13 +31,13 @@ namespace mros2 {
         static Node create_node();
         template <class T>
         Subscriber create_subscription(
-            char *node_name,
+            std::string node_name,
             int qos,
             void (*fp)(T)
         );
         template <class T>
         Publisher create_publisher(
-            char *node_name,
+            std::string node_name,
             int qos,
             int callback
         );

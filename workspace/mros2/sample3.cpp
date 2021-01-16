@@ -50,7 +50,7 @@ void setTrue(void* args){
 
 void userCallback(std_msgs::msg::String *msg)
 {
-	syslog(LOG_NOTICE, "recv");
+	syslog(LOG_NOTICE, "recv: [%s]", msg->data.c_str());
 }
 
 void main_task(void)
@@ -58,7 +58,7 @@ void main_task(void)
 	MX_LWIP_Init();
 	mros2::init(NULL, NULL);
 	mros2::Node node = mros2::Node::create_node();
-	auto sub = node.create_subscription("rt/to_stm", 1, userCallback);
+	auto sub = node.create_subscription("to_stm", 1, userCallback);
 	auto pub = node.create_publisher<std_msgs::msg::String>("rt/rt_linux", NULL, NULL);
 	mros2::spin();
 }
