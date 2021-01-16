@@ -70,9 +70,10 @@ void StartDefaultTask(void *argument)
 	startRTPStest();
 
 	while(1){
-    osDelay(1000);
-    BSP_LED_Toggle(LED1);
+		osDelay(1000);
+		BSP_LED_Toggle(LED1);
 	}
+	BSP_LED_On(LED1);
 }
 
 //Function to start the RTPS Test
@@ -109,10 +110,10 @@ void startRTPStest(){
 
 	//Wait for the subscriber on the Linux side to match
 	while(!subMatched || !pubMatched){
-    osDelay(1000);
-    BSP_LED_Toggle(LED3);
+		osDelay(100);
+		BSP_LED_Toggle(LED3);
 	}
-
+	BSP_LED_Off(LED3);
 }
 
 void
