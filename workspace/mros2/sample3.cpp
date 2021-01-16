@@ -17,6 +17,7 @@
 
 #include "mros2.h"
 #include "TEST.hpp"
+#include "std_msgs/msg/string.hpp"
 
 // To avoid link error
 void* __dso_handle=0;
@@ -47,7 +48,7 @@ void setTrue(void* args){
 	*static_cast<volatile bool*>(args) = true;
 }
 
-void userCallback(TEST *msg)
+void userCallback(std_msgs::msg::String *msg)
 {
 	syslog(LOG_NOTICE, "recv");
 }
@@ -57,8 +58,8 @@ void main_task(void)
 	MX_LWIP_Init();
 	mros2::init(NULL, NULL);
 	mros2::Node node = mros2::Node::create_node();
-	auto sub = node.create_subscription((char *)"TOSTM", 1, userCallback);
-	auto pub = node.create_publisher<TEST>("TOLINUX", NULL, NULL);
+	auto sub = node.create_subscription("rt/to_stm", 1, userCallback);
+	auto pub = node.create_publisher<std_msgs::msg::String>("rt/rt_linux", NULL, NULL);
 	mros2::spin();
 }
 

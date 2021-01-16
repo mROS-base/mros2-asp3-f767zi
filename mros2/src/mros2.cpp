@@ -16,7 +16,7 @@
 #include "stm32f7xx_nucleo_144.h"
 
 #include "rtps/rtps.h"
-#include "std_msgs/msg/string.hpp"
+
 namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
@@ -92,7 +92,8 @@ void mros2_init(void *args)
 //    syslog(LOG_NOTICE,"mROS2 RTPS init complete ");
 //    ext_tsk();
 	//Initialize variables and complete RTPS initialization
-    
+    	mros2::init(NULL, NULL);
+
 	 bool subMatched = false;
 	 bool pubMatched = false;
 	 bool received_message = false;
@@ -137,6 +138,9 @@ void mros2_init(void *args)
 template mros2::Publisher mros2::Node::create_publisher<TEST>(char *node_name, int qos, int callback);
 template mros2::Subscriber mros2::Node::create_subscription(char *node_name, int qos, void (*fp)(TEST*));
 
+#include "std_msgs/msg/string.hpp"
+template mros2::Subscriber mros2::Node::create_subscription(char *node_name, int qos, void (*fp)(std_msgs::msg::String*));
+template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(char *node_name, int qos, int callback);
 /*
 void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
 	rtps::Writer* writer = (rtps::Writer*) callee;

@@ -12,3 +12,17 @@ namespace std_msgs{
         };
     }//namspace msg
 }//namespace std_msgs
+
+namespace message_traits
+{
+
+template<>
+struct TypeName<std_msgs::msg::String*>
+{
+    static const char* value()
+    {
+        return "std_msgs::msg::dds_::String_";
+    }
+};
+
+}
