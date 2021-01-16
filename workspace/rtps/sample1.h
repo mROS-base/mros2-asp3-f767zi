@@ -54,9 +54,8 @@
  */
 
 #define MAIN_PRIORITY	5		/* メインタスクの優先度 */
-								/* メインタスクの優先度 */
 
-#define HIGH_PRIORITY	9		/* メインタスクの優先度 */
+#define HIGH_PRIORITY	9
 #define MID_PRIORITY	10
 #define LOW_PRIORITY	11
 
