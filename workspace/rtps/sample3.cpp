@@ -69,10 +69,13 @@ void StartDefaultTask(void *argument)
 
 	startRTPStest();
 
+	/* TODO: check whether the task with rtps::Domain would be exited */
+	/*
 	while(1){
 		osDelay(1000);
 		BSP_LED_Toggle(LED1);
 	}
+	*/
 	BSP_LED_On(LED1);
 }
 
