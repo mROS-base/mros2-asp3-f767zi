@@ -47,6 +47,8 @@
 
 /* LwIP Stack Parameters (modified compared to initialization value in opt.h) -*/
 /* Parameters set in STM32CubeMX LwIP Configuration GUI -*/
+/*----- Value in opt.h for LWIP_TCP: 1 -----*/
+#define LWIP_TCP 0
 /*----- Value in opt.h for MEM_ALIGNMENT: 1 -----*/
 #define MEM_ALIGNMENT 4
 /*----- Value in opt.h for LWIP_ETHERNET: LWIP_ARP || PPPOE_SUPPORT -*/
@@ -66,9 +68,9 @@
 /*----- Value in opt.h for TCPIP_THREAD_STACKSIZE: 0 -----*/
 #define TCPIP_THREAD_STACKSIZE 1024
 /*----- Value in opt.h for TCPIP_THREAD_PRIO: 1 -----*/
-#define TCPIP_THREAD_PRIO 24
+#define TCPIP_THREAD_PRIO 3
 /*----- Value in opt.h for TCPIP_MBOX_SIZE: 0 -----*/
-#define TCPIP_MBOX_SIZE 20
+#define TCPIP_MBOX_SIZE 6
 /*----- Value in opt.h for SLIPIF_THREAD_STACKSIZE: 0 -----*/
 #define SLIPIF_THREAD_STACKSIZE 1024
 /*----- Value in opt.h for SLIPIF_THREAD_PRIO: 1 -----*/
@@ -114,6 +116,47 @@
 #define LWIP_TCPIP_CORE_LOCKING    		1
 #endif //MROS2_USE_CUBE
 #define portNOP()
+
+#ifdef MROS2_USE_CUBE
+
+/* MEM_SIZE: the size of the heap memory. If the application will send
+a lot of data that needs to be copied, this should be set high. */
+#define MEM_SIZE                (1024)
+
+/* MEMP_NUM_PBUF: the number of memp struct pbufs. If the application
+sends a lot of data out of ROM (or other static memory), this
+should be set high. */
+#define MEMP_NUM_PBUF           16
+
+/* MEMP_NUM_UDP_PCB: the number of UDP protocol control blocks. One
+per active UDP "connection". */
+#define MEMP_NUM_UDP_PCB        8
+
+/* ---------- Pbuf options ---------- */
+/* PBUF_POOL_SIZE: the number of buffers in the pbuf pool. */
+#define PBUF_POOL_SIZE          20
+
+/* PBUF_POOL_BUFSIZE: the size of each pbuf in the pbuf pool. */
+#define PBUF_POOL_BUFSIZE       400
+
+
+/* ------ Not sure yet if required ------ */
+#define TCP_LISTEN_BACKLOG 1
+
+/* MEMP_NUM_TCP_PCB: the number of simultaneously active TCP
+connections. */
+#define MEMP_NUM_TCP_PCB        10
+/* MEMP_NUM_TCP_PCB_LISTEN: the number of listening TCP
+connections. */
+#define MEMP_NUM_TCP_PCB_LISTEN 5
+/* MEMP_NUM_TCP_SEG: the number of simultaneously queued TCP
+segments. */
+#define MEMP_NUM_TCP_SEG        20
+/* MEMP_NUM_SYS_TIMEOUT: the number of simultaneously active
+timeouts. */
+#define MEMP_NUM_SYS_TIMEOUT    10
+
+#endif //MROS2_USE_CUBE
 /* USER CODE END 1 */
 
 #ifdef __cplusplus

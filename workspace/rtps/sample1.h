@@ -54,9 +54,8 @@
  */
 
 #define MAIN_PRIORITY	5		/* メインタスクの優先度 */
-								/* メインタスクの優先度 */
 
-#define HIGH_PRIORITY	9		/* メインタスクの優先度 */
+#define HIGH_PRIORITY	9
 #define MID_PRIORITY	10
 #define LOW_PRIORITY	11
 
@@ -69,12 +68,8 @@
 #endif /* TASK_PORTID */
 
 #ifndef STACK_SIZE
-#define	STACK_SIZE		4096		/* 文字入力するシリアルポートID */
+#define	STACK_SIZE		4096		/* タスクのスタックサイズ */
 #endif /* STACK_SIZE */
-
-#ifndef LOOP_REF
-#define LOOP_REF		ULONG_C(1000000)	/* 速度計測用のループ回数 */
-#endif /* LOOP_REF */
 
 /*
  *  関数のプロトタイプ宣言
@@ -84,11 +79,11 @@
 extern "C" {
 #endif
 void main_task(void);
-void StartDefaultTask(void * argument);
+extern void	led_cyclic_handler(intptr_t exinf);
+void StartDefaultTask(void *argument);
 #ifdef __cplusplus
 }
 #endif
-extern void	task(intptr_t exinf);
 void Error_Handler();
 #endif /* TOPPERS_MACRO_ONLY */
 
