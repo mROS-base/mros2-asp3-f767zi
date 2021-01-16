@@ -107,11 +107,6 @@ void mros2_init(void *args)
     domain_ptr = &domain;
 	syslog(LOG_NOTICE, "mROS2 init start");
     while(!completeSubInit || !completePubInit){tslp_tsk(100000);}
-//    domain.completeInit();
-//    syslog(LOG_NOTICE,"mROS2 RTPS init complete ");
-//    ext_tsk();
-	//Initialize variables and complete RTPS initialization
-    	mros2::init(NULL, NULL);
 
 	 bool subMatched = false;
 	 bool pubMatched = false;
@@ -121,10 +116,6 @@ void mros2_init(void *args)
 	 part_ptr->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
 	 part_ptr->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
 
-	 //Create new writer to send messages
-	 //rtps::Writer* writer = domain.createWriter(*part_ptr, "TOLINUX","TEST", false);
-	 //rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
-	 //reader->registerCallback(&message_callback, writer);
 
 	 domain.completeInit();
 

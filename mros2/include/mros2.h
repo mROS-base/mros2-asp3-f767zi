@@ -69,6 +69,6 @@ namespace message_traits
 {
     template <class T>
     struct TypeName{static const char* value();};
-}
+}// namespace message_traits
 #endif //MROS2_MROS2_H
 
