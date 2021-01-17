@@ -24,6 +24,7 @@ namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
 rtps::Participant *part_ptr = NULL; //TODO: detele this
+rtps::Writer *pub_ptr = NULL;
 
 Node Node::create_node()
 {
@@ -63,6 +64,7 @@ Publisher Node::create_publisher(std::string node_name, int qos, int callback)
     rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, ("rt/"+node_name).c_str(), message_traits::TypeName<T*>().value(), false);
     completePubInit = true;
     Publisher pub;
+    pub_ptr = writer;
     pub.topic_name = node_name;
     return pub;
 }
@@ -80,6 +82,15 @@ void Subscriber::callback_handler(void* callee, const rtps::ReaderCacheChange& c
 	fp((intptr_t)&msg);
 }
 
+void Publisher::publish()
+{
+	static std::array<uint8_t, 16> str_buf{0,1,0,0,8,0,0,0,72,101,108,108,111,33,32,0};
+		//data.fill(10);
+		//syslog(LOG_NOTICE,"pub string");
+		//auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, str_buf.data(), str_buf.size());
+	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, str_buf.data(), str_buf.size());
+}
+
 void init(int argc, char *argv)
 {
     sys_thread_new("mROS2Thread", mros2_init, NULL, 1000, 24); //TODO: fix this
@@ -95,6 +106,9 @@ void spin()
 //Callback function to set the boolean to true upon a match
 void setTrue(void* args){
 	*static_cast<volatile bool*>(args) = true;
+}
+void pubMatch(void* args){
+	syslog(LOG_NOTICE, "publisher matched with remote subscriber");
 }
 
 void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
@@ -114,7 +128,7 @@ void mros2_init(void *args)
 
 	 //Register callback to ensure that a publisher is matched to the writer before sending messages
 	 part_ptr->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
-	 part_ptr->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
+	 part_ptr->registerOnNewSubscriberMatchedCallback(pubMatch, &subMatched);
 
 
 	 domain.completeInit();

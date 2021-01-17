@@ -51,7 +51,10 @@ void main_task(void)
 }
 
 //Callback function to set the boolean to true upon a match
-void setTrue(void* args){
+void setPubTrue(void* args){
+	*static_cast<volatile bool*>(args) = true;
+}
+void setSubTrue(void* args){
 	*static_cast<volatile bool*>(args) = true;
 }
 
@@ -99,12 +102,12 @@ void startRTPStest(){
 	}
 
 	//Register callback to ensure that a publisher is matched to the writer before sending messages
-	part->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
-	part->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
+	part->registerOnNewPublisherMatchedCallback(setPubTrue, &pubMatched);
+	part->registerOnNewSubscriberMatchedCallback(setSubTrue, &subMatched);
 
 	//Create new writer to send messages
-	rtps::Writer* writer = domain.createWriter(*part, "rt/to_linux","std_msgs::msg::dds_::String_", false);
-	rtps::Reader* reader = domain.createReader(*part, "rt/to_stm",  "std_msgs::msg::dds_::String_", false);
+	rtps::Writer* writer = domain.createWriter(*part, "TOLINUX","TEST", false);
+	rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
 	reader->registerCallback(&message_callback, writer);
 
 	domain.completeInit();
