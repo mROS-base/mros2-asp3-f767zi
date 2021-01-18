@@ -60,9 +60,13 @@ void main_task(void)
 	mros2::Node node = mros2::Node::create_node();
 	auto sub = node.create_subscription("to_stm", 1, userCallback);
 	auto pub = node.create_publisher<std_msgs::msg::String>("to_linux", NULL, NULL);
+	std_msgs::msg::String msg;
+	int hogehoge = 0;
 	while(true){
-		syslog(LOG_NOTICE, "publish message");
-		pub.publish();
+		msg.data = "Hello " + std::to_string(hogehoge);
+		syslog(LOG_NOTICE, "publish message %s]", msg.data.c_str());
+		pub.publish(msg);
+		hogehoge = (hogehoge + 1);
 		tslp_tsk(1000000);
 	}
 	mros2::spin();

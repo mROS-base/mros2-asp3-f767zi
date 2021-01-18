@@ -23,7 +23,8 @@ namespace mros2 {
     {
         public:
             std::string topic_name;
-            void publish();
+            template <class T>
+            void publish(T& msg);
     };
 
     class Node//TODO: move to node.h/cpp?

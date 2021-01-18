@@ -82,17 +82,29 @@ void Subscriber::callback_handler(void* callee, const rtps::ReaderCacheChange& c
 	fp((intptr_t)&msg);
 }
 
-void Publisher::publish()
+uint8_t buf[100];
+uint8_t buf_index = 4;
+
+template <class T>
+void Publisher::publish(T& msg)
 {
-	static std::array<uint8_t, 16> str_buf{0,1,0,0,8,0,0,0,72,101,108,108,111,33,32,0};
-		//data.fill(10);
-		//syslog(LOG_NOTICE,"pub string");
-		//auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, str_buf.data(), str_buf.size());
-	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, str_buf.data(), str_buf.size());
+	buf_index = 4;
+	//std::array<uint8_t, 20> str_buf{0,1,0,0,7,0,0,0,72,101,108,108,111,33,0};
+	int size = msg.data.size();
+	memcpy(&buf[buf_index], &size, 4);
+	buf_index += 4;
+	memcpy(&buf[buf_index], msg.data.c_str(),msg.data.size());
+	buf_index += size;
+	buf[buf_index] = 0;
+	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, buf, size + 8);
 }
 
 void init(int argc, char *argv)
 {
+	buf[0] = 0;
+	buf[1] = 1;
+	buf[2] = 0;
+	buf[3] = 0;
     sys_thread_new("mROS2Thread", mros2_init, NULL, 1000, 24); //TODO: fix this
 }
 
@@ -163,4 +175,4 @@ template mros2::Subscriber mros2::Node::create_subscription(std::string node_nam
 
 template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::String*));
 template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(std::string node_name, int qos, int callback);
-
+template void mros2::Publisher::publish(std_msgs::msg::String& msg);
