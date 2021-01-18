@@ -116,6 +116,11 @@ void pubMatch(void* args){
 	syslog(LOG_NOTICE, "publisher matched with remote subscriber");
 }
 
+void subMatch(void* args){
+	syslog(LOG_NOTICE, "subscriber matched with remote publisher");
+}
+
+
 void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
 	syslog(LOG_NOTICE, "recv message");
 }
@@ -132,7 +137,7 @@ void mros2_init(void *args)
 	 bool received_message = false;
 
 	 //Register callback to ensure that a publisher is matched to the writer before sending messages
-	 part_ptr->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
+	 part_ptr->registerOnNewPublisherMatchedCallback(subMatch, &pubMatched);
 	 part_ptr->registerOnNewSubscriberMatchedCallback(pubMatch, &subMatched);
 
 
