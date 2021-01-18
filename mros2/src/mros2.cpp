@@ -88,14 +88,8 @@ uint8_t buf_index = 4;
 template <class T>
 void Publisher::publish(T& msg)
 {
-	buf_index = 4;
-	int size = msg.data.size();
-	memcpy(&buf[buf_index], &size, 4);
-	buf_index += 4;
-	memcpy(&buf[buf_index], msg.data.c_str(),msg.data.size());
-	buf_index += size;
-	buf[buf_index] = 0;
-	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, buf, size + 8);
+	msg.copyToBuf(&buf[4]);
+	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, buf, msg.getTotalSize() + 4);
 }
 
 void init(int argc, char *argv)

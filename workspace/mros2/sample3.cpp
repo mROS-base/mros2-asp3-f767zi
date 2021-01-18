@@ -64,7 +64,7 @@ void main_task(void)
 	int hogehoge = 0;
 	while(true){
 		msg.data = "Hello " + std::to_string(hogehoge);
-		syslog(LOG_NOTICE, "publish message %s]", msg.data.c_str());
+		syslog(LOG_NOTICE, "publish message [%s]", msg.data.c_str());
 		pub.publish(msg);
 		hogehoge = (hogehoge + 1);
 		tslp_tsk(1000000);
