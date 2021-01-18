@@ -89,7 +89,6 @@ template <class T>
 void Publisher::publish(T& msg)
 {
 	buf_index = 4;
-	//std::array<uint8_t, 20> str_buf{0,1,0,0,7,0,0,0,72,101,108,108,111,33,0};
 	int size = msg.data.size();
 	memcpy(&buf[buf_index], &size, 4);
 	buf_index += 4;
@@ -144,25 +143,15 @@ void mros2_init(void *args)
 
 
 	 domain.completeInit();
-
-	 //Check that writer creation was successful
-	 //if(writer == nullptr || reader == nullptr){
-	 //	return;
-	 //}
 	 syslog(LOG_NOTICE, "mROS2 init complete");
+
 	 //Wait for the subscriber on the Linux side to match
 	 while(!subMatched || !pubMatched){
 	 	tslp_tsk(1000000);
-	 	//BSP_LED_Toggle(LED3);
 	 }
 
 	 //BSP_LED_On(LED1);
 	 ext_tsk();
-    while(true)
-	{
-		syslog(LOG_NOTICE,"hogehoge");
-		tslp_tsk(1000000);
-	}
 }
 
 
