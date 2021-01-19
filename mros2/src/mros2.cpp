@@ -31,7 +31,7 @@ Node Node::create_node()
    Node node;
    syslog(LOG_NOTICE, "create_node");
    syslog(LOG_NOTICE, "start creating participant");
-   while(domain_ptr == NULL){tslp_tsk(100000);}
+   while(domain_ptr == NULL){dly_tsk(100000);}
    node.part = domain_ptr->createParticipant();
    part_ptr = node.part;
    if(node.part == nullptr){
@@ -59,7 +59,7 @@ Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T
 }
 
 template <class T>
-Publisher Node::create_publisher(std::string node_name, int qos, int callback)
+Publisher Node::create_publisher(std::string node_name, int qos)
 {
     rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, ("rt/"+node_name).c_str(), message_traits::TypeName<T*>().value(), false);
     completePubInit = true;
@@ -130,7 +130,7 @@ void mros2_init(void *args)
     static rtps::Domain domain;
     domain_ptr = &domain;
 	syslog(LOG_NOTICE, "mROS2 init start");
-    while(!completeSubInit || !completePubInit){tslp_tsk(100000);}
+    while(!completeSubInit || !completePubInit){dly_tsk(100000);}
 
 	 bool subMatched = false;
 	 bool pubMatched = false;
@@ -146,7 +146,7 @@ void mros2_init(void *args)
 
 	 //Wait for the subscriber on the Linux side to match
 	 while(!subMatched || !pubMatched){
-	 	tslp_tsk(1000000);
+	 	dly_tsk(1000000);
 	 }
 
 	 //BSP_LED_On(LED1);
@@ -158,9 +158,9 @@ void mros2_init(void *args)
 
 //specialize template functions
 
-template mros2::Publisher mros2::Node::create_publisher<TEST>(std::string node_name, int qos, int callback);
+template mros2::Publisher mros2::Node::create_publisher<TEST>(std::string node_name, int qos);
 template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(TEST*));
 
+template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(std::string node_name, int qos);
 template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::String*));
-template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(std::string node_name, int qos, int callback);
 template void mros2::Publisher::publish(std_msgs::msg::String& msg);

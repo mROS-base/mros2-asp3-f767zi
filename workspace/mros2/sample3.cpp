@@ -64,7 +64,7 @@ void main_task(void)
 	mros2::init(NULL, NULL);
 	mros2::Node node = mros2::Node::create_node();
 	sub = node.create_subscription("to_stm", 1, userCallback);
-	pub = node.create_publisher<std_msgs::msg::String>("to_linux", NULL, NULL);
+	pub = node.create_publisher<std_msgs::msg::String>("to_linux", NULL);
 	std_msgs::msg::String msg;
 	mros2::spin();
 	int hogehoge = 0;
@@ -73,7 +73,7 @@ void main_task(void)
 		syslog(LOG_NOTICE, "publish message [%s]", msg.data.c_str());
 		pub.publish(msg);
 		hogehoge = (hogehoge + 1);
-		tslp_tsk(1000000);
+		dly_tsk(1000000);
 	}
 	mros2::spin();
 }

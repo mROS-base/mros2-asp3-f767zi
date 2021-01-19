@@ -40,8 +40,7 @@ namespace mros2 {
         template <class T>
         Publisher create_publisher(
             std::string node_name,
-            int qos,
-            int callback
+            int qos
         );
         std::string node_name;
         rtps::Participant* part;
