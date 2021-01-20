@@ -27,7 +27,6 @@ namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
 rtps::Participant *part_ptr = NULL; //TODO: detele this
-rtps::Writer *pub_ptr = NULL;
 
 std::map<int_t, intptr_t> subscriber_map;
 std::map<int_t, intptr_t> callback_arg_map;
@@ -78,7 +77,7 @@ Publisher Node::create_publisher(std::string node_name, int qos)
     rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, ("rt/"+node_name).c_str(), message_traits::TypeName<T*>().value(), false);
     completePubInit = true;
     Publisher pub;
-    pub_ptr = writer;
+    pub.writer_ptr = (void *)writer;
     pub.topic_name = node_name;
 	get_tid(&tskid);
 	syslog(LOG_NOTICE, "create publisher complete. taskID=%d", tskid);
@@ -102,7 +101,7 @@ template <class T>
 void Publisher::publish(T& msg)
 {
 	msg.copyToBuf(&pub_buf[4]);
-	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, pub_buf, msg.getTotalSize() + 4);
+	((rtps::Writer *)this->writer_ptr)->newChange(rtps::ChangeKind_t::ALIVE, pub_buf, msg.getTotalSize() + 4);
 }
 
 void init(int argc, char *argv)
@@ -153,7 +152,6 @@ void mros2_init(void *args)
 
 	 bool subMatched = false;
 	 bool pubMatched = false;
-	 bool received_message = false;
 
 	 //Register callback to ensure that a publisher is matched to the writer before sending messages
 	 part_ptr->registerOnNewPublisherMatchedCallback(subMatch, &pubMatched);

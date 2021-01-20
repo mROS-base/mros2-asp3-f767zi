@@ -27,6 +27,7 @@ namespace mros2 {
             std::string topic_name;
             template <class T>
             void publish(T& msg);
+            void* writer_ptr;
     };
 
     class Node//TODO: move to node.h/cpp?
