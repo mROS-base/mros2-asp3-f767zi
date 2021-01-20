@@ -2,8 +2,9 @@
 #define MROS2_MROS2_H
 
 #include <string>
+#include "kernel.h"
 #include "rtps/rtps.h"
-
+#include "mros2_cfg.h"
 
 namespace mros2 {
 
@@ -15,6 +16,7 @@ namespace mros2 {
                     void* callee,
                     const rtps::ReaderCacheChange& cacheChange
             );
+            ID task_id;
             void (*cb_fp)(intptr_t);
         private:
     };

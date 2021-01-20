@@ -11,6 +11,7 @@
 #include "cmsis_os.h"
 #include "lwip.h"
 #include <cstdint>
+#include <map>
 
 #include "stm32f7xx_hal.h"
 #include "stm32f7xx_nucleo_144.h"
@@ -20,11 +21,19 @@
 #include "TEST.hpp"
 #include "std_msgs/msg/string.hpp"
 
+#include "mros2_cfg.h"
+
 namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
 rtps::Participant *part_ptr = NULL; //TODO: detele this
 rtps::Writer *pub_ptr = NULL;
+
+std::map<int_t, intptr_t> subscriber_map;
+std::map<int_t, intptr_t> callback_arg_map;
+
+uint8_t recv_buf[MROS2_RECV_BUF_SIZE];
+uint8_t pub_buf[MROS2_SEND_BUF_SIZE];
 
 Node Node::create_node()
 {
@@ -45,6 +54,7 @@ bool completeSubInit = false;
 bool completePubInit = false;
 uint8_t endpointId = 0;
 uint32_t subCbArray[10];
+ID tskid;
 
 template <class T>
 Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T))
@@ -54,7 +64,11 @@ Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T
     Subscriber sub;
     sub.topic_name = node_name;
 	sub.cb_fp = (void (*)(intptr_t))fp;
+	get_tid(&tskid);
+	sub.task_id = tskid;
 	reader->registerCallback(sub.callback_handler, (void *)&sub);
+	subscriber_map[tskid] = (intptr_t)&sub;
+	syslog(LOG_NOTICE, "create subscription complete. taskID=%d", tskid);
     return sub;
 }
 
@@ -66,6 +80,8 @@ Publisher Node::create_publisher(std::string node_name, int qos)
     Publisher pub;
     pub_ptr = writer;
     pub.topic_name = node_name;
+	get_tid(&tskid);
+	syslog(LOG_NOTICE, "create publisher complete. taskID=%d", tskid);
     return pub;
 }
 
@@ -74,30 +90,27 @@ void Subscriber::callback_handler(void* callee, const rtps::ReaderCacheChange& c
 	//TODO: move this to msg header files
 	uint32_t msg_size;
 	memcpy(&msg_size, &cacheChange.data[4], 4);
-	std_msgs::msg::String msg;
-	msg.data.resize(msg_size);
-	memcpy(&msg.data[0], &cacheChange.data[8], msg_size);
+	std_msgs::msg::String *msg = (std_msgs::msg::String *)&recv_buf;
+	msg->data.resize(msg_size);
+	memcpy(&msg->data[0], &cacheChange.data[8], msg_size);
 	mros2::Subscriber *sub = (mros2::Subscriber*)callee;
-	void (*fp)(intptr_t) = sub->cb_fp;
-	fp((intptr_t)&msg);
+	callback_arg_map[sub->task_id] = (intptr_t)msg ;
+	wup_tsk(sub->task_id);
 }
-
-uint8_t buf[100];
-uint8_t buf_index = 4;
 
 template <class T>
 void Publisher::publish(T& msg)
 {
-	msg.copyToBuf(&buf[4]);
-	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, buf, msg.getTotalSize() + 4);
+	msg.copyToBuf(&pub_buf[4]);
+	pub_ptr->newChange(rtps::ChangeKind_t::ALIVE, pub_buf, msg.getTotalSize() + 4);
 }
 
 void init(int argc, char *argv)
 {
-	buf[0] = 0;
-	buf[1] = 1;
-	buf[2] = 0;
-	buf[3] = 0;
+	pub_buf[0] = 0;
+	pub_buf[1] = 1;
+	pub_buf[2] = 0;
+	pub_buf[3] = 0;
     sys_thread_new("mROS2Thread", mros2_init, NULL, 1000, 24); //TODO: fix this
 }
 
@@ -105,6 +118,12 @@ void spin()
 {
     while(true){
         slp_tsk();
+        get_tid(&tskid);
+        syslog(LOG_NOTICE, "mros2::spin taskid=%d",tskid);
+        mros2::Subscriber *sub = (mros2::Subscriber *)subscriber_map[tskid];
+        void (*fp)(intptr_t) = sub->cb_fp;
+        intptr_t msg = callback_arg_map[tskid];
+        fp((intptr_t)msg);
     }
 }
 
@@ -142,19 +161,22 @@ void mros2_init(void *args)
 
 
 	 domain.completeInit();
-	 syslog(LOG_NOTICE, "mROS2 init complete");
-
-	 //Wait for the subscriber on the Linux side to match
-	 while(!subMatched || !pubMatched){
-	 	dly_tsk(1000000);
-	 }
-
-	 //BSP_LED_On(LED1);
+	 //syslog(LOG_NOTICE, "mROS2 init complete");
+	 get_tid(&tskid);
+	syslog(LOG_NOTICE, "mROS2 init complete. taskID=%d", tskid);
 	 ext_tsk();
+	 //BSP_LED_On(LED1);
 }
 
 
 }//namespace mros2
+void sub_task_dummy()
+{
+	get_tid(&mros2::tskid);
+	syslog(LOG_NOTICE, "sub task called, taskid=%d", mros2::tskid);
+	ext_tsk();
+	while(true){}
+}
 
 //specialize template functions
 
