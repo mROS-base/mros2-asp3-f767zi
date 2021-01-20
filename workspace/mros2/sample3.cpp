@@ -31,11 +31,11 @@ void setTrue(void* args){
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-void userCallback(std_msgs::msg::String *msg)
+void userCallback(std_msgs::msg::String &msg)
 {
-	syslog(LOG_NOTICE, "recv: [%s]", msg->data.c_str());
-	syslog(LOG_NOTICE, "publish message [%s]", msg->data.c_str());
-	pub.publish(*msg);
+	syslog(LOG_NOTICE, "recv: [%s]", msg.data.c_str());
+	syslog(LOG_NOTICE, "publish message [%s]", msg.data.c_str());
+	pub.publish(msg);
 }
 
 void main_task(void)

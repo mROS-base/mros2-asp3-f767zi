@@ -18,7 +18,7 @@
 
 #include "rtps/rtps.h"
 
-#include "TEST.hpp"
+//#include "TEST.hpp"
 #include "std_msgs/msg/string.hpp"
 
 #include "mros2_cfg.h"
@@ -77,7 +77,7 @@ uint32_t subCbArray[10];
 ID tskid;
 
 template <class T>
-Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T))
+Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T&))
 {
 	rtps::Reader* reader = domain_ptr->createReader(*(this->part), ("rt/"+node_name).c_str(), message_traits::TypeName<T>().value(), false);
     completeSubInit = true;
@@ -86,6 +86,7 @@ Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T
 	sub.cb_fp = (void (*)(intptr_t))fp;
 	get_tid(&tskid);
 	sub.task_id = tskid;
+	sub.deserialize_fp = T::deserialize;
 	reader->registerCallback(sub.callback_handler, (void *)&sub);
 	subscriber_map[tskid] = (intptr_t)&sub;
 	syslog(LOG_NOTICE, "create subscription complete. taskID=%d", tskid);
@@ -95,7 +96,7 @@ Subscriber Node::create_subscription(std::string node_name, int qos, void(*fp)(T
 template <class T>
 Publisher Node::create_publisher(std::string node_name, int qos)
 {
-    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, ("rt/"+node_name).c_str(), message_traits::TypeName<T*>().value(), false);
+    rtps::Writer* writer = domain_ptr->createWriter(*part_ptr, ("rt/"+node_name).c_str(), message_traits::TypeName<T>().value(), false);
     completePubInit = true;
     Publisher pub;
     pub.writer_ptr = (void *)writer;
@@ -107,14 +108,8 @@ Publisher Node::create_publisher(std::string node_name, int qos)
 
 void Subscriber::callback_handler(void* callee, const rtps::ReaderCacheChange& cacheChange)
 {
-	//TODO: move this to msg header files
-	uint32_t msg_size;
-	memcpy(&msg_size, &cacheChange.data[4], 4);
-	std_msgs::msg::String *msg = (std_msgs::msg::String *)&recv_buf;
-	msg->data.resize(msg_size);
-	memcpy(&msg->data[0], &cacheChange.data[8], msg_size);
 	mros2::Subscriber *sub = (mros2::Subscriber*)callee;
-	callback_arg_map[sub->task_id] = (intptr_t)msg ;
+	callback_arg_map[sub->task_id] = (sub->deserialize_fp(cacheChange, recv_buf));
 	wup_tsk(sub->task_id);
 }
 
@@ -131,7 +126,7 @@ void init(int argc, char *argv)
 	pub_buf[1] = 1;
 	pub_buf[2] = 0;
 	pub_buf[3] = 0;
-    sys_thread_new("mROS2Thread", mros2_init, NULL, 1000, 24); //TODO: fix this
+    sys_thread_new("mROS2Thread", mros2_init, NULL, 1000, 24); //TODO: fix this ?
 }
 
 void spin()
@@ -199,9 +194,9 @@ void sub_task_dummy()
 
 //specialize template functions
 
-template mros2::Publisher mros2::Node::create_publisher<TEST>(std::string node_name, int qos);
-template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(TEST*));
+//template mros2::Publisher mros2::Node::create_publisher<TEST>(std::string node_name, int qos);
+//template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(TEST*));
 
 template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(std::string node_name, int qos);
-template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::String*));
+template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::String&));
 template void mros2::Publisher::publish(std_msgs::msg::String& msg);

@@ -1,4 +1,5 @@
 #include <string>
+#include "rtps/rtps.h"
 
 namespace std_msgs{
     namespace msg {
@@ -19,6 +20,14 @@ namespace std_msgs{
                 uint8_t getTotalSize(){
                     return (5 + data.size());
                 }
+                static intptr_t deserialize(const rtps::ReaderCacheChange& cacheChange, uint8_t *recv_buf) {
+                    uint32_t msg_size;
+                    memcpy(&msg_size, &cacheChange.data[4], 4);
+                    std_msgs::msg::String *msg = (std_msgs::msg::String *)recv_buf;
+                    msg->data.resize(msg_size);
+                    memcpy(&msg->data[0], &cacheChange.data[8], msg_size);
+                    return (intptr_t)msg;
+                }
             private:
                 std::string type_name = "std_msgs::msg::dds_::String";
         };
@@ -29,7 +38,7 @@ namespace message_traits
 {
 
 template<>
-struct TypeName<std_msgs::msg::String*>
+struct TypeName<std_msgs::msg::String>
 {
     static const char* value()
     {

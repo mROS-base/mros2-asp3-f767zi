@@ -18,6 +18,7 @@ namespace mros2 {
             );
             ID task_id;
             void (*cb_fp)(intptr_t);
+            intptr_t (*deserialize_fp)(const rtps::ReaderCacheChange&, uint8_t*);
         private:
     };
 
@@ -38,7 +39,7 @@ namespace mros2 {
         Subscriber create_subscription(
             std::string node_name,
             int qos,
-            void (*fp)(T)
+            void (*fp)(T&)
         );
         template <class T>
         Publisher create_publisher(
