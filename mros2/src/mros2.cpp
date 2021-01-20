@@ -23,6 +23,27 @@
 
 #include "mros2_cfg.h"
 
+void *networkSubDriverPtr;
+void *networkPubDriverPtr;
+void (*hbPubFuncPtr)(void *);
+void (*hbSubFuncPtr)(void *);
+
+extern "C" void callHbPubFunc(void *arg)
+{
+	if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL)
+	{
+		(*hbPubFuncPtr)(networkPubDriverPtr);
+	}
+}
+extern "C" void callHbSubFunc(void *arg)
+{
+	if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL)
+	{
+		(*hbSubFuncPtr)(networkSubDriverPtr);
+	}
+}
+
+
 namespace mros2 {
 
 rtps::Domain *domain_ptr = NULL;
