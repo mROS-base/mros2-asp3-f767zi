@@ -20,6 +20,7 @@
 
 //#include "TEST.hpp"
 #include "std_msgs/msg/string.hpp"
+#include "std_msgs/msg/int32.hpp"
 
 #include "mros2_cfg.h"
 
@@ -134,7 +135,7 @@ void spin()
     while(true){
         slp_tsk();
         get_tid(&tskid);
-        syslog(LOG_NOTICE, "mros2::spin taskid=%d",tskid);
+        //syslog(LOG_NOTICE, "mros2::spin taskid=%d",tskid);
         mros2::Subscriber *sub = (mros2::Subscriber *)subscriber_map[tskid];
         void (*fp)(intptr_t) = sub->cb_fp;
         intptr_t msg = callback_arg_map[tskid];
@@ -187,7 +188,7 @@ void mros2_init(void *args)
 void sub_task_dummy()
 {
 	get_tid(&mros2::tskid);
-	syslog(LOG_NOTICE, "sub task called, taskid=%d", mros2::tskid);
+	//syslog(LOG_NOTICE, "sub task called, taskid=%d", mros2::tskid);
 	ext_tsk();
 	while(true){}
 }
@@ -200,3 +201,7 @@ void sub_task_dummy()
 template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::String>(std::string node_name, int qos);
 template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::String&));
 template void mros2::Publisher::publish(std_msgs::msg::String& msg);
+
+template mros2::Publisher mros2::Node::create_publisher<std_msgs::msg::Int32>(std::string node_name, int qos);
+template mros2::Subscriber mros2::Node::create_subscription(std::string node_name, int qos, void (*fp)(std_msgs::msg::Int32&));
+template void mros2::Publisher::publish(std_msgs::msg::Int32& msg);
