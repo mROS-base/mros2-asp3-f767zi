@@ -6,3 +6,7 @@
 	path = cmsis-asp3
 	url = https://github.com/mROS-base/cmsis-asp3.git
 	branch = dev-esm
+[submodule "asp3-f767zi"]
+	path = asp3-f767zi
+	url = https://github.com/mROS-base/asp3-f767zi.git
+	branch = dev-esm
