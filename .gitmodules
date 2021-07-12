@@ -1,8 +1,0 @@
-[submodule "embeddedRTPS"]
-	path = embeddedRTPS
-	url = https://github.com/tlk-emb/embeddedRTPS.git
-	branch = mros2
-[submodule "asp3"]
-	path = asp3
-	url = https://github.com/tlk-emb/asp3-f767zi
-	branch = mros2

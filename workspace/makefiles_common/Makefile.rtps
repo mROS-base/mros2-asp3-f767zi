@@ -2,9 +2,9 @@
 # Makefile definition for embeddedRTPS stack
 #
 
-RTPSDIR := $(ROOTDIR)/embeddedRTPS
-DRIVERSDIR := $(ROOTDIR)/drivers
-APLDIR := $(ROOTDIR)/application
+RTPSDIR := $(ROOTDIR)/mros2/embeddedRTPS
+DRIVERSDIR := $(ROOTDIR)/STM32CubeF7/Drivers
+APLDIR := $(ROOTDIR)/src/startup
 MICROCDR_DIR := $(RTPSDIR)/thirdparty/Micro-CDR
 
 CDEFS            += -DMROS2_USE_CUBE -DMROS2_USE_EMBEDDEDRTPS

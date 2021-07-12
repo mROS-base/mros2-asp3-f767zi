@@ -2,17 +2,18 @@
 # Makefile definition for atk2ext stack
 #
 
-ATK2EXTDIR := ${ROOTDIR}/atk2ext
+ATK2EXTDIR := ${ROOTDIR}/cmsis-asp3/src
 
 #APPL_CFG += atk2ext.cfg
 
-INCLUDES += -I$(ATK2EXTDIR)/include
-INCLUDES += -I$(ATK2EXTDIR)/cmsis/include
+INCLUDES += -I$(ATK2EXTDIR)/api
+INCLUDES += -I$(ATK2EXTDIR)/config
+INCLUDES += -I$(DRIVERSDIR)/CMSIS/RTOS2/Include
+INCLUDES += -I$(DRIVERSDIR)/CMSIS/RTOS2/Template
 
-APPLDIR	+= $(ATK2EXTDIR)/cmsis/src
-APPLDIR	+= $(ATK2EXTDIR)/cmsis/src/core
-APPLDIR	+= $(ATK2EXTDIR)/cmsis/src/autosar
-APPLDIR	+= $(ATK2EXTDIR)/cmsis/src/sys
+APPLDIR	+= $(ATK2EXTDIR)/api
+APPLDIR	+= $(ATK2EXTDIR)/core
+APPLDIR	+= $(ATK2EXTDIR)/sys
 APPLDIR += $(ATK2EXTDIR)/config
 APPLDIR += $(ATK2EXTDIR)/config/asp
 

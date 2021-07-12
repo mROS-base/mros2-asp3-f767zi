@@ -68,7 +68,7 @@ endif
 #
 #  ソースファイルのディレクトリの定義
 #
-SRCDIR = ${ROOTDIR}/asp3
+SRCDIR = ${ROOTDIR}/asp3-f767zi
 
 #
 #  オブジェクトファイル名の拡張子の設定
