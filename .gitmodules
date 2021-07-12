@@ -2,3 +2,7 @@
 	path = mros2
 	url = https://github.com/mROS-base/mros2.git
 	branch = dev-esm
+[submodule "cmsis-asp3"]
+	path = cmsis-asp3
+	url = https://github.com/mROS-base/cmsis-asp3.git
+	branch = dev-esm
