@@ -10,4 +10,5 @@ const Atk2ExtFlagMapEntryType atk2ext_flag_user_map[ATK2EXT_ASP_FLAG_USER_NUM] =
 		ATK2EXT_FLAG_MAP_ENTRY(Atk2ExtWriterTask),
 		ATK2EXT_FLAG_MAP_ENTRY(Atk2ExtReaderTask),
 		ATK2EXT_FLAG_MAP_ENTRY(Atk2ExtMROS2Task),
+		ATK2EXT_FLAG_MAP_ENTRY(MAIN_TASK),
 };
