@@ -1,5 +1,6 @@
-#include "atk2ext_sys_config.h"
-#include "atk2ext_common.h"
+#include "cmsis_os.h"
+#include "cmsis_user_config.h"
+#include "atk2ext_user_config.h"
 
 extern void tcpip_thread(void *arg);
 extern void ethernetif_set_link(void* argument);
@@ -60,3 +61,16 @@ UserThreadAtk2TaskMapEntryType user_thread_atk2task_map[USER_THREAD_NUM] = {
 				.argument = NULL,
 		},
 };
+
+UserThreadAtk2TaskMapEntryType* cmsis_get_user_thread_map(void)
+{
+	return user_thread_atk2task_map;
+}
+int cmsis_get_app_heap_size(void)
+{
+	return APP_HEAP_SIZE;
+}
+int cmsis_get_user_thread_num(void)
+{
+	return USER_THREAD_NUM;
+}

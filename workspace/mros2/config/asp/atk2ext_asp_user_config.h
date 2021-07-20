@@ -1,7 +1,7 @@
 #ifndef _ATK2EXT_ASP_USER_CONFIG_H_
 #define _ATK2EXT_ASP_USER_CONFIG_H_
 
-#include "atk2ext_asp_config.h"
+#include "cmsis_config_utl.h"
 
 #define ATK2EXT_ASP_FLAG_USER_NUM	(10U)
 

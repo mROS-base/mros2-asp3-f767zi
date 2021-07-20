@@ -47,8 +47,8 @@
 /*
  *  ターゲット依存の定義
  */
-#include "target_test.h"
-#include "kernel.h"
+#include "cmsis_os.h"
+
 /*
  *  各タスクの優先度の定義
  */

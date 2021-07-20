@@ -1,7 +1,6 @@
-#ifndef _ATK2EXT_CONFIG_H_
-#define _ATK2EXT_CONFIG_H_
+#ifndef _ATK2EXT_USER_CONFIG_H_
+#define _ATK2EXT_USER_CONFIG_H_
 
-#include "atk2ext_common.h"
 #include "cmsis_os.h"
 
 /***********************************************
@@ -19,4 +18,4 @@
  ***********************************************/
 #define USER_THREAD_NUM		9U
 
-#endif /* _ATK2EXT_CONFIG_H_ */
+#endif /* _ATK2EXT_USER_CONFIG_H_ */

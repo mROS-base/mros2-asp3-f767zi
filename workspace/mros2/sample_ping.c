@@ -1,6 +1,5 @@
-#include "atk2ext_common.h"
 #include "cmsis_os.h"
-#include "atk2ext_sys_config.h"
+#include "cmsis_config_utl.h"
 #include "sample_ping.h"
 
 TASK(Atk2ExtTcpTask)

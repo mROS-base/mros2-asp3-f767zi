@@ -1,7 +1,7 @@
 #ifndef _ATK2EXT_TEST_H_
 #define _ATK2EXT_TEST_H_
 
-#include "atk2ext_task.h"
+#include "cmsis_config_utl.h"
 
 extern void	TASKNAME(Atk2ExtTcpTask) (intptr_t exinf);
 extern void	TASKNAME(Atk2ExtEthIfLinkTask) (intptr_t exinf);

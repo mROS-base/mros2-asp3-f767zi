@@ -1,28 +1,13 @@
-#include <kernel.h>
-#include <t_syslog.h>
-#include <t_stdlib.h>
-#include "syssvc/serial.h"
-#include "syssvc/syslog.h"
-#include "kernel_cfg.h"
-#include <rtps/rtps.h>
 #include "sample1.h"
 #include "cmsis_os.h"
 #include "lwip.h"
-#include <cstdint>
 
-#include "stm32f7xx_hal.h"
 #include "stm32f7xx_nucleo_144.h"
-
-#include "GPIO.h"
-
 #include "mros2.h"
-#include "TEST.hpp"
 #include "std_msgs/msg/string.hpp"
 
 // To avoid link error
 void* __dso_handle=0;
-
-void startRTPStest();
 
 void *networkSubDriverPtr;
 void *networkPubDriverPtr;
@@ -53,8 +38,8 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-	syslog(LOG_NOTICE, "recv: [%s]", msg->data.c_str());
-	syslog(LOG_NOTICE, "publish message [%s]", msg->data.c_str());
+	CMSIS_IMPL_INFO("recv: [%s]", msg->data.c_str());
+	CMSIS_IMPL_INFO("publish message [%s]", msg->data.c_str());
 	pub.publish(*msg);
 }
 
