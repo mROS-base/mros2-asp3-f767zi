@@ -5,11 +5,11 @@ APPLDIR	:= $(APPDIR)/
 
 TOPPERS_KERNEL = asp3
 ifeq ($(TOPPERS_KERNEL),asp3)
-	CDEFS := -DMROS2_USE_ASP3
+	CDEFS := -DUSE_ASP3_FOR_STM
 	# name of main application
 	APPLNAME = sample3
 else ifeq ($(TOPPERS_KERNEL),asp)
-	CDEFS := -DMROS2_USE_ASP
+	CDEFS := -DUSE_ASP_FOR_STM
 	# name of main application
 	APPLNAME = sample1
 endif

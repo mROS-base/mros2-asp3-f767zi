@@ -89,7 +89,7 @@ void main_task(intptr_t exinf)
 		p->len = 4;
 		err = udp_sendto(pcb, p, &dst_addr, dst_port);
 		pbuf_free(p);
-#ifdef MROS2_USE_ASP3
+#ifdef USE_ASP3_FOR_STM
 		tslp_tsk(1000000);
 #else
 		tslp_tsk(1000);
