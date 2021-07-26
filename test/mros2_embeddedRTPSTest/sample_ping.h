@@ -1,17 +1,17 @@
-#ifndef _ATK2EXT_TEST_H_
-#define _ATK2EXT_TEST_H_
+#ifndef _AUTSAR_OS_EXT_TEST_H_
+#define _AUTSAR_OS_EXT_TEST_H_
 
-#include "atk2ext_task.h"
+#include "autosar_os_ext_task.h"
 
-extern void	TASKNAME(Atk2ExtTcpTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtEthIfLinkTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtEthInputTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtHBPubTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtHBSubTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtSPDPTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtWriterTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtReaderTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtUserDefaultTask) (intptr_t exinf);
-extern void	TASKNAME(Atk2ExtMROS2Task) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtTcpTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtEthIfLinkTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtEthInputTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtHBPubTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtHBSubTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtSPDPTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtWriterTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtReaderTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtUserDefaultTask) (intptr_t exinf);
+extern void	TASKNAME(AutosarOsExtMROS2Task) (intptr_t exinf);
 
-#endif /* _ATK2EXT_TEST_H_ */
+#endif /* _AUTSAR_OS_EXT_TEST_H_ */

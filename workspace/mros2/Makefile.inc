@@ -19,5 +19,5 @@ APPLDIR	+= $(APPDIR)/config/asp
 
 # additional files for main application
 APPL_COBJS := sample_ping.o
-APPL_COBJS += atk2ext_user_config.o
-APPL_COBJS += atk2ext_asp_user_config.o
+APPL_COBJS += autosar_os_ext_user_config.o
+APPL_COBJS += autosar_os_ext_asp_user_config.o

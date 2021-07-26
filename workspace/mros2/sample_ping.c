@@ -2,10 +2,10 @@
 #include "cmsis_config_utl.h"
 #include "sample_ping.h"
 
-TASK(Atk2ExtTcpTask)
+TASK(AutosarOsExtTcpTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -15,10 +15,10 @@ TASK(Atk2ExtTcpTask)
 	return;
 }
 
-TASK(Atk2ExtEthIfLinkTask)
+TASK(AutosarOsExtEthIfLinkTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -28,10 +28,10 @@ TASK(Atk2ExtEthIfLinkTask)
 	return;
 }
 
-TASK(Atk2ExtEthInputTask)
+TASK(AutosarOsExtEthInputTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -40,10 +40,10 @@ TASK(Atk2ExtEthInputTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtHBPubTask)
+TASK(AutosarOsExtHBPubTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -52,10 +52,10 @@ TASK(Atk2ExtHBPubTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtHBSubTask)
+TASK(AutosarOsExtHBSubTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -64,10 +64,10 @@ TASK(Atk2ExtHBSubTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtSPDPTask)
+TASK(AutosarOsExtSPDPTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -76,10 +76,10 @@ TASK(Atk2ExtSPDPTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtWriterTask)
+TASK(AutosarOsExtWriterTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -88,10 +88,10 @@ TASK(Atk2ExtWriterTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtReaderTask)
+TASK(AutosarOsExtReaderTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -100,10 +100,10 @@ TASK(Atk2ExtReaderTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtUserDefaultTask)
+TASK(AutosarOsExtUserDefaultTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -112,10 +112,10 @@ TASK(Atk2ExtUserDefaultTask)
 	(void)osThreadTerminate(NULL);
 	return;
 }
-TASK(Atk2ExtMROS2Task)
+TASK(AutosarOsExtMROS2Task)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);

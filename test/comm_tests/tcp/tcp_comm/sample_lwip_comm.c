@@ -1,5 +1,5 @@
 #include "sample_lwip_comm.h"
-#include "atk2ext_common.h"
+#include "autosar_os_ext_common.h"
 #include "include/lwip/sockets.h"
 
 static int sample_lwip_socket_select(SampleLwipSocketType* socket, bool_t read, bool_t write)

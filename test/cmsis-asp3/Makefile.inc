@@ -5,7 +5,7 @@
 TOPPERS_KERNEL = asp3
 
 # compile switch
-CDEFS := -DMROS2_USE_ASP3
+CDEFS := -DUSE_ASP3_FOR_STM
 
 # name of main application
 APPLNAME = sample3

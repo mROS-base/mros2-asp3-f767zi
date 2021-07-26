@@ -1,7 +1,7 @@
 #ifndef _SAMPLE_LWIP_COMM_H_
 #define _SAMPLE_LWIP_COMM_H_
 
-#include "atk2ext_common.h"
+#include "autosar_os_ext_common.h"
 #include "include/lwip/sockets.h"
 
 #define SAMPLE_LWIP_COMM_TIMEOUT	100

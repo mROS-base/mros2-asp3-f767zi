@@ -1,5 +1,5 @@
 #include "sample_lwip_comm.h"
-#include "atk2ext_common.h"
+#include "autosar_os_ext_common.h"
 #include "include/lwip/sockets.h"
 
 /********************************************

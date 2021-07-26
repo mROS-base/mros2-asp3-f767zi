@@ -11,7 +11,7 @@ usage:
 	@echo Usage Guide：make app="<application folder>"
 endif
 
-run:
+all:
 	@cd $(BUILDSPACE) &&  make -j 24 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 

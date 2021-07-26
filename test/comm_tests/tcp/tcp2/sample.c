@@ -1,12 +1,12 @@
-#include "atk2ext_common.h"
+#include "autosar_os_ext_common.h"
 #include "cmsis_os.h"
-#include "atk2ext_sys_config.h"
+#include "autosar_os_ext_sys_config.h"
 #include "sample.h"
 
-TASK(Atk2ExtTestTask)
+TASK(AutosarOsExtTestTask)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -16,10 +16,10 @@ TASK(Atk2ExtTestTask)
 	return;
 }
 
-TASK(Atk2ExtTest2Task)
+TASK(AutosarOsExtTest2Task)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -29,10 +29,10 @@ TASK(Atk2ExtTest2Task)
 	return;
 }
 
-TASK(Atk2ExtTest3Task)
+TASK(AutosarOsExtTest3Task)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
@@ -42,10 +42,10 @@ TASK(Atk2ExtTest3Task)
 	return;
 }
 
-TASK(Atk2TaskTestControl)
+TASK(AutosarOsTaskTestControl)
 {
-	UserThreadAtk2TaskMapEntryType config;
-	StatusType ercd = Atk2TaskConfigGet(&config);
+	UserThreadAutosarOsTaskMapEntryType config;
+	StatusType ercd = AutosarOsTaskConfigGet(&config);
 
 	if (ercd == E_OK) {
 		config.func(config.argument);
