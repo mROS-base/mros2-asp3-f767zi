@@ -15,9 +15,9 @@ APPLNAME = sample3
 # information for user configuration
 APPLDIR	:= $(APPDIR)
 APPLDIR	+= $(APPDIR)/config
-APPLDIR	+= $(APPDIR)/config/asp
+APPLDIR	+= $(APPDIR)/config/asp3
 
 # additional files for main application
 APPL_COBJS := sample_ping.o
 APPL_COBJS += autosar_os_ext_user_config.o
-APPL_COBJS += autosar_os_ext_asp_user_config.o
+APPL_COBJS += autosar_os_ext_asp3_user_config.o

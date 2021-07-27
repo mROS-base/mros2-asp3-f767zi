@@ -1,5 +1,5 @@
-#ifndef _AUTSAR_OS_EXT_TEST_H_
-#define _AUTSAR_OS_EXT_TEST_H_
+#ifndef _AUTOSAR_OS_EXT_TEST_H_
+#define _AUTOSAR_OS_EXT_TEST_H_
 
 #include "cmsis_config_utl.h"
 
@@ -51,4 +51,4 @@ extern void	TASKNAME(AutosarOsExtMROS2Task) (intptr_t exinf);
 #define MROS2_STACK_SIZE_UserDefaultTask 250
 
 
-#endif /* _AUTSAR_OS_EXT_TEST_H_ */
+#endif /* _AUTOSAR_OS_EXT_TEST_H_ */

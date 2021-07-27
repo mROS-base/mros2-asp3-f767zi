@@ -1,5 +1,5 @@
-#ifndef _AUTOSAR_OS_EXT_USER_CONFIG_H_
-#define _AUTOSAR_OS_EXT_USER_CONFIG_H_
+#ifndef _AUTSAR_OS_EXT_USER_CONFIG_H_
+#define _AUTSAR_OS_EXT_USER_CONFIG_H_
 
 #include "cmsis_os.h"
 
@@ -18,4 +18,4 @@
  ***********************************************/
 #define USER_THREAD_NUM		9U
 
-#endif /* _AUTOSAR_OS_EXT_USER_CONFIG_H_ */
+#endif /* _AUTSAR_OS_EXT_USER_CONFIG_H_ */
