@@ -13,7 +13,7 @@ const AutosarOsExtFlagMapEntryType autosar_os_ext_flag_user_map[AUTOSAR_OS_EXT_A
 		AUTOSAR_OS_EXT_FLAG_MAP_ENTRY(MAIN_TASK),
 };
 
-AutosarOsExtFlagMapEntryType* cmsis_get_flag_user_map(void)
+const AutosarOsExtFlagMapEntryType* cmsis_get_flag_user_map(void)
 {
 	return autosar_os_ext_flag_user_map;
 }
