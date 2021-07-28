@@ -1,5 +1,5 @@
 #
-# Makefile for a workspace of mros2 app
+# Makefile for a test of mros2 app
 #
 
 # get the app name with the argument of make
@@ -11,14 +11,14 @@ MAKE = make -f Makefile.common
 # information for directory tree
 WSPCDIR           := ${shell pwd}/..
 ROOTDIR           := ${WSPCDIR}/..
-APPDIR            := ${ROOTDIR}/workspace/${APPNAME}
+APPDIR            := ${ROOTDIR}/test/${APPNAME}
 DRIVERSDIR        := $(ROOTDIR)/STM32CubeF7/Drivers
 MIDDLESDIR        := $(ROOTDIR)/STM32CubeF7/Middlewares
 CMSIS_MAKEFILEDIR := ${ROOTDIR}/cmsis-asp3
 MROS2_MAKEFILEDIR := ${ROOTDIR}/mros2/makefiles
 ASP3_MAKEFILEDIR  := ${ROOTDIR}/asp3-f767zi
 
-# workspace app makefile include
+# test app makefile include
 ifdef test
 include ${APPDIR}/Makefile.inc
 endif
