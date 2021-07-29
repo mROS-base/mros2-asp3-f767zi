@@ -1,4 +1,4 @@
-#include "sample1.h"
+#include "app.h"
 #include "cmsis_os.h"
 #include "lwip.h"
 

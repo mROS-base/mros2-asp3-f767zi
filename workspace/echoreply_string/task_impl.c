@@ -1,6 +1,6 @@
 #include "cmsis_os.h"
 #include "cmsis_config_utl.h"
-#include "sample_ping.h"
+#include "task_impl.h"
 
 TASK(AutosarOsExtTcpTask)
 {
