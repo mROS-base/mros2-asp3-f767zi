@@ -12,7 +12,7 @@ usage:
 endif
 
 all:
-	@cd $(BUILDSPACE) &&  make -j 24 -f Makefile.common app=${APPNAME}
+	@cd $(BUILDSPACE) &&  make -j 4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 
 clean:
