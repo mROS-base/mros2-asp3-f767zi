@@ -8,7 +8,7 @@ TOPPERS_KERNEL = asp3
 CDEFS := -DUSE_ASP3_FOR_STM
 
 # name of main application
-APPLNAME = sample3
+APPLNAME = test
 
 # information for directory tree
 CMSISTEST_MAKEFILEDIR := $(ROOTDIR)/cmsis-asp3/test/build
