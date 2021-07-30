@@ -1,5 +1,0 @@
-INCLUDE "arm_m_gcc/common/core"
-
-#chip_config.c
-target_initialize
-target_exit
