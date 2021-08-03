@@ -2,6 +2,7 @@
 #define _AUTOSAR_OS_EXT_USER_CONFIG_H_
 
 #include "cmsis_os.h"
+#include "cmsis_config_utl.h"
 
 /***********************************************
  *
