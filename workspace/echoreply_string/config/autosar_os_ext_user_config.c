@@ -1,5 +1,4 @@
 #include "cmsis_os.h"
-#include "cmsis_user_config.h"
 #include "autosar_os_ext_user_config.h"
 
 extern void tcpip_thread(void *arg);
