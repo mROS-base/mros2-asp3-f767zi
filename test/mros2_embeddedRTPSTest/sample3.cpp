@@ -30,36 +30,35 @@ void (*hbSubFuncPtr)(void *);
 
 extern "C" void callHbPubFunc(void *arg)
 {
-	if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL)
-	{
-		(*hbPubFuncPtr)(networkPubDriverPtr);
-	}
+  if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL) {
+    (*hbPubFuncPtr)(networkPubDriverPtr);
+  }
 }
 extern "C" void callHbSubFunc(void *arg)
 {
-	if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL)
-	{
-		(*hbSubFuncPtr)(networkSubDriverPtr);
-	}
+  if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL) {
+    (*hbSubFuncPtr)(networkSubDriverPtr);
+  }
 }
 
-void setTrue(void* args){
-	*static_cast<volatile bool*>(args) = true;
+void setTrue(void* args)
+{
+  *static_cast<volatile bool*>(args) = true;
 }
 
 void userCallback(TEST *msg)
 {
-	syslog(LOG_NOTICE, "recv");
+  syslog(LOG_NOTICE, "recv");
 }
 
 void main_task(void)
 {
-	MX_LWIP_Init();
-	mros2::init(NULL, NULL);
-	mros2::Node node = mros2::Node::create_node();
-	auto sub = node.create_subscription((char *)"TOSTM", 1, userCallback);
-	auto pub = node.create_publisher<TEST>("TOLINUX", NULL, NULL);
-	mros2::spin();
+  MX_LWIP_Init();
+  mros2::init(NULL, NULL);
+  mros2::Node node = mros2::Node::create_node();
+  auto sub = node.create_subscription((char *)"TOSTM", 1, userCallback);
+  auto pub = node.create_publisher<TEST>("TOLINUX", NULL, NULL);
+  mros2::spin();
 }
 
 void

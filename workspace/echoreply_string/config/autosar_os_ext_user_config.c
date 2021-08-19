@@ -14,62 +14,62 @@ extern void mros2_init(void *args);
 
 
 UserThreadAutosarOsTaskMapEntryType user_thread_autosar_ostask_map[USER_THREAD_NUM] = {
-		{
-				.taskID = AutosarOsExtTcpTask,
-				.func = tcpip_thread,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtEthIfLinkTask,
-				.func = ethernetif_set_link,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtEthInputTask,
-				.func = ethernetif_input,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtHBPubTask,
-				.func = callHbPubFunc,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtHBSubTask,
-				.func = callHbSubFunc,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtSPDPTask,
-				.func = callRunBroadcast,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtWriterTask,
-				.func = callWriterThreadFunction,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtReaderTask,
-				.func = callReaderThreadFunction,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtMROS2Task,
-				.func = mros2_init,
-				.argument = NULL,
-		},
+  {
+    .taskID = AutosarOsExtTcpTask,
+    .func = tcpip_thread,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtEthIfLinkTask,
+    .func = ethernetif_set_link,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtEthInputTask,
+    .func = ethernetif_input,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtHBPubTask,
+    .func = callHbPubFunc,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtHBSubTask,
+    .func = callHbSubFunc,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtSPDPTask,
+    .func = callRunBroadcast,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtWriterTask,
+    .func = callWriterThreadFunction,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtReaderTask,
+    .func = callReaderThreadFunction,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtMROS2Task,
+    .func = mros2_init,
+    .argument = NULL,
+  },
 };
 
 UserThreadAutosarOsTaskMapEntryType* cmsis_get_user_thread_map(void)
 {
-	return user_thread_autosar_ostask_map;
+  return user_thread_autosar_ostask_map;
 }
 int cmsis_get_app_heap_size(void)
 {
-	return APP_HEAP_SIZE;
+  return APP_HEAP_SIZE;
 }
 int cmsis_get_user_thread_num(void)
 {
-	return USER_THREAD_NUM;
+  return USER_THREAD_NUM;
 }

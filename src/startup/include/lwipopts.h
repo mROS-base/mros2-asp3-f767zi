@@ -34,7 +34,7 @@
 /* USER CODE END 0 */
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* STM32CubeMX Specific Parameters (not defined in opt.h) ---------------------*/

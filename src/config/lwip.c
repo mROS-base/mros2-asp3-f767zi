@@ -84,7 +84,7 @@ void MX_LWIP_Init(void)
 
   /* IP addresses initialization without DHCP (IPv4) */
   IP4_ADDR(&ipaddr, IP_ADDRESS[0], IP_ADDRESS[1], IP_ADDRESS[2], IP_ADDRESS[3]);
-  IP4_ADDR(&netmask, NETMASK_ADDRESS[0], NETMASK_ADDRESS[1] , NETMASK_ADDRESS[2], NETMASK_ADDRESS[3]);
+  IP4_ADDR(&netmask, NETMASK_ADDRESS[0], NETMASK_ADDRESS[1], NETMASK_ADDRESS[2], NETMASK_ADDRESS[3]);
   IP4_ADDR(&gw, GATEWAY_ADDRESS[0], GATEWAY_ADDRESS[1], GATEWAY_ADDRESS[2], GATEWAY_ADDRESS[3]);
 
   /* add the network interface (IPv4/IPv6) with RTOS */
@@ -93,13 +93,10 @@ void MX_LWIP_Init(void)
   /* Registers the default network interface */
   netif_set_default(&gnetif);
 
-  if (netif_is_link_up(&gnetif))
-  {
+  if (netif_is_link_up(&gnetif)) {
     /* When the netif is fully configured this function must be called */
     netif_set_up(&gnetif);
-  }
-  else
-  {
+  } else {
     /* When the netif link is down this function must be called */
     netif_set_down(&gnetif);
   }
@@ -113,17 +110,17 @@ void MX_LWIP_Init(void)
   link_arg.netif = &gnetif;
   link_arg.semaphore = Netif_LinkSemaphore;
   /* Create the Ethernet link handler thread */
-/* USER CODE BEGIN OS_THREAD_NEW_CMSIS_RTOS_V2 */
+  /* USER CODE BEGIN OS_THREAD_NEW_CMSIS_RTOS_V2 */
   memset(&attributes, 0x0, sizeof(osThreadAttr_t));
   attributes.name = "LinkThr";
   attributes.stack_size = INTERFACE_THREAD_STACK_SIZE;
   attributes.priority = osPriorityBelowNormal;
   osThreadNew(ethernetif_set_link, &link_arg, &attributes);
-/* USER CODE END OS_THREAD_NEW_CMSIS_RTOS_V2 */
+  /* USER CODE END OS_THREAD_NEW_CMSIS_RTOS_V2 */
 
-/* USER CODE BEGIN 3 */
+  /* USER CODE BEGIN 3 */
 
-/* USER CODE END 3 */
+  /* USER CODE END 3 */
 }
 
 #ifdef USE_OBSOLETE_USER_CODE_SECTION_4
@@ -144,9 +141,9 @@ sio_fd_t sio_open(u8_t devnum)
 {
   sio_fd_t sd;
 
-/* USER CODE BEGIN 7 */
+  /* USER CODE BEGIN 7 */
   sd = 0; // dummy code
-/* USER CODE END 7 */
+  /* USER CODE END 7 */
 
   return sd;
 }
@@ -161,8 +158,8 @@ sio_fd_t sio_open(u8_t devnum)
  */
 void sio_send(u8_t c, sio_fd_t fd)
 {
-/* USER CODE BEGIN 8 */
-/* USER CODE END 8 */
+  /* USER CODE BEGIN 8 */
+  /* USER CODE END 8 */
 }
 
 /**
@@ -180,9 +177,9 @@ u32_t sio_read(sio_fd_t fd, u8_t *data, u32_t len)
 {
   u32_t recved_bytes;
 
-/* USER CODE BEGIN 9 */
+  /* USER CODE BEGIN 9 */
   recved_bytes = 0; // dummy code
-/* USER CODE END 9 */
+  /* USER CODE END 9 */
   return recved_bytes;
 }
 
@@ -199,9 +196,9 @@ u32_t sio_tryread(sio_fd_t fd, u8_t *data, u32_t len)
 {
   u32_t recved_bytes;
 
-/* USER CODE BEGIN 10 */
+  /* USER CODE BEGIN 10 */
   recved_bytes = 0; // dummy code
-/* USER CODE END 10 */
+  /* USER CODE END 10 */
   return recved_bytes;
 }
 #endif /* MDK ARM Compiler */

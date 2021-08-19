@@ -17,9 +17,9 @@ ETH_HandleTypeDef heth;
 Inline void
 svc_perror(const char *file, int_t line, const char *expr, ER ercd)
 {
-	if (ercd < 0) {
-		t_perror(LOG_ERROR, file, line, expr, ercd);
-	}
+  if (ercd < 0) {
+    t_perror(LOG_ERROR, file, line, expr, ercd);
+  }
 }
 
 #define	SVC_PERROR(expr)	svc_perror(__FILE__, __LINE__, #expr, (expr))
@@ -30,20 +30,20 @@ extern int sample_lwip_scene7(void);
  */
 void main_task(intptr_t exinf)
 {
-	SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
-	syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
-	MX_LWIP_Init();
-	ena_int(77);
-	dev_timer_init();
-	osThreadNew((void *)(sample_lwip_scene7), NULL, NULL);
-  
-	while(true){
-		tslp_tsk(100);
-		(void)NVIC_GetPriority(ETH_IRQn);
-	}
-	SVC_PERROR(serial_ctl_por(TASK_PORTID,
-							(IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
-	ext_tsk();
+  SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
+  syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
+  MX_LWIP_Init();
+  ena_int(77);
+  dev_timer_init();
+  osThreadNew((void *)(sample_lwip_scene7), NULL, NULL);
+
+  while(true) {
+    tslp_tsk(100);
+    (void)NVIC_GetPriority(ETH_IRQn);
+  }
+  SVC_PERROR(serial_ctl_por(TASK_PORTID,
+                            (IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
+  ext_tsk();
 }
 
 

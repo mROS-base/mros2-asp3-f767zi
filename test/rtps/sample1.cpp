@@ -68,15 +68,15 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
-		  "defaultTask",
-		  0,
-		  0,
-		  0,
-		  0,
-		  250*4,
-		  (osPriority_t) osPriorityNormal, //osPriorityRealtime,
-		  0,
-		  0,
+  "defaultTask",
+  0,
+  0,
+  0,
+  0,
+  250*4,
+  (osPriority_t) osPriorityNormal, //osPriorityRealtime,
+  0,
+  0,
 };
 /* USER CODE BEGIN PV */
 
@@ -103,46 +103,48 @@ void StartDefaultTask(void * argument);
 // Used to read out registers
 extern "C"	void prvGetRegistersFromStack( uint32_t *pulFaultStackAddress )
 {
-	/* These are volatile to try and prevent the compiler/linker optimising them
-	away as the variables never actually get used.  If the debugger won't show the
-	values of the variables, make them global my moving their declaration outside
-	of this function. */
-	volatile uint32_t r0;
-	volatile uint32_t r1;
-	volatile uint32_t r2;
-	volatile uint32_t r3;
-	volatile uint32_t r12;
-	volatile uint32_t lr; /* Link register. */
-	volatile uint32_t pc; /* Program counter. */
-	volatile uint32_t psr;/* Program status register. */
+  /* These are volatile to try and prevent the compiler/linker optimising them
+  away as the variables never actually get used.  If the debugger won't show the
+  values of the variables, make them global my moving their declaration outside
+  of this function. */
+  volatile uint32_t r0;
+  volatile uint32_t r1;
+  volatile uint32_t r2;
+  volatile uint32_t r3;
+  volatile uint32_t r12;
+  volatile uint32_t lr; /* Link register. */
+  volatile uint32_t pc; /* Program counter. */
+  volatile uint32_t psr;/* Program status register. */
 
-	r0 = pulFaultStackAddress[ 0 ];
-	r1 = pulFaultStackAddress[ 1 ];
-	r2 = pulFaultStackAddress[ 2 ];
-	r3 = pulFaultStackAddress[ 3 ];
+  r0 = pulFaultStackAddress[ 0 ];
+  r1 = pulFaultStackAddress[ 1 ];
+  r2 = pulFaultStackAddress[ 2 ];
+  r3 = pulFaultStackAddress[ 3 ];
 
-	r12 = pulFaultStackAddress[ 4 ];
-	lr = pulFaultStackAddress[ 5 ];
-	pc = pulFaultStackAddress[ 6 ];
-	psr = pulFaultStackAddress[ 7 ];
+  r12 = pulFaultStackAddress[ 4 ];
+  lr = pulFaultStackAddress[ 5 ];
+  pc = pulFaultStackAddress[ 6 ];
+  psr = pulFaultStackAddress[ 7 ];
 
-	/* When the following line is hit, the variables contain the register values. */
-	for( ;; );
+  /* When the following line is hit, the variables contain the register values. */
+  for( ;; );
 }
 
 
-extern "C" int __io_putchar(int ch) {
+extern "C" int __io_putchar(int ch)
+{
   //taskENTER_CRITICAL();
   HAL_UART_Transmit(&huart6, (uint8_t *)&ch, 1, 1000);
   //taskEXIT_CRITICAL();
   return ch;
 }
 
-void uart_print(char* str){
-	//TODO: enter critical section here
+void uart_print(char* str)
+{
+  //TODO: enter critical section here
   //taskENTER_CRITICAL();
-	HAL_UART_Transmit(&huart6, (uint8_t*) str, strlen(str), 100);
-	//taskEXIT_CRITICAL();
+  HAL_UART_Transmit(&huart6, (uint8_t*) str, strlen(str), 100);
+  //taskEXIT_CRITICAL();
 }
 /*
 void * operator new( size_t size )
@@ -178,17 +180,15 @@ void (*hbSubFuncPtr)(void *);
 
 extern "C" void callHbPubFunc(void *arg)
 {
-	if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL)
-	{
-		(*hbPubFuncPtr)(networkPubDriverPtr);
-	}
+  if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL) {
+    (*hbPubFuncPtr)(networkPubDriverPtr);
+  }
 }
 extern "C" void callHbSubFunc(void *arg)
 {
-	if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL)
-	{
-		(*hbSubFuncPtr)(networkSubDriverPtr);
-	}
+  if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL) {
+    (*hbSubFuncPtr)(networkSubDriverPtr);
+  }
 }
 
 void main_task(void)
@@ -252,7 +252,7 @@ void main_task(void)
 
   /* Start scheduler */
   //osKernelStart();
-  
+
   /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
@@ -275,14 +275,14 @@ void SystemClock_Config(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
-  /** Configure LSE Drive Capability 
+  /** Configure LSE Drive Capability
   */
   HAL_PWR_EnableBkUpAccess();
-  /** Configure the main internal regulator output voltage 
+  /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
@@ -292,36 +292,32 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLN = 96;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
     Error_Handler();
   }
-  /** Activate the Over-Drive mode 
+  /** Activate the Over-Drive mode
   */
-  if (HAL_PWREx_EnableOverDrive() != HAL_OK)
-  {
+  if (HAL_PWREx_EnableOverDrive() != HAL_OK) {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;  //__HAL_RCC_SYSCLK_CONFIG(RCC_ClkInitStruct.SYSCLKSource);
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
-  {
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK) {
     Error_Handler();
   }
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART3|RCC_PERIPHCLK_USART6
-                              |RCC_PERIPHCLK_CLK48;
+      |RCC_PERIPHCLK_CLK48;
   PeriphClkInitStruct.Usart3ClockSelection = RCC_USART3CLKSOURCE_PCLK1;
   PeriphClkInitStruct.Usart6ClockSelection = RCC_USART6CLKSOURCE_PCLK2;
   PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLL;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-  {
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK) {
     Error_Handler();
   }
 }
@@ -351,8 +347,7 @@ static void MX_USART3_UART_Init(void)
   huart3.Init.OverSampling = UART_OVERSAMPLING_16;
   huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart3) != HAL_OK)
-  {
+  if (HAL_UART_Init(&huart3) != HAL_OK) {
     Error_Handler();
   }
   /* USER CODE BEGIN USART3_Init 2 */
@@ -386,8 +381,7 @@ static void MX_USART6_UART_Init(void)
   huart6.Init.OverSampling = UART_OVERSAMPLING_16;
   huart6.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart6.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart6) != HAL_OK)
-  {
+  if (HAL_UART_Init(&huart6) != HAL_OK) {
     Error_Handler();
   }
   /* USER CODE BEGIN USART6_Init 2 */
@@ -421,8 +415,7 @@ static void MX_USB_OTG_FS_PCD_Init(void)
   hpcd_USB_OTG_FS.Init.lpm_enable = DISABLE;
   hpcd_USB_OTG_FS.Init.vbus_sensing_enable = ENABLE;
   hpcd_USB_OTG_FS.Init.use_dedicated_ep1 = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_OTG_FS) != HAL_OK)
-  {
+  if (HAL_PCD_Init(&hpcd_USB_OTG_FS) != HAL_OK) {
     Error_Handler();
   }
   /* USER CODE BEGIN USB_OTG_FS_Init 2 */
@@ -488,56 +481,61 @@ static void MX_GPIO_Init(void)
 /* LATENCY TEST  RTPS*/
 
 //Callback function to set the boolean to true upon a match
-void setTrue(void* args){
-	*static_cast<volatile bool*>(args) = true;
+void setTrue(void* args)
+{
+  *static_cast<volatile bool*>(args) = true;
 }
 
-void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange){
-	rtps::Writer* writer = (rtps::Writer*) callee;
-	static std::array<uint8_t,10> data{};
-	data.fill(10);
-	auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
+void message_callback(void* callee, const rtps::ReaderCacheChange& cacheChange)
+{
+  rtps::Writer* writer = (rtps::Writer*) callee;
+  static std::array<uint8_t,10> data{};
+  data.fill(10);
+  auto* change = writer->newChange(rtps::ChangeKind_t::ALIVE, data.data(), data.size());
 }
 
 
 //Function to start the RTPS Test
-void startRTPStest(){
-	syslog(LOG_NOTICE, "starting RTPS test");
-	//Initialize variables and complete RTPS initialization
-	bool subMatched = false;
-	bool pubMatched = false;
-	bool received_message = false;
+void startRTPStest()
+{
+  syslog(LOG_NOTICE, "starting RTPS test");
+  //Initialize variables and complete RTPS initialization
+  bool subMatched = false;
+  bool pubMatched = false;
+  bool received_message = false;
 
-	static rtps::Domain domain;
+  static rtps::Domain domain;
 
-	//Create RTPS participant
-	rtps::Participant* part = domain.createParticipant();
-	if(part == nullptr){
-		return;
-	}
+  //Create RTPS participant
+  rtps::Participant* part = domain.createParticipant();
+  if(part == nullptr) {
+    return;
+  }
 
-	//Register callback to ensure that a publisher is matched to the writer before sending messages
-	part->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
-	part->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
+  //Register callback to ensure that a publisher is matched to the writer before sending messages
+  part->registerOnNewPublisherMatchedCallback(setTrue, &pubMatched);
+  part->registerOnNewSubscriberMatchedCallback(setTrue, &subMatched);
 
-	//Create new writer to send messages
-	rtps::Writer* writer = domain.createWriter(*part, "TOLINUX","TEST", false);
-	rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
-	reader->registerCallback(&message_callback, writer);
+  //Create new writer to send messages
+  rtps::Writer* writer = domain.createWriter(*part, "TOLINUX","TEST", false);
+  rtps::Reader* reader = domain.createReader(*part, "TOSTM",  "TEST", false);
+  reader->registerCallback(&message_callback, writer);
 
-	domain.completeInit();
+  domain.completeInit();
 
-	//Check that writer creation was successful
-	if(writer == nullptr || reader == nullptr){
-		return;
-	}
+  //Check that writer creation was successful
+  if(writer == nullptr || reader == nullptr) {
+    return;
+  }
 
-	//Wait for the subscriber on the Linux side to match
-	slp_tsk();
-	while(!subMatched || !pubMatched){
-	}
+  //Wait for the subscriber on the Linux side to match
+  slp_tsk();
+  while(!subMatched || !pubMatched) {
+  }
 
-	while(true){tslp_tsk(100);}
+  while(true) {
+    tslp_tsk(100);
+  }
 }
 
 
@@ -546,7 +544,7 @@ void startRTPStest(){
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
   * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used 
+  * @param  argument: Not used
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
@@ -555,16 +553,16 @@ void startRTPStest(){
 void StartDefaultTask(void * argument)
 {
 
-	/* init code for LWIP */
+  /* init code for LWIP */
 
 
-    /* USER CODE BEGIN 5 */
-	startRTPStest();
+  /* USER CODE BEGIN 5 */
+  startRTPStest();
 
-	//volatile auto size = uxTaskGetStackHighWaterMark(nullptr);
+  //volatile auto size = uxTaskGetStackHighWaterMark(nullptr);
 
-	ext_tsk();
-  /* USER CODE END 5 */ 
+  ext_tsk();
+  /* USER CODE END 5 */
 }
 
 /**
@@ -609,7 +607,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
