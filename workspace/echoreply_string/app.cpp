@@ -37,8 +37,8 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  CMSIS_IMPL_INFO("recv: [%s]", msg->data.c_str());
-  CMSIS_IMPL_INFO("publish message [%s]", msg->data.c_str());
+  CMSIS_IMPL_INFO("subscribed msg: '%s'", msg->data.c_str());
+  CMSIS_IMPL_INFO("publishing msg: '%s'", msg->data.c_str());
   pub.publish(*msg);
 }
 
