@@ -5,52 +5,52 @@
 
 TASK(AutosarOsExtTestTask)
 {
-	UserThreadAutosarOsTaskMapEntryType config;
-	StatusType ercd = AutosarOsTaskConfigGet(&config);
+  UserThreadAutosarOsTaskMapEntryType config;
+  StatusType ercd = AutosarOsTaskConfigGet(&config);
 
-	if (ercd == E_OK) {
-		config.func(config.argument);
-	}
+  if (ercd == E_OK) {
+    config.func(config.argument);
+  }
 
-	(void)osThreadTerminate(NULL);
-	return;
+  (void)osThreadTerminate(NULL);
+  return;
 }
 
 TASK(AutosarOsExtTest2Task)
 {
-	UserThreadAutosarOsTaskMapEntryType config;
-	StatusType ercd = AutosarOsTaskConfigGet(&config);
+  UserThreadAutosarOsTaskMapEntryType config;
+  StatusType ercd = AutosarOsTaskConfigGet(&config);
 
-	if (ercd == E_OK) {
-		config.func(config.argument);
-	}
+  if (ercd == E_OK) {
+    config.func(config.argument);
+  }
 
-	(void)osThreadTerminate(NULL);
-	return;
+  (void)osThreadTerminate(NULL);
+  return;
 }
 
 TASK(AutosarOsExtTest3Task)
 {
-	UserThreadAutosarOsTaskMapEntryType config;
-	StatusType ercd = AutosarOsTaskConfigGet(&config);
+  UserThreadAutosarOsTaskMapEntryType config;
+  StatusType ercd = AutosarOsTaskConfigGet(&config);
 
-	if (ercd == E_OK) {
-		config.func(config.argument);
-	}
+  if (ercd == E_OK) {
+    config.func(config.argument);
+  }
 
-	(void)osThreadTerminate(NULL);
-	return;
+  (void)osThreadTerminate(NULL);
+  return;
 }
 
 TASK(AutosarOsTaskTestControl)
 {
-	UserThreadAutosarOsTaskMapEntryType config;
-	StatusType ercd = AutosarOsTaskConfigGet(&config);
+  UserThreadAutosarOsTaskMapEntryType config;
+  StatusType ercd = AutosarOsTaskConfigGet(&config);
 
-	if (ercd == E_OK) {
-		config.func(config.argument);
-	}
+  if (ercd == E_OK) {
+    config.func(config.argument);
+  }
 
-	(void)osThreadTerminate(NULL);
-	return;
+  (void)osThreadTerminate(NULL);
+  return;
 }

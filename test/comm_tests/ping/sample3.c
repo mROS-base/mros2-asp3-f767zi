@@ -14,9 +14,9 @@
 Inline void
 svc_perror(const char *file, int_t line, const char *expr, ER ercd)
 {
-	if (ercd < 0) {
-		t_perror(LOG_ERROR, file, line, expr, ercd);
-	}
+  if (ercd < 0) {
+    t_perror(LOG_ERROR, file, line, expr, ercd);
+  }
 }
 
 #define	SVC_PERROR(expr)	svc_perror(__FILE__, __LINE__, #expr, (expr))
@@ -26,9 +26,9 @@ svc_perror(const char *file, int_t line, const char *expr, ER ercd)
  */
 void main_task(intptr_t exinf)
 {
-	SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
-	syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
-	MX_LWIP_Init();
-	
-	ext_tsk();
+  SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
+  syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
+  MX_LWIP_Init();
+
+  ext_tsk();
 }

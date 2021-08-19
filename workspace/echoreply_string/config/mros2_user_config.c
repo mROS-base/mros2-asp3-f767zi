@@ -4,7 +4,7 @@
 
 int mros2_get_submsg_count(void)
 {
-	return SUB_MSG_COUNT;
+  return SUB_MSG_COUNT;
 }
 
 

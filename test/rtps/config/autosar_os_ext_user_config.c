@@ -13,49 +13,49 @@ extern void callRunBroadcast(void *args);
 
 
 UserThreadAutosarOsTaskMapEntryType user_thread_autosar_ostask_map[USER_THREAD_NUM] = {
-		{
-				.taskID = AutosarOsExtTcpTask,
-				.func = tcpip_thread,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtEthIfLinkTask,
-				.func = ethernetif_set_link,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtEthInputTask,
-				.func = ethernetif_input,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtHBPubTask,
-				.func = callHbPubFunc,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtHBSubTask,
-				.func = callHbSubFunc,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtSPDPTask,
-				.func = callRunBroadcast,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtWriterTask,
-				.func = callWriterThreadFunction,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtReaderTask,
-				.func = callReaderThreadFunction,
-				.argument = NULL,
-		},
-		{
-				.taskID = AutosarOsExtUserDefaultTask,
-				.func = StartDefaultTask,
-				.argument = NULL,
-		},
+  {
+    .taskID = AutosarOsExtTcpTask,
+    .func = tcpip_thread,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtEthIfLinkTask,
+    .func = ethernetif_set_link,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtEthInputTask,
+    .func = ethernetif_input,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtHBPubTask,
+    .func = callHbPubFunc,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtHBSubTask,
+    .func = callHbSubFunc,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtSPDPTask,
+    .func = callRunBroadcast,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtWriterTask,
+    .func = callWriterThreadFunction,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtReaderTask,
+    .func = callReaderThreadFunction,
+    .argument = NULL,
+  },
+  {
+    .taskID = AutosarOsExtUserDefaultTask,
+    .func = StartDefaultTask,
+    .argument = NULL,
+  },
 };

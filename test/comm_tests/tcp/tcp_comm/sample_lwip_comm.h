@@ -17,17 +17,17 @@
 #define SAMPLE_LWIP_LISTENBACKLOG	1
 
 typedef struct {
-	int		sockfd;
-	int		timeout;
-	bool_t	blocking;
-	int		comm_type;
-}SampleLwipSocketType;
+  int		sockfd;
+  int		timeout;
+  bool_t	blocking;
+  int		comm_type;
+} SampleLwipSocketType;
 
 typedef struct {
-	int sockfd;
-	struct sockaddr_in addr;
-	bool_t	connected;
-}SampleLwipTcpClientType;
+  int sockfd;
+  struct sockaddr_in addr;
+  bool_t	connected;
+} SampleLwipTcpClientType;
 
 extern int sample_lwip_connection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server);
 extern int sample_lwip_reconnection_tcp_server(SampleLwipSocketType* server_socket, SampleLwipSocketType* client_socket, struct sockaddr_in* server);

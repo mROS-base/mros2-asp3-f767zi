@@ -13,7 +13,7 @@ extern void	TASKNAME(AutosarOsExtWriterTask) (intptr_t exinf);
 extern void	TASKNAME(AutosarOsExtReaderTask) (intptr_t exinf);
 extern void	TASKNAME(AutosarOsExtUserDefaultTask) (intptr_t exinf);
 
-/* 
+/*
  * priorities of mROS 2 tasks for RTPS
  *
  * TODO: We assigned relatevely lower priorities for EthIfLinkTask and
@@ -22,7 +22,7 @@ extern void	TASKNAME(AutosarOsExtUserDefaultTask) (intptr_t exinf);
 #define MROS2_HIGH_PRIORITY MAIN_PRIORITY
 #define MROS2_LOW_PRIORITY  LOW_PRIORITY+1
 
-/* 
+/*
  * experimental: stack size of mROS 2 tasks for RTPS
  * Each comment refers the location of original definition
  */

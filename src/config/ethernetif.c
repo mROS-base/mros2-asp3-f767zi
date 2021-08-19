@@ -48,29 +48,29 @@
 
 /* USER CODE BEGIN 1 */
 #ifndef portMAX_DELAY
-	typedef uint32_t TickType_t;
-	#define portMAX_DELAY ( TickType_t ) 0xffffffffUL
+typedef uint32_t TickType_t;
+#define portMAX_DELAY ( TickType_t ) 0xffffffffUL
 #endif
 /* USER CODE END 1 */
 
 /* Private variables ---------------------------------------------------------*/
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
-  #pragma data_alignment=4
+#pragma data_alignment=4
 #endif
 __ALIGN_BEGIN ETH_DMADescTypeDef  DMARxDscrTab[ETH_RXBUFNB] __ALIGN_END;/* Ethernet Rx MA Descriptor */
 
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
-  #pragma data_alignment=4
+#pragma data_alignment=4
 #endif
 __ALIGN_BEGIN ETH_DMADescTypeDef  DMATxDscrTab[ETH_TXBUFNB] __ALIGN_END;/* Ethernet Tx DMA Descriptor */
 
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
-  #pragma data_alignment=4
+#pragma data_alignment=4
 #endif
 __ALIGN_BEGIN uint8_t Rx_Buff[ETH_RXBUFNB][ETH_RX_BUF_SIZE] __ALIGN_END; /* Ethernet Receive Buffer */
 
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
-  #pragma data_alignment=4
+#pragma data_alignment=4
 #endif
 __ALIGN_BEGIN uint8_t Tx_Buff[ETH_TXBUFNB][ETH_TX_BUF_SIZE] __ALIGN_END; /* Ethernet Transmit Buffer */
 
@@ -92,11 +92,10 @@ ETH_HandleTypeDef heth;
 void HAL_ETH_MspInit(ETH_HandleTypeDef* ethHandle)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(ethHandle->Instance==ETH)
-  {
-  /* USER CODE BEGIN ETH_MspInit 0 */
+  if(ethHandle->Instance==ETH) {
+    /* USER CODE BEGIN ETH_MspInit 0 */
 
-  /* USER CODE END ETH_MspInit 0 */
+    /* USER CODE END ETH_MspInit 0 */
     /* Enable Peripheral clock */
     __HAL_RCC_ETH_CLK_ENABLE();
 
@@ -146,19 +145,18 @@ void HAL_ETH_MspInit(ETH_HandleTypeDef* ethHandle)
     /* Peripheral interrupt init */
     HAL_NVIC_SetPriority(ETH_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(ETH_IRQn);
-  /* USER CODE BEGIN ETH_MspInit 1 */
+    /* USER CODE BEGIN ETH_MspInit 1 */
 
-  /* USER CODE END ETH_MspInit 1 */
+    /* USER CODE END ETH_MspInit 1 */
   }
 }
 
 void HAL_ETH_MspDeInit(ETH_HandleTypeDef* ethHandle)
 {
-  if(ethHandle->Instance==ETH)
-  {
-  /* USER CODE BEGIN ETH_MspDeInit 0 */
+  if(ethHandle->Instance==ETH) {
+    /* USER CODE BEGIN ETH_MspDeInit 0 */
 
-  /* USER CODE END ETH_MspDeInit 0 */
+    /* USER CODE END ETH_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_ETH_CLK_DISABLE();
 
@@ -184,9 +182,9 @@ void HAL_ETH_MspDeInit(ETH_HandleTypeDef* ethHandle)
     /* Peripheral interrupt Deinit*/
     HAL_NVIC_DisableIRQ(ETH_IRQn);
 
-  /* USER CODE BEGIN ETH_MspDeInit 1 */
+    /* USER CODE BEGIN ETH_MspDeInit 1 */
 
-  /* USER CODE END ETH_MspDeInit 1 */
+    /* USER CODE END ETH_MspDeInit 1 */
   }
 }
 
@@ -218,13 +216,13 @@ static void low_level_init(struct netif *netif)
 {
   uint32_t regvalue = 0;
   HAL_StatusTypeDef hal_eth_init_status;
-/* USER CODE BEGIN OS_THREAD_ATTR_CMSIS_RTOS_V2 */
+  /* USER CODE BEGIN OS_THREAD_ATTR_CMSIS_RTOS_V2 */
   osThreadAttr_t attributes;
-/* USER CODE END OS_THREAD_ATTR_CMSIS_RTOS_V2 */
+  /* USER CODE END OS_THREAD_ATTR_CMSIS_RTOS_V2 */
 
-/* Init ETH */
+  /* Init ETH */
 
-   uint8_t MACAddr[6] ;
+  uint8_t MACAddr[6] ;
   heth.Instance = ETH;
   heth.Init.AutoNegotiation = ETH_AUTONEGOTIATION_ENABLE;
   heth.Init.PhyAddress = LAN8742A_PHY_ADDRESS;
@@ -245,8 +243,7 @@ static void low_level_init(struct netif *netif)
 
   hal_eth_init_status = HAL_ETH_Init(&heth);
 
-  if (hal_eth_init_status == HAL_OK)
-  {
+  if (hal_eth_init_status == HAL_OK) {
     /* Set netif link flag */
     netif->flags |= NETIF_FLAG_LINK_UP;
   }
@@ -274,51 +271,51 @@ static void low_level_init(struct netif *netif)
 
   /* Accept broadcast address and ARP traffic */
   /* don't set NETIF_FLAG_ETHARP if this device is not an ethernet one */
-  #if LWIP_ARP
-    netif->flags |= NETIF_FLAG_BROADCAST | NETIF_FLAG_ETHARP;
-  #else
-    netif->flags |= NETIF_FLAG_BROADCAST;
-  #endif /* LWIP_ARP */
+#if LWIP_ARP
+  netif->flags |= NETIF_FLAG_BROADCAST | NETIF_FLAG_ETHARP;
+#else
+  netif->flags |= NETIF_FLAG_BROADCAST;
+#endif /* LWIP_ARP */
 
-/* create a binary semaphore used for informing ethernetif of frame reception */
+  /* create a binary semaphore used for informing ethernetif of frame reception */
   s_xSemaphore = osSemaphoreNew(1, 1, NULL);
 
-/* create the task that handles the ETH_MAC */
-/* USER CODE BEGIN OS_THREAD_NEW_CMSIS_RTOS_V2 */
+  /* create the task that handles the ETH_MAC */
+  /* USER CODE BEGIN OS_THREAD_NEW_CMSIS_RTOS_V2 */
   memset(&attributes, 0x0, sizeof(osThreadAttr_t));
   attributes.name = "EthIf";
   attributes.stack_size = INTERFACE_THREAD_STACK_SIZE;
   attributes.priority = osPriorityRealtime;
   osThreadNew(ethernetif_input, netif, &attributes);
-/* USER CODE END OS_THREAD_NEW_CMSIS_RTOS_V2 */
+  /* USER CODE END OS_THREAD_NEW_CMSIS_RTOS_V2 */
   /* Enable MAC and DMA transmission and reception */
   HAL_ETH_Start(&heth);
 
-/* USER CODE BEGIN PHY_PRE_CONFIG */
+  /* USER CODE BEGIN PHY_PRE_CONFIG */
 #ifdef MROS2_USE_CUBE
   netif->flags |= NETIF_FLAG_IGMP;
 #endif
-/* USER CODE END PHY_PRE_CONFIG */
+  /* USER CODE END PHY_PRE_CONFIG */
 
   /* Read Register Configuration */
   HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
   regvalue |= (PHY_ISFR_INT4);
 
   /* Enable Interrupt on change of link status */
-  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR , regvalue );
+  HAL_ETH_WritePHYRegister(&heth, PHY_ISFR, regvalue );
 
   /* Read Register Configuration */
-  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR , &regvalue);
+  HAL_ETH_ReadPHYRegister(&heth, PHY_ISFR, &regvalue);
 
-/* USER CODE BEGIN PHY_POST_CONFIG */
+  /* USER CODE BEGIN PHY_POST_CONFIG */
 
-/* USER CODE END PHY_POST_CONFIG */
+  /* USER CODE END PHY_POST_CONFIG */
 
 #endif /* LWIP_ARP || LWIP_ETHERNET */
 
-/* USER CODE BEGIN LOW_LEVEL_INIT */
+  /* USER CODE BEGIN LOW_LEVEL_INIT */
 
-/* USER CODE END LOW_LEVEL_INIT */
+  /* USER CODE END LOW_LEVEL_INIT */
 }
 
 /**
@@ -351,48 +348,44 @@ static err_t low_level_output(struct netif *netif, struct pbuf *p)
   bufferoffset = 0;
 
   /* copy frame from pbufs to driver buffers */
-  for(q = p; q != NULL; q = q->next)
-    {
-      /* Is this buffer available? If not, goto error */
-      if((DmaTxDesc->Status & ETH_DMATXDESC_OWN) != (uint32_t)RESET)
-      {
+  for(q = p; q != NULL; q = q->next) {
+    /* Is this buffer available? If not, goto error */
+    if((DmaTxDesc->Status & ETH_DMATXDESC_OWN) != (uint32_t)RESET) {
+      errval = ERR_USE;
+      goto error;
+    }
+
+    /* Get bytes in current lwIP buffer */
+    byteslefttocopy = q->len;
+    payloadoffset = 0;
+
+    /* Check if the length of data to copy is bigger than Tx buffer size*/
+    while( (byteslefttocopy + bufferoffset) > ETH_TX_BUF_SIZE ) {
+      /* Copy data to Tx buffer*/
+      memcpy( (uint8_t*)((uint8_t*)buffer + bufferoffset), (uint8_t*)((uint8_t*)q->payload + payloadoffset), (ETH_TX_BUF_SIZE - bufferoffset) );
+
+      /* Point to next descriptor */
+      DmaTxDesc = (ETH_DMADescTypeDef *)(DmaTxDesc->Buffer2NextDescAddr);
+
+      /* Check if the buffer is available */
+      if((DmaTxDesc->Status & ETH_DMATXDESC_OWN) != (uint32_t)RESET) {
         errval = ERR_USE;
         goto error;
       }
 
-      /* Get bytes in current lwIP buffer */
-      byteslefttocopy = q->len;
-      payloadoffset = 0;
+      buffer = (uint8_t *)(DmaTxDesc->Buffer1Addr);
 
-      /* Check if the length of data to copy is bigger than Tx buffer size*/
-      while( (byteslefttocopy + bufferoffset) > ETH_TX_BUF_SIZE )
-      {
-        /* Copy data to Tx buffer*/
-        memcpy( (uint8_t*)((uint8_t*)buffer + bufferoffset), (uint8_t*)((uint8_t*)q->payload + payloadoffset), (ETH_TX_BUF_SIZE - bufferoffset) );
-
-        /* Point to next descriptor */
-        DmaTxDesc = (ETH_DMADescTypeDef *)(DmaTxDesc->Buffer2NextDescAddr);
-
-        /* Check if the buffer is available */
-        if((DmaTxDesc->Status & ETH_DMATXDESC_OWN) != (uint32_t)RESET)
-        {
-          errval = ERR_USE;
-          goto error;
-        }
-
-        buffer = (uint8_t *)(DmaTxDesc->Buffer1Addr);
-
-        byteslefttocopy = byteslefttocopy - (ETH_TX_BUF_SIZE - bufferoffset);
-        payloadoffset = payloadoffset + (ETH_TX_BUF_SIZE - bufferoffset);
-        framelength = framelength + (ETH_TX_BUF_SIZE - bufferoffset);
-        bufferoffset = 0;
-      }
-
-      /* Copy the remaining bytes */
-      memcpy( (uint8_t*)((uint8_t*)buffer + bufferoffset), (uint8_t*)((uint8_t*)q->payload + payloadoffset), byteslefttocopy );
-      bufferoffset = bufferoffset + byteslefttocopy;
-      framelength = framelength + byteslefttocopy;
+      byteslefttocopy = byteslefttocopy - (ETH_TX_BUF_SIZE - bufferoffset);
+      payloadoffset = payloadoffset + (ETH_TX_BUF_SIZE - bufferoffset);
+      framelength = framelength + (ETH_TX_BUF_SIZE - bufferoffset);
+      bufferoffset = 0;
     }
+
+    /* Copy the remaining bytes */
+    memcpy( (uint8_t*)((uint8_t*)buffer + bufferoffset), (uint8_t*)((uint8_t*)q->payload + payloadoffset), byteslefttocopy );
+    bufferoffset = bufferoffset + byteslefttocopy;
+    framelength = framelength + byteslefttocopy;
+  }
 
   /* Prepare transmit descriptors to give to DMA */
   HAL_ETH_TransmitFrame(&heth, framelength);
@@ -402,8 +395,7 @@ static err_t low_level_output(struct netif *netif, struct pbuf *p)
 error:
 
   /* When Transmit Underflow flag is set, clear it and issue a Transmit Poll Demand to resume transmission */
-  if ((heth.Instance->DMASR & ETH_DMASR_TUS) != (uint32_t)RESET)
-  {
+  if ((heth.Instance->DMASR & ETH_DMASR_TUS) != (uint32_t)RESET) {
     /* Clear TUS ETHERNET DMA flag */
     heth.Instance->DMASR = ETH_DMASR_TUS;
 
@@ -436,30 +428,28 @@ static struct pbuf * low_level_input(struct netif *netif)
   /* get received frame */
   if (HAL_ETH_GetReceivedFrame_IT(&heth) != HAL_OK)
 
+  {
     return NULL;
+  }
 
   /* Obtain the size of the packet and put it into the "len" variable. */
   len = heth.RxFrameInfos.length;
   buffer = (uint8_t *)heth.RxFrameInfos.buffer;
 
-  if (len > 0)
-  {
+  if (len > 0) {
     /* We allocate a pbuf chain of pbufs from the Lwip buffer pool */
     p = pbuf_alloc(PBUF_RAW, len, PBUF_POOL);
   }
 
-  if (p != NULL)
-  {
+  if (p != NULL) {
     dmarxdesc = heth.RxFrameInfos.FSRxDesc;
     bufferoffset = 0;
-    for(q = p; q != NULL; q = q->next)
-    {
+    for(q = p; q != NULL; q = q->next) {
       byteslefttocopy = q->len;
       payloadoffset = 0;
 
       /* Check if the length of bytes to copy in current pbuf is bigger than Rx buffer size*/
-      while( (byteslefttocopy + bufferoffset) > ETH_RX_BUF_SIZE )
-      {
+      while( (byteslefttocopy + bufferoffset) > ETH_RX_BUF_SIZE ) {
         /* Copy data to pbuf */
         memcpy( (uint8_t*)((uint8_t*)q->payload + payloadoffset), (uint8_t*)((uint8_t*)buffer + bufferoffset), (ETH_RX_BUF_SIZE - bufferoffset));
 
@@ -477,22 +467,20 @@ static struct pbuf * low_level_input(struct netif *netif)
     }
   }
 
-    /* Release descriptors to DMA */
-    /* Point to first descriptor */
-    dmarxdesc = heth.RxFrameInfos.FSRxDesc;
-    /* Set Own bit in Rx descriptors: gives the buffers back to DMA */
-    for (i=0; i< heth.RxFrameInfos.SegCount; i++)
-    {
-      dmarxdesc->Status |= ETH_DMARXDESC_OWN;
-      dmarxdesc = (ETH_DMADescTypeDef *)(dmarxdesc->Buffer2NextDescAddr);
-    }
+  /* Release descriptors to DMA */
+  /* Point to first descriptor */
+  dmarxdesc = heth.RxFrameInfos.FSRxDesc;
+  /* Set Own bit in Rx descriptors: gives the buffers back to DMA */
+  for (i=0; i< heth.RxFrameInfos.SegCount; i++) {
+    dmarxdesc->Status |= ETH_DMARXDESC_OWN;
+    dmarxdesc = (ETH_DMADescTypeDef *)(dmarxdesc->Buffer2NextDescAddr);
+  }
 
-    /* Clear Segment_Count */
-    heth.RxFrameInfos.SegCount =0;
+  /* Clear Segment_Count */
+  heth.RxFrameInfos.SegCount =0;
 
   /* When Rx Buffer unavailable flag is set: clear it and resume reception */
-  if ((heth.Instance->DMASR & ETH_DMASR_RBUS) != (uint32_t)RESET)
-  {
+  if ((heth.Instance->DMASR & ETH_DMASR_RBUS) != (uint32_t)RESET) {
     /* Clear RBUS ETHERNET DMA flag */
     heth.Instance->DMASR = ETH_DMASR_RBUS;
     /* Resume DMA reception */
@@ -515,18 +503,13 @@ void ethernetif_input(void* argument)
   struct pbuf *p;
   struct netif *netif = (struct netif *) argument;
 
-  for( ;; )
-  {
-    if (osSemaphoreAcquire(s_xSemaphore, TIME_WAITING_FOR_INPUT) == osOK)
-    {
-      do
-      {
+  for( ;; ) {
+    if (osSemaphoreAcquire(s_xSemaphore, TIME_WAITING_FOR_INPUT) == osOK) {
+      do {
         LOCK_TCPIP_CORE();
         p = low_level_input( netif );
-        if   (p != NULL)
-        {
-          if (netif->input( p, netif) != ERR_OK )
-          {
+        if   (p != NULL) {
+          if (netif->input( p, netif) != ERR_OK ) {
             pbuf_free(p);
           }
         }
@@ -548,9 +531,9 @@ static err_t low_level_output_arp_off(struct netif *netif, struct pbuf *q, const
   err_t errval;
   errval = ERR_OK;
 
-/* USER CODE BEGIN 5 */
+  /* USER CODE BEGIN 5 */
 
-/* USER CODE END 5 */
+  /* USER CODE END 5 */
 
   return errval;
 
@@ -647,21 +630,17 @@ void ethernetif_set_link(void* argument)
   uint32_t regvalue = 0;
   struct link_str *link_arg = (struct link_str *)argument;
 
-  for(;;)
-  {
+  for(;;) {
     /* Read PHY_BSR*/
     HAL_ETH_ReadPHYRegister(&heth, PHY_BSR, &regvalue);
 
     regvalue &= PHY_LINKED_STATUS;
 
     /* Check whether the netif link down and the PHY link is up */
-    if(!netif_is_link_up(link_arg->netif) && (regvalue))
-    {
+    if(!netif_is_link_up(link_arg->netif) && (regvalue)) {
       /* network cable is connected */
       netif_set_link_up(link_arg->netif);
-    }
-    else if(netif_is_link_up(link_arg->netif) && (!regvalue))
-    {
+    } else if(netif_is_link_up(link_arg->netif) && (!regvalue)) {
       /* network cable is dis-connected */
       netif_set_link_down(link_arg->netif);
     }
@@ -687,11 +666,9 @@ void ethernetif_update_config(struct netif *netif)
   __IO uint32_t tickstart = 0;
   uint32_t regvalue = 0;
 
-  if(netif_is_link_up(netif))
-  {
+  if(netif_is_link_up(netif)) {
     /* Restart the auto-negotiation */
-    if(heth.Init.AutoNegotiation != ETH_AUTONEGOTIATION_DISABLE)
-    {
+    if(heth.Init.AutoNegotiation != ETH_AUTONEGOTIATION_DISABLE) {
       /* Enable Auto-Negotiation */
       HAL_ETH_WritePHYRegister(&heth, PHY_BCR, PHY_AUTONEGOTIATION);
 
@@ -699,13 +676,11 @@ void ethernetif_update_config(struct netif *netif)
       tickstart = HAL_GetTick();
 
       /* Wait until the auto-negotiation will be completed */
-      do
-      {
+      do {
         HAL_ETH_ReadPHYRegister(&heth, PHY_BSR, &regvalue);
 
         /* Check for the Timeout ( 1s ) */
-        if((HAL_GetTick() - tickstart ) > 1000)
-        {
+        if((HAL_GetTick() - tickstart ) > 1000) {
           /* In case of timeout */
           goto error;
         }
@@ -715,38 +690,30 @@ void ethernetif_update_config(struct netif *netif)
       HAL_ETH_ReadPHYRegister(&heth, PHY_SR, &regvalue);
 
       /* Configure the MAC with the Duplex Mode fixed by the auto-negotiation process */
-      if((regvalue & PHY_DUPLEX_STATUS) != (uint32_t)RESET)
-      {
+      if((regvalue & PHY_DUPLEX_STATUS) != (uint32_t)RESET) {
         /* Set Ethernet duplex mode to Full-duplex following the auto-negotiation */
         heth.Init.DuplexMode = ETH_MODE_FULLDUPLEX;
-      }
-      else
-      {
+      } else {
         /* Set Ethernet duplex mode to Half-duplex following the auto-negotiation */
         heth.Init.DuplexMode = ETH_MODE_HALFDUPLEX;
       }
       /* Configure the MAC with the speed fixed by the auto-negotiation process */
-      if(regvalue & PHY_SPEED_STATUS)
-      {
+      if(regvalue & PHY_SPEED_STATUS) {
         /* Set Ethernet speed to 10M following the auto-negotiation */
         heth.Init.Speed = ETH_SPEED_10M;
-      }
-      else
-      {
+      } else {
         /* Set Ethernet speed to 100M following the auto-negotiation */
         heth.Init.Speed = ETH_SPEED_100M;
       }
-    }
-    else /* AutoNegotiation Disable */
-    {
-    error :
+    } else { /* AutoNegotiation Disable */
+error :
       /* Check parameters */
       assert_param(IS_ETH_SPEED(heth.Init.Speed));
       assert_param(IS_ETH_DUPLEX_MODE(heth.Init.DuplexMode));
 
       /* Set MAC Speed and Duplex Mode to PHY */
       HAL_ETH_WritePHYRegister(&heth, PHY_BCR, ((uint16_t)(heth.Init.DuplexMode >> 3) |
-                                                     (uint16_t)(heth.Init.Speed >> 1)));
+                               (uint16_t)(heth.Init.Speed >> 1)));
     }
 
     /* ETHERNET MAC Re-Configuration */
@@ -754,9 +721,7 @@ void ethernetif_update_config(struct netif *netif)
 
     /* Restart MAC interface */
     HAL_ETH_Start(&heth);
-  }
-  else
-  {
+  } else {
     /* Stop MAC interface */
     HAL_ETH_Stop(&heth);
   }
