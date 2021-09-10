@@ -7,7 +7,7 @@ This repository contains the reference implementation of mROS 2 that can be oper
 
 ## Supported environment
 
-- Embedded devices
+- Embedded device
   - Board: [STM32 NUCLEO-F767ZI](https://www.st.com/en/evaluation-tools/nucleo-f767zi.html)
   - Kernel: [TOPPERS/ASP3](https://www.toppers.jp/en/project.html)
 - Host environment
@@ -20,9 +20,9 @@ This repository contains the reference implementation of mROS 2 that can be oper
 1. Install arm-none-eabi v7.3.1.
     - There are two ways to install the appropriate version.
       1. Download and unzip the prebuilt archive of GNU Arm Embedded Toolchain from [official Arm website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Please select **"GNU Arm Embedded Toolchain: 7-2018-q2-update June 27, 2018"** and "Linux 64-bit" as the archive.  
-      Then, set _<unzipped_dir>/bin_ to `$PATH`.
+      Then, unzip the downloaded archive to any location (`/usr/local/` is recommended) and set _<unzipped_dir>/bin_ to `$PATH`.
       1. Install [STM32CubeIDE v1.5.0](https://www.st.com/en/development-tools/stm32cubeide.html#overview&secondary=st-get-software). It contains v7.3.1 cross-compiler.
-      If you did not change the default location to be installed, `$PATH` to be set will be _/home/$USER/st/stm32cubeide_1.5.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.5.0.202011040924/tools_
+      If you did not change the default location to be installed, `$PATH` to be set will be _/opt/st/stm32cubeide_1.5.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.5.0.202011040924/tools_
     - Currently, we confirmed issue that v6.3.1 (which will be installed via `apt`) cannot be operated successfully. See also [#36](https://github.com/mROS-base/mros2-asp3-f767zi/issues/36).
 1. Connet the board and the host with LAN cable and micro-USB cable (CN1 connector on the board, opposite side of LAN connector). Please set the IP address and Netmask of the host to `192.168.11.3` and `255.255.255.0`, respectively.
     - You can also connect the network with the board through the router when you can set the IP and Netmask as the above.
@@ -135,6 +135,31 @@ We need to start up the mROS 2 node at first, and then operate ROS 2 nodes on th
 - echoback_reply
   - The mROS 2 node on the embedded board subscribes `std_msgs::msg::String` message from `/to_stm` topic, and then publishes this message to `/to_linux` as the reply.
   - This app runs with [mros2-host-examples/mros2_echoback](https://github.com/mROS-base/mros2-host-examples/tree/main/mros2_echoback) package on the host.
+
+## Tips: Developing with VS Code
+
+We offer a comfortable development environment with Visual Studio Code (VS Code). 
+Building, flashing and debugging the application can be done with simple operations in one window.
+
+### Required environment
+
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- VS Code Extensions
+  - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+  - [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
+- OpenOCD ( `$ sudo apt install openocd` )
+
+### Operations
+
+- Build project for mros2 application
+  - Just type `Ctrl+Shift+B` or _[Terminal] -> [Run Build Task...]_
+  - You can change the target application name by editing `"app=echoreply_string"` in `.vscode/tasks.json`.
+- Clean project
+  - _[Terminal] -> [Run Task...]_ and then select _Clean project_
+- Flashing program to the board
+  - _[Terminal] -> [Run Task...]_ and then select _Flash program_
+- Debugging
+  - Just type `F5` or _[Run] -> [Start Debugging]_
 
 ## Submodules and Licenses
 
