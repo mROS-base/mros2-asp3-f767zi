@@ -12,6 +12,9 @@ offset.timestamp
 check.timestamp
 gen/
 
+# VSCode & Cortex-Debug related files
+.vscode/.cortex-debug*
+
 # STM32CubeIDE related files
 .cproject
 .project
