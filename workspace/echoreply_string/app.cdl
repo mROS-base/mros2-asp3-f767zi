@@ -63,7 +63,7 @@ cell tSerialAdapter SerialAdapter {
  */
 cell tSysLog SysLog {
 	logBufferSize = 32;					/* ログバッファのサイズ */
-	initLogMask = C_EXP("LOG_UPTO(LOG_NOTICE)");
+	initLogMask = C_EXP("LOG_UPTO(LOG_DEBUG)");
 										/* ログバッファに記録すべき重要度 */
 	initLowMask = C_EXP("LOG_UPTO(LOG_EMERG)");
 									   	/* 低レベル出力すべき重要度 */
