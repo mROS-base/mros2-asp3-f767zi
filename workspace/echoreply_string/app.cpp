@@ -20,11 +20,15 @@ void main_task(void)
 {
   MX_LWIP_Init();
   mros2::init(NULL, NULL);
+  BSP_LED_Toggle(LED1);
+
   mros2::Node node = mros2::Node::create_node();
   sub = node.create_subscription("to_stm", 1, userCallback);
   pub = node.create_publisher<std_msgs::msg::String>("to_linux", NULL);
   std_msgs::msg::String msg;
+
   mros2::spin();
+  BSP_LED_Toggle(LED3);
 }
 
 void
