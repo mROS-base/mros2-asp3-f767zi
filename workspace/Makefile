@@ -15,7 +15,7 @@ usage:
 endif
 
 all:
-	@cd $(BUILDSPACE) &&  make -j 4 -f Makefile.common app=${APPNAME}
+	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 	@echo "Build complete successfully"
 	@if [ -d "$(BOARDPATH)" ]; then \
