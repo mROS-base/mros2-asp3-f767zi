@@ -47,7 +47,7 @@
 /*
  *  ターゲット依存の定義
  */
-#include "cmsis_os.h"
+#include "lwip.h"
 
 /*
  *  各タスクの優先度の定義
@@ -65,16 +65,12 @@
  */
 
 #ifndef TASK_PORTID
-#define	TASK_PORTID		1			/* 文字入力するシリアルポートID */
+#define	TASK_PORTID		1
 #endif /* TASK_PORTID */
 
 #ifndef STACK_SIZE
-#define	STACK_SIZE		4096		/* 文字入力するシリアルポートID */
+#define	STACK_SIZE		4096
 #endif /* STACK_SIZE */
-
-#ifndef LOOP_REF
-#define LOOP_REF		ULONG_C(1000000)	/* 速度計測用のループ回数 */
-#endif /* LOOP_REF */
 
 /*
  *  関数のプロトタイプ宣言
