@@ -90,8 +90,3 @@ extern void	led_cyclic_handler(intptr_t exinf);
 #endif
 void Error_Handler();
 #endif /* TOPPERS_MACRO_ONLY */
-
-// To avoid link error
-#ifdef __cplusplus
-extern void* __dso_handle;
-#endif

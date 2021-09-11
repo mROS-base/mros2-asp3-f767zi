@@ -6,32 +6,6 @@
 #include "mros2.h"
 #include "std_msgs/msg/string.hpp"
 
-// To avoid link error
-void* __dso_handle=0;
-
-void *networkSubDriverPtr;
-void *networkPubDriverPtr;
-void (*hbPubFuncPtr)(void *);
-void (*hbSubFuncPtr)(void *);
-
-extern "C" void callHbPubFunc(void *arg)
-{
-  if(hbPubFuncPtr != NULL && networkPubDriverPtr != NULL) {
-    (*hbPubFuncPtr)(networkPubDriverPtr);
-  }
-}
-extern "C" void callHbSubFunc(void *arg)
-{
-  if(hbSubFuncPtr != NULL && networkSubDriverPtr != NULL) {
-    (*hbSubFuncPtr)(networkSubDriverPtr);
-  }
-}
-
-void setTrue(void* args)
-{
-  *static_cast<volatile bool*>(args) = true;
-}
-
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
