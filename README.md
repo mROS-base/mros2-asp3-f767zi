@@ -153,10 +153,11 @@ Building, flashing and debugging the application can be done with simple operati
 
 - Build project for mros2 application
   - Just type `Ctrl+Shift+B` or _[Terminal] -> [Run Build Task...]_
+  - The binary will be copied to the board at the final step when the board is connected to the host.
   - You can change the target application name by editing `"app=echoreply_string"` in `.vscode/tasks.json`.
 - Clean project
   - _[Terminal] -> [Run Task...]_ and then select _Clean project_
-- Flashing program to the board
+- Flashing program (ELF-format) to the board
   - _[Terminal] -> [Run Task...]_ and then select _Flash program_
 - Debugging
   - Just type `F5` or _[Run] -> [Start Debugging]_
