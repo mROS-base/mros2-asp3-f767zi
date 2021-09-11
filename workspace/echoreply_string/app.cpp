@@ -18,7 +18,6 @@ void main_task(void)
 {
   MROS2_INFO("mROS 2 application is started");
 
-  MX_LWIP_Init();
   mros2::init(NULL, NULL);
   MROS2_DEBUG("mROS 2 initialization is completed");
   BSP_LED_Toggle(LED1);

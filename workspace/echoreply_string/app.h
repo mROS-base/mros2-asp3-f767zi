@@ -41,27 +41,23 @@
  */
 
 /*
- *		サンプルプログラム(1)のヘッダファイル
+ * header file for the mros2 application
  */
+
+#include <kernel.h>
 
 /*
- *  ターゲット依存の定義
- */
-#include "lwip.h"
-
-/*
- *  各タスクの優先度の定義
+ * Priorities for TOPPERS tasks
  */
 
-#define MAIN_PRIORITY	5		/* メインタスクの優先度 */
-/* メインタスクの優先度 */
+#define MAIN_PRIORITY	5
 
-#define HIGH_PRIORITY	9		/* メインタスクの優先度 */
+#define HIGH_PRIORITY	9
 #define MID_PRIORITY	10
 #define LOW_PRIORITY	11
 
 /*
- *  ターゲットに依存する可能性のある定数の定義
+ * Constants that may depend on the target
  */
 
 #ifndef TASK_PORTID
@@ -73,7 +69,7 @@
 #endif /* STACK_SIZE */
 
 /*
- *  関数のプロトタイプ宣言
+ * Declaration of prototyle functions
  */
 #ifndef TOPPERS_MACRO_ONLY
 #ifdef __cplusplus
