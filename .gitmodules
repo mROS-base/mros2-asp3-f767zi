@@ -1,16 +1,16 @@
 [submodule "mros2"]
 	path = mros2
 	url = https://github.com/mROS-base/mros2.git
-	branch = dev-esm
+	branch = main
 [submodule "cmsis-asp3"]
 	path = cmsis-asp3
 	url = https://github.com/mROS-base/cmsis-asp3.git
-	branch = dev-esm
+	branch = mros2
 [submodule "asp3-f767zi"]
 	path = asp3-f767zi
 	url = https://github.com/mROS-base/asp3-f767zi.git
-	branch = dev-esm
+	branch = mros2
 [submodule "STM32CubeF7"]
 	path = STM32CubeF7
 	url = https://github.com/mROS-base/STM32CubeF7.git
-	branch = dev-esm
+	branch = mros2
