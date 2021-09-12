@@ -161,6 +161,7 @@ Building, flashing and debugging the application can be done with simple operati
   - _[Terminal] -> [Run Task...]_ and then select _Flash program_
 - Debugging
   - Just type `F5` or _[Run] -> [Start Debugging]_
+  - You need to rebuild project manually before debugging when you edit code.
 
 ## Submodules and Licenses
 

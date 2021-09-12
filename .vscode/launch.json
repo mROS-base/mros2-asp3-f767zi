@@ -15,7 +15,6 @@
         "interface/stlink-v2-1.cfg",
         "target/stm32f7x.cfg"
       ],
-      "preLaunchTask": "Build project",
       "gdbPath": "/usr/local/gcc-arm-none-eabi-7-2018-q2-update/bin/arm-none-eabi-gdb"
     }
   ]
