@@ -11,8 +11,8 @@ This repository contains the reference implementation of mROS 2 that can be oper
   - Board: [STM32 NUCLEO-F767ZI](https://www.st.com/en/evaluation-tools/nucleo-f767zi.html)
   - Kernel: [TOPPERS/ASP3](https://www.toppers.jp/en/project.html)
 - Host environment
-  - Ubuntu 18.04 LTS
-  - [ROS 2 Dashing Diademata](https://docs.ros.org/en/dashing/index.html)
+  - [ROS 2 Dashing Diademata](https://docs.ros.org/en/dashing/index.html) on Ubuntu 18.04 LTS
+  - [WiP] [ROS 2 Foxy Fitzroy](https://docs.ros.org/en/foxy/index.html) on Ubuntu 20.04 LTS
 
 ## Envorinmental setup
 
