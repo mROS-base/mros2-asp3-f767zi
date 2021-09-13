@@ -18,7 +18,7 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub = sub = node.create_subscription("to_stm", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription("to_stm", 10, userCallback);
 
   MROS2_INFO("ready to subscribe message");
   mros2::spin();
