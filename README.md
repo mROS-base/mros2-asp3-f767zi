@@ -1,9 +1,11 @@
 # mros2-asp3-f767zi
 
-mROS 2 (formly `mros2`) is a agent-less and lightweight runtime environment ROS 2 for embedded devices.
+mROS 2 (formly `mros2`) realizes a agent-less and lightweight runtime environment compatible with ROS 2 for embedded devices.
 mROS 2 mainly offers pub/sub APIs compatible with [rclcpp](https://docs.ros2.org/dashing/api/rclcpp/index.html) for embedded devices. 
 
-This repository contains the reference implementation of mROS 2 that can be operated on the embedded board. Please also check [mros2 repository](https://github.com/mROS-base/mros2) for more details and another implementations.
+mROS 2 consists of communication library for pub/sub APIs, RTPS protocol, UDP/IP stack, and real-time kernel.
+This repository provides the reference implementation of mROS 2 that can be operated on the embedded board. 
+Please also check [mros2 repository](https://github.com/mROS-base/mros2) for more details and another implementations.
 
 ## Supported environment
 
