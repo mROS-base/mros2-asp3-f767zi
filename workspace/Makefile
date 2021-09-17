@@ -14,7 +14,7 @@ usage:
 	@echo Usage Guide：make app="<application directory>"
 endif
 
-all:
+all: clean
 	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 	@echo "Build complete successfully"
