@@ -4,8 +4,8 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
-mros2::CustomSubscriber sub;
-mros2::CustomPublisher pub;
+mros2::Subscriber sub;
+mros2::Publisher pub;
 
 void userCallback(health_msgs::msg::Health *msg)
 {
