@@ -22,10 +22,11 @@ int main(int argc, char * argv[])
   MROS2_DEBUG("mROS 2 initialization is completed");
   BSP_LED_Toggle(LED1);
 
+  health_msgs::msg::Health msg;
+
   mros2::Node node = mros2::Node::create_node("mros2_node");
   pub = node.create_publisher<health_msgs::msg::Health>("to_linux", 10);
-  sub = node.create_subscription("to_stm", 10, userCallback);
-  health_msgs::msg::Health msg;
+  sub = node.create_subscription("to_stm", 10, userCallback, msg);
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();
