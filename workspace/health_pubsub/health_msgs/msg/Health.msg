@@ -1,3 +1,3 @@
 string name
-int8 height
+uint16 height
 float32 weight
