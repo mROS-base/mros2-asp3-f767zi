@@ -9,12 +9,19 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
-  MROS2_INFO("subscribed msg: %f", msg->data);
-  MROS2_INFO("publishing msg: %f", msg->data);
-  pub.publish(*msg);
+  if (msg->data > 0)
+  {
+    MROS2_INFO("subscribed msg: %f", msg->data);
+  }
+  else
+  {
+    MROS2_INFO("publishing msg: %f", msg->data);
+  }
+}
+pub.publish(*msg);
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
   MROS2_INFO("mROS 2 application is started");
 
@@ -37,8 +44,7 @@ void main_task(void)
   main(0, NULL);
 }
 
-void
-led_cyclic_handler(intptr_t exinf)
+void led_cyclic_handler(intptr_t exinf)
 {
   BSP_LED_Toggle(LED2);
 }
