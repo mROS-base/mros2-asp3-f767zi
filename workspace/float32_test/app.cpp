@@ -13,6 +13,10 @@ void userCallback(std_msgs::msg::Float32 *msg)
   {
     MROS2_INFO("subscribed msg: %f", msg->data);
   }
+  else if (msg->data < 64 && msg->data > 63)
+  {
+    MROS2_INFO("hoooo");
+  }
   else
   {
     MROS2_INFO("publishing msg: %f", msg->data);
