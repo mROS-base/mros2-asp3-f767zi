@@ -4,22 +4,18 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
-#include <string>
-
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
-  if (msg->data > 0)
+  if (msg->data == 0)
   {
-    std::string tmp = std::to_string(msg->data);
-    MROS2_INFO("subscribed msg: %s", tmp);
+    MROS2_INFO("subscribed msg: %f", msg->data);
   }
   else
   {
-    std::string tmp = std::to_string(msg->data);
-    MROS2_INFO("publishing msg: %s", tmp);
+    MROS2_INFO("publishing msg: %f", msg->data);
   }
   pub.publish(*msg);
 }
