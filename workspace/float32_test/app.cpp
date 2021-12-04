@@ -3,18 +3,14 @@
 #include "std_msgs/msg/float32.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
-#include <string>
-#include <iostream>
-#include <stdio.h>
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
-  if (msg->data > 0)
+  if (msg->data > 63 && msg->data < 64)
   {
-    printf("%f", msg->data);
     MROS2_INFO("subscribed msg: %f", msg->data);
   }
   else
