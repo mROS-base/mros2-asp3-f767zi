@@ -17,8 +17,7 @@ void userCallback(std_msgs::msg::Float32 *msg)
   {
     MROS2_INFO("publishing msg: %f", msg->data);
   }
-}
-pub.publish(*msg);
+  pub.publish(*msg);
 }
 
 int main(int argc, char *argv[])
