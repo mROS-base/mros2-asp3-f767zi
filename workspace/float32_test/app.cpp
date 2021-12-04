@@ -13,7 +13,7 @@ void userCallback(std_msgs::msg::Float32 *msg)
   {
     MROS2_INFO("subscribed msg: %f", msg->data);
   }
-  else if (msg->data < 1 && msg->data > 0.1)
+  else if (msg->data < 0.1 && msg->data > 0)
   {
     MROS2_INFO("hoooo");
   }
