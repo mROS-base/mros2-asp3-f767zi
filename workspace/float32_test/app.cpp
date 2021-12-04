@@ -9,7 +9,7 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
-  if (msg->data > 63 && msg->data < 64)
+  if (msg->data > 10000)
   {
     MROS2_INFO("subscribed msg: %f", msg->data);
   }
