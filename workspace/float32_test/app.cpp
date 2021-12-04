@@ -14,7 +14,6 @@ void userCallback(std_msgs::msg::Float32 *msg)
 {
   if (msg->data > 0)
   {
-    std::cout << msg->data << std::endl;
     printf("%f", msg->data);
     MROS2_INFO("subscribed msg: %f", msg->data);
   }
