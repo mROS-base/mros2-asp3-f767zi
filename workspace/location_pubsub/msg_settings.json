@@ -1,6 +1,6 @@
 {
     "includingMsgs": [  
-		"health_msgs/msg/Health.msg"
+		"location_msgs/msg/Location.msg"
 	],
 	"dependingPkgs": [ 
 	]
