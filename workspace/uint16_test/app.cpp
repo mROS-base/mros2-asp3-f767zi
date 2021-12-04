@@ -1,6 +1,6 @@
 #include "app.h"
 #include "mros2.h"
-#include "std_msgs/msg/uint16.hpp"
+#include "std_msgs/msg/u_int16.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
