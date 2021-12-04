@@ -5,6 +5,7 @@
 #include "stm32f7xx_nucleo_144.h"
 #include <string>
 #include <iostream>
+#include <stdio.h>
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
