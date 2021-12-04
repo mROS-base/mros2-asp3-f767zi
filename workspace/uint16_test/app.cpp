@@ -9,8 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::UInt16 *msg)
 {
-  MROS2_INFO("subscribed msg: %f", msg->data);
-  MROS2_INFO("publishing msg: %f", msg->data);
+  MROS2_INFO("subscribed msg: %d", msg->data);
+  MROS2_INFO("publishing msg: %d", msg->data);
   pub.publish(*msg);
 }
 
