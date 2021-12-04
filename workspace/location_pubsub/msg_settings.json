@@ -1,0 +1,7 @@
+{
+    "includingMsgs": [  
+		"health_msgs/msg/Health.msg"
+	],
+	"dependingPkgs": [ 
+	]
+}
