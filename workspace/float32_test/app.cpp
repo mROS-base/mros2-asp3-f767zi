@@ -9,18 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
-  if (msg->data > 10000)
-  {
-    MROS2_INFO("subscribed msg: %f", msg->data);
-  }
-  else if (msg->data < 0.1 && msg->data > 0)
-  {
-    MROS2_INFO("hoooo");
-  }
-  else
-  {
-    MROS2_INFO("publishing msg: %f", msg->data);
-  }
+  MROS2_INFO("subscribed msg: %f", msg->data);
+  MROS2_INFO("publishing msg: %f", msg->data);
   pub.publish(*msg);
 }
 
