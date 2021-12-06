@@ -9,8 +9,14 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
-  MROS2_INFO("subscribed msg: %f", msg->data);
-  MROS2_INFO("publishing msg: %f", msg->data);
+  if (msg->data < 64 && msg->data > 63)
+  {
+    MROS2_INFO("subscribed msg: %f", msg->data);
+  }
+  else
+  {
+    MROS2_INFO("publishing msg: %f", msg->data);
+  }
   pub.publish(*msg);
 }
 
