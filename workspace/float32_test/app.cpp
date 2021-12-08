@@ -9,8 +9,18 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::Float32 *msg)
 {
+  if (5.0 < msg->data && msg->data < 10.0)
+  {
+    MROS2_INFO("5.0 < msg < 10.0");
+  }
+  else
+  {
+    MROS2_INFO("msg <= 5.0 or 10.0 <= msg");
+  }
+  /* TODO: make MROS2_INFO support float type
   MROS2_INFO("subscribed msg: %f", msg->data);
   MROS2_INFO("publishing msg: %f", msg->data);
+  */
   pub.publish(*msg);
 }
 
