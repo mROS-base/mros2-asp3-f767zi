@@ -9,7 +9,7 @@ mros2::Publisher pub;
 
 void userCallback(health_msgs::msg::Health *msg)
 {
-  if (63 < msg->weight && msg->weight < 64) {
+  if (msg->weight==63.5) {
     MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: 63.5 kg }", msg->name.c_str(), msg->height);
   } else {
     MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
