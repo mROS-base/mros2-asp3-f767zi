@@ -18,7 +18,7 @@ void userCallback(health_msgs::msg::Health *msg)
     MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: 63.5 kg }", msg->name.c_str(), msg->height);
    }
   } else {
-       if (msg->name=="Hi"){
+    if (msg->name=="Hi"){
     MROS2_INFO("subscribed msg: { name: 'Hi', height: %u cm, weight: %f kg }", msg->height, msg->weight);
     MROS2_INFO("publishing msg: { name: 'Hi', height: %u cm, weight: %f kg }", msg->height, msg->weight);
    } else {
