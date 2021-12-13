@@ -13,12 +13,13 @@ Please also check [mros2 repository](https://github.com/mROS-base/mros2) for mor
   - Board: [STM32 NUCLEO-F767ZI](https://www.st.com/en/evaluation-tools/nucleo-f767zi.html)
   - Kernel: [TOPPERS/ASP3](https://www.toppers.jp/en/project.html)
 - Host environment
+  - [ROS 2 Foxy Fitzroy](https://docs.ros.org/en/foxy/index.html) on Ubuntu 20.04 LTS
   - [ROS 2 Dashing Diademata](https://docs.ros.org/en/dashing/index.html) on Ubuntu 18.04 LTS
-  - [WiP] [ROS 2 Foxy Fitzroy](https://docs.ros.org/en/foxy/index.html) on Ubuntu 20.04 LTS
 
 ## Envorinmental setup
 
-1. Install [ROS 2 Dashing Diademata](https://docs.ros.org/en/dashing/installation.html) on the host with Ubuntu 18.04 LTS.
+1. Install [ROS 2 Foxy Fitzroy](https://docs.ros.org/en/foxy/installation.html) on the host with Ubuntu 20.04 LTS.
+    - You can also use Docker as the host environment instead. Please check "Tips 1" section.
 1. Install arm-none-eabi v7.3.1.
     - There are two ways to install the appropriate version.
       1. Download and unzip the prebuilt archive of GNU Arm Embedded Toolchain from [official Arm website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Please select **"GNU Arm Embedded Toolchain: 7-2018-q2-update June 27, 2018"** and "Linux 64-bit" as the archive.  
@@ -40,7 +41,7 @@ First of all, clone this repository. Note that **--recursive** is mandatory.
 $ git clone --recursive https://github.com/mROS-base/mros2-asp3-f767zi
 ```
 
-Move to workspace and operate `make` with the target app name.
+Move to workspace and operate `make` with the target app name (e.g., `echoreply_string`).
 
 ```
 $ cd mros2-asp3-f767zi
@@ -60,18 +61,20 @@ $ cp asp.bin /media/$USER/NODE_F767ZI/
 
 ### Build for the host nodes
 
-We also provide the implemenation of ROS 2 nodes that communicate to the embedded device. Clone the repository and build in _<your_ros2_ws>_.
+We also provide the implemenation of ROS 2 nodes that communicate to the embedded device. (You can also use Docker as the host environment instead. Please check "Tips 1" section).
+
+Clone the repository and build in _<your_ros2_ws>_.
 
 ```
 $ cd <your_ros2_ws>/src
 $ git clone https://github.com/mROS-base/mros2-host-examples
 
 $ cd <your_ros2_ws>
-$ colcon build
+$ colcon build --packages-select mros2_echoback
 $ source install/local_setup.bash
 ```
 
-## Run the example
+## Run the echoreply_string example
 
 1. Connect the serial port of the board with `picocom`, and then push RESET button. Please wait a while until the message "`mROS2 init complete`" is confirmed. It means that the initiation process for mROS 2 has completed successfully.
 ```
@@ -86,12 +89,17 @@ Copyright (C) 2004-2019 by Embedded and Real-Time Systems Laboratory
             Graduate School of Information Science, Nagoya Univ., JAPAN
 
 System logging task is started.
-create_node
-start creating participant
-mROS2 init start
-successfully created participant
-create subscription complete. data memory address=0x2001aae8
-mROS2 init complete
+mROS 2 application is started
+mROS 2 initialization is completed
+[MROS2LIB] create_node
+[MROS2LIB] start creating participant
+[MROS2LIB] mros2_init task start
+[MROS2LIB] Initilizing lwIP complete
+[MROS2LIB] successfully created participant
+[MROS2LIB] create_publisher complete.
+[MROS2LIB] create_subscription complete. data memory address=0x2001d628
+ready to pub/sub message
+[MROS2LIB] Initilizing Domain complete
 ```
   
 2. Launch ROS 2 nodes on the host on another terminal.
@@ -116,6 +124,8 @@ $ ros2 launch mros2_echoback launch_pubsub.py
 3. Now, you can confirm the message of the board (on `picocom` terminal) :tada:
 ```
 <continue from 1.>
+[MROS2LIB] publisher matched with remote subscriber
+[MROS2LIB] subscriber matched with remote publisher
 subscriber matched with remote publisher
 publisher matched with remote subscriber
 subscribed msg: 'Hello, world! 0'
@@ -150,7 +160,22 @@ Please check the operation on the host for each application.
   - The mROS 2 node on the embedded board just subscribes `std_msgs::msg::String` message from `/to_stm` topic.
   - `$ ros2 run mros2_echoback sub_node`
 
-## Tips: Developing with VS Code
+## Tips 1: Execute host nodes with Docker environment
+
+If you do not want to prepare ROS 2 environment on your PC, using Docker is a good alternative to check the operation of mros2 just in 5 minutes. Type the command below.
+
+```
+docker run --rm -it --net=host ros:foxy /bin/bash \
+  -c "source /opt/ros/foxy/setup.bash &&
+  cd &&
+  git clone https://github.com/mROS-base/mros2-host-examples &&
+  cd mros2-host-examples &&
+  colcon build --packages-select mros2_echoback &&
+  source install/setup.bash &&
+  ros2 launch mros2_echoback launch_pubsub.py"
+```
+
+## Tips 2: Developing with VS Code
 
 We offer a comfortable development environment with Visual Studio Code (VS Code). 
 Building, flashing and debugging the application can be done with simple operations in one window.
