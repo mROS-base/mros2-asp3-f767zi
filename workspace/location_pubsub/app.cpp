@@ -24,7 +24,7 @@ int main(int argc, char * argv[])
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
   pub = node.create_publisher<location_msgs::msg::Location>("to_linux", 10);
-  sub = node.create_subscription("to_stm", 10, userCallback);
+  sub = node.create_subscription<location_msgs::msg::Location>("to_stm", 10, userCallback);
   location_msgs::msg::Location msg;
 
   MROS2_INFO("ready to pub/sub message");

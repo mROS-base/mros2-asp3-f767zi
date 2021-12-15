@@ -39,7 +39,7 @@ int main(int argc, char * argv[])
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
   pub = node.create_publisher<health_msgs::msg::Health>("to_linux", 10);
-  sub = node.create_subscription("to_stm", 10, userCallback);
+  sub = node.create_subscription<health_msgs::msg::Health>("to_stm", 10, userCallback);
   health_msgs::msg::Health msg;
 
   MROS2_INFO("ready to pub/sub message");
