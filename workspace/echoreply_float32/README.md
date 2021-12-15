@@ -3,7 +3,7 @@
 float32型の通信の動作確認をするためのサンプルアプリです。
 以下の手順で確認できます。
 
-1.workspaceディレクトリにて、`make app=float32_test` によりアプリをビルド
+1.workspaceディレクトリにて、`make app=echoreply_float32` によりアプリをビルド
 
 2.Serial Console (picocomなど) を立ち上げて、初期化
 
