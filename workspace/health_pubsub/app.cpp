@@ -26,7 +26,7 @@ void userCallback(health_msgs::msg::Health *msg)
     MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
    }
   }
-  pub.publish(*msg);
+  //pub.publish(*msg);
 }
 
 int main(int argc, char * argv[])
