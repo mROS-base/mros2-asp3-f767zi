@@ -1,6 +1,6 @@
 #include "app.h"
 #include "mros2.h"
-#include "float_location_msgs/msg/floatlocation.hpp"
+#include "float_location_msgs/msg/float_location.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
