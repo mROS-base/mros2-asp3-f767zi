@@ -98,7 +98,7 @@ mROS2 init complete
 ```
 $ cd <your_ros2_ws>
 $ source install/local_setup.bash
-$ ros2 launch mros2_echoback launch_pubsub.py 
+$ ros2 launch mros2_echoback_string launch_pubsub.py 
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [pub_node-1]: process started with pid [21232]
 [INFO] [sub_node-2]: process started with pid [21233]
@@ -134,21 +134,21 @@ We need to start up the mROS 2 node at first, and then operate ROS 2 nodes on th
 
 ## Example applications
 
-Currently, all applications can be operated with [mros2-host-examples/mros2_echoback](https://github.com/mROS-base/mros2-host-examples/tree/main/mros2_echoback) package on the host.
+Currently, all applications can be operated with [mros2-host-examples/mros2_echoback_string](https://github.com/mROS-base/mros2-host-examples/tree/main/mros2_echoback_string) package on the host.
 Please check the operation on the host for each application.
 
-- echoback_reply
+- echoreply_string
   - The mROS 2 node on the embedded board subscribes `std_msgs::msg::String` message from `/to_stm` topic, and then publishes this message to `/to_linux` as the reply.
-  - `$ ros2 launch mros2_echoback launch.py`
+  - `$ ros2 launch mros2_echoback_string launch.py`
   - or, at two terminals:
-    - `$ ros2 run mros2_echoback pub_node`
-    - `$ ros2 run mros2_echoback sub_node`
+    - `$ ros2 run mros2_echoback_string pub_node`
+    - `$ ros2 run mros2_echoback_string sub_node`
 - pub_string
   - The mROS 2 node on the embedded board says hello to `/to_linux` as the publication message of `std_msgs::msg::String`.
-  - `$ ros2 run mros2_echoback pub_node`
+  - `$ ros2 run mros2_echoback_string pub_node`
 - sub_string
   - The mROS 2 node on the embedded board just subscribes `std_msgs::msg::String` message from `/to_stm` topic.
-  - `$ ros2 run mros2_echoback sub_node`
+  - `$ ros2 run mros2_echoback_string sub_node`
 
 ## Tips: Developing with VS Code
 
