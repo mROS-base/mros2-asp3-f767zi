@@ -1,16 +1,16 @@
 #include "app.h"
 #include "mros2.h"
-#include "flocation_msgs/msg/flocation.hpp"
+#include "location_msgs/msg/location.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-void userCallback(flocation_msgs::msg::Flocation *msg)
+void userCallback(location_msgs::msg::Location *msg)
 {
-  MROS2_INFO("subscribed msg: { x: %f, y: %f, z: %f }", msg->x, msg->y, msg->z);
-  MROS2_INFO("publishing msg: { x: %f, y: %f, z: %f }", msg->x, msg->y, msg->z);
+  MROS2_INFO("subscribed msg: { x: %d, y: %d, z: %d }", msg->x, msg->y, msg->z);
+  MROS2_INFO("publishing msg: { x: %d, y: %d, z: %d }", msg->x, msg->y, msg->z);
   pub.publish(*msg);
 }
 
@@ -23,9 +23,9 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<flocation_msgs::msg::Flocation>("to_linux", 10);
-  sub = node.create_subscription<flocation_msgs::msg::Flocation>("to_stm", 10, userCallback);
-  flocation_msgs::msg::Flocation msg;
+  pub = node.create_publisher<location_msgs::msg::Location>("to_linux", 10);
+  sub = node.create_subscription<location_msgs::msg::Location>("to_stm", 10, userCallback);
+  location_msgs::msg::Location msg;
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();
