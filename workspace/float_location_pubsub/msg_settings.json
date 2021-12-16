@@ -1,6 +1,6 @@
 {
     "includingMsgs": [  
-		"float_location_msgs/msg/FloatLocation.msg"
+		"flocation_msgs/msg/Flocation.msg"
 	],
 	"dependingPkgs": [ 
 	]
