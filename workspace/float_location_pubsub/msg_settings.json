@@ -1,0 +1,7 @@
+{
+    "includingMsgs": [  
+		"location_msgs/msg/Location.msg"
+	],
+	"dependingPkgs": [ 
+	]
+}
