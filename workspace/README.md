@@ -32,6 +32,7 @@ Please also check [mROS-base/mros2-host-examples](https://github.com/mROS-base/m
 - Description:
   - The mROS 2 node on the embedded board subscribes `float32` (`std_msgs::msg::Float32`) message from `/to_stm` topic.
   - And then publishes this `float32` message as it is to `/to_linux` as the reply.
+    - Note that this application just print whether the value of message is between 5.0 and 10.0 or not, since TOPPERS/ASP3 kernel cannot print float value.
 - Host operation:
   - `$ ros2 launch mros2_echoback_float32 launch.py`
   - or, at two terminals:
