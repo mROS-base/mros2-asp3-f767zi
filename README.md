@@ -42,7 +42,7 @@ First of all, clone this repository. Note that **--recursive** is mandatory.
 $ git clone --recursive https://github.com/mROS-base/mros2-asp3-f767zi
 ```
 
-Move to workspace and operate `make` with the target app name (please see [workspace/README.md](workspace/) for another examples).
+Move to workspace and operate `make` with the target app name (please see [workspace/README.md](workspace/README.md) for another examples).
 
 ```
 $ cd mros2-asp3-f767zi
@@ -136,7 +136,7 @@ We need to start up the mROS 2 node at first, and then operate ROS 2 nodes on th
 
 ## Example applications
 
-Please see [workspace/README.md](workspace/README.md).
+Please see [workspace](workspace/) for example applications.
 
 ## Tips: Developing with VS Code
 
