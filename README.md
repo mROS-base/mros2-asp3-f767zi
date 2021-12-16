@@ -72,7 +72,7 @@ $ cd <your_ros2_ws>/src
 $ git clone https://github.com/mROS-base/mros2-host-examples
 
 $ cd <your_ros2_ws>
-$ colcon build --packages-select mros2_echoback
+$ colcon build --packages-select mros2_echoback_string
 $ source install/local_setup.bash
 ```
 
@@ -158,9 +158,9 @@ docker run --rm -it --net=host ros:foxy /bin/bash \
   cd &&
   git clone https://github.com/mROS-base/mros2-host-examples &&
   cd mros2-host-examples &&
-  colcon build --packages-select mros2_echoback &&
+  colcon build --packages-select mros2_echoback_string &&
   source install/setup.bash &&
-  ros2 launch mros2_echoback launch_pubsub.py"
+  ros2 launch mros2_echoback_string launch_pubsub.py"
 ```
 
 ## Tips 2: Developing with VS Code
