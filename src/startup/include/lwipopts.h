@@ -137,7 +137,7 @@ per active UDP "connection". */
 #define PBUF_POOL_SIZE          20
 
 /* PBUF_POOL_BUFSIZE: the size of each pbuf in the pbuf pool. */
-#define PBUF_POOL_BUFSIZE       400
+#define PBUF_POOL_BUFSIZE       800
 
 
 /* ------ Not sure yet if required ------ */
