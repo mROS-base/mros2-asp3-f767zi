@@ -9,23 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(health_msgs::msg::Health *msg)
 {
-  if (msg->weight==63.5) {
-   if (msg->name=="Hi"){
-    MROS2_INFO("subscribed msg: { name: 'Hi', height: %u cm, weight: 63.5 kg }", msg->height);
-    MROS2_INFO("publishing msg: { name: 'Hi', height: %u cm, weight: 63.5 kg }", msg->height);
-   } else {
-    MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: 63.5 kg }", msg->name.c_str(), msg->height);
-    MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: 63.5 kg }", msg->name.c_str(), msg->height);
-   }
-  } else {
-    if (msg->name=="Hi"){
-    MROS2_INFO("subscribed msg: { name: 'Hi', height: %u cm, weight: %f kg }", msg->height, msg->weight);
-    MROS2_INFO("publishing msg: { name: 'Hi', height: %u cm, weight: %f kg }", msg->height, msg->weight);
-   } else {
-    MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
-    MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
-   }
-  }
+  MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
+  MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
   pub.publish(*msg);
 }
 
