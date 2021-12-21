@@ -25,7 +25,6 @@ int main(int argc, char * argv[])
   mros2::Node node = mros2::Node::create_node("mros2_node");
   pub = node.create_publisher<std_msgs::msg::UInt16>("to_linux", 10);
   sub = node.create_subscription<std_msgs::msg::UInt16>("to_stm", 10, userCallback);
-  std_msgs::msg::UInt16 msg;
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();
