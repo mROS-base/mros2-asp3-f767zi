@@ -1,0 +1,7 @@
+{
+    "includingMsgs": [  
+		"geometry_msgs/msg/Vector3.msg"
+	],
+	"dependingPkgs": [ 
+	]
+}
