@@ -1,0 +1,7 @@
+{
+    "includingMsgs": [  
+		"u_int32_array_msgs/msg/UInt32Array.msg"
+	],
+	"dependingPkgs": [ 
+	]
+}
