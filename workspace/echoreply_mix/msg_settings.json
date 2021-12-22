@@ -1,6 +1,6 @@
 {
     "includingMsgs": [  
-		"flocation_msgs/msg/Flocation.msg"
+		"mix_msgs/msg/Mix.msg"
 	],
 	"dependingPkgs": [ 
 	]
