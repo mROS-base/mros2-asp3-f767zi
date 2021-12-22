@@ -1,16 +1,16 @@
 #include "app.h"
 #include "mros2.h"
-#include "std_msgs/msg/u_int16.hpp"
+#include "float_location_msgs/msg/float_location.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-void userCallback(std_msgs::msg::UInt16 *msg)
+void userCallback(float_location_msgs::msg::FloatLocation *msg)
 {
-  MROS2_INFO("subscribed msg: %u", msg->data);
-  MROS2_INFO("publishing msg: %u", msg->data);
+  MROS2_INFO("subscribed msg: { x: %f, y: %f, z: %f }", msg->x, msg->y, msg->z);
+  MROS2_INFO("publishing msg: { x: %f, y: %f, z: %f }", msg->x, msg->y, msg->z);
   pub.publish(*msg);
 }
 
@@ -23,9 +23,9 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<std_msgs::msg::UInt16>("to_linux", 10);
-  sub = node.create_subscription<std_msgs::msg::UInt16>("to_stm", 10, userCallback);
-  std_msgs::msg::UInt16 msg;
+  pub = node.create_publisher<float_location_msgs::msg::FloatLocation>("to_linux", 10);
+  sub = node.create_subscription<float_location_msgs::msg::FloatLocation>("to_stm", 10, userCallback);
+  float_location_msgs::msg::FloatLocation msg;
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();
