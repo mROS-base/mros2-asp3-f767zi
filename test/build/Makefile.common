@@ -15,7 +15,7 @@ APPDIR            := ${ROOTDIR}/test/${APPNAME}
 DRIVERSDIR        := $(ROOTDIR)/STM32CubeF7/Drivers
 MIDDLESDIR        := $(ROOTDIR)/STM32CubeF7/Middlewares
 CMSIS_MAKEFILEDIR := ${ROOTDIR}/cmsis-asp3
-MROS2_MAKEFILEDIR := ${ROOTDIR}/mros2/makefiles
+MROS2_MAKEFILEDIR := ${ROOTDIR}/makefiles
 ASP3_MAKEFILEDIR  := ${ROOTDIR}/asp3-f767zi
 
 # test app makefile include
