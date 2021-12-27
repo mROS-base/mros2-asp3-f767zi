@@ -1,7 +1,7 @@
 {
     "includingMsgs": [  
-		"geometry_msgs/msg/Vector3.msg"
-	],
-	"dependingMsgs": [ 
+		[
+			"geometry_msgs/msg/Vector3.msg"
+		]
 	]
 }

@@ -1,7 +1,7 @@
 {
     "includingMsgs": [  
-		"health_msgs/msg/Health.msg"
-	],
-	"dependingMsgs": [ 
+		[ 
+			"health_msgs/msg/Health.msg" 
+		]
 	]
 }

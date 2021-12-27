@@ -1,8 +1,8 @@
 {
-    "includingMsgs": [  
-		"geometry_msgs/msg/Twist.msg"
-	],
-	"dependingMsgs": [ 
-		"geometry_msgs/msg/Vector3.msg"
+	"includingMsgs": [  
+		[
+			"geometry_msgs/msg/Twist.msg", 
+			"geometry_msgs/msg/Vector3.msg"
+		]
 	]
 }
