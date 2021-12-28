@@ -1,8 +1,0 @@
-{
-	"includingMsgs": [  
-		[
-			"geometry_msgs/msg/Twist.msg", 
-			"geometry_msgs/msg/Vector3.msg"
-		]
-	]
-}

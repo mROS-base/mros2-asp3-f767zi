@@ -1,6 +1,6 @@
 #include "app.h"
 #include "mros2.h"
-#include "geometry_msgs/msg/twist.hpp"
+#include "../mros2_msgs/geometry_msgs/msg/twist.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 

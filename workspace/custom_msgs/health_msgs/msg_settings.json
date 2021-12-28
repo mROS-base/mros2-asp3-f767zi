@@ -1,7 +1,7 @@
 {
     "includingMsgs": [  
 		[
-			"geometry_msgs/msg/Vector3.msg"
+			"health_msgs/msg/Health.msg"
 		]
 	]
 }

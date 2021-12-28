@@ -1,0 +1,7 @@
+{
+    "includingMsgs": [  
+		[
+			"mix_msgs/msg/Mix.msg"
+		]
+	]
+}
