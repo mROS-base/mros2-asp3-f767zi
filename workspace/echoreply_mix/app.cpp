@@ -1,6 +1,6 @@
 #include "app.h"
 #include "mros2.h"
-#include "mix_msgs/msg/mix.hpp"
+#include "../mros2_msgs/mix_msgs/msg/mix.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
@@ -9,8 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(mix_msgs::msg::Mix *msg)
 {
-  MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: %f kg, array: {%u,%u,%u} }", msg->name.c_str(), msg->height, msg->weight, msg->array[0], msg->array[1], msg->array[2]);
-  MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: %f kg, array: {%u,%u,%u} }", msg->name.c_str(), msg->height, msg->weight, msg->array[0], msg->array[1], msg->array[2]);
+  MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: %f kg, array: {%f,%f,%f} }", msg->name.c_str(), msg->height, msg->weight, msg->array[0], msg->array[1], msg->array[2]);
+  MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: %f kg, array: {%f,%f,%f} }", msg->name.c_str(), msg->height, msg->weight, msg->array[0], msg->array[1], msg->array[2]);
   pub.publish(*msg);
 }
 

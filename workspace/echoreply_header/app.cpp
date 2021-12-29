@@ -1,16 +1,16 @@
 #include "app.h"
 #include "mros2.h"
-#include "../mros2_msgs/health_msgs/msg/health.hpp"
+#include "std_msgs/msg/header.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-void userCallback(health_msgs::msg::Health *msg)
+void userCallback(std_msgs::msg::Header *msg)
 {
-  MROS2_INFO("subscribed msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
-  MROS2_INFO("publishing msg: { name: '%s', height: %u cm, weight: %f kg }", msg->name.c_str(), msg->height, msg->weight);
+  MROS2_INFO("subscribed msg!");
+  MROS2_INFO("publishing msg!");
   pub.publish(*msg);
 }
 
@@ -23,9 +23,9 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<health_msgs::msg::Health>("to_linux", 10);
-  sub = node.create_subscription<health_msgs::msg::Health>("to_stm", 10, userCallback);
-  health_msgs::msg::Health msg;
+  pub = node.create_publisher<std_msgs::msg::Header>("to_linux", 10);
+  sub = node.create_subscription<std_msgs::msg::Header>("to_stm", 10, userCallback);
+  std_msgs::msg::Header msg;
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();

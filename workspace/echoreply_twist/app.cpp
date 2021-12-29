@@ -9,8 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(geometry_msgs::msg::Twist *msg)
 {
-  MROS2_INFO("subscribed msg: { linear: { x: , y: , z: }, angular: { x: , y: , z: } }");
-  MROS2_INFO("publishing msg: { linear: { x: , y: , z: }, angular: { x: , y: , z: } }");
+  MROS2_INFO("subscribed msg!");
+  MROS2_INFO("publishing msg!");
   pub.publish(*msg);
 }
 

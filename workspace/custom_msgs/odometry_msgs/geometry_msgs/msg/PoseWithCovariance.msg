@@ -1,2 +1,2 @@
 Pose pose
-float64[] covariance
+float64[36] covariance
