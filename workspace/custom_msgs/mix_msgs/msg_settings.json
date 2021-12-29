@@ -1,7 +1,11 @@
 {
-    "includingMsgs": [  
+    "includingMsgs": [
 		[
-			"mix_msgs/msg/Mix.msg"
+			"mix_msgs/msg/IntVector3.msg"
+		],
+		[
+			"mix_msgs/msg/Mix.msg",
+			"mix_msgs/msg/int_vector3.hpp"
 		]
 	]
 }

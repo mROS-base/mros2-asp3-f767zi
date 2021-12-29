@@ -1,4 +1,5 @@
 string name
+IntVector3 vec3
 uint16 height
 float32 weight
-float64[36] array
+float64[] array
