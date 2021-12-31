@@ -4,7 +4,7 @@ APPNAME := ${app}
 BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
-BOARDPATH := /Volumes/${BOARDNAME} # this path is MacOS's case; not Linux's case
+BOARDPATH := /Volumes/${BOARDNAME}
 
 MSGDIR := custom_msgs/${msg}
 MROS2DIR := ../mros2
