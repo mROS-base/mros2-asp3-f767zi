@@ -4,6 +4,7 @@ APPNAME := ${app}
 BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
+# this BOARDPATH is for MAC OS (not for Linux)
 BOARDPATH := /Volumes/${BOARDNAME}
 
 MSGDIR := custom_msgs/${msg}
