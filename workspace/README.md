@@ -39,6 +39,17 @@ Please also check [mROS-base/mros2-host-examples](https://github.com/mROS-base/m
     - `$ ros2 run mros2_echoback_float32 pub_node`
     - `$ ros2 run mros2_echoback_float32 sub_node`
 
+## echoreply_header
+
+- Description:
+  - The mROS 2 node on the embedded board subscribes `header` (`std_msgs::msg::Header`) message from `/to_stm` topic.
+  - And then publishes this `header` message as it is to `/to_linux` as the reply.
+- Host operation:
+  - `$ ros2 launch mros2_echoback_header launch.py`
+  - or, at two terminals:
+    - `$ ros2 run mros2_echoback_header pub_node`
+    - `$ ros2 run mros2_echoback_header sub_node`
+
 ## pub_string
 
 - Description:
