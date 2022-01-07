@@ -1,9 +1,5 @@
 {
     "includingMsgs": [
-		[
-			"nav_msgs/msg/Odometry.msg",
-            "geometry_msgs/msg/pose_with_covariance.hpp",
-            "geometry_msgs/msg/twist_with_covariance.hpp"
-		]
+		"nav_msgs/msg/Odometry.msg"
 	]
 }

@@ -1,6 +1,6 @@
 #include "app.h"
 #include "mros2.h"
-#include "../mros2_msgs/nav_msgs/msg/odometry.hpp"
+#include "nav_msgs/msg/odometry.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 

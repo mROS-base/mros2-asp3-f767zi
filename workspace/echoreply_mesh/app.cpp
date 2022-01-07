@@ -1,16 +1,16 @@
 #include "app.h"
 #include "mros2.h"
-#include "sensor_msgs/msg/joint_state.hpp"
+#include "shape_msgs/msg/mesh.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-void userCallback(sensor_msgs::msg::JointState *msg)
+void userCallback(shape_msgs::msg::Mesh *msg)
 {
-  MROS2_INFO("subscribed msg!!");
-  MROS2_INFO("publishing msg!!");
+  MROS2_INFO("subscribed!");
+  MROS2_INFO("publishing!");
   pub.publish(*msg);
 }
 
@@ -23,9 +23,9 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<sensor_msgs::msg::JointState>("to_linux", 10);
-  sub = node.create_subscription<sensor_msgs::msg::JointState>("to_stm", 10, userCallback);
-  sensor_msgs::msg::JointState msg;
+  pub = node.create_publisher<shape_msgs::msg::Mesh>("to_linux", 10);
+  sub = node.create_subscription<shape_msgs::msg::Mesh>("to_stm", 10, userCallback);
+  shape_msgs::msg::Mesh msg;
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();

@@ -1,7 +1,5 @@
 {
     "includingMsgs": [  
-		[
-			"sensor_msgs/msg/JointState.msg"
-		]
+		"sensor_msgs/msg/JointState.msg"
 	]
 }

@@ -1,30 +1,5 @@
 {
     "includingMsgs": [
-		[
-			"geometry_msgs/msg/Point.msg"
-		],
-		[
-			"geometry_msgs/msg/Quaternion.msg"
-		],
-		[
-			"geometry_msgs/msg/Pose.msg",
-			"geometry_msgs/msg/point.hpp",
-			"geometry_msgs/msg/quaternion.hpp"
-		],
-		[
-			"geometry_msgs/msg/Vector3.msg"
-		],
-		[
-			"geometry_msgs/msg/Twist.msg",
-			"geometry_msgs/msg/vector3.hpp"
-		],
-		[
-			"geometry_msgs/msg/PoseWithCovariance.msg",
-			"geometry_msgs/msg/pose.hpp"
-		],
-		[
-			"geometry_msgs/msg/TwistWithCovariance.msg",
-			"geometry_msgs/msg/twist.hpp"
-		]
+		"geometry_msgs/msg/Twist.msg"
 	]
 }

@@ -1,6 +1,6 @@
 #include "app.h"
 #include "mros2.h"
-#include "../mros2_msgs/health_msgs/msg/health.hpp"
+#include "health_msgs/msg/health.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
