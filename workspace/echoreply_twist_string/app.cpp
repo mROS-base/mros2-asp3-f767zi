@@ -5,6 +5,16 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
+std::string double_to_string(double value)
+{
+  int intpart, fracpart;
+  char str[12];
+  intpart = (int)value;
+  fracpart = (int)((value - intpart) * 1000000);
+  sprintf(str, "%d.%06d", intpart, fracpart);
+  return str;
+}
+
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
@@ -26,12 +36,12 @@ void userCallback(std_msgs::msg::String *msg)
   
   auto reconverted_message = std_msgs::msg::String();
 
-  std::string pub_str1 = std::to_string(linear_x);
-  std::string pub_str2 = std::to_string(linear_y);
-  std::string pub_str3 = std::to_string(linear_z);
-  std::string pub_str4 = std::to_string(angular_x);
-  std::string pub_str5 = std::to_string(angular_y);
-  std::string pub_str6 = std::to_string(angular_z);
+  std::string pub_str1 = double_to_string(linear_x);
+  std::string pub_str2 = double_to_string(linear_y);
+  std::string pub_str3 = double_to_string(linear_z);
+  std::string pub_str4 = double_to_string(angular_x);
+  std::string pub_str5 = double_to_string(angular_y);
+  std::string pub_str6 = double_to_string(angular_z);
 
   std::string pub_str = pub_str1 + pub_str2 + pub_str3 + pub_str4 + pub_str5 + pub_str6;
   reconverted_message.data = pub_str;
