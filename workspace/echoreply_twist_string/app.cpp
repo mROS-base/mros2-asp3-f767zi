@@ -10,8 +10,8 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  MROS2_INFO("subscribed msg!");
   
+  /*
   std::string sub_str1 = msg->data.substr(0,8);
   std::string sub_str2 = msg->data.substr(8,8);
   std::string sub_str3 = msg->data.substr(16,8);
@@ -37,8 +37,8 @@ void userCallback(std_msgs::msg::String *msg)
 
   std::string pub_str = "0.0000000.0000020.0000040.0000060.0000080.000010"; // pub_str1 + pub_str2 + pub_str3 + pub_str4 + pub_str5 + pub_str6;
   reconverted_message.data = pub_str;
-  MROS2_INFO("publishing msg!");
-  pub.publish(reconverted_message);
+  */
+  pub.publish(*msg); //reconverted_message);
 }
 
 int main(int argc, char * argv[])
