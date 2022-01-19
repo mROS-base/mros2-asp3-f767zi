@@ -1,5 +1,5 @@
 {
     "includingMsgs": [
-		"mix_msgs/msg/IntVector3.msg"
+		"mix_msgs/msg/Mix.msg"
 	]
 }

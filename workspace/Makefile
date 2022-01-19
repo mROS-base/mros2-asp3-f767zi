@@ -34,7 +34,7 @@ all: clean
 
 clean:
 	@cd $(BUILDSPACE) && make -f Makefile.common clean
-	rm -f asp.*
+	rm -f asp.* && rm -f .asp*
 
 gen-msg:
 	@if [ -a $(MSGDIR)/msg_settings.json ]; then \

@@ -28,6 +28,7 @@ STM32CubeF7/
 
 workspace/build/
 workspace/asp*
+workspace/.asp*
 workspace/Makefile
 mros2_msgs/
 

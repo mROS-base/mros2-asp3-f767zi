@@ -1,16 +1,14 @@
 #include "app.h"
 #include "mros2.h"
-#include "shape_msgs/msg/mesh.hpp"
+#include "std_msgs/msg/string.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-void userCallback(shape_msgs::msg::Mesh *msg)
+void userCallback(std_msgs::msg::String *msg)
 {
-  MROS2_INFO("subscribed! %lu", msg->triangles[0].vertex_indices[0]);
-  MROS2_INFO("publishing!");
   pub.publish(*msg);
 }
 
@@ -23,9 +21,9 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<shape_msgs::msg::Mesh>("to_linux", 10);
-  sub = node.create_subscription<shape_msgs::msg::Mesh>("to_stm", 10, userCallback);
-  shape_msgs::msg::Mesh msg;
+  pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
+  sub = node.create_subscription<std_msgs::msg::String>("to_stm", 10, userCallback);
+  std_msgs::msg::String msg;
 
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();
