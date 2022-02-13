@@ -37,8 +37,8 @@ JointState型の通信の動作確認をするためのサンプルアプリで�
 9.messageを受信、これを再びhostのros2アプリに向かって送信する。（以下)
 
 ```
-subscribed msg!!
-publishing msg!!
-subscribed msg!!
-publishing msg!!
+  subscribed msg!!
+  publishing msg!!
+  subscribed msg!!
+  publishing msg!!
 ```
