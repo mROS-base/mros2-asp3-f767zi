@@ -1,1 +1,0 @@
-#include "../workspace/echoreply_twist/templates.hpp"

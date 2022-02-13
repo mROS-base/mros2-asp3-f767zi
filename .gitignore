@@ -20,15 +20,3 @@ gen/
 .project
 .settings/
 *.launch
-
-mros2/
-asp3-f767zi/
-cmsis-asp3/
-STM32CubeF7/
-
-workspace/build/
-workspace/asp*
-workspace/.asp*
-workspace/Makefile
-mros2_msgs/
-
