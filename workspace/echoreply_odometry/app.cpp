@@ -9,8 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(nav_msgs::msg::Odometry *msg)
 {
-  MROS2_INFO("subscribed!");
-  MROS2_INFO("publishing!");
+  MROS2_INFO("subscribed msg!!");
+  MROS2_INFO("publishing msg!!");
   pub.publish(*msg);
 }
 

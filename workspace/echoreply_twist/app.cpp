@@ -1,6 +1,5 @@
 #include "app.h"
 #include "mros2.h"
-#include <kernel.h>
 #include "geometry_msgs/msg/twist.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
@@ -8,24 +7,11 @@
 mros2::Subscriber sub;
 mros2::Publisher pub;
 
-std::array<uint32_t, 230> timeArr;
-uint32_t count = 0;
-
 void userCallback(geometry_msgs::msg::Twist *msg)
 {
-  if (count == 200){
-    for (int i=0;i<200;i++){
-      MROS2_INFO("%lu", timeArr[i]);
-      dly_tsk(1000);
-    }
-    MROS2_INFO("----------------");
-  } else if (count > 200){
-
-  } else {
-    timeArr[count] = fch_hrt();
-    pub.publish(*msg);
-    count++;
-  }
+  MROS2_INFO("subscribed msg!!");
+  MROS2_INFO("publishing msg!!");
+  pub.publish(*msg);
 }
 
 int main(int argc, char * argv[])

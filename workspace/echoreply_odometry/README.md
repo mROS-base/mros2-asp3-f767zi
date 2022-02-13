@@ -1,68 +1,43 @@
-### EmbeddedRTPS動作確認用アプリ
+### Odometry型通信動作確認用アプリ
 
-EmbeddedRTPSの動作確認をする（＝embeddedRTPS開発元が提供するのテストプログラムを実行する）ためのサンプルアプリです。
-利用に当たっては、embeddedRTPS-STM32のリポジトリ内にある通信用アプリをビルドして実行する必要があります。
+Odometry型の通信の動作確認をするためのサンプルアプリです。
+以下の手順で確認できます。
 
-#### LINUX側の準備
-1.適当なディレクトリに、embeddedRTPS-STM32のリポジトリをcloneします  
-```
-git clone --recursive https://github.com/embedded-software-laboratory/embeddedRTPS-STM32
-```
-2. 通信用アプリをビルドします  
-```
-cd embeddedRTPS-STM32
-cd linux
-mkdir build
-cd build
-cmake -DTHIRDPARTY=ON ..
-make 
-```
-3. PC上のファイヤウォールの設定を切ります
+1.workspace/custom_msgsで、nav_msgs/msg/Odometry.msgを作成し、Odometry型を定義する。なお、Odometry型には多くの任意型(PoseWithCovariance, TwistWithCovariance, ...) を含むので、それらの定義も各ファイルで行う。
 
-#### STM側の設定
-1. IPアドレスを設定します。  
-`application/src/lwip.c L69-L80`  
-```
-  IP_ADDRESS[0] = 192;
-  IP_ADDRESS[1] = 168;
-  IP_ADDRESS[2] = 11;
-  IP_ADDRESS[3] = 2;
-  NETMASK_ADDRESS[0] = 255;
-  NETMASK_ADDRESS[1] = 255;
-  NETMASK_ADDRESS[2] = 255;
-  NETMASK_ADDRESS[3] = 0;
-  GATEWAY_ADDRESS[0] = 192;
-  GATEWAY_ADDRESS[1] = 168;
-  GATEWAY_ADDRESS[2] = 11;
-  GATEWAY_ADDRESS[3] = 1;
-  ```  
-`embeddedRTPS/include/rtps/config.h L36-L37`  
-```
-const std::array<uint8_t, 4> IP_ADDRESS = {
-    192, 168, 11, 2}; // Needs to be set in lwipcfg.h too.
-```
-2. 本アプリをビルドします
+  ```
+  header header
+  string child_frame_id
+  geometry_msgs/msg/PoseWithCovariance pose
+  geometry_msgs/msg/TwistWithCovariance twist
+    ```
 
-#### 実行
-1. STM32側のアプリを、STM32CubeIDEのデバッガ機能などにより実行します
-2. ビルドしたlinuxのアプリを実行します
-3. 以下のように、linux側から送信されたデータがstmから返送され、その旨のメッセージが出れば成功です
+2.nav_msgs内にmsg_settings.jsonを作成し、以下のように書き込む。今回通信に用いるのはOdometry型なので、Odometry型定義ファイルの場所を書き込む。
 ```
-Conducting new Test...
-Send message to the STM32.
-Received message from STM32 with len:10
-0 : 10
-1 : 10
-2 : 10
-3 : 10
-4 : 10
-5 : 10
-6 : 10
-7 : 10
-8 : 10
-9 : 10
+  {
+      "pubsubMsgs": [
+      "nav_msgs/msg/Odometry.msg"
+    ]
+  }
+```
 
-Conducting new Test...
-Send message to the STM32.
+3.workspaceディレクトリにて、`make gen-msg msg=nav_msgs` によodometry.hppを生成する。
 
+4.mros2-asp3-f767ziディレクトリにmros2_msgs/nav_msgs/msg/odometry.hppが生成されていることを確認する。
+
+5.echoreply_odometryアプリ内で、生成したodometry.hppをincludeして使用する。
+
+6.workspaceディレクトリにて、`make app=echoreply_odometry` によりアプリをビルドする。
+
+7.Serial Console (picocomなど) を立ち上げて、初期化する。
+
+8.hostのros2アプリからOdometry型のmessageを送信する。
+
+9.messageを受信、これを再びhostのros2アプリに向かって送信する。（以下)
+
+```
+subscribed msg!!
+publishing msg!!
+subscribed msg!!
+publishing msg!!
 ```
