@@ -9,8 +9,8 @@ mros2::Publisher pub;
 
 void userCallback(std_msgs::msg::String *msg)
 {
-  MROS2_INFO("Subscribed msg : Hello, world! %s", msg->data.c_str());
-  MROS2_INFO("Publishing msg : Hello, world! %s", msg->data.c_str());
+  MROS2_INFO("Subscribed msg : %s", msg->data.c_str());
+  MROS2_INFO("Publishing msg : %s", msg->data.c_str());
   pub.publish(*msg);
 }
 
