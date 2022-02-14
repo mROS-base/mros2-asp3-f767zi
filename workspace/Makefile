@@ -5,7 +5,7 @@ BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
 BOARDPATH := /media/${USER}/${BOARDNAME}
-# BOARDPATH for Mac OS -> BOARDPATH := /Volumes/${BOARDNAME}
+# BOARDPATH for MAC OS -> BOARDPATH := /Volumes/${BOARDNAME}
 
 MSGDIR := custom_msgs/${msg}
 MROS2DIR := ../mros2

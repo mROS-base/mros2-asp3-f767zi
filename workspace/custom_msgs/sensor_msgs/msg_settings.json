@@ -1,5 +1,0 @@
-{
-    "pubsubMsgs": [  
-		"sensor_msgs/msg/JointState.msg"
-	]
-}

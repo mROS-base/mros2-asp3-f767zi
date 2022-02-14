@@ -1,17 +1,14 @@
 #include "app.h"
 #include "mros2.h"
-#include "geometry_msgs/msg/twist.hpp"
+#include "geometry_msgs/msg/pose.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
 mros2::Subscriber sub;
-mros2::Publisher pub;
 
-void userCallback(geometry_msgs::msg::Twist *msg)
+void userCallback(geometry_msgs::msg::Pose *msg)
 {
-  MROS2_INFO("subscribed msg!!");
-  MROS2_INFO("publishing msg!!");
-  pub.publish(*msg);
+  MROS2_INFO("subscribed Pose msg!!");
 }
 
 int main(int argc, char * argv[])
@@ -22,11 +19,9 @@ int main(int argc, char * argv[])
   MROS2_DEBUG("mROS 2 initialization is completed");
   BSP_LED_Toggle(LED1);
 
-  mros2::Node node = mros2::Node::create_node("mros2_node");
-  pub = node.create_publisher<geometry_msgs::msg::Twist>("to_linux", 10);
-  sub = node.create_subscription<geometry_msgs::msg::Twist>("to_stm", 10, userCallback);
-  geometry_msgs::msg::Twist msg;
-
+  mros2::Node node = mros2::Node::create_node("sub_pose");
+  sub = node.create_subscription<geometry_msgs::msg::Pose>("cmd_vel", 10, userCallback);
+  
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();
   BSP_LED_Toggle(LED3);

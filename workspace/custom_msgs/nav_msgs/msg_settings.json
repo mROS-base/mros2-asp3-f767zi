@@ -1,5 +1,0 @@
-{
-    "pubsubMsgs": [
-		"nav_msgs/msg/Odometry.msg"
-	]
-}

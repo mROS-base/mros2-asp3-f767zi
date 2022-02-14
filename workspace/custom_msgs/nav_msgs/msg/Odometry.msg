@@ -1,4 +1,0 @@
-header header
-string child_frame_id
-geometry_msgs/msg/PoseWithCovariance pose
-geometry_msgs/msg/TwistWithCovariance twist
