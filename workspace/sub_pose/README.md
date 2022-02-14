@@ -35,7 +35,7 @@ Please follow the steps below.
   
 2.geometry_msgs/msgというディレクトリをcustom_msgsディレクトリ下に作成し、その下にこれらを配置する。
 
-  Make geometry_msgs/msg dirctory under custom_msgs directory, then set these definition files.
+  Make geometry_msgs/msg directory under custom_msgs directory, then set these definition files.
 
 3.geometry_msgsディレクトリ下にmsg_settings.jsonというファイルを作成する。
   以下のように、pubsubMsgsをkeyとするvalueに、通信を実際に行う型の定義ファイルのパスを全て、
@@ -44,7 +44,7 @@ Please follow the steps below.
 
   Make msg_settings.json under geometry_msgs directory.
   Then set all paths to each definition files used in this app at pubsubMsgs' value like below.
-  Note that Pose-type message is to be sent now and Pose-type has Point-type and Quaternion-type, but you don't have to write path to Point-type and Quaternion-type definition file.
+  Note that Pose-type message is to be sent now and Pose-type has Point-type and Quaternion-type, but you don't have to include path to Point-type and Quaternion-type definition file.
 
   ```
   {
@@ -77,8 +77,8 @@ Please follow the steps below.
   If you get logs below, which means success!!
 
 ```
-publishing float msg!!
-publishing float msg!!
+subscribed Pose msg!!
+subscribed Pose msg!!
 ...
 
 ```
