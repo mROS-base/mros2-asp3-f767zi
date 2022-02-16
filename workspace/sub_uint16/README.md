@@ -1,15 +1,15 @@
-### uint16型通信動作確認用アプリ
+# sub_uint16
 
-uint16型の通信の動作確認をするためのサンプルアプリです。
-以下の手順で確認できます。
+This is a sample application to subscribe `uint16` (`std_msgs::msg::Uint16`) message.
+Please follow the steps below.
 
-1.workspaceディレクトリにて、`make app=echoreply_uint16` によりアプリをビルド
+1.Execute `make app=sub_uint16` in `workspace` direcroty, then this app will be built.
 
-2.Serial Console (picocomなど) を立ち上げて、初期化
+2.Open serial console (ex. picocom) and initialize your micro computer board.
 
-3.hostのros2アプリからuint16型のmessageを送信
+3.On the host device to communicate with, run `mros2_pub_uint16` app (https://github.com/mROS-base/mros2-host-examples) .
 
-4.messageを受信、これを再びhostのros2アプリに向かって送信 (以下)
+4.If you get logs below, which means success!!
 
 ```
 Subscribed msg : 1
