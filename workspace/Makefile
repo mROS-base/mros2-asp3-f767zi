@@ -37,6 +37,7 @@ clean:
 	rm -f asp.* && rm -f .asp*
 
 gen-msg:
-	@if [ -a $(MSGDIR)/msg_settings.json ]; then \
+	@if [ -f $(MSGDIR)/msg_settings.json ]; then \
 		python $(HEADERGEN_FILE) $(MROS2DIR) $(MSGDIR); \
+		echo "msg file for ${msg} generated in ${MSGDIR}"; \
 	fi
