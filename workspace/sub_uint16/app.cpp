@@ -8,7 +8,7 @@ mros2::Subscriber sub;
 
 void userCallback(std_msgs::msg::UInt16 *msg)
 {
-  MROS2_INFO("subscribed msg: %u", msg->data);
+  MROS2_INFO("subscribed msg: '%d'", msg->data);
 }
 
 int main(int argc, char * argv[])
