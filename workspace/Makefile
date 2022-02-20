@@ -38,6 +38,6 @@ clean:
 
 gen-msg:
 	@if [ -f $(MSGDIR)/msg_settings.json ]; then \
-		python $(HEADERGEN_FILE) $(MROS2DIR) $(MSGDIR); \
+		python -B $(HEADERGEN_FILE) $(MROS2DIR) $(MSGDIR); \
 		echo "msg file for ${msg} generated in ${MSGDIR}"; \
 	fi
