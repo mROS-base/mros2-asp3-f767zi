@@ -16,39 +16,36 @@ Please also check [mROS-base/mros2-host-examples](https://github.com/mROS-base/m
     - `$ ros2 run mros2_echoback_string pub_node`
     - `$ ros2 run mros2_echoback_string sub_node`
 
-## echoreply_uint16
+## sub_uint16
 
 - Description:
   - The mROS 2 node on the embedded board subscribes `uint16` (`std_msgs::msg::UInt16`) message from `/to_stm` topic.
-  - And then publishes this `uint16` message as it is to `/to_linux` as the reply.
-- Host operation:
-  - `$ ros2 launch mros2_echoback_uint16 launch.py`
+  - `$ ros2 launch mros2_pub_uint16 launch.py`
   - or, at two terminals:
-    - `$ ros2 run mros2_echoback_uint16 pub_node`
-    - `$ ros2 run mros2_echoback_uint16 sub_node`
+    - `$ ros2 run mros2_pub_uint16 pub_node`
 
-## echoreply_float32
+## pub_float32
 
 - Description:
-  - The mROS 2 node on the embedded board subscribes `float32` (`std_msgs::msg::Float32`) message from `/to_stm` topic.
-  - And then publishes this `float32` message as it is to `/to_linux` as the reply.
-    - Note that this application just print whether the value of message is less than 0.0, between 0.0 and 1.0, or greater than 1.0, since TOPPERS/ASP3 kernel cannot print float value.
+  - The mROS 2 node on the embedded board publishes `float32` (`std_msgs::msg::Float32`) message to `/to_linux` topic.
 - Host operation:
-  - `$ ros2 launch mros2_echoback_float32 launch.py`
+  - `$ ros2 launch mros2_sub_float32 launch.py`
   - or, at two terminals:
-    - `$ ros2 run mros2_echoback_float32 pub_node`
-    - `$ ros2 run mros2_echoback_float32 sub_node`
+    - `$ ros2 run mros2_sub_float32 sub_node`
 
-## pub_string
-
-- Description:
-  - The mROS 2 node on the embedded board says hello to `/to_linux` as the publication message of `string`.
-- Host operation:
-  - `$ ros2 run mros2_echoback_string pub_node`
-
-## sub_string
+## sub_pose
 
 - Description:
-  - The mROS 2 node on the embedded board just subscribes `string` message from `/to_stm` topic.
+  - The mROS 2 node on the embedded board subscribes `Pose` (`geometry_msgs::msg::Pose`) message from `cmd_vel` topic.
+  - `$ ros2 launch mros2_pub_pose launch.py`
+  - or, at two terminals:
+    - `$ ros2 run mros2_pub_pose pub_node`
+
+## pub_twist
+
+- Description:
+  - The mROS 2 node on the embedded board publishes `Twist` (`geometry_msgs::msg::Twist`) message to `cmd_vel` topic.
 - Host operation:
-  - `$ ros2 run mros2_echoback_string sub_node`
+  - `$ ros2 launch mros2_sub_twist launch.py`
+  - or, at two terminals:
+    - `$ ros2 run mros2_sub_twist sub_node`

@@ -5,6 +5,12 @@ BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
 BOARDPATH := /media/${USER}/${BOARDNAME}
+# BOARDPATH for MAC OS -> BOARDPATH := /Volumes/${BOARDNAME}
+
+MSGDIR := custom_msgs/${msg}
+MROS2DIR := ../mros2
+HEADERGEN_FILE := $(MROS2DIR)/mros2_header_generator/header_generator.py
+TEMPLATESGEN_FILE := $(MROS2DIR)/mros2_header_generator/templates_generator.py
 
 ifdef app
 # nothing to do
@@ -15,6 +21,8 @@ usage:
 endif
 
 all: clean
+    
+	@python $(TEMPLATESGEN_FILE) $(MROS2DIR) $(APPNAME);
 	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 	@echo "Build complete successfully"
@@ -26,4 +34,10 @@ all: clean
 
 clean:
 	@cd $(BUILDSPACE) && make -f Makefile.common clean
-	rm -f asp.*
+	rm -f asp.* && rm -f .asp*
+
+gen-msg:
+	@if [ -f $(MSGDIR)/msg_settings.json ]; then \
+		python -B $(HEADERGEN_FILE) $(MROS2DIR) $(MSGDIR); \
+		echo "msg file for ${msg} generated in ${MSGDIR}"; \
+	fi

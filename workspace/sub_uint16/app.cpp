@@ -1,12 +1,14 @@
 #include "app.h"
 #include "mros2.h"
-#include "std_msgs/msg/string.hpp"
+#include "std_msgs/msg/u_int16.hpp"
 
 #include "stm32f7xx_nucleo_144.h"
 
-void userCallback(std_msgs::msg::String *msg)
+mros2::Subscriber sub;
+
+void userCallback(std_msgs::msg::UInt16 *msg)
 {
-  MROS2_INFO("subscribed msg: '%s'", msg->data.c_str());
+  MROS2_INFO("subscribed msg: '%d'", msg->data);
 }
 
 int main(int argc, char * argv[])
@@ -18,9 +20,9 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("mros2_node");
-  mros2::Subscriber sub = node.create_subscription("to_stm", 10, userCallback);
+  sub = node.create_subscription<std_msgs::msg::UInt16>("to_stm", 10, userCallback);
 
-  MROS2_INFO("ready to subscribe message");
+  MROS2_INFO("ready to pub/sub message");
   mros2::spin();
   BSP_LED_Toggle(LED3);
 }
