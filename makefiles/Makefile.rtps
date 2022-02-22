@@ -8,6 +8,8 @@ MICROCDR_DIR := $(RTPSDIR)/thirdparty/Micro-CDR
 CDEFS += -DMROS2_USE_CUBE
 CDEFS += -DMROS2_USE_EMBEDDEDRTPS
 
+INCLUDES += -I$(ROOTDIR)/src/config
+
 INCLUDES += -I$(RTPSDIR)/include
 INCLUDES += -I$(RTPSDIR)/include/rtps
 INCLUDES += -I$(RTPSDIR)/thirdparty/lwip
