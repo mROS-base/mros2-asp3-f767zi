@@ -16,8 +16,8 @@ ifdef app
 # nothing to do
 else
 usage:
-	@echo Please specify the application
-	@echo Usage Guide：make app="<application directory>"
+	@echo "Please specify the application"
+	@echo "Usage: make app=<app_dir_name>"
 endif
 
 all: clean
