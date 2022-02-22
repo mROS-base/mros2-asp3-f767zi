@@ -108,7 +108,7 @@ ready to pub/sub message
 ```
 $ cd <your_ros2_ws>
 $ source install/local_setup.bash
-$ ros2 launch mros2_echoback_string launch_pubsub.py 
+$ ros2 launch mros2_echoback_string pubsub.launch.py 
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [pub_node-1]: process started with pid [21232]
 [INFO] [sub_node-2]: process started with pid [21233]
@@ -146,7 +146,7 @@ We need to start up the mROS 2 node at first, and then operate ROS 2 nodes on th
 
 ## Example applications
 
-Please see [workspace](workspace/) for example applications.
+Please see [workspace/README.md](workspace/) for example applications.
 
 ## Tips 1: Execute host nodes with Docker environment
 
