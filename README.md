@@ -148,6 +148,17 @@ We need to start up the mROS 2 node at first, and then operate ROS 2 nodes on th
 
 Please see [workspace/README.md](workspace/) for example applications.
 
+## Configure the network
+
+There are two files for network configulation.
+
+- [src/startup/include/lwipots.h](https://github.com/mROS-base/mros2-asp3-f767zi/blob/main/src/startup/include/lwipopts.h) for lwIP
+- [src/config/rtps/config.h](https://github.com/mROS-base/mros2-asp3-f767zi/blob/main/src/config/rtps/config.h) for embeddedRTPS
+
+Currently, we are unable to communicate large size of messages probably due to these configurations. We should seek the appropreate configurations or how to fit them to the demand of applications.
+
+Please let us know about this if you have any opinions or awesome knowledges! #60 
+
 ## Tips 1: Execute host nodes with Docker environment
 
 If you do not want to prepare ROS 2 environment on your PC, using Docker is a good alternative to check the operation of mros2 just in 5 minutes. Type the command below.
