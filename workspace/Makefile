@@ -21,7 +21,6 @@ usage:
 endif
 
 all: clean
-    
 	@python $(TEMPLATESGEN_FILE) $(MROS2DIR) $(APPNAME);
 	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
