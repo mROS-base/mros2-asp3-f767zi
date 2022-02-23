@@ -105,12 +105,12 @@ mROS 2 initialization is completed
 ready to pub/sub message
 [MROS2LIB] Initilizing Domain complete
 ```
-  
+ 
 2. Launch ROS 2 nodes on the host on another terminal.
 ```
 $ cd <your_ros2_ws>
 $ source install/local_setup.bash
-$ ros2 launch mros2_echoback_string pubsub.launch.py 
+$ ros2 launch mros2_echoback_string pubsub.launch.py
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [pub_node-1]: process started with pid [21232]
 [INFO] [sub_node-2]: process started with pid [21233]
@@ -163,7 +163,7 @@ In additon, you can define a customized message type (e.g., `Twist.msg`) in the 
 Prepare `Twist.msg` file and make sure it is in `workspace/custom_msgs/geometry_msgs/msg/`.
 
 ```
-$ cat workspace/custom_msgs/geometry_msgs/msg/Twist.msg 
+$ cat workspace/custom_msgs/geometry_msgs/msg/Twist.msg
 geometry_msgs/msg/Vector3 linear
 geometry_msgs/msg/Vector3 angular
 ```
@@ -171,7 +171,7 @@ geometry_msgs/msg/Vector3 angular
 In this example, `Twist` has a nested structure with `Vector3` as a child element. So you also need to prepare its file.
 
 ```
-$ cat workspace/custom_msgs/geometry_msgs/msg/Vector3.msg 
+$ cat workspace/custom_msgs/geometry_msgs/msg/Vector3.msg
 float64 x
 float64 y
 float64 z
@@ -182,7 +182,7 @@ float64 z
 Next, create or edit `msg_settings.json` file under `workspace/custom_msgs/geometry_msgs/` directory. In general, you need to set all paths to `pubsubMsgs`'s value about each .msg files which you want to use. Note that you do not need to add additional paths in this example since `Vector3` will be located in the same hierarchy as `Twist`.
 
 ```
-$ cat workspace/custom_msgs/geometry_msgs/msg_settings.json 
+$ cat workspace/custom_msgs/geometry_msgs/msg_settings.json
 {
     "pubsubMsgs": [
         "geometry_msgs/msg/Twist.msg"
@@ -196,7 +196,7 @@ To generate header files for `Twist` and `Vector3`, do `make gen-msg msg=geometr
 
 ```
 $ cd workspace
-$ make gen-msg msg=geometry_msgs 
+$ make gen-msg msg=geometry_msgs
 msg file for geometry_msgs generated in custom_msgs/geometry_msgs
 ```
 
@@ -224,7 +224,7 @@ You can now use them in your applicaton like this.
 int main(int argc, char * argv[])
 {
 <snip.>
-  pub = node.create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);  
+  pub = node.create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
 <snip.>
 ```
 
@@ -283,7 +283,8 @@ Building, flashing and debugging the application can be done with simple operati
 
 ## Submodules and Licenses
 
-The source code of this repository itself is published under [Apache License 2.0](https://github.com/mROS-base/mros2/blob/main/LICENSE).  
+The source code of this repository itself is published under [Apache License 2.0](https://github.com/mROS-base/mros2/blob/main/LICENSE).
+
 Please note that this repository contains the following stacks as the submodules, and also check their Licenses.
 
 - [mros2](https://github.com/mROS-base/mros2): the pub/sub APIs compatible with ROS 2 Rclcpp
