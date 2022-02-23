@@ -1,11 +1,9 @@
 # echoreply_string
 
-This is a sample application to publish/subscribe `string` (`std_msgs::msg::String`) message.
+This is a sample application to publish and subscribe `string` message.
 
-## Description
-
-- The mROS 2 node on the embedded board subscribes `string` (`std_msgs::msg::String`) message from `/to_stm` topic.
-- And then publishes this `string` message as it is to `/to_linux` as the reply.
+The mROS 2 node on the embedded board subscribes `string` (`std_msgs::msg::String`) message from `/to_stm` topic.
+And then publishes this `string` message as it is to `/to_linux` as the reply.
 
 ## Build and Run for embedded devices
 
@@ -43,7 +41,7 @@ $ ros2 run mros2_echoback_string pub_node
 ### serial console for the baord with mros2
 
 ```
-$ picocom -b 115200 /dev/ttyACM0 
+$ picocom -b 115200 /dev/ttyACM0
 <snip.>
 Subscribed msg : Hello, world! 0
 Publishing msg : Hello, world! 0
@@ -53,13 +51,13 @@ Subscribed msg : Hello, world! 2
 Publishing msg : Hello, world! 2
 Subscribed msg : Hello, world! 3
 Publishing msg : Hello, world! 3
-...
+<cont.>
 ```
 
 ### terminal console on the host
 
 ```
-$ ros2 launch mros2_echoback_string pubsub.launch.py 
+$ ros2 launch mros2_echoback_string pubsub.launch.py
 <snip.>
 [pub_node-1] [INFO] [1645585644.001564405] [pub_mros2]: Publishing msg: 'Hello, world! 0'
 [sub_node-2] [INFO] [1645585644.002840991] [mros2_sub]: Subscribed msg: 'Hello, world! 0'
@@ -69,5 +67,5 @@ $ ros2 launch mros2_echoback_string pubsub.launch.py
 [sub_node-2] [INFO] [1645585646.002939830] [mros2_sub]: Subscribed msg: 'Hello, world! 2'
 [pub_node-1] [INFO] [1645585647.001583001] [pub_mros2]: Publishing msg: 'Hello, world! 3'
 [sub_node-2] [INFO] [1645585647.002903072] [mros2_sub]: Subscribed msg: 'Hello, world! 3'
-...
+<cont.>
 ```
