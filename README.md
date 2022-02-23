@@ -35,7 +35,7 @@ Please also check [mros2 repository](https://github.com/mROS-base/mros2) for mor
 
 This section explains how to build and execute mROS 2 with TOPPERS/ASP3 kernel, using `echoback_reply` application as an example.
 
-This example only uses a built-in-type (`string` a.k.a `std_msgs::msg::String`), so you can skip the generation of header files for custom msg types. Please see [Generating header files for MsgTypes](https://github.com/mROS-base/mros2-asp3-f767zi#generating-header-files-for-msgtypes) for more detail.
+This example only uses a built-in-type (`string` a.k.a `std_msgs::msg::String`), so you can skip the generation of header files for custom msg types. Please see [Generating header files for MsgTypes](#generating-header-files-for-msgtypes) for more detail.
 
 ### Build for mROS 2 app
 
