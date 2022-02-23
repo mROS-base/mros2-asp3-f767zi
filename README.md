@@ -31,9 +31,11 @@ Please also check [mros2 repository](https://github.com/mROS-base/mros2) for mor
     - You can also connect the network with the board through the router when you can set the IP and Netmask as the above.
     - The IP address of the board will be assigned to `192.168.11.2`. If you want to change the IP settings, you need to modify [src/config/lwip.c](https://github.com/mROS-base/mros2-asp3-f767zi/blob/main/src/config/lwip.c#L69-L80) and [embeddedRTPS/include/rtps/config.h](https://github.com/mROS-base/embeddedRTPS/blob/mros2/include/rtps/config.h#L37) as you want.
 
-## Usage
+## Quickstart
 
 This section explains how to build and execute mROS 2 with TOPPERS/ASP3 kernel, using `echoback_reply` application as an example.
+
+This example only uses a built-in-type (`string` a.k.a `std_msgs::msg::String`), so you can skip the generation of header files for custom msg types. Please see [Generating header files for MsgTypes](https://github.com/mROS-base/mros2-asp3-f767zi#generating-header-files-for-msgtypes) for more detail.
 
 ### Build for mROS 2 app
 
@@ -43,7 +45,7 @@ First of all, clone this repository. Note that **--recursive** is mandatory.
 $ git clone --recursive https://github.com/mROS-base/mros2-asp3-f767zi
 ```
 
-Move to workspace and operate `make` with the target app name (please see [workspace/README.md](workspace/README.md) for another examples).
+Move to workspace and operate `make` with the target app name (please see [workspace/](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace) for another examples).
 
 ```
 $ cd mros2-asp3-f767zi
@@ -147,6 +149,12 @@ We need to start up the mROS 2 node at first, and then operate ROS 2 nodes on th
 ## Example applications
 
 Please see [workspace/README.md](workspace/) for example applications.
+
+## Generating header files for MsgTypes
+
+You can use almost any [built-in-types in ROS 2](https://docs.ros.org/en/rolling/Concepts/About-ROS-Interfaces.html#field-types) on the embedded device.
+
+In additon, you can custom message types in the same way as in ROS 2.
 
 ## Configure the network
 
