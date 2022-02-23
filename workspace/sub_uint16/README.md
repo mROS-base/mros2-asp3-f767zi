@@ -1,24 +1,59 @@
 # sub_uint16
 
-This is a sample application to subscribe `uint16` (`std_msgs::msg::Uint16`) message.
-Please follow the steps below.
+This is a sample application to subscribe `uint16` message.
 
-1.Execute `make app=sub_uint16` in `workspace` direcroty, then this app will be built.
+The mROS 2 node on the embedded board subscribes `uint16` (`std_msgs::msg::UInt16`) message from `/to_stm` topic.
 
-2.Open serial console (ex. picocom) and initialize your micro computer board.
+## Build and Run for embedded devices
 
-3.On the host device to communicate with, run `mros2_pub_uint16` app (https://github.com/mROS-base/mros2-host-examples) .
-
-4.If you get logs below, which means success!!
+Make sure to set `app=sub_uint16` as `make` option.
 
 ```
-Subscribed msg : 1
-Publishing msg : 1
-Subscribed msg : 2
-Publishing msg : 2
-Subscribed msg : 3
-Publishing msg : 3
-Subscribed msg : 4
-Publishing msg : 4
-...
+$ pwd
+<snip.>/mros2-asp3-f767zi/workspace
+$ make app=sub_uint16
+<snip.>
+configuration check passed
+make[2]: Leaving directory '/home/takase/ros/mROS2/github/mros2-asp3-f767zi/workspace/build'
+make[1]: Leaving directory '/home/takase/ros/mROS2/github/mros2-asp3-f767zi/workspace/build'
+Build complete successfully
+Copying binary to the board...
+
+### The above message is appeared if the board is already connected to host PC.
+### If not, please connect the board and copy the binary manually.
+$ cp asp.bin /media/$USER/NODE_F767ZI/
+```
+
+## Host operation for native ROS 2
+
+```
+$ ros2 launch mros2_pub_uint16 pub.launch.py
+### or:
+$ ros2 run mros2_pub_uint16 pub_node
+```
+
+## Expected output
+
+### serial console for the baord with mros2
+
+```
+$ picocom -b 115200 /dev/ttyACM0
+<snip.>
+subscribed msg: '0'
+subscribed msg: '1'
+subscribed msg: '2'
+subscribed msg: '3'
+<cont.>
+```
+
+### terminal console on the host
+
+```
+$ ros2 launch mros2_pub_uint16 pub.launch.py
+<snip.>
+[pub_node-1] [INFO] [1645586366.041203916] [pub_mros2]: Publishing msg: '0'
+[pub_node-1] [INFO] [1645586367.041239322] [pub_mros2]: Publishing msg: '1'
+[pub_node-1] [INFO] [1645586368.041342645] [pub_mros2]: Publishing msg: '2'
+[pub_node-1] [INFO] [1645586369.041329532] [pub_mros2]: Publishing msg: '3'
+<cont.>
 ```
