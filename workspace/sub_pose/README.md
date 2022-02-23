@@ -43,7 +43,7 @@ $ make gen-msg msg=geometry_msgs
 msg file for geometry_msgs generated in custom_msgs/geometry_msgs
 ```
 
-See detail in [<repo_root>/README.md#generating-header-files-for-custom-msgtypes(../README.md#generating-header-files-for-custom-msgtypes)).
+See detail in [<repo_root>/README.md#generating-header-files-for-custom-msgtypes](../README.md#generating-header-files-for-custom-msgtypes)).
 
 ## Build and Run for embedded devices
 

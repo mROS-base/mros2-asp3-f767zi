@@ -6,7 +6,7 @@ The mROS 2 node on the embedded board publishes `Twist` (`geometry_msgs::msg::Tw
 
 ## Generate header files for Twist
 
-See detail in [<repo_root>/README.md#generating-header-files-for-custom-msgtypes(../README.md#generating-header-files-for-custom-msgtypes)).
+See detail in [<repo_root>/README.md#generating-header-files-for-custom-msgtypes](../README.md#generating-header-files-for-custom-msgtypes)).
 
 ## Build and Run for embedded devices
 
