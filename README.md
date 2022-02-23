@@ -45,7 +45,7 @@ First of all, clone this repository. Note that **--recursive** is mandatory.
 $ git clone --recursive https://github.com/mROS-base/mros2-asp3-f767zi
 ```
 
-Move to workspace and operate `make` with the target app name (please see [workspace/](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace) for another examples).
+Move to workspace and operate `make` with the target app name (please see [workspace/](workspace/) for another examples).
 
 ```
 $ cd mros2-asp3-f767zi
