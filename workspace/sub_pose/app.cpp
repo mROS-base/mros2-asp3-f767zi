@@ -4,8 +4,6 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
-mros2::Subscriber sub;
-
 void userCallback(geometry_msgs::msg::Pose *msg)
 {
   MROS2_INFO("subscribed Pose msg!!");
@@ -20,7 +18,7 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("sub_pose");
-  sub = node.create_subscription<geometry_msgs::msg::Pose>("cmd_vel", 10, userCallback);
+  mros2::Subscriber sub = node.create_subscription<geometry_msgs::msg::Pose>("cmd_vel", 10, userCallback);
   
   MROS2_INFO("ready to pub/sub message");
   mros2::spin();

@@ -5,8 +5,6 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
-mros2::Publisher pub;
-
 int main(int argc, char * argv[])
 {
   MROS2_INFO("mROS 2 application is started");
@@ -16,7 +14,7 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("pub_twist");
-  pub = node.create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);  
+  mros2::Publisher pub = node.create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);  
   MROS2_INFO("ready to pub/sub message");
 
   geometry_msgs::msg::Vector3 linear;
@@ -24,7 +22,8 @@ int main(int argc, char * argv[])
   geometry_msgs::msg::Twist twist;
 
   auto publish_count = 0;
-  while (1) {  
+  while (1)
+  {
     linear.x = publish_count/1.0;
     linear.y = publish_count/1.0;
     linear.z = publish_count/1.0;  

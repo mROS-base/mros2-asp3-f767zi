@@ -40,9 +40,13 @@ $ ros2 run mros2_sub_float32 sub_node
 $ picocom -b 115200 /dev/ttyACM0
 <snip.>
 publishing float msg!!
+msg <= 0.0
 publishing float msg!!
+msg <= 0.0
 publishing float msg!!
+0.0 < msg < 0.5
 publishing float msg!!
+0.0 < msg < 0.5
 <cont.>
 ```
 
@@ -53,9 +57,9 @@ Note that this app only prints about publications since printing float32 value o
 ```
 $ ros2 launch mros2_sub_float32 sub.launch.py
 <snip.>
-[sub_node-1] [INFO] [1645586016.473060439] [sub_mros2]: Subscribed msg: '3.0000'
-[sub_node-1] [INFO] [1645586017.482224733] [sub_mros2]: Subscribed msg: '4.0000'
-[sub_node-1] [INFO] [1645586018.491512349] [sub_mros2]: Subscribed msg: '5.0000'
-[sub_node-1] [INFO] [1645586019.500728573] [sub_mros2]: Subscribed msg: '6.0000'
+[sub_node-1] [INFO] [1645679842.497824017] [sub_mros2]: Subscribed msg: '-0.1000'
+[sub_node-1] [INFO] [1645679843.507012242] [sub_mros2]: Subscribed msg: '-0.0000'
+[sub_node-1] [INFO] [1645679844.516442044] [sub_mros2]: Subscribed msg: '0.1000'
+[sub_node-1] [INFO] [1645679845.525575190] [sub_mros2]: Subscribed msg: '0.2000'
 <cont.>
 ```
