@@ -21,6 +21,7 @@ int main(int argc, char * argv[])
   mros2::Subscriber sub = node.create_subscription<geometry_msgs::msg::Pose>("cmd_vel", 10, userCallback);
   
   MROS2_INFO("ready to pub/sub message");
+
   mros2::spin();
   BSP_LED_Toggle(LED3);
 }

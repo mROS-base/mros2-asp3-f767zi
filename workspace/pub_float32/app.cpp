@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     publish_count = publish_count + 0.1;
     osDelay(1000);
   }
+
   mros2::spin();
   BSP_LED_Toggle(LED3);
 }

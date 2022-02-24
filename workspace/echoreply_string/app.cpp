@@ -28,6 +28,7 @@ int main(int argc, char * argv[])
   std_msgs::msg::String msg;
 
   MROS2_INFO("ready to pub/sub message");
+
   mros2::spin();
   BSP_LED_Toggle(LED3);
 }
