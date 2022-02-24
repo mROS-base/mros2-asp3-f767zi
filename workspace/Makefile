@@ -4,10 +4,9 @@ APPNAME := ${app}
 BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
-BOARDPATH := /media/${USER}/${BOARDNAME}
-# BOARDPATH for MAC OS -> BOARDPATH := /Volumes/${BOARDNAME}
+BOARDPATH := /Volumes/${BOARDNAME}
 
-MSGDIR := custom_msgs/${msg}
+MSGFILE := ${msg}
 MROS2DIR := ../mros2
 HEADERGEN_FILE := $(MROS2DIR)/mros2_header_generator/header_generator.py
 TEMPLATESGEN_FILE := $(MROS2DIR)/mros2_header_generator/templates_generator.py
@@ -36,7 +35,6 @@ clean:
 	rm -f asp.* && rm -f .asp*
 
 gen-msg:
-	@if [ -f $(MSGDIR)/msg_settings.json ]; then \
-		python -B $(HEADERGEN_FILE) $(MROS2DIR) $(MSGDIR); \
-		echo "msg file for ${msg} generated in ${MSGDIR}"; \
+	@if [ -f custom_msgs/$(MSGFILE) ]; then \
+		python -B $(HEADERGEN_FILE) $(MROS2DIR) $(MSGFILE); \
 	fi

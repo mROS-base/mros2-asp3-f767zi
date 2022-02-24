@@ -1,0 +1,230 @@
+# generated automatically by tecsgen.
+# This file is not intended to modify.
+#
+# Makefile variables below are defined.
+#  TECS_IMPORT_CDLS          .cdl files improted by import statement
+#  SIGNATURE_HEADERS         .h files of signature
+#  CELLTYPE_TECSGEN_HEADERS  .h files of celltype
+#  CELLTYPE_FACTORY_HEADERS  .h files of celltype's factory
+#  TECS_HEADERS              summary of .h files above
+#  TECS_INLINE_HEADERS       .h files of celltype inline header
+#  PLUGIN_INLINE_HEADERS     .h files of plugin generated inline header
+#
+#  TECS_COBJS                .o files of TECS
+#                            = $(TECSGEN_COBJS)+$(PLUGIN_COBJS)+$(CELLTYPE_COBJS)
+#                            = $(TECS_KERNEL_COBJS)+$(TECS_KERNEL_COBJS)+$(TECS_OUTOFDOMAIN_COBJS)
+#                            = $(TECSGEN_domain_COBJS)+$(PLUGIN_domain_COBJS)+$(CELLTYPE_domain_COBJS) for each domain
+#
+#  TECSGEN_COBJS             .o files of celltype_tecsgen.c
+#  CELLTYPE_COBJS            .o files of celltype.c (celltype code)
+#  PLUGIN_COBJS              .o files of plugin generated .c files
+#
+#  TECSGEN_SRCS              .c files of celltype_tecsgen.c
+#  CELLTYPE_SRCS             .c files of celltype.c (celltype code)
+#  PLUGIN_SRCS               .c files of plugin generated
+#  PLUGIN_CELLTYPE_SRCS      .c files of plugin generated celltype.c (celltype code)
+#  PLUGIN_TECSGEN_SRCS       .c files of plugin generated celltype_tecsgen.c
+#
+# Variables for domain
+#  TECS_DOMAINS             domain names
+#  TECS_KERNEL_COBJS        .o files of kernel domain (tecsgen, celltype, plugin)
+#  TECS_USER_COBJS          .o files of user domain (tecsgen, celltype, plugin)
+#  TECS_OUTOFDOMAIN_COBJS   .o files of OutOfDomain (tecsgen, celltype, plugin)
+#  TECSGEN_domain_COBJS     .o files of celltype_tecsgen.c files for each domain
+#  PLUGIN_domain_COBJS      .o files of plugin generated .c files for each domain
+#  CELLTYPE_domain_COBJS    .o files of celltype.c files for each domain
+#  TECSGEN_domain_SRCS      .c files of celltype_domain_tecsgen.c
+#  PLUGIN_domain_SRCS       .c files of plugin generated .c files for each domain
+#  CELLTYPE_domain_SRCS     .c files of celltype.c files for each domain
+
+TECS_IMPORT_CDLS = /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../workspace/echoreply_health/app.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/tecs_kernel/kernel.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/tSerialPort.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/tSerialAdapter.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/tSysLog.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/tSysLogAdapter.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/tLogTask.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/tBanner.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/target/nucleo_f767zi_gcc/target.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/target/nucleo_f767zi_gcc/tPutLogTarget.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/target/nucleo_f767zi_gcc/tSIOPortTarget.cdl /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/arch/arm_m_gcc/stm32f7xx_stm32cube//tUsart.cdl ./gen/tmp_NotifierPlugin_post_code.cdl
+TECS_IMPORT_HEADERS = /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/tecs_kernel/tecs_kernel.h /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/serial.h /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/syssvc/syslog.h /Users/hibarayoichiro/Desktop/mros2-asp3-f767zi/workspace/build/../../asp3-f767zi/target/nucleo_f767zi_gcc/nucleo_f767zi.h
+TECS_IMPORTS = $(TECS_IMPORT_CDLS) $(TECS_IMPORT_HEADERS)
+
+SIGNATURE_HEADERS = \
+	$(GEN_DIR)/sKernel_tecsgen.h \
+	$(GEN_DIR)/siKernel_tecsgen.h \
+	$(GEN_DIR)/siNotificationHandler_tecsgen.h \
+	$(GEN_DIR)/sTaskBody_tecsgen.h \
+	$(GEN_DIR)/sTask_tecsgen.h \
+	$(GEN_DIR)/siTask_tecsgen.h \
+	$(GEN_DIR)/sSemaphore_tecsgen.h \
+	$(GEN_DIR)/siSemaphore_tecsgen.h \
+	$(GEN_DIR)/sEventflag_tecsgen.h \
+	$(GEN_DIR)/siEventflag_tecsgen.h \
+	$(GEN_DIR)/sDataqueue_tecsgen.h \
+	$(GEN_DIR)/siDataqueue_tecsgen.h \
+	$(GEN_DIR)/sPriorityDataqueue_tecsgen.h \
+	$(GEN_DIR)/siPriorityDataqueue_tecsgen.h \
+	$(GEN_DIR)/sMutex_tecsgen.h \
+	$(GEN_DIR)/sFixedSizeMemoryPool_tecsgen.h \
+	$(GEN_DIR)/siHandlerBody_tecsgen.h \
+	$(GEN_DIR)/sCyclic_tecsgen.h \
+	$(GEN_DIR)/sAlarm_tecsgen.h \
+	$(GEN_DIR)/siAlarm_tecsgen.h \
+	$(GEN_DIR)/sInterruptRequest_tecsgen.h \
+	$(GEN_DIR)/siCpuExceptionHandlerBody_tecsgen.h \
+	$(GEN_DIR)/sRoutineBody_tecsgen.h \
+	$(GEN_DIR)/sSerialPort_tecsgen.h \
+	$(GEN_DIR)/sSIOPort_tecsgen.h \
+	$(GEN_DIR)/siSIOCBR_tecsgen.h \
+	$(GEN_DIR)/snSerialPortManage_tecsgen.h \
+	$(GEN_DIR)/sPutLog_tecsgen.h \
+	$(GEN_DIR)/sSysLog_tecsgen.h \
+	$(GEN_DIR)/sLogTask_tecsgen.h \
+# SIGNATURE_HEADERS terminator
+
+CELLTYPE_TECSGEN_HEADERS = \
+ 	$(GEN_DIR)/tTask_tecsgen.h \
+ 	$(GEN_DIR)/tSemaphore_tecsgen.h \
+ 	$(GEN_DIR)/tInterruptRequest_tecsgen.h \
+ 	$(GEN_DIR)/tISR_tecsgen.h \
+ 	$(GEN_DIR)/tInitializeRoutine_tecsgen.h \
+ 	$(GEN_DIR)/tTerminateRoutine_tecsgen.h \
+ 	$(GEN_DIR)/tSerialPortMain_tecsgen.h \
+ 	$(GEN_DIR)/tSerialAdapter_tecsgen.h \
+ 	$(GEN_DIR)/tSysLog_tecsgen.h \
+ 	$(GEN_DIR)/tSysLogAdapter_tecsgen.h \
+ 	$(GEN_DIR)/tLogTaskMain_tecsgen.h \
+ 	$(GEN_DIR)/tBannerMain_tecsgen.h \
+ 	$(GEN_DIR)/tPutLogTarget_tecsgen.h \
+ 	$(GEN_DIR)/tUsart_tecsgen.h \
+ 	$(GEN_DIR)/tSIOPortTargetMain_tecsgen.h \
+# CELLTYPE_TECSGEN_HEADERS terminator
+
+CELLTYPE_FACTORY_HEADERS = \
+ 	$(GEN_DIR)/tTask_factory.h \
+ 	$(GEN_DIR)/tSemaphore_factory.h \
+ 	$(GEN_DIR)/tInterruptRequest_factory.h \
+ 	$(GEN_DIR)/tISR_factory.h \
+ 	$(GEN_DIR)/tInitializeRoutine_factory.h \
+ 	$(GEN_DIR)/tTerminateRoutine_factory.h \
+ 	$(GEN_DIR)/tSerialPortMain_factory.h \
+ 	$(GEN_DIR)/tSerialAdapter_factory.h \
+ 	$(GEN_DIR)/tSysLog_factory.h \
+ 	$(GEN_DIR)/tSysLogAdapter_factory.h \
+ 	$(GEN_DIR)/tLogTaskMain_factory.h \
+ 	$(GEN_DIR)/tBannerMain_factory.h \
+ 	$(GEN_DIR)/tPutLogTarget_factory.h \
+ 	$(GEN_DIR)/tUsart_factory.h \
+ 	$(GEN_DIR)/tSIOPortTargetMain_factory.h \
+# CELLTYPE_FACTORY_HEADERS terminator
+
+# TECS_HEADERS:  headers generated by tecsgen
+TECS_HEADERS = $(SIGNATURE_HEADERS) $(CELLTYPE_TECSGEN_HEADERS) $(CELLTYPE_FACTORY_HEADERS)
+
+TECS_INLINE_HEADERS = \
+ 	tTask_tecsgen.h \
+ 	tSemaphore_tecsgen.h \
+ 	tInterruptRequest_tecsgen.h \
+ 	tISR_tecsgen.h \
+ 	tInitializeRoutine_tecsgen.h \
+ 	tTerminateRoutine_tecsgen.h \
+ 	tSerialPortMain_tecsgen.h \
+ 	tSerialAdapter_tecsgen.h \
+ 	tSysLog_tecsgen.h \
+ 	tSysLogAdapter_tecsgen.h \
+ 	tLogTaskMain_tecsgen.h \
+ 	tBannerMain_tecsgen.h \
+ 	tPutLogTarget_tecsgen.h \
+ 	tUsart_tecsgen.h \
+ 	tSIOPortTargetMain_tecsgen.h \
+# TECS_INLINE_HEADERS terminator
+
+PLUGIN_INLINE_HEADERS = \
+# PLUGIN_INLINE_HEADERS terminator
+
+# TECS_COBJS: all objects of TECS, include both user written code and tecsgen automatically generated code
+TECS_COBJS = $(TECSGEN_COBJS) $(PLUGIN_COBJS) $(CELLTYPE_COBJS)
+
+# TECSGEN_COBJS: objects from sources which are automatically generated by tecsgen
+TECSGEN_COBJS = \
+ 	$(_TECS_OBJ_DIR)tTask_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tSemaphore_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tInterruptRequest_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tISR_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tInitializeRoutine_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tTerminateRoutine_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tSerialPortMain_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tSerialAdapter_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tSysLog_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tSysLogAdapter_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tLogTaskMain_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tBannerMain_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tPutLogTarget_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tUsart_tecsgen.o \
+ 	$(_TECS_OBJ_DIR)tSIOPortTargetMain_tecsgen.o \
+# TECSGEN_COBJS terminator
+
+# PLUGIN_COBJS: objects from sources which are automatically generated by plugin(s)
+PLUGIN_COBJS = \
+# PLUGIN_COBJS terminator
+
+# CELLTYPE_COBJS: objects of celltype code written by user
+CELLTYPE_COBJS = \
+ 	$(_TECS_OBJ_DIR)tTask.o \
+ 	$(_TECS_OBJ_DIR)tISR.o \
+ 	$(_TECS_OBJ_DIR)tInitializeRoutine.o \
+ 	$(_TECS_OBJ_DIR)tTerminateRoutine.o \
+ 	$(_TECS_OBJ_DIR)tSerialPortMain.o \
+ 	$(_TECS_OBJ_DIR)tSerialAdapter.o \
+ 	$(_TECS_OBJ_DIR)tSysLog.o \
+ 	$(_TECS_OBJ_DIR)tSysLogAdapter.o \
+ 	$(_TECS_OBJ_DIR)tLogTaskMain.o \
+ 	$(_TECS_OBJ_DIR)tBannerMain.o \
+ 	$(_TECS_OBJ_DIR)tPutLogTarget.o \
+ 	$(_TECS_OBJ_DIR)tUsart.o \
+# CELLTYPE_COBJS terminator
+
+# TECSGEN_SRCS: sources automatically generated by tecsgen
+TECSGEN_SRCS = \
+ 	$(GEN_DIR)/tTask_tecsgen.c \
+ 	$(GEN_DIR)/tSemaphore_tecsgen.c \
+ 	$(GEN_DIR)/tInterruptRequest_tecsgen.c \
+ 	$(GEN_DIR)/tISR_tecsgen.c \
+ 	$(GEN_DIR)/tInitializeRoutine_tecsgen.c \
+ 	$(GEN_DIR)/tTerminateRoutine_tecsgen.c \
+ 	$(GEN_DIR)/tSerialPortMain_tecsgen.c \
+ 	$(GEN_DIR)/tSerialAdapter_tecsgen.c \
+ 	$(GEN_DIR)/tSysLog_tecsgen.c \
+ 	$(GEN_DIR)/tSysLogAdapter_tecsgen.c \
+ 	$(GEN_DIR)/tLogTaskMain_tecsgen.c \
+ 	$(GEN_DIR)/tBannerMain_tecsgen.c \
+ 	$(GEN_DIR)/tPutLogTarget_tecsgen.c \
+ 	$(GEN_DIR)/tUsart_tecsgen.c \
+ 	$(GEN_DIR)/tSIOPortTargetMain_tecsgen.c \
+# TECSGEN_SRCS terminator
+
+# PLUGIN_SRCS: sources automatically generated by plugin
+PLUGIN_CELLTYPE_SRCS = \
+  $(PLUGIN_CELLTYPE_SRCS)\
+# PLUGIN_CELLTYPE_SRCS terminator
+
+PLUGIN_TECSGEN_SRCS = \
+  $(PLUGIN_TECSGEN_SRCS)\
+# PLUGIN_TECSGEN_SRCS terminator
+
+PLUGIN_SRCS = $(PLUGIN_CELLTYPE_SRCS) $(PLUGIN_TECSGEN_SRCS)
+
+PLUGIN_CELLTYPE_SRCS = \
+# PLUGIN_CELLTYPE_SRCS terminator
+
+PLUGIN_TECSGEN_SRCS = \
+# PLUGIN_TECSGEN_SRCS terminator
+
+# CELLTYPE_SRCS: sources of celltype code written by user
+CELLTYPE_SRCS = \
+ 	tTask.c \
+ 	tISR.c \
+ 	tInitializeRoutine.c \
+ 	tTerminateRoutine.c \
+ 	tSerialPortMain.c \
+ 	tSerialAdapter.c \
+ 	tSysLog.c \
+ 	tSysLogAdapter.c \
+ 	tLogTaskMain.c \
+ 	tBannerMain.c \
+ 	tPutLogTarget.c \
+ 	tUsart.c \
+# CELLTYPE_SRCS terminator
+
