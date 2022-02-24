@@ -18,7 +18,7 @@ Please also check [mros2 repository](https://github.com/mROS-base/mros2) for mor
 
 ## Envorinmental setup
 
-1. Install [ROS 2 Foxy Fitzroy](https://docs.ros.org/en/foxy/installation.html) on the host with Ubuntu 20.04 LTS.
+1. Install [ROS 2 Foxy Fitzroy](https://docs.ros.org/en/foxy/Installation.html) on the host with Ubuntu 20.04 LTS.
     - You can also use Docker as the host environment instead. Please check "Tips 1" section.
 1. Install arm-none-eabi v7.3.1.
     - There are two ways to install the appropriate version.
