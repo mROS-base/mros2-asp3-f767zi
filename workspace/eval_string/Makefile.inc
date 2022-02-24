@@ -7,7 +7,7 @@ APPLNAME = app
 
 # log level: 0(DEBUG), 1(INFO), 2(WARN), 3(ERROR), 4(FATAL), 5(NONE)
 # NOTE: also check `initLogMask` in app.cdl for syslog setting
-CDEFS := -DMROS2_LOG_MIN_SEVERITY=0
+CDEFS := -DMROS2_LOG_MIN_SEVERITY=2
 
 # information for directory tree
 APPLDIR	:= $(APPDIR)
