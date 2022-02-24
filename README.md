@@ -152,6 +152,8 @@ Please see [workspace/](workspace/) for example applications.
 
 ## Generating header files for custom MsgTypes
 
+_Note: This feature is still in progress. We plan to improve usability for this procedure._
+
 You can use almost any [built-in-types in ROS 2](https://docs.ros.org/en/rolling/Concepts/About-ROS-Interfaces.html#field-types) on the embedded device.
 
 In additon, you can define a customized message type (e.g., `Twist.msg`) in the same way as in ROS 2, and use its header file for your application. This section describes how to generate header files for your own MsgTypes (`geometry_msgs::msg::Twist` as an example).
