@@ -25,18 +25,7 @@ float64 z
 float64 w
 ```
 
-Edit `msg_settings.json` file under `workspace/custom_msgs/geometry_msgs/` directory as the follow.
-
-```
-$ cat workspace/custom_msgs/geometry_msgs/msg_settings.json
-{
-    "pubsubMsgs": [
-        "geometry_msgs/msg/Pose.msg"
-    ]
-}
-```
-
-Do `make gen-msg msg=geometry_msgs` in `workspace/`.
+Execute `make gen-msg msg=geometry_msgs` in `workspace/`.
 
 ```
 $ make gen-msg msg=geometry_msgs

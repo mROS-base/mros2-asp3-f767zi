@@ -37,7 +37,7 @@ This section explains how to build and execute mROS 2 with TOPPERS/ASP3 kernel, 
 
 This example only uses a built-in-type (`string` a.k.a `std_msgs::msg::String`), so you can skip the generation of header files for custom msg types. Please see [Generating header files for custom MsgTypes](#generating-header-files-for-custom-msgtypes) for more detail.
 
-### Build for mROS 2 app
+### Build mROS 2 app
 
 First of all, clone this repository. Note that **--recursive** is mandatory.
 
@@ -63,7 +63,7 @@ asp.bin  asp.elf
 $ cp asp.bin /media/$USER/NODE_F767ZI/
 ```
 
-### Build for the host nodes
+### Build the host nodes
 
 We also provide the implemenation of ROS 2 nodes that communicate to the embedded device. (You can also use Docker as the host environment instead. Please check "Tips 1" section).
 
@@ -177,22 +177,9 @@ float64 y
 float64 z
 ```
 
-### Prepare msg_settings.json files
-
-Next, create or edit `msg_settings.json` file under `workspace/custom_msgs/geometry_msgs/` directory. In general, you need to set all paths to `pubsubMsgs`'s value about each .msg files which you want to use. Note that you do not need to add additional paths in this example since `Vector3` will be located in the same hierarchy as `Twist`.
-
-```
-$ cat workspace/custom_msgs/geometry_msgs/msg_settings.json
-{
-    "pubsubMsgs": [
-        "geometry_msgs/msg/Twist.msg"
-    ]
-}
-```
-
 ### Generate header files
 
-To generate header files for `Twist` and `Vector3`, do `make gen-msg msg=geometry_msgs` in `workspace/`.
+To generate header files for `Twist` and `Vector3`, execute `make gen-msg msg=geometry_msgs` in `workspace/`.
 
 ```
 $ cd workspace
