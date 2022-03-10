@@ -94,7 +94,9 @@ public:
   }
 
   uint32_t getTotalSize(){
-    return cntPub ;
+    uint32_t tmpCntPub = cntPub;
+    cntPub = 0;
+    return tmpCntPub ;
   }
 
 private:
