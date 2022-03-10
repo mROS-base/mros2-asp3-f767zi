@@ -4,7 +4,7 @@ APPNAME := ${app}
 BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
-BOARDPATH := /Volumes/${BOARDNAME}
+BOARDPATH := /media/${USER}/${BOARDNAME}
 
 MSGFILE := ${msg}
 MROS2DIR := ../mros2
@@ -20,7 +20,7 @@ usage:
 endif
 
 all: clean
-	@python $(TEMPLATESGEN_FILE) $(MROS2DIR) $(APPNAME);
+	@python $(TEMPLATESGEN_FILE) $(APPNAME);
 	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 	@echo "Build complete successfully"
@@ -36,5 +36,5 @@ clean:
 
 gen-msg:
 	@if [ -f custom_msgs/$(MSGFILE) ]; then \
-		python -B $(HEADERGEN_FILE) $(MROS2DIR) $(MSGFILE); \
+		python -B $(HEADERGEN_FILE) $(MSGFILE); \
 	fi
