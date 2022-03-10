@@ -4,7 +4,11 @@ APPNAME := ${app}
 BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
-BOARDPATH := /media/${USER}/${BOARDNAME}
+ifeq ($(shell uname), Linux)
+	BOARDPATH := /media/${USER}/${BOARDNAME}
+else ifeq ($(shell uname), Darwin)
+	BOARDPATH := /Volumes/${BOARDNAME}
+endif
 
 MSGFILE := ${msg}
 MROS2DIR := ../mros2
@@ -39,4 +43,5 @@ clean:
 gen-msg:
 	@if [ -f custom_msgs/$(MSGFILE) ]; then \
 		python -B $(HEADERGEN_FILE) $(MSGFILE); \
+		echo "msg file for ${msg} was generated from ${MSGFILE}"; \
 	fi
