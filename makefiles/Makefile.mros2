@@ -7,7 +7,7 @@ MROS2DIR := $(ROOTDIR)/mros2
 INCLUDES += -I$(MROS2DIR)/include
 INCLUDES += -I$(MROS2DIR)/mros2_msgs
 
-INCLUDES += -I$(ROOTDIR)/mros2_msgs
+INCLUDES += -I$(ROOTDIR)/workspace/custom_msgs
 
 APPLDIR += $(MROS2DIR)/src
 

@@ -4,10 +4,13 @@ APPNAME := ${app}
 BUILDSPACE := build
 
 BOARDNAME := NODE_F767ZI
-BOARDPATH := /media/${USER}/${BOARDNAME}
-# BOARDPATH for MAC OS -> BOARDPATH := /Volumes/${BOARDNAME}
+ifeq ($(shell uname), Linux)
+	BOARDPATH := /media/${USER}/${BOARDNAME}
+else ifeq ($(shell uname), Darwin)
+	BOARDPATH := /Volumes/${BOARDNAME}
+endif
 
-MSGDIR := custom_msgs/${msg}
+MSGFILE := ${msg}
 MROS2DIR := ../mros2
 HEADERGEN_FILE := $(MROS2DIR)/mros2_header_generator/header_generator.py
 TEMPLATESGEN_FILE := $(MROS2DIR)/mros2_header_generator/templates_generator.py
@@ -17,11 +20,13 @@ ifdef app
 else
 usage:
 	@echo "Please specify the application"
-	@echo "Usage: make app=<app_dir_name>"
+	@echo "Usage:"
+	@echo "  build app: make app=<app_dir_name>"
+	@echo "  generate header file: make app=<app_dir_name>"
 endif
 
 all: clean
-	@python $(TEMPLATESGEN_FILE) $(MROS2DIR) $(APPNAME);
+	@python $(TEMPLATESGEN_FILE) $(APPNAME);
 	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 	@echo "Build complete successfully"
@@ -36,7 +41,7 @@ clean:
 	rm -f asp.* && rm -f .asp*
 
 gen-msg:
-	@if [ -f $(MSGDIR)/msg_settings.json ]; then \
-		python -B $(HEADERGEN_FILE) $(MROS2DIR) $(MSGDIR); \
-		echo "msg file for ${msg} generated in ${MSGDIR}"; \
+	@if [ -f custom_msgs/$(MSGFILE) ]; then \
+		python -B $(HEADERGEN_FILE) $(MSGFILE); \
+		echo "msg file for ${msg} was generated from ${MSGFILE}"; \
 	fi
