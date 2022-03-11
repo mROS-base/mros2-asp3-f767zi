@@ -12,6 +12,7 @@ void userCallback(geometry_msgs::msg::Pose *msg)
 int main(int argc, char * argv[])
 {
   MROS2_INFO("mROS 2 application is started");
+  MROS2_INFO("app name: sub_pose");
 
   mros2::init(argc, argv);
   MROS2_DEBUG("mROS 2 initialization is completed");
