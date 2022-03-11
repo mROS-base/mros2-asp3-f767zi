@@ -152,8 +152,6 @@ Please see [workspace/](workspace/) for example applications.
 
 ## Generating header files for custom MsgTypes
 
-_Note: This feature is still in progress. We plan to improve usability for this procedure._
-
 You can use almost any [built-in-types in ROS 2](https://docs.ros.org/en/rolling/Concepts/About-ROS-Interfaces.html#field-types) on the embedded device.
 
 In additon, you can define a customized message type (e.g., `Twist.msg`) in the same way as in ROS 2, and use its header file for your application. This section describes how to generate header files for your own MsgTypes (`geometry_msgs::msg::Twist` as an example).
@@ -189,18 +187,18 @@ $ make gen-msg msg=geometry_msgs/msg/Twist.msg
 header file for custom message was generated from geometry_msgs/msg/Twist.msg
 ```
 
-Make sure header files for custom MsgType are generated in `../mros2_msgs/`
+Make sure header files for custom MsgType are generated in `custom_msgs/`
 
 ```
-$ ls -R ../mros2_msgs/
-../mros2_msgs/:
+$ ls -R custom_msgs/
+custom_msgs/:
 geometry_msgs
 
-../mros2_msgs/geometry_msgs:
+custom_msgs/geometry_msgs:
 msg
 
-../mros2_msgs/geometry_msgs/msg:
-twist.hpp  vector3.hpp
+custom_msgs/geometry_msgs/msg:
+twist.hpp  vector3.hpp  Twist.msg  Vector3.msg
 ```
 
 You can now use them in your applicaton like this.
