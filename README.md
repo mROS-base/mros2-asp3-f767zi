@@ -181,7 +181,7 @@ float64 z
 
 ### Generate header files
 
-To generate header files for `Twist` and `Vector3`, execute `make gen-msg msg=geometry_msgs` in `workspace/`.
+To generate header files for `Twist` and `Vector3`, execute `make gen-msg msg=geometry_msgs/msg/Twist.msg` in `workspace/`.
 
 ```
 $ cd workspace
