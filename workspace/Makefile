@@ -22,7 +22,7 @@ usage:
 	@echo "Please specify the application"
 	@echo "Usage:"
 	@echo "  build app: make app=<app_dir_name>"
-	@echo "  generate header file: make app=<app_dir_name>"
+	@echo "  generate header file: make msg=<msg_file_path>"
 endif
 
 all: clean
