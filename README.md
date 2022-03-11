@@ -185,8 +185,8 @@ To generate header files for `Twist` and `Vector3`, execute `make gen-msg msg=ge
 
 ```
 $ cd workspace
-$ make gen-msg msg=geometry_msgs
-msg file for geometry_msgs generated in custom_msgs/geometry_msgs
+$ make gen-msg msg=geometry_msgs/msg/Twist.msg
+header file for custom message was generated from geometry_msgs/msg/Twist.msg
 ```
 
 Make sure header files for custom MsgType are generated in `../mros2_msgs/`

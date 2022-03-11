@@ -25,7 +25,7 @@ float64 z
 float64 w
 ```
 
-Execute `make gen-msg msg=geometry_msgs` in `workspace/`.
+Execute `make gen-msg msg=geometry_msgs/msg/Pose.msg` in `workspace/`.
 
 ```
 $ make gen-msg msg=geometry_msgs
