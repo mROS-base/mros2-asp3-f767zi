@@ -22,7 +22,7 @@ usage:
 	@echo "Please specify the application"
 	@echo "Usage:"
 	@echo "  build app: make app=<app_dir_name>"
-	@echo "  generate header file: make app=<app_dir_name>"
+	@echo "  generate header file: make msg=<msg_file_path>"
 endif
 
 all: clean
@@ -43,5 +43,7 @@ clean:
 gen-msg:
 	@if [ -f custom_msgs/$(MSGFILE) ]; then \
 		python -B $(HEADERGEN_FILE) $(MSGFILE); \
-		echo "msg file for ${msg} was generated from ${MSGFILE}"; \
+		echo "header file for custom message was generated from ${MSGFILE}"; \
+	else \
+		echo "error in msg file: ${MSGFILE} does not exist"; \
 	fi
