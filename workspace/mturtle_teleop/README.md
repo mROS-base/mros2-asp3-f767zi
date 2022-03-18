@@ -1,10 +1,8 @@
 # m_turtle_teleop
 
-**Work_in_Progress**
+This is a sample application along with [turtlesim](https://github.com/mROS-base/ros_tutorials/tree/mros2/foxy-devel/turtlesim) (mros2 version).
 
-This is a sample application to publish `Twist` message.
-
-The mROS 2 node on the embedded board publishes `Twist` (`geometry_msgs::msg::Twist`) message to `cmd_vel` topic.
+The mROS 2 node on the embedded board publishes `Twist` (`geometry_msgs::msg::Twist`) message to `/turtle1/cmd_vel` topic, according to the input from keyboard via serial console.
 
 ## Generate header files for Twist
 
@@ -32,10 +30,17 @@ $ cp asp.bin /media/$USER/NODE_F767ZI/
 
 ## Host operation for native ROS 2
 
+Since the current version of does not support the QoS control, the original version of `turtlesim` could not work well with this application. So please use the following repository that is customized for mros2.
+
 ```
-$ ros2 launch mros2_sub_twist sub.launch.py
-### or:
-$ ros2 run mros2_sub_twist sub_node
+### clone repository and build package
+$ cd <your_ros2_ws>/src
+$ git clone -b mros2/foxy-devel https://github.com/mROS-base/ros_tutorials
+$ cd ..
+$ colcon build --packages-select turtlesim
+$ source install/local_setup.bash
+### run turtlesim node
+$ ros2 run turtlesim turtlesim_node
 ```
 
 ## Expected output
@@ -45,23 +50,35 @@ $ ros2 run mros2_sub_twist sub_node
 ```
 $ picocom -b 115200 /dev/ttyACM0
 <snip.>
-publishing Twist msg!!
-publishing Twist msg!!
-publishing Twist msg!!
-publishing Twist msg!!
+ready to pub/sub message
+keymap to move arround:
+------------------
+   u    i    o
+   j    k    l
+   m    ,    .
+------------------
+q/z : increase/decrease max speeds by 10 percent
+w/x : increase/decrease only linear speed by 10 percent
+e/c : increase/decrease only angular speed by 10 percent
+currently: speed 0.5000 / turn 1.0000
+
+[MROS2LIB] Initilizing Domain complete
+[MROS2LIB] publisher matched with remote subscriber
+publishing Twist msg by 'u' command
+publishing Twist msg by 'u' command
+publishing Twist msg by 'u' command
 <cont.>
 ```
-
-Note that this app only prints about publications since printing float32 value on STM32 is quiet hard.
 
 ### terminal console on the host
 
 ```
 $ ros2 launch mros2_sub_twist sub.launch.py
 <snip.>
-[sub_node-1] [INFO] [1645586976.508508456] [sub_twist]: Subscribed msg: { linear: { x: 1.000000, y: 1.000000, z: 1.000000 }, angular: { x: 1.000000, y: 1.000000, z: 1.000000 } }
-[sub_node-1] [INFO] [1645586977.517233571] [sub_twist]: Subscribed msg: { linear: { x: 2.000000, y: 2.000000, z: 2.000000 }, angular: { x: 2.000000, y: 2.000000, z: 2.000000 } }
-[sub_node-1] [INFO] [1645586978.526933276] [sub_twist]: Subscribed msg: { linear: { x: 3.000000, y: 3.000000, z: 3.000000 }, angular: { x: 3.000000, y: 3.000000, z: 3.000000 } }
-[sub_node-1] [INFO] [1645586979.535760548] [sub_twist]: Subscribed msg: { linear: { x: 4.000000, y: 4.000000, z: 4.000000 }, angular: { x: 4.000000, y: 4.000000, z: 4.000000 } }
+[INFO] [1647589190.956007464] [turtlesim]: Starting turtlesim with node name /turtlesim
+[INFO] [1647589190.957948401] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+[INFO] [1647589195.831260526] [turtlesim]: subscribed Twist msg from mros2
+[INFO] [1647589196.422450459] [turtlesim]: subscribed Twist msg from mros2
+[INFO] [1647589196.934933835] [turtlesim]: subscribed Twist msg from mros2
 <cont.>
 ```
