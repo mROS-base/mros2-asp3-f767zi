@@ -1,4 +1,6 @@
-# pub_twist
+# m_turtle_teleop
+
+**Work_in_Progress**
 
 This is a sample application to publish `Twist` message.
 
@@ -10,12 +12,12 @@ See detail in [<repo_root>/README.md#generating-header-files-for-custom-msgtypes
 
 ## Build and Run for embedded devices
 
-Make sure to set `app=pub_twist` as `make` option.
+Make sure to set `app=mturtle_teleop` as `make` option.
 
 ```
 $ pwd
 <snip.>/mros2-asp3-f767zi/workspace
-$ make app=pub_twist
+$ make app=mturtle_teleop
 <snip.>
 configuration check passed
 make[2]: Leaving directory '/home/takase/ros/mROS2/github/mros2-asp3-f767zi/workspace/build'
