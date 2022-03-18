@@ -11,6 +11,7 @@ const AutosarOsExtFlagMapEntryType autosar_os_ext_flag_user_map[AUTOSAR_OS_EXT_A
   AUTOSAR_OS_EXT_FLAG_MAP_ENTRY(AutosarOsExtReaderTask),
   AUTOSAR_OS_EXT_FLAG_MAP_ENTRY(AutosarOsExtMROS2Task),
   AUTOSAR_OS_EXT_FLAG_MAP_ENTRY(MAIN_TASK),
+  AUTOSAR_OS_EXT_FLAG_MAP_ENTRY(TELEOP_TASK),
 };
 
 const AutosarOsExtFlagMapEntryType* cmsis_get_flag_user_map(void)

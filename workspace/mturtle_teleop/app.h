@@ -76,6 +76,7 @@
 extern "C" {
 #endif
 void main_task(void);
+void teleop_task(void);
 extern void	led_cyclic_handler(intptr_t exinf);
 #ifdef __cplusplus
 }

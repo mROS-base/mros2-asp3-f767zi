@@ -5,6 +5,8 @@
 
 #include "stm32f7xx_nucleo_144.h"
 
+#include "kernel_cfg.h"
+
 int main(int argc, char * argv[])
 {
   MROS2_INFO("mROS 2 application is started");
@@ -14,6 +16,13 @@ int main(int argc, char * argv[])
   MROS2_DEBUG("mROS 2 initialization is completed");
   BSP_LED_Toggle(LED1);
 
+  act_tsk(TELEOP_TASK);
+
+  BSP_LED_Toggle(LED3);
+}
+
+void teleop_task(void)
+{
   mros2::Node node = mros2::Node::create_node("mturtle_teleop");
   mros2::Publisher pub = node.create_publisher<geometry_msgs::msg::Twist>("turtle1/cmd_vel", 10);  
   MROS2_INFO("ready to pub/sub message");
@@ -40,7 +49,6 @@ int main(int argc, char * argv[])
   }
 
   mros2::spin();
-  BSP_LED_Toggle(LED3);
 }
 
 void main_task(void)
