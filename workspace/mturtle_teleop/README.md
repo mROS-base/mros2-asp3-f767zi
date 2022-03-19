@@ -1,4 +1,4 @@
-# m_turtle_teleop
+# mturtle_teleop
 
 This is a sample application along with [turtlesim](https://github.com/mROS-base/ros_tutorials/tree/mros2/foxy-devel/turtlesim) (mros2 version).
 
