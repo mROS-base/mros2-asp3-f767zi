@@ -27,7 +27,7 @@ int main(int argc, char * argv[])
   pub = node.create_publisher<std_msgs::msg::String>("to_linux", 10);
   sub = node.create_subscription<std_msgs::msg::String>("to_stm", 10, userCallback);
   std_msgs::msg::String msg;
-
+  osDelay(100);
   MROS2_INFO("ready to pub/sub message");
 
   mros2::spin();

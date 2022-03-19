@@ -8,7 +8,7 @@
       "type": "shell",
       "command": "make",
       "args": [
-        "app=mturtle_teleop"
+        "app=echoreply_string"
       ],
       "options": {
         "env": {
