@@ -30,17 +30,14 @@ $ cp asp.bin /media/$USER/NODE_F767ZI/
 
 ## Host operation for native ROS 2
 
-Since the current version of does not support the QoS control, the original version of `turtlesim` could not work well with this application. So please use the following repository that is customized for mros2.
+Since the current version of does not support the QoS control, the original version of `turtlesim` could not work well with this application. So please use the following repository (that is customized for mros2) to clone repository and build package.
 
 ```
-### clone repository and build package
 $ cd <your_ros2_ws>/src
 $ git clone -b mros2/foxy-devel https://github.com/mROS-base/ros_tutorials
 $ cd ..
 $ colcon build --packages-select turtlesim
 $ source install/local_setup.bash
-### run turtlesim node
-$ ros2 run turtlesim turtlesim_node
 ```
 
 ## Expected output
@@ -73,7 +70,7 @@ publishing Twist msg by 'u' command
 ### terminal console on the host
 
 ```
-$ ros2 launch mros2_sub_twist sub.launch.py
+$ ros2 run turtlesim turtlesim_node
 <snip.>
 [INFO] [1647589190.956007464] [turtlesim]: Starting turtlesim with node name /turtlesim
 [INFO] [1647589190.957948401] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
