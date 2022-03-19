@@ -27,13 +27,15 @@ Please also check [mros2 repository](https://github.com/mROS-base/mros2) for mor
       1. Install [STM32CubeIDE v1.5.0](https://www.st.com/en/development-tools/stm32cubeide.html#overview&secondary=st-get-software). It contains v7.3.1 cross-compiler.
       If you did not change the default location to be installed, `$PATH` to be set will be _/opt/st/stm32cubeide_1.5.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.5.0.202011040924/tools_
     - Currently, we confirmed issue that v6.3.1 (which will be installed via `apt`) cannot be operated successfully. See also [#36](https://github.com/mROS-base/mros2-asp3-f767zi/issues/36).
-1. Connet the board and the host with LAN cable and micro-USB cable (CN1 connector on the board, opposite side of LAN connector). Please set the IP address and Netmask of the host to `192.168.11.3` and `255.255.255.0`, respectively.
-    - You can also connect the network with the board through the router when you can set the IP and Netmask as the above.
+1. Connet the board and the host with LAN cable and micro-USB cable (CN1 connector on the board, opposite side of LAN connector). Please set the IP address and Netmask of the host to `192.168.11.x` and `255.255.255.0`, respectively.
     - The IP address of the board will be assigned to `192.168.11.2`. If you want to change the IP settings, you need to modify [src/config/lwip.c](https://github.com/mROS-base/mros2-asp3-f767zi/blob/main/src/config/lwip.c#L69-L80) and [embeddedRTPS/include/rtps/config.h](https://github.com/mROS-base/embeddedRTPS/blob/mros2/include/rtps/config.h#L37) as you want.
+    - You can also connect the network with the board through the router when you can set the IP and Netmask as the above.
+    - The firewall on the host (Ubuntu) needs to be disabled for ROS 2 (DDS) communication (e.g. `$ sudo ufw disable`)
+    - If the host is connected to the Internet other than wired network (e.g., Wi-Fi), communication with mros2 may not work properly. In that case, please turn off them.
 
 ## Quickstart
 
-This section explains how to build and execute mROS 2 with TOPPERS/ASP3 kernel, using `echoback_reply` application as an example.
+This section explains how to build and execute mROS 2 with TOPPERS/ASP3 kernel, using `echoreply_string` application as an example.
 
 This example only uses a built-in-type (`string` a.k.a `std_msgs::msg::String`), so you can skip the generation of header files for custom msg types. Please see [Generating header files for custom MsgTypes](#generating-header-files-for-custom-msgtypes) for more detail.
 

@@ -15,7 +15,8 @@ int main(int argc, char * argv[])
   BSP_LED_Toggle(LED1);
 
   mros2::Node node = mros2::Node::create_node("pub_twist");
-  mros2::Publisher pub = node.create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);  
+  mros2::Publisher pub = node.create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
+  osDelay(100);
   MROS2_INFO("ready to pub/sub message");
 
   geometry_msgs::msg::Vector3 linear;

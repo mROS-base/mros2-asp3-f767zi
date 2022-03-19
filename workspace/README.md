@@ -20,7 +20,8 @@ $ make app=pub_float32
 - [pub_twist](pub_twist/)
 - [sub_pose](sub_pose/)
 - [mturtle_teleop](mturtle_teleop/)
-- [custom_msgs/](custom_msgs/): definition and header files for custom MsgTypes (see [detail](../README.md#generating-header-files-for-custom-msgtypes))
+
+[custom_msgs/](custom_msgs/) contains the definition files and header files for custom MsgTypes. See [detail about generating header files for custom MsgTypes](../README.md#generating-header-files-for-custom-msgtypes).
 
 ## Corresponding examples on the host
 
