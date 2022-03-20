@@ -68,9 +68,12 @@ void teleop_task(void)
   char c;
   while (1)
   {
-    if (publish_count < 10) {
+    if (publish_count < 10)
+    {
       publish_count++;
-    } else {
+    }
+    else
+    {
       publish_count = 0;
       MROS2_INFO("keymap to move arround:");
       MROS2_INFO("------------------");
@@ -87,82 +90,83 @@ void teleop_task(void)
     }
 
     serial_rea_dat(TASK_PORTID, &c, 1);
-    switch (c) {
+    switch (c)
+    {
     /* increase/decrease speeds */
-		case 'q':
+    case 'q':
       speed = speed * 1.1;
       turn = turn * 1.1;
       MROS2_INFO("currently: speed %s / turn %s",
                  double_to_string(speed).c_str(), double_to_string(turn).c_str());
       break;
-		case 'z':
+    case 'z':
       speed = speed * 0.9;
       turn = turn * 0.9;
       MROS2_INFO("currently: speed %s / turn %s",
                  double_to_string(speed).c_str(), double_to_string(turn).c_str());
       break;
-		case 'w':
+    case 'w':
       speed = speed * 1.1;
       MROS2_INFO("currently: speed %s / turn %s",
                  double_to_string(speed).c_str(), double_to_string(turn).c_str());
       break;
-		case 'x':
+    case 'x':
       speed = speed * 0.9;
       MROS2_INFO("currently: speed %s / turn %s",
                  double_to_string(speed).c_str(), double_to_string(turn).c_str());
       break;
-		case 'e':
+    case 'e':
       turn = turn * 1.1;
       MROS2_INFO("currently: speed %s / turn %s",
                  double_to_string(speed).c_str(), double_to_string(turn).c_str());
       break;
-		case 'c':
+    case 'c':
       turn = turn * 0.9;
       MROS2_INFO("currently: speed %s / turn %s",
                  double_to_string(speed).c_str(), double_to_string(turn).c_str());
       break;
     /* set direction */
-		case 'u':
+    case 'u':
       twist = set_twist_val(speed, 0.0, 0.0, 0.0, 0.0, turn);
       MROS2_INFO("publishing Twist msg by 'u' command");
       pub.publish(twist);
       break;
-		case 'i':
+    case 'i':
       twist = set_twist_val(speed, 0.0, 0.0, 0.0, 0.0, 0.0);
       MROS2_INFO("publishing Twist msg by 'i' command");
       pub.publish(twist);
       break;
-		case 'o':
+    case 'o':
       twist = set_twist_val(speed, 0.0, 0.0, 0.0, 0.0, -turn);
       MROS2_INFO("publishing Twist msg by 'o' command");
       pub.publish(twist);
       break;
-		case 'j':
+    case 'j':
       twist = set_twist_val(0.0, 0.0, 0.0, 0.0, 0.0, turn);
       MROS2_INFO("publishing Twist msg by 'j' command");
       pub.publish(twist);
       break;
-		case 'k':
+    case 'k':
       twist = set_twist_val(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
       MROS2_INFO("publishing Twist msg by 'k' command");
       pub.publish(twist);
       break;
-		case 'l':
+    case 'l':
       twist = set_twist_val(0.0, 0.0, 0.0, 0.0, 0.0, -turn);
       MROS2_INFO("publishing Twist msg by 'l' command");
       pub.publish(twist);
       break;
-		case 'm':
+    case 'm':
       twist = set_twist_val(-speed, 0.0, 0.0, 0.0, 0.0, -turn);
       MROS2_INFO("publishing Twist msg by 'm' command");
       pub.publish(twist);
       break;
-		case ',':
+    case ',':
       twist = set_twist_val(-speed, 0.0, 0.0, 0.0, 0.0, 0.0);
       MROS2_INFO("publishing Twist msg by ',' command");
       pub.publish(twist);
       break;
-		case '.':
+    case '.':
       twist = set_twist_val(-speed, 0.0, 0.0, 0.0, 0.0, turn);
       MROS2_INFO("publishing Twist msg by '.' command");
       pub.publish(twist);
