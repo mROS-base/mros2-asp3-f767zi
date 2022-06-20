@@ -240,7 +240,7 @@ docker run --rm -it --net=host ros:foxy /bin/bash \
   cd mros2-host-examples &&
   colcon build --packages-select mros2_echoback_string &&
   source install/setup.bash &&
-  ros2 launch mros2_echoback_string launch_pubsub.py"
+  ros2 launch mros2_echoback_string pubsub.launch.py"
 ```
 
 ## Tips 2: Developing with VS Code
