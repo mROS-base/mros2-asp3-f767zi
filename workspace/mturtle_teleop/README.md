@@ -1,6 +1,6 @@
 # mturtle_teleop
 
-This is a sample application along with [turtlesim](https://github.com/mROS-base/ros_tutorials/tree/mros2/foxy-devel/turtlesim) (mros2 version).
+This is a sample application along with [mturtlesim](https://github.com/mROS-base/ros_tutorials/tree/mros2/foxy-devel/mturtlesim) (mros2 version).
 
 The mROS 2 node on the embedded board publishes `Twist` (`geometry_msgs::msg::Twist`) message to `/turtle1/cmd_vel` topic, according to the input from keyboard via serial console.
 
@@ -30,13 +30,13 @@ $ cp asp.bin /media/$USER/NODE_F767ZI/
 
 ## Host operation for native ROS 2
 
-Since the current version of does not support the QoS control, the original version of `turtlesim` could not work well with this application. So please use the following repository (that is customized for mros2) to clone repository and build package.
+Since the current version of does not support the QoS control, the original version of `mturtlesim` could not work well with this application. So please use the following repository (that is customized for mros2) to clone repository and build package.
 
 ```
 $ cd <your_ros2_ws>/src
 $ git clone -b mros2/foxy-devel https://github.com/mROS-base/ros_tutorials
 $ cd ..
-$ colcon build --packages-select turtlesim
+$ colcon build --packages-select mturtlesim
 $ source install/local_setup.bash
 ```
 
@@ -70,12 +70,12 @@ publishing Twist msg by 'u' command
 ### terminal console on the host
 
 ```
-$ ros2 run turtlesim turtlesim_node
+$ ros2 run mturtlesim turtlesim_node
 <snip.>
-[INFO] [1647589190.956007464] [turtlesim]: Starting turtlesim with node name /turtlesim
-[INFO] [1647589190.957948401] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
-[INFO] [1647589195.831260526] [turtlesim]: subscribed Twist msg from mros2
-[INFO] [1647589196.422450459] [turtlesim]: subscribed Twist msg from mros2
-[INFO] [1647589196.934933835] [turtlesim]: subscribed Twist msg from mros2
+[INFO] [1647589190.956007464] [mturtlesim]: Starting mturtlesim with node name /mturtlesim
+[INFO] [1647589190.957948401] [mturtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+[INFO] [1647589195.831260526] [mturtlesim]: subscribed Twist msg from mros2
+[INFO] [1647589196.422450459] [mturtlesim]: subscribed Twist msg from mros2
+[INFO] [1647589196.934933835] [mturtlesim]: subscribed Twist msg from mros2
 <cont.>
 ```
