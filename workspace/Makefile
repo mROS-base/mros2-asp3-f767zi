@@ -26,7 +26,7 @@ usage:
 endif
 
 all: clean
-	@python $(TEMPLATESGEN_FILE) $(APPNAME);
+	@python3 $(TEMPLATESGEN_FILE) $(APPNAME)
 	@cd $(BUILDSPACE) &&  make -j4 -f Makefile.common app=${APPNAME}
 	@cp $(BUILDSPACE)/asp.bin . && cp $(BUILDSPACE)/asp.elf .
 	@echo "Build complete successfully"
@@ -42,7 +42,7 @@ clean:
 
 gen-msg:
 	@if [ -f custom_msgs/$(MSGFILE) ]; then \
-		python -B $(HEADERGEN_FILE) $(MSGFILE); \
+		python3 -B $(HEADERGEN_FILE) $(MSGFILE); \
 		echo "header file for custom message was generated from ${MSGFILE}"; \
 	else \
 		echo "error in msg file: ${MSGFILE} does not exist"; \
